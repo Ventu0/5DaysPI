@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class Player : CharacterStatus
+public class EnemyAI : CharacterStatus
 {
-   
     void Start()
     {
         
     }
 
-    
     void Update()
     {
         
