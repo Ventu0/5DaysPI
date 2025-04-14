@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.TextCore.Text;
-public class Aliados : CharacterStatus
+public class Aliados : MonoBehaviour
 {
     [SerializeField]public List<BasicAttack> ataques;
     public bool jaAtacou;
+    void Awake()
+    {
+
+    }
     void Start()
     {
         

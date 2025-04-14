@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 1, g: 0.9454185, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -376,13 +376,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 889460133}
+        m_TargetAssemblyTypeName: InteractButtonsController, Assembly-CSharp
+        m_MethodName: SetMove
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 212723956}
   - component: {fileID: 212723955}
   - component: {fileID: 212723957}
+  - component: {fileID: 212723958}
   m_Layer: 0
   m_Name: PlayerBaixo
   m_TagString: Untagged
@@ -488,11 +489,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e2c4213b9083d4987e457dbaf02b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  vida: 0
   ataques:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   jaAtacou: 0
+--- !u!114 &212723958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212723954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "for\xE7a": 0
+  vida: 0
 --- !u!1 &319227694
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +641,7 @@ GameObject:
   - component: {fileID: 406774446}
   - component: {fileID: 406774448}
   - component: {fileID: 406774447}
+  - component: {fileID: 406774449}
   m_Layer: 5
   m_Name: AttackName
   m_TagString: Untagged
@@ -752,6 +769,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406774445}
   m_CullTransparentMesh: 1
+--- !u!114 &406774449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406774445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 406774447}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 889460133}
+        m_TargetAssemblyTypeName: InteractButtonsController, Assembly-CSharp
+        m_MethodName: SetMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &408862981
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +972,7 @@ GameObject:
   - component: {fileID: 518258459}
   - component: {fileID: 518258458}
   - component: {fileID: 518258460}
+  - component: {fileID: 518258461}
   m_Layer: 0
   m_Name: PlayerMeio
   m_TagString: Untagged
@@ -988,11 +1062,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e2c4213b9083d4987e457dbaf02b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  vida: 0
   ataques:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   jaAtacou: 0
+--- !u!114 &518258461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518258457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "for\xE7a": 0
+  vida: 0
 --- !u!1 &545364685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,11 +1187,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7550815b6009d6043aa92456682ebceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inimigos: []
+  inimigos:
+  - {fileID: 0}
+  hasOnlyOneEnemy: 0
   aliados:
   - {fileID: 1441147513}
   - {fileID: 518258460}
   - {fileID: 212723957}
+  qualInimigoVaiAtacar: 0
   turno: 0
 --- !u!4 &613544267
 Transform:
@@ -1430,6 +1522,8 @@ MonoBehaviour:
   attackMenuAnim: {fileID: 1758167311}
   attackButton: {fileID: 860592985}
   attacksText: []
+  attackButtons: []
+  ataques: []
   menuDistance: 3
 --- !u!1 &1105539879
 GameObject:
@@ -1442,6 +1536,7 @@ GameObject:
   - component: {fileID: 1105539880}
   - component: {fileID: 1105539882}
   - component: {fileID: 1105539881}
+  - component: {fileID: 1105539883}
   m_Layer: 5
   m_Name: AttackName
   m_TagString: Untagged
@@ -1569,6 +1664,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105539879}
   m_CullTransparentMesh: 1
+--- !u!114 &1105539883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105539879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1105539881}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 889460133}
+        m_TargetAssemblyTypeName: InteractButtonsController, Assembly-CSharp
+        m_MethodName: SetMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1179370941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1731,7 @@ GameObject:
   - component: {fileID: 1179370942}
   - component: {fileID: 1179370944}
   - component: {fileID: 1179370943}
+  - component: {fileID: 1179370945}
   m_Layer: 5
   m_Name: AttackName
   m_TagString: Untagged
@@ -1707,6 +1859,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179370941}
   m_CullTransparentMesh: 1
+--- !u!114 &1179370945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179370941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 1, g: 0.94509804, b: 0, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1179370943}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 889460133}
+        m_TargetAssemblyTypeName: InteractButtonsController, Assembly-CSharp
+        m_MethodName: SetMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1247276479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +2164,7 @@ GameObject:
   - component: {fileID: 1441147512}
   - component: {fileID: 1441147511}
   - component: {fileID: 1441147513}
+  - component: {fileID: 1441147514}
   m_Layer: 0
   m_Name: PlayerCima
   m_TagString: Untagged
@@ -2045,11 +2254,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e2c4213b9083d4987e457dbaf02b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  vida: 0
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   jaAtacou: 0
+--- !u!114 &1441147514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441147510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "for\xE7a": 0
+  vida: 0
 --- !u!1 &1503355780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1722228181}
   - component: {fileID: 1722228180}
+  - component: {fileID: 1722228183}
   - component: {fileID: 1722228182}
   m_Layer: 0
   m_Name: Enemy
@@ -2356,9 +2581,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "for\xE7a": 0
   vida: 1
-  ataques: []
-  turnoTipo: 1
+--- !u!114 &1722228183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722228179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de13e53712fd0c6409bc2e421ce7bfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  vida: 0
 --- !u!1 &1758167307
 GameObject:
   m_ObjectHideFlags: 0
