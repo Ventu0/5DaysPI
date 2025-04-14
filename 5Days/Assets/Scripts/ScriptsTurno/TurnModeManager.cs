@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 public enum Turnos
 {
     PlayerTurn,
@@ -12,12 +13,12 @@ public class TurnModeManager : MonoBehaviour
     public PlayerTurn onPlayerTurn;
     public static TurnModeManager instance;
     [SerializeField] List<EnemyAI> inimigos;
-    [SerializeField] List<BasePersonagem> aliados;
-    int qualJogadorVaiComeçar;
+    [SerializeField] List<Aliados> aliados;
+    int turnoDeQualJogador;
     public Turnos turno;
-    void Start()
+    private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -25,8 +26,12 @@ public class TurnModeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        onPlayerTurn?.Invoke();
+    }
+    void Start()
+    {
+        InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position, aliados[turnoDeQualJogador].ataques.ToArray());
 
+        onPlayerTurn?.Invoke();
     }
     void Update()
     {

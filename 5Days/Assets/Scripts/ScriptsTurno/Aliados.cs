@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
-public class Aliados : MonoBehaviour
+using UnityEngine.TextCore.Text;
+public class Aliados : CharacterStatus
 {
-    [SerializeField] List<BasicAttack> ataques;
+    [SerializeField]public List<BasicAttack> ataques;
+    public bool jaAtacou;
     void Start()
     {
         
@@ -11,4 +13,5 @@ public class Aliados : MonoBehaviour
     {
         
     }
+    
 }
