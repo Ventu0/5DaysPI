@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inimigos:
-  - {fileID: 0}
+  - {fileID: 1722228183}
   hasOnlyOneEnemy: 0
   aliados:
   - {fileID: 1441147513}
