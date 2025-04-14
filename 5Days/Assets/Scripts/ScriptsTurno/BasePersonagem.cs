@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {   
-    [SerializeField] int vida;
+    public int vida;
     [SerializeField] List<BasicAttack> ataques;
     [SerializeField] Turnos turnoTipo;
 
@@ -15,6 +15,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     {
         
     }
+    
     public void TakeDamage(int damage)
     {
         vida -= damage;
