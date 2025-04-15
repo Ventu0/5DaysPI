@@ -14,9 +14,9 @@ public class TurnModeManager : MonoBehaviour
     public static TurnModeManager instance;
     [SerializeField] List<EnemyAI> inimigos;
     [SerializeField] bool hasOnlyOneEnemy;
-    [SerializeField] List<Aliados> aliados;
+    public List<Aliados> aliados;
     [SerializeField] int qualInimigoVaiAtacar;
-    int turnoDeQualJogador;
+    public int turnoDeQualJogador;
     public Turnos turno;
     private void Awake()
     {
@@ -38,9 +38,8 @@ public class TurnModeManager : MonoBehaviour
         {
             hasOnlyOneEnemy = true;
         }
-            InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position);
-        InteractButtonsController.instance.ataques = aliados[turnoDeQualJogador].ataques;
-
+        turnoDeQualJogador = 0;
+        InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position);
         onPlayerTurn?.Invoke();
     }
     void Update()

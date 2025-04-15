@@ -12,7 +12,7 @@ public class InteractButtonsController : MonoBehaviour
     [SerializeField] Button attackButton;
     [SerializeField] TextMeshProUGUI[] attacksText;
     [SerializeField] Button[] attackButtons;
-    public List<BasicAttack> ataques;
+    public List<Attack> ataques;
 
     [Header("Configurable")]
     [SerializeField] float menuDistance;
@@ -32,14 +32,13 @@ public class InteractButtonsController : MonoBehaviour
     }
     void Start()
     {
-        attacksText = attackMenuAnim.GetComponentsInChildren<TextMeshProUGUI>();
         attackButtons = attackMenuAnim.GetComponentsInChildren<Button>();
         attackMenuAnim.gameObject.SetActive(false);
-            //for(int i = 0; i < attackButtons.Length; i++)
-            //{
-            //    attackButtons[i].onClick.AddListener(() => SetMove(i));
-            //}
         attackButton.onClick.AddListener(OpenMenu);
+    }
+    void OnEnable()
+    {
+        ataques = TurnModeManager.instance.aliados[TurnModeManager.instance.turnoDeQualJogador].ataques;
     }
     void Update()
     {
@@ -52,22 +51,18 @@ public class InteractButtonsController : MonoBehaviour
     public void SetupMenu(Vector2 newPos)
     {
         menu.transform.position = new Vector2(newPos.x + menuDistance, newPos.y);
+
         for (int i = 0; i < attacksText.Length; i++)
         {
             if (ataques[i] != null)
-            {
                 attacksText[i].text = ataques[i].name;
-            }
             else
-            {
                 attacksText[i].text = "------";
-            }
         }
     }
 
     public void SetMove(int whatMove)
     {
-        print("chora caetano: " + whatMove);
         ataques[whatMove].ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo());
     }
 }
