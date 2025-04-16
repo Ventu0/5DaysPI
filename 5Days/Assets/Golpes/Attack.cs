@@ -8,6 +8,6 @@ public abstract class Attack : ScriptableObject
 
     public virtual void ExecutarAtaque(BasePersonagem alvo)
     {
-
+        InteractButtonsController.instance.menu.SetActive(false);
     }
 }

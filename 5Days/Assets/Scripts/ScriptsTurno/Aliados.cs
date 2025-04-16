@@ -5,7 +5,7 @@ public class Aliados : MonoBehaviour
 {
     [SerializeField] public List<Attack> ataques;
     [SerializeField] AnimationCurve curve;
-    [SerializeField] float duration = 2f;
+    public float duration;
     public bool jaAtacou;
     Vector2 initialPos;
     void Awake()
@@ -27,17 +27,27 @@ public class Aliados : MonoBehaviour
     public IEnumerator MovePlayer(Vector2 newPos)
     {
         float iterador = 0;
-        print("mexendo player");
         while (iterador < duration)
         {
-            iterador = Mathf.Clamp01(iterador);
-            float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * iterador);
+            float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
             float playerNewX = Mathf.Lerp(initialPos.x, newPos.x, iterador);
             transform.position = new Vector2(playerNewX, playerNewY);
             iterador += Time.deltaTime * duration;
             yield return null;
         }
-        transform.position = newPos;
+
+        yield return new WaitForSeconds(0.1f);
+        iterador = 0;
+        while (iterador < duration)
+        {
+            float playerNewY = Mathf.Lerp(newPos.y, initialPos.y , iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
+            float playerNewX = Mathf.Lerp(newPos.x, initialPos.x , iterador);
+            transform.position = new Vector2(playerNewX, playerNewY);
+            iterador += Time.deltaTime * duration;
+            yield return null;
+        }
+        jaAtacou = true;
+        TurnModeManager.instance.CheckIfAllPlayersAttacked();
     }
 
 }

@@ -48,12 +48,39 @@ public class TurnModeManager : MonoBehaviour
         //{
         //    StartCoroutine(MoverSeta(new Vector2();
         //}
+        
     }
+   
+    IEnumerator MoverSeta(Vector2 newPos)
+    {
+        yield return null;
+    }
+    public void CheckIfAllPlayersAttacked()
+    {
+        for(int i = 0; i < aliados.Count; i++)
+        {
+            if (aliados[i].jaAtacou == false)
+            {
+                turnoDeQualJogador += 1;
+                InteractButtonsController.instance.menu.SetActive(true);
+                InteractButtonsController.instance.attackMenuAnim.gameObject.SetActive(false);
+                InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position);
+                return;
+            }
+            else
+            {
+                print("turno do inimigo agorinha");
+                InteractButtonsController.instance.menu.SetActive(false);
+                turno = Turnos.EnemyTurn;
+            }
+        }
+    }
+    #region Utils
     public Aliados QuemEstaAtacando()
     {
         if (!aliados[turnoDeQualJogador].jaAtacou) return aliados[turnoDeQualJogador];
         else
-        return null;
+            return null;
     }
     public Animator PlayerAnimator()
     {
@@ -69,14 +96,6 @@ public class TurnModeManager : MonoBehaviour
         {
             return null;
         }
-       
     }
-    IEnumerator MoverSeta(Vector2 newPos)
-    {
-        yield return null;
-    }
-    public void QualPlayerVaiAtacar()
-    {
-        //aliados[qualJogadorVaiComeçar].
-    }
+    #endregion
 }

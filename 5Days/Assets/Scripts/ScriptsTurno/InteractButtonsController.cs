@@ -7,8 +7,8 @@ using UnityEditor.Build;
 public class InteractButtonsController : MonoBehaviour
 {
     [Header("Essential")]
-    [SerializeField] GameObject menu;
-    [SerializeField] Animator attackMenuAnim;
+    public GameObject menu;
+    public Animator attackMenuAnim;
     [SerializeField] Button attackButton;
     [SerializeField] TextMeshProUGUI[] attacksText;
     [SerializeField] Button[] attackButtons;

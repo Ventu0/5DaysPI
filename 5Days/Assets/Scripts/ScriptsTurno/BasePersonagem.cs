@@ -8,6 +8,13 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     
     public void TakeDamage(int damage)
     {
-        vida -= damage;
+        if(vida > 0)
+        {
+            vida -= damage;
+        }else if(vida <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataques:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -502,7 +502,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 0.5
+  duration: 2
   jaAtacou: 0
 --- !u!114 &212723958
 MonoBehaviour:
@@ -2310,7 +2310,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 5
+  duration: 2
   jaAtacou: 0
 --- !u!114 &1441147514
 MonoBehaviour:
@@ -2656,7 +2656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "for\xE7a": 0
-  vida: 1
+  vida: 3
 --- !u!114 &1722228183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2671,6 +2671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   vida: 0
+  canAttack: 0
 --- !u!1 &1758167307
 GameObject:
   m_ObjectHideFlags: 0
