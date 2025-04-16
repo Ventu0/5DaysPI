@@ -38,7 +38,6 @@ public class TurnModeManager : MonoBehaviour
         {
             hasOnlyOneEnemy = true;
         }
-        turnoDeQualJogador = 0;
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position);
         onPlayerTurn?.Invoke();
     }
@@ -49,6 +48,16 @@ public class TurnModeManager : MonoBehaviour
         //{
         //    StartCoroutine(MoverSeta(new Vector2();
         //}
+    }
+    public Aliados QuemEstaAtacando()
+    {
+        if (!aliados[turnoDeQualJogador].jaAtacou) return aliados[turnoDeQualJogador];
+        else
+        return null;
+    }
+    public Animator PlayerAnimator()
+    {
+        return aliados[turnoDeQualJogador].GetComponent<Animator>();
     }
     public BasePersonagem EncontrarAlvo()
     {
