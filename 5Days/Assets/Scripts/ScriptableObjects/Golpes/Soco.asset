@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dano: 1
   nomeAtaque: Soco
+  iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   animatorController: {fileID: 9100000, guid: afe7260057d054c4d80961e5b3c5cd33, type: 2}

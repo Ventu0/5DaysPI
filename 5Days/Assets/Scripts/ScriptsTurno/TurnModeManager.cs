@@ -42,6 +42,7 @@ public class TurnModeManager : MonoBehaviour
         {
             inimigosPersonagens.Add(inimigos[i].GetComponent<BasePersonagem>());
         }
+        turnoDeQualPersonagem = 0;
     }
     void Start()
     {
@@ -53,7 +54,7 @@ public class TurnModeManager : MonoBehaviour
             hasOnlyOneEnemy = true;
         }
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
-        onPlayerTurn?.Invoke();
+        onPlayerTurn?.Invoke(); //depois do protótipo, arrumar o codigo inteiro para deixar organizado (inclui o delegate da linha).
     }
     void Update()
     {
@@ -83,7 +84,6 @@ public class TurnModeManager : MonoBehaviour
                     todosAtacaram = true;
                     aliadosPersonagens[i].jaAtacou = false;
                 }
-                    
             }
             if (todosAtacaram)
             {
@@ -112,6 +112,9 @@ public class TurnModeManager : MonoBehaviour
             }
             if (todosAtacaram)
             {
+                turno = Turnos.PlayerTurn;
+                print("mudando para turno: " + turno);
+                InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
             else if(!todosAtacaram)
@@ -155,7 +158,6 @@ public class TurnModeManager : MonoBehaviour
         {
             int aliadoEscolhido = Random.Range(0, aliados.Count);
             return aliadosPersonagens[aliadoEscolhido];
-
         }
         else
         {

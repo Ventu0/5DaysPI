@@ -6,6 +6,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
 {
     public int força;
     public int vida;
+    public int defesa;
     public float duration;
     Vector2 initialPos;
     public bool jaAtacou;
@@ -19,12 +20,13 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         if(vida > 0)
         {
             vida -= damage;
-        }else if(vida <= 0)
+        }
+        if(vida <= 0)
         {
             TurnModeManager.instance.aliadosPersonagens.Remove(this);
+            TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
             Destroy(gameObject);
         }
-
     }
     public void MovePlayerToPos(Vector2 newPos)
     {
@@ -61,6 +63,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             yield return null;
         }
         jaAtacou = true;
+        print("atacou");
         TurnModeManager.instance.CheckIfAllPlayersAttacked();
     }
 }

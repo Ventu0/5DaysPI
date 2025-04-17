@@ -11,16 +11,21 @@ public class InteractButtonsController : MonoBehaviour
     public Animator attackMenuAnim;
     [SerializeField] Button attackButton;
     [SerializeField] TextMeshProUGUI[] attacksText;
-    [SerializeField] Button[] attackButtons;
     public List<Attack> ataques;
 
     [Header("Configurable")]
+    [SerializeField] Image[] attackIcons = new Image[4];
     [SerializeField] float menuDistance;
-    
+
     //variaveis não-mostraveis
+    [SerializeField] Sprite[] originalSprites = new Sprite[4];
     public static InteractButtonsController instance;
     private void Awake()
     {
+        for (int i = 0; i < attacksText.Length; i++)
+        {
+            originalSprites[i] = attackIcons[i].sprite;
+        }
         if (instance == null)
         {
             instance = this;
@@ -32,13 +37,13 @@ public class InteractButtonsController : MonoBehaviour
     }
     void Start()
     {
-        attackButtons = attackMenuAnim.GetComponentsInChildren<Button>();
         attackMenuAnim.gameObject.SetActive(false);
         attackButton.onClick.AddListener(OpenMenu);
     }
     void OnEnable()
     {
-        ataques = TurnModeManager.instance.aliados[TurnModeManager.instance.turnoDeQualPersonagem].ataques;
+        
+        ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
     }
     void Update()
     {
@@ -47,17 +52,28 @@ public class InteractButtonsController : MonoBehaviour
     public void OpenMenu()
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);
+        ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
+    }
+    public void Run()
+    {
+
     }
     public void SetupMenu(Vector2 newPos)
     {
         menu.transform.position = new Vector2(newPos.x + menuDistance, newPos.y);
-
         for (int i = 0; i < attacksText.Length; i++)
         {
+            attackIcons[i].sprite = originalSprites[i];
+
             if (ataques[i] != null)
+            {
                 attacksText[i].text = ataques[i].name;
+                attackIcons[i].sprite = ataques[i].iconeAtaque;
+            }
             else
+            {
                 attacksText[i].text = "------";
+            }
         }
     }
     public void NextPlayer()

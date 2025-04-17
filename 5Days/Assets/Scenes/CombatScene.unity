@@ -195,6 +195,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6284844}
   m_CullTransparentMesh: 1
+--- !u!1 &20680990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20680991}
+  m_Layer: 0
+  m_Name: SpawnSpot_Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &20680991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20680990}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.56, y: -4.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1280350605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47854256
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,8 +542,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 0
+  defesa: 0
   duration: 2
   jaAtacou: 0
+  numeroDoPersonagem: 0
 --- !u!1 &319227694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1104,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   jaAtacou: 0
 --- !u!114 &518258461
 MonoBehaviour:
@@ -1087,8 +1120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 0
+  defesa: 0
   duration: 2
   jaAtacou: 0
+  numeroDoPersonagem: 0
 --- !u!95 &518258462
 Animator:
   serializedVersion: 7
@@ -1558,9 +1593,44 @@ MonoBehaviour:
   - {fileID: 1105539881}
   - {fileID: 406774447}
   - {fileID: 1179370943}
-  attackButtons: []
   ataques: []
+  attackIcons:
+  - {fileID: 6284846}
+  - {fileID: 1839107622}
+  - {fileID: 1503355782}
+  - {fileID: 545364687}
   menuDistance: 3
+--- !u!1 &924660690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924660691}
+  m_Layer: 0
+  m_Name: SpawnSpot_Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924660691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924660690}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.56, y: 1.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1280350605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105539879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,6 +2157,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247276479}
   m_CullTransparentMesh: 1
+--- !u!1 &1280350603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280350605}
+  - component: {fileID: 1280350604}
+  m_Layer: 0
+  m_Name: EnemySpawnersController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1280350604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280350603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e890e7d13248246beb0f673c9d51cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  spawnSpots:
+  - {fileID: 924660691}
+  - {fileID: 2141948350}
+  - {fileID: 20680991}
+--- !u!4 &1280350605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280350603}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6490748, y: 1.1134048, z: -2.246577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 924660691}
+  - {fileID: 2141948350}
+  - {fileID: 20680991}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324007869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,8 +2433,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 0
+  defesa: 0
   duration: 2
   jaAtacou: 0
+  numeroDoPersonagem: 0
 --- !u!95 &1441147515
 Animator:
   serializedVersion: 7
@@ -2643,9 +2767,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "for\xE7a": 0
-  vida: 3
+  vida: 4
+  defesa: 0
   duration: 2
   jaAtacou: 0
+  numeroDoPersonagem: 0
 --- !u!114 &1722228183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3033,6 +3159,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839107620}
   m_CullTransparentMesh: 1
+--- !u!1 &2141948349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141948350}
+  m_Layer: 0
+  m_Name: SpawnSpot_Middle
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2141948350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141948349}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.3909254, y: -1.0634048, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1280350605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3045,3 +3202,4 @@ SceneRoots:
   - {fileID: 1722228181}
   - {fileID: 1324007873}
   - {fileID: 1783494731}
+  - {fileID: 1280350605}
