@@ -1,8 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 public class Aliados : MonoBehaviour
 {
-    [SerializeField] List<BasicAttack> ataques;
+    [SerializeField] public List<Attack> ataques;
+    public bool jaAtacou;
+    void Awake()
+    {
+    }
     void Start()
     {
         
