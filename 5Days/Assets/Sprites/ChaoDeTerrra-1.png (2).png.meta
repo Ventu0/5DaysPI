@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 97a2bd8074f9d264cb16a7b69936cbaa
+guid: 0491161ee9579934395030b112ce41de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4518853377557969270
-    second: New Piskel-1.png (1)_0
+      213: -4805845118139679006
+    second: ChaoDeTerrra-1.png (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel-1.png (1)_0
+      name: ChaoDeTerrra-1.png (2)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8645968bcec941c0800000000000000
-      internalID: -4518853377557969270
+      spriteID: 2ee3db7d3553e4db0800000000000000
+      internalID: -4805845118139679006
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      New Piskel-1.png (1)_0: -4518853377557969270
+      ChaoDeTerrra-1.png (2)_0: -4805845118139679006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
