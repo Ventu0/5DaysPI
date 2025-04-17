@@ -518,6 +518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 0
+  duration: 2
+  jaAtacou: 0
 --- !u!1 &319227694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 0
+  duration: 2
+  jaAtacou: 0
 --- !u!95 &518258462
 Animator:
   serializedVersion: 7
@@ -1234,8 +1238,10 @@ MonoBehaviour:
   - {fileID: 518258460}
   - {fileID: 212723957}
   qualInimigoVaiAtacar: 0
-  turnoDeQualJogador: 0
+  turnoDeQualPersonagem: 0
   turno: 0
+  aliadosPersonagens: []
+  inimigosPersonagens: []
 --- !u!4 &613544267
 Transform:
   m_ObjectHideFlags: 0
@@ -2326,6 +2332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 0
+  duration: 2
+  jaAtacou: 0
 --- !u!95 &1441147515
 Animator:
   serializedVersion: 7
@@ -2657,6 +2665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 3
+  duration: 0
+  jaAtacou: 0
 --- !u!114 &1722228183
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class InteractButtonsController : MonoBehaviour
     }
     void OnEnable()
     {
-        ataques = TurnModeManager.instance.aliados[TurnModeManager.instance.turnoDeQualJogador].ataques;
+        ataques = TurnModeManager.instance.aliados[TurnModeManager.instance.turnoDeQualPersonagem].ataques;
     }
     void Update()
     {
@@ -59,6 +59,12 @@ public class InteractButtonsController : MonoBehaviour
             else
                 attacksText[i].text = "------";
         }
+    }
+    public void NextPlayer()
+    {
+        menu.SetActive(true);
+        attackMenuAnim.gameObject.SetActive(false);
+        SetupMenu(TurnModeManager.instance.QuemEstaAtacando().transform.position);
     }
 
     public void SetMove(int whatMove)

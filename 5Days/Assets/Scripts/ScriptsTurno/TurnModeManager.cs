@@ -16,8 +16,12 @@ public class TurnModeManager : MonoBehaviour
     [SerializeField] bool hasOnlyOneEnemy;
     public List<Aliados> aliados;
     [SerializeField] int qualInimigoVaiAtacar;
-    public int turnoDeQualJogador;
+    public int turnoDeQualPersonagem;
     public Turnos turno;
+
+    //variaveis invisiveis
+    [SerializeField] List<BasePersonagem> aliadosPersonagens;
+    [SerializeField] List<BasePersonagem> inimigosPersonagens;
     private void Awake()
     {
         if (instance == null)
@@ -27,6 +31,15 @@ public class TurnModeManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+
+        for(int i = 0; i < aliados.Count; i++)
+        {
+            aliadosPersonagens.Add(aliados[i].GetComponent<BasePersonagem>());
+        }
+        for(int i = 0; i < inimigos.Count; i++)
+        {
+            inimigosPersonagens.Add(inimigos[i].GetComponent<BasePersonagem>());
         }
     }
     void Start()
@@ -38,7 +51,7 @@ public class TurnModeManager : MonoBehaviour
         {
             hasOnlyOneEnemy = true;
         }
-        InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position);
+        InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
         onPlayerTurn?.Invoke();
     }
     void Update()
@@ -57,38 +70,93 @@ public class TurnModeManager : MonoBehaviour
     }
     public void CheckIfAllPlayersAttacked()
     {
-        for(int i = 0; i < aliados.Count; i++)
+        bool todosAtacaram = false;
+        if(turno == Turnos.PlayerTurn)
         {
-            if (aliados[i].jaAtacou == false)
+            for (int i = 0; i < aliadosPersonagens.Count; i++)
             {
-                turnoDeQualJogador += 1;
-                InteractButtonsController.instance.menu.SetActive(true);
-                InteractButtonsController.instance.attackMenuAnim.gameObject.SetActive(false);
-                InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualJogador].transform.position);
-                return;
+                if (aliadosPersonagens[i].jaAtacou == false)
+                {
+                    todosAtacaram = false;
+
+                }
+                else
+                {
+                    todosAtacaram = true;
+                }
             }
-            else
+            if (todosAtacaram)
             {
                 print("turno do inimigo agorinha");
                 InteractButtonsController.instance.menu.SetActive(false);
                 turno = Turnos.EnemyTurn;
             }
+            else if (!todosAtacaram)
+            {
+                turnoDeQualPersonagem += 1;
+                InteractButtonsController.instance.NextPlayer();
+                return;
+            }
+        }
+        else if(turno == Turnos.EnemyTurn)
+        {
+            turnoDeQualPersonagem = 0;
+            for (int i = 0; i < inimigosPersonagens.Count; i++)
+            {
+                if (inimigosPersonagens[i].jaAtacou == false)
+                {
+                    todosAtacaram = false;
+
+                }
+                else
+                {
+                    todosAtacaram = true;
+                }
+            }
+            if (todosAtacaram)
+            {
+                InteractButtonsController.instance.menu.SetActive(true);
+            }
+            else if(!todosAtacaram)
+            {
+                turnoDeQualPersonagem += 1;
+            }
         }
     }
     #region Utils
-    public Aliados QuemEstaAtacando()
+    public BasePersonagem QuemEstaAtacando()
     {
-        if (!aliados[turnoDeQualJogador].jaAtacou) return aliados[turnoDeQualJogador];
-        else
-            return null;
+        if (turno == Turnos.PlayerTurn)
+        {
+            if (!aliadosPersonagens[turnoDeQualPersonagem].jaAtacou)
+            {
+                return aliadosPersonagens[turnoDeQualPersonagem];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else if (turno == Turnos.EnemyTurn)
+        {
+            if (!inimigosPersonagens[turnoDeQualPersonagem].jaAtacou)
+            {
+                return inimigosPersonagens[turnoDeQualPersonagem];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else return null;   
     }
     public Animator PlayerAnimator()
     {
-        return aliados[turnoDeQualJogador].GetComponent<Animator>();
+        return aliados[turnoDeQualPersonagem].GetComponent<Animator>();
     }
     public BasePersonagem EncontrarAlvo()
     {
-        if (hasOnlyOneEnemy)
+        if (hasOnlyOneEnemy && turno == Turnos.PlayerTurn)
         {
             return inimigos[0].GetComponent<BasePersonagem>();
         }
