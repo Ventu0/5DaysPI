@@ -496,13 +496,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  duration: 2
   jaAtacou: 0
 --- !u!114 &212723958
 MonoBehaviour:
@@ -1079,13 +1072,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  duration: 2
   jaAtacou: 0
 --- !u!114 &518258461
 MonoBehaviour:
@@ -2310,13 +2296,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  duration: 2
   jaAtacou: 0
 --- !u!114 &1441147514
 MonoBehaviour:
@@ -2665,7 +2644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 0
   vida: 3
-  duration: 0
+  duration: 2
   jaAtacou: 0
 --- !u!114 &1722228183
 MonoBehaviour:
@@ -2682,6 +2661,11 @@ MonoBehaviour:
   speed: 0
   vida: 0
   canAttack: 0
+  ataques:
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
 --- !u!1 &1758167307
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,11 +15,11 @@ public class EnemyAI : CharacterStatus
     }
     public void Attack()
     {
-        if (canAttack)
+        if (canAttack && TurnModeManager.instance.turno == Turnos.EnemyTurn)
         {
             int ataqueEscolhido = Random.Range(0, ataques.Count);
             BasicAttack ataque = ataques[ataqueEscolhido];
-            //ataque.ExecutarAtaque();
+            ataque.ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo());
             canAttack = false;
         }
     }
