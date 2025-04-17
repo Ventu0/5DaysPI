@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,9 +123,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 63
-        width: 64
-        height: 27
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: "Anima\xE7\xE3oPraFrente (1)_1"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
-        width: 64
-        height: 27
+        x: 16
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: "Anima\xE7\xE3oPraFrente (1)_2"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 17
-        height: 26
+        x: 32
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,11 +184,143 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oPraFrente (1)_3"
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5198092bb2d137d498b1fa523bb36b97
+      internalID: 1784203148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oPraFrente (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97e4cccee4370f449accfdb4a255355
+      internalID: -795582735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oPraFrente (1)_5"
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64ad0620c0c68f4ba58e72f499e7a15
+      internalID: -1071655095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oPraFrente (1)_6"
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9711ad072162845994a4c29481e230
+      internalID: 254498352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oPraFrente (1)_7"
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f223e4fcb231f459636723247f0ee9
+      internalID: 196534812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3oPraFrente (1)_8"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731a990db99fc3841b1c73504634cdff
+      internalID: -1972817847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7598a5812801fea47a3c8e119259a5d5
     internalID: 0
     vertices: []
     indices: 
@@ -201,6 +333,12 @@ TextureImporter:
       "Anima\xE7\xE3oPraFrente (1)_0": 378574443022898561
       "Anima\xE7\xE3oPraFrente (1)_1": -3640107241763892133
       "Anima\xE7\xE3oPraFrente (1)_2": -6504471255640346622
+      "Anima\xE7\xE3oPraFrente (1)_3": 1784203148
+      "Anima\xE7\xE3oPraFrente (1)_4": -795582735
+      "Anima\xE7\xE3oPraFrente (1)_5": -1071655095
+      "Anima\xE7\xE3oPraFrente (1)_6": 254498352
+      "Anima\xE7\xE3oPraFrente (1)_7": 196534812
+      "Anima\xE7\xE3oPraFrente (1)_8": -1972817847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
