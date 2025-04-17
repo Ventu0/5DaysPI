@@ -65,7 +65,10 @@ public class TurnModeManager : MonoBehaviour
         //}
         
     }
-   
+    void Vitoria()
+    {
+
+    }
     IEnumerator MoverSeta(Vector2 newPos)
     {
         yield return null;
@@ -95,6 +98,10 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!todosAtacaram)
             {
+                if (inimigos.Count <= 0)
+                {
+                    Vitoria();
+                }
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();
                 return;
