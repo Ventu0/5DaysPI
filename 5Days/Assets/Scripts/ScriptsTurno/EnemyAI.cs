@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 public class EnemyAI : CharacterStatus
 {
-    [SerializeField] bool canAttack;
+    public bool canAttack;
     [SerializeField] List<BasicAttack> ataques;
     void Start()
     {

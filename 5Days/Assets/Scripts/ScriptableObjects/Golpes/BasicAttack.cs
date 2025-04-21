@@ -6,6 +6,7 @@ using System.Threading.Tasks;
     {
         public override async void ExecutarAtaque(BasePersonagem alvo)
         {
+            Debug.Log(TurnModeManager.instance.QuemEstaAtacando() + alvo.name);
             float duração = TurnModeManager.instance.QuemEstaAtacando().duration;
             base.ExecutarAtaque(alvo);
             TurnModeManager.instance.QuemEstaAtacando().MovePlayerToPos(new Vector2(alvo.transform.position.x, alvo.transform.position.y));

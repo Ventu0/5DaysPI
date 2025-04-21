@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using TMPro;
 public enum Turnos
 {
     PlayerTurn,
@@ -15,6 +16,7 @@ public class TurnModeManager : MonoBehaviour
     [SerializeField] List<EnemyAI> inimigos;
     [SerializeField] bool hasOnlyOneEnemy;
     public List<Aliados> aliados;
+    [SerializeField] TextMeshProUGUI winText;
     [SerializeField] int qualInimigoVaiAtacar;
     public int turnoDeQualPersonagem;
     public Turnos turno;
@@ -46,6 +48,7 @@ public class TurnModeManager : MonoBehaviour
     }
     void Start()
     {
+        winText.gameObject.SetActive(false);
         if (inimigos.Count > 1)
         {
             hasOnlyOneEnemy = false;
@@ -67,7 +70,7 @@ public class TurnModeManager : MonoBehaviour
     }
     void Vitoria()
     {
-
+        winText.gameObject.SetActive(true);
     }
     IEnumerator MoverSeta(Vector2 newPos)
     {
@@ -76,6 +79,7 @@ public class TurnModeManager : MonoBehaviour
     public void CheckIfAllPlayersAttacked()
     {
         bool todosAtacaram = false;
+        //inimigos[turnoDeQualPersonagem].canAttack = true;
         if(turno == Turnos.PlayerTurn)
         {
             for (int i = 0; i < aliadosPersonagens.Count; i++)
@@ -102,6 +106,7 @@ public class TurnModeManager : MonoBehaviour
                 {
                     Vitoria();
                 }
+                
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();
                 return;
@@ -121,6 +126,8 @@ public class TurnModeManager : MonoBehaviour
             {
                 turno = Turnos.PlayerTurn;
                 print("mudando para turno: " + turno);
+                inimigos[turnoDeQualPersonagem].canAttack = true;
+                inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
@@ -133,6 +140,7 @@ public class TurnModeManager : MonoBehaviour
     #region Utils
     public BasePersonagem QuemEstaAtacando()
     {
+        print("atacando: " + turnoDeQualPersonagem);
         if (turno == Turnos.PlayerTurn)
         {
             if (!aliadosPersonagens[turnoDeQualPersonagem].jaAtacou)
@@ -150,10 +158,6 @@ public class TurnModeManager : MonoBehaviour
             else return null;
         }
         else return null;   
-    }
-    public Animator PlayerAnimator()
-    {
-        return aliados[turnoDeQualPersonagem].GetComponent<Animator>();
     }
     public BasePersonagem EncontrarAlvo()
     {
