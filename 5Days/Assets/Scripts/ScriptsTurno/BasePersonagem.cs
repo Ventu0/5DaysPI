@@ -25,6 +25,8 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         {
             TurnModeManager.instance.aliadosPersonagens.Remove(this);
             TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
+            TurnModeManager.instance.inimigosPersonagens.Remove(this);
+            TurnModeManager.instance.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
             Destroy(gameObject);
         }
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 public class Player : CharacterStatus
 {
     [SerializeField] Vector2 moveInput;
-    Animator anim;
-    Rigidbody2D rb;
-    SpriteRenderer spriteRenderer;
+    [SerializeField] Animator anim;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] SpriteRenderer spriteRenderer;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

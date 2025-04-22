@@ -6,13 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/VilaIndio.unity
+    guid: 5fde4d7bb7645e24296ac483f101bbc4
   - enabled: 1
     path: Assets/Scenes/TesteDoPedro.unity
     guid: a91cbda03b3e755438818177d3fdac17
   - enabled: 1
     path: Assets/Scenes/CombatScene.unity
     guid: 7ce7755ad21e3b244822bce0efdeed29
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: dad51352fe3809a4a9463d2ff3209e20
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
