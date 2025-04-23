@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class InteractButtonsController : MonoBehaviour
 {
@@ -41,16 +42,17 @@ public class InteractButtonsController : MonoBehaviour
     }
     void OnEnable()
     {
-        
+        if (TurnModeManager.instance.QuemEstaAtacando() == null)
+        {
+            print("è nulo o QuemEstaAtacando");
+            return;
+        }
         ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
-    }
-    void Update()
-    {
-       
     }
     public void OpenMenu()
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);
+        print(TurnModeManager.instance.QuemEstaAtacando());
         ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
     }
     public void Run()
@@ -80,6 +82,7 @@ public class InteractButtonsController : MonoBehaviour
         menu.SetActive(true);
         attackMenuAnim.gameObject.SetActive(false);
         SetupMenu(TurnModeManager.instance.QuemEstaAtacando().transform.position);
+        EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
     }
 
     public void SetMove(int whatMove)

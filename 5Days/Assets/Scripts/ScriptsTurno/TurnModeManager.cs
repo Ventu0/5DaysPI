@@ -79,27 +79,16 @@ public class TurnModeManager : MonoBehaviour
     }
     public void CheckIfAllPlayersAttacked()
     {
-        bool todosAtacaram = false;
         if(turno == Turnos.PlayerTurn)
         {
-            for (int i = 0; i < aliadosPersonagens.Count; i++)
-            {
-                if (aliadosPersonagens[i].jaAtacou == false)
-                    todosAtacaram = false;
-                else
-                {
-                    todosAtacaram = true;
-                    aliadosPersonagens[i].jaAtacou = false;
-                }
-            }
-            if (todosAtacaram)
+            if (JaAtacaram(aliadosPersonagens))
             {
                 InteractButtonsController.instance.menu.SetActive(false);
                 turno = Turnos.EnemyTurn;
                 turnoDeQualPersonagem = 0;
                 inimigos[turnoDeQualPersonagem].Attack();
             }
-            else if (!todosAtacaram)
+            else if (!JaAtacaram(aliadosPersonagens))
             {
                 if (inimigos.Count <= 0)
                 {
@@ -114,14 +103,8 @@ public class TurnModeManager : MonoBehaviour
         else if(turno == Turnos.EnemyTurn)
         {
             turnoDeQualPersonagem = 0;
-            for (int i = 0; i < inimigosPersonagens.Count; i++)
-            {
-                if (inimigosPersonagens[i].jaAtacou == false)
-                    todosAtacaram = false;
-                else
-                    todosAtacaram = true;
-            }
-            if (todosAtacaram)
+             
+            if (JaAtacaram(inimigosPersonagens))
             {
                 if (aliados.Count <= 0)
                 {
@@ -129,35 +112,39 @@ public class TurnModeManager : MonoBehaviour
                     return;
                 }
                 turno = Turnos.PlayerTurn;
-                inimigos[turnoDeQualPersonagem].canAttack = true;
                 inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
+                for(int i = 0; i < aliadosPersonagens.Count; i++)
+                {
+                    aliadosPersonagens[i].jaAtacou = false;
+                }
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
-            else if(!todosAtacaram)
+            else if(!JaAtacaram(inimigosPersonagens))
             {
                 turnoDeQualPersonagem += 1;
             }
         }
     }
     #region Utils
+
+    public bool JaAtacaram(List<BasePersonagem> personagems)
+    {
+        for(int i = 0; i < personagems.Count; i++)
+        {
+            if (personagems[i].jaAtacou == false)
+                return false;
+        }
+        return true;
+    }
     public BasePersonagem QuemEstaAtacando()
     {
-        if (turno == Turnos.PlayerTurn)
-        {
-            if (!aliadosPersonagens[turnoDeQualPersonagem].jaAtacou)
-                return aliadosPersonagens[turnoDeQualPersonagem];
-            else return null;
-        }
-        else if (turno == Turnos.EnemyTurn)
-        {
-            if (!inimigosPersonagens[turnoDeQualPersonagem].jaAtacou)
-            {
-                return inimigosPersonagens[turnoDeQualPersonagem];
-            }
-            else return null;
-        }
-        else return null;   
+        List<BasePersonagem> personagems = turno == Turnos.PlayerTurn ? aliadosPersonagens : turno == Turnos.EnemyTurn ? inimigosPersonagens : null;
+        //verificador, se player turno for true, recebe aliadosPersonagens, se não, recebe inimigosPersonagens
+        if (personagems == null)
+            return null;
+
+        return !personagems[turnoDeQualPersonagem].jaAtacou ? personagems[turnoDeQualPersonagem] : null;
     }
     public BasePersonagem EncontrarAlvo()
     {
