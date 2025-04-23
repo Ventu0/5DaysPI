@@ -16,12 +16,6 @@ public class SpawnEnemies : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    
-    void Update()
-    {
-        
-    }
     public void Spawn(int quantidadeDeInimigos)
     {
        int valorLimitado = Mathf.Clamp(quantidadeDeInimigos, 0, spawnSpots.Length);

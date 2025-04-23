@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using TMPro;
 public enum Turnos
 {
     PlayerTurn,
@@ -12,16 +13,17 @@ public class TurnModeManager : MonoBehaviour
     public delegate void PlayerTurn();
     public PlayerTurn onPlayerTurn;
     public static TurnModeManager instance;
-    [SerializeField] List<EnemyAI> inimigos;
+    public List<EnemyAI> inimigos;
     [SerializeField] bool hasOnlyOneEnemy;
     public List<Aliados> aliados;
+    [SerializeField] GameObject decisionMenu;
     [SerializeField] int qualInimigoVaiAtacar;
     public int turnoDeQualPersonagem;
     public Turnos turno;
 
     //variaveis invisiveis
     public List<BasePersonagem> aliadosPersonagens;
-    [SerializeField] List<BasePersonagem> inimigosPersonagens;
+    public List<BasePersonagem> inimigosPersonagens;
     private void Awake()
     {
         if (instance == null)
@@ -46,6 +48,7 @@ public class TurnModeManager : MonoBehaviour
     }
     void Start()
     {
+        decisionMenu.gameObject.SetActive(false);
         if (inimigos.Count > 1)
         {
             hasOnlyOneEnemy = false;
@@ -65,9 +68,10 @@ public class TurnModeManager : MonoBehaviour
         //}
         
     }
-    void Vitoria()
+    void EndTurn()
     {
-
+        decisionMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
     IEnumerator MoverSeta(Vector2 newPos)
     {
@@ -90,7 +94,6 @@ public class TurnModeManager : MonoBehaviour
             }
             if (todosAtacaram)
             {
-                print("turno do inimigo agorinha");
                 InteractButtonsController.instance.menu.SetActive(false);
                 turno = Turnos.EnemyTurn;
                 turnoDeQualPersonagem = 0;
@@ -100,11 +103,12 @@ public class TurnModeManager : MonoBehaviour
             {
                 if (inimigos.Count <= 0)
                 {
-                    Vitoria();
+                    EndTurn();
+                    return;
                 }
+
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();
-                return;
             }
         }
         else if(turno == Turnos.EnemyTurn)
@@ -119,8 +123,14 @@ public class TurnModeManager : MonoBehaviour
             }
             if (todosAtacaram)
             {
+                if (aliados.Count <= 0)
+                {
+                    EndTurn();
+                    return;
+                }
                 turno = Turnos.PlayerTurn;
-                print("mudando para turno: " + turno);
+                inimigos[turnoDeQualPersonagem].canAttack = true;
+                inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
@@ -136,9 +146,7 @@ public class TurnModeManager : MonoBehaviour
         if (turno == Turnos.PlayerTurn)
         {
             if (!aliadosPersonagens[turnoDeQualPersonagem].jaAtacou)
-            {
                 return aliadosPersonagens[turnoDeQualPersonagem];
-            }
             else return null;
         }
         else if (turno == Turnos.EnemyTurn)
@@ -150,10 +158,6 @@ public class TurnModeManager : MonoBehaviour
             else return null;
         }
         else return null;   
-    }
-    public Animator PlayerAnimator()
-    {
-        return aliados[turnoDeQualPersonagem].GetComponent<Animator>();
     }
     public BasePersonagem EncontrarAlvo()
     {

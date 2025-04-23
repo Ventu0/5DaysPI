@@ -16,7 +16,7 @@ public class EnterBattle : MonoBehaviour, IEnterBattle
     }
     public void EnterInBattle()
     {
-        SceneManager.LoadScene("CombatScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("CombatScene");
 
     }
 }

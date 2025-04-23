@@ -2,11 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 public class EnemyAI : CharacterStatus
 {
-    [SerializeField] bool canAttack;
     [SerializeField] List<BasicAttack> ataques;
+    BasePersonagem enemyCharacter;
     void Start()
     {
-        canAttack = true;
+        enemyCharacter = GetComponent<BasePersonagem>();
     }
 
     void Update()
@@ -15,12 +15,11 @@ public class EnemyAI : CharacterStatus
     }
     public void Attack()
     {
-        if (canAttack && TurnModeManager.instance.turno == Turnos.EnemyTurn)
+        if (!enemyCharacter.jaAtacou && TurnModeManager.instance.turno == Turnos.EnemyTurn)
         {
             int ataqueEscolhido = Random.Range(0, ataques.Count);
             BasicAttack ataque = ataques[ataqueEscolhido];
             ataque.ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo());
-            canAttack = false;
         }
     }
 }
