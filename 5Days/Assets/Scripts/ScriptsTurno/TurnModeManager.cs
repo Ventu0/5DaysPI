@@ -113,7 +113,10 @@ public class TurnModeManager : MonoBehaviour
                 }
                 turno = Turnos.PlayerTurn;
                 inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
-                //aliadosPersonagens[turnoDeQualPersonagem].jaAtacou = false; <----- problema aqui 
+                for(int i = 0; i < aliadosPersonagens.Count; i++)
+                {
+                    aliadosPersonagens[i].jaAtacou = false;
+                }
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
