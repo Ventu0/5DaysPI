@@ -16,7 +16,7 @@ public class TurnModeManager : MonoBehaviour
     public List<EnemyAI> inimigos;
     [SerializeField] bool hasOnlyOneEnemy;
     public List<Aliados> aliados;
-    [SerializeField] GameObject winMenu;
+    [SerializeField] GameObject decisionMenu;
     [SerializeField] int qualInimigoVaiAtacar;
     public int turnoDeQualPersonagem;
     public Turnos turno;
@@ -48,7 +48,7 @@ public class TurnModeManager : MonoBehaviour
     }
     void Start()
     {
-        winMenu.gameObject.SetActive(false);
+        decisionMenu.gameObject.SetActive(false);
         if (inimigos.Count > 1)
         {
             hasOnlyOneEnemy = false;
@@ -70,7 +70,7 @@ public class TurnModeManager : MonoBehaviour
     }
     void EndTurn()
     {
-        winMenu.SetActive(true);
+        decisionMenu.SetActive(true);
         Time.timeScale = 0f;
     }
     IEnumerator MoverSeta(Vector2 newPos)
@@ -80,7 +80,6 @@ public class TurnModeManager : MonoBehaviour
     public void CheckIfAllPlayersAttacked()
     {
         bool todosAtacaram = false;
-        //inimigos[turnoDeQualPersonagem].canAttack = true;
         if(turno == Turnos.PlayerTurn)
         {
             for (int i = 0; i < aliadosPersonagens.Count; i++)
@@ -95,7 +94,6 @@ public class TurnModeManager : MonoBehaviour
             }
             if (todosAtacaram)
             {
-                print("turno do inimigo agorinha");
                 InteractButtonsController.instance.menu.SetActive(false);
                 turno = Turnos.EnemyTurn;
                 turnoDeQualPersonagem = 0;
@@ -131,7 +129,6 @@ public class TurnModeManager : MonoBehaviour
                     return;
                 }
                 turno = Turnos.PlayerTurn;
-                print("mudando para turno: " + turno);
                 inimigos[turnoDeQualPersonagem].canAttack = true;
                 inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
@@ -146,13 +143,10 @@ public class TurnModeManager : MonoBehaviour
     #region Utils
     public BasePersonagem QuemEstaAtacando()
     {
-        print("atacando: " + turnoDeQualPersonagem);
         if (turno == Turnos.PlayerTurn)
         {
             if (!aliadosPersonagens[turnoDeQualPersonagem].jaAtacou)
-            {
                 return aliadosPersonagens[turnoDeQualPersonagem];
-            }
             else return null;
         }
         else if (turno == Turnos.EnemyTurn)
