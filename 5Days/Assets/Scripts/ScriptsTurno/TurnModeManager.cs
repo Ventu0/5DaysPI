@@ -81,14 +81,14 @@ public class TurnModeManager : MonoBehaviour
     {
         if(turno == Turnos.PlayerTurn)
         {
-            if (JaAtacaram(inimigosPersonagens))
+            if (JaAtacaram(aliadosPersonagens))
             {
                 InteractButtonsController.instance.menu.SetActive(false);
                 turno = Turnos.EnemyTurn;
                 turnoDeQualPersonagem = 0;
                 inimigos[turnoDeQualPersonagem].Attack();
             }
-            else if (!JaAtacaram(inimigosPersonagens))
+            else if (!JaAtacaram(aliadosPersonagens))
             {
                 if (inimigos.Count <= 0)
                 {
@@ -104,7 +104,7 @@ public class TurnModeManager : MonoBehaviour
         {
             turnoDeQualPersonagem = 0;
              
-            if (JaAtacaram(aliadosPersonagens))
+            if (JaAtacaram(inimigosPersonagens))
             {
                 if (aliados.Count <= 0)
                 {
@@ -113,11 +113,11 @@ public class TurnModeManager : MonoBehaviour
                 }
                 turno = Turnos.PlayerTurn;
                 inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
-                aliadosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
+                //aliadosPersonagens[turnoDeQualPersonagem].jaAtacou = false; <----- problema aqui 
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
-            else if(!JaAtacaram(aliadosPersonagens))
+            else if(!JaAtacaram(inimigosPersonagens))
             {
                 turnoDeQualPersonagem += 1;
             }
