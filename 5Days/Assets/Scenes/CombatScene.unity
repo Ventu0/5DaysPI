@@ -1616,7 +1616,7 @@ MonoBehaviour:
   - {fileID: 1441147513}
   - {fileID: 518258460}
   - {fileID: 212723957}
-  winMenu: {fileID: 685205819}
+  decisionMenu: {fileID: 685205819}
   qualInimigoVaiAtacar: 0
   turnoDeQualPersonagem: 0
   turno: 0
@@ -3439,7 +3439,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   vida: 0
-  canAttack: 0
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
