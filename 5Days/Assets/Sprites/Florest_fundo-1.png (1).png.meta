@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 86367b54243a9ed4b80034624101d62a
+guid: 30c7142dcb865ff4b8c005bd2d248333
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7458753137594980554
-    second: Florest_fundo-1.png_0
+      213: -1629562906145031106
+    second: Florest_fundo-1.png (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Florest_fundo-1.png_0
+      name: Florest_fundo-1.png (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 976
-        height: 528
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac8dda1e570d28760800000000000000
-      internalID: 7458753137594980554
+      spriteID: e3c7210bb21a269e0800000000000000
+      internalID: -1629562906145031106
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Florest_fundo-1.png_0: 7458753137594980554
+      Florest_fundo-1.png (1)_0: -1629562906145031106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
