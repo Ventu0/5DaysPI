@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Life and XP bar-1.png_0: 4186123952921654355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
