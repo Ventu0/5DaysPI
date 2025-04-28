@@ -26,6 +26,7 @@ public class TurnModeManager : MonoBehaviour
     public List<BasePersonagem> inimigosPersonagens;
     private void Awake()
     {
+        turno = Turnos.PlayerTurn;
         if (instance == null)
         {
             instance = this;
@@ -39,10 +40,6 @@ public class TurnModeManager : MonoBehaviour
         {
             aliadosPersonagens.Add(aliados[i].GetComponent<BasePersonagem>());
             aliadosPersonagens[i].numeroDoPersonagem = i;
-        }
-        for(int i = 0; i < inimigos.Count; i++)
-        {
-            inimigosPersonagens.Add(inimigos[i].GetComponent<BasePersonagem>());
         }
         turnoDeQualPersonagem = 0;
     }

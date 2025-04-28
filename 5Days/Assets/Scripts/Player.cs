@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
@@ -6,10 +7,24 @@ public class Player : CharacterStatus
     [SerializeField] Vector2 moveInput;
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] public List<CharacterStatusGeneric> partyStatus;
     [SerializeField] SpriteRenderer spriteRenderer;
+    public static Player instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -17,6 +32,11 @@ public class Player : CharacterStatus
     
     void Update()
     {
+        if(SceneTimeController.instance.isPaused())
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         anim.SetFloat("Horizontal", Mathf.Abs(horizontal));

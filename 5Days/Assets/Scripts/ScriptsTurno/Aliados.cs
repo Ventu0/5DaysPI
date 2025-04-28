@@ -7,6 +7,7 @@ public class Aliados : MonoBehaviour
     public bool jaAtacou;
     void Awake()
     {
+
     }
     void Start()
     {

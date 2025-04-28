@@ -5,23 +5,33 @@ using System.Collections;
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
     public int força;
-    public int vida;
+    public int vidaAtual;
+    public int vidaMaxima;
     public int defesa;
     public float duration;
     Vector2 initialPos;
     public bool jaAtacou;
     public int numeroDoPersonagem;
+    public CharacterStatusGeneric characterStatus;
     void Start()
     {
         initialPos = transform.position;
     }
+    public void SetupStatus()
+    {
+        print("setando status");
+        characterStatus.força = força;
+        characterStatus.vidaAtual = vidaAtual;
+        characterStatus.vidaMaxima = vidaMaxima;
+        characterStatus.defesa = defesa;
+    }
     public void TakeDamage(int damage)
     {
-        if(vida > 0)
+        if(vidaAtual > 0)
         {
-            vida -= damage;
+            vidaAtual -= damage;
         }
-        if(vida <= 0)
+        if(vidaAtual <= 0)
         {
             TurnModeManager.instance.aliadosPersonagens.Remove(this);
             TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
