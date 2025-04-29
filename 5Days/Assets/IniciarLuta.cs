@@ -1,33 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class IniciarLuta : MonoBehaviour
 {
+    public delegate void OnStartBattle();
+    public OnStartBattle onStartBattle;
     [SerializeField] string cenaEscolhida;
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
     [SerializeField] List<CharacterStatusGeneric> playerParty;
     void Start()
     {
         playerParty = Player.instance.partyStatus;
-        for (int i = 0; i < enemiesStatus.Length; i++)
-        {
-            print("ADICIONANDO O COISA");
-            TurnModeInfo.enemiesToLoad.Add(enemiesStatus[i]);
-        }
-        for (int i = 0; i < Player.instance.partyStatus.Count; i++)
-        {
-            TurnModeInfo.alliesToLoad.Add(playerParty[i]);
-        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SceneManager.LoadScene(cenaEscolhida, LoadSceneMode.Additive);
+        Invoke("WaitSomeTime", 0.5f);
+    }
+    void WaitSomeTime()
+    {
+        RecieveInfoManager.instance.SetupCharacters(playerParty, enemiesStatus.ToList());
         SceneTimeController.instance.sceneTime = 0;
     }
-}
-public static class TurnModeInfo
-{
-    public static List<CharacterStatusGeneric> enemiesToLoad = new List<CharacterStatusGeneric>();
-    public static List<CharacterStatusGeneric> alliesToLoad = new List<CharacterStatusGeneric>();
 }

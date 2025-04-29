@@ -19,11 +19,11 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     }
     public void SetupStatus()
     {
-        print("setando status");
-        characterStatus.força = força;
-        characterStatus.vidaAtual = vidaAtual;
-        characterStatus.vidaMaxima = vidaMaxima;
-        characterStatus.defesa = defesa;
+        print("setando status: " + gameObject.name);
+        força = characterStatus.força;
+        vidaAtual = characterStatus.vidaAtual;
+        vidaMaxima = characterStatus.vidaMaxima;
+        defesa = characterStatus.defesa;
     }
     public void TakeDamage(int damage)
     {

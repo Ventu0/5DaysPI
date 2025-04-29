@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c8fce7cdc2a2e4e980b0733c00a56a, type: 3}
   m_Name: CoadJuvante
   m_EditorClassIdentifier: 
-  "for\xE7a": 1
-  vidaMaxima: 3
-  vidaAtual: 2
+  "for\xE7a": 4
+  defesa: 4
+  vidaMaxima: 4
+  vidaAtual: 4
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}

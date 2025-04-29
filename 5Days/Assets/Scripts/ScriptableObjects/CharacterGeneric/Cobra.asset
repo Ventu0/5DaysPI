@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c8fce7cdc2a2e4e980b0733c00a56a, type: 3}
   m_Name: Cobra
   m_EditorClassIdentifier: 
-  "for\xE7a": 2
-  vida: 0
+  "for\xE7a": 3
+  defesa: 3
+  vidaMaxima: 3
+  vidaAtual: 3
   ataques:
   - {fileID: 0}
   - {fileID: 0}

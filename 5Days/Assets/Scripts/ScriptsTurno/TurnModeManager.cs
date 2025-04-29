@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 public enum Turnos
 {
     PlayerTurn,
@@ -42,28 +43,31 @@ public class TurnModeManager : MonoBehaviour
             aliadosPersonagens[i].numeroDoPersonagem = i;
         }
         turnoDeQualPersonagem = 0;
+
     }
     void Start()
     {
         decisionMenu.gameObject.SetActive(false);
-        if (inimigos.Count > 1)
-        {
-            hasOnlyOneEnemy = false;
-        }else if(inimigos.Count == 1)
-        {
-            hasOnlyOneEnemy = true;
-        }
+        
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
         onPlayerTurn?.Invoke(); //depois do protótipo, arrumar o codigo inteiro para deixar organizado (inclui o delegate da linha).
     }
     void Update()
     {
+        if (inimigos.Count > 1)
+        {
+            hasOnlyOneEnemy = false;
+        }
+        else if (inimigos.Count == 1)
+        {
+            hasOnlyOneEnemy = true;
+        }
         //float vertical = Input.GetAxisRaw("Vertical");
         //if (!hasOnlyOneEnemy)
         //{
         //    StartCoroutine(MoverSeta(new Vector2();
         //}
-        
+
     }
     void EndTurn()
     {
