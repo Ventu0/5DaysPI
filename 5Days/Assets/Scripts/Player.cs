@@ -10,6 +10,7 @@ public class Player : CharacterStatus
     [SerializeField] public List<CharacterStatusGeneric> partyStatus;
     [SerializeField] SpriteRenderer spriteRenderer;
     public static Player instance;
+    bool isGamePaused;
     private void Awake()
     {
         if (instance == null)
@@ -24,15 +25,22 @@ public class Player : CharacterStatus
     }
     void Start()
     {
+        if (SceneTimeController.instance != null)
+        SceneTimeController.instance.onPauseGame += PausePlayer;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    
+    void PausePlayer()
+    {
+        if (!isGamePaused)
+        {
+            isGamePaused = true;
+        }
+    }
     void Update()
     {
-        if(SceneTimeController.instance.isPaused())
+        if(isGamePaused)
         {
             rb.linearVelocity = Vector2.zero;
             return;
