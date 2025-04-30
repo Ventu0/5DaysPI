@@ -417,26 +417,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
-      propertyPath: partyStatus.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
-      propertyPath: 'partyStatus.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ab683088ce5e0de4fbc6c65f78b86f59, type: 2}
-    - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
-      propertyPath: 'partyStatus.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
-    - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
-      propertyPath: 'partyStatus.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
-    - target: {fileID: 5905921806011357281, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8778113836206686955, guid: ba6c306e15bbef34baae5606eaae80cd, type: 3}
     - target: {fileID: 8180818974917600898, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

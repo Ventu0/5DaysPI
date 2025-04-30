@@ -16,9 +16,9 @@ public class InteractButtonsController : MonoBehaviour
     [Header("Configurable")]
     [SerializeField] Image[] attackIcons = new Image[4];
     [SerializeField] float menuDistance;
-
-    //variaveis não-mostraveis
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
+    //variaveis não-mostraveis
+
     public static InteractButtonsController instance;
     private void Awake()
     {
@@ -42,11 +42,6 @@ public class InteractButtonsController : MonoBehaviour
     }
     void OnEnable()
     {
-        if (TurnModeManager.instance.QuemEstaAtacando() == null)
-        {
-            print("è nulo o QuemEstaAtacando");
-            return;
-        }
         ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
     }
     public void OpenMenu()
