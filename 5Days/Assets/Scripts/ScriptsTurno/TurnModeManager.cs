@@ -11,46 +11,45 @@ public enum Turnos
 
 public class TurnModeManager : MonoBehaviour
 {
-    public delegate void PlayerTurn();
-    public PlayerTurn onPlayerTurn;
-    public static TurnModeManager instance;
+
+    [Header("Essential")]
     public List<EnemyAI> inimigos;
-    [SerializeField] bool hasOnlyOneEnemy;
+    [Space]
     public List<Aliados> aliados;
+
+    [Tooltip("uma UI de vitoria ou derrota")]
     [SerializeField] GameObject decisionMenu;
-    [SerializeField] int qualInimigoVaiAtacar;
+    
+    [Header("Debug")]
+    [SerializeField] bool hasOnlyOneEnemy;
     public int turnoDeQualPersonagem;
     public Turnos turno;
 
     //variaveis invisiveis
-    public List<BasePersonagem> aliadosPersonagens;
-    public List<BasePersonagem> inimigosPersonagens;
+    [HideInInspector] public List<BasePersonagem> aliadosPersonagens;
+    [HideInInspector] public List<BasePersonagem> inimigosPersonagens;
+    public static TurnModeManager instance;
     private void Awake()
     {
         turno = Turnos.PlayerTurn;
         if (instance == null)
-        {
             instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
 
         for(int i = 0; i < aliados.Count; i++)
         {
             aliadosPersonagens.Add(aliados[i].GetComponent<BasePersonagem>());
             aliadosPersonagens[i].numeroDoPersonagem = i;
         }
-        turnoDeQualPersonagem = 0;
 
+        turnoDeQualPersonagem = 0;
     }
     void Start()
     {
         decisionMenu.gameObject.SetActive(false);
         
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
-        onPlayerTurn?.Invoke(); //depois do protótipo, arrumar o codigo inteiro para deixar organizado (inclui o delegate da linha).
     }
     void Update()
     {
@@ -69,7 +68,7 @@ public class TurnModeManager : MonoBehaviour
         //}
 
     }
-    void EndTurn()
+    void EndGame()
     {
         decisionMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -93,7 +92,7 @@ public class TurnModeManager : MonoBehaviour
             {
                 if (inimigos.Count <= 0)
                 {
-                    EndTurn();
+                    EndGame();
                     return;
                 }
 
@@ -109,7 +108,7 @@ public class TurnModeManager : MonoBehaviour
             {
                 if (aliados.Count <= 0)
                 {
-                    EndTurn();
+                    EndGame();
                     return;
                 }
                 turno = Turnos.PlayerTurn;
