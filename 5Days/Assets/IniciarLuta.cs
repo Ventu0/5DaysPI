@@ -9,20 +9,18 @@ public class IniciarLuta : MonoBehaviour
     public OnStartBattle onStartBattle;
     [SerializeField] string cenaEscolhida;
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
-    [SerializeField] List<CharacterStatusGeneric> playerParty;
     void Start()
     {
-        playerParty = Player.instance.partyStatus;
-
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SceneManager.LoadScene(cenaEscolhida, LoadSceneMode.Additive);
-        Invoke("WaitSomeTime", 0.5f);
+        SceneTimeController.instance.sceneTime = 0;
+        Invoke("WaitSomeTime", 0.3f);
     }
     void WaitSomeTime()
     {
-        RecieveInfoManager.instance.SetupCharacters(playerParty, enemiesStatus.ToList());
-        SceneTimeController.instance.sceneTime = 0;
+        RecieveInfoManager.instance.SetupCharacters(PlayerPartyController.instance.partyAtual,enemiesStatus.ToList());
     }
 }

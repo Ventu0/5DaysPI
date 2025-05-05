@@ -1,9 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
+    [SerializeField] Slider lifeBar;
     public int força;
     public int vidaAtual;
     public int vidaMaxima;
@@ -11,11 +15,15 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public float duration;
     Vector2 initialPos;
     public bool jaAtacou;
-    public int numeroDoPersonagem;
     public CharacterStatusGeneric characterStatus;
+    TextMeshProUGUI lifeText;
     void Start()
     {
         initialPos = transform.position;
+        if(lifeBar != null)
+        {
+            
+        }
     }
     public void SetupStatus()
     {
@@ -24,19 +32,37 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
         defesa = characterStatus.defesa;
+        if (lifeBar != null)
+        {
+            lifeText = lifeBar.GetComponentInChildren<TextMeshProUGUI>();
+            lifeBar.gameObject.SetActive(true);
+            lifeBar.maxValue = vidaMaxima;
+            UpdateLife();
+        }
+    }
+    void UpdateLife()
+    {
+        lifeBar.value = vidaAtual;
+        lifeText.text = vidaAtual.ToString() + " / " + vidaMaxima.ToString();
     }
     public void TakeDamage(int damage)
     {
-        if(vidaAtual > 0)
+        TurnModeManager turnModeManager = TurnModeManager.instance;
+        if (vidaAtual > 0)
         {
             vidaAtual -= damage;
+            UpdateLife();
         }
         if(vidaAtual <= 0)
         {
-            TurnModeManager.instance.aliadosPersonagens.Remove(this);
-            TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
-            TurnModeManager.instance.inimigosPersonagens.Remove(this);
-            TurnModeManager.instance.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
+            turnModeManager.aliadosPersonagens.Remove(this);
+            turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
+            turnModeManager.inimigosPersonagens.Remove(this);
+            turnModeManager.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
+            if(lifeBar != null)
+            {
+                Destroy(lifeBar.gameObject);
+            }
             Destroy(gameObject);
         }
     }

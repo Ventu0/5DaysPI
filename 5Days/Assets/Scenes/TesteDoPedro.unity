@@ -405,6 +405,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 705546071edf8b1489627331c648563d, type: 3}
+--- !u!1 &1428348589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428348591}
+  - component: {fileID: 1428348590}
+  m_Layer: 0
+  m_Name: PartyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1428348590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428348589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a697864623c7041992dadacbd5c75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerParty:
+  - {fileID: 11400000, guid: ab683088ce5e0de4fbc6c65f78b86f59, type: 2}
+  - {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
+  partyAtual: []
+--- !u!4 &1428348591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428348589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7692395, y: -0.3697187, z: -0.06383934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3071172779772316764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -532,8 +580,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 868854795}
+  - {fileID: 919301391}
+  - {fileID: 1428348591}
   - {fileID: 3071172779772316764}
   - {fileID: 8358346721096806999}
   - {fileID: 976306373}
   - {fileID: 37297089}
-  - {fileID: 919301391}

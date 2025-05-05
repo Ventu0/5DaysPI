@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "for\xE7a": 4
   defesa: 4
-  vidaMaxima: 4
-  vidaAtual: 4
+  vidaMaxima: 300
+  vidaAtual: 175
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}

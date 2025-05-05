@@ -40,10 +40,6 @@ public class InteractButtonsController : MonoBehaviour
         attackMenuAnim.gameObject.SetActive(false);
         attackButton.onClick.AddListener(OpenMenu);
     }
-    void OnEnable()
-    {
-        ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
-    }
     public void OpenMenu()
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);

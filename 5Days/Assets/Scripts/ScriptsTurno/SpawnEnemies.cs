@@ -27,7 +27,7 @@ public class SpawnEnemies : MonoBehaviour
            GameObject enemy = Instantiate(enemyPrefab, spawnSpots[i].position, transform.rotation);
            enemy.transform.SetParent(spawnSpots[i]);
            enemy.GetComponent<BasePersonagem>().characterStatus = Instantiate(enemyStatus[i]);
-           SetInstancesToTurnMode(enemy);   
+           SetInstancesToTurnMode(enemy);
        }
     }
     void SetInstancesToTurnMode(GameObject enemy)
@@ -37,5 +37,7 @@ public class SpawnEnemies : MonoBehaviour
         turnModeManager.inimigos.Add(enemy.GetComponent<EnemyAI>());
         turnModeManager.inimigosPersonagens.Add(enemy.GetComponent<BasePersonagem>());
         enemy.GetComponent<BasePersonagem>().SetupStatus();
+
+        
     }
 }

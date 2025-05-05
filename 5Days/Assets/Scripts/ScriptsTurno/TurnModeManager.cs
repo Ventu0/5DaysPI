@@ -37,19 +37,15 @@ public class TurnModeManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        for(int i = 0; i < aliados.Count; i++)
-        {
-            aliadosPersonagens.Add(aliados[i].GetComponent<BasePersonagem>());
-            aliadosPersonagens[i].numeroDoPersonagem = i;
-        }
+        decisionMenu.gameObject.SetActive(false);
 
         turnoDeQualPersonagem = 0;
     }
-    void Start()
+    public void FirstAllyAttack()
     {
-        decisionMenu.gameObject.SetActive(false);
-        
+        InteractButtonsController.instance.ataques = QuemEstaAtacando().GetComponent<Aliados>().ataques;
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
+        print("primeiro ataque do aliado");
     }
     void Update()
     {
@@ -81,6 +77,11 @@ public class TurnModeManager : MonoBehaviour
     {
         if(turno == Turnos.PlayerTurn)
         {
+            if (inimigos.Count <= 0)
+            {
+                EndGame();
+                return;
+            }
             if (JaAtacaram(aliadosPersonagens))
             {
                 InteractButtonsController.instance.menu.SetActive(false);
@@ -90,11 +91,7 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!JaAtacaram(aliadosPersonagens))
             {
-                if (inimigos.Count <= 0)
-                {
-                    EndGame();
-                    return;
-                }
+                
 
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();

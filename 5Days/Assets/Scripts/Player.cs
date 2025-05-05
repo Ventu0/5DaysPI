@@ -7,7 +7,6 @@ public class Player : CharacterStatus
     [SerializeField] Vector2 moveInput;
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] public List<CharacterStatusGeneric> partyStatus;
     [SerializeField] SpriteRenderer spriteRenderer;
     public static Player instance;
     bool isGamePaused;
