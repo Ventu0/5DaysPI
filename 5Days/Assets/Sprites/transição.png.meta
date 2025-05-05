@@ -1,55 +1,13 @@
 fileFormatVersion: 2
-guid: 34056d74254a9d544b713a6b85d46069
+guid: 37669013f81ab6346b6e5cb0059d19b4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4979155618066158895
-    second: preto_0
+      213: 4716093874867529043
+    second: "transi\xE7\xE3o_0"
   - first:
-      213: 6611851661925080216
-    second: preto_1
-  - first:
-      213: -4707991796440607177
-    second: preto_2
-  - first:
-      213: -6955057498889700120
-    second: preto_3
-  - first:
-      213: -527107258304297077
-    second: preto_4
-  - first:
-      213: -7409127909029763326
-    second: preto_5
-  - first:
-      213: -2189617301487638468
-    second: preto_6
-  - first:
-      213: -489424033856835624
-    second: preto_7
-  - first:
-      213: 1607834272038271183
-    second: preto_8
-  - first:
-      213: -3716723637130552969
-    second: preto_9
-  - first:
-      213: 622684057299841522
-    second: preto_10
-  - first:
-      213: -1389180915292190976
-    second: preto_11
-  - first:
-      213: -6613091694085117207
-    second: preto_12
-  - first:
-      213: -1292669813904940563
-    second: preto_13
-  - first:
-      213: 1424630558068778733
-    second: preto_14
-  - first:
-      213: -2684287576225911454
-    second: preto_15
+      213: 3967151722308301256
+    second: "transi\xE7\xE3o_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -82,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -158,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: preto_0
+      name: "transi\xE7\xE3o_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
-        width: 256
-        height: 256
+        y: 1537
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e89228db669148f4786d73eef88654ae
-      internalID: -4979155618066158895
+      spriteID: 56873cf9d8b58f64089ddb37fce98511
+      internalID: 4716093874867529043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_1
+      name: "transi\xE7\xE3o_1"
       rect:
         serializedVersion: 2
-        x: 256
-        y: 768
-        width: 256
-        height: 256
+        x: 639
+        y: 1537
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49596e320028c5c4d897947cea437037
-      internalID: 6611851661925080216
+      spriteID: d3dd90868334ee749a1c45c128112e69
+      internalID: 3967151722308301256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_2
+      name: "transi\xE7\xE3o_2"
       rect:
         serializedVersion: 2
-        x: 512
-        y: 768
-        width: 256
-        height: 256
+        x: 1278
+        y: 1537
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,86 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d0268455dcbe77419ecf574adfeaece
-      internalID: -4707991796440607177
+      spriteID: c64fc7b92c05ef34bb4cac434eb45bcb
+      internalID: 1956147741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72f74171c9480af44b81c53cb021c5d3
-      internalID: -6955057498889700120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: preto_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 556546ec6db5234438ff2c2d82550b6c
-      internalID: -527107258304297077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: preto_5
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a0880fe7baa76f4eaf9b25589e35fb2
-      internalID: -7409127909029763326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: preto_6
+      name: "transi\xE7\xE3o_3"
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 256
-        height: 256
+        y: 1026
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9766e6783a8cf146839f72d2dc99342
-      internalID: -2189617301487638468
+      spriteID: d69b4a7efb6894b45a5e8eab6b023830
+      internalID: 1674087401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_7
+      name: "transi\xE7\xE3o_4"
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
+        x: 639
+        y: 1026
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 482ed9ab84d14c443b822bab498a1463
-      internalID: -489424033856835624
+      spriteID: 813f054541df6504991910378050a40e
+      internalID: 1790458601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_8
+      name: "transi\xE7\xE3o_5"
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
+        x: 1278
+        y: 1026
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5e5d31bf12c22f4bbf7ae2c88b6ab3f
-      internalID: 1607834272038271183
+      spriteID: 03dda2c670c325f4fa30088c5d4f939d
+      internalID: -800617727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_9
+      name: "transi\xE7\xE3o_6"
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 256
-        height: 256
+        y: 515
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55cbf62d4d5f279418d23ac64824f932
-      internalID: -3716723637130552969
+      spriteID: 1f4f0506c8ab5a04aa9bdc174830e243
+      internalID: 105805423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_10
+      name: "transi\xE7\xE3o_7"
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
+        x: 639
+        y: 515
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da866fbfcc0516941ab2b1cac3c91d00
-      internalID: 622684057299841522
+      spriteID: a411e73ac8d6ae24289c4af04fe6171d
+      internalID: -1919607792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: preto_11
+      name: "transi\xE7\xE3o_8"
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
+        x: 1278
+        y: 515
+        width: 639
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,8 +307,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e20c75869598bd418470d5a564a2f4c
-      internalID: -1389180915292190976
+      spriteID: 225c71d7b388a034889542ec861c2fbf
+      internalID: -923900119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "transi\xE7\xE3o_9"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 639
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ec05d0f71474f4fa54bace972c530f
+      internalID: -1513979712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "transi\xE7\xE3o_10"
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 4
+        width: 639
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c39da14b61086749ae5799c2f663a16
+      internalID: -1420404224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "transi\xE7\xE3o_11"
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 4
+        width: 639
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0970579b9d878419c6bef62fc5f85a
+      internalID: -1450344029
       vertices: []
       indices: 
       edges: []
@@ -425,7 +383,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1db8eb27532217e4288a120f27adc90b
+    spriteID: f1881b9b662c99949ad4530d28be234d
     internalID: 0
     vertices: []
     indices: 
@@ -435,18 +393,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      preto_0: -4979155618066158895
-      preto_1: 6611851661925080216
-      preto_10: 622684057299841522
-      preto_11: -1389180915292190976
-      preto_2: -4707991796440607177
-      preto_3: -6955057498889700120
-      preto_4: -527107258304297077
-      preto_5: -7409127909029763326
-      preto_6: -2189617301487638468
-      preto_7: -489424033856835624
-      preto_8: 1607834272038271183
-      preto_9: -3716723637130552969
+      "transi\xE7\xE3o_0": 4716093874867529043
+      "transi\xE7\xE3o_1": 3967151722308301256
+      "transi\xE7\xE3o_10": -1420404224
+      "transi\xE7\xE3o_11": -1450344029
+      "transi\xE7\xE3o_2": 1956147741
+      "transi\xE7\xE3o_3": 1674087401
+      "transi\xE7\xE3o_4": 1790458601
+      "transi\xE7\xE3o_5": -800617727
+      "transi\xE7\xE3o_6": 105805423
+      "transi\xE7\xE3o_7": -1919607792
+      "transi\xE7\xE3o_8": -923900119
+      "transi\xE7\xE3o_9": -1513979712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
