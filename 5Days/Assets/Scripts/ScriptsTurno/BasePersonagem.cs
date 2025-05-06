@@ -12,7 +12,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public int vidaAtual;
     public int vidaMaxima;
     public int defesa;
-    public float duration;
+    public float duration = 2;
     Vector2 initialPos;
     public bool jaAtacou;
     public CharacterStatusGeneric characterStatus;
@@ -85,7 +85,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             iterador += Time.deltaTime * duration;
             yield return null;
         }
-
+        print("Estou pulando agora: " + gameObject.name);
         yield return new WaitForSeconds(0.1f);
         iterador = 0;
         while (iterador < duration)

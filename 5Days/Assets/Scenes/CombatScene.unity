@@ -2624,7 +2624,7 @@ MonoBehaviour:
   - {fileID: 1441147513}
   - {fileID: 518258460}
   - {fileID: 212723957}
-  decisionMenu: {fileID: 685205819}
+  EndMenu: {fileID: 685205819}
   hasOnlyOneEnemy: 0
   turnoDeQualPersonagem: 0
   turno: 0
@@ -2961,7 +2961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de13e53712fd0c6409bc2e421ce7bfae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
@@ -3011,7 +3010,7 @@ SpriteRenderer:
   m_SortingLayerID: 949658733
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2249496826797622001, guid: 13e6e61ebd771fa439614e9fad4adc98, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3054,7 +3053,7 @@ MonoBehaviour:
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
-  duration: 0
+  duration: 2
   jaAtacou: 0
   characterStatus: {fileID: 0}
 --- !u!1 &743548936
@@ -4538,7 +4537,7 @@ MonoBehaviour:
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
-  duration: 0
+  duration: 2
   jaAtacou: 0
   characterStatus: {fileID: 0}
 --- !u!114 &1135933686
@@ -4553,7 +4552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de13e53712fd0c6409bc2e421ce7bfae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
@@ -7322,7 +7320,7 @@ MonoBehaviour:
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
-  duration: 0
+  duration: 2
   jaAtacou: 0
   characterStatus: {fileID: 0}
 --- !u!114 &1846320173
@@ -7337,7 +7335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de13e53712fd0c6409bc2e421ce7bfae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
