@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
-public class EnemyAI : CharacterStatus
+public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] int vida;
     [SerializeField] List<BasicAttack> ataques;
     BasePersonagem enemyCharacter;
     void Start()

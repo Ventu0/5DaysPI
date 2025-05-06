@@ -18,7 +18,7 @@ public class TurnModeManager : MonoBehaviour
     public List<Aliados> aliados;
 
     [Tooltip("uma UI de vitoria ou derrota")]
-    [SerializeField] GameObject decisionMenu;
+    [SerializeField] GameObject EndMenu;
     
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
@@ -37,7 +37,7 @@ public class TurnModeManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        decisionMenu.gameObject.SetActive(false);
+        EndMenu.gameObject.SetActive(false);
 
         turnoDeQualPersonagem = 0;
     }
@@ -66,14 +66,14 @@ public class TurnModeManager : MonoBehaviour
     }
     void EndGame()
     {
-        decisionMenu.SetActive(true);
+        EndMenu.SetActive(true);
         Time.timeScale = 0f;
     }
     IEnumerator MoverSeta(Vector2 newPos)
     {
         yield return null;
     }
-    public void CheckIfAllPlayersAttacked()
+    public void CheckIfAllCharactersAttacked()
     {
         if(turno == Turnos.PlayerTurn)
         {
@@ -84,30 +84,28 @@ public class TurnModeManager : MonoBehaviour
             }
             if (JaAtacaram(aliadosPersonagens))
             {
-                InteractButtonsController.instance.menu.SetActive(false);
                 turno = Turnos.EnemyTurn;
+                InteractButtonsController.instance.menu.SetActive(false);
                 turnoDeQualPersonagem = 0;
                 inimigos[turnoDeQualPersonagem].Attack();
             }
             else if (!JaAtacaram(aliadosPersonagens))
             {
-                
-
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();
             }
         }
         else if(turno == Turnos.EnemyTurn)
         {
+            if (aliados.Count <= 0)
+            {
+                EndGame();
+                return;
+            }
             turnoDeQualPersonagem = 0;
              
             if (JaAtacaram(inimigosPersonagens))
             {
-                if (aliados.Count <= 0)
-                {
-                    EndGame();
-                    return;
-                }
                 turno = Turnos.PlayerTurn;
                 inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
                 for(int i = 0; i < aliadosPersonagens.Count; i++)
@@ -118,13 +116,10 @@ public class TurnModeManager : MonoBehaviour
                 InteractButtonsController.instance.menu.SetActive(true);
             }
             else if(!JaAtacaram(inimigosPersonagens))
-            {
                 turnoDeQualPersonagem += 1;
-            }
         }
     }
     #region Utils
-
     public bool JaAtacaram(List<BasePersonagem> personagems)
     {
         for(int i = 0; i < personagems.Count; i++)
@@ -155,9 +150,7 @@ public class TurnModeManager : MonoBehaviour
             return aliadosPersonagens[aliadoEscolhido];
         }
         else
-        {
             return null;
-        }
     }
     #endregion
 }

@@ -7,9 +7,8 @@ public class SceneTimeController : MonoBehaviour
     public OnPauseGame onPauseGame;
     public static SceneTimeController instance;
     public float sceneTime;
-    void Start()
+    private void Awake()
     {
-        sceneTime = Time.timeScale;
         if (instance == null)
         {
             instance = this;
@@ -19,12 +18,18 @@ public class SceneTimeController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Start()
+    {
+        sceneTime = Time.timeScale;
+    }
     void Update()
     {
-        if(sceneTime == 0)
-        {
-            onPauseGame?.Invoke();
-        }
+
+    }
+    public void PausarJogo()
+    {
+        sceneTime = 0;
+        onPauseGame?.Invoke();
     }
     public bool isPaused()
     {

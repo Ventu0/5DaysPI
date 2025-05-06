@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
-    [SerializeField] Slider lifeBar;
+    [SerializeField]public Slider lifeBar;
     public int força;
     public int vidaAtual;
     public int vidaMaxima;
@@ -20,10 +20,6 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     void Start()
     {
         initialPos = transform.position;
-        if(lifeBar != null)
-        {
-            
-        }
     }
     public void SetupStatus()
     {
@@ -102,6 +98,6 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         }
         jaAtacou = true;
         print("atacou");
-        TurnModeManager.instance.CheckIfAllPlayersAttacked();
+        TurnModeManager.instance.CheckIfAllCharactersAttacked();
     }
 }
