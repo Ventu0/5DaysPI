@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: de70cb48a7e42de4d91daca50c0b63a1
+guid: 7e0c884bb88058c4999c49d60470193f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5509979709768791773
-    second: New Piskel-1.png (11)_0
+      213: -1898936516232743360
+    second: pesqueiro perfil_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel-1.png (11)_0
+      name: pesqueiro perfil_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 7
         y: 0
-        width: 32
-        height: 31
+        width: 242
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3290f97a5ae9883b0800000000000000
-      internalID: -5509979709768791773
+      spriteID: 046fdeaac4f95a5e0800000000000000
+      internalID: -1898936516232743360
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      New Piskel-1.png (11)_0: -5509979709768791773
+      pesqueiro perfil_0: -1898936516232743360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
