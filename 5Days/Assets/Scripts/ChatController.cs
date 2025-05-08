@@ -7,8 +7,10 @@ using System.Collections;
 public class ChatController : MonoBehaviour
 {
     public static ChatController instance;
+    [SerializeField] GameObject chatMenu;
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
+    Coroutine falasRoutine;
     private void Awake()
     {
         if(instance == null)
@@ -19,6 +21,28 @@ public class ChatController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        chatMenu.SetActive(false);
+    }
+    public void StartDialogue(Sprite sprite, string fala)
+    {
+        chatMenu.SetActive(true);
+        portrait.sprite = sprite;
+        dialogueText.text = "";
+        if(falasRoutine != null)
+        {
+            StopCoroutine(falasRoutine);
+        }
+        falasRoutine = StartCoroutine(EscreverFalas(fala));
+    }
+    public void CloseDialogue()
+    {
+        StopAllCoroutines();
+        chatMenu.SetActive(false);
+        dialogueText.text = "";
+        portrait.sprite = null;
     }
     IEnumerator EscreverFalas(string fala)
     {

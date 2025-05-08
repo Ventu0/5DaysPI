@@ -4,15 +4,15 @@ using TMPro;
 using System.Collections;
 public class NPC : MonoBehaviour
 {
-    [Header("Configurações de Fala")]
+    [Header("Configuraï¿½ï¿½es de Fala")]
     [SerializeField] string[] falas;
-    [SerializeField] int falaAtual;
-    [SerializeField] Sprite[] expressõesPersonagens;
-    [SerializeField] Image portrait;
-    [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] int falaAtual = -1;
+    [SerializeField] Sprite[] charactersFace;
+    int falasMaximas;
+    
     void Start()
     {
-        StartCoroutine(EscreverFalas("Eu Adoro Pintar O Cabelo"));
+        falasMaximas = falas.Length;
     }
     void Update()
     {
@@ -20,19 +20,17 @@ public class NPC : MonoBehaviour
     }
     public void Falar()
     {
-        print("falando");
-        if (falas.Length > 0 && falaAtual <= falas.Length)
+        falaAtual++;
+        if (falaAtual < falasMaximas)
         {
-            StartCoroutine(EscreverFalas(falas[falaAtual]));
+            print("falando");
+
+            ChatController.instance.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
         }
-    }
-    IEnumerator EscreverFalas(string fala)
-    {
-        char[] caracteres = fala.ToCharArray();
-        for(int i = 0; i < caracteres.Length; i++)
+        if(falaAtual > falasMaximas)
         {
-            dialogueText.text += caracteres[i];
-            yield return new WaitForSeconds(0.05f);
+            ChatController.instance.CloseDialogue();
+            falaAtual = 0;
         }
     }
 }

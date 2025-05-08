@@ -68,17 +68,17 @@ public class Player : CharacterStatus
             moveInput = moveInput.normalized;
         }
         rb.linearVelocity = moveInput * Speed;
-        if(Input.GetKeyDown(KeyCode.E))
+        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Interagir();
-        }
-    }
-    void Interagir()
-    {
-        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração);
-        if(collider2D != null)
-        {
-            collider2D.GetComponent<NPC>().Falar();
+            if (collider2D != null)
+            {
+                NPC npc = collider2D.GetComponent<NPC>();
+                if(npc != null)
+                {
+                    npc.Falar();
+                }
+            }
         }
     }
     private void OnDrawGizmos()
