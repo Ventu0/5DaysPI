@@ -6,6 +6,7 @@ public class NPC : MonoBehaviour
 {
     [Header("Configurações de Fala")]
     [SerializeField] string[] falas;
+    [SerializeField] int falaAtual;
     [SerializeField] Sprite[] expressõesPersonagens;
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
@@ -16,6 +17,14 @@ public class NPC : MonoBehaviour
     void Update()
     {
 
+    }
+    public void Falar()
+    {
+        print("falando");
+        if (falas.Length > 0 && falaAtual <= falas.Length)
+        {
+            StartCoroutine(EscreverFalas(falas[falaAtual]));
+        }
     }
     IEnumerator EscreverFalas(string fala)
     {

@@ -78,7 +78,7 @@ public class Player : CharacterStatus
         Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração);
         if(collider2D != null)
         {
-            //collider2D.GetComponent<NPC>().Falar();
+            collider2D.GetComponent<NPC>().Falar();
         }
     }
     private void OnDrawGizmos()
