@@ -8,8 +8,13 @@ public class Player : CharacterStatus
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
-    public static Player instance;
+
+    [Header("Interagir Com NPC")]
+    [SerializeField] float raioDeInteração = 2;
+    [SerializeField] LayerMask layerMaskInteração;
     bool isGamePaused;
+    public static Player instance;
+
     private void Awake()
     {
         if (instance == null)
@@ -63,5 +68,22 @@ public class Player : CharacterStatus
             moveInput = moveInput.normalized;
         }
         rb.linearVelocity = moveInput * Speed;
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Interagir();
+        }
+    }
+    void Interagir()
+    {
+        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração);
+        if(collider2D != null)
+        {
+            //collider2D.GetComponent<NPC>().Falar();
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, raioDeInteração);
     }
 }
