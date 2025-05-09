@@ -10,7 +10,7 @@ public class ChatController : MonoBehaviour
     [SerializeField] GameObject chatMenu;
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
-    Coroutine falasRoutine;
+    public Coroutine falasRoutine;
     private void Awake()
     {
         if(instance == null)
@@ -34,14 +34,15 @@ public class ChatController : MonoBehaviour
         if(falasRoutine != null)
         {
             StopCoroutine(falasRoutine);
+            dialogueText.text = fala;
         }
         falasRoutine = StartCoroutine(EscreverFalas(fala));
     }
     public void CloseDialogue()
     {
-        StopAllCoroutines();
-        chatMenu.SetActive(false);
-        dialogueText.text = "";
+        StopAllCoroutines();//AI AI AI AI AI
+        chatMenu.SetActive(false);//forsaken
+        dialogueText.text = "";//pedro vidente
         portrait.sprite = null;
     }
     IEnumerator EscreverFalas(string fala)
@@ -52,5 +53,6 @@ public class ChatController : MonoBehaviour
             dialogueText.text += caracteres[i];
             yield return new WaitForSeconds(0.05f);
         }
+        falasRoutine = null;
     }
 }

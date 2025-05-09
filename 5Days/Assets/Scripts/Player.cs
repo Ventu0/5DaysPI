@@ -69,7 +69,7 @@ public class Player : CharacterStatus
         }
         rb.linearVelocity = moveInput * Speed;
         Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             if (collider2D != null)
             {

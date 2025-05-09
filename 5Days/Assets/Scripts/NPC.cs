@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using Unity.VisualScripting;
 public class NPC : MonoBehaviour
 {
     [Header("Configura��es de Fala")]
@@ -20,7 +21,7 @@ public class NPC : MonoBehaviour
     }
     public void Falar()
     {
-        falaAtual++;
+            falaAtual++;
         if (falaAtual < falasMaximas)
         {
             print("falando");
@@ -30,7 +31,7 @@ public class NPC : MonoBehaviour
         if(falaAtual > falasMaximas)
         {
             ChatController.instance.CloseDialogue();
-            falaAtual = 0;
+            falaAtual = -1;
         }
     }
 }
