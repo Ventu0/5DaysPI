@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void Attack()
     {
-        if (!enemyCharacter.jaAtacou && TurnModeManager.instance.turno == Turnos.EnemyTurn)
+        if (!enemyCharacter.turnEnded && TurnModeManager.instance.turno == Turnos.EnemyTurn)
         {
             int ataqueEscolhido = Random.Range(0, ataques.Count);
             BasicAttack ataque = ataques[ataqueEscolhido];

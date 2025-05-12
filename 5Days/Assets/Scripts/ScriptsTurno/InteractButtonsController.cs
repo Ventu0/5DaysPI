@@ -46,6 +46,12 @@ public class InteractButtonsController : MonoBehaviour
         print(TurnModeManager.instance.QuemEstaAtacando());
         ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
     }
+    public void Defend()
+    {
+        TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().isDefending = true;
+        TurnModeManager.instance.QuemEstaAtacando().turnEnded = true;
+        TurnModeManager.instance.CheckIfAllCharactersAttacked();
+    }
     public void Run()
     {
 

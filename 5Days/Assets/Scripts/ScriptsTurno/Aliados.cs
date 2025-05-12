@@ -4,7 +4,7 @@ using System.Collections;
 public class Aliados : MonoBehaviour
 {
     [SerializeField] public List<Attack> ataques;
-    public bool jaAtacou;
+    public bool isDefending;
     void Awake()
     {
 

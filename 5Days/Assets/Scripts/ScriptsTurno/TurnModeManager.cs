@@ -67,6 +67,10 @@ public class TurnModeManager : MonoBehaviour
     void EndGame()
     {
         EndMenu.SetActive(true);
+        for(int i = 0; i < aliadosPersonagens.Count; i++)
+        {
+            PlayerPartyController.instance.partyAtual[i].vidaAtual = aliadosPersonagens[i].vidaAtual;
+        }
         Time.timeScale = 0f;
     }
     IEnumerator MoverSeta(Vector2 newPos)
@@ -108,10 +112,11 @@ public class TurnModeManager : MonoBehaviour
             if (JaAtacaram(inimigosPersonagens))
             {
                 turno = Turnos.PlayerTurn;
-                inimigosPersonagens[turnoDeQualPersonagem].jaAtacou = false;
+                inimigosPersonagens[turnoDeQualPersonagem].turnEnded = false;
                 for(int i = 0; i < aliadosPersonagens.Count; i++)
                 {
-                    aliadosPersonagens[i].jaAtacou = false;
+                    aliados[i].isDefending = false;
+                    aliadosPersonagens[i].turnEnded = false;
                 }
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
@@ -125,7 +130,7 @@ public class TurnModeManager : MonoBehaviour
     {
         for(int i = 0; i < personagems.Count; i++)
         {
-            if (personagems[i].jaAtacou == false)
+            if (personagems[i].turnEnded == false)
                 return false;
         }
         return true;
@@ -137,7 +142,7 @@ public class TurnModeManager : MonoBehaviour
         if (personagems == null)
             return null;
 
-        return !personagems[turnoDeQualPersonagem].jaAtacou ? personagems[turnoDeQualPersonagem] : null;
+        return !personagems[turnoDeQualPersonagem].turnEnded ? personagems[turnoDeQualPersonagem] : null;
     }
     public BasePersonagem EncontrarAlvo()
     {

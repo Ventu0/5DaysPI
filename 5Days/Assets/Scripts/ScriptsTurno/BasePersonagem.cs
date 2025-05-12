@@ -14,11 +14,13 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public int defesa;
     public float duration = 2;
     Vector2 initialPos;
-    public bool jaAtacou;
+    public bool turnEnded;
+    Aliados aliado;
     public CharacterStatusGeneric characterStatus;
     TextMeshProUGUI lifeText;
     void Start()
     {
+        aliado = gameObject.GetComponent<Aliados>();
         initialPos = transform.position;
     }
     public void SetupStatus()
@@ -44,23 +46,46 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         TurnModeManager turnModeManager = TurnModeManager.instance;
-        if (vidaAtual > 0)
+
+        if (CheckIfHasLife())
         {
-            vidaAtual -= damage;
-            UpdateLife();
+            if(aliado != null)
+            {
+                if (aliado.isDefending)
+                {
+                    vidaAtual -= damage / 2;
+                    aliado.isDefending = false;
+                    return;
+                }
+                else
+                {
+                    vidaAtual -= damage;
+                }
+            }
+            else
+            {
+                vidaAtual -= damage;
+            }
         }
-        if(vidaAtual <= 0)
+        else
         {
             turnModeManager.aliadosPersonagens.Remove(this);
             turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
             turnModeManager.inimigosPersonagens.Remove(this);
             turnModeManager.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
-            if(lifeBar != null)
+            if (lifeBar != null)
             {
                 Destroy(lifeBar.gameObject);
             }
             Destroy(gameObject);
         }
+        UpdateLife();
+    }
+    bool CheckIfHasLife()
+    {
+        if (vidaAtual > 0) return true;
+        else if (vidaAtual <= 0) return false;
+        return false;
     }
     public void MovePlayerToPos(Vector2 newPos)
     {
@@ -96,7 +121,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             iterador += Time.deltaTime * duration;
             yield return null;
         }
-        jaAtacou = true;
+        turnEnded = true;
         print("atacou");
         TurnModeManager.instance.CheckIfAllCharactersAttacked();
     }
