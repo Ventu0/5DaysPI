@@ -139,7 +139,7 @@ MonoBehaviour:
   "raioDeIntera\xE7\xE3o": 2
   "layerMaskIntera\xE7\xE3o":
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!95 &6900481064955034760
 Animator:
   serializedVersion: 7
