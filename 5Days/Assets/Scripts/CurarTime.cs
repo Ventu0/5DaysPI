@@ -5,10 +5,13 @@ public class CurarTime : MonoBehaviour
     [SerializeField] NPC NPC;
     void Start()
     {
-        
+        NPC = GetComponent<NPC>();
     }
 
-    // Update is called once per frame
+    void CurarTime()
+    {
+
+    }
     void Update()
     {
         
