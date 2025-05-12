@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      floresta entrada_0: -1928775897298987702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
