@@ -39,11 +39,16 @@ public class Player : CharacterStatus
         {
             isGamePaused = true;
         }
+        else
+        {
+            isGamePaused = false;
+        }
     }
     void Update()
     {
         if(isGamePaused)
         {
+            print("pausado");
             rb.linearVelocity = Vector2.zero;
             return;
         }

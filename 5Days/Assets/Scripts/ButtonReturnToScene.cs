@@ -7,6 +7,7 @@ public class ButtonReturnToScene : MonoBehaviour
     public void ReturnScene()
     {
         SceneManager.LoadScene(sceneName);
+        SceneTimeController.instance.onPauseGame?.Invoke();
         Time.timeScale = 1f;    
     }
 }

@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using Unity.VisualScripting;
 public class NPC : MonoBehaviour
 {
     [Header("Configura��es de Fala")]

@@ -40,9 +40,9 @@ public class ChatController : MonoBehaviour
     }
     public void CloseDialogue()
     {
-        StopAllCoroutines();//AI AI AI AI AI
-        chatMenu.SetActive(false);//forsaken
-        dialogueText.text = "";//pedro vidente
+        StopAllCoroutines();
+        chatMenu.SetActive(false);
+        dialogueText.text = "";
         portrait.sprite = null;
     }
     IEnumerator EscreverFalas(string fala)

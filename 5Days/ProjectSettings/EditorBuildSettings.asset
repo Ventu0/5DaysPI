@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/LugarDeCura.unity
+    guid: ff707c6dbb8f9ba4c87599e2fd79b88b
+  - enabled: 1
     path: Assets/Scenes/dentroDaCasa.unity
     guid: 11e8afd2f413c7e419fd9bd0e27867a5
   m_configObjects: {}

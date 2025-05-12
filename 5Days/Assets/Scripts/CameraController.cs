@@ -1,11 +1,12 @@
 using UnityEngine;
-
+using Cinemachine;
 public class CameraController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] CinemachineVirtualCamera cinemachineCamera;
     void Start()
     {
-        Camera.main.transform.SetParent(Player.instance.transform);
+        cinemachineCamera.LookAt = Player.instance.transform;
+        cinemachineCamera.Follow = Player.instance.transform;
     }
 
     // Update is called once per frame
