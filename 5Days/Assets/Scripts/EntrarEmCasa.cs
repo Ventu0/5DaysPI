@@ -17,6 +17,7 @@ public class EntrarEmCasa : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneName);
+            Player.instance.transform.position = Vector3.zero;
         }
     }
 }
