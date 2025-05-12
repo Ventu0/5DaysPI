@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour
     [SerializeField] string[] falas;
     [SerializeField] int falaAtual = -1;
     [SerializeField] Sprite[] charactersFace;
-    [SerializeField]
+    [SerializeField] bool isHealer = false;
     int falasMaximas;
     
     void Start()

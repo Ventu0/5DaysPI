@@ -7,11 +7,6 @@ public class CurarTime : MonoBehaviour
     {
         NPC = GetComponent<NPC>();
     }
-
-    void CurarTime()
-    {
-
-    }
     void Update()
     {
         
