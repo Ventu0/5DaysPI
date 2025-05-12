@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
 {
@@ -8,7 +7,6 @@ public class Player : CharacterStatus
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
-
     [Header("Interagir Com NPC")]
     [SerializeField] float raioDeInteração = 2;
     [SerializeField] LayerMask layerMaskInteração;

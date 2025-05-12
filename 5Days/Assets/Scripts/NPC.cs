@@ -31,8 +31,17 @@ public class NPC : MonoBehaviour
         }
         if(falaAtual > falasMaximas)
         {
-            ChatController.instance.CloseDialogue();
-            falaAtual = -1;
+            if (isHealer)
+            {
+                PlayerPartyController.instance.CurarTodos();
+                ChatController.instance.CloseDialogue();
+                falaAtual = -1;
+            }
+            else
+            {
+                ChatController.instance.CloseDialogue();
+                falaAtual = -1;
+            }
         }
     }
 }

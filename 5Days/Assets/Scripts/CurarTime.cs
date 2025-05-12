@@ -7,6 +7,11 @@ public class CurarTime : MonoBehaviour
     {
         NPC = GetComponent<NPC>();
     }
+
+    void Heal()
+    {
+        PlayerPartyController.instance.CurarTodos();
+    }
     void Update()
     {
         

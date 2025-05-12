@@ -29,6 +29,7 @@ public class PlayerPartyController : MonoBehaviour
     }
     public void CurarTodos()
     {
+        print("curando");
         for (int i = 0; i < playerParty.Count; i++)
         {
             playerParty[i].vidaAtual = playerParty[i].vidaMaxima;
