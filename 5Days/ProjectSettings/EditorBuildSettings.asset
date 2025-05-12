@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LoseScene.unity
     guid: dad51352fe3809a4a9463d2ff3209e20
   - enabled: 1
+    path: Assets/Scenes/FlorestaTeste.unity
+    guid: 9b9f29717a6d683489e84580f40cead6
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
