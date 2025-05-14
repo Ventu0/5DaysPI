@@ -84,6 +84,6 @@ public class InteractButtonsController : MonoBehaviour
 
     public void SetMove(int whatMove)
     {
-        ataques[whatMove].ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo());
+        ataques[whatMove].ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo(), ataques[whatMove].attackEffect);
     }
 }

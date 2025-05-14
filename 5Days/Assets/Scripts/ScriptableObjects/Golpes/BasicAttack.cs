@@ -4,15 +4,17 @@ using System.Threading.Tasks;
 [CreateAssetMenu(menuName = "Ataque/AtaqueBásico")]
     public class BasicAttack : Attack
     {
-        public override async void ExecutarAtaque(BasePersonagem alvo)
+        public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
         {
-            //Debug.Log(TurnModeManager.instance.QuemEstaAtacando() + alvo.name);
-            float duração = TurnModeManager.instance.QuemEstaAtacando().duration;
-            base.ExecutarAtaque(alvo);
-            Debug.Log(TurnModeManager.instance.QuemEstaAtacando());
-            TurnModeManager.instance.QuemEstaAtacando().MovePlayerToPos(new Vector2(alvo.transform.position.x, alvo.transform.position.y));
-            await Task.Delay(Mathf.CeilToInt(duração) * 250);
-            alvo.TakeDamage(dano);
+        float duração = TurnModeManager.instance.QuemEstaAtacando().duration;
+        BasePersonagem quemEstaAtacando = TurnModeManager.instance.QuemEstaAtacando();
+        InteractButtonsController.instance.menu.SetActive(false);
+        
+        Debug.Log(quemEstaAtacando);
+        quemEstaAtacando.MovePlayerToPos(new Vector2(alvo.transform.position.x, alvo.transform.position.y));
+        await Task.Delay(Mathf.CeilToInt(duração) * 250);
+        MovesVisualEffect.instance.AttackEffect(attackSprite, new Vector2(alvo.transform.position.x, alvo.transform.position.y));
+        alvo.TakeDamage(dano);
         }
 }
 

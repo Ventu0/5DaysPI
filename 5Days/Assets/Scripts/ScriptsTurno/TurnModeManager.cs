@@ -57,7 +57,7 @@ public class TurnModeManager : MonoBehaviour
         {
             hasOnlyOneEnemy = true;
         }
-        //float vertical = Input.GetAxisRaw("Vertical");
+        float vertical = Input.GetAxisRaw("Vertical");
         //if (!hasOnlyOneEnemy)
         //{
         //    StartCoroutine(MoverSeta(new Vector2();

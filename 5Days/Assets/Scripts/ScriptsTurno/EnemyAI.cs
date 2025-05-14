@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
         {
             int ataqueEscolhido = Random.Range(0, ataques.Count);
             BasicAttack ataque = ataques[ataqueEscolhido];
-            ataque.ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo());
+            ataque.ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo(), ataque.attackEffect);
         }
     }
 }
