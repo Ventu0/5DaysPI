@@ -22,6 +22,7 @@ public class TurnModeManager : MonoBehaviour
     
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
+    [SerializeField] public Camera mainCamera;
     public int turnoDeQualPersonagem;
     public Turnos turno;
 

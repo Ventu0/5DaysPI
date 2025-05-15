@@ -25,11 +25,16 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     }
     public void SetupStatus()
     {
+        EnemyAI enemy = GetComponent<EnemyAI>();
         print("setando status: " + gameObject.name);
         força = characterStatus.força;
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
         defesa = characterStatus.defesa;
+        if(enemy != null)
+        {
+            enemy.ataques = characterStatus.ataques;
+        }
         if (lifeBar != null)
         {
             lifeText = lifeBar.GetComponentInChildren<TextMeshProUGUI>();
@@ -43,43 +48,34 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         lifeBar.value = vidaAtual;
         lifeText.text = vidaAtual.ToString() + " / " + vidaMaxima.ToString();
     }
-    public void TakeDamage(int damage)
-    {
-        TurnModeManager turnModeManager = TurnModeManager.instance;
-
+        public void TakeDamage(int damage)
+        {
+        //esse codigo ta uma merda quadratica, muda ele depois
         if (CheckIfHasLife())
         {
-            if(aliado != null)
+            if (aliado != null)
             {
                 if (aliado.isDefending)
                 {
                     vidaAtual -= damage / 2;
-                    aliado.isDefending = false;
-                    return;
-                }
-                else
-                {
-                    vidaAtual -= damage;
                 }
             }
             else
             {
                 vidaAtual -= damage;
             }
+            StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
+            StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.05f));
+            UpdateLife();
         }
         else
         {
-            turnModeManager.aliadosPersonagens.Remove(this);
-            turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
-            turnModeManager.inimigosPersonagens.Remove(this);
-            turnModeManager.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
-            if (lifeBar != null)
-            {
-                Destroy(lifeBar.gameObject);
-            }
+            TurnModeManager.instance.aliadosPersonagens.Remove(this);
+            TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
+            TurnModeManager.instance.inimigosPersonagens.Remove(this);
+            TurnModeManager.instance.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
             Destroy(gameObject);
         }
-        UpdateLife();
     }
     bool CheckIfHasLife()
     {

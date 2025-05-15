@@ -48,7 +48,6 @@ public class Player : CharacterStatus
     {
         if(isGamePaused)
         {
-            print("pausado");
             rb.linearVelocity = Vector2.zero;
             return;
         }

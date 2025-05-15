@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
-  m_Name: Soco
+  m_Name: Presas Veneno
   m_EditorClassIdentifier: 
-  dano: 30
-  nomeAtaque: Soco
+  dano: 10
+  nomeAtaque: Presas de Veneno
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
-  attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
-  animatorController: {fileID: 0}
+  attackEffect: {fileID: -2016867680781080215, guid: 1a218a1fc7dc11c4aa378058534727c6, type: 3}
+  animatorController: {fileID: 9100000, guid: 503ad334b8f4b7749ad411291b9f794a, type: 2}

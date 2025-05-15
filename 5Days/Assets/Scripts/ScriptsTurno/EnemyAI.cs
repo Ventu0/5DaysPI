@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 public class EnemyAI : MonoBehaviour
 { 
-    [SerializeField] List<BasicAttack> ataques;
+    public List<Attack> ataques;
     BasePersonagem enemyCharacter;
     void Start()
     {
@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
         if (!enemyCharacter.turnEnded && TurnModeManager.instance.turno == Turnos.EnemyTurn)
         {
             int ataqueEscolhido = Random.Range(0, ataques.Count);
-            BasicAttack ataque = ataques[ataqueEscolhido];
+            Attack ataque = ataques[ataqueEscolhido];
             ataque.ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo(), ataque.attackEffect);
         }
     }

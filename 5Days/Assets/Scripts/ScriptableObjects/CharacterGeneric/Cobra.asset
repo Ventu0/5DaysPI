@@ -17,7 +17,7 @@ MonoBehaviour:
   vidaMaxima: 150
   vidaAtual: 150
   ataques:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
+  - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
+  - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
+  - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}

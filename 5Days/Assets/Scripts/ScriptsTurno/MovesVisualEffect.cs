@@ -5,8 +5,12 @@ public class MovesVisualEffect : MonoBehaviour
 {
     public static MovesVisualEffect instance;
     [SerializeField] GameObject attackEffect;
-    [SerializeField] Animator animatorController;
+    [SerializeField] Animator animator;
     SpriteRenderer spriteRenderer;
+
+    Sprite effectSprite;
+    Vector2 effectPosition;
+    RuntimeAnimatorController controllerAnimation;
     private void Awake()
     {
         if (instance == null)
@@ -21,31 +25,35 @@ public class MovesVisualEffect : MonoBehaviour
     void Start()
     {
         spriteRenderer = attackEffect.GetComponent<SpriteRenderer>();
-        animatorController = attackEffect.GetComponent<Animator>();
+        animator = attackEffect.GetComponent<Animator>();
     }
-    public void AttackEffect(Sprite effectSprite, Vector2 effectPosition)
+    public void AttackEffect(Sprite spriteEffect, Vector2 positionEffect, RuntimeAnimatorController animatorController)
     {
-        StartCoroutine(PlayAttackEffect(effectSprite, effectPosition));
+        controllerAnimation = animatorController;
+        effectSprite = spriteEffect;
+        effectPosition = positionEffect;
+        StartCoroutine(PlayAttackEffect());
     }
-    public IEnumerator PlayAttackEffect(Sprite effectSprite, Vector2 effectPosition)
+    public IEnumerator PlayAttackEffect()
     {
+        animator.runtimeAnimatorController = controllerAnimation;
         Turnos turno = TurnModeManager.instance.turno;
         if (turno == Turnos.EnemyTurn)
         {
-            effectPosition.x += 1;
-            spriteRenderer.flipX = true;
+                effectPosition.x += 1;
+                spriteRenderer.flipX = true;
         }
         else if (turno == Turnos.PlayerTurn)
-        {
-            effectPosition.x -= 1;
-            spriteRenderer.flipX = false;
+        {           
+                effectPosition.x -= 1;
+                spriteRenderer.flipX = false;
         }
 
         attackEffect.SetActive(true);
         spriteRenderer.sprite = effectSprite;
         attackEffect.transform.position = effectPosition;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         attackEffect.SetActive(false);
     }
     void Update()
