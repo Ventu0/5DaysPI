@@ -7,15 +7,19 @@ using System.Threading.Tasks;
         public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
         {
         float duração = TurnModeManager.instance.QuemEstaAtacando().duration;
+        Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y);
         BasePersonagem quemEstaAtacando = TurnModeManager.instance.QuemEstaAtacando();
+
         InteractButtonsController.instance.menu.SetActive(false);
-        
-        Debug.Log(quemEstaAtacando);
-        quemEstaAtacando.MovePlayerToPos(new Vector2(alvo.transform.position.x, alvo.transform.position.y));
+        if(CharacterMovement.instance != null)
+        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, quemEstaAtacando.shadow);
+        else
+        {
+            Debug.Log("nulo gay");
+        }
         await Task.Delay(Mathf.CeilToInt(duração) * 250);
-        MovesVisualEffect.instance.AttackEffect(attackSprite, new Vector2(alvo.transform.position.x, alvo.transform.position.y), animation);
+
+        MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation);
         alvo.TakeDamage(dano);
         }
 }
-
-

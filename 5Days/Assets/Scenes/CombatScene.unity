@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 13303827}
   - component: {fileID: 13303829}
   m_Layer: 0
-  m_Name: VisualEffectsCOntroller
+  m_Name: VisualEffectsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,12 +436,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13303826}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87079924, y: -0.5097363, z: -0.04902928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.460799, y: -0.24973655, z: -0.04902928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 1216816777}
+  m_Father: {fileID: 772576917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &13303829
 MonoBehaviour:
@@ -1335,14 +1336,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: {fileID: 1569166796}
   "for\xE7a": 0
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
+  characterStatus: {fileID: 0}
+  lifeBar: {fileID: 1569166796}
+  shadow: {fileID: 0}
   duration: 2
   turnEnded: 0
-  characterStatus: {fileID: 0}
 --- !u!1 &228044595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +1888,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319227694}
   m_CullTransparentMesh: 1
+--- !u!1 &323878257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323878258}
+  - component: {fileID: 323878259}
+  m_Layer: 0
+  m_Name: CharacterMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323878258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323878257}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 772576917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323878259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323878257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6582184708a0c424cb35457131da04cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357880246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,14 +2530,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: {fileID: 9574588}
   "for\xE7a": 0
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
+  characterStatus: {fileID: 0}
+  lifeBar: {fileID: 9574588}
+  shadow: {fileID: 0}
   duration: 2
   turnEnded: 0
-  characterStatus: {fileID: 0}
 --- !u!95 &518258462
 Animator:
   serializedVersion: 7
@@ -2808,12 +2855,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613544265}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6575274, y: 0.32858598, z: 0.040225547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.9324727, y: 0.58858573, z: 0.040225547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 772576917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615498268
 GameObject:
@@ -3218,14 +3265,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: {fileID: 1052354640}
   "for\xE7a": 0
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
+  characterStatus: {fileID: 0}
+  lifeBar: {fileID: 1052354640}
+  shadow: {fileID: 0}
   duration: 2
   turnEnded: 0
-  characterStatus: {fileID: 0}
 --- !u!1 &743548936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,6 +3491,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &772576916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 772576917}
+  m_Layer: 0
+  m_Name: Controllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &772576917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772576916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.59, y: -0.25999975, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 613544267}
+  - {fileID: 1809207106}
+  - {fileID: 13303828}
+  - {fileID: 323878258}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785872888
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,6 +4489,7 @@ RectTransform:
   m_Children:
   - {fileID: 1265610385}
   - {fileID: 1588711686}
+  - {fileID: 1441147512}
   m_Father: {fileID: 1912260637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4702,14 +4786,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: {fileID: 968589254}
   "for\xE7a": 0
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
+  characterStatus: {fileID: 0}
+  lifeBar: {fileID: 968589254}
+  shadow: {fileID: 0}
   duration: 2
   turnEnded: 0
-  characterStatus: {fileID: 0}
 --- !u!114 &1135933686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5309,12 +5394,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216816774}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.52, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.87079906, y: -9.010263, z: 0.04902928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 13303828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243682858
 GameObject:
@@ -5804,11 +5889,11 @@ Transform:
   m_GameObject: {fileID: 1441147510}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01678851, y: 0.45185548, z: 0}
-  m_LocalScale: {x: 1.1186558, y: 1.1186558, z: 1.1186558}
+  m_LocalPosition: {x: -34.680534, y: 261.97455, z: -28068.695}
+  m_LocalScale: {x: 311.8744, y: 311.8744, z: 311.8744}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1588711686}
+  m_Father: {fileID: 1104049573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1441147513
 MonoBehaviour:
@@ -5840,14 +5925,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: {fileID: 1265610386}
   "for\xE7a": 0
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
+  characterStatus: {fileID: 0}
+  lifeBar: {fileID: 1265610386}
+  shadow: {fileID: 1588711686}
   duration: 2
   turnEnded: 0
-  characterStatus: {fileID: 0}
 --- !u!95 &1441147515
 Animator:
   serializedVersion: 7
@@ -6354,8 +6440,7 @@ Transform:
   m_LocalPosition: {x: -30, y: 136, z: -28068.695}
   m_LocalScale: {x: 278.79388, y: 278.79388, z: 278.79388}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1441147512}
+  m_Children: []
   m_Father: {fileID: 1104049573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1588711687
@@ -7333,12 +7418,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809207105}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.097272106, y: 0.9790615, z: -0.043338772}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.687272, y: 1.2390612, z: -0.043338772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 772576917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809207107
 MonoBehaviour:
@@ -7695,14 +7780,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053856572f4f423468f3ae451e55b5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBar: {fileID: 590134240}
   "for\xE7a": 0
   vidaAtual: 0
   vidaMaxima: 0
   defesa: 0
+  characterStatus: {fileID: 0}
+  lifeBar: {fileID: 590134240}
+  shadow: {fileID: 0}
   duration: 2
   turnEnded: 0
-  characterStatus: {fileID: 0}
 --- !u!114 &1846320173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,14 +8148,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1645614960}
-  - {fileID: 613544267}
-  - {fileID: 1809207106}
+  - {fileID: 772576917}
   - {fileID: 1077221031}
   - {fileID: 1912260637}
   - {fileID: 1324007873}
   - {fileID: 1783494731}
   - {fileID: 1521820475}
   - {fileID: 2051597143}
-  - {fileID: 13303828}
-  - {fileID: 1216816777}
   - {fileID: 7572473}
