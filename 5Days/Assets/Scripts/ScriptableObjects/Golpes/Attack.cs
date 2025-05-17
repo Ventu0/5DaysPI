@@ -6,7 +6,9 @@ public abstract class Attack : ScriptableObject
     public string nomeAtaque;
     public Sprite iconeAtaque;
     public Sprite attackEffect;
-    public RuntimeAnimatorController animatorController;
+    [Tooltip("(OPCIONAL) Em caso de uma animação, coloque a animação")]
+    public RuntimeAnimatorController animation;
+    
 
     public virtual void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
     {

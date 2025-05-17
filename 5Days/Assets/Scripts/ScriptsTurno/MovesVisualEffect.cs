@@ -14,13 +14,9 @@ public class MovesVisualEffect : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
-        {
             instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
     void Start()
     {
@@ -55,9 +51,5 @@ public class MovesVisualEffect : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         attackEffect.SetActive(false);
-    }
-    void Update()
-    {
-        
     }
 }
