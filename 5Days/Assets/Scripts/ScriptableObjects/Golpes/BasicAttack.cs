@@ -11,15 +11,15 @@ using System.Threading.Tasks;
         BasePersonagem quemEstaAtacando = TurnModeManager.instance.QuemEstaAtacando();
 
         InteractButtonsController.instance.menu.SetActive(false);
-        if(CharacterMovement.instance != null)
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, quemEstaAtacando.shadow);
-        else
-        {
-            Debug.Log("nulo gay");
-        }
+        
+
         await Task.Delay(Mathf.CeilToInt(duração) * 250);
 
+        if (efeitoSecundario != null && alvo.efeitoAtivo == null)
+            efeitoSecundario.ApplyEffect(alvo);
+
         MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation);
-        alvo.TakeDamage(dano);
+        alvo.TakeDamage(dano, shakeCamera);
         }
 }

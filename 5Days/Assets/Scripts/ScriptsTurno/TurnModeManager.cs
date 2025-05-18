@@ -116,6 +116,7 @@ public class TurnModeManager : MonoBehaviour
                 inimigosPersonagens[turnoDeQualPersonagem].turnEnded = false;
                 for(int i = 0; i < aliadosPersonagens.Count; i++)
                 {
+                    aliadosPersonagens[i].OnTurnStart();
                     aliados[i].isDefending = false;
                     aliadosPersonagens[i].turnEnded = false;
                 }
