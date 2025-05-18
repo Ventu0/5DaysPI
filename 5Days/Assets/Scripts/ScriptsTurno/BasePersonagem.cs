@@ -50,8 +50,16 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     }
     void UpdateLife()
     {
-        lifeBar.value = vidaAtual;
-        lifeText.text = vidaAtual.ToString() + " / " + vidaMaxima.ToString();
+        if (CheckIfHasLife())
+        {
+            lifeBar.value = vidaAtual;
+            lifeText.text = vidaAtual.ToString() + " / " + vidaMaxima.ToString();
+        }
+        else
+        {
+            lifeBar.gameObject.SetActive(false);
+        }
+        
     }
         public void TakeDamage(int damage)
         {
@@ -64,6 +72,10 @@ public class BasePersonagem : MonoBehaviour, IDamageable
                 {
                     vidaAtual -= damage / 2;
                 }
+                else
+                {
+                    vidaAtual -= damage;
+                }
             }
             else
             {
@@ -73,8 +85,9 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.05f));
             UpdateLife();
         }
-        else
+        if(!CheckIfHasLife())
         {
+            UpdateLife();
             TurnModeManager.instance.aliadosPersonagens.Remove(this);
             TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
             TurnModeManager.instance.inimigosPersonagens.Remove(this);

@@ -16,4 +16,4 @@ MonoBehaviour:
   nomeAtaque: Presas de Veneno
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   attackEffect: {fileID: -2016867680781080215, guid: 1a218a1fc7dc11c4aa378058534727c6, type: 3}
-  animatorController: {fileID: 9100000, guid: 503ad334b8f4b7749ad411291b9f794a, type: 2}
+  animation: {fileID: 9100000, guid: 503ad334b8f4b7749ad411291b9f794a, type: 2}

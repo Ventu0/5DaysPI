@@ -49,7 +49,7 @@ public class MovesVisualEffect : MonoBehaviour
         spriteRenderer.sprite = effectSprite;
         attackEffect.transform.position = effectPosition;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         attackEffect.SetActive(false);
     }
 }
