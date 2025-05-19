@@ -77,7 +77,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             UpdateLife();
         }
         if(!CheckIfHasLife())
-        {
+        { 
             UpdateLife();
             TurnModeManager.instance.aliadosPersonagens.Remove(this);
             TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());

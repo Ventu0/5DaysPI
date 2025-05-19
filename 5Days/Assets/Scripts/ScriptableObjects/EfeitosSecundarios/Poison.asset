@@ -16,3 +16,4 @@ MonoBehaviour:
   durationInTurn: 2
   character: {fileID: 0}
   damagePerTurn: 10
+  remainingTurns: 2

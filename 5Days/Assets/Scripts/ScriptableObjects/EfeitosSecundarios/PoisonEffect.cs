@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Venenos/Novo veneno")]
@@ -5,13 +6,13 @@ public class PoisonEffect : Effect
 {
     [HideInInspector] public BasePersonagem character;
     public int damagePerTurn;
-    int remainingTurns;
+    [SerializeField] int remainingTurns;
     public override void ApplyEffect(BasePersonagem alvo)
     {
         character = alvo;
         remainingTurns = durationInTurn;
-        alvo.efeitoAtivo = this;
-        character.GetComponent<SpriteRenderer>().color = Color.green;
+        alvo.efeitoAtivo = Instantiate(this);
+        character.GetComponent<SpriteRenderer>().color = new Color(128, 0, 128);
     }
     public override void OnTurnStart()
     {
@@ -23,7 +24,6 @@ public class PoisonEffect : Effect
         {
             RemoveEffect();
         }
-        Debug.Log("Tomando dano do veneno!");
         character.TakeDamage(damagePerTurn, false);
         
     }
