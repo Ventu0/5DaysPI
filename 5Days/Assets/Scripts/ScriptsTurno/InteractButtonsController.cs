@@ -18,7 +18,7 @@ public class InteractButtonsController : MonoBehaviour
     [SerializeField] float menuDistance;
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
     //variaveis não-mostraveis
-
+    [HideInInspector] public int chosenAttack;
     public static InteractButtonsController instance;
     private void Awake()
     {
@@ -84,9 +84,22 @@ public class InteractButtonsController : MonoBehaviour
 
     public void SetMove(int whatMove)
     {
-        Attack ataque = ataques[whatMove];
+        chosenAttack = whatMove;
         BasePersonagem alvo = TurnModeManager.instance.EncontrarAlvo();
-        if(alvo != null)
+        if (alvo != null)
+            Atacar(whatMove, alvo); 
+        else
+        {
+            SelectTarget selectTarget = SelectTarget.instance;
+            selectTarget.targets = new List<BasePersonagem>(TurnModeManager.instance.inimigosPersonagens);
+            InteractButtonsController.instance.menu.SetActive(false);
+
+            selectTarget.StartSelecting();
+        }
+    }
+    public void Atacar(int whatMove, BasePersonagem alvo)
+    {
+        Attack ataque = ataques[whatMove];
         ataque.ExecutarAtaque(alvo, ataque.attackEffect);
     }
 }

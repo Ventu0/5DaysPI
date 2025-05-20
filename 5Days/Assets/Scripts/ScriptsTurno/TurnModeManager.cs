@@ -28,7 +28,7 @@ public class TurnModeManager : MonoBehaviour
 
     //variaveis invisiveis
     [HideInInspector] public List<BasePersonagem> aliadosPersonagens;
-    [HideInInspector] public List<BasePersonagem> inimigosPersonagens;
+     public List<BasePersonagem> inimigosPersonagens;
     public static TurnModeManager instance;
     private void Awake()
     {
@@ -113,7 +113,10 @@ public class TurnModeManager : MonoBehaviour
             if (JaAtacaram(inimigosPersonagens))
             {
                 turno = Turnos.PlayerTurn;
-                inimigosPersonagens[turnoDeQualPersonagem].turnEnded = false; //provavelmente um for aqui
+                for(int i = 0; i < inimigosPersonagens.Count; i++)
+                {
+                    inimigosPersonagens[i].turnEnded = false;
+                }
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 for (int i = 0; i < aliadosPersonagens.Count; i++)
                 {
@@ -123,8 +126,11 @@ public class TurnModeManager : MonoBehaviour
                 }
                 InteractButtonsController.instance.menu.SetActive(true);
             }
-            else if(!JaAtacaram(inimigosPersonagens))
+            else if (!JaAtacaram(inimigosPersonagens))
+            {
                 turnoDeQualPersonagem += 1;
+                inimigos[turnoDeQualPersonagem].Attack();
+            }
         }
     }
     #region Utils
@@ -151,25 +157,6 @@ public class TurnModeManager : MonoBehaviour
         if (hasOnlyOneEnemy && turno == Turnos.PlayerTurn)
         {
             return inimigos[0].GetComponent<BasePersonagem>();
-        }
-        else if (turno == Turnos.PlayerTurn && !hasOnlyOneEnemy)
-        {
-            SelectTarget selectTarget = SelectTarget.instance;
-           
-            if (!selectTarget.waitingForInput)
-            {
-                selectTarget.isSelecting = true;
-                selectTarget.targets = inimigosPersonagens;
-                selectTarget.waitingForInput = true;
-                return null;
-            }
-            if (selectTarget.selectedTarget != null)
-            {
-                BasePersonagem target = selectTarget.selectedTarget;
-                selectTarget.selectedTarget = null;
-                return target;
-            }
-            return null;
         }
         else if (turno == Turnos.EnemyTurn)
         {
