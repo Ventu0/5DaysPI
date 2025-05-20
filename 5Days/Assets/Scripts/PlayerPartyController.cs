@@ -27,10 +27,6 @@ public class PlayerPartyController : MonoBehaviour
             partyAtual.Add(character);
         }
     }
-    void Update()
-    {
-        
-    }
     public void CurarTodos()
     {
         print("curando");

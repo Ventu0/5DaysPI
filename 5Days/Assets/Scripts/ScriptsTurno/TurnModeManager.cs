@@ -152,7 +152,26 @@ public class TurnModeManager : MonoBehaviour
         {
             return inimigos[0].GetComponent<BasePersonagem>();
         }
-        else if(turno == Turnos.EnemyTurn)
+        else if (turno == Turnos.PlayerTurn && !hasOnlyOneEnemy)
+        {
+            SelectTarget selectTarget = SelectTarget.instance;
+           
+            if (!selectTarget.waitingForInput)
+            {
+                selectTarget.isSelecting = true;
+                selectTarget.targets = inimigosPersonagens;
+                selectTarget.waitingForInput = true;
+                return null;
+            }
+            if (selectTarget.selectedTarget != null)
+            {
+                BasePersonagem target = selectTarget.selectedTarget;
+                selectTarget.selectedTarget = null;
+                return target;
+            }
+            return null;
+        }
+        else if (turno == Turnos.EnemyTurn)
         {
             int aliadoEscolhido = Random.Range(0, aliados.Count);
             return aliadosPersonagens[aliadoEscolhido];

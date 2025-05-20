@@ -12,8 +12,4 @@ public class CurarTime : MonoBehaviour
     {
         PlayerPartyController.instance.CurarTodos();
     }
-    void Update()
-    {
-        
-    }
 }
