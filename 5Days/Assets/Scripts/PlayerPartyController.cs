@@ -21,7 +21,11 @@ public class PlayerPartyController : MonoBehaviour
     }
     void Start()
     {
-        partyAtual = playerParty;
+        for(int i = 0; i < playerParty.Count; i++)
+        {
+            CharacterStatusGeneric character = Instantiate(playerParty[i]);
+            partyAtual.Add(character);
+        }
     }
     void Update()
     {

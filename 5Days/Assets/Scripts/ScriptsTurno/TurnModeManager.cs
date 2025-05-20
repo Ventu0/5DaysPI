@@ -113,14 +113,14 @@ public class TurnModeManager : MonoBehaviour
             if (JaAtacaram(inimigosPersonagens))
             {
                 turno = Turnos.PlayerTurn;
-                inimigosPersonagens[turnoDeQualPersonagem].turnEnded = false;
-                for(int i = 0; i < aliadosPersonagens.Count; i++)
+                inimigosPersonagens[turnoDeQualPersonagem].turnEnded = false; //provavelmente um for aqui
+                InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
+                for (int i = 0; i < aliadosPersonagens.Count; i++)
                 {
                     aliadosPersonagens[i].OnTurnStart();
                     aliados[i].isDefending = false;
                     aliadosPersonagens[i].turnEnded = false;
                 }
-                InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 InteractButtonsController.instance.menu.SetActive(true);
             }
             else if(!JaAtacaram(inimigosPersonagens))

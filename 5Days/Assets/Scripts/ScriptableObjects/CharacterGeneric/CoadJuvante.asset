@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c8fce7cdc2a2e4e980b0733c00a56a, type: 3}
   m_Name: CoadJuvante
   m_EditorClassIdentifier: 
+  characterSprite: {fileID: 0}
   "for\xE7a": 4
   defesa: 4
   vidaMaxima: 300
@@ -21,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 0}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  animatorController: {fileID: 0}
