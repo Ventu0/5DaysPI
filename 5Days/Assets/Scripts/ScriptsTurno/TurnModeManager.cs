@@ -58,12 +58,6 @@ public class TurnModeManager : MonoBehaviour
         {
             hasOnlyOneEnemy = true;
         }
-        float vertical = Input.GetAxisRaw("Vertical");
-        //if (!hasOnlyOneEnemy)
-        //{
-        //    StartCoroutine(MoverSeta(new Vector2();
-        //}
-
     }
     void EndGame()
     {
@@ -73,10 +67,6 @@ public class TurnModeManager : MonoBehaviour
             PlayerPartyController.instance.partyAtual[i].vidaAtual = aliadosPersonagens[i].vidaAtual;
         }
         Time.timeScale = 0f;
-    }
-    IEnumerator MoverSeta(Vector2 newPos)
-    {
-        yield return null;
     }
     public void CheckIfAllCharactersAttacked()
     {

@@ -24,6 +24,10 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     //variaveis privadas
     Aliados aliado;
     TextMeshProUGUI lifeText;
+    void Awake()
+    {
+        if (shadow != null) shadow.gameObject.SetActive(false);
+    }
     void Start()
     {
         aliado = gameObject.GetComponent<Aliados>();

@@ -19,7 +19,7 @@ public class RecieveInfoManager : MonoBehaviour
         for(int i = 0; i < turnModeManager.inimigos.Count; i++)
         {
             inimigosOriginais.Add(turnModeManager.inimigos[i]);
-            turnModeManager.inimigos[i].gameObject.SetActive(false);
+            turnModeManager.inimigos[i].GetComponent<BasePersonagem>().gameObject.SetActive(false);
         }
         turnModeManager.aliados.Clear();
         turnModeManager.aliadosPersonagens.Clear();
@@ -39,6 +39,7 @@ public class RecieveInfoManager : MonoBehaviour
             turnModeManager.aliados.Add(aliadosOriginais[i]);
             turnModeManager.aliadosPersonagens.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
 
+            turnModeManager.aliadosPersonagens[i].shadow.gameObject.SetActive(true);
             turnModeManager.aliadosPersonagens[i].characterStatus = Instantiate(playerStatus[i]);
             turnModeManager.aliadosPersonagens[i].SetupStatus();
 
@@ -49,6 +50,7 @@ public class RecieveInfoManager : MonoBehaviour
             turnModeManager.inimigos.Add(inimigosOriginais[i]);
             turnModeManager.inimigosPersonagens.Add(inimigosOriginais[i].GetComponent<BasePersonagem>());
             turnModeManager.inimigosPersonagens[i].characterStatus = Instantiate(enemyStatus[i]);
+            turnModeManager.inimigosPersonagens[i].shadow.gameObject.SetActive(true);
 
             turnModeManager.inimigosPersonagens[i].SetupStatus();
 

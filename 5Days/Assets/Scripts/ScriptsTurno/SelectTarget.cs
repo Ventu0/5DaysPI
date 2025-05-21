@@ -67,7 +67,7 @@ public class SelectTarget : MonoBehaviour
                 currentCharacterSelected = Mathf.Clamp(currentCharacterSelected, 0, targets.Count - 1);
                 CallMoveArrow();
             }
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space))
             {
                 InteractButtonsController interactButtonsController = InteractButtonsController.instance;
                 selectedTarget = targets[currentCharacterSelected];

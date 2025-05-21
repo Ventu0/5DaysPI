@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: 6798304d86939dc479431acea689ff54
+guid: 73d8dc3c36c4a634fb375e318caf3eed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2728408147571416042
-    second: "Anima\xE7\xE3oDeLado_0"
+      213: 4208889026453792661
+    second: "Anima\xC3\xA7\xC3\xA3o da idke_0"
   - first:
-      213: 6702952673019785512
-    second: "Anima\xE7\xE3oDeLado_1"
-  - first:
-      213: 3529352074923318284
-    second: "Anima\xE7\xE3oDeLado_2"
-  - first:
-      213: 2914952556259041683
-    second: "Anima\xE7\xE3oDeLado_3"
-  - first:
-      213: 6261806125469620374
-    second: "Anima\xE7\xE3oDeLado_4"
-  - first:
-      213: -3238519227878097907
-    second: "Anima\xE7\xE3oDeLado_5"
+      213: 8909561516584058535
+    second: "Anima\xC3\xA7\xC3\xA3o da idke_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,133 +116,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oDeLado_0"
+      name: "Anima\xC3\xA7\xC3\xA3o da idke_0"
       rect:
         serializedVersion: 2
-        x: 1
-        y: 32
-        width: 13
-        height: 25
+        x: 0
+        y: 256
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61469b9de3fb22ad0800000000000000
-      internalID: -2728408147571416042
+      spriteID: 59761d8154af86a30800000000000000
+      internalID: 4208889026453792661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oDeLado_1"
+      name: "Anima\xC3\xA7\xC3\xA3o da idke_1"
       rect:
         serializedVersion: 2
-        x: 18
-        y: 32
-        width: 12
-        height: 25
+        x: 128
+        y: 256
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 821799d31fba50d50800000000000000
-      internalID: 6702952673019785512
+      spriteID: 7aebb749efe15ab70800000000000000
+      internalID: 8909561516584058535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oDeLado_2"
+      name: "Anima\xC3\xA7\xC3\xA3o da idke_2"
       rect:
         serializedVersion: 2
-        x: 33
-        y: 32
-        width: 13
-        height: 25
+        x: 256
+        y: 256
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c0c97194307caf030800000000000000
-      internalID: 3529352074923318284
+      spriteID: 36c6281195f7c4d4b8edcbc64b085a2b
+      internalID: -663563939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oDeLado_3"
+      name: "Anima\xC3\xA7\xC3\xA3o da idke_3"
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
-        height: 25
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 391efe4e7edf37820800000000000000
-      internalID: 2914952556259041683
+      spriteID: 90f804525388a444d855195b66a2a385
+      internalID: -912133873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oDeLado_4"
+      name: "Anima\xC3\xA7\xC3\xA3o da idke_4"
       rect:
         serializedVersion: 2
-        x: 17
+        x: 128
         y: 0
-        width: 13
-        height: 25
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6985bf0ae7766e650800000000000000
-      internalID: 6261806125469620374
+      spriteID: 3a35c4c26a9532a4aa30622869663618
+      internalID: 1151964429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Anima\xE7\xE3oDeLado_5"
+      name: "Anima\xC3\xA7\xC3\xA3o da idke_5"
       rect:
         serializedVersion: 2
-        x: 34
+        x: 256
         y: 0
-        width: 12
-        height: 25
+        width: 128
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d0cbd00bbe77e03d0800000000000000
-      internalID: -3238519227878097907
+      spriteID: 3a76431085ce91846b7e2015a1c12f25
+      internalID: 1997184891
       vertices: []
       indices: 
       edges: []
@@ -263,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 66039faa380ae7d43a01541df56b39e4
+    spriteID: 2140cccd0cd6eda43abbf70add92948f
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +261,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Anima\xE7\xE3oDeLado_0": -2728408147571416042
-      "Anima\xE7\xE3oDeLado_1": 6702952673019785512
-      "Anima\xE7\xE3oDeLado_2": 3529352074923318284
-      "Anima\xE7\xE3oDeLado_3": 2914952556259041683
-      "Anima\xE7\xE3oDeLado_4": 6261806125469620374
-      "Anima\xE7\xE3oDeLado_5": -3238519227878097907
+      "Anima\xC3\xA7\xC3\xA3o da idke_0": 4208889026453792661
+      "Anima\xC3\xA7\xC3\xA3o da idke_1": 8909561516584058535
+      "Anima\xC3\xA7\xC3\xA3o da idke_2": -663563939
+      "Anima\xC3\xA7\xC3\xA3o da idke_3": -912133873
+      "Anima\xC3\xA7\xC3\xA3o da idke_4": 1151964429
+      "Anima\xC3\xA7\xC3\xA3o da idke_5": 1997184891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
