@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0618d6cf94935574789402f232164d6a
+guid: 5cb69e890c87f9e458f7526cec614c3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5660672064491921127
-    second: "bot\xC3\xA3o de ataque-1.png (1)_0"
+      213: 3620092898569648242
+    second: "bot\xC3\xA3o de ataque-1.png (2)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "bot\xC3\xA3o de ataque-1.png (1)_0"
+      name: "bot\xC3\xA3o de ataque-1.png (2)_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9116bf5bfb04171b0800000000000000
-      internalID: -5660672064491921127
+      spriteID: 2787829af472d3230800000000000000
+      internalID: 3620092898569648242
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "bot\xC3\xA3o de ataque-1.png (2)_0": 3620092898569648242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
