@@ -78,6 +78,8 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
             if(shakeCamera)
             StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.05f));
+
+            TextPopup.instance.GerarTexto("-" + damage.ToString(), 0.5f);
             UpdateLife();
         }
         if(!CheckIfHasLife())

@@ -17,3 +17,4 @@ MonoBehaviour:
   character: {fileID: 0}
   damagePerTurn: 10
   remainingTurns: 2
+  poisonAnimation: {fileID: 9100000, guid: 2fb7f7d32eefd8348afb7e476fb7b25c, type: 2}

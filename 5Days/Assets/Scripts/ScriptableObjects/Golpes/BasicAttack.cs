@@ -19,7 +19,7 @@ using System.Threading.Tasks;
         if (efeitoSecundario != null && alvo.efeitoAtivo == null)
             efeitoSecundario.ApplyEffect(alvo);
 
-        MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation);
+        MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, true);
         alvo.TakeDamage(dano, shakeCamera);
         }
 }

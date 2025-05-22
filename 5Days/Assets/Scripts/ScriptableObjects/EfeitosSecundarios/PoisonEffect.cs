@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Venenos/Novo veneno")]
@@ -7,6 +6,7 @@ public class PoisonEffect : Effect
     [HideInInspector] public BasePersonagem character;
     public int damagePerTurn;
     [SerializeField] int remainingTurns;
+    [SerializeField] RuntimeAnimatorController poisonAnimation;
     public override void ApplyEffect(BasePersonagem alvo)
     {
         character = alvo;
@@ -24,6 +24,7 @@ public class PoisonEffect : Effect
         {
             RemoveEffect();
         }
+        MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
         character.TakeDamage(damagePerTurn, false);
         
     }
