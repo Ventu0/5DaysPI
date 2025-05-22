@@ -1,0 +1,774 @@
+fileFormatVersion: 2
+guid: 95fbd5ef6b84b5d4cb4071e6de178fc8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8914174468522570118
+    second: poison efect_0
+  - first:
+      213: 253300144449304501
+    second: poison efect_1
+  - first:
+      213: 7238638978981611374
+    second: poison efect_2
+  - first:
+      213: 4005353476308117099
+    second: poison efect_3
+  - first:
+      213: 1080380566253845415
+    second: poison efect_4
+  - first:
+      213: 2840826960376434777
+    second: poison efect_5
+  - first:
+      213: 737483739228889293
+    second: poison efect_6
+  - first:
+      213: 117271464294425841
+    second: poison efect_7
+  - first:
+      213: 6902440200619373549
+    second: poison efect_8
+  - first:
+      213: 4877717769975414514
+    second: poison efect_9
+  - first:
+      213: -2349806849059037038
+    second: poison efect_10
+  - first:
+      213: 3482915722585635855
+    second: poison efect_11
+  - first:
+      213: -7344596575441870589
+    second: poison efect_12
+  - first:
+      213: 4486070022408712415
+    second: poison efect_13
+  - first:
+      213: -4600085419818923407
+    second: poison efect_14
+  - first:
+      213: -4077155490826822231
+    second: poison efect_15
+  - first:
+      213: -3396608406759103280
+    second: poison efect_16
+  - first:
+      213: -6516703255500448607
+    second: poison efect_17
+  - first:
+      213: 8383793974357233604
+    second: poison efect_18
+  - first:
+      213: 982827923669699708
+    second: poison efect_19
+  - first:
+      213: 6387746477184607182
+    second: poison efect_20
+  - first:
+      213: 5369242924548774708
+    second: poison efect_21
+  - first:
+      213: -4345372283910911872
+    second: poison efect_22
+  - first:
+      213: -2550249946578409280
+    second: poison efect_23
+  - first:
+      213: -4745466682263547442
+    second: poison efect_24
+  - first:
+      213: 1359912858038328541
+    second: poison efect_25
+  - first:
+      213: -3758354219459592734
+    second: poison efect_26
+  - first:
+      213: -3797322980884973665
+    second: poison efect_27
+  - first:
+      213: 2715331332273565877
+    second: poison efect_28
+  - first:
+      213: -2727221540131264431
+    second: poison efect_29
+  - first:
+      213: 886085186920947759
+    second: poison efect_30
+  - first:
+      213: 536943756659836663
+    second: poison efect_31
+  - first:
+      213: 6154067223577356280
+    second: poison efect_32
+  - first:
+      213: 3091999588862560261
+    second: poison efect_33
+  - first:
+      213: 6605632052660435683
+    second: poison efect_34
+  - first:
+      213: 7450309605210380216
+    second: poison efect_35
+  - first:
+      213: -316720341774771300
+    second: poison efect_36
+  - first:
+      213: 5040176481004462425
+    second: poison efect_37
+  - first:
+      213: 7794827125931355411
+    second: poison efect_38
+  - first:
+      213: -2264729644864576871
+    second: poison efect_39
+  - first:
+      213: -1599248032277088850
+    second: poison efect_40
+  - first:
+      213: -7403574881726914453
+    second: poison efect_41
+  - first:
+      213: -7436500292000681401
+    second: poison efect_42
+  - first:
+      213: 2846552826987469469
+    second: poison efect_43
+  - first:
+      213: 2147166171900351930
+    second: poison efect_44
+  - first:
+      213: 492652114966676117
+    second: poison efect_45
+  - first:
+      213: 6176509727466262377
+    second: poison efect_46
+  - first:
+      213: -6947989519473728149
+    second: poison efect_47
+  - first:
+      213: 4548156878355684740
+    second: poison efect_48
+  - first:
+      213: -5106623783550653349
+    second: poison efect_49
+  - first:
+      213: 8452940735500208488
+    second: poison efect_50
+  - first:
+      213: 6237742169947623389
+    second: poison efect_51
+  - first:
+      213: 887012353315288878
+    second: poison efect_52
+  - first:
+      213: -7024234375607410651
+    second: poison efect_53
+  - first:
+      213: 7404546605008139355
+    second: poison efect_54
+  - first:
+      213: 8940252234913723169
+    second: poison efect_55
+  - first:
+      213: -8676695268445680673
+    second: poison efect_56
+  - first:
+      213: 887264447252043493
+    second: poison efect_57
+  - first:
+      213: -8867157153553094985
+    second: poison efect_58
+  - first:
+      213: 7799891709991109289
+    second: poison efect_59
+  - first:
+      213: 4439001118833117052
+    second: poison efect_60
+  - first:
+      213: -4712440180122861861
+    second: poison efect_61
+  - first:
+      213: -4943301005440209745
+    second: poison efect_62
+  - first:
+      213: 6912111926454024428
+    second: poison efect_63
+  - first:
+      213: -3948408756319880867
+    second: poison efect_64
+  - first:
+      213: -2584463432208300052
+    second: poison efect_65
+  - first:
+      213: 6639999281430990475
+    second: poison efect_66
+  - first:
+      213: -4989652144370943253
+    second: poison efect_67
+  - first:
+      213: 5082511519179143780
+    second: poison efect_68
+  - first:
+      213: -7127557200062098436
+    second: poison efect_69
+  - first:
+      213: 1049916002247957433
+    second: poison efect_70
+  - first:
+      213: 6737984409471487510
+    second: poison efect_71
+  - first:
+      213: 1418531097776529078
+    second: poison efect_72
+  - first:
+      213: 3479437790968824195
+    second: poison efect_73
+  - first:
+      213: 2950158280849140334
+    second: poison efect_74
+  - first:
+      213: -7232999873202553141
+    second: poison efect_75
+  - first:
+      213: -8441367012651128376
+    second: poison efect_76
+  - first:
+      213: 2444712700655086983
+    second: poison efect_77
+  - first:
+      213: 944550705043732289
+    second: poison efect_78
+  - first:
+      213: -8332085808499604917
+    second: poison efect_79
+  - first:
+      213: -8226246510055310686
+    second: poison efect_80
+  - first:
+      213: 9039401109485701903
+    second: poison efect_81
+  - first:
+      213: -2545238482037135126
+    second: poison efect_82
+  - first:
+      213: -8555962902977490208
+    second: poison efect_83
+  - first:
+      213: -4902209723651284217
+    second: poison efect_84
+  - first:
+      213: -1545019567254267597
+    second: poison efect_85
+  - first:
+      213: 7312211336464192157
+    second: poison efect_86
+  - first:
+      213: -8491018049995281572
+    second: poison efect_87
+  - first:
+      213: 2077155180491263006
+    second: poison efect_88
+  - first:
+      213: 6033317540584407040
+    second: poison efect_89
+  - first:
+      213: -7952551430009859050
+    second: poison efect_90
+  - first:
+      213: -703725221448572119
+    second: poison efect_91
+  - first:
+      213: 7908847766839391252
+    second: poison efect_92
+  - first:
+      213: 2846273847182689349
+    second: poison efect_93
+  - first:
+      213: -5471759800635570575
+    second: poison efect_94
+  - first:
+      213: -844736805781582442
+    second: poison efect_95
+  - first:
+      213: 7059871898287317371
+    second: poison efect_96
+  - first:
+      213: -2382747599208803342
+    second: poison efect_97
+  - first:
+      213: -3133184790426921467
+    second: poison efect_98
+  - first:
+      213: 1106398329719929980
+    second: poison efect_99
+  - first:
+      213: 2310932806560375283
+    second: poison efect_100
+  - first:
+      213: -474934642805959726
+    second: poison efect_101
+  - first:
+      213: -3765728583886224952
+    second: poison efect_102
+  - first:
+      213: -7565720865722035381
+    second: poison efect_103
+  - first:
+      213: 1215427438894035362
+    second: poison efect_104
+  - first:
+      213: 3022593424898711393
+    second: poison efect_105
+  - first:
+      213: 5617498539345989474
+    second: poison efect_106
+  - first:
+      213: 4866920785669653596
+    second: poison efect_107
+  - first:
+      213: -5446108357959217095
+    second: poison efect_108
+  - first:
+      213: 7643520621212868513
+    second: poison efect_109
+  - first:
+      213: -2530420071502996146
+    second: poison efect_110
+  - first:
+      213: -5411562941031059496
+    second: poison efect_111
+  - first:
+      213: -397211665739013307
+    second: poison efect_112
+  - first:
+      213: 8656249601701937423
+    second: poison efect_113
+  - first:
+      213: -8592446854952766348
+    second: poison efect_114
+  - first:
+      213: -2580634829877611819
+    second: poison efect_115
+  - first:
+      213: -8979095282446239437
+    second: poison efect_116
+  - first:
+      213: 5012511460073678027
+    second: poison efect_117
+  - first:
+      213: -8100493935557032745
+    second: poison efect_118
+  - first:
+      213: -3163329035640192577
+    second: poison efect_119
+  - first:
+      213: -3045438027138180610
+    second: poison efect_120
+  - first:
+      213: 773463597617068622
+    second: poison efect_121
+  - first:
+      213: -1707821448185436029
+    second: poison efect_122
+  - first:
+      213: 8406907594019537961
+    second: poison efect_123
+  - first:
+      213: -5472418708826429359
+    second: poison efect_124
+  - first:
+      213: 8979781730100719974
+    second: poison efect_125
+  - first:
+      213: -2233343731330479808
+    second: poison efect_126
+  - first:
+      213: -4550312739739629799
+    second: poison efect_127
+  - first:
+      213: 934270164602829509
+    second: poison efect_128
+  - first:
+      213: 3004974749058733350
+    second: poison efect_129
+  - first:
+      213: -1719855939976863844
+    second: poison efect_130
+  - first:
+      213: -7014704526777627430
+    second: poison efect_131
+  - first:
+      213: 7005465473934267157
+    second: poison efect_132
+  - first:
+      213: 3716866107591836303
+    second: poison efect_133
+  - first:
+      213: -1193993560849367387
+    second: poison efect_134
+  - first:
+      213: 2878189607089085263
+    second: poison efect_135
+  - first:
+      213: -318932480986035931
+    second: poison efect_136
+  - first:
+      213: -2230573086547215204
+    second: poison efect_137
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: poison efect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1443
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681f426237285bb70800000000000000
+      internalID: 8914174468522570118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1443
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7b47ba327e38300800000000000000
+      internalID: 253300144449304501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_2
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1443
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67ce77accfc47460800000000000000
+      internalID: 7238638978981611374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 966
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b66a833f3cfd59730800000000000000
+      internalID: 4005353476308117099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 966
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abbbc1a6684efe00800000000000000
+      internalID: 1080380566253845415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 966
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9501791b115ac6720800000000000000
+      internalID: 2840826960376434777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 489
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc06d50bd811c3a00800000000000000
+      internalID: 737483739228889293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 489
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f42f8386c1a0a100800000000000000
+      internalID: 117271464294425841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 489
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de33b41bac46acf50800000000000000
+      internalID: 6902440200619373549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poison efect_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 480
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2febef1f77221b340800000000000000
+      internalID: 4877717769975414514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 282f42f28f57452459f3297333a9e358
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      poison efect_0: 8914174468522570118
+      poison efect_1: 253300144449304501
+      poison efect_2: 7238638978981611374
+      poison efect_3: 4005353476308117099
+      poison efect_4: 1080380566253845415
+      poison efect_5: 2840826960376434777
+      poison efect_6: 737483739228889293
+      poison efect_7: 117271464294425841
+      poison efect_8: 6902440200619373549
+      poison efect_9: 4877717769975414514
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
