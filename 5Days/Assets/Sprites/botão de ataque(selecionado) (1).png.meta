@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5f8f89d2db79a5c49bf19a7661c87e44
+guid: e3b8e408fd47a96409b2247a5b4e0b01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2706669339438378726
-    second: "bot\xE3o de ataque_0"
+      213: 4558277850395645896
+    second: "bot\xE3o de ataque(selecionado) (1)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "bot\xE3o de ataque_0"
+      name: "bot\xE3o de ataque(selecionado) (1)_0"
       rect:
         serializedVersion: 2
         x: 7
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a11955a839aff6ad0800000000000000
-      internalID: -2706669339438378726
+      spriteID: 8c71d5cdd81424f30800000000000000
+      internalID: 4558277850395645896
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "bot\xE3o de ataque_0": -2706669339438378726
+      "bot\xE3o de ataque(selecionado) (1)_0": 4558277850395645896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
