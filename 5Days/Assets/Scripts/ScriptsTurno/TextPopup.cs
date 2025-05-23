@@ -13,10 +13,10 @@ public class TextPopup : MonoBehaviour
     [SerializeField] int tamanhoDaPool;
 
     [Header("Read-Only")]
-    [SerializeField] List<Transform> textPool;
+    [SerializeField] Queue<Transform> textPool = new Queue<Transform>();
 
     //variaveis invisiveis
-    List<TextMeshProUGUI> tmproPool;
+    List<TextMeshProUGUI> tmproPool = new List<TextMeshProUGUI>();
     public static TextPopup instance;
 
     private void Awake()
@@ -29,26 +29,28 @@ public class TextPopup : MonoBehaviour
         {
             Transform text = Instantiate(prefabText, transform.position, transform.rotation);
             text.gameObject.SetActive(false);
-            text.position = Vector3.zero;
-            tmproPool.Add(text.GetComponent<TextMeshProUGUI>());
-            textPool.Add(text);
+            tmproPool.Add(text.GetComponentInChildren<TextMeshProUGUI>());
+            textPool.Enqueue(text);
         }
     }
-    public void GerarTexto(string texto, float duration)
+    public void GerarTexto(string texto, float duration, Vector2 targetPos)
     {
-        Transform textTransform = textPool[0];
+        Transform textTransform = textPool.Dequeue();
         TextMeshProUGUI text = tmproPool[0];
+        //Vector2 convertedPos = CameraController.instance.mainCamera.ScreenToWorldPoint(targetPos);
+        textTransform.gameObject.SetActive(true);
+        textTransform.position = targetPos;
         text.text = texto;
         StartCoroutine(moveTextUpwards(textTransform, duration));
     }
     IEnumerator moveTextUpwards(Transform text, float duration)
     {
         float iterador = 0;
-        Vector2 newPos = new Vector2(text.position.x, text.position.y + 2f);
+        Vector2 newPos = new Vector2(text.position.x, text.position.y + 5f);
         while(iterador < duration)
         {
-            iterador += Time.deltaTime;
-            text.position = Vector2.Lerp(text.position, newPos, iterador / duration);
+            iterador += Time.deltaTime / duration;
+            text.position = Vector2.Lerp(text.position, newPos, iterador);
             yield return null;
         }
         text.gameObject.SetActive(false);

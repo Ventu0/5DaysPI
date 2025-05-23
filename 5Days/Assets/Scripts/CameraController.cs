@@ -7,7 +7,15 @@ public class CameraController : MonoBehaviour
     public static CameraController instance;
     private void Awake()
     {
-        if(instance == null)
+        if(mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+        else
+        {
+            Destroy(mainCamera.gameObject);
+        }
+        if (instance == null)
         {
             instance = this;
         }
@@ -21,8 +29,6 @@ public class CameraController : MonoBehaviour
         cinemachineCamera.LookAt = Player.instance.transform;
         cinemachineCamera.Follow = Player.instance.transform;
     }
-
-    // Update is called once per frame
     void Update()
     {
         
