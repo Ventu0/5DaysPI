@@ -10,6 +10,7 @@ using System.Threading.Tasks;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y);
         BasePersonagem quemEstaAtacando = TurnModeManager.instance.QuemEstaAtacando();
 
+        if (quemEstaAtacando.characterStatus.isHuman) alvoPos.y += 0.7f;
         InteractButtonsController.instance.menu.SetActive(false);
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, quemEstaAtacando.shadow);
         

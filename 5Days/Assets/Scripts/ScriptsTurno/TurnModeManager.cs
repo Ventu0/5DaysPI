@@ -110,8 +110,9 @@ public class TurnModeManager : MonoBehaviour
                 InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
                 for (int i = 0; i < aliadosPersonagens.Count; i++)
                 {
-                    aliadosPersonagens[i].OnTurnStart();
+                    aliados[i].shield.SetActive(false);
                     aliados[i].isDefending = false;
+                    aliadosPersonagens[i].OnTurnStart();
                     aliadosPersonagens[i].turnEnded = false;
                 }
                 InteractButtonsController.instance.menu.SetActive(true);

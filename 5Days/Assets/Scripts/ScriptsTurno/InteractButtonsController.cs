@@ -48,7 +48,10 @@ public class InteractButtonsController : MonoBehaviour
     }
     public void Defend()
     {
-        TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().isDefending = true;
+        Aliados aliado = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>();
+        aliado.isDefending = true;
+        
+        aliado.shield.SetActive(true);
         TurnModeManager.instance.QuemEstaAtacando().turnEnded = true;
         TurnModeManager.instance.CheckIfAllCharactersAttacked();
     }

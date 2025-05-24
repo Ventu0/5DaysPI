@@ -12,7 +12,7 @@ public class PoisonEffect : Effect
         character = alvo;
         remainingTurns = durationInTurn;
         alvo.efeitoAtivo = Instantiate(this);
-        character.GetComponent<SpriteRenderer>().color = new Color(128, 0, 128);
+        character.GetComponent<SpriteRenderer>().color = new Color(138, 0, 214);
     }
     public override void OnTurnStart()
     {

@@ -15,6 +15,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
 
     [Header("Opcional")]
     [SerializeField] public Slider lifeBar;
+    public GameObject shield;
     public Transform shadow;
 
     [Header("Read-Only")]
@@ -30,7 +31,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     }
     void Start()
     {
-        aliado = gameObject.GetComponent<Aliados>();
+        aliado = GetComponent<Aliados>();
     }
     public void OnTurnStart()
     {
@@ -40,14 +41,21 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public void SetupStatus()
     {
         EnemyAI enemy = GetComponent<EnemyAI>();
+        Animator animator = GetComponent<Animator>();
         força = characterStatus.força;
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
         defesa = characterStatus.defesa;
-        if(enemy != null)
+        if (animator != null) animator.runtimeAnimatorController = characterStatus.animatorController;
+        if (characterStatus.isHuman)
         {
-            enemy.ataques = characterStatus.ataques;
+            Vector2 fixedPos = new Vector2(transform.position.x, transform.position.y + 0.7f);
+            transform.position = fixedPos;
+            if(aliado != null)
+            aliado.shield.transform.position = fixedPos;
         }
+        if (enemy != null)
+            enemy.ataques = characterStatus.ataques;
         if (lifeBar != null)
         {
             lifeText = lifeBar.GetComponentInChildren<TextMeshProUGUI>();

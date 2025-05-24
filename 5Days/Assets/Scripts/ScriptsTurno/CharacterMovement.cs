@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
             print("characterDuration = " + duration);
             while (iterador < duration)
             {
-                float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
+                float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.75f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
                 float playerNewX = Mathf.Lerp(initialPos.x, newPos.x, iterador);
                 characterTransform.position = new Vector2(playerNewX, playerNewY);
                 iterador += Time.deltaTime * duration;
@@ -51,7 +51,7 @@ public class CharacterMovement : MonoBehaviour
             iterador = 0;
             while (iterador < duration)
             {
-                float playerNewY = Mathf.Lerp(newPos.y, initialPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
+                float playerNewY = Mathf.Lerp(newPos.y, initialPos.y, iterador) + 0.75f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
                 float playerNewX = Mathf.Lerp(newPos.x, initialPos.x, iterador);
                 characterTransform.position = new Vector2(playerNewX, playerNewY);
                 iterador += Time.deltaTime * duration;
