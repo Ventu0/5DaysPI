@@ -3,13 +3,14 @@ using UnityEngine;
 using System.Threading.Tasks;
 public class MovesVisualEffect : MonoBehaviour
 {
-    public static MovesVisualEffect instance;
+    [SerializeField] float espaçamento = 0.75f;
     [SerializeField] GameObject attackEffect;
     [SerializeField] Animator animator;
     SpriteRenderer spriteRenderer;
 
     Sprite effectSprite;
     Vector2 effectPosition;
+    public static MovesVisualEffect instance;
     RuntimeAnimatorController controllerAnimation;
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class MovesVisualEffect : MonoBehaviour
     {
         controllerAnimation = animatorController;
         effectSprite = spriteEffect;
-        effectPosition = positionEffect;
+        effectPosition = new Vector2(positionEffect.x, positionEffect.y - 0.5f);
         if(playInFront)
         StartCoroutine(PlayAttackEffectInFront());
         else StartCoroutine(PlayAttackEffectInPosition());
@@ -38,12 +39,12 @@ public class MovesVisualEffect : MonoBehaviour
         Turnos turno = TurnModeManager.instance.turno;
         if (turno == Turnos.EnemyTurn)
         {
-                effectPosition.x += 1;
+                effectPosition.x += espaçamento;
                 spriteRenderer.flipX = true;
         }
         else if (turno == Turnos.PlayerTurn)
         {           
-                effectPosition.x -= 1;
+                effectPosition.x -= espaçamento;
                 spriteRenderer.flipX = false;
         }
 

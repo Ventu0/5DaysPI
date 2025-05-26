@@ -23,4 +23,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   animatorController: {fileID: 9100000, guid: c27dfda13976d744f9639ef0aa8fea14, type: 2}
-  isHuman: 1
+  isHuman: 0

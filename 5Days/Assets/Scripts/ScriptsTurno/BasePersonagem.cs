@@ -46,16 +46,10 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
         defesa = characterStatus.defesa;
+
         if (animator != null) animator.runtimeAnimatorController = characterStatus.animatorController;
-        if (characterStatus.isHuman)
-        {
-            Vector2 fixedPos = new Vector2(transform.position.x, transform.position.y + 0.7f);
-            transform.position = fixedPos;
-            if(aliado != null)
-            aliado.shield.transform.position = fixedPos;
-        }
-        if (enemy != null)
-            enemy.ataques = characterStatus.ataques;
+        if (enemy != null) enemy.ataques = characterStatus.ataques;
+
         if (lifeBar != null)
         {
             lifeText = lifeBar.GetComponentInChildren<TextMeshProUGUI>();

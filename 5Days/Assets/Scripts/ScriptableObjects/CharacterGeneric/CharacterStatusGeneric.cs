@@ -11,5 +11,4 @@ public class CharacterStatusGeneric : ScriptableObject
     public int vidaAtual;
     public List<Attack> ataques;
     public RuntimeAnimatorController animatorController;
-    public bool isHuman;
 }
