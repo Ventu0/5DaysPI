@@ -1,0 +1,629 @@
+fileFormatVersion: 2
+guid: b5c43de9ed8df2b44a8fd4b7dc76e539
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8987271427450927229
+    second: particula de cura_0
+  - first:
+      213: 5548200460854774689
+    second: particula de cura_1
+  - first:
+      213: 5422624495012754315
+    second: particula de cura_2
+  - first:
+      213: -2684370034002601185
+    second: particula de cura_3
+  - first:
+      213: -8592138791912447350
+    second: particula de cura_4
+  - first:
+      213: 3629789446748321752
+    second: particula de cura_5
+  - first:
+      213: 599910487799948894
+    second: particula de cura_6
+  - first:
+      213: 4760311813362508620
+    second: particula de cura_7
+  - first:
+      213: 5386966552442556295
+    second: particula de cura_8
+  - first:
+      213: 9051108748765208673
+    second: particula de cura_9
+  - first:
+      213: 3733727731152880251
+    second: particula de cura_10
+  - first:
+      213: 1860192502929936539
+    second: particula de cura_11
+  - first:
+      213: 4486351092816774243
+    second: particula de cura_12
+  - first:
+      213: 8162186190870486709
+    second: particula de cura_13
+  - first:
+      213: 4027698061493677485
+    second: particula de cura_14
+  - first:
+      213: -8034689878799464641
+    second: particula de cura_15
+  - first:
+      213: 215935771113522487
+    second: particula de cura_16
+  - first:
+      213: 3427480583480945755
+    second: particula de cura_17
+  - first:
+      213: 866887344349283130
+    second: particula de cura_18
+  - first:
+      213: -1257171400976075775
+    second: particula de cura_19
+  - first:
+      213: -6536427598761144564
+    second: particula de cura_20
+  - first:
+      213: -5270097963210796377
+    second: particula de cura_21
+  - first:
+      213: 2148153742552774212
+    second: particula de cura_22
+  - first:
+      213: 2811090574292126808
+    second: particula de cura_23
+  - first:
+      213: 1544768624634893063
+    second: particula de cura_24
+  - first:
+      213: 5671015111983646719
+    second: particula de cura_25
+  - first:
+      213: 6181977480323435195
+    second: particula de cura_26
+  - first:
+      213: -7085976132917107073
+    second: particula de cura_27
+  - first:
+      213: -459810490941305028
+    second: particula de cura_28
+  - first:
+      213: 11485309665356795
+    second: particula de cura_29
+  - first:
+      213: -2756275526733181059
+    second: particula de cura_30
+  - first:
+      213: -5682426289618428163
+    second: particula de cura_31
+  - first:
+      213: -5613849297483333055
+    second: particula de cura_32
+  - first:
+      213: 9041369605797599937
+    second: particula de cura_33
+  - first:
+      213: -7117328989856683234
+    second: particula de cura_34
+  - first:
+      213: 3310833703337348626
+    second: particula de cura_35
+  - first:
+      213: -1092688799348040239
+    second: particula de cura_36
+  - first:
+      213: -5727642161267376891
+    second: particula de cura_37
+  - first:
+      213: 7129790617464974863
+    second: particula de cura_38
+  - first:
+      213: 694596837005512666
+    second: particula de cura_39
+  - first:
+      213: 3595801865044576490
+    second: particula de cura_40
+  - first:
+      213: 6582393725299233733
+    second: particula de cura_41
+  - first:
+      213: -6115197370815433661
+    second: particula de cura_42
+  - first:
+      213: 1746481547713070019
+    second: particula de cura_43
+  - first:
+      213: -4444845735581888021
+    second: particula de cura_44
+  - first:
+      213: -7766237044424810360
+    second: particula de cura_45
+  - first:
+      213: -1079632648638731839
+    second: particula de cura_46
+  - first:
+      213: 5021158259014041286
+    second: particula de cura_47
+  - first:
+      213: -1957972912592179176
+    second: particula de cura_48
+  - first:
+      213: -3386057758765003048
+    second: particula de cura_49
+  - first:
+      213: 4417999055106894203
+    second: particula de cura_50
+  - first:
+      213: -3882967368847085742
+    second: particula de cura_51
+  - first:
+      213: -8353179749965962024
+    second: particula de cura_52
+  - first:
+      213: -1296172677420696933
+    second: particula de cura_53
+  - first:
+      213: -2141390954649747666
+    second: particula de cura_54
+  - first:
+      213: -8020120347533532544
+    second: particula de cura_55
+  - first:
+      213: -5638562809373151588
+    second: particula de cura_56
+  - first:
+      213: 4375126596856777863
+    second: particula de cura_57
+  - first:
+      213: 4843273388743706311
+    second: particula de cura_58
+  - first:
+      213: 8097146791766599336
+    second: particula de cura_59
+  - first:
+      213: 5203272934042168711
+    second: particula de cura_60
+  - first:
+      213: -563771555087409585
+    second: particula de cura_61
+  - first:
+      213: -5205757213432422613
+    second: particula de cura_62
+  - first:
+      213: -708085743799551453
+    second: particula de cura_63
+  - first:
+      213: -4335069514336005482
+    second: particula de cura_64
+  - first:
+      213: -2076084498981182328
+    second: particula de cura_65
+  - first:
+      213: 8386710978303096399
+    second: particula de cura_66
+  - first:
+      213: 6308707839192162516
+    second: particula de cura_67
+  - first:
+      213: -6001467392364808752
+    second: particula de cura_68
+  - first:
+      213: -3060340128524490664
+    second: particula de cura_69
+  - first:
+      213: 8269280087628447993
+    second: particula de cura_70
+  - first:
+      213: 2140774376083696898
+    second: particula de cura_71
+  - first:
+      213: 6287440294347707038
+    second: particula de cura_72
+  - first:
+      213: -4495762354406718252
+    second: particula de cura_73
+  - first:
+      213: 6115249668323122931
+    second: particula de cura_74
+  - first:
+      213: 3497459221196279359
+    second: particula de cura_75
+  - first:
+      213: -4320004657609842290
+    second: particula de cura_76
+  - first:
+      213: -5543980932714472550
+    second: particula de cura_77
+  - first:
+      213: -1542376444495121715
+    second: particula de cura_78
+  - first:
+      213: -3565127013494779785
+    second: particula de cura_79
+  - first:
+      213: -248595350193059961
+    second: particula de cura_80
+  - first:
+      213: 4026691226151375893
+    second: particula de cura_81
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 34
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: particula de cura_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38705cad04cc64380800000000000000
+      internalID: -8987271427450927229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab48eb6cea2ffc40800000000000000
+      internalID: 5548200460854774689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8331977f38014b40800000000000000
+      internalID: 5422624495012754315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b529d2da33fbad0800000000000000
+      internalID: -2684370034002601185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a826437ba4792c880800000000000000
+      internalID: -8592138791912447350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d735e6354a9f5230800000000000000
+      internalID: 3629789446748321752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56e852096f435800800000000000000
+      internalID: 599910487799948894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43619f7f56001240800000000000000
+      internalID: 4760311813362508620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fcf3fb98952ca40800000000000000
+      internalID: 5386966552442556295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160a491c37ffb9d70800000000000000
+      internalID: 9051108748765208673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particula de cura_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72846fd69dd0d330800000000000000
+      internalID: 3733727731152880251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f603afccf6f405f48951e6ba2baef131
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      particula de cura_0: -8987271427450927229
+      particula de cura_1: 5548200460854774689
+      particula de cura_10: 3733727731152880251
+      particula de cura_2: 5422624495012754315
+      particula de cura_3: -2684370034002601185
+      particula de cura_4: -8592138791912447350
+      particula de cura_5: 3629789446748321752
+      particula de cura_6: 599910487799948894
+      particula de cura_7: 4760311813362508620
+      particula de cura_8: 5386966552442556295
+      particula de cura_9: 9051108748765208673
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
