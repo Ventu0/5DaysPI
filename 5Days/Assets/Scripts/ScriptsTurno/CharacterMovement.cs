@@ -20,9 +20,9 @@ public class CharacterMovement : MonoBehaviour
     {
         Turnos turno = TurnModeManager.instance.turno;
         if (turno == Turnos.EnemyTurn)
-            newPos.x += 2;
+            newPos.x += 3;
         else if (turno == Turnos.PlayerTurn)
-            newPos.x -= 2;
+            newPos.x -= 3;
 
         StartCoroutine(AllyMove(characterToMove, newPos, duration));
         if(shadow != null)
