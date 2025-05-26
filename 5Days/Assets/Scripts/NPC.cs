@@ -10,9 +10,11 @@ public class NPC : MonoBehaviour
     [SerializeField] Sprite[] charactersFace;
     [SerializeField] bool isHealer = false;
     int falasMaximas;
+    ChatController chatController;
     
     void Start()
     {
+        chatController = ChatController.instance;
         falasMaximas = falas.Length;
     }
     void Update()
@@ -21,24 +23,25 @@ public class NPC : MonoBehaviour
     }
     public void Falar()
     {
+        if(chatController.falasRoutine == null)
             falaAtual++;
         if (falaAtual < falasMaximas)
         {
             print("falando");
 
-            ChatController.instance.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
+            chatController.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
         }
         if(falaAtual > falasMaximas)
         {
             if (isHealer)
             {
                 PlayerPartyController.instance.CurarTodos();
-                ChatController.instance.CloseDialogue();
+                chatController.CloseDialogue();
                 falaAtual = -1;
             }
             else
             {
-                ChatController.instance.CloseDialogue();
+                chatController.CloseDialogue();
                 falaAtual = -1;
             }
         }

@@ -33,10 +33,14 @@ public class ChatController : MonoBehaviour
         dialogueText.text = "";
         if(falasRoutine != null)
         {
-            StopCoroutine(falasRoutine);
+            StopAllCoroutines();
+            dialogueText.text = "";
             dialogueText.text = fala;
+            falasRoutine = null;
+            return;
         }
-        falasRoutine = StartCoroutine(EscreverFalas(fala));
+        if(falasRoutine == null)
+            falasRoutine = StartCoroutine(EscreverFalas(fala));
     }
     public void CloseDialogue()
     {
@@ -50,8 +54,8 @@ public class ChatController : MonoBehaviour
         char[] caracteres = fala.ToCharArray();
         for (int i = 0; i < caracteres.Length; i++)
         {
-            dialogueText.text += caracteres[i];
-            yield return new WaitForSeconds(0.05f);
+                dialogueText.text += caracteres[i];
+                yield return new WaitForSeconds(0.05f);
         }
         falasRoutine = null;
     }

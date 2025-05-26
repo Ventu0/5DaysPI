@@ -7,12 +7,13 @@ public class PoisonEffect : Effect
     public int damagePerTurn;
     [SerializeField] int remainingTurns;
     [SerializeField] RuntimeAnimatorController poisonAnimation;
+    Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
     public override void ApplyEffect(BasePersonagem alvo)
     {
         character = alvo;
         remainingTurns = durationInTurn;
         alvo.efeitoAtivo = Instantiate(this);
-        character.GetComponent<SpriteRenderer>().color = new Color(138, 0, 214);
+        character.GetComponent<SpriteRenderer>().color = poisonColor;
     }
     public override void OnTurnStart()
     {
@@ -25,6 +26,7 @@ public class PoisonEffect : Effect
             RemoveEffect();
         }
         MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
+        TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, 29, poisonColor);
         character.TakeDamage(damagePerTurn, false);
         
     }

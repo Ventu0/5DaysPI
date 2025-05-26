@@ -16,7 +16,8 @@ public class TextPopup : MonoBehaviour
     [SerializeField] Queue<Transform> textPool = new Queue<Transform>();
 
     //variaveis invisiveis
-    List<TextMeshProUGUI> tmproPool = new List<TextMeshProUGUI>();
+    Queue<TextMeshProUGUI> tmproPool = new Queue<TextMeshProUGUI>();
+    float normalTextSize;
     public static TextPopup instance;
 
     private void Awake()
@@ -29,30 +30,50 @@ public class TextPopup : MonoBehaviour
         {
             Transform text = Instantiate(prefabText, transform.position, transform.rotation);
             text.gameObject.SetActive(false);
-            tmproPool.Add(text.GetComponentInChildren<TextMeshProUGUI>());
+            tmproPool.Enqueue(text.GetComponentInChildren<TextMeshProUGUI>());
             textPool.Enqueue(text);
         }
     }
-    public void GerarTexto(string texto, float duration, Vector2 targetPos)
+    public void GerarTexto(string texto, Vector2 targetPos, float textSize, Color textColor)
     {
         Transform textTransform = textPool.Dequeue();
-        TextMeshProUGUI text = tmproPool[0];
-        //Vector2 convertedPos = CameraController.instance.mainCamera.ScreenToWorldPoint(targetPos);
+        TextMeshProUGUI tmProText = tmproPool.Dequeue();
+
+        float x = Random.Range(-0.5f, 0.5f);
+        float y = Random.Range(-0.5f, 0.5f);
+        targetPos = new Vector2(targetPos.x + x, targetPos.y + y);
+        
         textTransform.gameObject.SetActive(true);
         textTransform.position = targetPos;
-        text.text = texto;
-        StartCoroutine(moveTextUpwards(textTransform, duration));
+        tmProText.color = textColor;
+        tmProText.text = texto;
+
+        if(textSize != 0) tmProText.fontSize = textSize;
+        StartCoroutine(moveTextUpwards(textTransform));
     }
-    IEnumerator moveTextUpwards(Transform text, float duration)
+    IEnumerator moveTextUpwards(Transform text)
     {
         float iterador = 0;
-        Vector2 newPos = new Vector2(text.position.x, text.position.y + 5f);
-        while(iterador < duration)
+        Vector2 newPos = new Vector2(text.position.x, text.position.y + 0.4f);
+        while(iterador < baseDuration)
         {
-            iterador += Time.deltaTime / duration;
+            iterador += Time.deltaTime / baseDuration;
             text.position = Vector2.Lerp(text.position, newPos, iterador);
             yield return null;
         }
+        yield return null;
+        iterador = 0;
+        newPos = new Vector2(text.position.x, text.position.y - 0.4f);
+        while (iterador < baseDuration)
+        {
+            iterador += Time.deltaTime / baseDuration;
+            text.position = Vector2.Lerp(text.position, newPos, iterador);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        textPool.Enqueue(text);
+        tmproPool.Enqueue(text.GetComponentInChildren<TextMeshProUGUI>());
         text.gameObject.SetActive(false);
     }
     void Update()

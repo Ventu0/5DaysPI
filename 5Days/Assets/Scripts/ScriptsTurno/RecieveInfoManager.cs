@@ -50,6 +50,8 @@ public class RecieveInfoManager : MonoBehaviour
             turnModeManager.inimigos.Add(inimigosOriginais[i]);
             turnModeManager.inimigosPersonagens.Add(inimigosOriginais[i].GetComponent<BasePersonagem>());
             turnModeManager.inimigosPersonagens[i].characterStatus = Instantiate(enemyStatus[i]);
+            if (turnModeManager.inimigosPersonagens[i].characterStatus.isEnemy)
+                turnModeManager.inimigosPersonagens[i].GetComponent<SpriteRenderer>().flipX = true;
             turnModeManager.inimigosPersonagens[i].shadow.gameObject.SetActive(true);
 
             turnModeManager.inimigosPersonagens[i].SetupStatus();

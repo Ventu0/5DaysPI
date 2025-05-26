@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.1, y: 1.4, z: 0}
-  m_LocalScale: {x: 5.7641, y: 5.7641, z: 5.7641}
+  m_LocalScale: {x: 4.0828276, y: 3.980757, z: 4.0828276}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,16 +102,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   falas:
-  - oi menina charmosa tudo bem
-  - quer vir comigo? rsrs
-  - se alguem lhe amou
-  - e foi, se embora
+  - Ola moradora!
+  - Senhor, a vila vai ser atacada em 5 dias!!!
+  - "S\xE9rio?? n\xE3o brinca."
+  - "Ent\xE3o, temos apenas 5 dias para se preparar!"
   falaAtual: -1
   charactersFace:
   - {fileID: -5414593874171225108, guid: 2ecfe71fe6d853b47bfbe1ce5cb83755, type: 3}
-  - {fileID: -5414593874171225108, guid: 2ecfe71fe6d853b47bfbe1ce5cb83755, type: 3}
-  - {fileID: -5414593874171225108, guid: 2ecfe71fe6d853b47bfbe1ce5cb83755, type: 3}
   - {fileID: 2592975743464167710, guid: 5914f9ad2961e2a428cf394600ac3d0c, type: 3}
+  - {fileID: -5414593874171225108, guid: 2ecfe71fe6d853b47bfbe1ce5cb83755, type: 3}
+  - {fileID: -5414593874171225108, guid: 2ecfe71fe6d853b47bfbe1ce5cb83755, type: 3}
+  isHealer: 0
 --- !u!61 &6959405974106560408
 BoxCollider2D:
   m_ObjectHideFlags: 0
