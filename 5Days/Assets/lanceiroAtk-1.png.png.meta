@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lanceiroAtk-1.png_0: 1652144598874420233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

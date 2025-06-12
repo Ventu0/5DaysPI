@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dano: 20
   nomeAtaque: Presas de Veneno
+  shakeCamera: 0
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   attackEffect: {fileID: -2016867680781080215, guid: 1a218a1fc7dc11c4aa378058534727c6, type: 3}
   animation: {fileID: 9100000, guid: 503ad334b8f4b7749ad411291b9f794a, type: 2}
   efeitoSecundario: {fileID: 11400000, guid: 55ceecb8bd200d8429a594a78b8d46a3, type: 2}
+  punchSound: {fileID: 8300000, guid: 439dc4789aeac1d4dbc78d805ecb4e2d, type: 3}
