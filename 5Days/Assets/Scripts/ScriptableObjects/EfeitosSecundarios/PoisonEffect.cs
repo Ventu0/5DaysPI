@@ -8,6 +8,7 @@ public class PoisonEffect : Effect
     [SerializeField] int remainingTurns;
     [SerializeField] RuntimeAnimatorController poisonAnimation;
     Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
+    [SerializeField] AudioClip poisonSound;
     public override void ApplyEffect(BasePersonagem alvo)
     {
         character = alvo;
@@ -25,6 +26,7 @@ public class PoisonEffect : Effect
         {
             RemoveEffect();
         }
+        SFX.instance.PlaySFX(poisonSound, 1f);
         MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
         TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, 29, poisonColor);
         character.TakeDamage(damagePerTurn, false);

@@ -17,9 +17,9 @@ public class TurnModeManager : MonoBehaviour
     [Space]
     public List<Aliados> aliados;
 
-    [Tooltip("uma UI de vitoria ou derrota")]
     [SerializeField] GameObject EndMenu;
-    
+    [Tooltip("uma UI de vitoria ou derrota")]
+
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
     [SerializeField] public Camera mainCamera;
