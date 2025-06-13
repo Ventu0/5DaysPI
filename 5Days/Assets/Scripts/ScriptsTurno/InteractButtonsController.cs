@@ -45,7 +45,7 @@ public class InteractButtonsController : MonoBehaviour
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);
         print(TurnModeManager.instance.QuemEstaAtacando());
-        ataques = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>().ataques;
+        ataques = TurnModeManager.instance.QuemEstaAtacando().characterStatus.ataques;
     }
     public void Defend()
     {

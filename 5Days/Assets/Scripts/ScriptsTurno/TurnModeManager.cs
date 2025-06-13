@@ -44,7 +44,7 @@ public class TurnModeManager : MonoBehaviour
     }
     public void FirstAllyAttack()
     {
-        InteractButtonsController.instance.ataques = QuemEstaAtacando().GetComponent<Aliados>().ataques;
+        InteractButtonsController.instance.ataques = QuemEstaAtacando().characterStatus.ataques;
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
         print("primeiro ataque do aliado");
     }
