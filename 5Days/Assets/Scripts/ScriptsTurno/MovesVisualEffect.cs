@@ -58,11 +58,9 @@ public class MovesVisualEffect : MonoBehaviour
     IEnumerator PlayAttackEffectInPosition()
     {
         GameObject effect = Instantiate(attackEffect, effectPosition, transform.rotation);
-        effect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        //effect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         effect.GetComponent<Animator>().runtimeAnimatorController = controllerAnimation;
         effect.SetActive(true);
-        effectPosition.x += 0.1f;
-        spriteRenderer.sprite = effectSprite;
         effect.transform.position = effectPosition;
         yield return new WaitForSeconds(0.7f);
         Destroy(effect);

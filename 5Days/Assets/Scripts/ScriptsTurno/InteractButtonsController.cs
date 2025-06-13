@@ -97,8 +97,11 @@ public class InteractButtonsController : MonoBehaviour
         else
         {
             SelectTarget selectTarget = SelectTarget.instance;
-            selectTarget.targets = new List<BasePersonagem>(TurnModeManager.instance.inimigosPersonagens);
+            List<BasePersonagem> target = ataques[whatMove].tipoDeAlvo == Alvo.Inimigo 
+                ? new List<BasePersonagem>(TurnModeManager.instance.inimigosPersonagens) 
+                : new List<BasePersonagem>(TurnModeManager.instance.aliadosPersonagens);
             menu.SetActive(false);
+            selectTarget.targets = target;
 
             selectTarget.StartSelecting();
         }

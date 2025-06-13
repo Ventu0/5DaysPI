@@ -27,16 +27,22 @@ using System.Threading.Tasks;
             List<BasePersonagem> alvos = turnModeManager.turno == Turnos.PlayerTurn ? turnModeManager.inimigosPersonagens : turnModeManager.aliadosPersonagens;
             for (int i = 0; i < alvos.Count; i++)
             {
-                MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, true);
-                if (efeitoSecundario != null && alvos[i].efeitoAtivo == null) efeitoSecundario.ApplyEffect(alvos[i]);
-                alvos[i].TakeDamage(dano, shakeCamera);
+                MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[i].transform.position, animation, animationPlayInFront);
+
+                if (efeitoSecundario != null && alvos[i].efeitoAtivo == null) 
+                    efeitoSecundario.ApplyEffect(alvos[i]);
+
+                if(alvo != alvos[i]) 
+                    alvos[i].TakeDamage(danoOuCura / 2, shakeCamera);
+                else 
+                    alvo.TakeDamage(danoOuCura, shakeCamera);
             }
         }
         else
         {
             MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, animationPlayInFront);
 
-            alvo.TakeDamage(dano, shakeCamera);
+            alvo.TakeDamage(danoOuCura, shakeCamera);
         } 
     }
 }

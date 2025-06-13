@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OutLine botao-1.png_0: 5422114460552635046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

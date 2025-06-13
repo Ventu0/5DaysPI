@@ -1,11 +1,16 @@
 using UnityEngine;
-
+public enum Alvo
+{
+    Inimigo,
+    Aliado
+}
 public abstract class Attack : ScriptableObject
 {
-    public int dano;
+    public int danoOuCura;
     public string nomeAtaque;
     public Sprite iconeAtaque;
     public Sprite attackEffect;
+    public Alvo tipoDeAlvo;
 
     [Header("Configurações Opcionais")]
     public RuntimeAnimatorController animation;
@@ -14,6 +19,8 @@ public abstract class Attack : ScriptableObject
     public AudioClip soundEffect;
 
     [Header("Configurações de Ataque")]
+    public bool ataqueNeutro;
+    [Tooltip("Ataque que buffa ou debuffa o alvo, não causa dano")]
     public bool shakeCamera;
     public bool ataqueEmArea;
 
@@ -21,5 +28,9 @@ public abstract class Attack : ScriptableObject
     public virtual void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
     {
 
+    }
+    public virtual void AplicarDebuff(BasePersonagem alvo)
+    {
+        
     }
 }                                                                                                 
