@@ -1,0 +1,453 @@
+fileFormatVersion: 2
+guid: eaaf6ebc9749dae49b6c15c407b38cc0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1167623567924719593
+    second: Escudo Quebrando_0
+  - first:
+      213: -687165017577834019
+    second: Escudo Quebrando_1
+  - first:
+      213: -6531077504789787039
+    second: Escudo Quebrando_2
+  - first:
+      213: 6693892953808427062
+    second: Escudo Quebrando_3
+  - first:
+      213: 7812966766695274850
+    second: Escudo Quebrando_4
+  - first:
+      213: 1238412406628620884
+    second: Escudo Quebrando_5
+  - first:
+      213: -4037645566909910161
+    second: Escudo Quebrando_6
+  - first:
+      213: 4102596296226951276
+    second: Escudo Quebrando_7
+  - first:
+      213: -1219891768209355872
+    second: Escudo Quebrando_8
+  - first:
+      213: 8843232225001909090
+    second: Escudo Quebrando_9
+  - first:
+      213: -146494553801634347
+    second: Escudo Quebrando_10
+  - first:
+      213: -6455521496212414800
+    second: Escudo Quebrando_11
+  - first:
+      213: 3468856631028407450
+    second: Escudo Quebrando_12
+  - first:
+      213: -6322356956316739352
+    second: Escudo Quebrando_13
+  - first:
+      213: 5740399653538963064
+    second: Escudo Quebrando_14
+  - first:
+      213: 448783799854618052
+    second: Escudo Quebrando_15
+  - first:
+      213: -9013986892456567026
+    second: Escudo Quebrando_16
+  - first:
+      213: 6182467312972490166
+    second: Escudo Quebrando_17
+  - first:
+      213: 4761450745544249146
+    second: Escudo Quebrando_18
+  - first:
+      213: 8498475897191466948
+    second: Escudo Quebrando_19
+  - first:
+      213: -1284310401704602446
+    second: Escudo Quebrando_20
+  - first:
+      213: 5526166203641218080
+    second: Escudo Quebrando_21
+  - first:
+      213: 731921414757028821
+    second: Escudo Quebrando_22
+  - first:
+      213: 3416357690871103463
+    second: Escudo Quebrando_23
+  - first:
+      213: -871085214877172994
+    second: Escudo Quebrando_24
+  - first:
+      213: -6155758229865022956
+    second: Escudo Quebrando_25
+  - first:
+      213: 8029002764061194242
+    second: Escudo Quebrando_26
+  - first:
+      213: 8859313920758851334
+    second: Escudo Quebrando_27
+  - first:
+      213: -3003055971332407786
+    second: Escudo Quebrando_28
+  - first:
+      213: 6699126525090295446
+    second: Escudo Quebrando_29
+  - first:
+      213: 5537631319339528533
+    second: Escudo Quebrando_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Escudo Quebrando_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71019722d84cbcfe0800000000000000
+      internalID: -1167623567924719593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9b239ae03b676f0800000000000000
+      internalID: -687165017577834019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16ec57ecc93fc55a0800000000000000
+      internalID: -6531077504789787039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638dd3cfc2c75ec50800000000000000
+      internalID: 6693892953808427062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269ddc221eb3d6c60800000000000000
+      internalID: 7812966766695274850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a198eb589bf2110800000000000000
+      internalID: 1238412406628620884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f63776fcfb667f7c0800000000000000
+      internalID: -4037645566909910161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60d07d48995fe830800000000000000
+      internalID: 4102596296226951276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab457b66e2121fe0800000000000000
+      internalID: -1219891768209355872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escudo Quebrando_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ba68dead879ba70800000000000000
+      internalID: 8843232225001909090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42cbcfb7b16f2944f8b9474028f18adb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Escudo Quebrando_0: -1167623567924719593
+      Escudo Quebrando_1: -687165017577834019
+      Escudo Quebrando_2: -6531077504789787039
+      Escudo Quebrando_3: 6693892953808427062
+      Escudo Quebrando_4: 7812966766695274850
+      Escudo Quebrando_5: 1238412406628620884
+      Escudo Quebrando_6: -4037645566909910161
+      Escudo Quebrando_7: 4102596296226951276
+      Escudo Quebrando_8: -1219891768209355872
+      Escudo Quebrando_9: 8843232225001909090
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
