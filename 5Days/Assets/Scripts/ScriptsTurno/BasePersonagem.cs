@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using System.Data;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
@@ -66,22 +67,23 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             {
                 if (aliado.isDefending)
                 {
-                    vidaAtual -= damage / 2;
-                    int shieldDamage = damage / 2;
-                    TextPopup.instance.GerarTexto("-" + shieldDamage.ToString(), transform.position, 0, Color.red);
+                    damage = damage / 2;
+                    vidaAtual -= damage;
+
                 }
                 else
                 {
                     vidaAtual -= damage;
-                    TextPopup.instance.GerarTexto("-" + damage.ToString(), transform.position, 0, Color.red);
                 }
             }
             else
             {
                 vidaAtual -= damage;
-                TextPopup.instance.GerarTexto("-" + damage.ToString(), transform.position, 0, Color.red);
             }
+
+            TextPopup.instance.GerarTexto("-" + damage.ToString(), transform.position, 0, Color.red);
             StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
+
             if(shakeCamera)
             StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.05f));
 

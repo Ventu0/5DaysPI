@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class InteractButtonsController : MonoBehaviour
 {
@@ -69,7 +70,7 @@ public class InteractButtonsController : MonoBehaviour
             if (ataques[i] != null)
             {
                 attacksText[i].text = ataques[i].name;
-                attackIcons[i].sprite = ataques[i].iconeAtaque;
+                if(attackIcons != null) attackIcons[i].sprite = ataques[i].iconeAtaque;
             }
             else
             {
@@ -87,6 +88,8 @@ public class InteractButtonsController : MonoBehaviour
 
     public void SetMove(int whatMove)
     {
+        if(ataques[whatMove] == null) return;
+
         chosenAttack = whatMove;
         BasePersonagem alvo = TurnModeManager.instance.EncontrarAlvo();
         if (alvo != null)
@@ -95,7 +98,7 @@ public class InteractButtonsController : MonoBehaviour
         {
             SelectTarget selectTarget = SelectTarget.instance;
             selectTarget.targets = new List<BasePersonagem>(TurnModeManager.instance.inimigosPersonagens);
-            InteractButtonsController.instance.menu.SetActive(false);
+            menu.SetActive(false);
 
             selectTarget.StartSelecting();
         }
