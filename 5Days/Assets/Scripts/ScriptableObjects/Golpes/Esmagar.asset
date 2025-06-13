@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
-  m_Name: Soco
+  m_Name: Esmagar
   m_EditorClassIdentifier: 
-  dano: 30
-  nomeAtaque: Soco
-  iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
-  attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
-  animation: {fileID: 0}
+  dano: 20
+  nomeAtaque: Esmagar
+  iconeAtaque: {fileID: 8232695534017358868, guid: 10dc84ebd71f59f40812f0375c66b1da, type: 3}
+  attackEffect: {fileID: -4333323723195929695, guid: 4014e03860ab26740bf697ca13c71209, type: 3}
+  animation: {fileID: 9100000, guid: 664d3beb069041c4b8cc52d507bab2f0, type: 2}
   efeitoSecundario: {fileID: 0}
-  soundEffect: {fileID: 8300000, guid: 3faa760b5a64098408ec8f2832cbec19, type: 3}
-  shakeCamera: 0
-  ataqueEmArea: 0
+  soundEffect: {fileID: 0}
+  shakeCamera: 1
+  ataqueEmArea: 1

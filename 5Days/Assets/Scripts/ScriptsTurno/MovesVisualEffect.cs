@@ -64,7 +64,6 @@ public class MovesVisualEffect : MonoBehaviour
         effectPosition.x += 0.1f;
         spriteRenderer.sprite = effectSprite;
         effect.transform.position = effectPosition;
-
         yield return new WaitForSeconds(0.7f);
         Destroy(effect);
     }
