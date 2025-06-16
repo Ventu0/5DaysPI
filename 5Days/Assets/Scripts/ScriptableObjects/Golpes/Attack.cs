@@ -11,6 +11,8 @@ public abstract class Attack : ScriptableObject
     public int danoOuCura;
     public float effectsDuration = 1f;
     [Tooltip("tempo em segundos para a duração do efeito visual")]
+    public int quantidadesDeAtaque = 1;
+    [Tooltip("Quantidades de ataque executado em sequência")]
     public string nomeAtaque;
     public Sprite iconeAtaque;
     public Sprite attackEffect;

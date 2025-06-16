@@ -15,7 +15,7 @@ MonoBehaviour:
   danoOuCura: 20
   effectsDuration: 1
   nomeAtaque: Curar
-  iconeAtaque: {fileID: 0}
+  iconeAtaque: {fileID: -4423450090214009036, guid: 9ecd82581d43d4b44bf5310b08bb53b2, type: 3}
   attackEffect: {fileID: -8987271427450927229, guid: b5c43de9ed8df2b44a8fd4b7dc76e539, type: 3}
   tipoDeAlvo: 2
   animation: {fileID: 9100000, guid: 8c1b80898f2fbe0469af492e79bda716, type: 2}
