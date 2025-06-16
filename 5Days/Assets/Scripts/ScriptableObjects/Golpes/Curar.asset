@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Curar
   m_EditorClassIdentifier: 
   danoOuCura: 20
+  effectsDuration: 1
   nomeAtaque: Curar
   iconeAtaque: {fileID: 0}
   attackEffect: {fileID: -8987271427450927229, guid: b5c43de9ed8df2b44a8fd4b7dc76e539, type: 3}
@@ -24,3 +25,5 @@ MonoBehaviour:
   ataqueNeutro: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  changeColorWhileApplyingEffect: 1
+  healingColor: {r: 0, g: 1, b: 0, a: 1}

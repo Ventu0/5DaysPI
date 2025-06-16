@@ -104,7 +104,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         turnEnded = true;
         TurnModeManager.instance.CheckIfAllCharactersAttacked();
     }
-    void UpdateLife()
+    public void UpdateLife()
     {
         if (CheckIfHasLife())
         {
