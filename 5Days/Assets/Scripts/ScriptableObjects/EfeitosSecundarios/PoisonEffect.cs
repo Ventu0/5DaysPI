@@ -28,7 +28,7 @@ public class PoisonEffect : Effect
         }
         SFX.instance.PlaySFX(poisonSound, 1f);
         MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
-        TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, 29, poisonColor);
+        TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, poisonColor, 29);
         character.TakeDamage(damagePerTurn, false);
         
     }

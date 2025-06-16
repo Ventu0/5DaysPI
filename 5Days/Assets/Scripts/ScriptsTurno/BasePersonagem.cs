@@ -81,7 +81,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
                 vidaAtual -= damage;
             }
 
-            TextPopup.instance.GerarTexto("-" + damage.ToString(), transform.position, 0, Color.red);
+            TextPopup.instance.GerarTexto("-" + damage.ToString(), transform.position, Color.red);
             StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
 
             if(shakeCamera)
@@ -98,6 +98,11 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             TurnModeManager.instance.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
             Destroy(gameObject);
         }
+    }
+    public void EndTurn()
+    {
+        turnEnded = true;
+        TurnModeManager.instance.CheckIfAllCharactersAttacked();
     }
     void UpdateLife()
     {

@@ -36,7 +36,6 @@ public class CharacterMovement : MonoBehaviour
             float iterador = 0;
             Transform characterTransform = characterToMove.transform;
             Vector2 initialPos = characterTransform.position;
-            print("characterDuration = " + duration);
             while (iterador < duration)
             {
                 float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));

@@ -10,8 +10,9 @@ public class MovesVisualEffect : MonoBehaviour
 
     Sprite effectSprite;
     Vector2 effectPosition;
-    public static MovesVisualEffect instance;
     RuntimeAnimatorController controllerAnimation;
+    float effectDuration;
+    public static MovesVisualEffect instance;
     private void Awake()
     {
         if (instance == null)
@@ -24,10 +25,11 @@ public class MovesVisualEffect : MonoBehaviour
         spriteRenderer = attackEffect.GetComponent<SpriteRenderer>();
         animator = attackEffect.GetComponent<Animator>();
     }
-    public void AttackEffect(Sprite spriteEffect, Vector2 positionEffect, RuntimeAnimatorController animatorController, bool playInFront)
+    public void AttackEffect(Sprite spriteEffect, Vector2 positionEffect, RuntimeAnimatorController animatorController, bool playInFront, float duration = 0.7f)
     {
         controllerAnimation = animatorController;
         effectSprite = spriteEffect;
+        effectDuration = duration;
         effectPosition = new Vector2(positionEffect.x, positionEffect.y - 0.5f);
         if(playInFront)
         StartCoroutine(PlayAttackEffectInFront());
@@ -52,17 +54,16 @@ public class MovesVisualEffect : MonoBehaviour
         spriteRenderer.sprite = effectSprite;
         attackEffect.transform.position = effectPosition;
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(effectDuration);
         attackEffect.SetActive(false);
     }
     IEnumerator PlayAttackEffectInPosition()
     {
         GameObject effect = Instantiate(attackEffect, effectPosition, transform.rotation);
-        //effect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         effect.GetComponent<Animator>().runtimeAnimatorController = controllerAnimation;
         effect.SetActive(true);
         effect.transform.position = effectPosition;
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(effectDuration);
         Destroy(effect);
     }
 }

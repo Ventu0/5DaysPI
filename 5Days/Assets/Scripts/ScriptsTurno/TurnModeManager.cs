@@ -27,8 +27,8 @@ public class TurnModeManager : MonoBehaviour
     public Turnos turno;
 
     //variaveis invisiveis
-    [HideInInspector] public List<BasePersonagem> aliadosPersonagens;
-     public List<BasePersonagem> inimigosPersonagens;
+    public List<BasePersonagem> aliadosPersonagens;
+    public List<BasePersonagem> inimigosPersonagens;
     public static TurnModeManager instance;
     private void Awake()
     {
@@ -46,7 +46,6 @@ public class TurnModeManager : MonoBehaviour
     {
         InteractButtonsController.instance.ataques = QuemEstaAtacando().characterStatus.ataques;
         InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
-        print("primeiro ataque do aliado");
     }
     void Update()
     {
@@ -81,7 +80,6 @@ public class TurnModeManager : MonoBehaviour
             {
                 turno = Turnos.EnemyTurn;
                 InteractButtonsController.instance.menu.SetActive(false);
-                print(turno);
                 turnoDeQualPersonagem = 0;
                 inimigos[turnoDeQualPersonagem].Attack();
             }
@@ -107,7 +105,7 @@ public class TurnModeManager : MonoBehaviour
                 {
                     inimigosPersonagens[i].turnEnded = false;
                 }
-                InteractButtonsController.instance.SetupMenu(aliados[turnoDeQualPersonagem].transform.position);
+                InteractButtonsController.instance.NextPlayer();
                 for (int i = 0; i < aliadosPersonagens.Count; i++)
                 {
                     aliados[i].shield.SetActive(false);
@@ -116,6 +114,7 @@ public class TurnModeManager : MonoBehaviour
                     aliadosPersonagens[i].turnEnded = false;
                 }
                 InteractButtonsController.instance.menu.SetActive(true);
+                InteractButtonsController.instance.attackMenuAnim.gameObject.SetActive(false);
             }
             else if (!JaAtacaram(inimigosPersonagens))
             {
@@ -138,10 +137,10 @@ public class TurnModeManager : MonoBehaviour
     {
         List<BasePersonagem> personagems = turno == Turnos.PlayerTurn ? aliadosPersonagens : turno == Turnos.EnemyTurn ? inimigosPersonagens : null;
         //verificador, se player turno for true, recebe aliadosPersonagens, se não, recebe inimigosPersonagens
-        if (personagems == null)
-            return null;
 
-        return !personagems[turnoDeQualPersonagem].turnEnded ? personagems[turnoDeQualPersonagem] : null;
+        BasePersonagem personagem = personagems[turnoDeQualPersonagem];
+
+        return personagem;
     }
     public BasePersonagem EncontrarAlvo()
     {

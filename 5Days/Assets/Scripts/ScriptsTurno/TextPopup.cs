@@ -34,7 +34,7 @@ public class TextPopup : MonoBehaviour
             textPool.Enqueue(text);
         }
     }
-    public void GerarTexto(string texto, Vector2 targetPos, float textSize, Color textColor)
+    public void GerarTexto(string texto, Vector2 targetPos, Color textColor, float textSize = 36f)
     {
         Transform textTransform = textPool.Dequeue();
         TextMeshProUGUI tmProText = tmproPool.Dequeue();
@@ -75,9 +75,5 @@ public class TextPopup : MonoBehaviour
         textPool.Enqueue(text);
         tmproPool.Enqueue(text.GetComponentInChildren<TextMeshProUGUI>());
         text.gameObject.SetActive(false);
-    }
-    void Update()
-    {
-        
     }
 }

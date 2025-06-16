@@ -2,7 +2,8 @@ using UnityEngine;
 public enum Alvo
 {
     Inimigo,
-    Aliado
+    Aliado,
+    Self
 }
 public abstract class Attack : ScriptableObject
 {

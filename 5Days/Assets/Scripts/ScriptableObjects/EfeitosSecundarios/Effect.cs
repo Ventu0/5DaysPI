@@ -8,12 +8,21 @@ public abstract class Effect : ScriptableObject
     public virtual void ApplyEffect(BasePersonagem alvo)
     {
 
+
+    }
+    public virtual void ApplyEffect(BasePersonagem alvo, int buffDebuffNumberQuantity)
+    {
+
     }
     public virtual void OnTurnStart()
     {
 
     }
     public virtual void RemoveEffect()
+    {
+
+    }
+    public virtual void OneTurnActivation()
     {
 
     }

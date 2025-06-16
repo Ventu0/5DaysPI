@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb6f06121f23fd4c94a839c03694efc, type: 3}
   m_Name: Curar
   m_EditorClassIdentifier: 
-  dano: 40
+  danoOuCura: 20
   nomeAtaque: Curar
   iconeAtaque: {fileID: 0}
-  attackEffect: {fileID: 0}
-  tipoDeAlvo: 1
-  animation: {fileID: 0}
-  animationPlayInFront: 1
-  efeitoSecundario: {fileID: 0}
+  attackEffect: {fileID: -8987271427450927229, guid: b5c43de9ed8df2b44a8fd4b7dc76e539, type: 3}
+  tipoDeAlvo: 2
+  animation: {fileID: 9100000, guid: 8c1b80898f2fbe0469af492e79bda716, type: 2}
+  animationPlayInFront: 0
+  efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
   soundEffect: {fileID: 0}
   ataqueNeutro: 0
   shakeCamera: 0

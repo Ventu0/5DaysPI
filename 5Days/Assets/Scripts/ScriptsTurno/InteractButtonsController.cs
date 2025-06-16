@@ -19,6 +19,7 @@ public class InteractButtonsController : MonoBehaviour
     [SerializeField] float menuDistance;
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
     //variaveis não-mostraveis
+    [SerializeField] TurnModeManager turnModeManager;
     [HideInInspector] public int chosenAttack;
     public static InteractButtonsController instance;
     private void Awake()
@@ -38,23 +39,25 @@ public class InteractButtonsController : MonoBehaviour
     }
     void Start()
     {
+        turnModeManager = TurnModeManager.instance;
         attackMenuAnim.gameObject.SetActive(false);
         attackButton.onClick.AddListener(OpenMenu);
     }
     public void OpenMenu()
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);
-        print(TurnModeManager.instance.QuemEstaAtacando());
-        ataques = TurnModeManager.instance.QuemEstaAtacando().characterStatus.ataques;
+        print(turnModeManager.QuemEstaAtacando());
+        ataques = turnModeManager.QuemEstaAtacando().characterStatus.ataques;
+        EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
     }
     public void Defend()
     {
-        Aliados aliado = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Aliados>();
+        Aliados aliado = turnModeManager.QuemEstaAtacando().GetComponent<Aliados>();
         aliado.isDefending = true;
         
         aliado.shield.SetActive(true);
-        TurnModeManager.instance.QuemEstaAtacando().turnEnded = true;
-        TurnModeManager.instance.CheckIfAllCharactersAttacked();
+        turnModeManager.QuemEstaAtacando().turnEnded = true;
+        turnModeManager.CheckIfAllCharactersAttacked();
     }
     public void Run()
     {
@@ -62,6 +65,7 @@ public class InteractButtonsController : MonoBehaviour
     }
     public void SetupMenu(Vector2 newPos)
     {
+        if(turnModeManager.QuemEstaAtacando().characterStatus.ataques != null) ataques = turnModeManager.QuemEstaAtacando().characterStatus.ataques;
         menu.transform.position = new Vector2(newPos.x + menuDistance, newPos.y);
         for (int i = 0; i < attacksText.Length; i++)
         {
@@ -70,7 +74,7 @@ public class InteractButtonsController : MonoBehaviour
             if (ataques[i] != null)
             {
                 attacksText[i].text = ataques[i].name;
-                if(attackIcons != null) attackIcons[i].sprite = ataques[i].iconeAtaque;
+                if(ataques[i].iconeAtaque != null) attackIcons[i].sprite = ataques[i].iconeAtaque;
             }
             else
             {
@@ -82,24 +86,33 @@ public class InteractButtonsController : MonoBehaviour
     {
         menu.SetActive(true);
         attackMenuAnim.gameObject.SetActive(false);
-        SetupMenu(TurnModeManager.instance.QuemEstaAtacando().transform.position);
+        SetupMenu(turnModeManager.QuemEstaAtacando().transform.position);
         EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
     }
 
     public void SetMove(int whatMove)
     {
-        if(ataques[whatMove] == null) return;
+        Attack ataque = ataques[whatMove];
+        if(ataque == null) return;
 
         chosenAttack = whatMove;
-        BasePersonagem alvo = TurnModeManager.instance.EncontrarAlvo();
+        BasePersonagem alvo = turnModeManager.EncontrarAlvo();
+        if (ataque.tipoDeAlvo == Alvo.Self)
+        {
+            alvo = turnModeManager.QuemEstaAtacando();
+            Atacar(whatMove, alvo);
+            return;
+        }
+            
+
         if (alvo != null)
             Atacar(whatMove, alvo); 
         else
         {
             SelectTarget selectTarget = SelectTarget.instance;
             List<BasePersonagem> target = ataques[whatMove].tipoDeAlvo == Alvo.Inimigo 
-                ? new List<BasePersonagem>(TurnModeManager.instance.inimigosPersonagens) 
-                : new List<BasePersonagem>(TurnModeManager.instance.aliadosPersonagens);
+                ? new List<BasePersonagem>(turnModeManager.inimigosPersonagens)
+                : new List<BasePersonagem>(turnModeManager.aliadosPersonagens);
             menu.SetActive(false);
             selectTarget.targets = target;
 
