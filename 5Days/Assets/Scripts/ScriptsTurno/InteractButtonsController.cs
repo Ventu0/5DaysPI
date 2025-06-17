@@ -16,8 +16,10 @@ public class InteractButtonsController : MonoBehaviour
 
     [Header("Configurable")]
     [SerializeField] Image[] attackIcons = new Image[4];
-    [SerializeField] float menuDistance;
+    [SerializeField] Color[] attackColors = new Color[4];
+    [Tooltip("Cores de seleção dos botões de ataque, pode configurar com base na cor do icone do ataque")]
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
+    [SerializeField] float menuDistance;
     //variaveis não-mostraveis
     [SerializeField] TurnModeManager turnModeManager;
     [HideInInspector] public int chosenAttack;
