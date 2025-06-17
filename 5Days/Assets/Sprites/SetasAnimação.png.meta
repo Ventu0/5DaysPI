@@ -1,0 +1,2855 @@
+fileFormatVersion: 2
+guid: db4eabb8086be07438f5610b7e08d612
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3381916210605191175
+    second: "SetasAnima\xE7\xE3o_0"
+  - first:
+      213: -6996977524875924611
+    second: "SetasAnima\xE7\xE3o_1"
+  - first:
+      213: 339391105664128891
+    second: "SetasAnima\xE7\xE3o_2"
+  - first:
+      213: 480449778213661301
+    second: "SetasAnima\xE7\xE3o_3"
+  - first:
+      213: 8880058703220773801
+    second: "SetasAnima\xE7\xE3o_4"
+  - first:
+      213: 5645457755610896655
+    second: "SetasAnima\xE7\xE3o_5"
+  - first:
+      213: -1159276433469397908
+    second: "SetasAnima\xE7\xE3o_6"
+  - first:
+      213: 1697040154599166657
+    second: "SetasAnima\xE7\xE3o_7"
+  - first:
+      213: -3946338156502196027
+    second: "SetasAnima\xE7\xE3o_8"
+  - first:
+      213: 8451171186824817940
+    second: "SetasAnima\xE7\xE3o_9"
+  - first:
+      213: -29018696748385012
+    second: "SetasAnima\xE7\xE3o_10"
+  - first:
+      213: 6890866873302110232
+    second: "SetasAnima\xE7\xE3o_11"
+  - first:
+      213: 6089737101790539867
+    second: "SetasAnima\xE7\xE3o_12"
+  - first:
+      213: -6012814401955302511
+    second: "SetasAnima\xE7\xE3o_13"
+  - first:
+      213: 2411587189510121304
+    second: "SetasAnima\xE7\xE3o_14"
+  - first:
+      213: -1647613859686763050
+    second: "SetasAnima\xE7\xE3o_15"
+  - first:
+      213: -5494768884362103040
+    second: "SetasAnima\xE7\xE3o_16"
+  - first:
+      213: -3609907662647527301
+    second: "SetasAnima\xE7\xE3o_17"
+  - first:
+      213: -2381573991327812731
+    second: "SetasAnima\xE7\xE3o_18"
+  - first:
+      213: 6198960090194901086
+    second: "SetasAnima\xE7\xE3o_19"
+  - first:
+      213: -1928203423573914624
+    second: "SetasAnima\xE7\xE3o_20"
+  - first:
+      213: -7475666848204235030
+    second: "SetasAnima\xE7\xE3o_21"
+  - first:
+      213: -8231580193013859505
+    second: "SetasAnima\xE7\xE3o_22"
+  - first:
+      213: -992927089727255975
+    second: "SetasAnima\xE7\xE3o_23"
+  - first:
+      213: -2628891484316450383
+    second: "SetasAnima\xE7\xE3o_24"
+  - first:
+      213: -6447006946785076792
+    second: "SetasAnima\xE7\xE3o_25"
+  - first:
+      213: 6797755838804784418
+    second: "SetasAnima\xE7\xE3o_26"
+  - first:
+      213: 1903645000895985298
+    second: "SetasAnima\xE7\xE3o_27"
+  - first:
+      213: 1712049143309640538
+    second: "SetasAnima\xE7\xE3o_28"
+  - first:
+      213: 4025573020051979042
+    second: "SetasAnima\xE7\xE3o_29"
+  - first:
+      213: -214027531257802427
+    second: "SetasAnima\xE7\xE3o_30"
+  - first:
+      213: 6372577322922345623
+    second: "SetasAnima\xE7\xE3o_31"
+  - first:
+      213: -4725838361385628593
+    second: "SetasAnima\xE7\xE3o_32"
+  - first:
+      213: 6112083934917521337
+    second: "SetasAnima\xE7\xE3o_33"
+  - first:
+      213: 2859405429809022616
+    second: "SetasAnima\xE7\xE3o_34"
+  - first:
+      213: 3261108733024755471
+    second: "SetasAnima\xE7\xE3o_35"
+  - first:
+      213: 1906486356886039633
+    second: "SetasAnima\xE7\xE3o_36"
+  - first:
+      213: 8358233091709206235
+    second: "SetasAnima\xE7\xE3o_37"
+  - first:
+      213: 6713347116120605016
+    second: "SetasAnima\xE7\xE3o_38"
+  - first:
+      213: -3703999839459784119
+    second: "SetasAnima\xE7\xE3o_39"
+  - first:
+      213: 8660832719497996543
+    second: "SetasAnima\xE7\xE3o_40"
+  - first:
+      213: 6374647945533100920
+    second: "SetasAnima\xE7\xE3o_41"
+  - first:
+      213: 4915007907035674522
+    second: "SetasAnima\xE7\xE3o_42"
+  - first:
+      213: 5312371828516224702
+    second: "SetasAnima\xE7\xE3o_43"
+  - first:
+      213: -7383686778642935709
+    second: "SetasAnima\xE7\xE3o_44"
+  - first:
+      213: -7824317062487338906
+    second: "SetasAnima\xE7\xE3o_45"
+  - first:
+      213: -8645925410805947321
+    second: "SetasAnima\xE7\xE3o_46"
+  - first:
+      213: 5657885233822719525
+    second: "SetasAnima\xE7\xE3o_47"
+  - first:
+      213: -5920389845893872621
+    second: "SetasAnima\xE7\xE3o_48"
+  - first:
+      213: -5783459946033205242
+    second: "SetasAnima\xE7\xE3o_49"
+  - first:
+      213: -5572234823951375909
+    second: "SetasAnima\xE7\xE3o_50"
+  - first:
+      213: 6906275617841620209
+    second: "SetasAnima\xE7\xE3o_51"
+  - first:
+      213: 577830791851294464
+    second: "SetasAnima\xE7\xE3o_52"
+  - first:
+      213: 1472370307573887128
+    second: "SetasAnima\xE7\xE3o_53"
+  - first:
+      213: 2823190685491935730
+    second: "SetasAnima\xE7\xE3o_54"
+  - first:
+      213: -5548958228817977036
+    second: "SetasAnima\xE7\xE3o_55"
+  - first:
+      213: 2578191621566201127
+    second: "SetasAnima\xE7\xE3o_56"
+  - first:
+      213: 9032512675220721180
+    second: "SetasAnima\xE7\xE3o_57"
+  - first:
+      213: -6557528502835907109
+    second: "SetasAnima\xE7\xE3o_58"
+  - first:
+      213: -6992714980555814743
+    second: "SetasAnima\xE7\xE3o_59"
+  - first:
+      213: -6010704307344468520
+    second: "SetasAnima\xE7\xE3o_60"
+  - first:
+      213: 4355644716096848256
+    second: "SetasAnima\xE7\xE3o_61"
+  - first:
+      213: 4571643217788283542
+    second: "SetasAnima\xE7\xE3o_62"
+  - first:
+      213: 4446475870942937586
+    second: "SetasAnima\xE7\xE3o_63"
+  - first:
+      213: 4839564536345547238
+    second: "SetasAnima\xE7\xE3o_64"
+  - first:
+      213: 6112258487131073207
+    second: "SetasAnima\xE7\xE3o_65"
+  - first:
+      213: 2407385583111016484
+    second: "SetasAnima\xE7\xE3o_66"
+  - first:
+      213: 1972411384367056082
+    second: "SetasAnima\xE7\xE3o_67"
+  - first:
+      213: 8380861269298057767
+    second: "SetasAnima\xE7\xE3o_68"
+  - first:
+      213: 6764023860040845167
+    second: "SetasAnima\xE7\xE3o_69"
+  - first:
+      213: 7161155541254172376
+    second: "SetasAnima\xE7\xE3o_70"
+  - first:
+      213: 690247539122225336
+    second: "SetasAnima\xE7\xE3o_71"
+  - first:
+      213: 5030044657381053855
+    second: "SetasAnima\xE7\xE3o_72"
+  - first:
+      213: -2686498674222098623
+    second: "SetasAnima\xE7\xE3o_73"
+  - first:
+      213: -3162166534048748157
+    second: "SetasAnima\xE7\xE3o_74"
+  - first:
+      213: 3346956729879119438
+    second: "SetasAnima\xE7\xE3o_75"
+  - first:
+      213: -2232423250262021443
+    second: "SetasAnima\xE7\xE3o_76"
+  - first:
+      213: 7800390100043654762
+    second: "SetasAnima\xE7\xE3o_77"
+  - first:
+      213: 8326881220079076216
+    second: "SetasAnima\xE7\xE3o_78"
+  - first:
+      213: 2325118386369782407
+    second: "SetasAnima\xE7\xE3o_79"
+  - first:
+      213: 6249739120868614378
+    second: "SetasAnima\xE7\xE3o_80"
+  - first:
+      213: 7332852204347441222
+    second: "SetasAnima\xE7\xE3o_81"
+  - first:
+      213: 1647466753783200100
+    second: "SetasAnima\xE7\xE3o_82"
+  - first:
+      213: -6132237402071280362
+    second: "SetasAnima\xE7\xE3o_83"
+  - first:
+      213: -2419273798473282827
+    second: "SetasAnima\xE7\xE3o_84"
+  - first:
+      213: -3947018150785128920
+    second: "SetasAnima\xE7\xE3o_85"
+  - first:
+      213: 6101740431464054426
+    second: "SetasAnima\xE7\xE3o_86"
+  - first:
+      213: 2028888438436662410
+    second: "SetasAnima\xE7\xE3o_87"
+  - first:
+      213: 555824051370224116
+    second: "SetasAnima\xE7\xE3o_88"
+  - first:
+      213: -6685771162329840905
+    second: "SetasAnima\xE7\xE3o_89"
+  - first:
+      213: -1958472677182591440
+    second: "SetasAnima\xE7\xE3o_90"
+  - first:
+      213: -792712818651917567
+    second: "SetasAnima\xE7\xE3o_91"
+  - first:
+      213: -1363337641022477495
+    second: "SetasAnima\xE7\xE3o_92"
+  - first:
+      213: -5444847584436258380
+    second: "SetasAnima\xE7\xE3o_93"
+  - first:
+      213: 678748204896116635
+    second: "SetasAnima\xE7\xE3o_94"
+  - first:
+      213: -5476111783125782866
+    second: "SetasAnima\xE7\xE3o_95"
+  - first:
+      213: -7731363971931159950
+    second: "SetasAnima\xE7\xE3o_96"
+  - first:
+      213: -8895993177402042395
+    second: "SetasAnima\xE7\xE3o_97"
+  - first:
+      213: -2961339723170852373
+    second: "SetasAnima\xE7\xE3o_98"
+  - first:
+      213: -6157868596714668720
+    second: "SetasAnima\xE7\xE3o_99"
+  - first:
+      213: -789190354283169158
+    second: "SetasAnima\xE7\xE3o_100"
+  - first:
+      213: 1214928156958548300
+    second: "SetasAnima\xE7\xE3o_101"
+  - first:
+      213: -6760021785504164594
+    second: "SetasAnima\xE7\xE3o_102"
+  - first:
+      213: 383993411741947694
+    second: "SetasAnima\xE7\xE3o_103"
+  - first:
+      213: 849886800885650832
+    second: "SetasAnima\xE7\xE3o_104"
+  - first:
+      213: -8219403991637942167
+    second: "SetasAnima\xE7\xE3o_105"
+  - first:
+      213: 2347635563905587189
+    second: "SetasAnima\xE7\xE3o_106"
+  - first:
+      213: 3448471459965597921
+    second: "SetasAnima\xE7\xE3o_107"
+  - first:
+      213: 5796356506299326356
+    second: "SetasAnima\xE7\xE3o_108"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_0"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 219
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700f14910eafeee20800000000000000
+      internalID: 3381916210605191175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_1"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 220
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7be060430eb5ee90800000000000000
+      internalID: -6996977524875924611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_2"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 220
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7799059962c5b400800000000000000
+      internalID: 339391105664128891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_3"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 222
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a27da1786eaa600800000000000000
+      internalID: 480449778213661301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_4"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 215
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3171e875e4c3b70800000000000000
+      internalID: 8880058703220773801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_5"
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 222
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0959a5fae1b85e40800000000000000
+      internalID: 5645457755610896655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_6"
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 215
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c642392d93c69efe0800000000000000
+      internalID: -1159276433469397908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_7"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 224
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2157087091d8710800000000000000
+      internalID: 1697040154599166657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_8"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 217
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0ed12fa5acb39c0800000000000000
+      internalID: -3946338156502196027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_9"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 212
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41da5be0b67984570800000000000000
+      internalID: 8451171186824817940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_10"
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 208
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0db77826a7e89ff0800000000000000
+      internalID: -29018696748385012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_11"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 213
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810dda179e641af50800000000000000
+      internalID: 6890866873302110232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_12"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 213
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50fdb711a7138450800000000000000
+      internalID: 6089737101790539867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_13"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 211
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193f91f98213e8ca0800000000000000
+      internalID: -6012814401955302511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_14"
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 213
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85722af85cda77120800000000000000
+      internalID: 2411587189510121304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_15"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 204
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d53c5e8cef7229e0800000000000000
+      internalID: -1647613859686763050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_16"
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 200
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0073abcefc8aeb3b0800000000000000
+      internalID: -5494768884362103040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_17"
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 193
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b78feef5b1807edc0800000000000000
+      internalID: -3609907662647527301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_18"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 199
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583b890b213f2fed0800000000000000
+      internalID: -2381573991327812731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_19"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 192
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58f3e8cb51270650800000000000000
+      internalID: 6198960090194901086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_20"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 201
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c4f2bc335ad35e0800000000000000
+      internalID: -1928203423573914624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_21"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 194
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee5f9dfb98114890800000000000000
+      internalID: -7475666848204235030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_22"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 201
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b744f5d6d83cd80800000000000000
+      internalID: -8231580193013859505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_23"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 194
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ac1f8921a6832f0800000000000000
+      internalID: -992927089727255975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_24"
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 202
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1c44c9f1d448bd0800000000000000
+      internalID: -2628891484316450383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_25"
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 195
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c95660f651a786a0800000000000000
+      internalID: -6447006946785076792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_26"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 197
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225fbc95bea765e50800000000000000
+      internalID: 6797755838804784418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_27"
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 160
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2967ad8da0b1b6a10800000000000000
+      internalID: 1903645000895985298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_28"
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 162
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a53abf000ab62c710800000000000000
+      internalID: 1712049143309640538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_29"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 160
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b38955555bdd730800000000000000
+      internalID: 4025573020051979042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_30"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 164
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5419933281f970df0800000000000000
+      internalID: -214027531257802427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_31"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 157
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7940f74df41ff6850800000000000000
+      internalID: 6372577322922345623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_32"
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 162
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4c02b38c037a6eb0800000000000000
+      internalID: -4725838361385628593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_33"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 166
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf6122a4fb72d450800000000000000
+      internalID: 6112083934917521337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_34"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 159
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8960790b616aea720800000000000000
+      internalID: 2859405429809022616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_35"
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 153
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f5dd55d19c14d20800000000000000
+      internalID: 3261108733024755471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_36"
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 149
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c22579d33357a10800000000000000
+      internalID: 1906486356886039633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_37"
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 155
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdefd3d86b86ef370800000000000000
+      internalID: 8358233091709206235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_38"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 153
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851034e12a99a2d50800000000000000
+      internalID: 6713347116120605016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_39"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 151
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a45e845cfb89cc0800000000000000
+      internalID: -3703999839459784119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_40"
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 155
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff822c8a875713870800000000000000
+      internalID: 8660832719497996543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_41"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 145
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8739ca9388c477850800000000000000
+      internalID: 6374647945533100920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_42"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 151
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97f81f86ad953440800000000000000
+      internalID: 4915007907035674522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_43"
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 146
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe7089280659b940800000000000000
+      internalID: 5312371828516224702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_44"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 140
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3605d3aceffd78990800000000000000
+      internalID: -7383686778642935709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_45"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 142
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6601a6036117a6390800000000000000
+      internalID: -7824317062487338906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_46"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 135
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744636e95a0830880800000000000000
+      internalID: -8645925410805947321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_47"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 143
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e5ee5b4a8d48e40800000000000000
+      internalID: 5657885233822719525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_48"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 136
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3148aaf7dcc86dda0800000000000000
+      internalID: -5920389845893872621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_49"
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 144
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600bdf732d50dbfa0800000000000000
+      internalID: -5783459946033205242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_50"
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 137
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1215953f17ba2b0800000000000000
+      internalID: -5572234823951375909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_51"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 138
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4246a551508df50800000000000000
+      internalID: 6906275617841620209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_52"
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 139
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f34903b0ed40800800000000000000
+      internalID: 577830791851294464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_53"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 133
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89036c86ef8ee6410800000000000000
+      internalID: 1472370307573887128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_54"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 101
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f930f578fcfd2720800000000000000
+      internalID: 2823190685491935730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_55"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 104
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431e2d9f3e32ef2b0800000000000000
+      internalID: -5548958228817977036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_56"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 97
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d7756be9397c320800000000000000
+      internalID: 2578191621566201127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_57"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 102
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e8ebbfb6ee95d70800000000000000
+      internalID: 9032512675220721180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_58"
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 95
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd577f7e19afef4a0800000000000000
+      internalID: -6557528502835907109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_59"
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 104
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a80b6036c2e4fe90800000000000000
+      internalID: -6992714980555814743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_60"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 105
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d592de4740b59ca0800000000000000
+      internalID: -6010704307344468520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_61"
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 98
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08182c6cacb527c30800000000000000
+      internalID: 4355644716096848256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_62"
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 105
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a2814f84db17f30800000000000000
+      internalID: 4571643217788283542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_63"
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 105
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f146e50f3e05bd30800000000000000
+      internalID: 4446475870942937586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_64"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 98
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e154700e46992340800000000000000
+      internalID: 4839564536345547238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_65"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 105
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba60dcb5ba13d450800000000000000
+      internalID: 6112258487131073207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_66"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 98
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4209ab6de60c86120800000000000000
+      internalID: 2407385583111016484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_67"
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 105
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4822c24b96f5b10800000000000000
+      internalID: 1972411384367056082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_68"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 94
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7221754bbecce4470800000000000000
+      internalID: 8380861269298057767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_69"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 89
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6740060dd3aedd50800000000000000
+      internalID: 6764023860040845167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_70"
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 90
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de66c9f509816360800000000000000
+      internalID: 7161155541254172376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_71"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 98
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0c770da70449900800000000000000
+      internalID: 690247539122225336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_72"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f959c8f27fe4ec540800000000000000
+      internalID: 5030044657381053855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_73"
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 91
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1471f6180b3a7bad0800000000000000
+      internalID: -2686498674222098623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_74"
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 98
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d65698a4abd14d0800000000000000
+      internalID: -3162166534048748157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_75"
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 83
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e464c03b967c27e20800000000000000
+      internalID: 3346956729879119438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_76"
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 84
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba2fcbb1e6d401e0800000000000000
+      internalID: -2232423250262021443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_77"
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 84
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66639eb77d804c60800000000000000
+      internalID: 7800390100043654762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_78"
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 90
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8734fa91a560f8370800000000000000
+      internalID: 8326881220079076216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_79"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 85
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782ec487ada744020800000000000000
+      internalID: 2325118386369782407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_80"
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 85
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae06c3e2e988bb650800000000000000
+      internalID: 6249739120868614378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_81"
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 85
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640c19e8a3683c560800000000000000
+      internalID: 7332852204347441222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_82"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 85
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469738ea84afcd610800000000000000
+      internalID: 1647466753783200100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_83"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 87
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6155d23a29ae5eaa0800000000000000
+      internalID: -6132237402071280362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_84"
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa07935c430d6ed0800000000000000
+      internalID: -2419273798473282827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_85"
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 76
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826ee6077ef5939c0800000000000000
+      internalID: -3947018150785128920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_86"
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 77
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ebd01189cbda450800000000000000
+      internalID: 6101740431464054426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_87"
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 77
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c0ae5094f082c10800000000000000
+      internalID: 2028888438436662410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_88"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 78
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f96a83a70fa6b700800000000000000
+      internalID: 555824051370224116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_89"
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 78
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f287c3fc8e5733a0800000000000000
+      internalID: -6685771162329840905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_90"
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 78
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e293ef97b12d4e0800000000000000
+      internalID: -1958472677182591440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_91"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1039a5334e7bff4f0800000000000000
+      internalID: -792712818651917567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_92"
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 80
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bafe583a3741de0800000000000000
+      internalID: -1363337641022477495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_93"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9788158f30074b0800000000000000
+      internalID: -5444847584436258380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_94"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 16
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f54cc65e56b6900800000000000000
+      internalID: 678748204896116635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_95"
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaee470d851f004b0800000000000000
+      internalID: -5476111783125782866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_96"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 36
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2724ac71e6da4b490800000000000000
+      internalID: -7731363971931159950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_97"
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 23
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e717a096551b8480800000000000000
+      internalID: -8895993177402042395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_98"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 30
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1d52d263537e6d0800000000000000
+      internalID: -2961339723170852373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_99"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 44
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05df947132bda8aa0800000000000000
+      internalID: -6157868596714668720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_100"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 37
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a79c8dd8b3c05f0800000000000000
+      internalID: -789190354283169158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_101"
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 18
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c416227c8ba4cd010800000000000000
+      internalID: 1214928156958548300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_102"
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 37
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e055f1190049f22a0800000000000000
+      internalID: -6760021785504164594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_103"
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 18
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2718f639f7345500800000000000000
+      internalID: 383993411741947694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_104"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 18
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0951512ea876bcb00800000000000000
+      internalID: 849886800885650832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_105"
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 21
+        width: 64
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9602efc2e9fceed80800000000000000
+      internalID: -8219403991637942167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_106"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 41
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f79aa86b1a749020800000000000000
+      internalID: 2347635563905587189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_107"
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 22
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e87255a58e6bdf20800000000000000
+      internalID: 3448471459965597921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SetasAnima\xE7\xE3o_108"
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 24
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49fde75388bc07050800000000000000
+      internalID: 5796356506299326356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

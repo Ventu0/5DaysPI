@@ -1,0 +1,733 @@
+fileFormatVersion: 2
+guid: ad87a8be74c7817438cee689222ca1da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7866795523874103367
+    second: Particula de seta_0
+  - first:
+      213: 7239480576586067981
+    second: Particula de seta_1
+  - first:
+      213: 2230651775803645910
+    second: Particula de seta_2
+  - first:
+      213: -6450902860939954471
+    second: Particula de seta_3
+  - first:
+      213: -6772463558428257098
+    second: Particula de seta_4
+  - first:
+      213: -6310088439960877295
+    second: Particula de seta_5
+  - first:
+      213: 6600539604333928839
+    second: Particula de seta_6
+  - first:
+      213: -9103057358803802599
+    second: Particula de seta_7
+  - first:
+      213: 2230545577893012039
+    second: Particula de seta_8
+  - first:
+      213: -6292153540593586282
+    second: Particula de seta_9
+  - first:
+      213: 6072995832050548547
+    second: Particula de seta_10
+  - first:
+      213: -4263027457434430579
+    second: Particula de seta_11
+  - first:
+      213: 8952801292574980403
+    second: Particula de seta_12
+  - first:
+      213: -6248969115432586590
+    second: Particula de seta_13
+  - first:
+      213: -4718541137772448333
+    second: Particula de seta_14
+  - first:
+      213: -4079287365824518367
+    second: Particula de seta_15
+  - first:
+      213: -3555641186384143817
+    second: Particula de seta_16
+  - first:
+      213: -3471631341103292132
+    second: Particula de seta_17
+  - first:
+      213: -5394216671204549718
+    second: Particula de seta_18
+  - first:
+      213: -7957955885481631277
+    second: Particula de seta_19
+  - first:
+      213: -5445976000786999299
+    second: Particula de seta_20
+  - first:
+      213: -7710711048858158137
+    second: Particula de seta_21
+  - first:
+      213: -4080978003643986276
+    second: Particula de seta_22
+  - first:
+      213: 3453609449292244585
+    second: Particula de seta_23
+  - first:
+      213: 6791710917577578046
+    second: Particula de seta_24
+  - first:
+      213: 2545955996996412859
+    second: Particula de seta_25
+  - first:
+      213: -2912321843464591842
+    second: Particula de seta_26
+  - first:
+      213: 374478763519920836
+    second: Particula de seta_27
+  - first:
+      213: 1755663972547975307
+    second: Particula de seta_28
+  - first:
+      213: -4420427151135631157
+    second: Particula de seta_29
+  - first:
+      213: 1509028915263583374
+    second: Particula de seta_30
+  - first:
+      213: 4167240701083722776
+    second: Particula de seta_31
+  - first:
+      213: -923079598851538072
+    second: Particula de seta_32
+  - first:
+      213: -2696030149866507321
+    second: Particula de seta_33
+  - first:
+      213: -5273267024358466489
+    second: Particula de seta_34
+  - first:
+      213: 2357381781185807040
+    second: Particula de seta_35
+  - first:
+      213: -4529480300626229991
+    second: Particula de seta_36
+  - first:
+      213: -5943143813318686466
+    second: Particula de seta_37
+  - first:
+      213: 8709190571369966326
+    second: Particula de seta_38
+  - first:
+      213: -3577820037215036702
+    second: Particula de seta_39
+  - first:
+      213: -6970680708307134293
+    second: Particula de seta_40
+  - first:
+      213: -2472101007522557031
+    second: Particula de seta_41
+  - first:
+      213: 2899024031449934915
+    second: Particula de seta_42
+  - first:
+      213: 6383677447628673282
+    second: Particula de seta_43
+  - first:
+      213: -780600481529813497
+    second: Particula de seta_44
+  - first:
+      213: 3594880045344675444
+    second: Particula de seta_45
+  - first:
+      213: -8973888233821482950
+    second: Particula de seta_46
+  - first:
+      213: -673904682070159732
+    second: Particula de seta_47
+  - first:
+      213: -6352009595296608350
+    second: Particula de seta_48
+  - first:
+      213: 2775532938898683791
+    second: Particula de seta_49
+  - first:
+      213: -5057824912095825692
+    second: Particula de seta_50
+  - first:
+      213: -8075865980066476811
+    second: Particula de seta_51
+  - first:
+      213: 3630437132725357885
+    second: Particula de seta_52
+  - first:
+      213: -6738372069648605481
+    second: Particula de seta_53
+  - first:
+      213: 5071656447402806398
+    second: Particula de seta_54
+  - first:
+      213: 6341363173188499268
+    second: Particula de seta_55
+  - first:
+      213: 2067960000330913988
+    second: Particula de seta_56
+  - first:
+      213: 3589471796752335450
+    second: Particula de seta_57
+  - first:
+      213: -2938335171058713966
+    second: Particula de seta_58
+  - first:
+      213: -5106383736453443269
+    second: Particula de seta_59
+  - first:
+      213: 5216575597882537469
+    second: Particula de seta_60
+  - first:
+      213: 3841877401044394942
+    second: Particula de seta_61
+  - first:
+      213: -8513797564162224771
+    second: Particula de seta_62
+  - first:
+      213: -5494747254106256779
+    second: Particula de seta_63
+  - first:
+      213: 225157891646932733
+    second: Particula de seta_64
+  - first:
+      213: 6962805181532093808
+    second: Particula de seta_65
+  - first:
+      213: -1066911109274473528
+    second: Particula de seta_66
+  - first:
+      213: -1483957469145210665
+    second: Particula de seta_67
+  - first:
+      213: 5561967507091671360
+    second: Particula de seta_68
+  - first:
+      213: -830927118714716390
+    second: Particula de seta_69
+  - first:
+      213: 8957016496951861446
+    second: Particula de seta_70
+  - first:
+      213: 7101572857597272463
+    second: Particula de seta_71
+  - first:
+      213: 2394573261085161114
+    second: Particula de seta_72
+  - first:
+      213: 6484772932113979494
+    second: Particula de seta_73
+  - first:
+      213: 6241977919727390522
+    second: Particula de seta_74
+  - first:
+      213: -2486724810904410809
+    second: Particula de seta_75
+  - first:
+      213: 6699370391535567696
+    second: Particula de seta_76
+  - first:
+      213: -1870007262938260183
+    second: Particula de seta_77
+  - first:
+      213: 2272618546939666699
+    second: Particula de seta_78
+  - first:
+      213: 6347640295789885818
+    second: Particula de seta_79
+  - first:
+      213: -3463590140991316125
+    second: Particula de seta_80
+  - first:
+      213: 2381701107261276774
+    second: Particula de seta_81
+  - first:
+      213: 172754710731695244
+    second: Particula de seta_82
+  - first:
+      213: 2875721906639927133
+    second: Particula de seta_83
+  - first:
+      213: 6982750739913907760
+    second: Particula de seta_84
+  - first:
+      213: 4865564371636907134
+    second: Particula de seta_85
+  - first:
+      213: -2738042114151805912
+    second: Particula de seta_86
+  - first:
+      213: 250932120631439377
+    second: Particula de seta_87
+  - first:
+      213: -6688825621256854746
+    second: Particula de seta_88
+  - first:
+      213: 4566048275140196804
+    second: Particula de seta_89
+  - first:
+      213: -8187473356458052331
+    second: Particula de seta_90
+  - first:
+      213: 990647524936428009
+    second: Particula de seta_91
+  - first:
+      213: 5593957455241981041
+    second: Particula de seta_92
+  - first:
+      213: 6949275447157074854
+    second: Particula de seta_93
+  - first:
+      213: 8493883264802305657
+    second: Particula de seta_94
+  - first:
+      213: 2624377069548323788
+    second: Particula de seta_95
+  - first:
+      213: -3483481790317427171
+    second: Particula de seta_96
+  - first:
+      213: -5429185447673437545
+    second: Particula de seta_97
+  - first:
+      213: -7383185289880508969
+    second: Particula de seta_98
+  - first:
+      213: 3895054355249188702
+    second: Particula de seta_99
+  - first:
+      213: -289294114103297862
+    second: Particula de seta_100
+  - first:
+      213: -7644819009733887584
+    second: Particula de seta_101
+  - first:
+      213: -2671399103339526546
+    second: Particula de seta_102
+  - first:
+      213: -7656721495218335527
+    second: Particula de seta_103
+  - first:
+      213: 2633560953077047363
+    second: Particula de seta_104
+  - first:
+      213: 6450556338114124831
+    second: Particula de seta_105
+  - first:
+      213: -6431583274020444434
+    second: Particula de seta_106
+  - first:
+      213: 2331720632303000572
+    second: Particula de seta_107
+  - first:
+      213: -4283026851028248007
+    second: Particula de seta_108
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Particula de seta_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740262159d87c2d60800000000000000
+      internalID: 7866795523874103367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00b0cd5a3dc77460800000000000000
+      internalID: 7239480576586067981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfde5ab8fdd4fe10800000000000000
+      internalID: 2230651775803645910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d67f1db60ac976a0800000000000000
+      internalID: -6450902860939954471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b41b9196406302a0800000000000000
+      internalID: -6772463558428257098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11745d20fff0e68a0800000000000000
+      internalID: -6310088439960877295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781a83a8cc3d99b50800000000000000
+      internalID: 6600539604333928839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9166e7eef817ba180800000000000000
+      internalID: -9103057358803802599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742a1a9926d74fe10800000000000000
+      internalID: 2230545577893012039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69fe3bc21b7cda8a0800000000000000
+      internalID: -6292153540593586282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ffccb788d974450800000000000000
+      internalID: 6072995832050548547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particula de seta_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8352eb2d1fa6d4c0800000000000000
+      internalID: -4263027457434430579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: acbc8e08d3ab5cd49a999b3c7fb396e4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Particula de seta_0: 7866795523874103367
+      Particula de seta_1: 7239480576586067981
+      Particula de seta_10: 6072995832050548547
+      Particula de seta_11: -4263027457434430579
+      Particula de seta_2: 2230651775803645910
+      Particula de seta_3: -6450902860939954471
+      Particula de seta_4: -6772463558428257098
+      Particula de seta_5: -6310088439960877295
+      Particula de seta_6: 6600539604333928839
+      Particula de seta_7: -9103057358803802599
+      Particula de seta_8: 2230545577893012039
+      Particula de seta_9: -6292153540593586282
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
