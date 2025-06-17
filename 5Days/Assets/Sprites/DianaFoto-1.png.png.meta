@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: db33303b20e7ffe4ab1e4901cd003de1
+guid: 72e7a752bac0d1e48bc554eb070e7d09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3268768941151584653
-    second: fundo menu_0
+      213: 5043542923769579383
+    second: DianaFoto-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fundo menu_0
+      name: DianaFoto-1.png_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 71
         y: 0
-        width: 1600
-        height: 1200
+        width: 100
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d818b2688000d5d20800000000000000
-      internalID: 3268768941151584653
+      spriteID: 77788bc31934ef540800000000000000
+      internalID: 5043542923769579383
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ce4cc8b4adfefbe46b7fdc4efe138063
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fundo menu_0: 3268768941151584653
+      DianaFoto-1.png_0: 5043542923769579383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
