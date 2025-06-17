@@ -16,12 +16,13 @@ public class InteractButtonsController : MonoBehaviour
 
     [Header("Configurable")]
     [SerializeField] Image[] attackIcons = new Image[4];
-    [SerializeField] Color[] attackColors = new Color[4];
     [Tooltip("Cores de seleção dos botões de ataque, pode configurar com base na cor do icone do ataque")]
+    [SerializeField] Button[] attackButtons = new Button[4];
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
     [SerializeField] float menuDistance;
+
     //variaveis não-mostraveis
-    [SerializeField] TurnModeManager turnModeManager;
+     TurnModeManager turnModeManager;
     [HideInInspector] public int chosenAttack;
     public static InteractButtonsController instance;
     private void Awake()
@@ -76,7 +77,18 @@ public class InteractButtonsController : MonoBehaviour
             if (ataques[i] != null)
             {
                 attacksText[i].text = ataques[i].name;
-                if(ataques[i].iconeAtaque != null) attackIcons[i].sprite = ataques[i].iconeAtaque;
+                attackButtons[i].interactable = true;
+                if (ataques[i].iconeAtaque != null)
+                {
+                    attackIcons[i].sprite = ataques[i].iconeAtaque;
+
+                    ColorBlock colors = attackButtons[i].colors;
+
+                    colors.highlightedColor = ataques[i].iconMainColor;
+                    colors.selectedColor = ataques[i].iconMainColor;
+
+                    attackButtons[i].colors = colors;
+                }
             }
             else
             {

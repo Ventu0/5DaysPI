@@ -4987,13 +4987,17 @@ MonoBehaviour:
   - {fileID: 1839107622}
   - {fileID: 1503355782}
   - {fileID: 545364687}
-  menuDistance: 3
+  attackButtons:
+  - {fileID: 47854260}
+  - {fileID: 1105539883}
+  - {fileID: 406774449}
+  - {fileID: 1179370945}
   originalSprites:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  turnModeManager: {fileID: 0}
+  menuDistance: 3
   chosenAttack: 0
 --- !u!1 &894911954
 GameObject:

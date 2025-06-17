@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Esmagar
   m_EditorClassIdentifier: 
   danoOuCura: 20
+  effectsDuration: 1
+  quantidadesDeAtaque: 1
   nomeAtaque: Esmagar
   iconeAtaque: {fileID: 8232695534017358868, guid: 10dc84ebd71f59f40812f0375c66b1da, type: 3}
+  iconMainColor: {r: 0.36078432, g: 0.19607845, b: 0, a: 1}
   attackEffect: {fileID: -4333323723195929695, guid: 4014e03860ab26740bf697ca13c71209, type: 3}
   tipoDeAlvo: 0
   animation: {fileID: 9100000, guid: 664d3beb069041c4b8cc52d507bab2f0, type: 2}

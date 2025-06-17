@@ -15,6 +15,7 @@ public abstract class Attack : ScriptableObject
     [Tooltip("Quantidades de ataque executado em sequência")]
     public string nomeAtaque;
     public Sprite iconeAtaque;
+    public Color iconMainColor = Color.yellow;
     public Sprite attackEffect;
     [Tooltip("Sprite do efeito visual (caso não possua animação, isto é obrigatório")]
     public Alvo tipoDeAlvo;

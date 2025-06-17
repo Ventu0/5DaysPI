@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Soco
   m_EditorClassIdentifier: 
   danoOuCura: 30
+  effectsDuration: 1
+  quantidadesDeAtaque: 1
   nomeAtaque: Soco
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
+  iconMainColor: {r: 0.79215693, g: 0, b: 0.2392157, a: 1}
   attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
   tipoDeAlvo: 0
   animation: {fileID: 0}
