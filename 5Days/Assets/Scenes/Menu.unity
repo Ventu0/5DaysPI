@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterTransform: {fileID: 1925298868}
+  jumpQuantity: 20
   bobbingDuration: 0.2
 --- !u!1 &1149069202
 GameObject:
@@ -1371,7 +1372,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 5331390490721706006, guid: ec0a9a7a33500f449a90a851892a37e8, type: 3}
-    m_PressedSprite: {fileID: -1981268770160298414, guid: ec0a9a7a33500f449a90a851892a37e8, type: 3}
+    m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

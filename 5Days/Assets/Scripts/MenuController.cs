@@ -6,6 +6,7 @@ using System.Collections;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] Transform characterTransform;
+    [SerializeField] float jumpQuantity = 10f;
     [SerializeField] float bobbingDuration = 0.5f;
     void Start()
     {
@@ -30,7 +31,7 @@ public class MenuController : MonoBehaviour
     IEnumerator BounceEffect(Transform tranform)
     {
         float iterador = 0;
-        Vector2 newPos = new Vector2(tranform.position.x, tranform.position.y + 10f);
+        Vector2 newPos = new Vector2(tranform.position.x, tranform.position.y + jumpQuantity);
         while (iterador < bobbingDuration)
         {
             iterador += Time.deltaTime / bobbingDuration;
@@ -39,7 +40,7 @@ public class MenuController : MonoBehaviour
         }
         yield return null;
         iterador = 0;
-        newPos = new Vector2(tranform.position.x, tranform.position.y - 10f);
+        newPos = new Vector2(tranform.position.x, tranform.position.y - jumpQuantity);
         while (iterador < bobbingDuration)
         {
             iterador += Time.deltaTime / bobbingDuration;
