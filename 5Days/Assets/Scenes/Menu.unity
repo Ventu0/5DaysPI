@@ -940,6 +940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed48f21a3f3a384e8146f12a16017bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterTransform: {fileID: 1925298868}
+  bobbingDuration: 0.2
 --- !u!1 &1149069202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,13 +1385,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1925298870}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
+      - m_Target: {fileID: 1088642449}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OnCharacterClick
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: -8480345711512835104, guid: fbec1b3446d32544188c6c993f732ee6, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

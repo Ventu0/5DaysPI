@@ -5,6 +5,7 @@ using System.Collections;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] Transform characterTransform;
     [SerializeField] float bobbingDuration = 0.5f;
     void Start()
     {
@@ -22,10 +23,14 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
+    public void OnCharacterClick()
+    {
+        StartCoroutine(BounceEffect(characterTransform));
+    }
     IEnumerator BounceEffect(Transform tranform)
     {
         float iterador = 0;
-        Vector2 newPos = new Vector2(tranform.position.x, tranform.position.y + 0.4f);
+        Vector2 newPos = new Vector2(tranform.position.x, tranform.position.y + 10f);
         while (iterador < bobbingDuration)
         {
             iterador += Time.deltaTime / bobbingDuration;
@@ -34,7 +39,7 @@ public class MenuController : MonoBehaviour
         }
         yield return null;
         iterador = 0;
-        newPos = new Vector2(tranform.position.x, tranform.position.y - 0.4f);
+        newPos = new Vector2(tranform.position.x, tranform.position.y - 10f);
         while (iterador < bobbingDuration)
         {
             iterador += Time.deltaTime / bobbingDuration;
