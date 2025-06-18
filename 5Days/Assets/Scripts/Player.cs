@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
 {
@@ -7,9 +8,11 @@ public class Player : CharacterStatus
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
+
     [Header("Interagir Com NPC")]
     [SerializeField] float raioDeInteração = 2;
     [SerializeField] LayerMask layerMaskInteração;
+    public Vector2 lastSavedPosition;
     bool isGamePaused;
     public static Player instance;
 
@@ -33,6 +36,10 @@ public class Player : CharacterStatus
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    public void SavePosition()
+    {
+        lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
+    }
     void PausePlayer()
     {
         if (!isGamePaused)
@@ -51,6 +58,7 @@ public class Player : CharacterStatus
             rb.linearVelocity = Vector2.zero;
             return;
         }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         anim.SetFloat("Horizontal", Mathf.Abs(horizontal));

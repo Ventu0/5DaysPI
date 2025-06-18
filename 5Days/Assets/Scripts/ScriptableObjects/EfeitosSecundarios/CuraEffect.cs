@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Cura/Nova cura")]
+[CreateAssetMenu(fileName = "CuraEffect", menuName = "ScriptableObjects/Effects/CuraEffect", order = 1)]
 public class CuraEffect : Effect
 {
     public override void ApplyEffect(BasePersonagem alvo, int buffDebuffNumberQuantity)

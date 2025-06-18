@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class EntrarEmCasa : MonoBehaviour
 {
     [SerializeField] string sceneName;
+    [SerializeField] bool usePlayerSavedPosition;
     void Start()
     {
         
@@ -17,7 +18,21 @@ public class EntrarEmCasa : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneName);
-            Player.instance.transform.position = Vector3.zero;
+            Player player = Player.instance;
+            if (usePlayerSavedPosition)
+            {
+                if (player.lastSavedPosition == Vector2.zero)
+                {
+                    player.transform.position = Vector2.zero;
+                } else
+                    player.transform.position = player.lastSavedPosition;
+            }
+            else
+            {
+                player.SavePosition();
+                player.transform.position = Vector2.zero;
+            }
+            
         }
     }
 }

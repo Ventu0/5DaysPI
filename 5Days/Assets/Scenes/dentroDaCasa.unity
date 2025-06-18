@@ -508,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: VilaIndio
+  usePlayerSavedPosition: 1
 --- !u!61 &346908534
 BoxCollider2D:
   m_ObjectHideFlags: 0

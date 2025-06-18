@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Venenos/Novo veneno")]
+[CreateAssetMenu(fileName = "PoisonEffect", menuName = "ScriptableObjects/Effects/PoisonEffect", order = 1)]
 public class PoisonEffect : Effect
 {
     [HideInInspector] public BasePersonagem character;
