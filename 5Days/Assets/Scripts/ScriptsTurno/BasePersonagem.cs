@@ -43,6 +43,9 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         Animator animator = GetComponent<Animator>();
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
+        if (characterStatus.characterSprite != null)
+            GetComponent<SpriteRenderer>().sprite = characterStatus.characterSprite;
+
         if (animator != null) animator.runtimeAnimatorController = characterStatus.animatorController;
         if (enemy != null) enemy.ataques = characterStatus.ataques;
 

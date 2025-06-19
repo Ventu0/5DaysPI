@@ -943,7 +943,7 @@ MonoBehaviour:
   clickSprite: {fileID: -1981268770160298414, guid: ec0a9a7a33500f449a90a851892a37e8, type: 3}
   characterTransform: {fileID: 1925298868}
   jumpQuantity: 20
-  bobbingDuration: 0.35
+  bobbingDuration: 0.3
 --- !u!1 &1149069202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,8 +1340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 174.25665, y: 0}
-  m_SizeDelta: {x: 53.5639, y: 30}
+  m_AnchoredPosition: {x: 174.25665, y: -0.31116}
+  m_SizeDelta: {x: 53.564, y: 30.021}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1925298869
 MonoBehaviour:

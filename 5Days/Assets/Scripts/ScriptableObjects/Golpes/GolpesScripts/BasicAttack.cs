@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 [CreateAssetMenu(menuName = "Ataque/AtaqueBásico")]
     public class BasicAttack : Attack
     {
+        [SerializeField] float stillDuration = 0.1f; //tempo parado na frente do inimigo
         TurnModeManager turnModeManager;
         public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
         {
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
 
         InteractButtonsController.instance.menu.SetActive(false);
-        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, quemEstaAtacando.shadow);
+        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, quemEstaAtacando.shadow, stillDuration * quantidadesDeAtaque);
         
 
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo

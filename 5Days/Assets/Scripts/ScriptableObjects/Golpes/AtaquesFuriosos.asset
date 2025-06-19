@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danoOuCura: 30
   effectsDuration: 0.5
-  quantidadesDeAtaque: 2
+  quantidadesDeAtaque: 4
   nomeAtaque: Ataques
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
+  iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
   tipoDeAlvo: 0
   animation: {fileID: 0}
@@ -26,3 +27,4 @@ MonoBehaviour:
   ataqueNeutro: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  stillDuration: 0.1

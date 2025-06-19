@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Lanceiro
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 1797109563838230265, guid: 0f93ba0687460e049816bbd4d68fb18d, type: 3}
-  "for\xE7a": 0
-  defesa: 0
   vidaMaxima: 130
   vidaAtual: 130
   ataques:
@@ -22,5 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 8055cad34bc684b46973c7b3bc787ed6, type: 2}
   isEnemy: 0

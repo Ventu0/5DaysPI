@@ -7,7 +7,7 @@ public enum Alvo
 }
 public abstract class Attack : ScriptableObject
 {
-    [Header("configurações Base")]
+    [Header("Configurações Base")]
     public int danoOuCura;
     public float effectsDuration = 1f;
     [Tooltip("tempo em segundos para a duração do efeito visual")]

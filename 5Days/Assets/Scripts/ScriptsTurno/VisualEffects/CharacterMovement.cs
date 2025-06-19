@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 public class CharacterMovement : MonoBehaviour
 {
+    float standingStillDuration;
     public static CharacterMovement instance;
     
     void Awake()
@@ -16,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void Move(BasePersonagem characterToMove, Vector2 newPos, float duration, Transform shadow)
+    public void Move(BasePersonagem characterToMove, Vector2 newPos, float duration, Transform shadow, float stillDuration)
     {
         Turnos turno = TurnModeManager.instance.turno;
         if (turno == Turnos.EnemyTurn)
@@ -24,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
         else if (turno == Turnos.PlayerTurn)
             newPos.x -= 3;
 
+        standingStillDuration = stillDuration;
         StartCoroutine(AllyMove(characterToMove, newPos, duration));
         if(shadow != null)
         {
@@ -45,7 +47,7 @@ public class CharacterMovement : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(standingStillDuration);
 
             iterador = 0;
             while (iterador < duration)
@@ -71,7 +73,7 @@ public class CharacterMovement : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(standingStillDuration);
 
         iterador = 0;
         while(iterador < duration)

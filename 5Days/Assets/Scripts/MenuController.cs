@@ -12,6 +12,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] float bobbingDuration = 0.5f;
     Image objectImage;
     Sprite originalSprite;
+    Coroutine routine;
     void Start()
     {
         objectImage = characterTransform.GetComponent<Image>();
@@ -31,7 +32,11 @@ public class MenuController : MonoBehaviour
     }
     public void OnCharacterClick()
     {
-        StartCoroutine(BounceEffect(characterTransform));
+        if (routine != null)
+            return; 
+        else if (routine == null)
+            routine = StartCoroutine(BounceEffect(characterTransform));
+
     }
     IEnumerator BounceEffect(Transform tranform)
     {
@@ -55,6 +60,8 @@ public class MenuController : MonoBehaviour
             tranform.position = Vector2.Lerp(tranform.position, newPos, iterador);
             yield return null;
         }
+        yield return new WaitForSeconds(0.4f);
+        routine = null;
         objectImage.sprite = originalSprite;
     }
 }
