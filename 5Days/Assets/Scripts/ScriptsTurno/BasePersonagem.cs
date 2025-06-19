@@ -8,10 +8,8 @@ using System.Data;
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
     [Header("Status")]
-    public int força;
     public int vidaAtual;
     public int vidaMaxima;
-    public int defesa;
     public CharacterStatusGeneric characterStatus;
 
     [Header("Opcional")]
@@ -43,11 +41,8 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     {
         EnemyAI enemy = GetComponent<EnemyAI>();
         Animator animator = GetComponent<Animator>();
-        força = characterStatus.força;
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
-        defesa = characterStatus.defesa;
-
         if (animator != null) animator.runtimeAnimatorController = characterStatus.animatorController;
         if (enemy != null) enemy.ataques = characterStatus.ataques;
 

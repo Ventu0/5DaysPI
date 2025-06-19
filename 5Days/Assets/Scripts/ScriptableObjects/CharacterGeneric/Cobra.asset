@@ -15,12 +15,12 @@ MonoBehaviour:
   characterSprite: {fileID: 2249496826797622001, guid: 13e6e61ebd771fa439614e9fad4adc98, type: 3}
   "for\xE7a": 3
   defesa: 3
-  vidaMaxima: 150
-  vidaAtual: 150
+  vidaMaxima: 110
+  vidaAtual: 110
   ataques:
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   animatorController: {fileID: 9100000, guid: 4a805634a909dad4ca4afb3bfd8a6a78, type: 2}
-  isHuman: 0
+  isEnemy: 0

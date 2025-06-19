@@ -5,8 +5,6 @@ using System.Collections.Generic;
 public class CharacterStatusGeneric : ScriptableObject
 {
     public Sprite characterSprite;
-    public int força;
-    public int defesa;
     public int vidaMaxima;
     public int vidaAtual;
     public List<Attack> ataques;
