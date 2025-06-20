@@ -1431,9 +1431,10 @@ MonoBehaviour:
   lifeBar: {fileID: 1569166796}
   shield: {fileID: 0}
   shadow: {fileID: 2045169020}
+  strengthFactor: 1
   duration: 2
   turnEnded: 0
-  efeitoAtivo: {fileID: 0}
+  efeitosAtivos: []
 --- !u!95 &212723959
 Animator:
   serializedVersion: 7
@@ -3153,9 +3154,10 @@ MonoBehaviour:
   lifeBar: {fileID: 9574588}
   shield: {fileID: 0}
   shadow: {fileID: 1844722824}
+  strengthFactor: 1
   duration: 2
   turnEnded: 0
-  efeitoAtivo: {fileID: 0}
+  efeitosAtivos: []
 --- !u!95 &518258462
 Animator:
   serializedVersion: 7
@@ -4123,9 +4125,10 @@ MonoBehaviour:
   lifeBar: {fileID: 1052354640}
   shield: {fileID: 0}
   shadow: {fileID: 353918827}
+  strengthFactor: 1
   duration: 2
   turnEnded: 0
-  efeitoAtivo: {fileID: 0}
+  efeitosAtivos: []
 --- !u!95 &742859711
 Animator:
   serializedVersion: 7
@@ -5876,9 +5879,10 @@ MonoBehaviour:
   lifeBar: {fileID: 968589254}
   shield: {fileID: 0}
   shadow: {fileID: 1609946321}
+  strengthFactor: 1
   duration: 2
   turnEnded: 0
-  efeitoAtivo: {fileID: 0}
+  efeitosAtivos: []
 --- !u!114 &1135933686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7016,7 +7020,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 949658733
+  m_SortingLayerID: -955370377
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1324007873
@@ -7167,9 +7171,10 @@ MonoBehaviour:
   lifeBar: {fileID: 1265610386}
   shield: {fileID: 0}
   shadow: {fileID: 1588711686}
+  strengthFactor: 1
   duration: 2
   turnEnded: 0
-  efeitoAtivo: {fileID: 0}
+  efeitosAtivos: []
 --- !u!95 &1441147515
 Animator:
   serializedVersion: 7
@@ -9866,9 +9871,10 @@ MonoBehaviour:
   lifeBar: {fileID: 590134240}
   shield: {fileID: 0}
   shadow: {fileID: 1630353502}
+  strengthFactor: 1
   duration: 2
   turnEnded: 0
-  efeitoAtivo: {fileID: 0}
+  efeitosAtivos: []
 --- !u!114 &1846320173
 MonoBehaviour:
   m_ObjectHideFlags: 0

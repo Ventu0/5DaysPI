@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    public void TakeDamage(int damage, bool shakeCamera);
+    public void TakeDamage(int damage, bool shakeCamera, bool strongMove);
 }

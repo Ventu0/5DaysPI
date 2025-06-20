@@ -17,7 +17,7 @@ MonoBehaviour:
   vidaAtual: 100
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
-  - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
+  - {fileID: 11400000, guid: df58a9ef854b94a49a840148b91aabef, type: 2}
   - {fileID: 11400000, guid: 283c6cf080c7fb141a69b6b8f42755ca, type: 2}
   - {fileID: 11400000, guid: 28ccf9dcfffedfc4a8a2e9120cd4ce63, type: 2}
   animatorController: {fileID: 9100000, guid: c27dfda13976d744f9639ef0aa8fea14, type: 2}

@@ -18,9 +18,11 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public Transform shadow;
 
     [Header("Read-Only")]
+    public float strengthFactor = 1; //futuramente: fazer stackar com outras coisas como Grito de Guerra
+    [Tooltip("A quantidade de força que o golpe será multiplicado, usado apenas em golpes buffados")]
     public float duration = 2;
     public bool turnEnded;
-    public Effect efeitoAtivo;
+    public List<Effect> efeitosAtivos;
     //variaveis privadas
     Aliados aliado;
     TextMeshProUGUI lifeText;
@@ -32,11 +34,26 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     {
         aliado = GetComponent<Aliados>();
     }
+    #region EffectInvolved
     public void OnTurnStart()
     {
-        if(efeitoAtivo != null)
-        efeitoAtivo.OnTurnStart();
+        for(int i = 0; i < efeitosAtivos.Count; i++)
+        {
+            efeitosAtivos[i].OnTurnStart();
+        }
     }
+    public (bool jaTem, Effect efeitoQueJaPossui) ChecarSeJaPossuiEfeito(Effect effectToCheck)
+    {
+        for(int i = 0; i < efeitosAtivos.Count; i++)
+        {
+            Effect effect = efeitosAtivos[i];
+            
+            if (effectToCheck.GetType() == effect.GetType()) //se o tipo do efeito for o mesmo do efeito que tem
+            return (true, efeitosAtivos[i]);
+        }   
+        return (false, null);
+    }
+    #endregion
     public void SetupStatus()
     {
         EnemyAI enemy = GetComponent<EnemyAI>();
@@ -54,42 +71,32 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             lifeText = lifeBar.GetComponentInChildren<TextMeshProUGUI>();
             lifeBar.gameObject.SetActive(true);
             lifeBar.maxValue = vidaMaxima;
-            UpdateLife();
+            AtualizarVida();
         }
     }
-        public void TakeDamage(int damage, bool shakeCamera)
+        public void TakeDamage(int damage, bool shakeCamera, bool strongMove = false)
         {
-        if (CheckIfHasLife())
+        if (ChecarSePossuiVida())
         {
-            if (aliado != null)
+            if (aliado != null && aliado.isDefending)
             {
-                if (aliado.isDefending)
-                {
-                    damage = damage / 2;
-                    vidaAtual -= damage;
-
-                }
-                else
-                {
-                    vidaAtual -= damage;
-                }
+                damage = damage / 2;
             }
-            else
-            {
-                vidaAtual -= damage;
-            }
+            vidaAtual -= damage;
 
-            TextPopup.instance.GerarTexto("-" + damage.ToString(), transform.position, Color.red);
+            string texto = ("-" + damage.ToString() + (strongMove ? "!" : ""));
+            TextPopup.instance.GerarTexto(texto, transform.position, Color.red);
+
             StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
 
             if(shakeCamera)
             StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.09f));
 
-            UpdateLife();
+            AtualizarVida();
         }
-        if(!CheckIfHasLife())
+        if(!ChecarSePossuiVida())
         { 
-            UpdateLife();
+            AtualizarVida();
             TurnModeManager.instance.aliadosPersonagens.Remove(this);
             TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
             TurnModeManager.instance.inimigosPersonagens.Remove(this);
@@ -102,9 +109,10 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         turnEnded = true;
         TurnModeManager.instance.CheckIfAllCharactersAttacked();
     }
-    public void UpdateLife()
+    #region LifeInvolved
+    public void AtualizarVida()
     {
-        if (CheckIfHasLife())
+        if (ChecarSePossuiVida())
         {
             lifeBar.value = vidaAtual;
             lifeText.text = vidaAtual.ToString() + " / " + vidaMaxima.ToString();
@@ -116,10 +124,11 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             shadow.gameObject.SetActive(false);
         }
     }
-    bool CheckIfHasLife()
+    bool ChecarSePossuiVida()
     {
         if (vidaAtual > 0) return true;
         else if (vidaAtual <= 0) return false;
         return false;
-    } 
+    }
+    #endregion
 }

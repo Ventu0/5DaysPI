@@ -5,7 +5,6 @@ public class PoisonEffect : Effect
 {
     [HideInInspector] public BasePersonagem character;
     public int damagePerTurn;
-    [SerializeField] int remainingTurns;
     [SerializeField] RuntimeAnimatorController poisonAnimation;
     Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
     [SerializeField] AudioClip poisonSound;
@@ -13,19 +12,20 @@ public class PoisonEffect : Effect
     {
         character = alvo;
         remainingTurns = durationInTurn;
-        alvo.efeitoAtivo = Instantiate(this);
+        var resultado = alvo.ChecarSeJaPossuiEfeito(this);
+        if (resultado.jaTem) //se o alvo ja tiver o efeito
+        {
+            resultado.efeitoQueJaPossui.remainingTurns = durationInTurn;
+        }
+        else //se o alvo não tiver o efeito
+        {
+            alvo.efeitosAtivos.Add(Instantiate(this));
+        }
         character.GetComponent<SpriteRenderer>().color = poisonColor;
     }
     public override void OnTurnStart()
     {
-        if(remainingTurns <= durationInTurn)
-        {
-            remainingTurns--;
-        }
-        if(remainingTurns <= 0)
-        {
-            RemoveEffect();
-        }
+        base.OnTurnStart();
         SFX.instance.PlaySFX(poisonSound, 1f);
         MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
         TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, poisonColor, 29);
@@ -34,7 +34,7 @@ public class PoisonEffect : Effect
     }
     public override void RemoveEffect()
     {
-        character.efeitoAtivo = null;
+        character.efeitosAtivos.Remove(this);
         character.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

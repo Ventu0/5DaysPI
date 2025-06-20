@@ -3,6 +3,7 @@ using System.Collections;
 public class CharacterMovement : MonoBehaviour
 {
     float standingStillDuration;
+    Transform shadow;
     public static CharacterMovement instance;
     
     void Awake()
@@ -17,7 +18,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void Move(BasePersonagem characterToMove, Vector2 newPos, float duration, Transform shadow, float stillDuration)
+    public void Move(BasePersonagem characterToMove, Vector2 newPos, float duration, float stillDuration)
     {
         Turnos turno = TurnModeManager.instance.turno;
         if (turno == Turnos.EnemyTurn)
@@ -25,7 +26,9 @@ public class CharacterMovement : MonoBehaviour
         else if (turno == Turnos.PlayerTurn)
             newPos.x -= 3;
 
+        shadow = characterToMove.shadow;
         standingStillDuration = stillDuration;
+
         StartCoroutine(AllyMove(characterToMove, newPos, duration));
         if(shadow != null)
         {

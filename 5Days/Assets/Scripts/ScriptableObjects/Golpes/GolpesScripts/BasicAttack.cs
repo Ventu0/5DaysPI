@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 [CreateAssetMenu(menuName = "Ataque/AtaqueBásico")]
     public class BasicAttack : Attack
     {
+        public int quantidadesDeAtaque = 1;
+
         [SerializeField] float stillDuration = 0.1f; //tempo parado na frente do inimigo
         TurnModeManager turnModeManager;
         public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
@@ -15,41 +17,39 @@ using System.Threading.Tasks;
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
 
         InteractButtonsController.instance.menu.SetActive(false);
-        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, quemEstaAtacando.shadow, stillDuration * quantidadesDeAtaque);
-        
+        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, stillDuration * quantidadesDeAtaque);
 
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo
 
         for(int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
         {
-            if (efeitoSecundario != null && alvo.efeitoAtivo == null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar
+            if (efeitoSecundario != null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar
 
             if (soundEffect != null) SFX.instance.PlaySFX(soundEffect, 1f);// tocar som do ataque
 
-            if (ataqueEmArea)
+            if (ataqueEmArea) //se for, faz o ataque em area, se não, ataca normalmente
             {
-                Turnos turnos = turnModeManager.turno;
                 List<BasePersonagem> alvos = turnModeManager.turno == Turnos.PlayerTurn ? turnModeManager.inimigosPersonagens : turnModeManager.aliadosPersonagens;
                 for (int j = 0; j < alvos.Count; j++)
                 {
-                    MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[i].transform.position, animation, animationPlayInFront);
+                    MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[j].transform.position, animation, animationPlayInFront);
 
-                    if (efeitoSecundario != null && alvos[j].efeitoAtivo == null)
+                    if (efeitoSecundario != null)
                         efeitoSecundario.ApplyEffect(alvos[j]);
 
                     if (alvo != alvos[j])
                         alvos[j].TakeDamage(danoOuCura / 2, shakeCamera);
                     else
-                        alvo.TakeDamage(danoOuCura, shakeCamera);
+                        alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera);
                 }
-            } //se for, faz o ataque em area, se não, ataca normalmente
+            } 
             else
             {
-                MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, animationPlayInFront);
+                MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, animationPlayInFront, 0.7f / quantidadesDeAtaque);
 
-                alvo.TakeDamage(danoOuCura, shakeCamera);
+                alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera);
             }
-            await Task.Delay(Mathf.CeilToInt(effectsDuration) * 1000 / quantidadesDeAtaque);
+            await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000 / quantidadesDeAtaque);
         } 
     }
 }

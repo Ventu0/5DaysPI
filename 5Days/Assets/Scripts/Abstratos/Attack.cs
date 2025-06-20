@@ -8,12 +8,10 @@ public enum Alvo
 public abstract class Attack : ScriptableObject
 {
     [Header("Configurações Base")]
-    public int danoOuCura;
-    public float effectsDuration = 1f;
-    [Tooltip("tempo em segundos para a duração do efeito visual")]
-    public int quantidadesDeAtaque = 1;
-    [Tooltip("Quantidades de ataque executado em sequência")]
     public string nomeAtaque;
+    public int danoOuCura;
+    public float VisualEffectDuration = 1f;
+    [Tooltip("tempo em segundos para a duração do efeito visual")]
     public Sprite iconeAtaque;
     public Color iconMainColor = Color.yellow;
     public Sprite attackEffect;
@@ -27,8 +25,6 @@ public abstract class Attack : ScriptableObject
     public AudioClip soundEffect;
 
     [Header("Configurações de Ataque")]
-    public bool ataqueNeutro;
-    [Tooltip("Ataque que buffa ou debuffa o alvo, não causa dano")]
     public bool shakeCamera;
     public bool ataqueEmArea;
 
