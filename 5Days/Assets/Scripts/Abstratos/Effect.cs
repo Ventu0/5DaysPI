@@ -1,5 +1,11 @@
 using UnityEngine;
 
+public enum StatusEffect
+{
+    Nada,
+    Veneno,
+    Atordoado
+}
 public abstract class Effect : ScriptableObject
 {
     public string effectName;
@@ -15,16 +21,9 @@ public abstract class Effect : ScriptableObject
     {
 
     }
-    public virtual void OnTurnStart()
+    public virtual void OnTurnStart(BasePersonagem alvo)
     {
-        if (remainingTurns <= durationInTurn)
-        {
-            remainingTurns--;
-        }
-        if (remainingTurns <= 0)
-        {
-            RemoveEffect();
-        }
+  
     }
     public virtual void RemoveEffect()
     {

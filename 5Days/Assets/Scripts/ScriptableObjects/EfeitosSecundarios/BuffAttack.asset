@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BuffAttack
   m_EditorClassIdentifier: 
   effectName: Fortalecer
-  durationInTurn: 1
+  durationInTurn: 2
   remainingTurns: 0

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
-using System.Data;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
@@ -23,6 +22,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public float duration = 2;
     public bool turnEnded;
     public List<Effect> efeitosAtivos;
+    public StatusEffect statusEffect;
     //variaveis privadas
     Aliados aliado;
     TextMeshProUGUI lifeText;
@@ -39,7 +39,8 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     {
         for(int i = 0; i < efeitosAtivos.Count; i++)
         {
-            efeitosAtivos[i].OnTurnStart();
+            if(efeitosAtivos[i] != null)
+            efeitosAtivos[i].OnTurnStart(this);
         }
     }
     public (bool jaTem, Effect efeitoQueJaPossui) ChecarSeJaPossuiEfeito(Effect effectToCheck)

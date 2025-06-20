@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PoisonEffect", menuName = "ScriptableObjects/Effects/PoisonEffect", order = 1)]
 public class PoisonEffect : Effect
 {
-    [HideInInspector] public BasePersonagem character;
+    [SerializeField] BasePersonagem character;
     public int damagePerTurn;
     [SerializeField] RuntimeAnimatorController poisonAnimation;
     Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
@@ -13,6 +13,7 @@ public class PoisonEffect : Effect
         character = alvo;
         remainingTurns = durationInTurn;
         var resultado = alvo.ChecarSeJaPossuiEfeito(this);
+        StatusEffect alvoStatus = alvo.statusEffect;
         if (resultado.jaTem) //se o alvo ja tiver o efeito
         {
             resultado.efeitoQueJaPossui.remainingTurns = durationInTurn;
@@ -20,12 +21,25 @@ public class PoisonEffect : Effect
         else //se o alvo não tiver o efeito
         {
             alvo.efeitosAtivos.Add(Instantiate(this));
+           if(alvoStatus == StatusEffect.Nada)
+            alvo.statusEffect = StatusEffect.Veneno;
         }
         character.GetComponent<SpriteRenderer>().color = poisonColor;
+        character = alvo;
     }
-    public override void OnTurnStart()
+    public override void OnTurnStart(BasePersonagem alvo)
     {
-        base.OnTurnStart();
+        Debug.Log("OnTurnStart ativando do script: " + name + "com os turnos faltantes: " + remainingTurns);
+        if (remainingTurns <= durationInTurn)
+        {
+            remainingTurns--;
+            Debug.Log("Foi ativado e agora o remainingTurns esta com:" + remainingTurns);
+        }
+        if (remainingTurns <= 0)
+        {
+            Debug.Log("Removendo efeito");
+            RemoveEffect();
+        }
         SFX.instance.PlaySFX(poisonSound, 1f);
         MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
         TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, poisonColor, 29);
@@ -35,6 +49,7 @@ public class PoisonEffect : Effect
     public override void RemoveEffect()
     {
         character.efeitosAtivos.Remove(this);
+        character.statusEffect = StatusEffect.Nada;
         character.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
