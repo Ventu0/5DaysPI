@@ -33,30 +33,37 @@ public class RecieveInfoManager : MonoBehaviour
     IEnumerator Setup(List<CharacterStatusGeneric> playerStatus, List<CharacterStatusGeneric> enemyStatus)
     {
         TurnModeManager turnModeManager = TurnModeManager.instance;
+        
 
         for (int i = 0; i < playerStatus.Count; i++)
         {
             turnModeManager.aliados.Add(aliadosOriginais[i]);
             turnModeManager.aliadosPersonagens.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
+            BasePersonagem aliado = turnModeManager.aliadosPersonagens[i];
 
-            turnModeManager.aliadosPersonagens[i].shadow.gameObject.SetActive(true);
-            turnModeManager.aliadosPersonagens[i].characterStatus = Instantiate(playerStatus[i]);
-            turnModeManager.aliadosPersonagens[i].SetupStatus();
+            aliado.shadow.gameObject.SetActive(true);
+            aliado.characterStatus = Instantiate(playerStatus[i]);
+            aliado.SetupStatus();
 
-            turnModeManager.aliados[i].gameObject.SetActive(true);
+            aliado.gameObject.SetActive(true);
         }
+
         for (int i = 0; i < enemyStatus.Count; i++)
         {
             turnModeManager.inimigos.Add(inimigosOriginais[i]);
             turnModeManager.inimigosPersonagens.Add(inimigosOriginais[i].GetComponent<BasePersonagem>());
-            turnModeManager.inimigosPersonagens[i].characterStatus = Instantiate(enemyStatus[i]);
-            if (turnModeManager.inimigosPersonagens[i].characterStatus.isEnemy)
-                turnModeManager.inimigosPersonagens[i].GetComponent<SpriteRenderer>().flipX = true;
-            turnModeManager.inimigosPersonagens[i].shadow.gameObject.SetActive(true);
+            BasePersonagem inimigo = turnModeManager.inimigosPersonagens[i];
 
-            turnModeManager.inimigosPersonagens[i].SetupStatus();
+            inimigo.characterStatus = Instantiate(enemyStatus[i]);
 
-            turnModeManager.inimigos[i].gameObject.SetActive(true);
+            if (inimigo.characterStatus.isEnemy)
+                inimigo.GetComponent<SpriteRenderer>().flipX = true;
+
+            inimigo.shadow.gameObject.SetActive(true);
+
+            inimigo.SetupStatus();
+
+            inimigo.gameObject.SetActive(true);
         }
         yield return new WaitForSeconds(0.1f);
         TurnModeManager.instance.FirstAllyAttack();

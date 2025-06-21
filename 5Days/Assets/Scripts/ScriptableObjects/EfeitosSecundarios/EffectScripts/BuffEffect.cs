@@ -15,11 +15,13 @@ public class BuffEffect : Effect
         {
             alvo.efeitosAtivos.Add(Instantiate(this));
         }
+        alvo.isBuffed = true;
         character = alvo;
     }
     public override void OnTurnStart(BasePersonagem alvo) //por algum motivo desconhecido, o character estava sendo nulo, então teve que ser atribuido forçadamente
     {
         Debug.Log("OnTurnStart ativando: " + remainingTurns);
+        alvo.isBuffed = true;
         if (remainingTurns <= durationInTurn)
         {
             remainingTurns--;
@@ -34,6 +36,7 @@ public class BuffEffect : Effect
     {
         character.strengthFactor /= 2; //bug ocorrendo aqui
         TextPopup.instance.GerarTexto("Força: " + character.strengthFactor.ToString(), character.transform.position, Color.red, 26f);
+        character.isBuffed = false;
         character.efeitosAtivos.Remove(this);
     }
 }

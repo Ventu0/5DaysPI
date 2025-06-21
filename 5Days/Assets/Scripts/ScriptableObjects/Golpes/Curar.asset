@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb6f06121f23fd4c94a839c03694efc, type: 3}
   m_Name: Curar
   m_EditorClassIdentifier: 
-  danoOuCura: 25
-  effectsDuration: 1
-  quantidadesDeAtaque: 1
   nomeAtaque: Curar
+  description: "O usu\xE1rio usa uma magia da tribo para se curar"
+  danoOuCura: 25
+  maxPP: 15
+  currentPP: 13
+  VisualEffectDuration: 1
   iconeAtaque: {fileID: -4423450090214009036, guid: 9ecd82581d43d4b44bf5310b08bb53b2, type: 3}
   iconMainColor: {r: 0.28235295, g: 0.76470596, b: 0, a: 1}
   attackEffect: {fileID: -8987271427450927229, guid: b5c43de9ed8df2b44a8fd4b7dc76e539, type: 3}
@@ -24,8 +26,7 @@ MonoBehaviour:
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
   soundEffect: {fileID: 0}
-  ataqueNeutro: 0
   shakeCamera: 0
   ataqueEmArea: 0
   changeColorWhileApplyingEffect: 1
-  healingColor: {r: 0, g: 1, b: 0, a: 1}
+  colorToChange: {r: 0, g: 1, b: 0, a: 1}

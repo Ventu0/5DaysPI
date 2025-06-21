@@ -17,21 +17,25 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public Transform shadow;
 
     [Header("Read-Only")]
+    public bool isBuffed;
     public float strengthFactor = 1; //futuramente: fazer stackar com outras coisas como Grito de Guerra
     [Tooltip("A quantidade de força que o golpe será multiplicado, usado apenas em golpes buffados")]
     public float duration = 2;
     public bool turnEnded;
     public List<Effect> efeitosAtivos;
     public StatusEffect statusEffect;
+
     //variaveis privadas
     Aliados aliado;
     TextMeshProUGUI lifeText;
+    TurnModeManager turnModeManager;
     void Awake()
     {
         if (shadow != null) shadow.gameObject.SetActive(false);
     }
     void Start()
     {
+        turnModeManager = TurnModeManager.instance;
         aliado = GetComponent<Aliados>();
     }
     #region EffectInvolved
@@ -63,7 +67,6 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         vidaMaxima = characterStatus.vidaMaxima;
         if (characterStatus.characterSprite != null)
             GetComponent<SpriteRenderer>().sprite = characterStatus.characterSprite;
-
         if (animator != null) animator.runtimeAnimatorController = characterStatus.animatorController;
         if (enemy != null) enemy.ataques = characterStatus.ataques;
 
@@ -75,7 +78,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             AtualizarVida();
         }
     }
-        public void TakeDamage(int damage, bool shakeCamera, bool strongMove = false)
+        public void TakeDamage(int damage, bool shakeCamera, bool isMoveStrong = false)
         {
         if (ChecarSePossuiVida())
         {
@@ -85,30 +88,30 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             }
             vidaAtual -= damage;
 
-            string texto = ("-" + damage.ToString() + (strongMove ? "!" : ""));
+            string texto = ("-" + damage.ToString() + (isMoveStrong ? "!" : ""));
             TextPopup.instance.GerarTexto(texto, transform.position, Color.red);
 
             StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
 
             if(shakeCamera)
-            StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.09f));
+            StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.09f, true));
 
             AtualizarVida();
         }
         if(!ChecarSePossuiVida())
         { 
             AtualizarVida();
-            TurnModeManager.instance.aliadosPersonagens.Remove(this);
-            TurnModeManager.instance.aliados.Remove(gameObject.GetComponent<Aliados>());
-            TurnModeManager.instance.inimigosPersonagens.Remove(this);
-            TurnModeManager.instance.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
+            turnModeManager.aliadosPersonagens.Remove(this);
+            turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
+            turnModeManager.inimigosPersonagens.Remove(this);
+            turnModeManager.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
             Destroy(gameObject);
         }
     }
     public void EndTurn()
     {
         turnEnded = true;
-        TurnModeManager.instance.CheckIfAllCharactersAttacked();
+        turnModeManager.CheckIfAllCharactersAttacked();
     }
     #region LifeInvolved
     public void AtualizarVida()

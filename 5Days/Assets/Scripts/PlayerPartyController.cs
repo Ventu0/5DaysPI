@@ -24,8 +24,15 @@ public class PlayerPartyController : MonoBehaviour
         for(int i = 0; i < playerParty.Count; i++)
         {
             CharacterStatusGeneric character = Instantiate(playerParty[i]);
+            List<Attack> ataques = character.ataques;
+            for (int j = 0; j < ataques.Count; j++)
+            {
+                if(ataques[j] != null)
+                ataques[j].currentPP = ataques[j].maxPP;
+            }
             partyAtual.Add(character);
         }
+        CurarTodos();
     }
     public void CurarTodos()
     {
@@ -33,6 +40,12 @@ public class PlayerPartyController : MonoBehaviour
         for (int i = 0; i < playerParty.Count; i++)
         {
             playerParty[i].vidaAtual = playerParty[i].vidaMaxima;
+            List<Attack> ataques = playerParty[i].ataques;
+            for (int j = 0; j < ataques.Count; j++)
+            {
+                if(ataques[j])
+                playerParty[i].ataques[j].currentPP = ataques[j].maxPP;
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     public Camera mainCamera;
+    public GameObject cameraRoot;
     [SerializeField]public CinemachineVirtualCamera cinemachineCamera;
     public static CameraController instance;
     private void Awake()

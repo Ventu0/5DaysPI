@@ -7,7 +7,7 @@ public class GolpesNeutros : Attack
     [Header("Exclusivo neutral")]
     [SerializeField] bool changeColorWhileApplyingEffect;
     [SerializeField] Color colorToChange = Color.green;
-    public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
+    public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O próprio usuário
     {
         alvoPersonagem = alvo;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);

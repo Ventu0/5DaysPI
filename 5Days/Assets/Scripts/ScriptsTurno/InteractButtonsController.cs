@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
-using Unity.VisualScripting;
 
 public class InteractButtonsController : MonoBehaviour
 {
@@ -23,6 +22,7 @@ public class InteractButtonsController : MonoBehaviour
 
     //variaveis não-mostraveis
      TurnModeManager turnModeManager;
+    DescriptionMenu descriptionMenuScript;
     [HideInInspector] public int chosenAttack;
     public static InteractButtonsController instance;
     private void Awake()
@@ -42,10 +42,12 @@ public class InteractButtonsController : MonoBehaviour
     }
     void Start()
     {
+        descriptionMenuScript = GetComponent<DescriptionMenu>();
         turnModeManager = TurnModeManager.instance;
         attackMenuAnim.gameObject.SetActive(false);
         attackButton.onClick.AddListener(OpenMenu);
     }
+    #region MainButtons
     public void OpenMenu()
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);
@@ -66,6 +68,7 @@ public class InteractButtonsController : MonoBehaviour
     {
 
     }
+    #endregion
     public void SetupMenu(Vector2 newPos)
     {
         if(turnModeManager.QuemEstaAtacando().characterStatus.ataques != null) ataques = turnModeManager.QuemEstaAtacando().characterStatus.ataques;
@@ -107,8 +110,9 @@ public class InteractButtonsController : MonoBehaviour
     public void SetMove(int whatMove)
     {
         Attack ataque = ataques[whatMove];
+        if (ataque.currentPP <= 0) return;
         if(ataque == null) return;
-
+        descriptionMenuScript.descriptionMenu.SetActive(false);
         chosenAttack = whatMove;
         BasePersonagem alvo = turnModeManager.EncontrarAlvo();
         if (ataque.tipoDeAlvo == Alvo.Self)
@@ -116,8 +120,7 @@ public class InteractButtonsController : MonoBehaviour
             alvo = turnModeManager.QuemEstaAtacando();
             Atacar(whatMove, alvo);
             return;
-        }
-            
+        }  
 
         if (alvo != null)
             Atacar(whatMove, alvo); 

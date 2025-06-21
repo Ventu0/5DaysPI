@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
         [SerializeField] float stillDuration = 0.1f; //tempo parado na frente do inimigo
         TurnModeManager turnModeManager;
-        public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
+        public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O Inimigo
         {
         turnModeManager = TurnModeManager.instance;
         float duração = turnModeManager.QuemEstaAtacando().duration;
@@ -18,6 +18,8 @@ using System.Threading.Tasks;
 
         InteractButtonsController.instance.menu.SetActive(false);
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, stillDuration * quantidadesDeAtaque);
+        currentPP = Mathf.Abs(currentPP - 1);
+        Debug.Log("Gastei PP, agora estou com: " + currentPP);
 
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo
 
@@ -29,7 +31,10 @@ using System.Threading.Tasks;
 
             if (ataqueEmArea) //se for, faz o ataque em area, se não, ataca normalmente
             {
-                List<BasePersonagem> alvos = turnModeManager.turno == Turnos.PlayerTurn ? turnModeManager.inimigosPersonagens : turnModeManager.aliadosPersonagens;
+                List<BasePersonagem> alvos = turnModeManager.turno == Turnos.PlayerTurn ? 
+                    new List<BasePersonagem>(turnModeManager.inimigosPersonagens) 
+                    : new List<BasePersonagem>(turnModeManager.aliadosPersonagens);
+
                 for (int j = 0; j < alvos.Count; j++)
                 {
                     MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[j].transform.position, animation, animationPlayInFront);
@@ -38,16 +43,16 @@ using System.Threading.Tasks;
                         efeitoSecundario.ApplyEffect(alvos[j]);
 
                     if (alvo != alvos[j])
-                        alvos[j].TakeDamage(danoOuCura / 2, shakeCamera);
+                        alvos[j].TakeDamage(danoOuCura / 2, shakeCamera, quemEstaAtacando.isBuffed);
                     else
-                        alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera);
+                        alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
                 }
             } 
             else
             {
                 MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, animationPlayInFront, 0.7f / quantidadesDeAtaque);
 
-                alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera);
+                alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
             }
             await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000 / quantidadesDeAtaque);
         } 

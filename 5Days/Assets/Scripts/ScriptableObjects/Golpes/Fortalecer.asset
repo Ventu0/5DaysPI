@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Fortalecer
   m_EditorClassIdentifier: 
   nomeAtaque: Fortalecer
+  description: "O usu\xE1rio foca suas energias, aumentando o dano de seu proximo
+    ataque"
   danoOuCura: 0
+  maxPP: 15
+  currentPP: 15
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 0}
   iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

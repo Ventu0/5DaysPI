@@ -61,9 +61,16 @@ public class TurnModeManager : MonoBehaviour
     void EndGame()
     {
         EndMenu.SetActive(true);
+        PlayerPartyController party = PlayerPartyController.instance;
+
         for(int i = 0; i < aliadosPersonagens.Count; i++)
         {
-            PlayerPartyController.instance.partyAtual[i].vidaAtual = aliadosPersonagens[i].vidaAtual;
+            BasePersonagem personagem = aliadosPersonagens[i];
+            party.partyAtual[i].vidaAtual = personagem.vidaAtual;
+            for(int j = 0; j < personagem.characterStatus.ataques.Count; j++)
+            {
+                party.partyAtual[i].ataques[j].currentPP = personagem.characterStatus.ataques[j].currentPP;
+            }
         }
         Time.timeScale = 0f;
     }

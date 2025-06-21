@@ -9,7 +9,10 @@ public abstract class Attack : ScriptableObject
 {
     [Header("Configurações Base")]
     public string nomeAtaque;
+    public string description;
     public int danoOuCura;
+    public int maxPP = 15;
+    public int currentPP = 13;
     public float VisualEffectDuration = 1f;
     [Tooltip("tempo em segundos para a duração do efeito visual")]
     public Sprite iconeAtaque;
