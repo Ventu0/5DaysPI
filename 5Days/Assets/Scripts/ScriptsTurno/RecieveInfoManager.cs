@@ -39,6 +39,8 @@ public class RecieveInfoManager : MonoBehaviour
         {
             turnModeManager.aliados.Add(aliadosOriginais[i]);
             turnModeManager.aliadosPersonagens.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
+            turnModeManager.aliadosPersonagensPersistentes.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
+
             BasePersonagem aliado = turnModeManager.aliadosPersonagens[i];
 
             aliado.shadow.gameObject.SetActive(true);

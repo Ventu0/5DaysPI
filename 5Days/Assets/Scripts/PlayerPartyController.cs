@@ -39,12 +39,13 @@ public class PlayerPartyController : MonoBehaviour
         print("curando");
         for (int i = 0; i < playerParty.Count; i++)
         {
-            playerParty[i].vidaAtual = playerParty[i].vidaMaxima;
+            partyAtual[i].vidaAtual = playerParty[i].vidaMaxima;
+            partyAtual[i].isDead = false;
             List<Attack> ataques = playerParty[i].ataques;
             for (int j = 0; j < ataques.Count; j++)
             {
                 if(ataques[j])
-                playerParty[i].ataques[j].currentPP = ataques[j].maxPP;
+                partyAtual[i].ataques[j].currentPP = ataques[j].maxPP;
             }
         }
     }

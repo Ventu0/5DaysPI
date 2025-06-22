@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Fortalecer
   description: "O usu\xE1rio foca suas energias, aumentando o dano de seu proximo
-    ataque"
+    ataque. Este ataque n\xE3o pode ser usado em sequ\xEAncia"
   danoOuCura: 0
   maxPP: 15
   currentPP: 15

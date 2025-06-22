@@ -22,6 +22,15 @@ public class IniciarLuta : MonoBehaviour
     }
     void WaitSomeTime()
     {
-        RecieveInfoManager.instance.SetupCharacters(PlayerPartyController.instance.partyAtual,enemiesStatus.ToList());
+        PlayerPartyController party = PlayerPartyController.instance;
+        List<CharacterStatusGeneric> statusAtualizado = new List<CharacterStatusGeneric>();
+        for (int i = 0; i < party.partyAtual.Count; i++)
+        {
+            if (!party.partyAtual[i].isDead)
+            {
+                statusAtualizado.Add(party.partyAtual[i]);
+            }
+        }
+        RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
 }

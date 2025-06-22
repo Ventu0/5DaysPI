@@ -41,10 +41,11 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     #region EffectInvolved
     public void OnTurnStart()
     {
-        for(int i = 0; i < efeitosAtivos.Count; i++)
+        List<Effect> efeitos = new List<Effect>(efeitosAtivos);
+        for(int i = 0; i < efeitos.Count; i++)
         {
-            if(efeitosAtivos[i] != null)
-            efeitosAtivos[i].OnTurnStart(this);
+            if(efeitos[i] != null)
+            efeitos[i].OnTurnStart(this);
         }
     }
     public (bool jaTem, Effect efeitoQueJaPossui) ChecarSeJaPossuiEfeito(Effect effectToCheck)
@@ -101,11 +102,12 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         if(!ChecarSePossuiVida())
         { 
             AtualizarVida();
+            characterStatus.isDead = true;
             turnModeManager.aliadosPersonagens.Remove(this);
             turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
             turnModeManager.inimigosPersonagens.Remove(this);
             turnModeManager.inimigos.Remove(gameObject.GetComponent<EnemyAI>());
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     public void EndTurn()

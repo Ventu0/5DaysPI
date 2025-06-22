@@ -195,7 +195,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1202,11 +1202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4864413031540435534, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.98119926
+      value: -4.07
       objectReference: {fileID: 0}
     - target: {fileID: 4864413031540435534, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21213818
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4864413031540435534, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1749,6 +1749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: VilaIndio
+  usePlayerSavedPosition: 0
 --- !u!61 &1391705766
 BoxCollider2D:
   m_ObjectHideFlags: 0

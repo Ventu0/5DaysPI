@@ -28,6 +28,7 @@ public class TurnModeManager : MonoBehaviour
 
     //variaveis invisiveis
     public List<BasePersonagem> aliadosPersonagens;
+    public List<BasePersonagem> aliadosPersonagensPersistentes; //não é usado no sistema, somente no final
     public List<BasePersonagem> inimigosPersonagens;
     public static TurnModeManager instance;
     private void Awake()
@@ -61,17 +62,20 @@ public class TurnModeManager : MonoBehaviour
     void EndGame()
     {
         EndMenu.SetActive(true);
+        #region ManterStatusAposALuta
         PlayerPartyController party = PlayerPartyController.instance;
-
         for(int i = 0; i < aliadosPersonagens.Count; i++)
         {
             BasePersonagem personagem = aliadosPersonagens[i];
+            BasePersonagem personagemPersistente = aliadosPersonagensPersistentes[i];
             party.partyAtual[i].vidaAtual = personagem.vidaAtual;
-            for(int j = 0; j < personagem.characterStatus.ataques.Count; j++)
+            party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
+            for (int j = 0; j < personagem.characterStatus.ataques.Count; j++)
             {
                 party.partyAtual[i].ataques[j].currentPP = personagem.characterStatus.ataques[j].currentPP;
             }
         }
+        #endregion
         Time.timeScale = 0f;
     }
     public void CheckIfAllCharactersAttacked()
@@ -112,14 +116,14 @@ public class TurnModeManager : MonoBehaviour
                 {
                     inimigosPersonagens[i].turnEnded = false;
                 }
-                InteractButtonsController.instance.NextPlayer();
                 for (int i = 0; i < aliadosPersonagens.Count; i++)
                 {
                     aliados[i].shield.SetActive(false);
                     aliados[i].isDefending = false;
-                    aliadosPersonagens[i].OnTurnStart();
                     aliadosPersonagens[i].turnEnded = false;
+                    aliadosPersonagens[i].OnTurnStart();
                 }
+                InteractButtonsController.instance.NextPlayer();
                 InteractButtonsController.instance.menu.SetActive(true);
                 InteractButtonsController.instance.attackMenuAnim.gameObject.SetActive(false);
             }

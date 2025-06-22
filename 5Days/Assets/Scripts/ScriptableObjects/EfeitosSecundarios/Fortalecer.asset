@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7ccc444518e55940b68e0155f7b2f73, type: 3}
-  m_Name: BuffAttack
+  m_Name: Fortalecer
   m_EditorClassIdentifier: 
   effectName: Fortalecer
   durationInTurn: 2
-  remainingTurns: 0
+  remainingTurns: 1

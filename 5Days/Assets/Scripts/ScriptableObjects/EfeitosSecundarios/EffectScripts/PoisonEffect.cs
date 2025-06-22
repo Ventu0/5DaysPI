@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PoisonEffect", menuName = "ScriptableObjects/Effects/PoisonEffect", order = 1)]
+[CreateAssetMenu(fileName = "PoisonEffect", menuName = "EfeitoSecundario/PoisonEffect", order = 1)]
 public class PoisonEffect : Effect
 {
     [SerializeField] BasePersonagem character;

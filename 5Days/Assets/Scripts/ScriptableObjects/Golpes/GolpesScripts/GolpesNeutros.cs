@@ -14,6 +14,7 @@ public class GolpesNeutros : Attack
         InteractButtonsController.instance.menu.SetActive(false);
         MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, animationPlayInFront, VisualEffectDuration);
         if (changeColorWhileApplyingEffect) ChangeColorDuringEffect();
+        currentPP -= 1;
         await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000);
 
         if (efeitoSecundario != null)
