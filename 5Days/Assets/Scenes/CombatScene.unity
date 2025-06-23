@@ -3730,6 +3730,7 @@ MonoBehaviour:
   turnoDeQualPersonagem: 0
   turno: 0
   aliadosPersonagens: []
+  aliadosPersonagensPersistentes: []
   inimigosPersonagens: []
 --- !u!4 &613544267
 Transform:
@@ -4279,7 +4280,7 @@ Transform:
   m_GameObject: {fileID: 742859706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0001487133, y: 562, z: 0}
+  m_LocalPosition: {x: -0.0001487133, y: 534, z: 0}
   m_LocalScale: {x: 452.91928, y: 447.32767, z: 223.66383}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6383,7 +6384,7 @@ Transform:
   m_GameObject: {fileID: 1135933684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.474964, y: 430.99457, z: -28068.695}
+  m_LocalPosition: {x: -12.474964, y: 400, z: -28068.695}
   m_LocalScale: {x: 452.91928, y: 447.32767, z: 223.66383}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10458,7 +10459,7 @@ Transform:
   m_GameObject: {fileID: 1846320171}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.803713, y: 328.49683, z: 0}
+  m_LocalPosition: {x: -24.803713, y: 330, z: 0}
   m_LocalScale: {x: 452.91928, y: 447.32767, z: 223.66383}
   m_ConstrainProportionsScale: 0
   m_Children: []

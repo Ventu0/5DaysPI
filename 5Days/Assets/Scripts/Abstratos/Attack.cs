@@ -28,6 +28,8 @@ public abstract class Attack : ScriptableObject
     public AudioClip soundEffect;
 
     [Header("Configurações de Ataque")]
+    public bool usarMovimentoLinear;
+    [Tooltip("Se sim, se mexe ao inimigo caminhando. Se não, pula até o inimigo")]
     public bool shakeCamera;
     public bool ataqueEmArea;
 

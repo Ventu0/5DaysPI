@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 [CreateAssetMenu(menuName = "Ataque/AtaqueBásico")]
     public class BasicAttack : Attack
     {
+        [Header("Configurações de ataque básico")]
         public int quantidadesDeAtaque = 1;
 
         [SerializeField] float stillDuration = 0.1f; //tempo parado na frente do inimigo
@@ -17,7 +18,7 @@ using System.Threading.Tasks;
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
 
         InteractButtonsController.instance.menu.SetActive(false);
-        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, quemEstaAtacando.duration, stillDuration * quantidadesDeAtaque);
+        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
         currentPP = Mathf.Abs(currentPP - 1);
         Debug.Log("Gastei PP, agora estou com: " + currentPP);
 

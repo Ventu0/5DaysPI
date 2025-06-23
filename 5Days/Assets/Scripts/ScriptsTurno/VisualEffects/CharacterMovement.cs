@@ -4,6 +4,8 @@ public class CharacterMovement : MonoBehaviour
 {
     float standingStillDuration;
     Transform shadow;
+    TurnModeManager turnModeManager;
+    BasePersonagem character;
     public static CharacterMovement instance;
     
     void Awake()
@@ -17,20 +19,29 @@ public class CharacterMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void Move(BasePersonagem characterToMove, Vector2 newPos, float duration, float stillDuration)
+    private void Start()
     {
-        Turnos turno = TurnModeManager.instance.turno;
+        turnModeManager = TurnModeManager.instance;
+    }
+
+    public void Move(BasePersonagem characterToMove, Vector2 newPos, float stillDuration, bool useLinearMovement = false)
+    {
+        Turnos turno = turnModeManager.turno;
         if (turno == Turnos.EnemyTurn)
             newPos.x += 3;
         else if (turno == Turnos.PlayerTurn)
             newPos.x -= 3;
 
+        float duration = turnModeManager.QuemEstaAtacando().duration;
         shadow = characterToMove.shadow;
+        character = characterToMove;
         standingStillDuration = stillDuration;
 
-        StartCoroutine(AllyMove(characterToMove, newPos, duration));
-        if(shadow != null)
+        if (!useLinearMovement)
+            StartCoroutine(AllyMove(characterToMove, newPos, duration));
+        else
+            StartCoroutine(ShadowMove(characterToMove.transform, newPos, duration, useLinearMovement));
+        if (shadow != null)
         {
             StartCoroutine(ShadowMove(shadow, new Vector2(newPos.x, newPos.y - 0.45f), duration));
         }
@@ -61,13 +72,13 @@ public class CharacterMovement : MonoBehaviour
                 iterador += Time.deltaTime * duration;
                 yield return null;
             }
-            characterToMove.turnEnded = true;
-            TurnModeManager.instance.CheckIfAllCharactersAttacked();
+        character.EndTurn();
     } 
-    IEnumerator ShadowMove(Transform shadow, Vector2 newPos, float duration)
+    IEnumerator ShadowMove(Transform shadow, Vector2 newPos, float duration, bool useLinearMovement = false)
     {
         float iterador = 0;
         Vector2 initialPos = shadow.position;
+        if(!useLinearMovement)
         newPos.y -= 0.5f;
         while(iterador < duration)
         {
@@ -84,6 +95,10 @@ public class CharacterMovement : MonoBehaviour
             iterador += Time.deltaTime * duration;
             shadow.position = Vector2.Lerp(newPos, initialPos, iterador);
             yield return null;
+        }
+        if (useLinearMovement)
+        {
+            character.EndTurn();
         }
     }
 }
