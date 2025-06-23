@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
-  m_Name: AtaquesFuriosos
+  m_Name: "F\xFAria"
   m_EditorClassIdentifier: 
   nomeAtaque: Ataques
-  description: "Lan\xE7a uma barragem de socos"
-  danoOuCura: 30
+  description: "Lan\xE7a uma barragem de socos furiosos"
+  danoOuCura: 15
   maxPP: 15
   currentPP: 15
   VisualEffectDuration: 1
@@ -26,6 +26,7 @@ MonoBehaviour:
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: 3faa760b5a64098408ec8f2832cbec19, type: 3}
+  usarMovimentoLinear: 0
   shakeCamera: 0
   ataqueEmArea: 0
   quantidadesDeAtaque: 4

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5163892024950695327}
   - component: {fileID: 1257353893620837213}
   - component: {fileID: 5997324493319968124}
+  - component: {fileID: 5382764367639105057}
   m_Layer: 0
   m_Name: Inimigo_EntrarBatalha
   m_TagString: Untagged
@@ -138,15 +139,37 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0072784424, y: 0.050953627}
+  m_Offset: {x: -0.00122118, y: 0.0022376776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8666667, y: 2.3466666}
+    oldSize: {x: 1.12, y: 1.408}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8880501, y: 2.38303}
+  m_Size: {x: 1.1369269, y: 1.4264665}
   m_EdgeRadius: 0
+--- !u!95 &5382764367639105057
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480002590178634455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
