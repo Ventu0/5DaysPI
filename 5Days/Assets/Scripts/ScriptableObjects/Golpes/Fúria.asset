@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: "F\xFAria"
   m_EditorClassIdentifier: 
   nomeAtaque: Ataques
-  description: "Lan\xE7a uma barragem de socos furiosos"
+  description: "Lan\xE7a uma barragem de socos furiosos. <color=red>S\xF3 pode ser
+    usado 1 vez por partida.</color>"
   danoOuCura: 15
   maxPP: 15
   currentPP: 15

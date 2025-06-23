@@ -110,8 +110,23 @@ public class InteractButtonsController : MonoBehaviour
     public void SetMove(int whatMove)
     {
         Attack ataque = ataques[whatMove];
-        if (ataque.currentPP <= 0) return;
-        if(ataque == null) return;
+        MainText mainText = MainText.instance;
+        if (ataque.currentPP <= 0)
+        {
+            mainText.SetText("Esse ataque não tem mais PP!", Color.red);
+            return;
+        }
+        if(ataque.oneTime)
+        {
+            mainText.SetText("Esse ataque só pode ser usado uma vez por batalha!", Color.red);
+            return;
+        }
+        if(ataque == null)
+        {
+            mainText.SetText("Ataque não existe!", Color.red);
+            return;
+        }
+
         descriptionMenuScript.descriptionMenu.SetActive(false);
         chosenAttack = whatMove;
         BasePersonagem alvo = turnModeManager.EncontrarAlvo();

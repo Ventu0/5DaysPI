@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c8fce7cdc2a2e4e980b0733c00a56a, type: 3}
   m_Name: Tanque
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 0}
-  "for\xE7a": 4
-  defesa: 4
+  characterSprite: {fileID: -5133412329262697850, guid: 4386f6a97b708294dbb1215329ad84cb, type: 3}
   vidaMaxima: 200
   vidaAtual: 175
+  isDead: 0
   ataques:
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: c2efc787ccf7b5848b8a47d6b6425310, type: 2}
   isEnemy: 0

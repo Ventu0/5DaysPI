@@ -18,7 +18,7 @@ public abstract class Attack : ScriptableObject
     public Sprite iconeAtaque;
     public Color iconMainColor = Color.yellow;
     public Sprite attackEffect;
-    [Tooltip("Sprite do efeito visual (caso não possua animação, isto é obrigatório")]
+    [Tooltip("Sprite do efeito visual (caso não possua animação, isto é obrigatório)")]
     public Alvo tipoDeAlvo;
 
     [Header("Configurações Opcionais")]
@@ -30,9 +30,10 @@ public abstract class Attack : ScriptableObject
     [Header("Configurações de Ataque")]
     public bool usarMovimentoLinear;
     [Tooltip("Se sim, se mexe ao inimigo caminhando. Se não, pula até o inimigo")]
+    public bool ataqueUmaVezSó = false;
     public bool shakeCamera;
     public bool ataqueEmArea;
-
+    [HideInInspector] public bool oneTime;
 
     public virtual void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
     {

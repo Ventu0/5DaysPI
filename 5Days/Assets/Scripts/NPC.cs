@@ -8,10 +8,14 @@ public class NPC : MonoBehaviour
     [SerializeField] string[] falas;
     [SerializeField] int falaAtual = -1;
     [SerializeField] Sprite[] charactersFace;
+
     [Header("Opcionais")]
     [SerializeField] bool isHealer = false;
-    public bool completeQuest = false;
-    public string nextQuestName = "";
+
+    [Header("Quest-Only")]
+    [SerializeField] bool completeQuest = false;
+    [SerializeField] string nextQuestName = "";
+    bool jaFalou;
     int falasMaximas;
     ChatController chatController;
     
@@ -45,8 +49,11 @@ public class NPC : MonoBehaviour
             else
             {
                 chatController.CloseDialogue();
-                if (completeQuest)
+                if (completeQuest && !jaFalou)
+                {
                     QuestController.instance.SetQuestText(nextQuestName);
+                    jaFalou = true;
+                }
                 falaAtual = -1;
             }
         }

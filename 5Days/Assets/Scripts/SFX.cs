@@ -23,7 +23,7 @@ public class SFX : MonoBehaviour
 
     public void PlaySFX(AudioClip clip, float volume = 1f)
     {
-        if (audioSource.isPlaying) return;
+        if (audioSource.isPlaying) audioSource.Stop();
         audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.Play();

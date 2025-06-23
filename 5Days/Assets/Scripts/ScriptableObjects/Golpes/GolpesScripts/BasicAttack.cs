@@ -13,6 +13,9 @@ using System.Threading.Tasks;
         TurnModeManager turnModeManager;
         public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O Inimigo
         {
+        if(ataqueUmaVezSó)
+            if(oneTime) return; //se for ataque uma vez só e já tiver sido usado, não faz nada
+
         turnModeManager = TurnModeManager.instance;
         float duração = turnModeManager.QuemEstaAtacando().duration;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
@@ -21,9 +24,9 @@ using System.Threading.Tasks;
         InteractButtonsController.instance.menu.SetActive(false);
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
         currentPP = Mathf.Abs(currentPP - 1);
-
+        if(ataqueUmaVezSó) oneTime = true;
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo
-
+        
         for(int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
         {
             if (efeitoSecundario != null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar

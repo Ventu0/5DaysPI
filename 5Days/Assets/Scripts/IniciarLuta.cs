@@ -36,6 +36,7 @@ public class IniciarLuta : MonoBehaviour
                 statusAtualizado.Add(party.partyAtual[i]);
             }
         }
+        QuestController.instance.menu.SetActive(false);
         TurnModeManager.instance.iniciarLuta = this;
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
