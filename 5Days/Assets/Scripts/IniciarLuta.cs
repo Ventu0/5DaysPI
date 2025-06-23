@@ -20,6 +20,11 @@ public class IniciarLuta : MonoBehaviour
         SceneTimeController.instance.PausarJogo();
         Invoke("WaitSomeTime", 0.3f);
     }
+    public void EndBattle()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 0f;
+    }
     void WaitSomeTime()
     {
         PlayerPartyController party = PlayerPartyController.instance;
@@ -31,6 +36,7 @@ public class IniciarLuta : MonoBehaviour
                 statusAtualizado.Add(party.partyAtual[i]);
             }
         }
+        TurnModeManager.instance.iniciarLuta = this;
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
 }

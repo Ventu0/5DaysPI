@@ -17,9 +17,9 @@ MonoBehaviour:
   vidaAtual: 125
   isDead: 0
   ataques:
-  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
-  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
-  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
-  - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
+  - {fileID: 11400000, guid: 90668ec17c21aa740982722c78737573, type: 2}
+  - {fileID: 11400000, guid: 90668ec17c21aa740982722c78737573, type: 2}
+  - {fileID: 11400000, guid: 90668ec17c21aa740982722c78737573, type: 2}
+  - {fileID: 11400000, guid: 90668ec17c21aa740982722c78737573, type: 2}
   animatorController: {fileID: 9100000, guid: 0db138cbfbe2f894e9c13cf0cf94573d, type: 2}
   isEnemy: 1

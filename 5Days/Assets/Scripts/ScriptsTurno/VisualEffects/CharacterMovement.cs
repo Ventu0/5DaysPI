@@ -23,9 +23,8 @@ public class CharacterMovement : MonoBehaviour
     {
         turnModeManager = TurnModeManager.instance;
     }
-
     public void Move(BasePersonagem characterToMove, Vector2 newPos, float stillDuration, bool useLinearMovement = false)
-    {
+    { 
         Turnos turno = turnModeManager.turno;
         if (turno == Turnos.EnemyTurn)
             newPos.x += 3;
