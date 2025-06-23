@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 [CreateAssetMenu(menuName = "Ataque/AtaqueBásico")]
+
     public class BasicAttack : Attack
     {
         [Header("Configurações de ataque básico")]
@@ -20,7 +21,6 @@ using System.Threading.Tasks;
         InteractButtonsController.instance.menu.SetActive(false);
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
         currentPP = Mathf.Abs(currentPP - 1);
-        Debug.Log("Gastei PP, agora estou com: " + currentPP);
 
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo
 

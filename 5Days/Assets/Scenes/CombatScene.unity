@@ -3732,6 +3732,7 @@ MonoBehaviour:
   aliadosPersonagens: []
   aliadosPersonagensPersistentes: []
   inimigosPersonagens: []
+  iniciarLuta: {fileID: 0}
 --- !u!4 &613544267
 Transform:
   m_ObjectHideFlags: 0

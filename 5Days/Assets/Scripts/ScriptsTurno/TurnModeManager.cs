@@ -30,6 +30,7 @@ public class TurnModeManager : MonoBehaviour
     public List<BasePersonagem> aliadosPersonagens;
     public List<BasePersonagem> aliadosPersonagensPersistentes; //não é usado no sistema, somente no final
     public List<BasePersonagem> inimigosPersonagens;
+    public IniciarLuta iniciarLuta;
     public static TurnModeManager instance;
     private void Awake()
     {
@@ -72,11 +73,13 @@ public class TurnModeManager : MonoBehaviour
             party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
             for (int j = 0; j < personagem.characterStatus.ataques.Count; j++)
             {
-                party.partyAtual[i].ataques[j].currentPP = personagem.characterStatus.ataques[j].currentPP;
+                if(personagem.characterStatus.ataques[j] != null)
+                    party.partyAtual[i].ataques[j].currentPP = personagem.characterStatus.ataques[j].currentPP;
             }
         }
         #endregion
-        Time.timeScale = 0f;
+        iniciarLuta.EndBattle();
+        iniciarLuta = null;
     }
     public void CheckIfAllCharactersAttacked()
     {
