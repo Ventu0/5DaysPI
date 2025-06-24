@@ -4,11 +4,18 @@ using TMPro;
 using System.Collections;
 public class NPC : MonoBehaviour
 {
-    [Header("Configura��es de Fala")]
+    [Header("Configurações de Fala")]
     [SerializeField] string[] falas;
     [SerializeField] int falaAtual = -1;
     [SerializeField] Sprite[] charactersFace;
+
+    [Header("Opcionais")]
     [SerializeField] bool isHealer = false;
+
+    [Header("Quest-Only")]
+    [SerializeField] bool completeQuest = false;
+    [SerializeField] string nextQuestName = "";
+    bool jaFalou;
     int falasMaximas;
     ChatController chatController;
     
@@ -42,6 +49,11 @@ public class NPC : MonoBehaviour
             else
             {
                 chatController.CloseDialogue();
+                if (completeQuest && !jaFalou)
+                {
+                    QuestController.instance.SetQuestText(nextQuestName);
+                    jaFalou = true;
+                }
                 falaAtual = -1;
             }
         }
