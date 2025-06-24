@@ -23,6 +23,8 @@ public class TurnModeManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
     [SerializeField] public Camera mainCamera;
+    public float escapeChance;
+    [Tooltip("Chance de escapar da batalha, é usado em porcentagem, ou seja, o numero é entre 0 a 1")]
     public int turnoDeQualPersonagem;
     public Turnos turno;
 

@@ -66,7 +66,15 @@ public class InteractButtonsController : MonoBehaviour
     }
     public void Run()
     {
+        if (turnModeManager.escapeChance != 0)
+        {
 
+        }
+        else
+        {
+            MainText mainText = MainText.instance;
+            mainText.SetText("Não é possível fugir!", Color.red);
+        }
     }
     #endregion
     public void SetupMenu(Vector2 newPos)

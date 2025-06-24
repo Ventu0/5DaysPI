@@ -1,19 +1,25 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
 {
-    [SerializeField] Vector2 moveInput;
-    [SerializeField] Animator anim;
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [Header("Optional")]
+    [SerializeField] Light2D luzNatural;
 
     [Header("Interagir Com NPC")]
     [SerializeField] float raioDeInteração = 2;
     [SerializeField] LayerMask layerMaskInteração;
     public Vector2 lastSavedPosition;
     bool isGamePaused;
+
+    [Header("Read-Only")]
+    [SerializeField] Vector2 moveInput;
+    [SerializeField] Animator anim;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] SpriteRenderer spriteRenderer;
+
     public static Player instance;
 
     private void Awake()
@@ -30,16 +36,23 @@ public class Player : CharacterStatus
     }
     void Start()
     {
-        if (SceneTimeController.instance != null)
-        SceneTimeController.instance.onPauseGame += PausePlayer;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //luzNatural = GetComponentInChildren<Light2D>();
+
+        if (SceneTimeController.instance != null)
+        SceneTimeController.instance.onPauseGame += PausePlayer;
+
+        if (DiaENoite.instance != null)
+            DiaENoite.instance.onNightStart += OnNightStart;
+        luzNatural?.gameObject.SetActive(false);
     }
     public void SavePosition()
     {
         lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
     }
+    #region delegates
     void PausePlayer()
     {
         if (!isGamePaused)
@@ -51,6 +64,11 @@ public class Player : CharacterStatus
             isGamePaused = false;
         }
     }
+    void OnNightStart()
+    {
+            luzNatural?.gameObject.SetActive(true);
+    }
+    #endregion
     void Update()
     {
         if(isGamePaused)
@@ -58,7 +76,6 @@ public class Player : CharacterStatus
             rb.linearVelocity = Vector2.zero;
             return;
         }
-
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         anim.SetFloat("Horizontal", Mathf.Abs(horizontal));
