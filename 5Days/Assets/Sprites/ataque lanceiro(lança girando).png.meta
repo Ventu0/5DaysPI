@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: ff077f4ec67a3db468f865cc72cdc17b
+guid: eefb39383dcb0804391234a13437f9f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2647053897218787770
-    second: FlorestaDaVilaindioDeLado-1.png_0
+      213: 6268371631710405095
+    second: "ataque lanceiro(lan\xE7a girando)_0"
+  - first:
+      213: -2276646528659702273
+    second: "ataque lanceiro(lan\xE7a girando)_1"
+  - first:
+      213: 5327958101878256801
+    second: "ataque lanceiro(lan\xE7a girando)_2"
+  - first:
+      213: 909328401777741613
+    second: "ataque lanceiro(lan\xE7a girando)_3"
+  - first:
+      213: -9121226748424172746
+    second: "ataque lanceiro(lan\xE7a girando)_4"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FlorestaDaVilaindioDeLado-1.png_0
+      name: "ataque lanceiro(lan\xE7a girando)_0"
       rect:
         serializedVersion: 2
-        x: 8
-        y: 2
-        width: 35
-        height: 78
+        x: 0
+        y: 464
+        width: 400
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab90a0dae793cb420800000000000000
-      internalID: 2647053897218787770
+      spriteID: 7e10c3ca9cabdf650800000000000000
+      internalID: 6268371631710405095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xE7a girando)_1"
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 464
+        width: 400
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffdbc1c5b0ab760e0800000000000000
+      internalID: -2276646528659702273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xE7a girando)_2"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 400
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a43e983aa5b0f940800000000000000
+      internalID: 5327958101878256801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xE7a girando)_3"
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 232
+        width: 400
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2fc2241d559e9c00800000000000000
+      internalID: 909328401777741613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xE7a girando)_4"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63bc2604994ea6180800000000000000
+      internalID: -9121226748424172746
       vertices: []
       indices: 
       edges: []
@@ -151,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 921ffd1811eb7404f836b72fe7fb36f5
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FlorestaDaVilaindioDeLado-1.png_0: 2647053897218787770
+      "ataque lanceiro(lan\xE7a girando)_0": 6268371631710405095
+      "ataque lanceiro(lan\xE7a girando)_1": -2276646528659702273
+      "ataque lanceiro(lan\xE7a girando)_2": 5327958101878256801
+      "ataque lanceiro(lan\xE7a girando)_3": 909328401777741613
+      "ataque lanceiro(lan\xE7a girando)_4": -9121226748424172746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
