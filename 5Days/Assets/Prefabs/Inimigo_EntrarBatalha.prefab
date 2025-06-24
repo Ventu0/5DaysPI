@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2682794652752421947}
   - component: {fileID: 5163892024950695327}
   - component: {fileID: 1257353893620837213}
-  - component: {fileID: 5997324493319968124}
   - component: {fileID: 5382764367639105057}
+  - component: {fileID: 8598730989796458988}
   m_Layer: 0
   m_Name: Inimigo_EntrarBatalha
   m_TagString: Untagged
@@ -105,8 +105,30 @@ MonoBehaviour:
   cenaEscolhida: CombatScene
   enemiesStatus:
   - {fileID: 11400000, guid: 39577218f1eb9fa4bbed93a96bfa8d71, type: 2}
---- !u!61 &5997324493319968124
-BoxCollider2D:
+--- !u!95 &5382764367639105057
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480002590178634455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &8598730989796458988
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,37 +161,31 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00122118, y: 0.0022376776}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.12, y: 1.408}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.1369269, y: 1.4264665}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
---- !u!95 &5382764367639105057
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8480002590178634455}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Points:
+  - {x: 0.19778499, y: -0.6777967}
+  - {x: -0.34495527, y: -0.7064439}
+  - {x: -0.51826197, y: -0.6251799}
+  - {x: -0.583673, y: -0.3003965}
+  - {x: -0.45256764, y: -0.06172572}
+  - {x: -0.35890874, y: -0.004416302}
+  - {x: -0.32917345, y: 0.04200226}
+  - {x: -0.03537813, y: 0.07728195}
+  - {x: -0.097118884, y: 0.44159734}
+  - {x: -0.40638712, y: 0.45046073}
+  - {x: -0.44179106, y: 0.63851106}
+  - {x: -0.35097927, y: 0.7000201}
+  - {x: -0.086519755, y: 0.7230404}
+  - {x: 0.14434141, y: 0.61917007}
+  - {x: 0.26393116, y: 0.42199498}
+  - {x: 0.2558056, y: -0.08944707}
+  - {x: 0.4036516, y: -0.0984575}
+  - {x: 0.583897, y: -0.31500912}
+  - {x: 0.55655444, y: -0.48981258}
+  - {x: 0.43665674, y: -0.64607996}
+  - {x: 0.20636667, y: -0.6820065}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

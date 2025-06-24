@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7526820945506267311}
   - component: {fileID: 6538479310872512312}
   - component: {fileID: 4209713978218065125}
+  - component: {fileID: 6806025889217560873}
   m_Layer: 0
   m_Name: cobra coral_0
   m_TagString: Untagged
@@ -110,3 +111,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &6806025889217560873
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014556585159389373}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.23101562, y: -0.076058865}
+  - {x: 0.271986, y: 0.27029276}
+  - {x: 0.20422173, y: 0.4953866}
+  - {x: 0.11361313, y: 0.6150155}
+  - {x: -0.02538681, y: 0.69363546}
+  - {x: -0.34698486, y: 0.7094717}
+  - {x: -0.43149757, y: 0.63939095}
+  - {x: -0.43803215, y: 0.48968887}
+  - {x: -0.3819313, y: 0.4051261}
+  - {x: -0.116285324, y: 0.39562988}
+  - {x: -0.010139465, y: 0.27193165}
+  - {x: -0.048259735, y: 0.07260656}
+  - {x: -0.23516655, y: 0.07633972}
+  - {x: -0.4537773, y: -0.055371284}
+  - {x: -0.5353203, y: -0.19196129}
+  - {x: -0.55978775, y: -0.38695002}
+  - {x: -0.5047684, y: -0.62180424}
+  - {x: -0.38884544, y: -0.69703436}
+  - {x: 0.23578453, y: -0.6883364}
+  - {x: 0.3601799, y: -0.67366457}
+  - {x: 0.48503494, y: -0.5758629}
+  - {x: 0.55480385, y: -0.36491728}
+  - {x: 0.5344372, y: -0.27268028}
+  - {x: 0.44188118, y: -0.16350889}
+  - {x: 0.25576264, y: -0.09507418}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
