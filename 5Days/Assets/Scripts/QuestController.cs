@@ -18,19 +18,26 @@ public class QuestController : MonoBehaviour
     public static QuestController instance;
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
         {
-            instance = this;
-            DontDestroyOnLoad(canva);
+            Destroy(canva);
+            return;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        instance = this;
+        DontDestroyOnLoad(canva);
     }
     void Start()
     {
-        
+        //QuestController[] uiParaDeletar = FindObjectsByType<QuestController>(FindObjectsSortMode.None);
+        //foreach(QuestController ui in uiParaDeletar)
+        //{
+        //    GameObject uiGameObject = GetComponentInParent<GameObject>();
+        //    if (ui != this)
+        //    {
+        //        Destroy(uiGameObject);
+        //    }
+        //}
     }
     public void SetQuestText(string text)
     {
