@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class InteractButtonsController : MonoBehaviour
 {
@@ -68,7 +70,14 @@ public class InteractButtonsController : MonoBehaviour
     {
         if (turnModeManager.escapeChance != 0)
         {
-
+            float random = Random.Range(0f, 1f);
+            if(random <= turnModeManager.escapeChance)
+            {
+                QuestController.instance.menu.SetActive(true);
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+                SceneTimeController.instance.onPauseGame?.Invoke();
+                Time.timeScale = 1f;
+            }
         }
         else
         {

@@ -9,6 +9,7 @@ public class IniciarLuta : MonoBehaviour
     public OnStartBattle onStartBattle;
     [SerializeField] string cenaEscolhida;
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
+    [SerializeField] float escapeChance = 0.5f; //chance de escapar da batalha, entre 0 e 1 
     void Start()
     {
         
@@ -38,6 +39,7 @@ public class IniciarLuta : MonoBehaviour
         }
         QuestController.instance.menu.SetActive(false);
         TurnModeManager.instance.iniciarLuta = this;
+        TurnModeManager.instance.escapeChance = escapeChance;
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
 }
