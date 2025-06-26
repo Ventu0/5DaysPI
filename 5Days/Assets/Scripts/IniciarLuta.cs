@@ -38,7 +38,8 @@ public class IniciarLuta : MonoBehaviour
             }
         }
         QuestController.instance.menu.SetActive(false);
-        DiaENoite.instance?.dontDestroyObject.SetActive(false);
+        if(DiaENoite.instance.dontDestroyObject != null)
+        DiaENoite.instance?.dontDestroyObject?.SetActive(false);
         TurnModeManager.instance.iniciarLuta = this;
         TurnModeManager.instance.escapeChance = escapeChance;
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());

@@ -27,7 +27,8 @@ public class ReturnScene : MonoBehaviour
     public void ReturnSceneBTN()
     {
         QuestController.instance.menu.SetActive(true);
-        DiaENoite.instance.dontDestroyObject.SetActive(true);
+        if(DiaENoite.instance.dontDestroyObject != null)
+        DiaENoite.instance?.dontDestroyObject.SetActive(true);
         SceneManager.UnloadSceneAsync(sceneName);
         SceneTimeController.instance.onPauseGame?.Invoke();
         Time.timeScale = 1f;
