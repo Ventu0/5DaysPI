@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 65de52e49f491be4388260ff5c5c6832
+guid: ff2af7f4c8e18aa4e8407017af17249c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9122410416754378914
-    second: cobra coral (1)_0
+      213: -2953720748126650082
+    second: vagalume_0
   - first:
-      213: -6138176167348564063
-    second: cobra coral (1)_1
+      213: -1388639947789949642
+    second: vagalume_1
   - first:
-      213: -1118479935957741658
-    second: cobra coral (1)_2
+      213: -7641038728424102155
+    second: vagalume_2
   - first:
-      213: 4996692969382472872
-    second: cobra coral (1)_3
+      213: -545097058909233761
+    second: vagalume_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 11
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cobra coral (1)_0
+      name: vagalume_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 513
-        width: 512
-        height: 511
+        y: 128
+        width: 88
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a8c7f101ff499e70800000000000000
-      internalID: 9122410416754378914
+      spriteID: e11c53a01a64207d0800000000000000
+      internalID: -2953720748126650082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobra coral (1)_1
+      name: vagalume_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 513
-        width: 512
-        height: 511
+        x: 88
+        y: 128
+        width: 88
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1af8b681c41d0daa0800000000000000
-      internalID: -6138176167348564063
+      spriteID: 6352017235f8abce0800000000000000
+      internalID: -1388639947789949642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobra coral (1)_2
+      name: vagalume_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 512
-        height: 511
+        y: 64
+        width: 88
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6af46d89c6c5a70f0800000000000000
-      internalID: -1118479935957741658
+      spriteID: 5f6674da2c395f590800000000000000
+      internalID: -7641038728424102155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cobra coral (1)_3
+      name: vagalume_3
       rect:
         serializedVersion: 2
-        x: 512
-        y: 2
-        width: 512
-        height: 511
+        x: 88
+        y: 64
+        width: 88
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +216,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8acebb338c1d75540800000000000000
-      internalID: 4996692969382472872
+      spriteID: f9dda9bec1d6f68f0800000000000000
+      internalID: -545097058909233761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagalume_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99129861a67fdf8448744a681984a41c
+      internalID: -1159826134
       vertices: []
       indices: 
       edges: []
@@ -226,7 +248,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2e8d87bed7fdc7b4e890f73c1dcc3da3
+    spriteID: c11e5894f97e57d4e9e18e33cf440456
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +258,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cobra coral (1)_0: 9122410416754378914
-      cobra coral (1)_1: -6138176167348564063
-      cobra coral (1)_2: -1118479935957741658
-      cobra coral (1)_3: 4996692969382472872
+      vagalume_0: -2953720748126650082
+      vagalume_1: -1388639947789949642
+      vagalume_2: -7641038728424102155
+      vagalume_3: -545097058909233761
+      vagalume_4: -1159826134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

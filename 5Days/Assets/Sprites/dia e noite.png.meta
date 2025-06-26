@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 13e6e61ebd771fa439614e9fad4adc98
+guid: 174244fffcc48574b85d427a4a2fa3f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2249496826797622001
-    second: cobra coral_0
-  - first:
-      213: -1220565538023349421
-    second: cobra coral_1
+      213: -9103535018343260806
+    second: dia e noite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,6 +97,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,35 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cobra coral_0
+      name: dia e noite_0
       rect:
         serializedVersion: 2
-        x: 104
-        y: 512
-        width: 280
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f204a41271d73f10800000000000000
-      internalID: 2249496826797622001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cobra coral_1
-      rect:
-        serializedVersion: 2
-        x: 88
+        x: 0
         y: 0
-        width: 280
-        height: 336
+        width: 4000
+        height: 2000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 353e8092c1eaf0fe0800000000000000
-      internalID: -1220565538023349421
+      spriteID: a7d1257222fb9a180800000000000000
+      internalID: -9103535018343260806
       vertices: []
       indices: 
       edges: []
@@ -163,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ba00f1c4d8faf2e459dc51b8406bdfac
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cobra coral_0: 2249496826797622001
-      cobra coral_1: -1220565538023349421
+      dia e noite_0: -9103535018343260806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

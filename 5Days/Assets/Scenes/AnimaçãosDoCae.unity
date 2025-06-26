@@ -461,13 +461,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: cobra coral_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6538479310872512312, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
+      propertyPath: m_Size.x
+      value: 2.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538479310872512312, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
+      propertyPath: m_Size.y
+      value: 2.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538479310872512312, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 9122410416754378914, guid: 65de52e49f491be4388260ff5c5c6832, type: 3}
+    - target: {fileID: 6538479310872512312, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7526820945506267311, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.051731
+      value: -17.21
       objectReference: {fileID: 0}
     - target: {fileID: 7526820945506267311, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.9303513
+      value: -6.62
       objectReference: {fileID: 0}
     - target: {fileID: 7526820945506267311, guid: 232a65346ed590645838d7b54caf82b1, type: 3}
       propertyPath: m_LocalPosition.z
