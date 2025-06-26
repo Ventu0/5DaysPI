@@ -1091,7 +1091,6 @@ GameObject:
   - component: {fileID: 108515771}
   - component: {fileID: 108515774}
   - component: {fileID: 108515773}
-  - component: {fileID: 108515775}
   - component: {fileID: 108515772}
   m_Layer: 5
   m_Name: Voltar
@@ -1164,9 +1163,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 108515775}
-        m_TargetAssemblyTypeName: ButtonReturnToScene, Assembly-CSharp
-        m_MethodName: ReturnScene
+      - m_Target: {fileID: 772576918}
+        m_TargetAssemblyTypeName: ReturnScene, Assembly-CSharp
+        m_MethodName: ReturnSceneBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1214,19 +1213,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108515770}
   m_CullTransparentMesh: 1
---- !u!114 &108515775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108515770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7eb20bbba8e92a4bbde309be8833491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: CombatScene
 --- !u!1 &176252685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,13 +2411,13 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2449,7 +2435,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 319227697}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889460133}
+        m_TargetAssemblyTypeName: InteractButtonsController, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &319227697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3727,6 +3725,7 @@ MonoBehaviour:
   EndMenu: {fileID: 685205819}
   hasOnlyOneEnemy: 0
   mainCamera: {fileID: 1645614959}
+  escapeChance: 0
   turnoDeQualPersonagem: 0
   turno: 0
   aliadosPersonagens: []
@@ -4559,6 +4558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772576917}
+  - component: {fileID: 772576918}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -4586,6 +4586,21 @@ Transform:
   - {fileID: 640958299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772576918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772576916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7eb20bbba8e92a4bbde309be8833491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
+  characterSpeed: 1
+  sceneName: CombatScene
 --- !u!1 &785872888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,6 +5276,7 @@ MonoBehaviour:
   menu: {fileID: 889460131}
   attackMenuAnim: {fileID: 1758167311}
   attackButton: {fileID: 860592985}
+  runButton: {fileID: 319227696}
   attacksText:
   - {fileID: 47854258}
   - {fileID: 1105539881}

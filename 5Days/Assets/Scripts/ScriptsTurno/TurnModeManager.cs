@@ -128,9 +128,12 @@ public class TurnModeManager : MonoBehaviour
                     aliadosPersonagens[i].turnEnded = false;
                     aliadosPersonagens[i].OnTurnStart();
                 }
-                InteractButtonsController.instance.NextPlayer();
-                InteractButtonsController.instance.menu.SetActive(true);
-                InteractButtonsController.instance.attackMenuAnim.gameObject.SetActive(false);
+                InteractButtonsController interactButtonsController = InteractButtonsController.instance;
+                interactButtonsController.runButton.enabled = true;
+                interactButtonsController.runButton.gameObject.SetActive(true);
+                interactButtonsController.NextPlayer();
+                interactButtonsController.menu.SetActive(true);
+                interactButtonsController.attackMenuAnim.gameObject.SetActive(false);
             }
             else if (!JaAtacaram(inimigosPersonagens))
             {

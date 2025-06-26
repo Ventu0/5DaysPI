@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class InteractButtonsController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class InteractButtonsController : MonoBehaviour
     public GameObject menu;
     public Animator attackMenuAnim;
     [SerializeField] Button attackButton;
+    public Button runButton;
     [SerializeField] TextMeshProUGUI[] attacksText;
     public List<Attack> ataques;
 
@@ -68,21 +70,29 @@ public class InteractButtonsController : MonoBehaviour
     }
     public void Run()
     {
-        if (turnModeManager.escapeChance != 0)
+        MainText mainText = MainText.instance;
+        if (turnModeManager.escapeChance == 0)
         {
-            float random = Random.Range(0f, 1f);
-            if(random <= turnModeManager.escapeChance)
-            {
-                QuestController.instance.menu.SetActive(true);
-                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-                SceneTimeController.instance.onPauseGame?.Invoke();
-                Time.timeScale = 1f;
-            }
+            mainText.SetText("Não é possível fugir!", Color.red);
+            runButton.enabled = false;
+        }
+        float random = Random.Range(0f, 1f);
+        if(random <= turnModeManager.escapeChance)
+        {
+
+            //QuestController.instance.menu.SetActive(true);
+            //SceneManager.UnloadSceneAsync("CombatScene");
+            //SceneTimeController.instance.onPauseGame?.Invoke();
+            //Time.timeScale = 1f;
+            ReturnScene.instance.StartCoroutine(ReturnScene.instance.RunAnimation(turnModeManager.aliadosPersonagens.ToArray()));
+            mainText.SetText("Conseguiu fugir", Color.green);
         }
         else
         {
-            MainText mainText = MainText.instance;
-            mainText.SetText("Não é possível fugir!", Color.red);
+            mainText.SetText("Não conseguiu fugir!", Color.red);
+            runButton.enabled = false;
+            runButton.gameObject.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
         }
     }
     #endregion
