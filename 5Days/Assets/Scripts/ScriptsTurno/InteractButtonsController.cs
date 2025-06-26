@@ -79,13 +79,7 @@ public class InteractButtonsController : MonoBehaviour
         float random = Random.Range(0f, 1f);
         if(random <= turnModeManager.escapeChance)
         {
-
-            //QuestController.instance.menu.SetActive(true);
-            //SceneManager.UnloadSceneAsync("CombatScene");
-            //SceneTimeController.instance.onPauseGame?.Invoke();
-            //Time.timeScale = 1f;
             ReturnScene.instance.StartCoroutine(ReturnScene.instance.RunAnimation(turnModeManager.aliadosPersonagens.ToArray()));
-            mainText.SetText("Conseguiu fugir", Color.green);
         }
         else
         {

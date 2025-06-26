@@ -75,8 +75,12 @@ public class TurnModeManager : MonoBehaviour
             party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
             for (int j = 0; j < personagem.characterStatus.ataques.Count; j++)
             {
-                if(personagem.characterStatus.ataques[j] != null)
-                    party.partyAtual[i].ataques[j].currentPP = personagem.characterStatus.ataques[j].currentPP;
+                Attack ataque = party.partyAtual[i].ataques[j];
+                if (personagem.characterStatus.ataques[j] != null)
+                {
+                    ataque.oneTime = false;
+                    ataque.currentPP = personagem.characterStatus.ataques[j].currentPP; 
+                }
             }
         }
         #endregion

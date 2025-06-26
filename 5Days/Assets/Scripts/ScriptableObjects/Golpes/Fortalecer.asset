@@ -19,15 +19,18 @@ MonoBehaviour:
   maxPP: 15
   currentPP: 15
   VisualEffectDuration: 1
-  iconeAtaque: {fileID: 0}
-  iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  iconeAtaque: {fileID: 2069320296070208538, guid: 0658892808ea2c847ad532323f05c2cc, type: 3}
+  iconMainColor: {r: 0.23137257, g: 0.36862746, b: 0.78823537, a: 1}
   attackEffect: {fileID: 7866795523874103367, guid: ad87a8be74c7817438cee689222ca1da, type: 3}
   tipoDeAlvo: 2
   animation: {fileID: 9100000, guid: a0e3edc097c999b499719d12d8d5f00c, type: 2}
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 11400000, guid: 5aeb4a08fb90720458b88cdc3cd57faf, type: 2}
   soundEffect: {fileID: 0}
+  usarMovimentoLinear: 0
+  "ataqueUmaVezS\xF3": 0
   shakeCamera: 0
   ataqueEmArea: 0
+  oneTime: 0
   changeColorWhileApplyingEffect: 1
-  colorToChange: {r: 1, g: 0.1596647, b: 0, a: 1}
+  colorToChange: {r: 0.23137257, g: 0.36862746, b: 0.78823537, a: 1}
