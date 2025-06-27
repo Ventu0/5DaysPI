@@ -26,6 +26,7 @@ public abstract class Attack : ScriptableObject
     public bool animationPlayInFront = true;
     public Effect efeitoSecundario;
     public AudioClip soundEffect;
+    public bool repeatSoundOnLoop = true;
 
     [Header("Configurações de Ataque")]
     public bool usarMovimentoLinear;

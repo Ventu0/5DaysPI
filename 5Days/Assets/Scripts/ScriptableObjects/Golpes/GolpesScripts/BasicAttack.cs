@@ -26,12 +26,14 @@ using System.Threading.Tasks;
         currentPP = Mathf.Abs(currentPP - 1);
         if(ataqueUmaVezSó) oneTime = true;
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo
-        
-        for(int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
+        if (soundEffect != null && !repeatSoundOnLoop)
+            SFX.instance.PlaySFX(soundEffect, 1f);
+
+        for (int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
         {
             if (efeitoSecundario != null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar
 
-            if (soundEffect != null) SFX.instance.PlaySFX(soundEffect, 1f);// tocar som do ataque
+            if (soundEffect != null && repeatSoundOnLoop) SFX.instance.PlaySFX(soundEffect, 1f);// tocar som do ataque
 
             if (ataqueEmArea) //se for, faz o ataque em area, se não, ataca normalmente
             {
@@ -60,5 +62,6 @@ using System.Threading.Tasks;
             }
             await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000 / quantidadesDeAtaque);
         } 
+        
     }
 }

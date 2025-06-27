@@ -7,8 +7,8 @@ public class RelogioScript : MonoBehaviour
     [Header("Configurações do Relógio")]
     [SerializeField] Image gradiente;
     [SerializeField] TextMeshProUGUI hourText;
-    [SerializeField] Vector2 gradienteInitialPos;
-    [SerializeField] Vector2 gradienteFinalPos;
+    [SerializeField] float gradienteInitialX;
+    [SerializeField] float gradienteFinalX;
 
     [Header("Configurações de Tempo")]
     [SerializeField] string time;
@@ -59,7 +59,8 @@ public class RelogioScript : MonoBehaviour
         while (iterador < dayScript.tempoParaNoite * 60)
         {
             iterador += Time.deltaTime;
-            rectTransform.anchoredPosition = Vector2.Lerp(gradienteInitialPos, gradienteFinalPos, iterador / duration);
+            float x = Mathf.Lerp(gradienteInitialX, gradienteFinalX, iterador / duration);
+            rectTransform.anchoredPosition = new Vector2(x, rectTransform.anchoredPosition.y);
             yield return null;
         }
         print("Relogio Completo");

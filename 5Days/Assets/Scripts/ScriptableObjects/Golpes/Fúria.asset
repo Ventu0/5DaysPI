@@ -26,7 +26,8 @@ MonoBehaviour:
   animation: {fileID: 0}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 0}
-  soundEffect: {fileID: 8300000, guid: 3faa760b5a64098408ec8f2832cbec19, type: 3}
+  soundEffect: {fileID: 8300000, guid: a42ff7391a3e38f48a670bfc04ecf18d, type: 3}
+  repeatSoundOnLoop: 0
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 1
   shakeCamera: 0

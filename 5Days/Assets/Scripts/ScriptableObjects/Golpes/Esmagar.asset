@@ -15,8 +15,8 @@ MonoBehaviour:
   nomeAtaque: Esmagar
   description: "O usu\xE1rio pisa no cha\xF5 com for\xE7a, causando dano em \xE1rea"
   danoOuCura: 20
-  maxPP: 15
-  currentPP: 13
+  maxPP: 10
+  currentPP: 10
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 8232695534017358868, guid: 10dc84ebd71f59f40812f0375c66b1da, type: 3}
   iconMainColor: {r: 0.36078432, g: 0.19607845, b: 0, a: 1}
@@ -25,8 +25,12 @@ MonoBehaviour:
   animation: {fileID: 9100000, guid: 664d3beb069041c4b8cc52d507bab2f0, type: 2}
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 0}
-  soundEffect: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 17b6c09c4f932014c8eccb901a9cb01b, type: 3}
+  repeatSoundOnLoop: 0
+  usarMovimentoLinear: 0
+  "ataqueUmaVezS\xF3": 0
   shakeCamera: 1
   ataqueEmArea: 1
+  oneTime: 0
   quantidadesDeAtaque: 1
   stillDuration: 0.1

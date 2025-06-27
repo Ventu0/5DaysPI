@@ -45,9 +45,16 @@ public class RecieveInfoManager : MonoBehaviour
 
             aliado.shadow.gameObject.SetActive(true);
             aliado.characterStatus = Instantiate(playerStatus[i]);
+            
+            
             aliado.SetupStatus();
 
             aliado.gameObject.SetActive(true);
+            for(int j = 0; j < enemyStatus.Count; j++)
+            {
+                aliado.characterStatus.ataques[j] = Instantiate(playerStatus[i].ataques[j]);
+                aliado.characterStatus.ataques[j].name = playerStatus[i].ataques[j].name;
+            }
         }
 
         for (int i = 0; i < enemyStatus.Count; i++)

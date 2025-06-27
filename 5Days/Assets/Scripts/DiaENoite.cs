@@ -42,7 +42,7 @@ public class DiaENoite : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= tempoParaNoiteSegundos / 101)
+        if(time >= tempoParaNoiteSegundos / 110) //verifica time usando tempoParaNoiteSegundos dividido por 113, pois o tempo entre 6 e 23 da 17, vezes 6 da 102
         {
             relogioScript.AddTime();
             time = 0;
