@@ -8,6 +8,7 @@ public class ChatController : MonoBehaviour
 {
     public static ChatController instance;
     [SerializeField] GameObject chatMenu;
+    [SerializeField] GameObject portraitFundo;
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
     public Coroutine falasRoutine;
@@ -29,7 +30,13 @@ public class ChatController : MonoBehaviour
     public void StartDialogue(Sprite sprite, string fala)
     {
         chatMenu.SetActive(true);
-        portrait.sprite = sprite;
+
+        if(sprite == null)
+        {
+            portrait.gameObject.SetActive(false);
+        }else
+            portrait.sprite = sprite;
+
         dialogueText.text = "";
         if(falasRoutine != null)
         {

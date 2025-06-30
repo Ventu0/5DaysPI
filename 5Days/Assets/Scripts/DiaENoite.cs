@@ -16,7 +16,7 @@ public class DiaENoite : MonoBehaviour
     public delegate void OnNightChange();
     public OnNightChange onNightStart;
     
-    [SerializeField] RelogioScript relogioScript;
+    RelogioScript relogioScript;
     public static DiaENoite instance;
     
     private void Awake()
@@ -48,6 +48,11 @@ public class DiaENoite : MonoBehaviour
             time = 0;
         }
     }
+    public void SetSpecificHour(float tempo) 
+    {
+      directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, tempo);
+      StopAllCoroutines();
+    }
     IEnumerator ChangeToNight()
     {
         float iterador = 0;
@@ -58,7 +63,6 @@ public class DiaENoite : MonoBehaviour
             directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, iterador / duration);
             yield return null;
         }
-        print("Noite Iniciada");
         onNightStart?.Invoke();
     }
 }
