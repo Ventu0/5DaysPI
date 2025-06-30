@@ -30,10 +30,10 @@ public class ChatController : MonoBehaviour
     public void StartDialogue(Sprite sprite, string fala)
     {
         chatMenu.SetActive(true);
-
-        if(sprite == null)
+        portraitFundo.SetActive(true);
+        if (sprite == null)
         {
-            portrait.gameObject.SetActive(false);
+            portraitFundo.SetActive(false);
         }else
             portrait.sprite = sprite;
 

@@ -24,10 +24,6 @@ public class NPC : MonoBehaviour
         chatController = ChatController.instance;
         falasMaximas = falas.Length;
     }
-    void Update()
-    {
-
-    }
     public void Falar()
     {
         if(chatController.falasRoutine == null)

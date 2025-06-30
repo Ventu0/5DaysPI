@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatMenu: {fileID: 445089182318387509}
+  portraitFundo: {fileID: 4959368107702980099}
   portrait: {fileID: 4128138537291883416}
   dialogueText: {fileID: 5747086176871028586}
 --- !u!1 &2235253030555321206
@@ -331,7 +332,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -600.06995, y: 21.058868}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 99.5739}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3163223013574442107
 CanvasRenderer:

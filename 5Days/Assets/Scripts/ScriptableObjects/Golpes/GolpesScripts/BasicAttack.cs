@@ -25,7 +25,9 @@ using System.Threading.Tasks;
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
         currentPP = Mathf.Abs(currentPP - 1);
         if(ataqueUmaVezSó) oneTime = true;
+
         await Task.Delay(Mathf.CeilToInt(duração) * 250); //tempo do pulo
+
         if (soundEffect != null && !repeatSoundOnLoop)
             SFX.instance.PlaySFX(soundEffect, 1f);
 

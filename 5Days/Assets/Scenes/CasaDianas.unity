@@ -753,14 +753,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4959368107702980099, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7172809823293039707, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 99.5739
-      objectReference: {fileID: 0}
     - target: {fileID: 7441956713374165473, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: m_Name
       value: ChatMenu
