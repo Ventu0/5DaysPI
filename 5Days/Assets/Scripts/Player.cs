@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
 {
     [Header("Optional")]
     [SerializeField] Light2D luzNatural;
+    [SerializeField] bool canMove = true;
 
     [Header("Interagir Com NPC")]
     [SerializeField] float raioDeInteração = 2;
@@ -71,7 +71,7 @@ public class Player : CharacterStatus
     #endregion
     void Update()
     {
-        if(isGamePaused)
+        if(isGamePaused || !canMove)
         {
             rb.linearVelocity = Vector2.zero;
             return;

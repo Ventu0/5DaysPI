@@ -30,7 +30,6 @@ public class NPC : MonoBehaviour
             falaAtual++;
         if (falaAtual < falasMaximas)
         {
-            print("falando");
 
             chatController.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
         }
