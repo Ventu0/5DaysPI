@@ -18,7 +18,7 @@ public class CutsceneChat : MonoBehaviour
     [SerializeField] Sprite[] charactersFace3;
     Sprite[][] faces;
     ChatController chatController;
-    [SerializeField] WaitPlayerinput waitPlayerInput;
+    [SerializeField] CutsceneController waitPlayerInput;
     void Start()
     {
         chatController = ChatController.instance;
@@ -44,12 +44,16 @@ public class CutsceneChat : MonoBehaviour
         }
         if (falaAtual > falasMaximas)
         {
-            chatController.CloseDialogue();
-            dialogoAtual += 1;
-            dialogoAtual = Mathf.Clamp(dialogoAtual, 0, 2);
-            falaAtual = -1;
-            waitPlayerInput.director.Play();
-            waitPlayerInput.waitingInput = false;
+            Fechar();
         }
+    }
+    public void Fechar()
+    {
+        chatController.CloseDialogue();
+        dialogoAtual += 1;
+        dialogoAtual = Mathf.Clamp(dialogoAtual, 0, 2);
+        falaAtual = -1;
+        waitPlayerInput.director.Play();
+        waitPlayerInput.waitingInput = false;
     }
 }

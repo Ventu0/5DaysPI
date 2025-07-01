@@ -134,11 +134,12 @@ MonoBehaviour:
   speed: 4.45
   vida: 0
   luzNatural: {fileID: 0}
+  canMove: 1
   "raioDeIntera\xE7\xE3o": 2
   "layerMaskIntera\xE7\xE3o":
     serializedVersion: 2
     m_Bits: 8
-  lastSavedPosition: {x: 0, y: 0}
+  lastSavedPosition: {x: -8.56, y: 2.99}
   moveInput: {x: 0, y: 0}
   anim: {fileID: 0}
   rb: {fileID: 0}
