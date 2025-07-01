@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Events;
 public class WaitPlayerinput : MonoBehaviour
 {
-    PlayableDirector director;
+    [SerializeField] PlayableDirector director;
+    [SerializeField] UnityEvent onInputReceived;
     bool waitingInput = false;
     void Start()
     {
@@ -19,6 +21,8 @@ public class WaitPlayerinput : MonoBehaviour
         {
             director.Play();
             waitingInput = false;
+            onInputReceived.Invoke();
+            print("Despausado");
         }
     }
 }

@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 public class ShakeEffect : MonoBehaviour
 {
+    //[SerializeField] bool shakeOnStart = false;
+    [SerializeField] GameObject shakeObject;
+    [SerializeField] float shakeDuration;
+    [SerializeField] float shakeStrength;
     public static ShakeEffect instance;
     void Awake()
     {
@@ -18,6 +22,10 @@ public class ShakeEffect : MonoBehaviour
     void Update()
     {
 
+    }
+    public void StartShake()
+    {
+        StartCoroutine(Shake(shakeObject, shakeDuration, shakeStrength));
     }
     public IEnumerator Shake(GameObject objectToShake, float duration, float strength, bool useLocalPosition = false)
     {
