@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff077f4ec67a3db468f865cc72cdc17b
+guid: 44dcae40313cefa4f9b60d2e383a2526
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2647053897218787770
-    second: FlorestaDaVilaindioDeLado-1.png_0
+      213: -5505332285803678304
+    second: Casa de indio inimigo-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FlorestaDaVilaindioDeLado-1.png_0
+      name: Casa de indio inimigo-1.png_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 2
-        width: 35
-        height: 78
+        x: 0
+        y: 0
+        width: 72
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab90a0dae793cb420800000000000000
-      internalID: 2647053897218787770
+      spriteID: 0a5be2e54712993b0800000000000000
+      internalID: -5505332285803678304
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FlorestaDaVilaindioDeLado-1.png_0: 2647053897218787770
+      Casa de indio inimigo-1.png_0: -5505332285803678304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
