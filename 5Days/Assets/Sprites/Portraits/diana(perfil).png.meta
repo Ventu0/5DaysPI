@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 533aeeacea583b14b8dad958d3345fd9
+guid: 8bdd911a1fb38624e830300c565af48c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7796478084627734524
-    second: diana perfil _0
+      213: 7071523916423533649
+    second: diana(perfil)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diana perfil _0
+      name: diana(perfil)_0
       rect:
         serializedVersion: 2
         x: 15
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cff9a5da287a23c60800000000000000
-      internalID: 7796478084627734524
+      spriteID: 1549a131989132260800000000000000
+      internalID: 7071523916423533649
       vertices: []
       indices: 
       edges: []
