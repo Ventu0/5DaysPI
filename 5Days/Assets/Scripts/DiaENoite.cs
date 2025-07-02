@@ -5,7 +5,7 @@ using System.Collections;
 public class DiaENoite : MonoBehaviour
 {
     public GameObject dontDestroyObject;
-    [SerializeField] Light2D directionalLight;
+    public Light2D directionalLight;
     public float tempoParaNoite = 1;
     [HideInInspector] public float tempoParaNoiteSegundos;
     [Range(0, 1)]
@@ -28,7 +28,8 @@ public class DiaENoite : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            directionalLight.gameObject.SetActive(false);
+            Destroy(dontDestroyObject);
         }
     }
     void Start()

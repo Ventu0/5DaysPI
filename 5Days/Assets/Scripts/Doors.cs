@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class Doors : MonoBehaviour
 {
-    [SerializeField] Collider2D[] doors;
+    [SerializeField] GameObject[] doors;
     public static Doors instance;
     private void Awake()
     {
@@ -10,26 +11,27 @@ public class Doors : MonoBehaviour
         {
             instance = this;
         }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
         //DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
         
     }
-    public void InteractDoors(bool open)
+    public IEnumerator InteractDoors(bool open)
     {
+        yield return null;
+        print("Quantidade portas: " + doors.Length);
         print("Interagindo com portas: " + open);
-        foreach (Collider2D door in doors)
+        for(int i = 0; i < doors.Length; i++)
         {
-            if (door != null)
+            Collider2D collider2D = doors[i].GetComponent<Collider2D>();
+            if (collider2D != null)
             {
-                door.enabled = open;
+                print("Interagindo com a porta: " + doors[i].name + " - Estado: " + open);
+                collider2D.enabled = open;
             }
         }
+            
     }
     void Update()
     {
