@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
+      propertyPath: lastSavedPosition.y
+      value: 1.67
+      objectReference: {fileID: 0}
     - target: {fileID: 6900481064955034760, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -346,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeObject: {fileID: 1575663267}
   shakeDuration: 1
-  shakeStrength: 0.1
+  shakeStrength: 0.05
 --- !u!4 &379290046
 Transform:
   m_ObjectHideFlags: 0
@@ -419,6 +423,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd7e0a020ad77e94fb575061ed3a6493, type: 3}
+--- !u!1 &522813420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522813421}
+  - component: {fileID: 522813423}
+  m_Layer: 0
+  m_Name: "Colis\xE3oTriggerCutscene"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522813421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522813420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.038823802, w: 0.99924606}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 806715203}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.45}
+--- !u!58 &522813423
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522813420}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.29, y: 0.05}
+  m_Radius: 1.01
 --- !u!1 &569763935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4702719294116560221, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
@@ -512,6 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806715203}
   - component: {fileID: 806715204}
+  - component: {fileID: 806715205}
   m_Layer: 0
   m_Name: LuzArvores
   m_TagString: Untagged
@@ -531,7 +604,8 @@ Transform:
   m_LocalPosition: {x: -17.47, y: 2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 522813421}
   m_Father: {fileID: 958920869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &806715204
@@ -586,6 +660,20 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &806715205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806715202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21c9ffbeaa45a943b99207f8100d235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luz: {fileID: 806715204}
+  duration: 1
 --- !u!1 &899467855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,21 +1324,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bf2f1f8f168510c46baba5c371176c0e, type: 2}
     - {fileID: 11400000, guid: 21ae47ed15d864a4994429400365d6bc, type: 2}
     - {fileID: 11400000, guid: d43633336c4ac374bbeeb4f519217cea, type: 2}
+    - {fileID: 11400000, guid: f954c09c09eba004abde9399f182d03f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1359589373}
-          m_TargetAssemblyTypeName: WaitPlayerinput, Assembly-CSharp
-          m_MethodName: Wait
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 1359589374}
           m_TargetAssemblyTypeName: CutsceneChat, Assembly-CSharp
           m_MethodName: IniciarFala
@@ -1288,6 +1365,20 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0.9
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1359589373}
+          m_TargetAssemblyTypeName: CutsceneController, Assembly-CSharp
+          m_MethodName: Wait
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -1838,6 +1929,38 @@ PrefabInstance:
     - target: {fileID: 6937467654524660725, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
       propertyPath: m_Name
       value: PassarCena
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: usePlayerSavedPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1359589373}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSceneChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163590671181577653, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
+      propertyPath: onChangeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7886168850669050286, guid: 0c10ce866e2af2b4d833aea15a3ca326, type: 3}
       propertyPath: m_LocalScale.x

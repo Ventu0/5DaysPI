@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dentroDaCasa.unity
     guid: 11e8afd2f413c7e419fd9bd0e27867a5
+  - enabled: 1
+    path: Assets/Scenes/CasaDianas.unity
+    guid: c2bd1243cdf4c7a4ab7484297689a9f1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

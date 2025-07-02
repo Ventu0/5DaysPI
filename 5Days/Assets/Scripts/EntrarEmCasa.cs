@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class EntrarEmCasa : MonoBehaviour
 {
     [SerializeField] string sceneName;
     [SerializeField] bool usePlayerSavedPosition;
+    [SerializeField] UnityEvent onChangeScene;
     void Start()
     {
         
@@ -32,7 +34,7 @@ public class EntrarEmCasa : MonoBehaviour
                 player.SavePosition();
                 player.transform.position = Vector2.zero;
             }
-            
+            onChangeScene?.Invoke();
         }
     }
 }

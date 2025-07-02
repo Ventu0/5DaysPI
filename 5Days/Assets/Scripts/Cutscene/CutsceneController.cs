@@ -23,6 +23,10 @@ public class CutsceneController : MonoBehaviour
     {
         
     }
+    public void OnSceneChange()
+    {
+        Doors.instance.InteractDoors(false);
+    }
     public void Wait()
     {
         waitingInput = true;
