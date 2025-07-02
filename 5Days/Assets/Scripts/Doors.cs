@@ -1,40 +1,45 @@
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Doors : MonoBehaviour
 {
-    [SerializeField] GameObject[] doors;
+    [SerializeField] Collider2D[] doors;
     public static Doors instance;
     private void Awake()
     {
+        //DontDestroyOnLoad(gameObject);
         if(instance == null)
         {
             instance = this;
         }
-        //DontDestroyOnLoad(gameObject);
+
+        int value = PlayerPrefs.GetInt("AlreadyPlayedCutscene", 0);
+        if(value == 1)
+        {
+            return;
+        }
+
+        print("cena começou");
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     void Start()
     {
         
     }
-    public IEnumerator InteractDoors(bool open)
+    public void OnSceneLoaded(Scene cena, LoadSceneMode modo)
     {
-        yield return null;
-        print("Quantidade portas: " + doors.Length);
-        print("Interagindo com portas: " + open);
+        InteractDoors(false);
+    }
+    public void InteractDoors(bool open)
+    {
         for(int i = 0; i < doors.Length; i++)
         {
-            Collider2D collider2D = doors[i].GetComponent<Collider2D>();
+            Collider2D collider2D = doors[i];
             if (collider2D != null)
-            {
+            {   
                 print("Interagindo com a porta: " + doors[i].name + " - Estado: " + open);
                 collider2D.enabled = open;
             }
-        }
-            
-    }
-    void Update()
-    {
-        
+        }       
     }
 }

@@ -6,7 +6,7 @@ public class Player : CharacterStatus
 {
     [Header("Optional")]
     [SerializeField] Light2D luzNatural;
-    [SerializeField] bool canMove = true;
+    public bool canMove = true;
 
     [Header("Interagir Com NPC")]
     [SerializeField] float raioDeInteração = 2;

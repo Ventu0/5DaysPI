@@ -28,20 +28,20 @@ public class CutsceneController : MonoBehaviour
         Doors doors = Doors.instance;
         DiaENoite diaENoite = DiaENoite.instance;
         diaENoite.directionalLight.gameObject.SetActive(false);
-        doors?.StartCoroutine(doors?.InteractDoors(false));
         diaENoite.directionalLight.gameObject.SetActive(true);
     }
-    public void Wait()
+    public void Wait(bool waitInput = true)
     {
+        if (waitingInput)
         waitingInput = true;
+
         director.Pause();
     }
     void Update()
     {
-       if(waitingInput && Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+       if(waitingInput && Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
        {
            onInputReceived.Invoke();
-            print("Despausado");
        }
     }
     public void EndCutscene()
