@@ -11,6 +11,11 @@ public class CutsceneController : MonoBehaviour
     public static CutsceneController instance;
     private void Awake()
     {
+        if(CutsceneStatus.cutsceneEnded)
+        {
+            Destroy(dontDestroyParent);
+            return;
+        }
         if (instance == null)
         {
             instance = this;
@@ -50,13 +55,20 @@ public class CutsceneController : MonoBehaviour
     }
     public void EndCutscene()
     {
-        //PlayerPrefs.SetInt("AlreadyPlayedCutscene", 1);
+        Player player = Player.instance;
         QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
+        CutsceneStatus.cutsceneEnded = true;
         SceneManager.LoadScene("CasaDianas");
-        Destroy(dontDestroyParent);
         DiaENoite.instance.ResetTime();
-        Player.instance.transform.position = Vector3.zero;
-        Player.instance.gameObject.SetActive(true);
-        dontDestroyParent.SetActive(false);
+        player.transform.position = Vector3.zero;
+        player.gameObject.SetActive(true);
+        player.canMove = true;
+        Doors.instance.InteractDoors(true);
+        Destroy(dontDestroyParent);
     }
+}
+public static class CutsceneStatus
+{
+    public static bool cutsceneStarted = false;
+    public static bool cutsceneEnded = false;
 }

@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
       propertyPath: "layerMaskIntera\xE7\xE3o.m_Bits"
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6900481064955034760, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
       propertyPath: m_Enabled
