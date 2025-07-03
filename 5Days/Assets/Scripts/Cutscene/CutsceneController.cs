@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System;
 public class CutsceneController : MonoBehaviour
 {
     [SerializeField] GameObject dontDestroyParent;
@@ -67,7 +68,8 @@ public class CutsceneController : MonoBehaviour
         Destroy(dontDestroyParent);
     }
 }
-public static class CutsceneStatus
+[Serializable]
+public class CutsceneStatus
 {
     public static bool cutsceneStarted = false;
     public static bool cutsceneEnded = false;
