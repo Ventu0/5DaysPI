@@ -15,6 +15,7 @@ MonoBehaviour:
   characterSprite: {fileID: -5133412329262697850, guid: 4386f6a97b708294dbb1215329ad84cb, type: 3}
   vidaMaxima: 200
   vidaAtual: 175
+  YOffset: 0
   isDead: 0
   ataques:
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
@@ -22,4 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   animatorController: {fileID: 9100000, guid: c2efc787ccf7b5848b8a47d6b6425310, type: 2}
-  isEnemy: 0
+  flipX: 0

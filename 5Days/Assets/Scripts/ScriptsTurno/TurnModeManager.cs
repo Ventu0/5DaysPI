@@ -13,6 +13,7 @@ public class TurnModeManager : MonoBehaviour
 {
 
     [Header("Essential")]
+    public TextMeshProUGUI winText;
     public List<EnemyAI> inimigos;
     [Space]
     public List<Aliados> aliados;
@@ -72,6 +73,7 @@ public class TurnModeManager : MonoBehaviour
             BasePersonagem personagem = aliadosPersonagens[i];
             BasePersonagem personagemPersistente = aliadosPersonagensPersistentes[i];
             party.partyAtual[i].vidaAtual = personagem.vidaAtual;
+            if (party.partyAtual[i].isDead)
             party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
             for (int j = 0; j < personagem.characterStatus.ataques.Count; j++)
             {

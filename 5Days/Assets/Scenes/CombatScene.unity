@@ -456,6 +456,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9593b6970a9954418373074ad82ec91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeObject: {fileID: 0}
+  shakeDuration: 0
+  shakeStrength: 0
 --- !u!1 &26305928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,6 +3719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7550815b6009d6043aa92456682ebceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winText: {fileID: 1619888810}
   inimigos:
   - {fileID: 742859707}
   - {fileID: 1135933686}

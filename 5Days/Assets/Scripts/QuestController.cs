@@ -42,8 +42,8 @@ public class QuestController : MonoBehaviour
     public void SetQuestText(string text)
     {
         RectTransform transform = retangulo.GetComponent<RectTransform>();
-        Vector2 size = questText.GetPreferredValues(questText.text);
-        transform.sizeDelta = new Vector2(size.x, transform.sizeDelta.y);
+        Vector2 size = questText.GetPreferredValues(text);
+        transform.sizeDelta = new Vector2(size.x + 60, transform.sizeDelta.y);
         StartCoroutine(ChangeQuest(text));
     }
     public IEnumerator ChangeQuest(string text)

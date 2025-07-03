@@ -62,12 +62,14 @@ public class RecieveInfoManager : MonoBehaviour
             turnModeManager.inimigos.Add(inimigosOriginais[i]);
             turnModeManager.inimigosPersonagens.Add(inimigosOriginais[i].GetComponent<BasePersonagem>());
             BasePersonagem inimigo = turnModeManager.inimigosPersonagens[i];
-
+            Vector2 inimigoPos = inimigo.transform.position;
+            Vector2 shadowOriginalPos = inimigo.shadow.transform.position;
             inimigo.characterStatus = Instantiate(enemyStatus[i]);
 
-            if (inimigo.characterStatus.isEnemy)
-                inimigo.GetComponent<SpriteRenderer>().flipX = true;
+            inimigo.GetComponent<SpriteRenderer>().flipX = inimigo.characterStatus.flipX;
 
+            inimigo.transform.position = new Vector2(inimigoPos.x, inimigoPos.y + inimigo.characterStatus.YOffset);
+            inimigo.shadow.transform.position = shadowOriginalPos;
             inimigo.shadow.gameObject.SetActive(true);
 
             inimigo.SetupStatus();

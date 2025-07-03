@@ -42,7 +42,8 @@ public class CharacterMovement : MonoBehaviour
             StartCoroutine(ShadowMove(characterToMove.transform, newPos, duration, useLinearMovement));
         if (shadow != null)
         {
-            StartCoroutine(ShadowMove(shadow, new Vector2(newPos.x, newPos.y - 0.45f), duration));
+            Vector2 shadowPos = !useLinearMovement ? new Vector2(newPos.x, newPos.y - 0.45f) : new Vector2(newPos.x, newPos.y);
+            StartCoroutine(ShadowMove(shadow, shadowPos, duration));
         }
     }
 

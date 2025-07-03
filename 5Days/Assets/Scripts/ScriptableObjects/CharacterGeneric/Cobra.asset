@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c8fce7cdc2a2e4e980b0733c00a56a, type: 3}
   m_Name: Cobra
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 2249496826797622001, guid: 13e6e61ebd771fa439614e9fad4adc98, type: 3}
-  "for\xE7a": 3
-  defesa: 3
+  characterSprite: {fileID: 9061232554596751, guid: bcf417657e71b0f4985b6c38caae8d78, type: 3}
   vidaMaxima: 110
   vidaAtual: 110
+  YOffset: 0
+  isDead: 0
   ataques:
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   animatorController: {fileID: 9100000, guid: 4a805634a909dad4ca4afb3bfd8a6a78, type: 2}
-  isEnemy: 0
+  flipX: 1
