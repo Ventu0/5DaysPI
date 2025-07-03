@@ -5,7 +5,7 @@ public class CutsceneChat : MonoBehaviour
     [Header("Configurações de Fala")]
     [SerializeField] int falaAtual = 0;
     [Space]
-    [Header("Todos os Textos")]
+    [Header("Todos os Textos (se quiser adicionar mais falas: aumenta as array")]
     [SerializeField] int dialogoAtual = 0;
     [SerializeField] string[] dialogo1;
     [SerializeField] string[] dialogo2;
