@@ -6,21 +6,23 @@ using System.Collections;
 
 public class ChatController : MonoBehaviour
 {
-    public static ChatController instance;
+    [SerializeField] GameObject dontDestroyObject;
     [SerializeField] GameObject chatMenu;
     [SerializeField] GameObject portraitFundo;
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
     public Coroutine falasRoutine;
+    public static ChatController instance;
     private void Awake()
     {
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(dontDestroyObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(dontDestroyObject);
         }
     }
     private void Start()

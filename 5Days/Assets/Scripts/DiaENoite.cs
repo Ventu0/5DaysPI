@@ -49,6 +49,14 @@ public class DiaENoite : MonoBehaviour
             time = 0;
         }
     }
+    public void ResetTime()
+    {
+        time = 0;
+        directionalLight.intensity = 1;
+        relogioScript.ResetTime();
+        StopAllCoroutines();
+        StartCoroutine(ChangeToNight());
+    }
     public void SetSpecificHour(float tempo) 
     {
       directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, tempo);

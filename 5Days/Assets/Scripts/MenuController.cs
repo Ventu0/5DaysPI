@@ -28,6 +28,7 @@ public class MenuController : MonoBehaviour
     }
     public void ExitButton()
     {
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
     public void OnCharacterClick()

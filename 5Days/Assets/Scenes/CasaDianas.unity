@@ -211,7 +211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
       propertyPath: lastSavedPosition.y
-      value: 1.67
+      value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933575722030241093, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
+      propertyPath: "layerMaskIntera\xE7\xE3o.m_Bits"
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6900481064955034760, guid: 40de811fc6da2174eb869c49c38835a9, type: 3}
       propertyPath: m_Enabled
@@ -306,6 +310,8 @@ PlayableDirector:
     value: {fileID: 1389533993}
   - key: {fileID: -3121445118440446608, guid: d8d017bd81807444e8f155b50dcdf79e, type: 2}
     value: {fileID: 660285796}
+  - key: {fileID: -3493180469056001544, guid: d8d017bd81807444e8f155b50dcdf79e, type: 2}
+    value: {fileID: 1389533995}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &239250715
@@ -1388,14 +1394,8 @@ Transform:
   - {fileID: 1372820044}
   - {fileID: 806715203}
   - {fileID: 1913464256}
-  - {fileID: 993037413}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &993037413 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7502306255859135624, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
-  m_PrefabInstance: {fileID: 1426656057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1102482597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1516,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 21ae47ed15d864a4994429400365d6bc, type: 2}
     - {fileID: 11400000, guid: d43633336c4ac374bbeeb4f519217cea, type: 2}
     - {fileID: 11400000, guid: f954c09c09eba004abde9399f182d03f, type: 2}
+    - {fileID: 11400000, guid: a054008cb66e3aa41913eb9a2bee20a2, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1530,6 +1531,18 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1359589373}
+          m_TargetAssemblyTypeName: CutsceneController, Assembly-CSharp
+          m_MethodName: Wait
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -1565,6 +1578,20 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: CutsceneController, Assembly-CSharp
           m_MethodName: Wait
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1359589373}
+          m_TargetAssemblyTypeName: CutsceneController, Assembly-CSharp
+          m_MethodName: EndCutscene
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1623,14 +1650,18 @@ MonoBehaviour:
   - Vamos atacar essa vila deles
   - eles estao fracos, entao temos uma chance
   dialogo3:
-  - 'Sim sim '
   - concordo com voce, vamos comunicar ao chefe
+  dialogo4:
+  - Preciso sair daqui
   charactersFace1:
   - {fileID: 0}
   charactersFace2:
-  - {fileID: 0}
+  - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
+  - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
   charactersFace3:
-  - {fileID: 0}
+  - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
+  charactersFace4:
+  - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
   waitPlayerInput: {fileID: 1359589373}
 --- !u!1 &1372820042
 GameObject:
@@ -2114,23 +2145,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 958920869}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 445089182318387509, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3633318284348988494, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 198
+    - target: {fileID: 3320384456531155728, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7441956713374165473, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: m_Name
       value: ChatMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 7441956713374165473, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7502306255859135624, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: m_Pivot.x
@@ -2940,3 +2963,4 @@ SceneRoots:
   - {fileID: 1523130361}
   - {fileID: 1972608715}
   - {fileID: 1102482600}
+  - {fileID: 1426656057}

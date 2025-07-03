@@ -3,27 +3,29 @@ using UnityEngine;
 public class CutsceneChat : MonoBehaviour
 {
     [Header("Configurações de Fala")]
-    [SerializeField] int falaAtual = -1;
+    [SerializeField] int falaAtual = 0;
     [Space]
     [Header("Todos os Textos")]
     [SerializeField] int dialogoAtual = 0;
     [SerializeField] string[] dialogo1;
     [SerializeField] string[] dialogo2;
     [SerializeField] string[] dialogo3;
+    [SerializeField] string[] dialogo4;
     string[][] dialogos;
     [Space]
     [Header("Todos os Rostos")]
     [SerializeField] Sprite[] charactersFace1;
     [SerializeField] Sprite[] charactersFace2;
     [SerializeField] Sprite[] charactersFace3;
+    [SerializeField] Sprite[] charactersFace4;
     Sprite[][] faces;
     ChatController chatController;
     [SerializeField] CutsceneController waitPlayerInput;
     void Start()
     {
         chatController = ChatController.instance;
-        faces = new Sprite[][] { charactersFace1, charactersFace2, charactersFace3 };
-        dialogos = new string[][] { dialogo1, dialogo2, dialogo3};
+        faces = new Sprite[][] { charactersFace1, charactersFace2, charactersFace3, charactersFace4 };
+        dialogos = new string[][] { dialogo1, dialogo2, dialogo3, dialogo4};
     }
     void Update()
     {
@@ -40,18 +42,20 @@ public class CutsceneChat : MonoBehaviour
             falaAtual++;
         if (falaAtual < falasMaximas)
         {
+            print("falando: " + falas[falaAtual]);
             chatController.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
         }
-        if (falaAtual > falasMaximas)
+        else if (falaAtual >= falasMaximas)
         {
             Fechar();
         }
     }
     public void Fechar()
     {
+        print("fechando");
         chatController.CloseDialogue();
         dialogoAtual += 1;
-        dialogoAtual = Mathf.Clamp(dialogoAtual, 0, 2);
+        dialogoAtual = Mathf.Clamp(dialogoAtual, 0, 3);
         falaAtual = -1;
         waitPlayerInput.director.Play();
         waitPlayerInput.waitingInput = false;

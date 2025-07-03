@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 445089182318387509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 221, y: -277.05887, z: -2.8041642}
+  m_LocalPosition: {x: 172, y: -277.05887, z: -2.8041642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb9bc69fe90bbb4f9c5feabef5e43fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroyObject: {fileID: 7441956713374165473}
   chatMenu: {fileID: 445089182318387509}
   portraitFundo: {fileID: 4959368107702980099}
   portrait: {fileID: 4128138537291883416}

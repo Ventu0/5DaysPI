@@ -34,6 +34,13 @@ public class RelogioScript : MonoBehaviour
         minutes = Mathf.Clamp(minutes, 0, 60);
         UpdateTime();
     }
+    public void ResetTime()
+    {
+        isCompleted = false;
+        minutes = 0;
+        hours = 6;
+        gradiente.rectTransform.anchoredPosition = new Vector2(gradienteInitialX, gradiente.rectTransform.anchoredPosition.y);
+    }
     void UpdateTime()
     {
         if(minutes >= 60)
