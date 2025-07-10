@@ -36,9 +36,7 @@ public class CutsceneController : MonoBehaviour
     }
     public void OnSceneChange()
     {
-        Doors doors = Doors.instance;
         DiaENoite diaENoite = DiaENoite.instance;
-        SceneManager.sceneLoaded += doors.OnSceneLoaded;
         diaENoite.directionalLight.gameObject.SetActive(false);
         diaENoite.directionalLight.gameObject.SetActive(true);
     }

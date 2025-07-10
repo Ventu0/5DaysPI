@@ -44,14 +44,15 @@ public class RecieveInfoManager : MonoBehaviour
             BasePersonagem aliado = turnModeManager.aliadosPersonagens[i];
 
             aliado.shadow.gameObject.SetActive(true);
+            
             aliado.characterStatus = Instantiate(playerStatus[i]);
-            
-            
+
             aliado.SetupStatus();
 
             aliado.gameObject.SetActive(true);
             for(int j = 0; j < enemyStatus.Count; j++)
             {
+                playerStatus[i].ataques[j].oneTime = false; //para não dar erro de ataque nulo
                 aliado.characterStatus.ataques[j] = Instantiate(playerStatus[i].ataques[j]);
                 aliado.characterStatus.ataques[j].name = playerStatus[i].ataques[j].name;
             }

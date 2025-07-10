@@ -63,32 +63,37 @@ public class TurnModeManager : MonoBehaviour
             hasOnlyOneEnemy = true;
         }
     }
-    void EndGame()
+    public void EndGame()
     {
         EndMenu.SetActive(true);
+
+        MaintainStatus();
+        iniciarLuta.EndBattle();
+        iniciarLuta = null;
+    }
+    public void MaintainStatus()
+    {
         #region ManterStatusAposALuta
         PlayerPartyController party = PlayerPartyController.instance;
         //int aliadosMortos =     terminar isso aqui    
-        for(int i = 0; i < aliadosPersonagens.Count; i++)
+        for (int i = 0; i < aliadosPersonagens.Count; i++)
         {
             BasePersonagem personagem = aliadosPersonagens[i];
             BasePersonagem personagemPersistente = aliadosPersonagensPersistentes[i];
             party.partyAtual[i].vidaAtual = personagem.vidaAtual;
             if (party.partyAtual[i].isDead)
-            party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
+                party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
             for (int j = 0; j < personagem.characterStatus.ataques.Count; j++)
             {
                 Attack ataque = party.partyAtual[i].ataques[j];
                 if (personagem.characterStatus.ataques[j] != null)
                 {
                     ataque.oneTime = false;
-                    ataque.currentPP = personagem.characterStatus.ataques[j].currentPP; 
+                    ataque.currentPP = personagem.characterStatus.ataques[j].currentPP;
                 }
             }
         }
         #endregion
-        iniciarLuta.EndBattle();
-        iniciarLuta = null;
     }
     public void CheckIfAllCharactersAttacked()
     {

@@ -4,8 +4,11 @@ using System.Collections;
 
 public class DiaENoite : MonoBehaviour
 {
+    [SerializeField] GameObject clockUI;
     public GameObject dontDestroyObject;
     public Light2D directionalLight;
+    [SerializeField] Color corDaManha = new Color(218, 255, 254);
+    [SerializeField] Color corDaTarde = new Color(218, 255, 254);
     public float tempoParaNoite = 1;
     [HideInInspector] public float tempoParaNoiteSegundos;
     [Range(0, 1)]
@@ -51,6 +54,7 @@ public class DiaENoite : MonoBehaviour
     }
     public void ResetTime()
     {
+        clockUI.SetActive(true);
         time = 0;
         directionalLight.intensity = 1;
         relogioScript.ResetTime();
@@ -59,6 +63,7 @@ public class DiaENoite : MonoBehaviour
     }
     public void SetSpecificHour(float tempo) 
     {
+      clockUI.SetActive(false);
       directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, tempo);
       StopAllCoroutines();
     }

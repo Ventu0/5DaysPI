@@ -34,7 +34,7 @@ public abstract class Attack : ScriptableObject
     public bool ataqueUmaVezSó = false;
     public bool shakeCamera;
     public bool ataqueEmArea;
-    [HideInInspector] public bool oneTime;
+    public bool oneTime;
 
     public virtual void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
     {
