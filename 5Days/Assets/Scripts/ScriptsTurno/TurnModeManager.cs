@@ -68,6 +68,7 @@ public class TurnModeManager : MonoBehaviour
         EndMenu.SetActive(true);
         #region ManterStatusAposALuta
         PlayerPartyController party = PlayerPartyController.instance;
+        //int aliadosMortos =     terminar isso aqui    
         for(int i = 0; i < aliadosPersonagens.Count; i++)
         {
             BasePersonagem personagem = aliadosPersonagens[i];

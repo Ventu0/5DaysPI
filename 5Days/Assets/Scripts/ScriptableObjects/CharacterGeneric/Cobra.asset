@@ -23,4 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   - {fileID: 11400000, guid: 1e0c3358ae3d82e4785114a7c12f0095, type: 2}
   animatorController: {fileID: 9100000, guid: 4a805634a909dad4ca4afb3bfd8a6a78, type: 2}
-  flipX: 1
+  flipX: 0
