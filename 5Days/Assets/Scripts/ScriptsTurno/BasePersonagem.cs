@@ -26,6 +26,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public StatusEffect statusEffect;
 
     //variaveis privadas
+    public Animator animator;
     Aliados aliado;
     TextMeshProUGUI lifeText;
     TurnModeManager turnModeManager;
@@ -36,6 +37,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     void Start()
     {
         turnModeManager = TurnModeManager.instance;
+        animator = GetComponent<Animator>();
         aliado = GetComponent<Aliados>();
     }
     #region EffectInvolved
@@ -63,12 +65,12 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public void SetupStatus()
     {
         EnemyAI enemy = GetComponent<EnemyAI>();
-        Animator animator = GetComponent<Animator>();
+        Animator animato = GetComponent<Animator>();
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
         if (characterStatus.characterSprite != null)
             GetComponent<SpriteRenderer>().sprite = characterStatus.characterSprite;
-        if (animator != null) animator.runtimeAnimatorController = characterStatus.animatorController;
+        if(animato!= null) animato.runtimeAnimatorController = characterStatus.animatorController;
         if (enemy != null) enemy.ataques = characterStatus.ataques;
 
         if (lifeBar != null)

@@ -20,6 +20,7 @@ using System.Threading.Tasks;
         float duração = turnModeManager.QuemEstaAtacando().duration;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
+        Animator characterAnimator = quemEstaAtacando.GetComponent<Animator>();
 
         InteractButtonsController.instance.menu.SetActive(false);
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
@@ -31,6 +32,10 @@ using System.Threading.Tasks;
         if (soundEffect != null && !repeatSoundOnLoop)
             SFX.instance.PlaySFX(soundEffect, 1f);
 
+        if(useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
+        {
+            characterAnimator.SetTrigger(attackParameterName); //se tiver animação, usar ela
+        }
         for (int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
         {
             if (efeitoSecundario != null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar
@@ -45,7 +50,7 @@ using System.Threading.Tasks;
 
                 for (int j = 0; j < alvos.Count; j++)
                 {
-                    MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[j].transform.position, animation, animationPlayInFront);
+                    MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[j].transform.position, attackAnimation, animationPlayInFront, attackEffectYOffset);
 
                     if (efeitoSecundario != null)
                         efeitoSecundario.ApplyEffect(alvos[j]);
@@ -58,7 +63,7 @@ using System.Threading.Tasks;
             } 
             else
             {
-                MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, animation, animationPlayInFront, 0.7f / quantidadesDeAtaque);
+                MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront,attackEffectYOffset , 0.7f / quantidadesDeAtaque);
 
                 alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
             }

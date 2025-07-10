@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: eefb39383dcb0804391234a13437f9f2
+guid: 37a948d4de45f7c41bdf4e32b141c175
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6268371631710405095
-    second: "ataque lanceiro(lan\xE7a girando)_0"
+      213: 9222072530314037003
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_0"
   - first:
-      213: -2276646528659702273
-    second: "ataque lanceiro(lan\xE7a girando)_1"
+      213: 4042752210390868310
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_1"
   - first:
-      213: 5327958101878256801
-    second: "ataque lanceiro(lan\xE7a girando)_2"
+      213: -8970564084450230503
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_2"
   - first:
-      213: 909328401777741613
-    second: "ataque lanceiro(lan\xE7a girando)_3"
+      213: 4643231446142834359
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_3"
   - first:
-      213: -9121226748424172746
-    second: "ataque lanceiro(lan\xE7a girando)_4"
+      213: -6700857357237376242
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_4"
+  - first:
+      213: -1821320546123588293
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_5"
+  - first:
+      213: 8826047805654316509
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_6"
+  - first:
+      213: 253268771414340208
+    second: "ataque lanceiro(lan\xC3\xA7a girando)_7"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,13 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ataque lanceiro(lan\xE7a girando)_0"
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 464
-        width: 400
-        height: 232
+        y: 58
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e10c3ca9cabdf650800000000000000
-      internalID: 6268371631710405095
+      spriteID: b07814e0b126bff70800000000000000
+      internalID: 9222072530314037003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ataque lanceiro(lan\xE7a girando)_1"
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_1"
       rect:
         serializedVersion: 2
-        x: 400
-        y: 464
-        width: 400
-        height: 232
+        x: 32
+        y: 58
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +184,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ffdbc1c5b0ab760e0800000000000000
-      internalID: -2276646528659702273
+      spriteID: 651e54747bdba1830800000000000000
+      internalID: 4042752210390868310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ataque lanceiro(lan\xE7a girando)_2"
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_2"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 58
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f77774e77228380800000000000000
+      internalID: -8970564084450230503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_3"
       rect:
         serializedVersion: 2
         x: 0
-        y: 232
-        width: 400
-        height: 232
+        y: 29
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a43e983aa5b0f940800000000000000
-      internalID: 5327958101878256801
+      spriteID: 7b6544d3662107040800000000000000
+      internalID: 4643231446142834359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ataque lanceiro(lan\xE7a girando)_3"
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_4"
       rect:
         serializedVersion: 2
-        x: 400
-        y: 232
-        width: 400
-        height: 232
+        x: 32
+        y: 29
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +250,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2fc2241d559e9c00800000000000000
-      internalID: 909328401777741613
+      spriteID: e0bad4b7cb5c103a0800000000000000
+      internalID: -6700857357237376242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ataque lanceiro(lan\xE7a girando)_4"
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_5"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 29
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3dde22fc9e59b6e0800000000000000
+      internalID: -1821320546123588293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_6"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 400
-        height: 232
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +294,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63bc2604994ea6180800000000000000
-      internalID: -9121226748424172746
+      spriteID: dd534a287bb6c7a70800000000000000
+      internalID: 8826047805654316509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ataque lanceiro(lan\xC3\xA7a girando)_7"
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072f9d01b9ac38300800000000000000
+      internalID: 253268771414340208
       vertices: []
       indices: 
       edges: []
@@ -251,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 921ffd1811eb7404f836b72fe7fb36f5
+    spriteID: 69ecc18fffdd21e469da26900aee28a1
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +336,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ataque lanceiro(lan\xE7a girando)_0": 6268371631710405095
-      "ataque lanceiro(lan\xE7a girando)_1": -2276646528659702273
-      "ataque lanceiro(lan\xE7a girando)_2": 5327958101878256801
-      "ataque lanceiro(lan\xE7a girando)_3": 909328401777741613
-      "ataque lanceiro(lan\xE7a girando)_4": -9121226748424172746
+      "ataque lanceiro(lan\xC3\xA7a girando)_0": 9222072530314037003
+      "ataque lanceiro(lan\xC3\xA7a girando)_1": 4042752210390868310
+      "ataque lanceiro(lan\xC3\xA7a girando)_2": -8970564084450230503
+      "ataque lanceiro(lan\xC3\xA7a girando)_3": 4643231446142834359
+      "ataque lanceiro(lan\xC3\xA7a girando)_4": -6700857357237376242
+      "ataque lanceiro(lan\xC3\xA7a girando)_5": -1821320546123588293
+      "ataque lanceiro(lan\xC3\xA7a girando)_6": 8826047805654316509
+      "ataque lanceiro(lan\xC3\xA7a girando)_7": 253268771414340208
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

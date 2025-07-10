@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
+  m_Name: Perfurar
+  m_EditorClassIdentifier: 
+  nomeAtaque: "Ataquen Girat\xF3rio"
+  description: "Um ataque onde o usuario gira a lan\xE7a, causando dano repetidamente"
+  danoOuCura: 10
+  maxPP: 15
+  currentPP: 15
+  VisualEffectDuration: 1
+  iconeAtaque: {fileID: -7385497226993952244, guid: ebf37106a9ebe8e4badfe67a365f741f, type: 3}
+  iconMainColor: {r: 0.8313726, g: 0.5137255, b: 0, a: 1}
+  attackEffect: {fileID: 6660453761866703191, guid: 7527d22d3cd392644aac2fc8ad525045, type: 3}
+  tipoDeAlvo: 0
+  animation: {fileID: 9100000, guid: 083c2b51028c77b4ab20dd5b7c6a8f45, type: 2}
+  animationPlayInFront: 1
+  efeitoSecundario: {fileID: 0}
+  soundEffect: {fileID: 0}
+  repeatSoundOnLoop: 1
+  usarMovimentoLinear: 0
+  "ataqueUmaVezS\xF3": 0
+  oneTime: 0
+  shakeCamera: 0
+  ataqueEmArea: 0
+  useCharacterAnimation: 1
+  attackParameterName: Spin
+  quantidadesDeAtaque: 7
+  stillDuration: 0.1

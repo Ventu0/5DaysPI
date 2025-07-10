@@ -25,12 +25,12 @@ public class MovesVisualEffect : MonoBehaviour
         spriteRenderer = attackEffect.GetComponent<SpriteRenderer>();
         animator = attackEffect.GetComponent<Animator>();
     }
-    public void AttackEffect(Sprite spriteEffect, Vector2 positionEffect, RuntimeAnimatorController animatorController, bool playInFront, float duration = 0.7f)
+    public void AttackEffect(Sprite spriteEffect, Vector2 positionEffect, RuntimeAnimatorController animatorController, bool playInFront, float YOffset = -0.5f, float duration = 0.7f)
     {
         controllerAnimation = animatorController;
         effectSprite = spriteEffect;
         effectDuration = duration;
-        effectPosition = new Vector2(positionEffect.x, positionEffect.y - 0.5f);
+        effectPosition = new Vector2(positionEffect.x, positionEffect.y + YOffset);
         if(playInFront)
         StartCoroutine(PlayAttackEffectInFront());
         else StartCoroutine(PlayAttackEffectInPosition());
