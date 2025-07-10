@@ -1659,7 +1659,7 @@ MonoBehaviour:
   - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
   - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
   charactersFace3:
-  - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
+  - {fileID: -8793098670829490268, guid: 994819c72698ad3459f30caef6b91658, type: 3}
   charactersFace4:
   - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
   waitPlayerInput: {fileID: 1359589373}

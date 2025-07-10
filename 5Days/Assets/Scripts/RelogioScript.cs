@@ -36,6 +36,7 @@ public class RelogioScript : MonoBehaviour
     }
     public void ResetTime()
     {
+        gradiente.gameObject.SetActive(true);
         isCompleted = false;
         minutes = 0;
         hours = 6;

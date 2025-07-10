@@ -20,7 +20,6 @@ public class Doors : MonoBehaviour
         }
 
         print("cena começou");
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     void Start()
     {

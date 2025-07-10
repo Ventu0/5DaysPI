@@ -9,6 +9,7 @@ public class CutsceneController : MonoBehaviour
     [SerializeField] UnityEvent onInputReceived;
     public bool waitingInput = false;
     public static CutsceneController instance;
+    Doors doors;
     private void Awake()
     {
         if(CutsceneStatus.cutsceneEnded)
@@ -30,12 +31,14 @@ public class CutsceneController : MonoBehaviour
 
     void Start()
     {
+        doors = Doors.instance;
         
     }
     public void OnSceneChange()
     {
         Doors doors = Doors.instance;
         DiaENoite diaENoite = DiaENoite.instance;
+        SceneManager.sceneLoaded += doors.OnSceneLoaded;
         diaENoite.directionalLight.gameObject.SetActive(false);
         diaENoite.directionalLight.gameObject.SetActive(true);
     }
@@ -59,6 +62,7 @@ public class CutsceneController : MonoBehaviour
         QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
         CutsceneStatus.cutsceneEnded = true;
         SceneManager.LoadScene("CasaDianas");
+        SceneManager.sceneLoaded -= Doors.instance.OnSceneLoaded;
         DiaENoite.instance.ResetTime();
         player.transform.position = Vector3.zero;
         player.gameObject.SetActive(true);

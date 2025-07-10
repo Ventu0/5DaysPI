@@ -20,7 +20,7 @@ public class MenuController : MonoBehaviour
     }
     public void StartButton()
     {
-        SceneManager.LoadScene("VilaIndio");
+        SceneManager.LoadScene("CasaDianas");
     }
     public void OptionsButton()
     {
