@@ -16,18 +16,24 @@ MonoBehaviour:
   description: "A maneira mais b\xE1sica de atacar um oponente."
   danoOuCura: 25
   maxPP: 15
-  currentPP: 13
+  currentPP: 15
   VisualEffectDuration: 1
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   iconMainColor: {r: 0.79215693, g: 0, b: 0.2392157, a: 1}
   attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
+  attackEffectYOffset: -0.5
   tipoDeAlvo: 0
-  animation: {fileID: 0}
+  attackAnimation: {fileID: 0}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: 3faa760b5a64098408ec8f2832cbec19, type: 3}
+  repeatSoundOnLoop: 1
   usarMovimentoLinear: 0
+  "ataqueUmaVezS\xF3": 0
+  oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  useCharacterAnimation: 0
+  attackParameterName: 
   quantidadesDeAtaque: 1
   stillDuration: 0.1

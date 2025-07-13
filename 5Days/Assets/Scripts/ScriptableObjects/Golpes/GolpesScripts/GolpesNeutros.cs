@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Threading.Tasks;
-[CreateAssetMenu(menuName = "AtaqueNeutro/AtaqueNeutro")]
+[CreateAssetMenu(menuName = "Ataques/AtaqueNeutro")]
 public class GolpesNeutros : Attack
 {
     BasePersonagem alvoPersonagem;

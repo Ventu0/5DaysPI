@@ -15,7 +15,7 @@ MonoBehaviour:
   characterSprite: {fileID: 1797109563838230265, guid: 0f93ba0687460e049816bbd4d68fb18d, type: 3}
   vidaMaxima: 130
   vidaAtual: 130
-  YOffset: 0
+  YOffset: 0.2
   isDead: 0
   ataques:
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}

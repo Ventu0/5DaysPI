@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-[CreateAssetMenu(menuName = "Ataque/AtaqueBásico")]
+[CreateAssetMenu(menuName = "Ataques/AtaqueBásico")]
 
     public class BasicAttack : Attack
     {
@@ -17,6 +17,7 @@ using System.Threading.Tasks;
             if(oneTime) return; //se for ataque uma vez só e já tiver sido usado, não faz nada
 
         turnModeManager = TurnModeManager.instance;
+
         float duração = turnModeManager.QuemEstaAtacando().duration;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
@@ -33,9 +34,7 @@ using System.Threading.Tasks;
             SFX.instance.PlaySFX(soundEffect, 1f);
 
         if(useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
-        {
             characterAnimator.SetTrigger(attackParameterName); //se tiver animação, usar ela
-        }
         for (int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
         {
             if (efeitoSecundario != null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar
@@ -68,7 +67,8 @@ using System.Threading.Tasks;
                 alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
             }
             await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000 / quantidadesDeAtaque);
-        } 
-        
+        }
+        if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
+            characterAnimator.SetTrigger("Exit");
     }
 }

@@ -31,15 +31,18 @@ public class CharacterMovement : MonoBehaviour
         else if (turno == Turnos.PlayerTurn)
             newPos.x -= 3;
 
-        float duration = turnModeManager.QuemEstaAtacando().duration;
         shadow = characterToMove.shadow;
-        character = characterToMove;
+        character = characterToMove;  //coloca os parametros em variaveis, para facilitar+
         standingStillDuration = stillDuration;
 
+        float duration = turnModeManager.QuemEstaAtacando().duration;
+        float offset = character.characterStatus.YOffset;
+        Vector2 playerNewPos = new Vector2(newPos.x, newPos.y + offset); //calcula a posição com base no Offset do personagem
+
         if (!useLinearMovement)
-            StartCoroutine(AllyMove(characterToMove, newPos, duration));
+            StartCoroutine(AllyMove(characterToMove, playerNewPos, duration));
         else
-            StartCoroutine(ShadowMove(characterToMove.transform, newPos, duration, useLinearMovement));
+            StartCoroutine(ShadowMove(characterToMove.transform, playerNewPos, duration, useLinearMovement));
         if (shadow != null)
         {
             Vector2 shadowPos = !useLinearMovement ? new Vector2(newPos.x, newPos.y - 0.45f) : new Vector2(newPos.x, newPos.y);
