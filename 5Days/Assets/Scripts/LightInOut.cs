@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class LuzMexendo : MonoBehaviour
+public class LightBobing : MonoBehaviour
 {
     [SerializeField] Light2D luz;//Referência para a luz que será mexida
     [SerializeField] float duration = 5f;
