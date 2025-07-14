@@ -36,11 +36,13 @@ public class RelogioScript : MonoBehaviour
     }
     public void ResetTime()
     {
+        StopAllCoroutines();
         gradiente.gameObject.SetActive(true);
         isCompleted = false;
         minutes = 0;
         hours = 6;
         gradiente.rectTransform.anchoredPosition = new Vector2(gradienteInitialX, gradiente.rectTransform.anchoredPosition.y);
+        StartCoroutine(MoveGradient());
     }
     void UpdateTime()
     {
@@ -52,8 +54,7 @@ public class RelogioScript : MonoBehaviour
         }
         if (hours == maxHours)
         {
-            print("Tempo completo");
-            isCompleted = true;
+            GetComponent<DiaENoite>().ResetTime();
         }
 
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");

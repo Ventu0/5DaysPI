@@ -50,7 +50,6 @@ using System.Threading.Tasks;
                 for (int j = 0; j < alvos.Count; j++)
                 {
                     MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[j].transform.position, attackAnimation, animationPlayInFront, attackEffectYOffset);
-
                     if (efeitoSecundario != null)
                         efeitoSecundario.ApplyEffect(alvos[j]);
 

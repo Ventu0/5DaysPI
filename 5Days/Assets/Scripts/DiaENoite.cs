@@ -40,7 +40,6 @@ public class DiaENoite : MonoBehaviour
         relogioScript = GetComponent<RelogioScript>();
         tempoParaNoiteSegundos = tempoParaNoite * 60;
         StartCoroutine(ChangeToNight());
-
     }
     
     void Update()
