@@ -24,7 +24,7 @@ using System.Threading.Tasks;
         Animator characterAnimator = quemEstaAtacando.GetComponent<Animator>();
 
         InteractButtonsController.instance.menu.SetActive(false);
-        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
+        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, VisualEffectDuration * stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
         currentPP = Mathf.Abs(currentPP - 1);
         if(ataqueUmaVezSó) oneTime = true;
 
@@ -66,7 +66,7 @@ using System.Threading.Tasks;
 
                 alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
             }
-            await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000 / quantidadesDeAtaque);
+            await Task.Delay((int)VisualEffectDuration * 1000 / quantidadesDeAtaque);
         }
         if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
             characterAnimator.SetTrigger("Exit");

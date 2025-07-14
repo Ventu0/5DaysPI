@@ -23,7 +23,7 @@ MonoBehaviour:
   attackEffect: {fileID: -4333323723195929695, guid: 4014e03860ab26740bf697ca13c71209, type: 3}
   attackEffectYOffset: -0.5
   tipoDeAlvo: 0
-  attackAnimation: {fileID: 0}
+  attackAnimation: {fileID: 9100000, guid: 664d3beb069041c4b8cc52d507bab2f0, type: 2}
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: 17b6c09c4f932014c8eccb901a9cb01b, type: 3}

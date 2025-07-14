@@ -33,7 +33,7 @@ MonoBehaviour:
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
-  useCharacterAnimation: 0
-  attackParameterName: 
+  useCharacterAnimation: 1
+  attackParameterName: Normal
   quantidadesDeAtaque: 1
   stillDuration: 0.1
