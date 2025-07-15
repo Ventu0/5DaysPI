@@ -38,17 +38,19 @@ public class DiaENoite : MonoBehaviour
             directionalLight.gameObject.SetActive(false);
             Destroy(dontDestroyObject);
         }
-    }
-    void Start()
-    {
         relogioScript = GetComponent<RelogioScript>();
         tempoParaNoiteSegundos = tempoParaNoite * 60;
     }
-    public void IniciarNoite()
+    void Start()
     {
-        float porcentagem = iniciarEmQualHora / 24f * 100f; //acha a porcentagem do horario dentre as 24 horas
+        
+    }
+    public float AcharValorRestante(float valorParaAcharPorcentagem)
+    {
+        float porcentagem = valorParaAcharPorcentagem / 24f * 100f; //acha a porcentagem do horario dentre as 24 horas
         float tempoInicial = (porcentagem / 100) * tempoParaNoiteSegundos; //acha o valor da porcentagem aplicado no tempoParaNoite
-        StartCoroutine(ChangeToNight(tempoInicial));
+        return tempoInicial;
+        
     }
 
     void Update()
@@ -76,7 +78,7 @@ public class DiaENoite : MonoBehaviour
       StopAllCoroutines();
     }
     #region LerpsDeTempo
-    IEnumerator ChangeToNight(float tempoInicial = 0)
+    public IEnumerator ChangeToNight(float tempoInicial = 0)
     {
         float iterador = 0;
         float tempoAtual = tempoParaNoiteSegundos - tempoInicial;

@@ -1597,6 +1597,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  animator: {fileID: 0}
 --- !u!95 &212723959
 Animator:
   serializedVersion: 7
@@ -3339,6 +3340,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  animator: {fileID: 0}
 --- !u!95 &518258462
 Animator:
   serializedVersion: 7
@@ -3729,6 +3731,7 @@ MonoBehaviour:
   - {fileID: 518258460}
   - {fileID: 212723957}
   EndMenu: {fileID: 685205819}
+  endText: {fileID: 1619888810}
   hasOnlyOneEnemy: 0
   mainCamera: {fileID: 1645614959}
   escapeChance: 0
@@ -4316,6 +4319,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  animator: {fileID: 0}
 --- !u!95 &742859711
 Animator:
   serializedVersion: 7
@@ -6325,6 +6329,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  animator: {fileID: 0}
 --- !u!114 &1135933686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7796,6 +7801,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  animator: {fileID: 0}
 --- !u!95 &1441147515
 Animator:
   serializedVersion: 7
@@ -10737,6 +10743,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  animator: {fileID: 0}
 --- !u!114 &1846320173
 MonoBehaviour:
   m_ObjectHideFlags: 0

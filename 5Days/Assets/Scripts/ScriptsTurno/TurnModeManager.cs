@@ -19,6 +19,7 @@ public class TurnModeManager : MonoBehaviour
     public List<Aliados> aliados;
 
     [SerializeField] GameObject EndMenu;
+    [SerializeField] TextMeshProUGUI endText;
     [Tooltip("uma UI de vitoria ou derrota")]
 
     [Header("Debug")]
@@ -63,10 +64,20 @@ public class TurnModeManager : MonoBehaviour
             hasOnlyOneEnemy = true;
         }
     }
-    public void EndGame()
+    public void EndGame(bool winOrLose = false)
     {
         EndMenu.SetActive(true);
-
+        if (winOrLose)
+        {
+            endText.text = "Vitória!!!";
+            endText.color = Color.green;
+        }
+        else
+        {
+            endText.text = "Derrota!!!";
+            endText.color = Color.red;
+        }
+           
         MaintainStatus();
         iniciarLuta.EndBattle();
         iniciarLuta = null;
@@ -95,13 +106,14 @@ public class TurnModeManager : MonoBehaviour
         }
         #endregion
     }
+
     public void CheckIfAllCharactersAttacked()
     {
         if(turno == Turnos.PlayerTurn)
         {
-            if (inimigos.Count <= 0)
+            if(inimigos.Count <= 0)
             {
-                EndGame();
+                EndGame(true);
                 return;
             }
             if (JaAtacaram(aliadosPersonagens))
@@ -121,7 +133,7 @@ public class TurnModeManager : MonoBehaviour
         {
             if (aliados.Count <= 0)
             {
-                EndGame();
+                EndGame(false);
                 return;
             }
             turnoDeQualPersonagem = 0;
@@ -143,7 +155,13 @@ public class TurnModeManager : MonoBehaviour
                 InteractButtonsController interactButtonsController = InteractButtonsController.instance;
                 interactButtonsController.runButton.enabled = true;
                 interactButtonsController.runButton.gameObject.SetActive(true);
+                if (aliados.Count <= 0)
+                {
+                    EndGame(false);
+                    return;
+                }
                 interactButtonsController.NextPlayer();
+
                 interactButtonsController.menu.SetActive(true);
                 interactButtonsController.attackMenuAnim.gameObject.SetActive(false);
             }

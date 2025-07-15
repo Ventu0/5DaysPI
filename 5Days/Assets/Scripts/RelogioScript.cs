@@ -21,7 +21,7 @@ public class RelogioScript : MonoBehaviour
     {
         dayScript = GetComponent<DiaENoite>();
         UpdateTime();
-        StartCoroutine(MoveGradient());
+        StartCoroutine(MoveGradient(dayScript.AcharValorRestante(dayScript.iniciarEmQualHora)));
         hours = dayScript.iniciarEmQualHora;
     }
     void Update()
@@ -45,7 +45,7 @@ public class RelogioScript : MonoBehaviour
         }
         if (hours == dayScript.horarioDaNoite)
         {
-            dayScript.IniciarNoite();
+            StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));
         }
         if (hours == maxHours)
         {
@@ -70,12 +70,12 @@ public class RelogioScript : MonoBehaviour
         gradiente.rectTransform.anchoredPosition = new Vector2(gradienteInitialX, gradiente.rectTransform.anchoredPosition.y);
         StartCoroutine(MoveGradient());
     }
-    IEnumerator MoveGradient()
+    IEnumerator MoveGradient(float tempoInicial = 0)
     {
-        float duration = dayScript.tempoParaNoite * 60;
+        float duration = dayScript.tempoParaNoite * 60 - tempoInicial;
         float iterador = 0;
         RectTransform rectTransform = gradiente.GetComponent<RectTransform>();
-        while (iterador < dayScript.tempoParaNoite * 60)
+        while (iterador < duration)
         {
             iterador += Time.deltaTime;
             float x = Mathf.Lerp(gradienteInitialX, gradienteFinalX, iterador / duration);
