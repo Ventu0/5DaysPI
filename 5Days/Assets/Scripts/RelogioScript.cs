@@ -73,6 +73,7 @@ public class RelogioScript : MonoBehaviour
     IEnumerator MoveGradient(float tempoInicial = 0)
     {
         float duration = dayScript.tempoParaNoite * 60 - tempoInicial;
+        print("Tempo inicial" + tempoInicial);
         float iterador = 0;
         RectTransform rectTransform = gradiente.GetComponent<RectTransform>();
         while (iterador < duration)
