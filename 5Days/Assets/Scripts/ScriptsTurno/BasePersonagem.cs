@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {
@@ -104,7 +105,8 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         if(!ChecarSePossuiVida())
         { 
             AtualizarVida();
-            characterStatus.isDead = true;
+            characterStatus.isDead = true;  
+            aliado.shield.SetActive(false);
             turnModeManager.aliadosPersonagens.Remove(this);
             turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
             turnModeManager.inimigosPersonagens.Remove(this);
