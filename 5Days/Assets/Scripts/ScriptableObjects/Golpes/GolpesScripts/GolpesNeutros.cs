@@ -12,11 +12,14 @@ public class GolpesNeutros : Attack
         alvoPersonagem = alvo;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
         InteractButtonsController.instance.menu.SetActive(false);
+        Animator characterAnimator = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Animator>();
         MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront, VisualEffectDuration);
         if (changeColorWhileApplyingEffect) ChangeColorDuringEffect();
         currentPP -= 1;
         await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000);
 
+        if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
+            characterAnimator.SetTrigger(attackParameterName); //se tiver animação, usar ela
         if (efeitoSecundario != null)
         {
             efeitoSecundario.ApplyEffect(alvo, danoOuCura);

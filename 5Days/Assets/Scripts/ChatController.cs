@@ -14,10 +14,11 @@ public class ChatController : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueText;
     public Coroutine falasRoutine;
     public static ChatController instance;
+
     [Header("Configurações para aparecer texto de clicar E")]
+    [SerializeField] GameObject pressButtonText;
     [SerializeField] float timer;
     [SerializeField] float timeToTextAppear = 5f;
-    [SerializeField] GameObject pressButtonText;
     [SerializeField] bool canShowText = false;
 
     private void Awake()
