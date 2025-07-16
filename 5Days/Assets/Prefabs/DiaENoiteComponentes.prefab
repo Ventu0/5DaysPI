@@ -252,6 +252,7 @@ MonoBehaviour:
   intensidadeNoite: 0.149
   iniciarEmQualHora: 6
   horarioDaNoite: 18
+  isPaused: 0
 --- !u!114 &8910532338804416755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 06:00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8ce927514cef0941928ff848f27a10b, type: 2}
   m_sharedMaterial: {fileID: 1506280818641601163, guid: b8ce927514cef0941928ff848f27a10b, type: 2}

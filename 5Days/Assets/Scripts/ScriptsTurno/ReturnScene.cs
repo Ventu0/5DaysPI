@@ -28,8 +28,9 @@ public class ReturnScene : MonoBehaviour
     {
         QuestController.instance.menu.SetActive(true);
         TurnModeManager.instance.MaintainStatus();
-        if (DiaENoite.instance.dontDestroyObject != null)
-        DiaENoite.instance?.dontDestroyObject.SetActive(true);
+        DiaENoite dayScript = DiaENoite.instance;
+        if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
+        dayScript.PauseTime(false);
         SceneManager.UnloadSceneAsync(sceneName);
         SceneTimeController.instance.onPauseGame?.Invoke();
         Time.timeScale = 1f;

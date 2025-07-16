@@ -63,12 +63,14 @@ public class RelogioScript : MonoBehaviour
     public void ResetTime()
     {
         StopAllCoroutines();
-        gradiente.gameObject.SetActive(true);
         isCompleted = false;
-        minutes = 0;
-        hours = 0;
         gradiente.rectTransform.anchoredPosition = new Vector2(gradienteInitialX, gradiente.rectTransform.anchoredPosition.y);
-        StartCoroutine(MoveGradient());
+        gradiente.gameObject.SetActive(true);
+        int iniciarEmQualHora = dayScript.iniciarEmQualHora;
+        float valorRestante = dayScript.AcharValorRestante(iniciarEmQualHora);
+        minutes = 0;
+        hours = iniciarEmQualHora;
+        StartCoroutine(MoveGradient(valorRestante));
     }
     IEnumerator MoveGradient(float tempoInicial = 0)
     {
@@ -78,6 +80,7 @@ public class RelogioScript : MonoBehaviour
         RectTransform rectTransform = gradiente.GetComponent<RectTransform>();
         while (iterador < duration)
         {
+            while (dayScript.isPaused) yield return null;
             iterador += Time.deltaTime;
             float x = Mathf.Lerp(gradienteInitialX, gradienteFinalX, iterador / duration);
             rectTransform.anchoredPosition = new Vector2(x, rectTransform.anchoredPosition.y);
