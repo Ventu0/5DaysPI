@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Unity.VisualScripting;
 
 
 public class ChatController : MonoBehaviour
@@ -13,6 +14,12 @@ public class ChatController : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueText;
     public Coroutine falasRoutine;
     public static ChatController instance;
+    [Header("Configurações para aparecer texto de clicar E")]
+    [SerializeField] float timer;
+    [SerializeField] float timeToTextAppear = 5f;
+    [SerializeField] GameObject pressButtonText;
+    [SerializeField] bool canShowText = false;
+
     private void Awake()
     {
         if(instance == null)
@@ -27,11 +34,26 @@ public class ChatController : MonoBehaviour
     }
     private void Start()
     {
+        pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
+    }
+    private void Update()
+    {
+        if(canShowText) timer += Time.deltaTime;
+        else timer = 0;
+        if(timer >= timeToTextAppear)
+        {
+            pressButtonText.SetActive(true);
+            timer = 0;
+        }
     }
     public void StartDialogue(Sprite sprite, string fala)
     {
         chatMenu.SetActive(true);
+        timer = 0;
+        canShowText = true;
+        pressButtonText.SetActive(false);
+        Player.instance.canMove = false;
         portraitFundo.SetActive(true);
         if (sprite == null)
         {
@@ -54,6 +76,9 @@ public class ChatController : MonoBehaviour
     public void CloseDialogue()
     {
         StopAllCoroutines();
+        Player.instance.canMove = true;
+        canShowText = false;
+        pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
         dialogueText.text = "";
         portrait.sprite = null;
