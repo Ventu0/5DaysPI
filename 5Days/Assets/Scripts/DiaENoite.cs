@@ -4,20 +4,28 @@ using System.Collections;
 
 public class DiaENoite : MonoBehaviour
 {
-    [SerializeField] GameObject clockUI;
+    public GameObject clockUI;
     public GameObject dontDestroyObject;
     public Light2D directionalLight;
     [SerializeField] Color corDaManha = new Color(218, 255, 254);
     [SerializeField] Color corDaTarde = new Color(218, 255, 254);
-    public float tempoParaNoite = 1;
+
     [Header("Configurações do tempo")]
+    public float tempoParaNoite = 1;
+    [Tooltip("Tempo(em minutos) para a noite")]
+
     [HideInInspector] public float tempoParaNoiteSegundos;
+
     [Range(0, 1)]
     [SerializeField] float intensidadeNoite = 0.2f;
-    [Tooltip("Tempo(em minutos) para a noite")]
+
     [Range(0,24)]
     public int iniciarEmQualHora = 0;
+
+    [Range(0, 24)]
     public int horarioDaNoite = 18;
+    [Header("Read-Only")]
+    public bool isPaused;
     float time;
 
     public delegate void OnNightChange();
@@ -50,17 +58,20 @@ public class DiaENoite : MonoBehaviour
         float porcentagem = valorParaAcharPorcentagem / 24f * 100f; //acha a porcentagem do horario dentre as 24 horas
         float tempoInicial = (porcentagem / 100) * tempoParaNoiteSegundos; //acha o valor da porcentagem aplicado no tempoParaNoite
         return tempoInicial;
-        
     }
 
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= tempoParaNoiteSegundos / 144) //verifica time usando tempoParaNoiteSegundos dividido por 110, pois o tempo entre 6 e 23 da 17, vezes 6 da 102
+        if(time >= tempoParaNoiteSegundos / 144 && !isPaused) //verifica time usando tempoParaNoiteSegundos dividido por 110, pois o tempo entre 6 e 23 da 17, vezes 6 da 102
         {
             relogioScript.AddTime();
             time = 0;
         }
+    }
+    public void PauseTime(bool pause = true)
+    {
+        isPaused = pause;
     }
     public void ResetTime()
     {
@@ -85,6 +96,7 @@ public class DiaENoite : MonoBehaviour
         float duration = tempoAtual; 
         while (iterador < duration)
         {
+            while(isPaused) yield return null;
             iterador += Time.deltaTime;
             directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, iterador / duration);
             yield return null;
@@ -98,6 +110,7 @@ public class DiaENoite : MonoBehaviour
         float duration = tempoParaNoiteSegundos / 4;
         while (iterador < duration)
         {
+            while (isPaused) yield return null;
             iterador += Time.deltaTime;
             directionalLight.intensity = Mathf.Lerp(intensidadeNoite, 1, iterador / duration);
             yield return null;
