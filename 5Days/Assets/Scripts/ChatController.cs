@@ -46,6 +46,7 @@ public class ChatController : MonoBehaviour
         {
             pressButtonText.SetActive(true);
             timer = 0;
+            canShowText = false;
         }
     }
     public void StartDialogue(Sprite sprite, string fala)
@@ -62,6 +63,7 @@ public class ChatController : MonoBehaviour
         }else
             portrait.sprite = sprite;
 
+        print("indo para segunda parte");
         dialogueText.text = "";
         if(falasRoutine != null)
         {
