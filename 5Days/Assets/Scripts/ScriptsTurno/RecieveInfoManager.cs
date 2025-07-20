@@ -51,6 +51,7 @@ public class RecieveInfoManager : MonoBehaviour
             aliado.gameObject.SetActive(true);
             for(int j = 0; j < enemyStatus.Count; j++)
             {
+                aliado.characterStatus.ataques[j] = Instantiate(playerStatus[i].ataques[j]);
                 playerStatus[i].ataques[j].oneTime = false; //para não dar erro de ataque nulo
                 aliado.characterStatus.ataques[j].name = playerStatus[i].ataques[j].name; //para nao dar o ataque(copia)
             }
