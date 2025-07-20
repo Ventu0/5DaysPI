@@ -53,17 +53,23 @@ public class CutsceneController : MonoBehaviour
     public void EndCutscene()
     {
         Player player = Player.instance;
-        QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
-        CutsceneStatus.cutsceneEnded = true;
-        SceneManager.LoadScene("CasaDianas");
+        DiaENoite dayScript = DiaENoite.instance;
         Doors doors = Doors.instance;
+
+        QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
+        SceneManager.LoadScene("CasaDianas");
+        CutsceneStatus.cutsceneEnded = true;
+
         SceneManager.sceneLoaded -= doors.OnSceneLoaded;
         doors.InteractDoors(true);
-        DiaENoite.instance.PauseTime(false);
-        DiaENoite.instance.ResetTime();
-        player.transform.position = Vector3.zero;
+
+        dayScript.PauseTime(false); //reseta o tempo
+        dayScript.ResetTime();
+
+        player.transform.position = Vector3.zero; //redefine posições do player
         player.gameObject.SetActive(true);
         player.canMove = true;
+
         Destroy(dontDestroyParent);
     }
 }

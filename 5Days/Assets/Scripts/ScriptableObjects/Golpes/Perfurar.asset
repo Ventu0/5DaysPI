@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "Um ataque onde o usuario gira a lan\xE7a, causando dano repetidamente"
   danoOuCura: 10
   maxPP: 15
-  currentPP: 13
+  currentPP: 15
   VisualEffectDuration: 1.4
   iconeAtaque: {fileID: -7385497226993952244, guid: ebf37106a9ebe8e4badfe67a365f741f, type: 3}
   iconMainColor: {r: 0.8313726, g: 0.5137255, b: 0, a: 1}
@@ -35,5 +35,6 @@ MonoBehaviour:
   ataqueEmArea: 0
   useCharacterAnimation: 1
   attackParameterName: Spin
+  endAttackParameter: Exit
   quantidadesDeAtaque: 7
   stillDuration: 0.2

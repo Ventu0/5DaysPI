@@ -35,5 +35,6 @@ MonoBehaviour:
   ataqueEmArea: 0
   useCharacterAnimation: 0
   attackParameterName: 
+  endAttackParameter: 
   changeColorWhileApplyingEffect: 1
   colorToChange: {r: 0, g: 1, b: 0, a: 1}

@@ -68,6 +68,6 @@ using System.Threading.Tasks;
             await Task.Delay((int)VisualEffectDuration * 1000 / quantidadesDeAtaque);
         }
         if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
-            characterAnimator.SetTrigger("Exit");
+            characterAnimator.SetTrigger(endAttackParameter);
     }
 }

@@ -16,7 +16,7 @@ public class SelectTarget : MonoBehaviour
 
     [Header("Read-Only")]
     public BasePersonagem selectedTarget;
-    [SerializeField] int currentCharacterSelected;
+    public int currentCharacterSelected;
     public List<BasePersonagem> targets = new List<BasePersonagem>();
     public bool isSelecting;
 
@@ -45,8 +45,8 @@ public class SelectTarget : MonoBehaviour
     void Update()
     {
         if (isSelecting)
-            {
-            if (inputTimer > 0f)
+        {
+            if (inputTimer > 0f) //para não dar erro de apertar espaço duas vezes
             {
                 inputTimer -= Time.unscaledDeltaTime;
                 return;
@@ -57,7 +57,7 @@ public class SelectTarget : MonoBehaviour
                 canMove = false;
                 currentCharacterSelected++;
                 currentCharacterSelected = Mathf.Clamp(currentCharacterSelected, 0, targets.Count - 1);
-                CallMoveArrow();
+                CallMoveArrow(currentCharacterSelected);
             }
             if (vertical > 0 && canMove) //este código está bastante genérico e consegue trabalhar sozinho, apenas remover algumas coisas específicas (como Atacar()) e pronto
             {
@@ -65,23 +65,27 @@ public class SelectTarget : MonoBehaviour
 
                 currentCharacterSelected--;
                 currentCharacterSelected = Mathf.Clamp(currentCharacterSelected, 0, targets.Count - 1);
-                CallMoveArrow();
+                CallMoveArrow(currentCharacterSelected);
             }
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space))
             {
-                InteractButtonsController interactButtonsController = InteractButtonsController.instance;
-                selectedTarget = targets[currentCharacterSelected];
-                interactButtonsController.Atacar(interactButtonsController.chosenAttack, selectedTarget);
-
-                targets.Clear();
-                inputTimer = inputTimerCooldown;
-                attackText.SetActive(false);
-                selectedTarget = null;
-                arrowTransform.gameObject.SetActive(false);
-                isSelecting = false;
-                canMove = true;
+                FinishSelect();
             }
         }
+    }
+    public void FinishSelect()
+    {
+        InteractButtonsController interactButtonsController = InteractButtonsController.instance;
+        selectedTarget = targets[currentCharacterSelected];
+        interactButtonsController.Atacar(interactButtonsController.chosenAttack, selectedTarget);
+
+        targets.Clear();
+        inputTimer = inputTimerCooldown;
+        attackText.SetActive(false);
+        selectedTarget = null;
+        arrowTransform.gameObject.SetActive(false);
+        isSelecting = false;
+        canMove = true;
     }
     public void StartSelecting() //caso eu queria mudar para genérico (selecionar aliados também) adicionar parametro generico
     { 
@@ -91,9 +95,9 @@ public class SelectTarget : MonoBehaviour
         arrowTransform.position = new Vector2(targets[0].transform.position.x, targets[0].transform.position.y + 1);
         attackText.SetActive(true);
     }
-    void CallMoveArrow()
+    public void CallMoveArrow(int index)
     {
-        Vector2 newPos = new Vector2(targets[currentCharacterSelected].transform.position.x, targets[currentCharacterSelected].transform.position.y + 1);
+        Vector2 newPos = new Vector2(targets[index].transform.position.x, targets[index].transform.position.y + 1);
         StartCoroutine(MoveArrow(newPos));
     }
     IEnumerator MoveArrow(Vector2 newPos)

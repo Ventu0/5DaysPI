@@ -42,6 +42,7 @@ public abstract class Attack : ScriptableObject
 
     [Header("Configurações da animação do personagem (ativar se useCharacterAnimation for true)" )]
     public string attackParameterName;
+    public string endAttackParameter;
 
     public virtual void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
     {

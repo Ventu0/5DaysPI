@@ -4,8 +4,8 @@ using System.Collections;
 public class RecieveInfoManager : MonoBehaviour
 {
     public static RecieveInfoManager instance;
-    private List<Aliados> aliadosOriginais = new List<Aliados>();
-    private List<EnemyAI> inimigosOriginais = new List<EnemyAI>();
+    [SerializeField] private List<Aliados> aliadosOriginais = new List<Aliados>();
+    [SerializeField] private List<EnemyAI> inimigosOriginais = new List<EnemyAI>();
     private void Awake()
     {
         TurnModeManager turnModeManager = TurnModeManager.instance;
@@ -19,7 +19,7 @@ public class RecieveInfoManager : MonoBehaviour
         for(int i = 0; i < turnModeManager.inimigos.Count; i++)
         {
             inimigosOriginais.Add(turnModeManager.inimigos[i]);
-            turnModeManager.inimigos[i].GetComponent<BasePersonagem>().gameObject.SetActive(false);
+            turnModeManager.inimigos[i].gameObject.SetActive(false);
         }
         turnModeManager.aliados.Clear();
         turnModeManager.aliadosPersonagens.Clear();
@@ -62,9 +62,11 @@ public class RecieveInfoManager : MonoBehaviour
         {
             turnModeManager.inimigos.Add(inimigosOriginais[i]);
             turnModeManager.inimigosPersonagens.Add(inimigosOriginais[i].GetComponent<BasePersonagem>());
+
             BasePersonagem inimigo = turnModeManager.inimigosPersonagens[i];
             Vector2 inimigoPos = inimigo.transform.position;
             Vector2 shadowOriginalPos = inimigo.shadow.transform.position;
+
             inimigo.characterStatus = Instantiate(enemyStatus[i]);
 
             inimigo.GetComponent<SpriteRenderer>().flipX = inimigo.characterStatus.flipX;

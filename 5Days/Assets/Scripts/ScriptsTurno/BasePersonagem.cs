@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 public class BasePersonagem : MonoBehaviour, IDamageable
 {

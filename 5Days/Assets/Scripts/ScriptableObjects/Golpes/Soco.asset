@@ -35,5 +35,6 @@ MonoBehaviour:
   ataqueEmArea: 0
   useCharacterAnimation: 1
   attackParameterName: Normal
+  endAttackParameter: 
   quantidadesDeAtaque: 1
   stillDuration: 0.1

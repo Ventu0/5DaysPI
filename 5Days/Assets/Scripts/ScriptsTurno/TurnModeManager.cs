@@ -25,8 +25,8 @@ public class TurnModeManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
     [SerializeField] public Camera mainCamera;
-    public float escapeChance;
     [Tooltip("Chance de escapar da batalha, é usado em porcentagem, ou seja, o numero é entre 0 a 1")]
+    public float escapeChance;
     public int turnoDeQualPersonagem;
     public Turnos turno;
 
@@ -136,10 +136,10 @@ public class TurnModeManager : MonoBehaviour
                 EndGame(false);
                 return;
             }
-            turnoDeQualPersonagem = 0;
              
             if (JaAtacaram(inimigosPersonagens))
             {
+                turnoDeQualPersonagem = 0;
                 turno = Turnos.PlayerTurn;
                 for(int i = 0; i < inimigosPersonagens.Count; i++)
                 {
@@ -167,7 +167,9 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!JaAtacaram(inimigosPersonagens))
             {
+                Debug.Log("Antes de somar: " + turnoDeQualPersonagem);
                 turnoDeQualPersonagem += 1;
+                Debug.Log("Depois de somar: " + turnoDeQualPersonagem);
                 inimigos[turnoDeQualPersonagem].Attack();
             }
         }
