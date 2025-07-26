@@ -3,16 +3,30 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
+[System.Serializable]
+public class Inimigo
+{
+    public bool jaMorreu;
+    public Inimigo(bool jaMorreu)
+    {
+        this.jaMorreu = jaMorreu;
+    }
+}
 public class IniciarLuta : MonoBehaviour
 {
     public delegate void OnStartBattle();
     public OnStartBattle onStartBattle;
+
     [SerializeField] string cenaEscolhida;
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
     [SerializeField] float escapeChance = 0.7f; //chance de escapar da batalha, entre 0 e 1 
+
+    public bool jaMorreu;
+    public int personalID;
+    public Inimigo inimigo;
     void Start()
     {
-        
+        inimigo = new Inimigo(jaMorreu);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,7 +37,8 @@ public class IniciarLuta : MonoBehaviour
     }
     public void EndBattle()
     {
-        Destroy(gameObject);
+        inimigo.jaMorreu = true;
+        gameObject.SetActive(false);
         Time.timeScale = 0f;
     }
     void WaitSomeTime()

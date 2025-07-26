@@ -105,6 +105,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         { 
             AtualizarVida();
             characterStatus.isDead = true;  
+            if(aliado != null)
             aliado.shield.SetActive(false);
             turnModeManager.aliadosPersonagens.Remove(this);
             turnModeManager.aliados.Remove(gameObject.GetComponent<Aliados>());
