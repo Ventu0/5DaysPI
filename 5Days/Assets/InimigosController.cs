@@ -11,9 +11,11 @@ public class Inimigos
 public class InimigosController : MonoBehaviour
 {
     [SerializeField] IniciarLuta[] inimigosArray;
+    public static InimigosController instance;
 
     private void Awake()
     {
+        if (instance == null) instance = this;
     }
     void Start()
     {

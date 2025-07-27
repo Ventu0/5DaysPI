@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
+using System.IO;
 
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] Button loadGameButton;
     [SerializeField] Sprite clickSprite;
     [SerializeField] Transform characterTransform;
     [SerializeField] float jumpQuantity = 10f;
@@ -17,10 +19,33 @@ public class MenuController : MonoBehaviour
     {
         objectImage = characterTransform.GetComponent<Image>();
         originalSprite = objectImage.sprite;
+        loadGameButton.onClick.AddListener(LoadGameButton);
+        loadGameButton.enabled = ChecarSePossuiSave();
     }
-    public void StartButton()
+    #region MenuButtons
+    public void NewGameButton()
     {
+        if (ChecarSePossuiSave())
+        {
+            string pasta = Application.persistentDataPath;
+            string[] arquivos = Directory.GetFiles(pasta, "*.json");
+
+            for(int i = 0; i < arquivos.Length; i++)
+            {
+                File.Delete(arquivos[i]); //se já houver um save, deleta ele
+            }
+        }
         SceneManager.LoadScene("CasaDianas");
+    }
+    public void LoadGameButton()
+    {
+        Loader.instance.Carregar();
+    }
+    public bool ChecarSePossuiSave()
+    {
+        string caminho = Application.persistentDataPath;
+        string[] arquivosJson = Directory.GetFiles(caminho, "*.json");
+        return arquivosJson.Length > 0;
     }
     public void OptionsButton()
     {
@@ -31,6 +56,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Application.Quit();
     }
+    #endregion
     public void OnCharacterClick()
     {
         if (routine != null)
