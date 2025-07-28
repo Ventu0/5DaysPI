@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.EventSystems;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering;
 
 public class InteractButtonsController : MonoBehaviour
 {
@@ -50,6 +48,7 @@ public class InteractButtonsController : MonoBehaviour
         turnModeManager = TurnModeManager.instance;
         attackMenuAnim.gameObject.SetActive(false);
         attackButton.onClick.AddListener(OpenMenu);
+        EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
     }
     #region MainButtons
     public void OpenMenu()

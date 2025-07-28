@@ -11,7 +11,8 @@ public class CutsceneController : MonoBehaviour
     public static CutsceneController instance;
     private void Awake()
     {
-        if(CutsceneStatus.cutsceneEnded)
+        int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
+        if(cutsceneEnded == 1)
         {
             Destroy(dontDestroyParent);
             return;
@@ -57,10 +58,9 @@ public class CutsceneController : MonoBehaviour
         Doors doors = Doors.instance;
 
         QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
-        SceneManager.LoadScene("CasaDianas");
-        CutsceneStatus.cutsceneEnded = true;
-
         SceneManager.sceneLoaded -= doors.OnSceneLoaded;
+        SceneManager.LoadScene("CasaDianas");
+        PlayerPrefs.SetInt("CutsceneEnded", 1);
         doors.InteractDoors(true);
 
         dayScript.PauseTime(false); //reseta o tempo
@@ -72,9 +72,4 @@ public class CutsceneController : MonoBehaviour
 
         Destroy(dontDestroyParent);
     }
-}
-public static class CutsceneStatus
-{
-    public static bool cutsceneStarted = false;
-    public static bool cutsceneEnded = false;
 }

@@ -12,10 +12,9 @@ public class Doors : MonoBehaviour
         {
             instance = this;
         }
-
-        if (CutsceneStatus.cutsceneEnded) return;
+        int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
+        if (cutsceneEnded == 1) return;
         SceneManager.sceneLoaded += OnSceneLoaded;
-        print("cena começou");
     }
     void Start()
     {

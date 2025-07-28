@@ -21,6 +21,16 @@ public class MenuController : MonoBehaviour
         originalSprite = objectImage.sprite;
         loadGameButton.onClick.AddListener(LoadGameButton);
         loadGameButton.enabled = ChecarSePossuiSave();
+        if (!ChecarSePossuiSave())
+        {
+            return;
+        }
+        else
+        {
+            Color deactivateColor = new Color(255, 255, 255, 110);
+            loadGameButton.image.color = deactivateColor;
+            loadGameButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = deactivateColor;
+        }
     }
     #region MenuButtons
     public void NewGameButton()
@@ -35,6 +45,8 @@ public class MenuController : MonoBehaviour
                 File.Delete(arquivos[i]); //se já houver um save, deleta ele
             }
         }
+        PlayerPrefs.DeleteAll();
+        Loader.instance.DeletarTudo();
         SceneManager.LoadScene("CasaDianas");
     }
     public void LoadGameButton()
@@ -53,7 +65,6 @@ public class MenuController : MonoBehaviour
     }
     public void ExitButton()
     {
-        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
     #endregion

@@ -29,7 +29,7 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: 439dc4789aeac1d4dbc78d805ecb4e2d, type: 3}
   repeatSoundOnLoop: 1
   usarMovimentoLinear: 0
-  "ataqueUmaVezS\xF3": 0
+  "ataqueUmaVezS\xF3": 1
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0

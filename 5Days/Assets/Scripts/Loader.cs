@@ -17,6 +17,16 @@ public class Loader : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void DeletarTudo()
+    {
+        Scene dontDestroyScene = gameObject.scene;
+        GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
+        foreach(GameObject objeto in objectsInScene)
+        {
+            Destroy(objeto);
+        }
+        Destroy(gameObject);
+    }
     public void Carregar()
     {
         string caminho = Application.persistentDataPath + "/PlayerData.json";
@@ -33,9 +43,5 @@ public class Loader : MonoBehaviour
         player.transform.position = coisasSalvas.playerPos;
         player.lastSavedPosition = coisasSalvas.playerLastSavedPos;
         Destroy(gameObject);
-    }
-    void Update()
-    {
-        
     }
 }

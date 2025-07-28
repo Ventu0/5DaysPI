@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Linq;
-
 [System.Serializable]
 public class Inimigo
 {

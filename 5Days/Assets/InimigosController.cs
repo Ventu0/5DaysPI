@@ -16,6 +16,7 @@ public class InimigosController : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
+        PauseMenuController.instance.onSave += Salvar;
     }
     void Start()
     {
@@ -60,8 +61,8 @@ public class InimigosController : MonoBehaviour
             }
         }
     }
-    void Update()
+    private void OnDisable()
     {
-        
+        PauseMenuController.instance.onSave -= Salvar;
     }
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
     usado 1 vez por partida.</color>"
   danoOuCura: 15
   maxPP: 15
-  currentPP: 12
+  currentPP: 15
   VisualEffectDuration: 1
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -30,11 +30,12 @@ MonoBehaviour:
   soundEffect: {fileID: 8300000, guid: a42ff7391a3e38f48a670bfc04ecf18d, type: 3}
   repeatSoundOnLoop: 0
   usarMovimentoLinear: 0
-  "ataqueUmaVezS\xF3": 0
+  "ataqueUmaVezS\xF3": 1
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
   useCharacterAnimation: 0
   attackParameterName: 
+  endAttackParameter: 
   quantidadesDeAtaque: 4
   stillDuration: 0.1

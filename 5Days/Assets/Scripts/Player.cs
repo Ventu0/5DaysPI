@@ -71,7 +71,13 @@ public class Player : CharacterStatus
     #endregion
     void Update()
     {
-        if(isGamePaused || !canMove)
+        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        {
+            InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
+        }
+
+        if (isGamePaused || !canMove)
         {
             rb.linearVelocity = Vector2.zero;
             return;
@@ -95,16 +101,16 @@ public class Player : CharacterStatus
             moveInput = moveInput.normalized;
         }
         rb.linearVelocity = moveInput * Speed;
-        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        
+    }
+    void InteragirNPC(Collider2D overlapCircle)
+    {
+        if (overlapCircle != null)
         {
-            if (collider2D != null)
+            NPC npc = overlapCircle.GetComponent<NPC>();
+            if (npc != null)
             {
-                NPC npc = collider2D.GetComponent<NPC>();
-                if(npc != null)
-                {
-                    npc.Falar();
-                }
+                npc.Falar();
             }
         }
     }

@@ -55,15 +55,13 @@ public class ChatController : MonoBehaviour
         timer = 0;
         canShowText = true;
         pressButtonText.SetActive(false);
-        Player.instance.canMove = false;
         portraitFundo.SetActive(true);
+
         if (sprite == null)
-        {
             portraitFundo.SetActive(false);
-        }else
+        else
             portrait.sprite = sprite;
 
-        print("indo para segunda parte");
         dialogueText.text = "";
         if(falasRoutine != null)
         {
@@ -79,7 +77,6 @@ public class ChatController : MonoBehaviour
     public void CloseDialogue()
     {
         StopAllCoroutines();
-        Player.instance.canMove = true;
         canShowText = false;
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);

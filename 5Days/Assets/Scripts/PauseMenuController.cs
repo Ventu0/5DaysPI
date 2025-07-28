@@ -14,6 +14,8 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] Button SaveButton;
     [SerializeField] bool isPaused;
 
+    public delegate void Save();
+    public Save onSave;
     public CoisasParaSalvar coisasSalvar;
     public static PauseMenuController instance;
     private void Awake()
@@ -64,7 +66,7 @@ public class PauseMenuController : MonoBehaviour
     }
     public void Salvar()
     {
-        InimigosController.instance.Salvar();
+        onSave?.Invoke();
         coisasSalvar.playerPos = Player.instance.transform.position;
         coisasSalvar.playerLastSavedPos = Player.instance.lastSavedPosition;
         coisasSalvar.activeScene = SceneManager.GetActiveScene().name;
@@ -77,6 +79,8 @@ public class PauseMenuController : MonoBehaviour
     {
         Salvar();
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+        Destroy(gameObject); //para não pausar no menu
     }
     #endregion
 }

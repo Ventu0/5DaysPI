@@ -26,11 +26,14 @@ public class NPC : MonoBehaviour
     }
     public void Falar()
     {
-        if(chatController.falasRoutine == null)
+        if (chatController.falasRoutine == null)
             falaAtual++;
+        else
+            print("não é nulo");
         if (falaAtual < falasMaximas)
         {
-
+            print("proximo dialogo");
+            Player.instance.canMove = false;
             chatController.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
         }
         if(falaAtual > falasMaximas)
@@ -43,6 +46,7 @@ public class NPC : MonoBehaviour
             }
             else
             {
+                Player.instance.canMove = true;
                 chatController.CloseDialogue();
                 if (completeQuest && !jaFalou)
                 {
