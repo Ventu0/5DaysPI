@@ -28,8 +28,7 @@ public class NPC : MonoBehaviour
     {
         if (chatController.falasRoutine == null)
             falaAtual++;
-        else
-            print("não é nulo");
+
         if (falaAtual < falasMaximas)
         {
             print("proximo dialogo");

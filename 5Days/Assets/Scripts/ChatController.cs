@@ -12,8 +12,6 @@ public class ChatController : MonoBehaviour
     [SerializeField] GameObject portraitFundo;
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
-    public Coroutine falasRoutine;
-    public static ChatController instance;
 
     [Header("Configurações para aparecer texto de clicar E")]
     [SerializeField] GameObject pressButtonText;
@@ -21,6 +19,9 @@ public class ChatController : MonoBehaviour
     [SerializeField] float timeToTextAppear = 5f;
     [SerializeField] bool canShowText = false;
 
+    BounceEffect bounceEffect;
+    public Coroutine falasRoutine;
+    public static ChatController instance;
     private void Awake()
     {
         if(instance == null)
@@ -35,6 +36,7 @@ public class ChatController : MonoBehaviour
     }
     private void Start()
     {
+        bounceEffect = BounceEffect.instance;
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
     }
@@ -55,12 +57,19 @@ public class ChatController : MonoBehaviour
         timer = 0;
         canShowText = true;
         pressButtonText.SetActive(false);
-        portraitFundo.SetActive(true);
-
+        bounceEffect.isOnRoutine = false;
+        //SÓ PARA MOSTRAR: posso fazer isso: portraitFundo.SetActive(sprite == null);
         if (sprite == null)
+        {
             portraitFundo.SetActive(false);
+        }
         else
+        {
             portrait.sprite = sprite;
+            portraitFundo.SetActive(true);
+            //if (portrait.sprite != sprite) //se for um novo sprite
+            StartCoroutine(bounceEffect?.Bounce(portrait.transform, 0.25f, 5)); //efeito de pulinho
+        }
 
         dialogueText.text = "";
         if(falasRoutine != null)
@@ -71,7 +80,7 @@ public class ChatController : MonoBehaviour
             falasRoutine = null;
             return;
         }
-        if(falasRoutine == null)
+        else 
             falasRoutine = StartCoroutine(EscreverFalas(fala));
     }
     public void CloseDialogue()
@@ -80,6 +89,7 @@ public class ChatController : MonoBehaviour
         canShowText = false;
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
+        bounceEffect.isOnRoutine = false;
         dialogueText.text = "";
         portrait.sprite = null;
     }
