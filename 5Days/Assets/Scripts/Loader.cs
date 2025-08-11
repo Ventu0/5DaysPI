@@ -4,10 +4,12 @@ using System.IO;
 
 public class Loader : MonoBehaviour
 {
+    CoisasParaSalvar coisasSalvas;
     public static Loader instance;
     private void Awake()
     {
-        if(instance == null)
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -30,7 +32,7 @@ public class Loader : MonoBehaviour
     public void Carregar()
     {
         string caminho = Application.persistentDataPath + "/PlayerData.json";
-        CoisasParaSalvar coisasSalvas = new CoisasParaSalvar();
+         coisasSalvas = new CoisasParaSalvar();
         if (File.Exists(caminho))
         {
             string json = File.ReadAllText(caminho);
@@ -38,10 +40,17 @@ public class Loader : MonoBehaviour
         }
 
         SceneManager.LoadScene(coisasSalvas.activeScene);
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name != coisasSalvas.activeScene)
+            return;
 
         Player player = Player.instance;
+        if (player == null) print("Player nulo no Loader");
         player.transform.position = coisasSalvas.playerPos;
         player.lastSavedPosition = coisasSalvas.playerLastSavedPos;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         Destroy(gameObject);
     }
 }

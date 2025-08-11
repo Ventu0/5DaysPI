@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DiaENoite : MonoBehaviour
 {
@@ -36,10 +37,12 @@ public class DiaENoite : MonoBehaviour
     
     private void Awake()
     {
+        directionalLight.gameObject.SetActive(false);
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(dontDestroyObject);
+            directionalLight.gameObject.SetActive(true);
         }
         else
         {
@@ -59,7 +62,6 @@ public class DiaENoite : MonoBehaviour
         float tempoInicial = (porcentagem / 100) * tempoParaNoiteSegundos; //acha o valor da porcentagem aplicado no tempoParaNoite
         return tempoInicial;
     }
-
     void Update()
     {
         time += Time.deltaTime;
