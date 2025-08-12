@@ -50,6 +50,7 @@ public class Loader : MonoBehaviour
         if (player == null) print("Player nulo no Loader");
         player.transform.position = coisasSalvas.playerPos;
         player.lastSavedPosition = coisasSalvas.playerLastSavedPos;
+        QuestController.instance?.SetQuestText(coisasSalvas.activeQuest);
         SceneManager.sceneLoaded -= OnSceneLoaded;
         Destroy(gameObject);
     }

@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
     Transform shadow;
     TurnModeManager turnModeManager;
     BasePersonagem character;
+    [SerializeField] AnimationCurve curve; //curva até funciona, mas ela não é adaptativa, teria que mexer no script
     public static CharacterMovement instance;
     
     void Awake()
@@ -58,6 +59,7 @@ public class CharacterMovement : MonoBehaviour
             while (iterador < duration)
             {
                 float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
+                
                 float playerNewX = Mathf.Lerp(initialPos.x, newPos.x, iterador);
                 characterTransform.position = new Vector2(playerNewX, playerNewY);
                 iterador += Time.deltaTime * duration;

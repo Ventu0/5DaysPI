@@ -6,6 +6,7 @@ public class CoisasParaSalvar
 {
     public Vector2 playerPos;
     public Vector2 playerLastSavedPos;
+    public string activeQuest;
     public string activeScene;
 }
 public class PauseMenuController : MonoBehaviour
@@ -69,6 +70,7 @@ public class PauseMenuController : MonoBehaviour
     public void Salvar()
     {
         onSave?.Invoke();
+        coisasSalvar.activeQuest = QuestController.instance?.GetActiveQuest();
         coisasSalvar.playerPos = Player.instance.transform.position;
         coisasSalvar.playerLastSavedPos = Player.instance.lastSavedPosition;
         coisasSalvar.activeScene = SceneManager.GetActiveScene().name;

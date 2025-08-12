@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using Unity.VisualScripting;
 public class QuestController : MonoBehaviour
 {
     [Header("Obrigatório")]
@@ -29,15 +28,11 @@ public class QuestController : MonoBehaviour
     }
     void Start()
     {
-        //QuestController[] uiParaDeletar = FindObjectsByType<QuestController>(FindObjectsSortMode.None);
-        //foreach(QuestController ui in uiParaDeletar)
-        //{
-        //    GameObject uiGameObject = GetComponentInParent<GameObject>();
-        //    if (ui != this)
-        //    {
-        //        Destroy(uiGameObject);
-        //    }
-        //}
+
+    }
+    public string GetActiveQuest()
+    {
+        return questText.text;
     }
     public void SetQuestText(string text)
     {
