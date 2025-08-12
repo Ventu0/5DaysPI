@@ -21,6 +21,7 @@ public class InteractButtonsController : MonoBehaviour
     [SerializeField] Button[] attackButtons = new Button[4];
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
     [SerializeField] float menuDistance;
+    [SerializeField] AudioClip errorSound;
 
     //variaveis não-mostraveis
      TurnModeManager turnModeManager;
@@ -73,6 +74,7 @@ public class InteractButtonsController : MonoBehaviour
         if (turnModeManager.escapeChance == 0)
         {
             mainText.SetText("Não é possível fugir!", Color.red);
+            SFX.instance.PlaySFX(errorSound);
             runButton.enabled = false;
         }
         float random = Random.Range(0f, 1f);
@@ -131,19 +133,23 @@ public class InteractButtonsController : MonoBehaviour
     {
         Attack ataque = ataques[whatMove];
         MainText mainText = MainText.instance;
+        SFX sfx = SFX.instance;
         if (ataque.currentPP <= 0)
         {
             mainText.SetText("Esse ataque não tem mais PP!", Color.red);
+            sfx.PlaySFX(errorSound);
             return;
         }
         if(ataque.oneTime)
         {
             mainText.SetText("Esse ataque só pode ser usado uma vez por batalha!", Color.red);
+            sfx.PlaySFX(errorSound);
             return;
         }
         if(ataque == null)
         {
             mainText.SetText("Ataque não existe!", Color.red);
+            sfx.PlaySFX(errorSound);
             return;
         }
 

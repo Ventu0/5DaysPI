@@ -5483,6 +5483,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   menuDistance: 3
+  errorSound: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
   chosenAttack: 0
 --- !u!114 &889460134
 MonoBehaviour:

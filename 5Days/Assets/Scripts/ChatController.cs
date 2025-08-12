@@ -13,6 +13,8 @@ public class ChatController : MonoBehaviour
     [SerializeField] Image portrait;
     [SerializeField] TextMeshProUGUI dialogueText;
 
+    [Header("Opcional")]
+    [SerializeField] AudioSource talkVoice;
     [Header("Configurações para aparecer texto de clicar E")]
     [SerializeField] GameObject pressButtonText;
     [SerializeField] float timer;
@@ -98,8 +100,12 @@ public class ChatController : MonoBehaviour
         char[] caracteres = fala.ToCharArray();
         for (int i = 0; i < caracteres.Length; i++)
         {
+            float pitch = Random.Range(1, 3);
+            talkVoice.pitch = pitch;
+            talkVoice?.Play();
             dialogueText.text += caracteres[i];
             yield return new WaitForSeconds(0.05f);
+            talkVoice?.Stop();
         }
         falasRoutine = null;
     }

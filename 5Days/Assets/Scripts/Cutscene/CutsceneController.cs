@@ -7,6 +7,7 @@ public class CutsceneController : MonoBehaviour
     [SerializeField] GameObject dontDestroyParent;
     public PlayableDirector director;
     [SerializeField] UnityEvent onInputReceived;
+    public AudioSource whisperSound;
     public bool waitingInput = false;
     public static CutsceneController instance;
     private void Awake()
@@ -32,10 +33,11 @@ public class CutsceneController : MonoBehaviour
     void Start()
     {
         DiaENoite.instance.PauseTime(true);
+        PauseMenuController.instance.canPause = false;
     }
     public void OnSceneChange()
     {
-
+        whisperSound.Play();
     }
     public void Wait(bool waitInput = true)
     {
@@ -60,9 +62,11 @@ public class CutsceneController : MonoBehaviour
         QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
         SceneManager.sceneLoaded -= doors.OnSceneLoaded;
         SceneManager.LoadScene("CasaDianas");
-        PlayerPrefs.SetInt("CutsceneEnded", 1);
-        doors.InteractDoors(true);
 
+        PlayerPrefs.SetInt("CutsceneEnded", 1);
+        PauseMenuController.instance.canPause = true;
+
+        doors.InteractDoors(true);
         dayScript.PauseTime(false); //reseta o tempo
         dayScript.ResetTime();
 

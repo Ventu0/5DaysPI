@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 public class LightBobing : MonoBehaviour
 {
     [SerializeField] Light2D luz;//Referência para a luz que será mexida
+    [SerializeField] float maxLightRadius = 1.5f; // Raio máximo da luz
     [SerializeField] float duration = 5f;
     void Start()
     {
@@ -22,7 +23,7 @@ public class LightBobing : MonoBehaviour
             while (iterador < duration)
             {
                 iterador += Time.deltaTime;
-                luz.pointLightOuterRadius = Mathf.Lerp(1.5f, 1, iterador / duration);
+                luz.pointLightOuterRadius = Mathf.Lerp(maxLightRadius, 1, iterador / duration);
                 yield return null;
             }
 
@@ -31,7 +32,7 @@ public class LightBobing : MonoBehaviour
             while (iterador < duration)
             {
                 iterador += Time.deltaTime;
-                luz.pointLightOuterRadius = Mathf.Lerp(1, 1.5f, iterador / duration);
+                luz.pointLightOuterRadius = Mathf.Lerp(1, maxLightRadius, iterador / duration);
                 yield return null;
             }
             iterador = 0;

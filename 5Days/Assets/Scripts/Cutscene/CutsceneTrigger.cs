@@ -15,6 +15,7 @@ public class CutsceneTrigger : MonoBehaviour
         {
             director.Play();
             collision.GetComponent<Player>().canMove = false;
+            CutsceneController.instance.whisperSound.Stop();
         }
     }
 }

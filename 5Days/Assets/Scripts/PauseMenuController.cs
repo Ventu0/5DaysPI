@@ -12,6 +12,7 @@ public class PauseMenuController : MonoBehaviour
 {
     [SerializeField] GameObject menu;
     [SerializeField] Button SaveButton;
+    public bool canPause = true;
     [SerializeField] bool isPaused;
 
     public delegate void Save();
@@ -39,6 +40,7 @@ public class PauseMenuController : MonoBehaviour
     
     void Update()
     {
+        if (!canPause) return;
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
             Pausar(true);
