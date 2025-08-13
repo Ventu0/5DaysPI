@@ -35,7 +35,11 @@ public class QuestController : MonoBehaviour
     {
         return questText.text;
     }
-    public void SetQuestText(string text)
+    public void JustSetQuest(string text)
+    {
+        questText.text = text;
+    }
+    public void SetQuestWithAnimation(string text)
     {
         RectTransform transform = retangulo.GetComponent<RectTransform>();
         Vector2 size = questText.GetPreferredValues(questText.text);
@@ -58,7 +62,7 @@ public class QuestController : MonoBehaviour
         yield return new WaitForSeconds(halfWaitTime);
         questText.text = text;
         isOnRoutine = true;
-        SetQuestText(text); // Atualiza o tamanho do retângulo com o novo texto
+        SetQuestWithAnimation(text); // Atualiza o tamanho do retângulo com o novo texto
         yield return new WaitForSeconds(halfWaitTime);
         while (iterador > 0)
         {

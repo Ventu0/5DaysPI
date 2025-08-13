@@ -54,7 +54,7 @@ public class NPC : MonoBehaviour
                 chatController.CloseDialogue();
                 if (completeQuest && !jaFalou)
                 {
-                    QuestController.instance.SetQuestText(nextQuestName);
+                    QuestController.instance.SetQuestWithAnimation(nextQuestName);
                     jaFalou = true;
                 }
                 falaAtual = -1;

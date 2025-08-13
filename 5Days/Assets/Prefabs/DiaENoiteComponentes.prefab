@@ -245,13 +245,11 @@ MonoBehaviour:
   clockUI: {fileID: 1551012992348587638}
   dontDestroyObject: {fileID: 6721595690482119415}
   directionalLight: {fileID: 7726231660225402303}
-  corDaManha: {r: 218, g: 255, b: 254, a: 1}
-  corDaTarde: {r: 218, g: 255, b: 254, a: 1}
   tempoParaNoite: 3
   tempoParaNoiteSegundos: 0
   intensidadeNoite: 0.149
   iniciarEmQualHora: 6
-  horarioDaNoite: 18
+  horarioDaNoite: 16
   isPaused: 0
 --- !u!114 &8910532338804416755
 MonoBehaviour:

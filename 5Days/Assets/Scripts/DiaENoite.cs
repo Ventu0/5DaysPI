@@ -8,8 +8,6 @@ public class DiaENoite : MonoBehaviour
     public GameObject clockUI;
     public GameObject dontDestroyObject;
     public Light2D directionalLight;
-    [SerializeField] Color corDaManha = new Color(218, 255, 254);
-    [SerializeField] Color corDaTarde = new Color(218, 255, 254);
 
     [Header("Configurações do tempo")]
     public float tempoParaNoite = 1;
@@ -25,6 +23,7 @@ public class DiaENoite : MonoBehaviour
 
     [Range(0, 24)]
     public int horarioDaNoite = 18;
+
     [Header("Read-Only")]
     public bool isPaused;
     float time;

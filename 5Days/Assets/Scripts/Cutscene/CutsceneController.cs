@@ -59,7 +59,7 @@ public class CutsceneController : MonoBehaviour
         DiaENoite dayScript = DiaENoite.instance;
         Doors doors = Doors.instance;
 
-        QuestController.instance.SetQuestText("Fale com o chefe da vila sobre o ocorrido");
+        QuestController.instance.SetQuestWithAnimation("Fale com o chefe da vila sobre o ocorrido");
         SceneManager.sceneLoaded -= doors.OnSceneLoaded;
         SceneManager.LoadScene("CasaDianas");
 
