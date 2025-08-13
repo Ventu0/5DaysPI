@@ -71,6 +71,7 @@ public class Player : CharacterStatus
     #endregion
     void Update()
     {
+        if (Time.timeScale == 0) return; //evita que o update seja chamado quando for pausado
         Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
