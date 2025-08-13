@@ -41,6 +41,8 @@ public class NPC : MonoBehaviour
         {
             if (isHealer)
             {
+                Player.instance.canMove = true;
+                pauseMenu.canPause = true;
                 PlayerPartyController.instance.CurarTodos();
                 chatController.CloseDialogue();
                 falaAtual = -1;

@@ -1935,7 +1935,7 @@ MonoBehaviour:
   charactersFace3:
   - {fileID: -8793098670829490268, guid: 994819c72698ad3459f30caef6b91658, type: 3}
   charactersFace4:
-  - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
+  - {fileID: 21300000, guid: 5380c22cf693f2d4889171de20948616, type: 3}
   waitPlayerInput: {fileID: 1359589373}
 --- !u!1 &1372820042
 GameObject:

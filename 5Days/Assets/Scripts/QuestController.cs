@@ -14,6 +14,7 @@ public class QuestController : MonoBehaviour
     [SerializeField] float duration;
     [SerializeField] float waitTime;
 
+    bool isOnRoutine = false;
     public static QuestController instance;
     private void Awake()
     {
@@ -37,8 +38,10 @@ public class QuestController : MonoBehaviour
     public void SetQuestText(string text)
     {
         RectTransform transform = retangulo.GetComponent<RectTransform>();
-        Vector2 size = questText.GetPreferredValues(text);
-        transform.sizeDelta = new Vector2(size.x + 60, transform.sizeDelta.y);
+        Vector2 size = questText.GetPreferredValues(questText.text);
+        transform.sizeDelta = new Vector2(size.x + 10, transform.sizeDelta.y);
+
+        if (isOnRoutine) return;
         StartCoroutine(ChangeQuest(text));
     }
     public IEnumerator ChangeQuest(string text)
@@ -54,6 +57,8 @@ public class QuestController : MonoBehaviour
 
         yield return new WaitForSeconds(halfWaitTime);
         questText.text = text;
+        isOnRoutine = true;
+        SetQuestText(text); // Atualiza o tamanho do retângulo com o novo texto
         yield return new WaitForSeconds(halfWaitTime);
         while (iterador > 0)
         {
@@ -61,5 +66,6 @@ public class QuestController : MonoBehaviour
             retangulo.fillAmount = Mathf.Clamp01(iterador);
             yield return null;
         }
+        isOnRoutine = false;
     }
 }
