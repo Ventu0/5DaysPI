@@ -1919,18 +1919,18 @@ MonoBehaviour:
   falaAtual: -1
   dialogoAtual: 0
   dialogo1:
-  - Voce acorda no meio da noite
+  - "voc\xEA acorda ouvindo sussurros ao seu redor."
   dialogo2:
-  - Vamos atacar essa vila deles
-  - eles estao fracos, entao temos uma chance
+  - "chefe essa \xE9 a vila que n\xF3s encontramos ela parece ser fraca."
+  - realmente essa vila parece ser fraca, iremos atacar ela em 5 dias.
   dialogo3:
-  - concordo com voce, vamos comunicar ao chefe
+  - "voc\xEAs ouviram isso? vamos sair daqui antes que nos descubram!"
   dialogo4:
-  - Preciso sair daqui
+  - preciso sair daqui e avisar ao meu chefe sobre oque eu ouvi!
   charactersFace1:
   - {fileID: 0}
   charactersFace2:
-  - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
+  - {fileID: 3328362890739736015, guid: 78767b56c61ef134d93e6002f34e8bb2, type: 3}
   - {fileID: 6531157596999860558, guid: c1bc4d3b13b5b704d8c4cae79ae64ca8, type: 3}
   charactersFace3:
   - {fileID: -8793098670829490268, guid: 994819c72698ad3459f30caef6b91658, type: 3}
