@@ -55,7 +55,7 @@ public class NPC : MonoBehaviour
         if (chatController.falasRoutine == null)
             falaAtual++;
 
-        if (falaAtual < activeLines.Length && canTalk)
+        if (falaAtual < activeLines.Length && canTalk) //erro aqui
         {
             print("proximo dialogo");
             Player.instance.canMove = false;
