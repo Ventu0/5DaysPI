@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 [System.Serializable]
 public class YesOrNo
 {
+    public UnityEvent OnYesTextEnd; 
     public bool hasQuestion;
     public int question;
+    public bool alreadyAnswered = false;
 
     [Header("Configurações Sim")]
     public string[] yesText;
@@ -40,18 +43,20 @@ public class NPC : MonoBehaviour
     void Start()
     {
         chatController = ChatController.instance;
+        activeLines = dialogueLines;
+        activeIcons = charactersFace;
 
         if (!yesOrNo.hasQuestion) yesOrNo = null;
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
-        if(falas != activeLines && icons != activeIcons)
+        PauseMenuController pauseMenu = PauseMenuController.instance;
+        if(falas != null && icons != null)
         {
             activeLines = falas;
             activeIcons = icons;
         }
-
-        PauseMenuController pauseMenu = PauseMenuController.instance;
+        
         if (chatController.falasRoutine == null)
             falaAtual++;
 
@@ -66,49 +71,50 @@ public class NPC : MonoBehaviour
 
         if (falaAtual > activeLines.Length)
         {
+            Player.instance.canMove = true;
+            pauseMenu.canPause = true;
+            chatController.CloseDialogue();
+            yesOrNo.alreadyAnswered = false;
+            activeLines = dialogueLines; 
+            activeIcons = charactersFace; 
+            yesOrNo.OnYesTextEnd?.Invoke();
+
             if (isHealer)
             {
-                Player.instance.canMove = true;
-                pauseMenu.canPause = true;
                 PlayerPartyController.instance.CurarTodos();
-                chatController.CloseDialogue();
-                falaAtual = -1;
             }
             else
-            {
-                Player.instance.canMove = true;
-                pauseMenu.canPause = true;
-                chatController.CloseDialogue();
+            {  
                 if (completeQuest && !alreadyTalked)
                 {
                     QuestController.instance.SetQuestWithAnimation(nextQuestName);
                     alreadyTalked = true;
                 }
-                falaAtual = -1;
             }
+            falaAtual = -1;
         }
     }
     void CheckIfHasQuestion()
     {
-        if (yesOrNo != null && falaAtual == yesOrNo.question)
+        if(yesOrNo == null || yesOrNo.alreadyAnswered) return;
+
+        if (falaAtual == yesOrNo.question)
         {
+            chatController.SetYesNoFunctions(this);
             chatController.ShowYesOrNoButtons(true);
             canTalk = false;
         }
     }
     public void ChooseQuestion(bool yesOrNoButton)
     {
-        if (yesOrNoButton)
-        {
-            falaAtual = -1;
-            chatController.ShowYesOrNoButtons(false);
+        falaAtual = -1;
+        chatController.ShowYesOrNoButtons(false);
+        canTalk = true;
+        yesOrNo.alreadyAnswered = true;
+
+        if (yesOrNoButton)   
             Falar(yesOrNo.yesText, yesOrNo.yesIcons);
-        }
         else
-        {
-            falaAtual = -1;
-            chatController.ShowYesOrNoButtons(false);
             Falar(yesOrNo.noText, yesOrNo.noIcons);
-        }
     }
 }

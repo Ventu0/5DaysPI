@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using Unity.VisualScripting;
+using System;
 
 public class ChatController : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class ChatController : MonoBehaviour
     [SerializeField] AudioSource talkVoice;
     [SerializeField] Button yesBTN;
     [SerializeField] Button noBTN;
+
     [Header("Configurações para aparecer texto de clicar E")]
     [SerializeField] GameObject pressButtonText;
     [SerializeField] float timer;
@@ -43,6 +44,7 @@ public class ChatController : MonoBehaviour
         ShowYesOrNoButtons(false);
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
+
     }
     private void Update()
     {
@@ -87,11 +89,18 @@ public class ChatController : MonoBehaviour
         else 
             falasRoutine = StartCoroutine(EscreverFalas(fala));
     }
+    #region ChooseBTN
+    public void SetYesNoFunctions(NPC npc)
+    {
+        yesBTN.onClick.AddListener(() => npc.ChooseQuestion(true));
+        noBTN.onClick.AddListener(() => npc.ChooseQuestion(false));
+    }
     public void ShowYesOrNoButtons(bool show)
     {
         yesBTN.gameObject.SetActive(show);
         noBTN.gameObject.SetActive(show);
     }
+    #endregion
     public void CloseDialogue()
     {
         StopAllCoroutines();
@@ -107,7 +116,7 @@ public class ChatController : MonoBehaviour
         char[] caracteres = fala.ToCharArray();
         for (int i = 0; i < caracteres.Length; i++)
         {
-            float pitch = Random.Range(1, 3);
+            float pitch = UnityEngine.Random.Range(1, 3);
             talkVoice.pitch = pitch;
             talkVoice?.Play();
             dialogueText.text += caracteres[i];
