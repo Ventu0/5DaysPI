@@ -2528,6 +2528,30 @@ PrefabInstance:
       value: Va para a floresta
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: yesOrNo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: O que foi?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: Chefe a nossa vila sera atacada
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: Serio??!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: Entao tenos 5 dias para se preparar!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'charactersFace.Array.data[0]'
       value: 
       objectReference: {fileID: 21300000, guid: 7084be6af7bfe0f429d3ca0cf5f2a935, type: 3}

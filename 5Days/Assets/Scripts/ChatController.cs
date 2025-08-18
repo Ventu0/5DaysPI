@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting;
 
-
 public class ChatController : MonoBehaviour
 {
     [SerializeField] GameObject dontDestroyObject;
@@ -15,6 +14,8 @@ public class ChatController : MonoBehaviour
 
     [Header("Opcional")]
     [SerializeField] AudioSource talkVoice;
+    [SerializeField] Button yesBTN;
+    [SerializeField] Button noBTN;
     [Header("Configurações para aparecer texto de clicar E")]
     [SerializeField] GameObject pressButtonText;
     [SerializeField] float timer;
@@ -84,6 +85,11 @@ public class ChatController : MonoBehaviour
         }
         else 
             falasRoutine = StartCoroutine(EscreverFalas(fala));
+    }
+    public void ShowYesOrNoButtons(bool show)
+    {
+        yesBTN.gameObject.SetActive(show);
+        noBTN.gameObject.SetActive(show);
     }
     public void CloseDialogue()
     {

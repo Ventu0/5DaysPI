@@ -1,43 +1,62 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using System.Collections;
+[System.Serializable]
+public class YesOrNo
+{
+    public bool hasQuestion;
+    public int question;
+
+    public string[] yesText;
+    public string[] noText;
+}
 public class NPC : MonoBehaviour
 {
     [Header("Configurações de Fala")]
-    [SerializeField] string[] falas;
+    [SerializeField] string[] dialogueLines;
     [SerializeField] int falaAtual = -1;
     [SerializeField] Sprite[] charactersFace;
 
     [Header("Opcionais")]
     [SerializeField] bool isHealer = false;
+    [SerializeField] YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
 
     [Header("Quest-Only")]
     [SerializeField] bool completeQuest = false;
     [SerializeField] string nextQuestName = "";
-    bool jaFalou;
+    bool alreadyTalked;
+    bool canTalk;
     int falasMaximas;
     ChatController chatController;
     
     void Start()
     {
         chatController = ChatController.instance;
-        falasMaximas = falas.Length;
+        falasMaximas = dialogueLines.Length;
+
+        if (!yesOrNo.hasQuestion) yesOrNo = null;
     }
-    public void Falar()
+    public void Falar(string[] falas = null, Sprite[] icons = null)
     {
+        if(falas == null && icons == null)
+        {
+            falas = dialogueLines;
+            icons = charactersFace;
+        }
+
         PauseMenuController pauseMenu = PauseMenuController.instance;
         if (chatController.falasRoutine == null)
             falaAtual++;
 
-        if (falaAtual < falasMaximas)
+        if (falaAtual < falasMaximas && canTalk)
         {
             print("proximo dialogo");
             Player.instance.canMove = false;
             pauseMenu.canPause = false;
-            chatController.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
+            chatController.StartDialogue(icons[falaAtual], falas[falaAtual]);
+            CheckIfHasQuestion();
         }
-        if(falaAtual > falasMaximas)
+
+        if (falaAtual > falasMaximas)
         {
             if (isHealer)
             {
@@ -52,13 +71,22 @@ public class NPC : MonoBehaviour
                 Player.instance.canMove = true;
                 pauseMenu.canPause = true;
                 chatController.CloseDialogue();
-                if (completeQuest && !jaFalou)
+                if (completeQuest && !alreadyTalked)
                 {
                     QuestController.instance.SetQuestWithAnimation(nextQuestName);
-                    jaFalou = true;
+                    alreadyTalked = true;
                 }
                 falaAtual = -1;
             }
         }
     }
+    void CheckIfHasQuestion()
+    {
+        if (yesOrNo != null && falaAtual == yesOrNo.question)
+        {
+            chatController.ShowYesOrNoButtons(true);
+            canTalk = false;
+        }
+    }
+    //void
 }
