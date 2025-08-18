@@ -2520,6 +2520,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: isHealer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: completeQuest
       value: 1
       objectReference: {fileID: 0}
@@ -2528,12 +2532,24 @@ PrefabInstance:
       value: Va para a floresta
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: yesOrNo.question
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: yesOrNo.hasQuestion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: yesOrNo.yesText.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
@@ -2552,6 +2568,10 @@ PrefabInstance:
       value: Entao tenos 5 dias para se preparar!
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: yesOrNo.yesIcons.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'charactersFace.Array.data[0]'
       value: 
       objectReference: {fileID: 21300000, guid: 7084be6af7bfe0f429d3ca0cf5f2a935, type: 3}
@@ -2567,6 +2587,10 @@ PrefabInstance:
       propertyPath: 'charactersFace.Array.data[3]'
       value: 
       objectReference: {fileID: 21300000, guid: 7084be6af7bfe0f429d3ca0cf5f2a935, type: 3}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'yesOrNo.yesText.Array.data[0]'
+      value: Haborgue gordo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3160,6 +3184,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137004182849802052, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
+    - target: {fileID: 9137004182849802052, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

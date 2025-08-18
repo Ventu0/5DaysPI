@@ -6,8 +6,13 @@ public class YesOrNo
     public bool hasQuestion;
     public int question;
 
+    [Header("Configurações Sim")]
     public string[] yesText;
+    public Sprite[] yesIcons;
+
+    [Header("Configurações Nao")]
     public string[] noText;
+    public Sprite[] noIcons;
 }
 public class NPC : MonoBehaviour
 {
@@ -23,40 +28,43 @@ public class NPC : MonoBehaviour
     [Header("Quest-Only")]
     [SerializeField] bool completeQuest = false;
     [SerializeField] string nextQuestName = "";
+
+    [Header("Read-Only")]
+    [SerializeField] string[] activeLines;
+    [SerializeField] Sprite[] activeIcons;
+
     bool alreadyTalked;
-    bool canTalk;
-    int falasMaximas;
+    bool canTalk = true;
     ChatController chatController;
     
     void Start()
     {
         chatController = ChatController.instance;
-        falasMaximas = dialogueLines.Length;
 
         if (!yesOrNo.hasQuestion) yesOrNo = null;
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
-        if(falas == null && icons == null)
+        if(falas != activeLines && icons != activeIcons)
         {
-            falas = dialogueLines;
-            icons = charactersFace;
+            activeLines = falas;
+            activeIcons = icons;
         }
 
         PauseMenuController pauseMenu = PauseMenuController.instance;
         if (chatController.falasRoutine == null)
             falaAtual++;
 
-        if (falaAtual < falasMaximas && canTalk)
+        if (falaAtual < activeLines.Length && canTalk)
         {
             print("proximo dialogo");
             Player.instance.canMove = false;
             pauseMenu.canPause = false;
-            chatController.StartDialogue(icons[falaAtual], falas[falaAtual]);
+            chatController.StartDialogue(activeIcons[falaAtual], activeLines[falaAtual]);
             CheckIfHasQuestion();
         }
 
-        if (falaAtual > falasMaximas)
+        if (falaAtual > activeLines.Length)
         {
             if (isHealer)
             {
@@ -88,5 +96,19 @@ public class NPC : MonoBehaviour
             canTalk = false;
         }
     }
-    //void
+    public void ChooseQuestion(bool yesOrNoButton)
+    {
+        if (yesOrNoButton)
+        {
+            falaAtual = -1;
+            chatController.ShowYesOrNoButtons(false);
+            Falar(yesOrNo.yesText, yesOrNo.yesIcons);
+        }
+        else
+        {
+            falaAtual = -1;
+            chatController.ShowYesOrNoButtons(false);
+            Falar(yesOrNo.noText, yesOrNo.noIcons);
+        }
+    }
 }

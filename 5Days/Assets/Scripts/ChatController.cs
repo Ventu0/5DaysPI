@@ -40,6 +40,7 @@ public class ChatController : MonoBehaviour
     private void Start()
     {
         bounceEffect = BounceEffect.instance;
+        ShowYesOrNoButtons(false);
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
     }
