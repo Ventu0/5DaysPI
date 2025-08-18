@@ -12,6 +12,7 @@ public class YesOrNo
     [Header("Configurações Sim")]
     public string[] yesText;
     public Sprite[] yesIcons;
+    public bool yesTextActivated = false;
 
     [Header("Configurações Nao")]
     public string[] noText;
@@ -76,8 +77,12 @@ public class NPC : MonoBehaviour
             chatController.CloseDialogue();
             yesOrNo.alreadyAnswered = false;
             activeLines = dialogueLines; 
-            activeIcons = charactersFace; 
-            yesOrNo.OnYesTextEnd?.Invoke();
+            activeIcons = charactersFace;
+            if (yesOrNo.yesTextActivated)
+            {
+                yesOrNo.OnYesTextEnd?.Invoke();
+                yesOrNo.yesTextActivated = false;
+            }
 
             if (isHealer)
             {
@@ -112,8 +117,11 @@ public class NPC : MonoBehaviour
         canTalk = true;
         yesOrNo.alreadyAnswered = true;
 
-        if (yesOrNoButton)   
+        if (yesOrNoButton)
+        {
+            yesOrNo.yesTextActivated = true;
             Falar(yesOrNo.yesText, yesOrNo.yesIcons);
+        }
         else
             Falar(yesOrNo.noText, yesOrNo.noIcons);
     }
