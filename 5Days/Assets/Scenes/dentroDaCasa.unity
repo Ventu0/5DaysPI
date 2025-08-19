@@ -2533,7 +2533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.question
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.Array.size
@@ -2541,23 +2541,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.hasQuestion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: dialogueLines.Array.size
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: charactersFace.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.noText.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.noIcons.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.yesText.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
@@ -2573,11 +2577,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'dialogueLines.Array.data[3]'
-      value: Entao tenos 5 dias para se preparar!
+      value: Entao temos 5 dias para se preparar!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[4]'
+      value: nao temos tempo, va para a floresta e pratique!
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: yesOrNo.yesIcons.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'charactersFace.Array.data[0]'
@@ -2593,6 +2601,10 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c4da5683c1b932a4a916ea5b40b5f1c5, type: 3}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'charactersFace.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7084be6af7bfe0f429d3ca0cf5f2a935, type: 3}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'charactersFace.Array.data[4]'
       value: 
       objectReference: {fileID: 21300000, guid: 7084be6af7bfe0f429d3ca0cf5f2a935, type: 3}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
@@ -2613,11 +2625,11 @@ PrefabInstance:
       objectReference: {fileID: 5683751026366616965, guid: bfad5ebad37e7d447958c02c96888002, type: 3}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'yesOrNo.yesText.Array.data[0]'
-      value: Haborgue gordo
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'yesOrNo.yesText.Array.data[1]'
-      value: Haborgue gordo 2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'yesOrNo.yesText.Array.data[2]'

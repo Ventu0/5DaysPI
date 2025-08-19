@@ -52,11 +52,16 @@ public class IniciarLuta : MonoBehaviour
             }
         }
         QuestController.instance.menu.SetActive(false);
+        PauseMenuController.instance.canPause = false;
+
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(false);
         dayScript.PauseTime(true);
-        TurnModeManager.instance.iniciarLuta = this;
-        TurnModeManager.instance.escapeChance = escapeChance;
+
+        TurnModeManager turnModeManager = TurnModeManager.instance;
+        turnModeManager.iniciarLuta = this;
+        turnModeManager.escapeChance = escapeChance;
+
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
 }

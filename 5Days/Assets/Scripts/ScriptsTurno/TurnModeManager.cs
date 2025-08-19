@@ -167,9 +167,7 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!JaAtacaram(inimigosPersonagens))
             {
-                Debug.Log("Antes de somar: " + turnoDeQualPersonagem);
                 turnoDeQualPersonagem += 1;
-                Debug.Log("Depois de somar: " + turnoDeQualPersonagem);
                 inimigos[turnoDeQualPersonagem].Attack();
             }
         }
