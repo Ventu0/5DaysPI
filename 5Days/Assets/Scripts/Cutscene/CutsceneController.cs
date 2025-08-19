@@ -60,7 +60,6 @@ public class CutsceneController : MonoBehaviour
         Doors doors = Doors.instance;
 
         QuestController.instance.SetQuestWithAnimation("Fale com o chefe da vila sobre o ocorrido");
-        SceneManager.sceneLoaded -= doors.OnSceneLoaded;
         SceneManager.LoadScene("CasaDianas");
 
         PlayerPrefs.SetInt("CutsceneEnded", 1);

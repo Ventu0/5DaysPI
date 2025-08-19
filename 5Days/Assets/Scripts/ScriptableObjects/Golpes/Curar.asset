@@ -22,7 +22,7 @@ MonoBehaviour:
   iconMainColor: {r: 0.28235295, g: 0.76470596, b: 0, a: 1}
   attackEffect: {fileID: -8987271427450927229, guid: b5c43de9ed8df2b44a8fd4b7dc76e539, type: 3}
   attackEffectYOffset: -0.5
-  tipoDeAlvo: 2
+  tipoDeAlvo: 1
   attackAnimation: {fileID: 9100000, guid: 8c1b80898f2fbe0469af492e79bda716, type: 2}
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
