@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 419aad33417f038438dcafe45c665252
+guid: bc6ec33b83a7d2346999a0e735fde467
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8696112665548742718
-    second: Pilar Da Casa Do CaciqueFinal-1.png_0
+      213: 6554736390298987251
+    second: cursor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pilar Da Casa Do CaciqueFinal-1.png_0
+      name: cursor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 147
-        height: 700
+        width: 168
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30eec4356ccea870800000000000000
-      internalID: 8696112665548742718
+      spriteID: 3fae81cb40a17fa50800000000000000
+      internalID: 6554736390298987251
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pilar Da Casa Do CaciqueFinal-1.png_0: 8696112665548742718
+      cursor_0: 6554736390298987251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
