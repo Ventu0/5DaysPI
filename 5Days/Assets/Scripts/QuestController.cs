@@ -36,12 +36,13 @@ public class QuestController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-
+            SetActive(menu.activeSelf);
         }
     }
     void SetActive(bool active)
     {
-        
+        menu.SetActive(!active);
+        closedText.gameObject.SetActive(active);
     }
     #region OpçõesDeSetQuest
     public string GetActiveQuest()
