@@ -14,15 +14,11 @@ public class Doors : MonoBehaviour
         }
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
         if (cutsceneEnded == 1) return;
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        InteractDoors(false);
     }
     void Start()
     {
         
-    }
-    public void OnSceneLoaded(Scene cena, LoadSceneMode modo)
-    {
-        InteractDoors(false);
     }
     public void InteractDoors(bool open)
     {
