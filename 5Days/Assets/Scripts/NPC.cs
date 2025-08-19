@@ -80,6 +80,7 @@ public class NPC : MonoBehaviour
             yesOrNo.alreadyAnswered = false;
             activeLines = dialogueLines; 
             activeIcons = charactersFace;
+
             if (yesOrNo.yesTextActivated)
             {
                 yesOrNo.OnYesTextEnd?.Invoke();

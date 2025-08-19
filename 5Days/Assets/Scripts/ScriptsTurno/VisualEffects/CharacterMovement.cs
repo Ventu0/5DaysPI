@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
     Transform shadow;
     TurnModeManager turnModeManager;
     BasePersonagem character;
+    [SerializeField] AnimationCurve timeCurve;
     [SerializeField] AnimationCurve curve; //curva até funciona, mas ela não é adaptativa, teria que mexer no script
     public static CharacterMovement instance;
     
@@ -58,9 +59,9 @@ public class CharacterMovement : MonoBehaviour
             Vector2 initialPos = characterTransform.position;
             while (iterador < duration)
             {
-                float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
+                float playerNewY = Mathf.Lerp(initialPos.y, newPos.y, timeCurve.Evaluate(iterador)) + 0.5f * Mathf.Sin(Mathf.PI * timeCurve.Evaluate(Mathf.Clamp01(iterador)));
                 
-                float playerNewX = Mathf.Lerp(initialPos.x, newPos.x, iterador);
+                float playerNewX = Mathf.Lerp(initialPos.x, newPos.x, timeCurve.Evaluate(iterador));
                 characterTransform.position = new Vector2(playerNewX, playerNewY);
                 iterador += Time.deltaTime * duration;
                 yield return null;
@@ -71,8 +72,8 @@ public class CharacterMovement : MonoBehaviour
             iterador = 0;
             while (iterador < duration)
             {
-                float playerNewY = Mathf.Lerp(newPos.y, initialPos.y, iterador) + 0.5f * Mathf.Sin(Mathf.PI * Mathf.Clamp01(iterador));
-                float playerNewX = Mathf.Lerp(newPos.x, initialPos.x, iterador);
+                float playerNewY = Mathf.Lerp(newPos.y, initialPos.y, timeCurve.Evaluate(iterador)) + 0.5f * Mathf.Sin(Mathf.PI * timeCurve.Evaluate(Mathf.Clamp01(iterador)));
+                float playerNewX = Mathf.Lerp(newPos.x, initialPos.x, timeCurve.Evaluate(iterador));
                 characterTransform.position = new Vector2(playerNewX, playerNewY);
                 iterador += Time.deltaTime * duration;
                 yield return null;

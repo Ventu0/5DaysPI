@@ -2018,7 +2018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: sAir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8ce927514cef0941928ff848f27a10b, type: 2}
   m_sharedMaterial: {fileID: 1506280818641601163, guid: b8ce927514cef0941928ff848f27a10b, type: 2}

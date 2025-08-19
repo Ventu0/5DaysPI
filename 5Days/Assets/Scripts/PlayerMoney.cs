@@ -6,14 +6,22 @@ public class PlayerMoney : MonoBehaviour
     public static int money { get; private set; } = 0;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI moneyToAddText;
+    public static PlayerMoney instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         moneyToAddText.gameObject.SetActive(false);
-        AddMoney(100);
-    }
-    void Update()
-    {
-        
     }
     public void AddMoney(int amount)
     {
@@ -45,8 +53,13 @@ public class PlayerMoney : MonoBehaviour
                 moneyText.text = fakeMoney.ToString();
             }
         }
+
         money += amount;
         moneyText.text = money.ToString();
+        moneyToAddText.GetComponent<Animator>().SetTrigger("Ativar");
+
+        yield return new WaitForSeconds(1);
+
         moneyToAddText.gameObject.SetActive(false);
     }
 }

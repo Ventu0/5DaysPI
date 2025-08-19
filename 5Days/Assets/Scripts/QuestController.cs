@@ -9,6 +9,7 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject canva;
     [SerializeField] TextMeshProUGUI questText;
     [SerializeField] Image retangulo;
+    [SerializeField] TextMeshProUGUI closedText;
 
     [Header("Configurações da animação")]
     [SerializeField] float duration;
@@ -31,6 +32,18 @@ public class QuestController : MonoBehaviour
     {
 
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+
+        }
+    }
+    void SetActive(bool active)
+    {
+        
+    }
+    #region OpçõesDeSetQuest
     public string GetActiveQuest()
     {
         return questText.text;
@@ -39,6 +52,7 @@ public class QuestController : MonoBehaviour
     {
         questText.text = text;
     }
+    #endregion
     public void SetQuestWithAnimation(string text)
     {
         RectTransform transform = retangulo.GetComponent<RectTransform>();
