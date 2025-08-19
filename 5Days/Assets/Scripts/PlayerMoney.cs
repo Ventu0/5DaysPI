@@ -23,19 +23,30 @@ public class PlayerMoney : MonoBehaviour
     {
         moneyToAddText.gameObject.SetActive(true);
         int moneyToAdd = amount;
+        int moneyAmount = money;
+
         moneyToAddText.text = "+" + moneyToAdd.ToString();
+
         yield return new WaitForSeconds(2);
 
-        while (moneyToAdd != 0)
+        while(moneyToAdd != 0 || money <= moneyAmount + amount) 
         {
-            moneyToAdd -= 1;
-            yield return null;
+            if (moneyToAdd != 0)
+            {
+                moneyToAdd -= 1;
+                moneyToAddText.text = "+" + moneyToAdd.ToString();
+            }
+
+            yield return new WaitForSeconds(0.05f);
+
+            if (money <= money + amount)
+            {
+                money += 1;
+                moneyText.text = money.ToString();
+            }
+
         }
-        while(money != money + amount)
-        {
-            money += 1;
-            yield return null;
-        }
+
         moneyText.text = money.ToString();
         moneyToAddText.gameObject.SetActive(false);
     }

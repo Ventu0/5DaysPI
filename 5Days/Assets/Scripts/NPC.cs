@@ -66,6 +66,7 @@ public class NPC : MonoBehaviour
             print("proximo dialogo");
             Player.instance.canMove = false;
             pauseMenu.canPause = false;
+            DiaENoite.instance.isPaused = true;
             chatController.StartDialogue(activeIcons[falaAtual], activeLines[falaAtual]);
             CheckIfHasQuestion();
         }
@@ -74,6 +75,7 @@ public class NPC : MonoBehaviour
         {
             Player.instance.canMove = true;
             pauseMenu.canPause = true;
+            DiaENoite.instance.isPaused = false;
             chatController.CloseDialogue();
             yesOrNo.alreadyAnswered = false;
             activeLines = dialogueLines; 
