@@ -24,12 +24,12 @@ public class PlayerMoney : MonoBehaviour
         moneyToAddText.gameObject.SetActive(true);
         int moneyToAdd = amount;
         int moneyAmount = money;
-
+        int fakeMoney = money;
         moneyToAddText.text = "+" + moneyToAdd.ToString();
 
         yield return new WaitForSeconds(2);
 
-        while(moneyToAdd != 0 || money <= moneyAmount + amount) 
+        while(moneyToAdd != 0 || fakeMoney <= moneyAmount + amount) 
         {
             if (moneyToAdd != 0)
             {
@@ -39,14 +39,13 @@ public class PlayerMoney : MonoBehaviour
 
             yield return new WaitForSeconds(0.05f);
 
-            if (money <= money + amount)
+            if (fakeMoney <= moneyAmount + amount)
             {
-                money += 1;
-                moneyText.text = money.ToString();
+                fakeMoney += 1;
+                moneyText.text = fakeMoney.ToString();
             }
-
         }
-
+        money += amount;
         moneyText.text = money.ToString();
         moneyToAddText.gameObject.SetActive(false);
     }
