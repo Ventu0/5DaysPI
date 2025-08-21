@@ -22,7 +22,7 @@ public class ChatController : MonoBehaviour
     [SerializeField] float timer;
     [SerializeField] float timeToTextAppear = 5f;
     [SerializeField] bool canShowText = false;
-
+    string line;
     BounceEffect bounceEffect;
     public Coroutine falasRoutine;
     public static ChatController instance;
@@ -59,6 +59,7 @@ public class ChatController : MonoBehaviour
     }
     public void StartDialogue(Sprite sprite, string fala)
     {
+        line = fala;
         chatMenu.SetActive(true);
         timer = 0;
         canShowText = true;
@@ -80,14 +81,18 @@ public class ChatController : MonoBehaviour
         dialogueText.text = "";
         if(falasRoutine != null)
         {
-            StopAllCoroutines();
-            dialogueText.text = "";
-            dialogueText.text = fala;
-            falasRoutine = null;
+            ResetText();
             return;
         }
         else 
             falasRoutine = StartCoroutine(EscreverFalas(fala));
+    }
+    public void ResetText()
+    {
+        StopAllCoroutines();
+        dialogueText.text = "";
+        dialogueText.text = line;
+        falasRoutine = null;
     }
     #region ChooseBTN
     public void SetYesNoFunctions(NPC npc)

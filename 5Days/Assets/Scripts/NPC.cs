@@ -18,10 +18,10 @@ public class YesOrNo
         if(money >= options.moneyAmount)
         {
             money -= options.moneyAmount;
-            whichNPC.Falar(options.yesLines, options.yesFaces);
+            whichNPC.Falar(options.yesLines, options.yesFaces, true);
         }
         else
-            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces);
+            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces, true);
     }
     public bool hasCondition()
     {
@@ -61,7 +61,11 @@ public class NPC : MonoBehaviour
     }
     public void Falar(string[] falas = null, Sprite[] icons = null, bool reset = false)
     {
-        if (reset) falaAtual = -1;
+        //if (reset)
+        //{
+        //    falaAtual = -1;
+        //    chatController.StopAllCoroutines();
+        //}
         Player player = Player.instance;
         DiaENoite dayAndNight = DiaENoite.instance;
         PauseMenuController pauseMenu = PauseMenuController.instance;
@@ -73,7 +77,7 @@ public class NPC : MonoBehaviour
         }
         
         if (chatController.falasRoutine == null)
-            falaAtual++;
+        falaAtual++;
 
         if (falaAtual < activeLines.Length && canTalk) //erro aqui
         {
@@ -144,6 +148,6 @@ public class NPC : MonoBehaviour
                 yesOrNo.ActiveCondition(this);
         }
         else
-            Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces);
+            Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces, true);
     }
 }
