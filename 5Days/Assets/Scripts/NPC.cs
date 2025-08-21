@@ -4,19 +4,29 @@ using System.Collections;
 [System.Serializable]
 public class YesOrNo
 {
-    public UnityEvent OnYesTextEnd; 
     public bool hasQuestion;
-    public int question;
     public bool alreadyAnswered = false;
+    public int question;
 
-    [Header("Configurações Sim")]
-    public string[] yesText;
-    public Sprite[] yesIcons;
     public bool yesTextActivated = false;
+    public UnityEvent OnYesTextEnd;
+    public DialogueOptions options;
 
-    [Header("Configurações Nao")]
-    public string[] noText;
-    public Sprite[] noIcons;
+    public void ActiveCondition(NPC whichNPC)
+    {
+        int money = PlayerMoney.money;
+        if(money >= options.moneyAmount)
+        {
+            money -= options.moneyAmount;
+            whichNPC.Falar(options.yesLines, options.yesFaces);
+        }
+        else
+            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces);
+    }
+    public bool hasCondition()
+    {
+        return options != null;
+    }
 }
 public class NPC : MonoBehaviour
 {
@@ -49,9 +59,13 @@ public class NPC : MonoBehaviour
 
         if (!yesOrNo.hasQuestion) yesOrNo = null;
     }
-    public void Falar(string[] falas = null, Sprite[] icons = null)
+    public void Falar(string[] falas = null, Sprite[] icons = null, bool reset = false)
     {
+        if (reset) falaAtual = -1;
+        Player player = Player.instance;
+        DiaENoite dayAndNight = DiaENoite.instance;
         PauseMenuController pauseMenu = PauseMenuController.instance;
+        
         if(falas != null && icons != null)
         {
             activeLines = falas;
@@ -64,18 +78,20 @@ public class NPC : MonoBehaviour
         if (falaAtual < activeLines.Length && canTalk) //erro aqui
         {
             print("proximo dialogo");
-            Player.instance.canMove = false;
+
+            player.canMove = false;
             pauseMenu.canPause = false;
-            DiaENoite.instance.isPaused = true;
+            dayAndNight.isPaused = true;
+            print(falaAtual);
             chatController.StartDialogue(activeIcons[falaAtual], activeLines[falaAtual]);
             CheckIfHasQuestion();
         }
 
         if (falaAtual > activeLines.Length)
         {
-            Player.instance.canMove = true;
+            player.canMove = true;
             pauseMenu.canPause = true;
-            DiaENoite.instance.isPaused = false;
+            dayAndNight.isPaused = false;
             chatController.CloseDialogue();
             yesOrNo.alreadyAnswered = false;
             activeLines = dialogueLines; 
@@ -123,9 +139,11 @@ public class NPC : MonoBehaviour
         if (yesOrNoButton)
         {
             yesOrNo.yesTextActivated = true;
-            Falar(yesOrNo.yesText, yesOrNo.yesIcons);
+
+            if (yesOrNo.hasCondition())
+                yesOrNo.ActiveCondition(this);
         }
         else
-            Falar(yesOrNo.noText, yesOrNo.noIcons);
+            Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces);
     }
 }
