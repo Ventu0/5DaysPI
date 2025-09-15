@@ -18,10 +18,10 @@ public class YesOrNo
         if(money >= options.moneyAmount)
         {
             money -= options.moneyAmount;
-            whichNPC.Falar(options.yesLines, options.yesFaces, true);
+            whichNPC.Falar(options.yesLines, options.yesFaces);
         }
         else
-            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces, true);
+            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces);
     }
     public bool hasCondition()
     {
@@ -47,6 +47,7 @@ public class NPC : MonoBehaviour
     [SerializeField] string[] activeLines;
     [SerializeField] Sprite[] activeIcons;
     [SerializeField] bool canTalk = true;
+    [SerializeField] bool isChoosing = false;
 
     bool alreadyTalked;
     ChatController chatController;
@@ -59,13 +60,10 @@ public class NPC : MonoBehaviour
 
         if (!yesOrNo.hasQuestion) yesOrNo = null;
     }
-    public void Falar(string[] falas = null, Sprite[] icons = null, bool reset = false)
+    public void Falar(string[] falas = null, Sprite[] icons = null)
     {
-        //if (reset)
-        //{
-        //    falaAtual = -1;
-        //    chatController.StopAllCoroutines();
-        //}
+        if (isChoosing) return;
+
         Player player = Player.instance;
         DiaENoite dayAndNight = DiaENoite.instance;
         PauseMenuController pauseMenu = PauseMenuController.instance;
@@ -76,7 +74,7 @@ public class NPC : MonoBehaviour
             activeIcons = icons;
         }
         
-        if (chatController.falasRoutine == null && chatController.isWritingText)
+        if (chatController.falasRoutine != null && chatController.isWritingText)
         {
             chatController.ResetText();
             print("nulo");
@@ -144,7 +142,9 @@ public class NPC : MonoBehaviour
         falaAtual = -1;
         chatController.ShowYesOrNoButtons(false);
         canTalk = true;
+        isChoosing = true;
         yesOrNo.alreadyAnswered = true;
+        chatController.ResetText();
 
         if (yesOrNoButton)
         {
@@ -154,6 +154,6 @@ public class NPC : MonoBehaviour
                 yesOrNo.ActiveCondition(this);
         }
         else
-            Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces, true);
+            Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces);
     }
 }

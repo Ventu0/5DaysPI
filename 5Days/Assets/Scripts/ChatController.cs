@@ -23,7 +23,7 @@ public class ChatController : MonoBehaviour
     [SerializeField] float timeToTextAppear = 5f;
     [SerializeField] bool canShowText = false;
     public bool isWritingText = false;
-
+    [SerializeField] 
 
     string line;
     BounceEffect bounceEffect;
