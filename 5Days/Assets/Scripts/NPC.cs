@@ -46,9 +46,9 @@ public class NPC : MonoBehaviour
     [Header("Read-Only")]
     [SerializeField] string[] activeLines;
     [SerializeField] Sprite[] activeIcons;
+    [SerializeField] bool canTalk = true;
 
     bool alreadyTalked;
-    bool canTalk = true;
     ChatController chatController;
     
     void Start()
@@ -76,7 +76,13 @@ public class NPC : MonoBehaviour
             activeIcons = icons;
         }
         
-        if (chatController.falasRoutine == null)
+        if (chatController.falasRoutine == null && chatController.isWritingText)
+        {
+            chatController.ResetText();
+            print("nulo");
+            return;
+        }
+
         falaAtual++;
 
         if (falaAtual < activeLines.Length && canTalk) //erro aqui

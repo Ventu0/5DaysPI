@@ -22,6 +22,9 @@ public class ChatController : MonoBehaviour
     [SerializeField] float timer;
     [SerializeField] float timeToTextAppear = 5f;
     [SerializeField] bool canShowText = false;
+    public bool isWritingText = false;
+
+
     string line;
     BounceEffect bounceEffect;
     public Coroutine falasRoutine;
@@ -66,6 +69,7 @@ public class ChatController : MonoBehaviour
         pressButtonText.SetActive(false);
         bounceEffect.isOnRoutine = false;
         //SÓ PARA MOSTRAR: posso fazer isso: portraitFundo.SetActive(sprite == null);
+
         if (sprite == null)
         {
             portraitFundo.SetActive(false);
@@ -90,8 +94,12 @@ public class ChatController : MonoBehaviour
     public void ResetText()
     {
         StopAllCoroutines();
+
+        isWritingText = false;
+
         dialogueText.text = "";
         dialogueText.text = line;
+
         falasRoutine = null;
     }
     #region ChooseBTN
@@ -110,6 +118,7 @@ public class ChatController : MonoBehaviour
     {
         StopAllCoroutines();
         canShowText = false;
+        isWritingText = false;
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
         bounceEffect.isOnRoutine = false;
@@ -119,6 +128,7 @@ public class ChatController : MonoBehaviour
     IEnumerator EscreverFalas(string fala)
     {
         char[] caracteres = fala.ToCharArray();
+        isWritingText = true;
         for (int i = 0; i < caracteres.Length; i++)
         {
             float pitch = UnityEngine.Random.Range(1, 3);
@@ -128,6 +138,7 @@ public class ChatController : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
             talkVoice?.Stop();
         }
+        isWritingText = false;
         falasRoutine = null;
     }
 }
