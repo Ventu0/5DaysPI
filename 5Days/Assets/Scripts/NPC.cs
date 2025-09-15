@@ -62,7 +62,11 @@ public class NPC : MonoBehaviour
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
-        if (isChoosing) return;
+        if (isChoosing)
+        {
+        print("to escolhendo");
+        return;
+        }
 
         Player player = Player.instance;
         DiaENoite dayAndNight = DiaENoite.instance;
@@ -134,6 +138,8 @@ public class NPC : MonoBehaviour
         {
             chatController.SetYesNoFunctions(this);
             chatController.ShowYesOrNoButtons(true);
+
+            Player.instance.canTalk = false;
             canTalk = false;
         }
     }
@@ -148,12 +154,18 @@ public class NPC : MonoBehaviour
 
         if (yesOrNoButton)
         {
+            isChoosing = false;
             yesOrNo.yesTextActivated = true;
 
             if (yesOrNo.hasCondition())
                 yesOrNo.ActiveCondition(this);
         }
         else
+        {
+            isChoosing = false;
             Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces);
+        }
+            
+        Player.instance.canTalk = true;
     }
 }

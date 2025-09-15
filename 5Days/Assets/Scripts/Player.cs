@@ -11,11 +11,12 @@ public class Player : CharacterStatus
     [Header("Interagir Com NPC")]
     [SerializeField] float raioDeInteração = 2;
     [SerializeField] LayerMask layerMaskInteração;
-    public Vector2 lastSavedPosition;
+    public bool canTalk = true;
     bool isGamePaused;
 
     [Header("Read-Only")]
     [SerializeField] Vector2 moveInput;
+    public Vector2 lastSavedPosition;
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -41,6 +42,7 @@ public class Player : CharacterStatus
         spriteRenderer = GetComponent<SpriteRenderer>();
         //luzNatural = GetComponentInChildren<Light2D>();
 
+        canTalk = true;
         if (SceneTimeController.instance != null)
         SceneTimeController.instance.onPauseGame += PausePlayer;
 
@@ -72,11 +74,15 @@ public class Player : CharacterStatus
     void Update()
     {
         if (Time.timeScale == 0) return; //evita que o update seja chamado quando for pausado
-        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+
+        if (canTalk)
         {
-            print("Interagindo com NPC");
-            InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
+            Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+            {
+                print("Interagindo com NPC");
+                InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
+            }
         }
 
         if (isGamePaused || !canMove)
@@ -84,26 +90,23 @@ public class Player : CharacterStatus
             rb.linearVelocity = Vector2.zero;
             return;
         }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         anim.SetFloat("Horizontal", Mathf.Abs(horizontal));
         anim.SetFloat("Vertical", vertical);
         moveInput = new Vector2(horizontal, vertical);
+
         if(horizontal > 0)
-        {
             spriteRenderer.flipX = false;
-        }
         else if (horizontal < 0)
-        {
             spriteRenderer.flipX = true;
-        }
 
         if (moveInput != Vector2.zero)
         {
             moveInput = moveInput.normalized;
         }
         rb.linearVelocity = moveInput * Speed;
-        
     }
     void InteragirNPC(Collider2D overlapCircle)
     {
@@ -112,7 +115,6 @@ public class Player : CharacterStatus
             NPC npc = overlapCircle.GetComponent<NPC>();
             if (npc != null)
             {
-                print("falando com npc: " + npc.name);
                 npc.Falar();
             }
         }
