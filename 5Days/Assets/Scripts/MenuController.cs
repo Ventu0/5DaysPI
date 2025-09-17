@@ -18,11 +18,12 @@ public class MenuController : MonoBehaviour
     Sprite originalSprite;
     void Start()
     {
+        DeleteSave delete = DeleteSave.instance;
         objectImage = characterTransform.GetComponent<Image>();
         originalSprite = objectImage.sprite;
         loadGameButton.onClick.AddListener(LoadGameButton);
-        loadGameButton.enabled = ChecarSePossuiSave();
-        if (!ChecarSePossuiSave())
+        loadGameButton.enabled = delete.ChecarSePossuiSave();
+        if (!delete.ChecarSePossuiSave())
         {
             return;
         }
@@ -36,30 +37,14 @@ public class MenuController : MonoBehaviour
     #region MenuButtons
     public void NewGameButton()
     {
-        if (ChecarSePossuiSave())
-        {
-            string pasta = Application.persistentDataPath;
-            string[] arquivos = Directory.GetFiles(pasta, "*.json");
-
-            for(int i = 0; i < arquivos.Length; i++)
-            {
-                File.Delete(arquivos[i]); //se já houver um save, deleta ele
-            }
-        }
-        PlayerPrefs.DeleteAll();
-        Loader.instance.DeletarTudo();
+        DeleteSave.instance.Deletar();
         SceneManager.LoadScene("CasaDianas");
     }
     public void LoadGameButton()
     {
         Loader.instance.Carregar();
     }
-    public bool ChecarSePossuiSave()
-    {
-        string caminho = Application.persistentDataPath;
-        string[] arquivosJson = Directory.GetFiles(caminho, "*.json");
-        return arquivosJson.Length > 0;
-    }
+    
     public void OptionsButton()
     {
 

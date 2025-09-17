@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2682794652752421947}
   - component: {fileID: 5163892024950695327}
-  - component: {fileID: 1257353893620837213}
   - component: {fileID: 5382764367639105057}
   - component: {fileID: 8598730989796458988}
+  - component: {fileID: 6205605082003792416}
   m_Layer: 0
   m_Name: Inimigo_EntrarBatalha
   m_TagString: Untagged
@@ -90,22 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1257353893620837213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8480002590178634455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0338ef3abc713bf468506005eb00245d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cenaEscolhida: CombatScene
-  enemiesStatus:
-  - {fileID: 11400000, guid: 39577218f1eb9fa4bbed93a96bfa8d71, type: 2}
-  escapeChance: 0.5
 --- !u!95 &5382764367639105057
 Animator:
   serializedVersion: 7
@@ -190,3 +174,22 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6205605082003792416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480002590178634455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ded482a24b4c834186f5130e98a58f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cenaEscolhida: CombatScene
+  enemiesStatus: []
+  escapeChance: 0.7
+  moneyYield: 5
+  jaMorreu: 0
+  inimigo:
+    jaMorreu: 0

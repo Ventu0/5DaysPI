@@ -12,16 +12,9 @@ public class YesOrNo
     public UnityEvent OnYesTextEnd;
     public DialogueOptions options;
 
-    public void ActiveCondition(NPC whichNPC)
+    public void ActiveCondition(NPC npc)
     {
-        int money = PlayerMoney.money;
-        if(money >= options.moneyAmount)
-        {
-            money -= options.moneyAmount;
-            whichNPC.Falar(options.yesLines, options.yesFaces);
-        }
-        else
-            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces);
+
     }
     public bool hasCondition()
     {
@@ -105,16 +98,19 @@ public class NPC : MonoBehaviour
             pauseMenu.canPause = true;
             dayAndNight.isPaused = false;
             chatController.CloseDialogue();
-            yesOrNo.alreadyAnswered = false;
+
             activeLines = dialogueLines; 
             activeIcons = charactersFace;
-
-            if (yesOrNo.yesTextActivated)
+            if(yesOrNo != null)
             {
-                yesOrNo.OnYesTextEnd?.Invoke();
-                yesOrNo.yesTextActivated = false;
+                yesOrNo.alreadyAnswered = false;
+                if (yesOrNo.yesTextActivated)
+                {
+                    yesOrNo.OnYesTextEnd?.Invoke();
+                    yesOrNo.yesTextActivated = false;
+                }
             }
-
+               
             if (isHealer)
             {
                 PlayerPartyController.instance.CurarTodos();

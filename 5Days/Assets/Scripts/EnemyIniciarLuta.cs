@@ -11,7 +11,7 @@ public class Inimigo
         this.jaMorreu = jaMorreu;
     }
 }
-public class IniciarLuta : MonoBehaviour
+public class EnemyIniciarLuta : MonoBehaviour
 {
     public delegate void OnStartBattle();
     public OnStartBattle onStartBattle;
@@ -19,9 +19,9 @@ public class IniciarLuta : MonoBehaviour
     [SerializeField] string cenaEscolhida;
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
     [SerializeField] float escapeChance = 0.7f; //chance de escapar da batalha, entre 0 e 1 
+    [SerializeField] int moneyYield = 5; 
 
     public bool jaMorreu;
-    public int personalID;
     public Inimigo inimigo;
     void Start()
     {
@@ -38,12 +38,16 @@ public class IniciarLuta : MonoBehaviour
     {
         inimigo.jaMorreu = true;
         gameObject.SetActive(false);
+        PlayerMoney.instance.AddMoney(moneyYield);
         Time.timeScale = 0f;
     }
     void WaitSomeTime()
     {
         PlayerPartyController party = PlayerPartyController.instance;
+        TurnModeManager turnModeManager = TurnModeManager.instance;
+
         List<CharacterStatusGeneric> statusAtualizado = new List<CharacterStatusGeneric>();
+
         for (int i = 0; i < party.partyAtual.Count; i++)
         {
             if (!party.partyAtual[i].isDead)
@@ -51,6 +55,7 @@ public class IniciarLuta : MonoBehaviour
                 statusAtualizado.Add(party.partyAtual[i]);
             }
         }
+
         QuestController.instance.menu.SetActive(false);
         PauseMenuController.instance.canPause = false;
 
@@ -58,7 +63,6 @@ public class IniciarLuta : MonoBehaviour
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(false);
         dayScript.PauseTime(true);
 
-        TurnModeManager turnModeManager = TurnModeManager.instance;
         turnModeManager.iniciarLuta = this;
         turnModeManager.escapeChance = escapeChance;
 

@@ -26,6 +26,7 @@ public class CutsceneChat : MonoBehaviour
         chatController = ChatController.instance;
         faces = new Sprite[][] { charactersFace1, charactersFace2, charactersFace3, charactersFace4 };
         dialogos = new string[][] { dialogo1, dialogo2, dialogo3, dialogo4};
+
     }
     void Update()
     {
@@ -42,7 +43,6 @@ public class CutsceneChat : MonoBehaviour
             falaAtual++;
         if (falaAtual < falasMaximas)
         {
-            print("falando: " + falas[falaAtual]);
             chatController.StartDialogue(charactersFace[falaAtual], falas[falaAtual]);
         }
         else if (falaAtual >= falasMaximas)

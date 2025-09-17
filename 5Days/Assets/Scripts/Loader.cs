@@ -19,7 +19,7 @@ public class Loader : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void DeletarTudo()
+    public void DeletarTudoDoDontDestroy()
     {
         Scene dontDestroyScene = gameObject.scene;
         GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
@@ -38,7 +38,7 @@ public class Loader : MonoBehaviour
             string json = File.ReadAllText(caminho);
             coisasSalvas = JsonUtility.FromJson<CoisasParaSalvar>(json);
         }
-
+        Destroy(DeleteSave.instance);
         SceneManager.LoadScene(coisasSalvas.activeScene);
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

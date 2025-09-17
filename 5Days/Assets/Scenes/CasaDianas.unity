@@ -2234,6 +2234,7 @@ GameObject:
   - component: {fileID: 1403760629}
   - component: {fileID: 1403760628}
   - component: {fileID: 1403760630}
+  - component: {fileID: 1403760631}
   m_Layer: 0
   m_Name: Cama
   m_TagString: Untagged
@@ -2413,6 +2414,37 @@ PolygonCollider2D:
       - {x: -0.12727554, y: -0.04396791}
       - {x: -0.12419007, y: 0.013113237}
   m_UseDelaunayMesh: 1
+--- !u!114 &1403760631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403760627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96910a5266cfdf43be3ddb94a39e597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueLines: []
+  falaAtual: -1
+  charactersFace: []
+  isHealer: 0
+  yesOrNo:
+    hasQuestion: 0
+    alreadyAnswered: 0
+    question: 0
+    yesTextActivated: 0
+    OnYesTextEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    options: {fileID: 0}
+  completeQuest: 0
+  nextQuestName: 
+  activeLines: []
+  activeIcons: []
+  canTalk: 1
+  isChoosing: 0
 --- !u!1001 &1426656057
 PrefabInstance:
   m_ObjectHideFlags: 0
