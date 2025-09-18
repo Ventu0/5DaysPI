@@ -1,18 +1,16 @@
 using UnityEngine;
-
+[System.Serializable]
+public class DialogueArrays
+{
+    [TextArea] public string[] lines;
+    public Sprite[] faces;
+}
 [CreateAssetMenu(fileName = "DialogueOptions", menuName = "Scriptable Objects/DialogueOptions")]
 public class DialogueOptions : ScriptableObject
 {
-
-   [TextArea] public string[] yesLines;
-   public Sprite[] yesFaces;
-
-   [TextArea] public string[] notEnoughMoneyText;
-   public Sprite[] notEnoughMoneyFaces;
-
-    [Header("Falas para caso o player diga não")]
-    [TextArea] public string[] noLines;
-    public Sprite[] noFaces;
+    public DialogueArrays yesDialogue;
+    public DialogueArrays noDialogue;
+    public DialogueArrays notEnoughMoneyDialogues;
 
     [Header("Configurações de opções")]
     public bool needMoney;

@@ -31,6 +31,7 @@ public class DiaENoite : MonoBehaviour
     public delegate void OnNightChange();
     public OnNightChange onNightStart;
     [HideInInspector] public RelogioScript relogioScript;
+
     public static DiaENoite instance;
     
     private void Awake()

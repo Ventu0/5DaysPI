@@ -3,6 +3,11 @@ using UnityEngine;
 public class Sleep : MonoBehaviour
 {
     [SerializeField] bool canSleep;
+    public static Sleep instance;
+    private void Awake()
+    {   
+        instance = this;
+    }
     void Start()
     {
         
