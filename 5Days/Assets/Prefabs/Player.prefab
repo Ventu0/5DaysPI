@@ -135,12 +135,13 @@ MonoBehaviour:
   vida: 0
   luzNatural: {fileID: 0}
   canMove: 1
-  "raioDeIntera\xE7\xE3o": 2
+  "raioDeIntera\xE7\xE3o": 1.75
   "layerMaskIntera\xE7\xE3o":
     serializedVersion: 2
     m_Bits: 8
-  lastSavedPosition: {x: -8.56, y: 2.99}
+  canTalk: 1
   moveInput: {x: 0, y: 0}
+  lastSavedPosition: {x: -8.56, y: 1.14}
   anim: {fileID: 0}
   rb: {fileID: 0}
   spriteRenderer: {fileID: 0}

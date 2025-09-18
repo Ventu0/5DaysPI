@@ -88,6 +88,8 @@ public class Player : CharacterStatus
         if (isGamePaused || !canMove)
         {
             rb.linearVelocity = Vector2.zero;
+            anim.SetFloat("Horizontal", 0);
+            anim.SetFloat("Vertical", 0);
             return;
         }
 

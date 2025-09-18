@@ -12,17 +12,6 @@ public class YesOrNo
     public UnityEvent OnYesTextEnd;
     public DialogueOptions options;
 
-    public void ActiveCondition(NPC whichNPC)
-    {
-        int money = PlayerMoney.money;
-        if(money >= options.moneyAmount)
-        {
-            money -= options.moneyAmount;
-            whichNPC.Falar(options.yesLines, options.yesFaces);
-        }
-        else
-            whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces);
-    }
     public bool hasCondition()
     {
         return options != null;
@@ -49,11 +38,13 @@ public class NPC : MonoBehaviour
     [SerializeField] bool canTalk = true;
     [SerializeField] bool isChoosing = false;
 
-    bool alreadyTalked;
+    bool alreadyRecievedQuest;
+    NPConditions conditions;
     ChatController chatController;
     
     void Start()
     {
+        conditions = NPConditions.instance;
         chatController = ChatController.instance;
         activeLines = dialogueLines;
         activeIcons = charactersFace;
@@ -81,7 +72,6 @@ public class NPC : MonoBehaviour
         if (chatController.falasRoutine != null && chatController.isWritingText)
         {
             chatController.ResetText();
-            print("nulo");
             return;
         }
 
@@ -89,46 +79,52 @@ public class NPC : MonoBehaviour
 
         if (falaAtual < activeLines.Length && canTalk) //erro aqui
         {
-            print("proximo dialogo");
 
             player.canMove = false;
             pauseMenu.canPause = false;
-            dayAndNight.isPaused = true;
-            print(falaAtual);
+            dayAndNight.isPaused = true;    
             chatController.StartDialogue(activeIcons[falaAtual], activeLines[falaAtual]);
             CheckIfHasQuestion();
         }
 
         if (falaAtual > activeLines.Length)
         {
-            player.canMove = true;
-            pauseMenu.canPause = true;
-            dayAndNight.isPaused = false;
-            chatController.CloseDialogue();
-            yesOrNo.alreadyAnswered = false;
-            activeLines = dialogueLines; 
-            activeIcons = charactersFace;
+            ResetNPC();
+        }
+    }
+    public void ResetNPC()
+    {
+        Player.instance.canMove = true;
+        PauseMenuController.instance.canPause = true;
+        DiaENoite.instance.isPaused = false;
 
+        chatController.CloseDialogue();
+
+        activeLines = dialogueLines;
+        activeIcons = charactersFace;
+        if (yesOrNo != null)
+        {
+            yesOrNo.alreadyAnswered = false;
             if (yesOrNo.yesTextActivated)
             {
                 yesOrNo.OnYesTextEnd?.Invoke();
                 yesOrNo.yesTextActivated = false;
             }
-
-            if (isHealer)
-            {
-                PlayerPartyController.instance.CurarTodos();
-            }
-            else
-            {  
-                if (completeQuest && !alreadyTalked)
-                {
-                    QuestController.instance.SetQuestWithAnimation(nextQuestName);
-                    alreadyTalked = true;
-                }
-            }
-            falaAtual = -1;
         }
+
+        if (isHealer)
+        {
+            PlayerPartyController.instance.CurarTodos();
+        }
+        else
+        {
+            if (completeQuest && !alreadyRecievedQuest)
+            {
+                QuestController.instance.SetQuestWithAnimation(nextQuestName);
+                alreadyRecievedQuest = true;
+            }
+        }
+        falaAtual = -1;
     }
     void CheckIfHasQuestion()
     {
@@ -156,9 +152,9 @@ public class NPC : MonoBehaviour
         {
             isChoosing = false;
             yesOrNo.yesTextActivated = true;
-
+            if (conditions == null) print("Null");
             if (yesOrNo.hasCondition())
-                yesOrNo.ActiveCondition(this);
+                conditions.DoAction(this, yesOrNo.options);
         }
         else
         {

@@ -34,7 +34,7 @@ public class TurnModeManager : MonoBehaviour
     public List<BasePersonagem> aliadosPersonagens;
     public List<BasePersonagem> aliadosPersonagensPersistentes; //não é usado no sistema, somente no final
     public List<BasePersonagem> inimigosPersonagens;
-    public IniciarLuta iniciarLuta;
+    public EnemyIniciarLuta iniciarLuta;
     public static TurnModeManager instance;
     private void Awake()
     {

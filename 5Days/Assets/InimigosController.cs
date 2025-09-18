@@ -10,7 +10,7 @@ public class Inimigos
 }
 public class InimigosController : MonoBehaviour
 {
-    [SerializeField] IniciarLuta[] inimigosArray;
+    [SerializeField] EnemyIniciarLuta[] inimigosArray;
     public static InimigosController instance;
 
     private void Awake()
@@ -20,11 +20,7 @@ public class InimigosController : MonoBehaviour
     }
     void Start()
     {
-        inimigosArray = GetComponentsInChildren<IniciarLuta>();   
-        for(int i = 0; i < inimigosArray.Length; i++)
-        {
-            inimigosArray[i].personalID = i + 1; //da o ID, evitando 0,1,2 para ficar 1,2,3
-        }
+        inimigosArray = GetComponentsInChildren<EnemyIniciarLuta>();   
         Carregar();
     }
     public void Salvar()
