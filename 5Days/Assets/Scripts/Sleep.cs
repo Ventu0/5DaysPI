@@ -7,8 +7,9 @@ public class Sleep : MonoBehaviour
     {
         
     }
-    void SleepForTheDay()
+    public void SleepForTheDay()
     {
-
+        DiaENoite.instance.ResetTime();
+        DiaENoite.instance.relogioScript.NextDay();
     }
 }

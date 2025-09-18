@@ -7,11 +7,13 @@ public class RelogioScript : MonoBehaviour
     [Header("Configurações do Relógio")]
     [SerializeField] Image gradiente;
     [SerializeField] TextMeshProUGUI hourText;
+    [SerializeField] TextMeshProUGUI dayText;
     [SerializeField] float gradienteInitialX;
     [SerializeField] float gradienteFinalX;
 
     [Header("Configurações de Tempo")]
     [SerializeField] string time;
+    [SerializeField] int currentDay = 1;
     [SerializeField] int minutes;
     [HideInInspector] public int hours = 0;
     [SerializeField] int maxHours = 23;
@@ -27,6 +29,12 @@ public class RelogioScript : MonoBehaviour
     void Update()
     {
         
+    }
+    public void NextDay()
+    {
+        currentDay += 1;
+        currentDay = Mathf.Clamp(currentDay, 1, 5);
+        dayText.text = "Dia " + currentDay;
     }
     public void AddTime()
     {

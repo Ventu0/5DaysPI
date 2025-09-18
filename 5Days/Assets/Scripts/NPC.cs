@@ -82,7 +82,7 @@ public class NPC : MonoBehaviour
 
             player.canMove = false;
             pauseMenu.canPause = false;
-            dayAndNight.isPaused = true;    
+            dayAndNight.isPaused = true;
             chatController.StartDialogue(activeIcons[falaAtual], activeLines[falaAtual]);
             CheckIfHasQuestion();
         }
@@ -152,7 +152,6 @@ public class NPC : MonoBehaviour
         {
             isChoosing = false;
             yesOrNo.yesTextActivated = true;
-            if (conditions == null) print("Null");
             if (yesOrNo.hasCondition())
                 conditions.DoAction(this, yesOrNo.options);
         }

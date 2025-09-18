@@ -2255,7 +2255,7 @@ GameObject:
   - component: {fileID: 1403760628}
   - component: {fileID: 1403760630}
   - component: {fileID: 1403760631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,14 +2447,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueLines:
-  - 
+  - Oi cama
+  - Oi
+  - Deseja Dormir?
   falaAtual: -1
-  charactersFace: []
+  charactersFace:
+  - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
+  - {fileID: 3269279359094584176, guid: acf8eb9ad4dc9ef489d4bf302d252ac2, type: 3}
+  - {fileID: 3269279359094584176, guid: acf8eb9ad4dc9ef489d4bf302d252ac2, type: 3}
   isHealer: 0
   yesOrNo:
     hasQuestion: 1
     alreadyAnswered: 0
-    question: 0
+    question: 2
     yesTextActivated: 0
     OnYesTextEnd:
       m_PersistentCalls:
@@ -2567,6 +2572,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+--- !u!1 &1466838106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466838108}
+  - component: {fileID: 1466838107}
+  m_Layer: 0
+  m_Name: NPConditionsCotroller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1466838107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466838106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566e1d199a702e34598a4d0b5c7d7661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualNPC: {fileID: 0}
+  actualOptions: {fileID: 0}
+--- !u!4 &1466838108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466838106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0145912, y: -0.03973415, z: 0.6449815}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1523130361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2877,6 +2928,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+--- !u!1 &1817015276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817015278}
+  - component: {fileID: 1817015277}
+  m_Layer: 0
+  m_Name: SaveController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1817015277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817015276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5142c8ab9d160424cb687c2474761116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1817015278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817015276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2817237, y: -1.5270959, z: 0.6143736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913464255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,3 +3380,5 @@ SceneRoots:
   - {fileID: 1426656057}
   - {fileID: 189622312}
   - {fileID: 1123995295}
+  - {fileID: 1466838108}
+  - {fileID: 1817015278}

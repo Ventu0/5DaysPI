@@ -32,6 +32,7 @@ public class CutsceneController : MonoBehaviour
 
     void Start()
     {
+        Player.instance.canTalk = false;
         DiaENoite.instance.PauseTime(true);
         PauseMenuController.instance.canPause = false;
     }
@@ -72,6 +73,7 @@ public class CutsceneController : MonoBehaviour
         player.transform.position = Vector3.zero; //redefine posições do player
         player.gameObject.SetActive(true);
         player.canMove = true;
+        player.canTalk = true;
 
         Destroy(dontDestroyParent);
     }

@@ -18,7 +18,7 @@ public class DiaENoite : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] float intensidadeNoite = 0.2f;
 
-    [Range(0,24)]
+    [Range(0, 24)]
     public int iniciarEmQualHora = 0;
 
     [Range(0, 24)]
@@ -30,8 +30,7 @@ public class DiaENoite : MonoBehaviour
 
     public delegate void OnNightChange();
     public OnNightChange onNightStart;
-    
-    RelogioScript relogioScript;
+    [HideInInspector] public RelogioScript relogioScript;
     public static DiaENoite instance;
     
     private void Awake()
