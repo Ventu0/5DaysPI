@@ -29,23 +29,41 @@ public class NPConditions : MonoBehaviour
 
         if (options.needMoney)
         {
-            int money = PlayerMoney.money;
-            if (money >= options.moneyAmount)
-            {
-                money -= options.moneyAmount;
-                whichNPC.Falar(options.yesLines, options.yesFaces);
-            }
-            else
-                whichNPC.Falar(options.notEnoughMoneyText, options.notEnoughMoneyFaces);
+            WasteMoney();
         }
-        else if(options.canSleep)
+
+        if(options.canSleep)
         {
             Sleep();
-            whichNPC.Falar(options.yesLines, options.yesFaces);
         }
     }
-    public void Sleep()
+    void WasteMoney()
     {
+        int money = PlayerMoney.money;
+        if (money >= actualOptions.moneyAmount)
+        {
+            money -= actualOptions.moneyAmount;
+            print("gastando dinheiro do player");
+            if (actualOptions.yesLines.Length == 0 && actualOptions.yesFaces.Length == 0)
+            {
+                actualNPC.ResetNPC();
+                return;
+            }
 
+            actualNPC.Falar(actualOptions.yesLines, actualOptions.yesFaces);
+        }
+        else
+        {
+            if(actualOptions.notEnoughMoneyText.Length == 0 && actualOptions.notEnoughMoneyFaces.Length == 0)
+            {
+                actualNPC.ResetNPC();
+                return;
+            }
+            actualNPC.Falar(actualOptions.notEnoughMoneyText, actualOptions.notEnoughMoneyFaces);
+        }
+    }
+    void Sleep()
+    {
+            
     }
 }

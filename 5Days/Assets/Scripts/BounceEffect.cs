@@ -21,7 +21,6 @@ public class BounceEffect : MonoBehaviour
     }
     public IEnumerator Bounce(Transform tranform, float bobbingDuration, float bounceQuantity, Action onEnd = null)
     {
-        print("isOnRoutine: " + isOnRoutine);
         if (isOnRoutine) yield break;
         isOnRoutine = true;
         float iterador = 0;
@@ -43,6 +42,7 @@ public class BounceEffect : MonoBehaviour
             tranform.position = Vector2.Lerp(tranform.position, newPos, iterador);
             yield return null;
         }
+        tranform.position = newPos;
         yield return new WaitForSeconds(0.5f);
         onEnd?.Invoke();
         isOnRoutine = false;

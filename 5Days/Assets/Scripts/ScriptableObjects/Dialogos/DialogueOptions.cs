@@ -16,6 +16,6 @@ public class DialogueOptions : ScriptableObject
 
     [Header("Configurações de opções")]
     public bool needMoney;
-    public bool canSleep;
     public int moneyAmount;
+    public bool canSleep;
 }
