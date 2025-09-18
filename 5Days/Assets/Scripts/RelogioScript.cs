@@ -25,6 +25,7 @@ public class RelogioScript : MonoBehaviour
         UpdateTime();
         StartCoroutine(MoveGradient(dayScript.AcharValorRestante(dayScript.iniciarEmQualHora)));
         hours = dayScript.iniciarEmQualHora;
+        dayText.text = "Dia " + currentDay;
     }
     void Update()
     {

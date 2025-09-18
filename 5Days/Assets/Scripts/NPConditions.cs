@@ -1,9 +1,11 @@
-using UnityEngine;
+using NUnit.Framework;
+using UnityEngine;  
 
 public class NPConditions : MonoBehaviour
 {
     [SerializeField] NPC actualNPC;
     [SerializeField] DialogueOptions actualOptions;
+    [SerializeField] Sleep sleepScript;
     public static NPConditions instance;
     private void Awake()
     {
@@ -19,7 +21,7 @@ public class NPConditions : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     public void DoAction(NPC whichNPC, DialogueOptions options)
@@ -34,7 +36,8 @@ public class NPConditions : MonoBehaviour
 
         if(options.canSleep)
         {
-            Sleep();
+
+            Sleep.instance.SleepForTheDay();
         }
     }
     void WasteMoney()
@@ -42,28 +45,34 @@ public class NPConditions : MonoBehaviour
         int money = PlayerMoney.money;
         if (money >= actualOptions.moneyAmount)
         {
+            string[] yesLines = actualOptions.yesDialogue.lines;
+            Sprite[] yesFaces = actualOptions.yesDialogue.faces;
+
             money -= actualOptions.moneyAmount;
-            print("gastando dinheiro do player");
-            if (actualOptions.yesLines.Length == 0 && actualOptions.yesFaces.Length == 0)
+            if (yesLines.Length == 0 && yesFaces.Length == 0)
             {
                 actualNPC.ResetNPC();
                 return;
             }
 
-            actualNPC.Falar(actualOptions.yesLines, actualOptions.yesFaces);
+            actualNPC.Falar(yesLines, yesFaces);
         }
         else
         {
-            if(actualOptions.notEnoughMoneyText.Length == 0 && actualOptions.notEnoughMoneyFaces.Length == 0)
+            string[] noMoneyLines = actualOptions.noDialogue.lines;
+            Sprite[] noMoneyFaces = actualOptions.noDialogue.faces;
+            if (actualOptions.notEnoughMoneyDialogues.lines.Length == 0 && actualOptions.notEnoughMoneyDialogues.faces.Length == 0)
             {
                 actualNPC.ResetNPC();
                 return;
             }
-            actualNPC.Falar(actualOptions.notEnoughMoneyText, actualOptions.notEnoughMoneyFaces);
+            actualNPC.Falar(noMoneyLines, noMoneyFaces);
         }
     }
-    void Sleep()
+    bool CheckIfHasText(DialogueArrays dialogue)
     {
-            
+        string[] dialogueLines = dialogue.lines;
+        Sprite[] dialogueFaces = dialogue.faces;
+        return false; //fazendo isso daqui
     }
 }

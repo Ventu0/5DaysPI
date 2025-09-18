@@ -99,7 +99,7 @@ public class NPC : MonoBehaviour
         DiaENoite.instance.isPaused = false;
 
         chatController.CloseDialogue();
-
+        print("fechando dialogo");
         activeLines = dialogueLines;
         activeIcons = charactersFace;
         if (yesOrNo != null)
@@ -158,7 +158,7 @@ public class NPC : MonoBehaviour
         else
         {
             isChoosing = false;
-            Falar(yesOrNo.options.noLines, yesOrNo.options.noFaces);
+            Falar(yesOrNo.options.noDialogue.lines, yesOrNo.options.noDialogue.faces);
         }
             
         Player.instance.canTalk = true;
