@@ -36,7 +36,10 @@ public class NPConditions : MonoBehaviour
 
         if(options.canSleep)
         {
-
+            if(CheckIfHasText(actualOptions.yesDialogue))
+            {
+                actualNPC.ResetNPC();
+            }
             Sleep.instance.SleepForTheDay();
         }
     }
@@ -49,7 +52,7 @@ public class NPConditions : MonoBehaviour
             Sprite[] yesFaces = actualOptions.yesDialogue.faces;
 
             money -= actualOptions.moneyAmount;
-            if (yesLines.Length == 0 && yesFaces.Length == 0)
+            if (!CheckIfHasText(actualOptions.yesDialogue))
             {
                 actualNPC.ResetNPC();
                 return;
@@ -61,7 +64,7 @@ public class NPConditions : MonoBehaviour
         {
             string[] noMoneyLines = actualOptions.noDialogue.lines;
             Sprite[] noMoneyFaces = actualOptions.noDialogue.faces;
-            if (actualOptions.notEnoughMoneyDialogues.lines.Length == 0 && actualOptions.notEnoughMoneyDialogues.faces.Length == 0)
+            if (!CheckIfHasText(actualOptions.notEnoughMoneyDialogues))
             {
                 actualNPC.ResetNPC();
                 return;
@@ -73,6 +76,14 @@ public class NPConditions : MonoBehaviour
     {
         string[] dialogueLines = dialogue.lines;
         Sprite[] dialogueFaces = dialogue.faces;
-        return false; //fazendo isso daqui
+        
+        if(dialogueLines.Length == 0 && dialogueFaces.Length == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
