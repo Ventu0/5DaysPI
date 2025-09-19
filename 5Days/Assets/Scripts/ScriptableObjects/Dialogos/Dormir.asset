@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811cb9dc139b65e42a2998e6eb36d030, type: 3}
   m_Name: Dormir
   m_EditorClassIdentifier: 
-  yesLines: []
-  yesFaces: []
-  notEnoughMoneyText: []
-  notEnoughMoneyFaces: []
-  noLines: []
-  noFaces: []
+  yesDialogue:
+    lines: []
+    faces: []
+  noDialogue:
+    lines: []
+    faces: []
+  notEnoughMoneyDialogues:
+    lines: []
+    faces: []
   needMoney: 0
   moneyAmount: 0
-  canSleep: 1
+  needSleep: 1

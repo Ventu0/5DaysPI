@@ -2470,7 +2470,7 @@ MonoBehaviour:
   nextQuestName: 
   activeLines: []
   activeIcons: []
-  canTalk: 1
+  canBeInteracted: 0
   isChoosing: 0
 --- !u!114 &1403760632
 MonoBehaviour:
@@ -2484,7 +2484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ac4299a88cd4a4c8c8632e4ea9d7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSleep: 0
 --- !u!1001 &1426656057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2617,6 +2616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNPC: {fileID: 0}
   actualOptions: {fileID: 0}
+  canSleep: 1
 --- !u!4 &1466838108
 Transform:
   m_ObjectHideFlags: 0
@@ -2893,6 +2893,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2071040697021452473, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 14.700073
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071040697021452473, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.799988
+      objectReference: {fileID: 0}
     - target: {fileID: 3276163473673638495, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6070051
@@ -2932,6 +2940,14 @@ PrefabInstance:
     - target: {fileID: 3276163473673638495, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102222990943949287, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: horarioDaNoite
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102222990943949287, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: tempoParaNoite
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6721595690482119415, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_Name

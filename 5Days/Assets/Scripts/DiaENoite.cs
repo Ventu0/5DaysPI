@@ -30,6 +30,10 @@ public class DiaENoite : MonoBehaviour
 
     public delegate void OnNightChange();
     public OnNightChange onNightStart;
+
+    public delegate void OnDayBegin();
+    public OnDayBegin onDayBegin;
+
     [HideInInspector] public RelogioScript relogioScript;
 
     public static DiaENoite instance;
@@ -94,7 +98,9 @@ public class DiaENoite : MonoBehaviour
     {
         float iterador = 0;
         float tempoAtual = tempoParaNoiteSegundos - tempoInicial;
-        float duration = tempoAtual; 
+        float duration = tempoAtual;
+        onNightStart?.Invoke();
+
         while (iterador < duration)
         {
             while(isPaused) yield return null;
@@ -103,12 +109,13 @@ public class DiaENoite : MonoBehaviour
             yield return null;
         }
         print("Noite Iniciada");
-        onNightStart?.Invoke();
     }
     public IEnumerator ChangeToDay()
     {
         float iterador = 0;
         float duration = tempoParaNoiteSegundos / 4;
+        onDayBegin?.Invoke();
+
         while (iterador < duration)
         {
             while (isPaused) yield return null;

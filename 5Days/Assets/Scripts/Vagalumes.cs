@@ -20,21 +20,28 @@ public class Vagalumes : MonoBehaviour
     [Range(-1, 1)]
     [SerializeField] float randomYmax;
     [Space]
+
+    [Header("Pool de Vagalumes")]
     [SerializeField] int poolSize = 10;
     Queue<GameObject> fireflyQueue = new Queue<GameObject>();
-    float time;
-    bool canSpawn = false;
+
+    [Header("Read-Only")]
+    [SerializeField] float time;
+    [SerializeField] bool canSpawn = false;
+    DiaENoite dayAndNight;
 
     void Start()
     {
-        for(int i = 0; i < poolSize; i++)
+        dayAndNight = DiaENoite.instance;
+        for (int i = 0; i < poolSize; i++)
         {
             GameObject firefly = Instantiate(vagalumesObject, transform);
             firefly.SetActive(false);
             firefly.transform.position = transform.position;
             fireflyQueue.Enqueue(firefly);
         }
-        canSpawn = true;
+        dayAndNight.onNightStart += () => canSpawn = true;
+        dayAndNight.onDayBegin += () => canSpawn = false;
     }
     void Update()
     {
@@ -47,6 +54,12 @@ public class Vagalumes : MonoBehaviour
                 time = 0f;
             }
         }
+    }
+    private void OnDisable()
+    {
+        if(dayAndNight == null) return;
+        dayAndNight.onDayBegin -= () => canSpawn = false;
+        dayAndNight.onNightStart -= () => canSpawn = true;
     }
     IEnumerator SpawnFirefly()
     {
@@ -65,11 +78,21 @@ public class Vagalumes : MonoBehaviour
        float speed = Random.Range(fireflySpeed + 0f, fireflySpeed + 0.5f);
        firefly.GetComponent<Rigidbody2D>().linearVelocity = direction.normalized * speed;
        yield return new WaitForSeconds(10f);
-       firefly.SetActive(false);
-       fireflyQueue.Enqueue(firefly);
+       StartCoroutine(FireflyFade(firefly));
     }
-    void OnNight()
+    IEnumerator FireflyFade(GameObject firefly)
     {
-        canSpawn = true;
+        SpriteRenderer fireflyRenderer = firefly.GetComponent<SpriteRenderer>();
+        Color originalColor = fireflyRenderer.color;
+        float iterador = Time.deltaTime;
+        while(iterador < 0.5f)
+        {
+            iterador += Time.deltaTime;
+            originalColor = Color.Lerp(originalColor, new Color(originalColor.r, originalColor.g, originalColor.b, 0), iterador);
+            fireflyRenderer.color = originalColor;
+            yield return null;
+        }
+        firefly.SetActive(false);
+        fireflyQueue.Enqueue(firefly);
     }
 }

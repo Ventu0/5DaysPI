@@ -105,6 +105,9 @@ public class ChatController : MonoBehaviour
     #region ChooseBTN
     public void SetYesNoFunctions(NPC npc)
     {
+        yesBTN.onClick.RemoveAllListeners();
+        noBTN.onClick.RemoveAllListeners();
+
         yesBTN.onClick.AddListener(() => npc.ChooseQuestion(true));
         noBTN.onClick.AddListener(() => npc.ChooseQuestion(false));
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Sleep : MonoBehaviour
 {
-    [SerializeField] bool canSleep;
+    NPC npc;
     public static Sleep instance;
     private void Awake()
     {   
@@ -10,7 +10,8 @@ public class Sleep : MonoBehaviour
     }
     void Start()
     {
-        
+        npc = GetComponent<NPC>();
+        DiaENoite.instance.onNightStart += () => npc.canBeInteracted = true;
     }
     public void SleepForTheDay()
     {

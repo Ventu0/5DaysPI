@@ -35,7 +35,7 @@ public class NPC : MonoBehaviour
     [Header("Read-Only")]
     [SerializeField] string[] activeLines;
     [SerializeField] Sprite[] activeIcons;
-    [SerializeField] bool canTalk = true;
+    public bool canBeInteracted = true;
     [SerializeField] bool isChoosing = false;
 
     bool alreadyRecievedQuest;
@@ -53,6 +53,8 @@ public class NPC : MonoBehaviour
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
+        if(!canBeInteracted) return;
+
         if (isChoosing)
         {
         print("to escolhendo");
@@ -77,7 +79,7 @@ public class NPC : MonoBehaviour
 
         falaAtual++;
 
-        if (falaAtual < activeLines.Length && canTalk) //erro aqui
+        if (falaAtual < activeLines.Length && canBeInteracted) //erro aqui
         {
 
             player.canMove = false;
@@ -128,7 +130,7 @@ public class NPC : MonoBehaviour
     }
     void CheckIfHasQuestion()
     {
-        if(yesOrNo == null || yesOrNo.alreadyAnswered) return;
+        if(yesOrNo.hasQuestion == false || yesOrNo.alreadyAnswered) return;
 
         if (falaAtual == yesOrNo.question)
         {
@@ -136,14 +138,14 @@ public class NPC : MonoBehaviour
             chatController.ShowYesOrNoButtons(true);
 
             Player.instance.canTalk = false;
-            canTalk = false;
+            canBeInteracted = false;
         }
     }
     public void ChooseQuestion(bool yesOrNoButton)
     {
         falaAtual = -1;
         chatController.ShowYesOrNoButtons(false);
-        canTalk = true;
+        canBeInteracted = true;
         isChoosing = true;
         yesOrNo.alreadyAnswered = true;
         chatController.ResetText();

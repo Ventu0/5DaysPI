@@ -33,6 +33,7 @@ public class RelogioScript : MonoBehaviour
     }
     public void NextDay()
     {
+        print("Next Day");
         currentDay += 1;
         currentDay = Mathf.Clamp(currentDay, 1, 5);
         dayText.text = "Dia " + currentDay;
@@ -54,6 +55,7 @@ public class RelogioScript : MonoBehaviour
         }
         if (hours == dayScript.horarioDaNoite)
         {
+            print("noite começou");
             StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));
         }
         if (hours == maxHours)
@@ -79,6 +81,7 @@ public class RelogioScript : MonoBehaviour
         float valorRestante = dayScript.AcharValorRestante(iniciarEmQualHora);
         minutes = 0;
         hours = iniciarEmQualHora;
+        UpdateTime();
         StartCoroutine(MoveGradient(valorRestante));
     }
     IEnumerator MoveGradient(float tempoInicial = 0)
