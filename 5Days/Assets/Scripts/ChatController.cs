@@ -23,8 +23,9 @@ public class ChatController : MonoBehaviour
     [SerializeField] float timeToTextAppear = 5f;
     [SerializeField] bool canShowText = false;
     public bool isWritingText = false;
-    [SerializeField] 
+    [SerializeField]
 
+    Vector2 originalIconPos;
     string line;
     BounceEffect bounceEffect;
     public Coroutine falasRoutine;
@@ -44,6 +45,7 @@ public class ChatController : MonoBehaviour
     private void Start()
     {
         bounceEffect = BounceEffect.instance;
+        originalIconPos = portrait.transform.position;
         ShowYesOrNoButtons(false);
         pressButtonText.SetActive(false);
         chatMenu.SetActive(false);
@@ -79,7 +81,7 @@ public class ChatController : MonoBehaviour
             portrait.sprite = sprite;
             portraitFundo.SetActive(true);
             //if (portrait.sprite != sprite) //se for um novo sprite
-            StartCoroutine(bounceEffect?.Bounce(portrait.transform, 0.25f, 5)); //efeito de pulinho
+            StartCoroutine(bounceEffect?.Bounce(portrait.transform, originalIconPos, 0.25f, 5)); //efeito de pulinho
         }
 
         dialogueText.text = "";

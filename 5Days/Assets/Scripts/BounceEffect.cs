@@ -19,9 +19,10 @@ public class BounceEffect : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public IEnumerator Bounce(Transform tranform, float bobbingDuration, float bounceQuantity, Action onEnd = null)
+    public IEnumerator Bounce(Transform tranform, Vector2 originalPos, float bobbingDuration, float bounceQuantity, Action onEnd = null)
     {
         if (isOnRoutine) yield break;
+        tranform.position = originalPos;
         isOnRoutine = true;
         float iterador = 0;
         Vector2 newPos = new Vector2(tranform.position.x, tranform.position.y + bounceQuantity);
@@ -42,7 +43,7 @@ public class BounceEffect : MonoBehaviour
             tranform.position = Vector2.Lerp(tranform.position, newPos, iterador);
             yield return null;
         }
-        tranform.position = newPos;
+        tranform.position = originalPos;
         yield return new WaitForSeconds(0.5f);
         onEnd?.Invoke();
         isOnRoutine = false;

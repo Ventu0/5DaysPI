@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
     #endregion
     public void InteractObject()
     {
-        StartCoroutine(BounceEffect.instance.Bounce(objectImage.transform, bobbingDuration, jumpQuantity, OnEndBounce));
+        StartCoroutine(BounceEffect.instance.Bounce(objectImage.transform, characterTransform.position, bobbingDuration, jumpQuantity, OnEndBounce));
         objectImage.sprite = clickSprite;
     }
     void OnEndBounce()

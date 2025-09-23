@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Threading.Tasks;
+using Unity.VisualScripting.FullSerializer;
 [CreateAssetMenu(menuName = "Ataques/AtaqueNeutro")]
 public class GolpesNeutros : Attack
 {
@@ -10,12 +11,17 @@ public class GolpesNeutros : Attack
     public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O próprio usuário
     {
         alvoPersonagem = alvo;
+        Debug.Log("Alvo: " + alvo.name);
+
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
+        TurnModeManager turnModeManager = TurnModeManager.instance;
         InteractButtonsController.instance.menu.SetActive(false);
-        Animator characterAnimator = TurnModeManager.instance.QuemEstaAtacando().GetComponent<Animator>();
+        Animator characterAnimator = turnModeManager.QuemEstaAtacando().GetComponent<Animator>();
         MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront, VisualEffectDuration);
+
         if (changeColorWhileApplyingEffect) ChangeColorDuringEffect();
         currentPP -= 1;
+
         await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000);
 
         if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
@@ -28,7 +34,7 @@ public class GolpesNeutros : Attack
         alvo.AtualizarVida();
 
         if(soundEffect != null) SFX.instance.PlaySFX(soundEffect);
-        alvo.EndTurn();
+        turnModeManager.QuemEstaAtacando().EndTurn();
     }
     private async void ChangeColorDuringEffect()
     {

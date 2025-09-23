@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: RoubaVida
   description: Suga a energia vital do alvo, ao mesmo tempo que causa dano
-  danoOuCura: 0
+  danoOuCura: 15
   maxPP: 7
   currentPP: 7
   VisualEffectDuration: 1
-  iconeAtaque: {fileID: 0}
+  iconeAtaque: {fileID: 21300000, guid: 5927e884eb083a5499b7ef57dac8d9ac, type: 3}
   iconMainColor: {r: 1, g: 0.015686274, b: 0.034201954, a: 1}
-  attackEffect: {fileID: 0}
+  attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
   attackEffectYOffset: -0.5
-  tipoDeAlvo: 1
+  tipoDeAlvo: 0
   attackAnimation: {fileID: 0}
   animationPlayInFront: 1
-  efeitoSecundario: {fileID: 0}
+  efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
   usarMovimentoLinear: 0
@@ -33,9 +33,9 @@ MonoBehaviour:
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
-  stealHeal: 0
+  stealHeal: 1
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 
-  quantidadesDeAtaque: 1
+  quantidadesDeAtaque: 3
   stillDuration: 0.1

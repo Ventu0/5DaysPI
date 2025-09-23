@@ -54,9 +54,13 @@ using System.Threading.Tasks;
                         efeitoSecundario.ApplyEffect(alvos[j]);
 
                     if (alvo != alvos[j])
+                    {
                         AttackTarget(alvos[j], Mathf.FloorToInt(quemEstaAtacando.strengthFactor * danoOuCura / 2), quemEstaAtacando.isBuffed);
+                    }
                     else
+                    {
                         AttackTarget(alvos[j], Mathf.FloorToInt(quemEstaAtacando.strengthFactor * danoOuCura), quemEstaAtacando.isBuffed);
+                    }
                 }
             } 
             else
@@ -72,6 +76,15 @@ using System.Threading.Tasks;
     }
     void AttackTarget(BasePersonagem alvo,int damage, bool isMoveStrong)
     {
+        if (stealHeal)
+        {
+            if (efeitoSecundario == null)
+            {
+                Debug.LogWarning("Steal Heal precisa de um efeito secundário de cura!");
+                return;
+            }
+            efeitoSecundario.ApplyEffect(TurnModeManager.instance.QuemEstaAtacando(), Mathf.FloorToInt(danoOuCura * 0.3f) /* trinta por cento */);
+        }
         alvo.TakeDamage(damage, shakeCamera, isMoveStrong);
     }
 }

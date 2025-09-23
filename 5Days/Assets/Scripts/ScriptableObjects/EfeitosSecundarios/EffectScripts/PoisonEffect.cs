@@ -10,6 +10,13 @@ public class PoisonEffect : Effect
     [SerializeField] AudioClip poisonSound;
     public override void ApplyEffect(BasePersonagem alvo)
     {
+        int random = Random.Range(1, 3);
+        if(random == 1)
+        {
+            TextPopup.instance.GerarTexto("Errou!", alvo.transform.position, Color.yellow);
+            return;
+        }
+
         character = alvo;
         remainingTurns = durationInTurn;
         var resultado = alvo.ChecarSeJaPossuiEfeito(this);
