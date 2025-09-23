@@ -54,20 +54,24 @@ using System.Threading.Tasks;
                         efeitoSecundario.ApplyEffect(alvos[j]);
 
                     if (alvo != alvos[j])
-                        alvos[j].TakeDamage(danoOuCura / 2, shakeCamera, quemEstaAtacando.isBuffed);
+                        AttackTarget(alvos[j], Mathf.FloorToInt(quemEstaAtacando.strengthFactor * danoOuCura / 2), quemEstaAtacando.isBuffed);
                     else
-                        alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
+                        AttackTarget(alvos[j], Mathf.FloorToInt(quemEstaAtacando.strengthFactor * danoOuCura), quemEstaAtacando.isBuffed);
                 }
             } 
             else
             {
                 MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront,attackEffectYOffset , 0.7f / quantidadesDeAtaque);
 
-                alvo.TakeDamage(Mathf.FloorToInt(danoOuCura * quemEstaAtacando.strengthFactor), shakeCamera, quemEstaAtacando.isBuffed);
+               AttackTarget(alvo, Mathf.FloorToInt(quemEstaAtacando.strengthFactor * danoOuCura), quemEstaAtacando.isBuffed);
             }
             await Task.Delay((int)VisualEffectDuration * 1000 / quantidadesDeAtaque);
         }
         if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
             characterAnimator.SetTrigger(endAttackParameter);
+    }
+    void AttackTarget(BasePersonagem alvo,int damage, bool isMoveStrong)
+    {
+        alvo.TakeDamage(damage, shakeCamera, isMoveStrong);
     }
 }

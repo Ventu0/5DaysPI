@@ -29,15 +29,12 @@ public class PoisonEffect : Effect
     }
     public override void OnTurnStart(BasePersonagem alvo)
     {
-        Debug.Log("OnTurnStart ativando do script: " + name + "com os turnos faltantes: " + remainingTurns);
         if (remainingTurns <= durationInTurn)
         {
             remainingTurns--;
-            Debug.Log("Foi ativado e agora o remainingTurns esta com:" + remainingTurns);
         }
         if (remainingTurns <= 0)
         {
-            Debug.Log("Removendo efeito");
             RemoveEffect();
         }
         SFX.instance.PlaySFX(poisonSound, 1f);

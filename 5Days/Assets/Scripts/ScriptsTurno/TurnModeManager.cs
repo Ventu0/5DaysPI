@@ -125,6 +125,7 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!JaAtacaram(aliadosPersonagens))
             {
+                print("nao acabou o turno: " + turnoDeQualPersonagem);
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();
             }
@@ -167,6 +168,7 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!JaAtacaram(inimigosPersonagens))
             {
+                print("nao acabou o turno: " + turnoDeQualPersonagem);
                 turnoDeQualPersonagem += 1;
                 inimigos[turnoDeQualPersonagem].Attack();
             }
@@ -178,7 +180,10 @@ public class TurnModeManager : MonoBehaviour
         for(int i = 0; i < personagems.Count; i++)
         {
             if (personagems[i].turnEnded == false)
+            {
+                print("nao acabei de atacar: " + personagems[i].name);
                 return false;
+            }
         }
         return true;
     }

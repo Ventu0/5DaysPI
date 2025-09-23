@@ -163,9 +163,9 @@ public class InteractButtonsController : MonoBehaviour
             return;
         }  
 
-        if (alvo != null)
+        if (alvo != null && ataque.tipoDeAlvo == Alvo.Inimigo)
             Atacar(whatMove, alvo); 
-        else
+        else if(ataque.tipoDeAlvo != Alvo.Self)
         {
             SelectTarget selectTarget = SelectTarget.instance;
             List<BasePersonagem> target = ataques[whatMove].tipoDeAlvo == Alvo.Inimigo 

@@ -22,7 +22,10 @@ public class DescriptionMenu : MonoBehaviour
         Attack attack = interactButtonsController.ataques[whatMove];
         descriptionMenu.SetActive(true);
 
-        descriptionText.text = attack.description;
+        if(attack.description == null || attack.description == "")
+            descriptionText.text = "Sem descrição.";
+        else
+            descriptionText.text = attack.description;
 
         PPText.text = "Usos: " + attack.currentPP.ToString() + "/" + attack.maxPP.ToString();
 

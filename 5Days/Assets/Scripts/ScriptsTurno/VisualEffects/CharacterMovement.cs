@@ -45,6 +45,7 @@ public class CharacterMovement : MonoBehaviour
             StartCoroutine(AllyMove(characterToMove, playerNewPos, duration));
         else
             StartCoroutine(ShadowMove(characterToMove.transform, playerNewPos, duration, useLinearMovement));
+
         if (shadow != null)
         {
             Vector2 shadowPos = !useLinearMovement ? new Vector2(newPos.x, newPos.y - 0.45f) : new Vector2(newPos.x, newPos.y);
@@ -104,6 +105,7 @@ public class CharacterMovement : MonoBehaviour
         }
         if (useLinearMovement)
         {
+            print("finalizando turno");
             character.EndTurn();
         }
     }
