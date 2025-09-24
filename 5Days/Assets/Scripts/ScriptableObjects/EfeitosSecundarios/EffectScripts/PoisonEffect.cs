@@ -10,6 +10,13 @@ public class PoisonEffect : Effect
     [SerializeField] AudioClip poisonSound;
     public override void ApplyEffect(BasePersonagem alvo)
     {
+        int random = Random.Range(1, 3);
+        if(random == 1)
+        {
+            TextPopup.instance.GerarTexto("Errou!", alvo.transform.position, Color.yellow);
+            return;
+        }
+
         character = alvo;
         remainingTurns = durationInTurn;
         var resultado = alvo.ChecarSeJaPossuiEfeito(this);
@@ -29,15 +36,12 @@ public class PoisonEffect : Effect
     }
     public override void OnTurnStart(BasePersonagem alvo)
     {
-        Debug.Log("OnTurnStart ativando do script: " + name + "com os turnos faltantes: " + remainingTurns);
         if (remainingTurns <= durationInTurn)
         {
             remainingTurns--;
-            Debug.Log("Foi ativado e agora o remainingTurns esta com:" + remainingTurns);
         }
         if (remainingTurns <= 0)
         {
-            Debug.Log("Removendo efeito");
             RemoveEffect();
         }
         SFX.instance.PlaySFX(poisonSound, 1f);

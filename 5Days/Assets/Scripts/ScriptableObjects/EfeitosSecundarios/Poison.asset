@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectName: Veneno
   durationInTurn: 3
-  remainingTurns: 2
+  remainingTurns: 3
+  character: {fileID: 0}
   damagePerTurn: 10
   poisonAnimation: {fileID: 9100000, guid: 2fb7f7d32eefd8348afb7e476fb7b25c, type: 2}
   poisonSound: {fileID: 8300000, guid: d23fd786e4d6fea48b9ded9522e60099, type: 3}

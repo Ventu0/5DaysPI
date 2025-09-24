@@ -130,6 +130,7 @@ public class NPC : MonoBehaviour
     }
     void CheckIfHasQuestion()
     {
+        if (yesOrNo == null) return;
         if(yesOrNo.hasQuestion == false || yesOrNo.alreadyAnswered) return;
 
         if (falaAtual == yesOrNo.question)

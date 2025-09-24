@@ -1,3 +1,4 @@
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CuraEffect", menuName = "EfeitoSecundario/CuraEffect", order = 1)]
@@ -9,6 +10,7 @@ public class CuraEffect : Effect
 
         alvo.vidaAtual += buffDebuffNumberQuantity;
         alvo.vidaAtual = Mathf.Clamp(alvo.vidaAtual, 0, alvo.vidaMaxima);
+        alvo.AtualizarVida();
         TextPopup.instance.GerarTexto(Mathf.Abs(originalLife - alvo.vidaAtual).ToString(), alvo.transform.position, Color.green);
     }
 }

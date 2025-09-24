@@ -37,6 +37,8 @@ public abstract class Attack : ScriptableObject
     public bool oneTime;
     public bool shakeCamera;
     public bool ataqueEmArea;
+    public bool stealHeal;
+    [Tooltip("se for um ataque que cura, precisa ter efeito secundario de cura")]
     public bool useCharacterAnimation = false;
     [Tooltip("se o personagem tiver animation, usar ela")]
 
