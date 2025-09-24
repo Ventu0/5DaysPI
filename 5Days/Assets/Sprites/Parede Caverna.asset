@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Parede Caverna
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: a10feb7757bdd7a49a4bbd2e9059d9fd, type: 3}
-  m_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+  m_Color: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 1}
   m_Transform:
     e00: 1
     e01: 0
