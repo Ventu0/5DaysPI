@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 public enum Alvo
 {
     Inimigo,
@@ -27,6 +29,9 @@ public abstract class Attack : ScriptableObject
     public RuntimeAnimatorController attackAnimation;
     public bool animationPlayInFront = true;
     public Effect efeitoSecundario;
+    [Range(0, 1)]
+    public float porcentagemDeCura = 0.3f;
+    [Tooltip("Se o ataque for de cura, qual a porcentagem de cura que ele vai fazer")]
     public AudioClip soundEffect;
     public bool repeatSoundOnLoop = true;
 
@@ -45,7 +50,38 @@ public abstract class Attack : ScriptableObject
     [Header("Configurações da animação do personagem (ativar se useCharacterAnimation for true)" )]
     public string attackParameterName;
     public string endAttackParameter;
+    public virtual List<BasePersonagem> EncontrarAliados()
+    { //fiz esse if pra eu identificar quem esta atacando, pra os inimigos poderem usar esses golpes também
+        TurnModeManager turnModeManager = TurnModeManager.instance;
+        List<BasePersonagem> alvos = new List<BasePersonagem>();
 
+        switch (turnModeManager.turno)
+        {
+            case Turnos.EnemyTurn:
+
+                if (tipoDeAlvo == Alvo.Aliado)
+                    alvos = turnModeManager.inimigosPersonagens;
+                else if (tipoDeAlvo == Alvo.Inimigo)
+                    alvos = turnModeManager.aliadosPersonagens;
+
+                break;
+
+            case Turnos.PlayerTurn:
+
+                if (tipoDeAlvo == Alvo.Inimigo)
+                    alvos = turnModeManager.inimigosPersonagens;
+                else if (tipoDeAlvo == Alvo.Aliado)
+                    alvos = turnModeManager.aliadosPersonagens;
+
+                break;
+
+            default:
+                Debug.Log("Alvo é self");
+                alvos.Add(turnModeManager.QuemEstaAtacando());
+                break;
+        }
+        return new List<BasePersonagem>(alvos);
+    }
     public virtual void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite)
     {
 

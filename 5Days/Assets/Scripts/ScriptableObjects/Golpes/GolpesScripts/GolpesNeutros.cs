@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Threading.Tasks;
 using Unity.VisualScripting.FullSerializer;
+using NUnit.Framework;
+using System.Collections.Generic;
 [CreateAssetMenu(menuName = "Ataques/AtaqueNeutro")]
 public class GolpesNeutros : Attack
 {
@@ -26,15 +28,36 @@ public class GolpesNeutros : Attack
 
         if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
             characterAnimator.SetTrigger(attackParameterName); //se tiver animação, usar ela
+
+        AplicarEfeito(alvo);
+
+        if(soundEffect != null) SFX.instance.PlaySFX(soundEffect);
+
+        turnModeManager.QuemEstaAtacando().EndTurn();
+    }
+    void AplicarEfeito(BasePersonagem alvo)
+    {
+        TurnModeManager turnModeManager = TurnModeManager.instance;
+        if (ataqueEmArea)
+        {
+            List<BasePersonagem> alvos = EncontrarAliados();
+            for(int i = 0; i < alvos.Count; i++)
+            {
+                efeitoSecundario.ApplyEffect(alvos[i], danoOuCura);
+                efeitoSecundario.ApplyEffect(alvos[i]);
+                alvos[i].AtualizarVida();
+            }
+        }
         if (efeitoSecundario != null)
         {
             efeitoSecundario.ApplyEffect(alvo, danoOuCura);
             efeitoSecundario.ApplyEffect(alvo);
         }
         alvo.AtualizarVida();
-
-        if(soundEffect != null) SFX.instance.PlaySFX(soundEffect);
-        turnModeManager.QuemEstaAtacando().EndTurn();
+    }
+    public override List<BasePersonagem> EncontrarAliados()
+    {
+        return base.EncontrarAliados();
     }
     private async void ChangeColorDuringEffect()
     {

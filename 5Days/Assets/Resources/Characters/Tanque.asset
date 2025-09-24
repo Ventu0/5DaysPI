@@ -20,7 +20,7 @@ MonoBehaviour:
   ataques:
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   - {fileID: 11400000, guid: dde959b40c0d1da4a8dbba4abdbf9452, type: 2}
-  - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
+  - {fileID: 11400000, guid: 935aae9a6fc2bfe4cbdf98673f0a8784, type: 2}
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   animatorController: {fileID: 9100000, guid: c2efc787ccf7b5848b8a47d6b6425310, type: 2}
   flipX: 0
