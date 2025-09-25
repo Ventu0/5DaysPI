@@ -21,10 +21,10 @@ public class TurnModeManager : MonoBehaviour
     [SerializeField] GameObject EndMenu;
     [SerializeField] TextMeshProUGUI endText;
     [Tooltip("uma UI de vitoria ou derrota")]
+    public Camera turnModeCam;
 
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
-    [SerializeField] public Camera mainCamera;
     [Tooltip("Chance de escapar da batalha, é usado em porcentagem, ou seja, o numero é entre 0 a 1")]
     public float escapeChance;
     public int turnoDeQualPersonagem;
@@ -34,6 +34,7 @@ public class TurnModeManager : MonoBehaviour
     public List<BasePersonagem> aliadosPersonagens;
     public List<BasePersonagem> aliadosPersonagensPersistentes; //não é usado no sistema, somente no final
     public List<BasePersonagem> inimigosPersonagens;
+    [HideInInspector] public Vector3 originalCameraPos;
     public EnemyIniciarLuta iniciarLuta;
     public static TurnModeManager instance;
     private void Awake()
@@ -47,6 +48,7 @@ public class TurnModeManager : MonoBehaviour
         EndMenu.gameObject.SetActive(false);
 
         turnoDeQualPersonagem = 0;
+        originalCameraPos = turnModeCam.transform.position;
     }
     public void FirstAllyAttack()
     {
@@ -181,7 +183,6 @@ public class TurnModeManager : MonoBehaviour
         {
             if (personagems[i].turnEnded == false)
             {
-                print("nao acabei de atacar: " + personagems[i].name);
                 return false;
             }
         }

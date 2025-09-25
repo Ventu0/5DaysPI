@@ -93,7 +93,9 @@ public class InteractButtonsController : MonoBehaviour
     #endregion
     public void SetupMenu(Vector2 newPos)
     {
-        if(turnModeManager.QuemEstaAtacando().characterStatus.ataques != null) ataques = turnModeManager.QuemEstaAtacando().characterStatus.ataques;
+        if(turnModeManager.QuemEstaAtacando().characterStatus.ataques != null) 
+            ataques = turnModeManager.QuemEstaAtacando().characterStatus.ataques;
+
         menu.transform.position = new Vector2(newPos.x + menuDistance, newPos.y);
         for (int i = 0; i < attacksText.Length; i++)
         {
@@ -101,7 +103,7 @@ public class InteractButtonsController : MonoBehaviour
 
             if (ataques[i] != null)
             {
-                attacksText[i].text = ataques[i].name;
+                attacksText[i].text = ataques[i].nomeAtaque;
                 attackButtons[i].interactable = true;
                 if (ataques[i].iconeAtaque != null)
                 {
@@ -129,9 +131,9 @@ public class InteractButtonsController : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
     }
 
-    public void SetMove(int whatMove)
+    public void SetMove(int whichMove)
     {
-        Attack ataque = ataques[whatMove];
+        Attack ataque = ataques[whichMove];
         MainText mainText = MainText.instance;
         SFX sfx = SFX.instance;
         if (ataque.currentPP <= 0)
@@ -154,27 +156,32 @@ public class InteractButtonsController : MonoBehaviour
         }
 
         descriptionMenuScript.descriptionMenu.SetActive(false);
-        chosenAttack = whatMove;
+        chosenAttack = whichMove;
         BasePersonagem alvo = turnModeManager.EncontrarAlvo();
         if (ataque.tipoDeAlvo == Alvo.Self)
         {
             alvo = turnModeManager.QuemEstaAtacando();
-            Atacar(whatMove, alvo);
+            Atacar(whichMove, alvo);
             return;
         }  
 
         if (alvo != null && ataque.tipoDeAlvo == Alvo.Inimigo)
-            Atacar(whatMove, alvo); 
-        else if(ataque.tipoDeAlvo != Alvo.Self)
+            Atacar(whichMove, alvo); 
+        else if(ataque.tipoDeAlvo != Alvo.Self && ataque.canUseSelectMenu)
         {
             SelectTarget selectTarget = SelectTarget.instance;
-            List<BasePersonagem> target = ataques[whatMove].tipoDeAlvo == Alvo.Inimigo 
+            List<BasePersonagem> target = ataques[whichMove].tipoDeAlvo == Alvo.Inimigo 
                 ? new List<BasePersonagem>(turnModeManager.inimigosPersonagens)
                 : new List<BasePersonagem>(turnModeManager.aliadosPersonagens);
             menu.SetActive(false);
             selectTarget.targets = target;
 
             selectTarget.StartSelecting();
+        }
+        else if (!ataque.canUseSelectMenu)
+        {
+            alvo = turnModeManager.QuemEstaAtacando();
+            Atacar(whichMove, alvo);
         }
     }
     public void Atacar(int whatMove, BasePersonagem alvo)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb6f06121f23fd4c94a839c03694efc, type: 3}
   m_Name: CuraEmArea
   m_EditorClassIdentifier: 
-  nomeAtaque: CuraArea
+  nomeAtaque: "Ben\xE7\xE3o"
   description: 
   danoOuCura: 15
   maxPP: 15
@@ -24,11 +24,12 @@ MonoBehaviour:
   attackEffectYOffset: -0.5
   tipoDeAlvo: 1
   attackAnimation: {fileID: 9100000, guid: 8c1b80898f2fbe0469af492e79bda716, type: 2}
-  animationPlayInFront: 1
+  animationPlayInFront: 0
   efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
   porcentagemDeCura: 0.498
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
+  canUseSelectMenu: 0
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 0
   oneTime: 0

@@ -23,11 +23,7 @@ public class ShakeEffect : MonoBehaviour
     {
 
     }
-    public void StartShake()
-    {
-        StartCoroutine(Shake(shakeObject, shakeDuration, shakeStrength));
-    }
-    public IEnumerator Shake(GameObject objectToShake, float duration, float strength, bool useLocalPosition = false)
+    public IEnumerator Shake(GameObject objectToShake, Vector3 originalPos, float duration, float strength, bool useLocalPosition = false)
     {
         Vector3 initialPos = objectToShake.transform.position;
         float timer = 0f;
@@ -46,7 +42,7 @@ public class ShakeEffect : MonoBehaviour
             yield return null;
         }
 
-        objectToShake.transform.position = initialPos;
+        objectToShake.transform.position = originalPos;
 
     }
 }

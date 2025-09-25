@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
   m_Name: "F\xFAria"
   m_EditorClassIdentifier: 
-  nomeAtaque: Ataques
+  nomeAtaque: "F\xFAria"
   description: "Lan\xE7a uma barragem de socos furiosos. <color=red>S\xF3 pode ser
     usado 1 vez por partida.</color>"
   danoOuCura: 15
@@ -27,13 +27,16 @@ MonoBehaviour:
   attackAnimation: {fileID: 0}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 0}
+  porcentagemDeCura: 0.3
   soundEffect: {fileID: 8300000, guid: a42ff7391a3e38f48a670bfc04ecf18d, type: 3}
   repeatSoundOnLoop: 0
+  canUseSelectMenu: 1
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 1
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  stealHeal: 0
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 

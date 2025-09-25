@@ -30,17 +30,13 @@ public class MovesVisualEffect : MonoBehaviour
         controllerAnimation = animatorController;
         effectSprite = spriteEffect;
         effectDuration = duration;
+        effectPosition = new Vector2(positionEffect.x, positionEffect.y + YOffset);
 
         if (playInFront)
-        {
-            effectPosition = new Vector2(positionEffect.x, positionEffect.y + YOffset);
             StartCoroutine(PlayAttackEffectInFront());
-        }
         else
-        {
-            effectPosition = new Vector2(positionEffect.x, positionEffect.y);
             StartCoroutine(PlayAttackEffectInPosition());
-        }
+            
     }
     public IEnumerator PlayAttackEffectInFront()
     {

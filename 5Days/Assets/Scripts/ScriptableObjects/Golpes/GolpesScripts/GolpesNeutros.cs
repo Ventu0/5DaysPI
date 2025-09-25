@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Threading.Tasks;
-using Unity.VisualScripting.FullSerializer;
-using NUnit.Framework;
 using System.Collections.Generic;
+using System;
 [CreateAssetMenu(menuName = "Ataques/AtaqueNeutro")]
 public class GolpesNeutros : Attack
 {
@@ -19,9 +18,21 @@ public class GolpesNeutros : Attack
         TurnModeManager turnModeManager = TurnModeManager.instance;
         InteractButtonsController.instance.menu.SetActive(false);
         Animator characterAnimator = turnModeManager.QuemEstaAtacando().GetComponent<Animator>();
-        MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront, VisualEffectDuration);
-
-        if (changeColorWhileApplyingEffect) ChangeColorDuringEffect();
+        if (ataqueEmArea)
+        {
+            List<BasePersonagem> alvos = EncontrarAliados();
+            for (int i = 0; i < alvos.Count; i++)
+            {
+                MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[i].transform.position, attackAnimation, animationPlayInFront, VisualEffectDuration);
+                if (changeColorWhileApplyingEffect)
+                    ChangeColorDuringEffect(alvos[i]);
+            }
+        }
+        else
+        {
+            MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront, VisualEffectDuration);
+            if (changeColorWhileApplyingEffect) ChangeColorDuringEffect(alvo);
+        }
         currentPP -= 1;
 
         await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000);
@@ -37,7 +48,12 @@ public class GolpesNeutros : Attack
     }
     void AplicarEfeito(BasePersonagem alvo)
     {
-        TurnModeManager turnModeManager = TurnModeManager.instance;
+        if(efeitoSecundario == null)
+        {
+            Debug.LogError("precisa ter um efeito pra aplicar ele, gênio!");
+            return;
+        }
+
         if (ataqueEmArea)
         {
             List<BasePersonagem> alvos = EncontrarAliados();
@@ -48,20 +64,20 @@ public class GolpesNeutros : Attack
                 alvos[i].AtualizarVida();
             }
         }
-        if (efeitoSecundario != null)
+        else
         {
             efeitoSecundario.ApplyEffect(alvo, danoOuCura);
             efeitoSecundario.ApplyEffect(alvo);
+            alvo.AtualizarVida();
         }
-        alvo.AtualizarVida();
     }
     public override List<BasePersonagem> EncontrarAliados()
     {
         return base.EncontrarAliados();
     }
-    private async void ChangeColorDuringEffect()
+    private async void ChangeColorDuringEffect(BasePersonagem alvo)
     {
-        SpriteRenderer alvoSpriteRenderer = alvoPersonagem.GetComponent<SpriteRenderer>();
+        SpriteRenderer alvoSpriteRenderer = alvo.GetComponent<SpriteRenderer>();
         Color originalColor = alvoSpriteRenderer.color;
         alvoSpriteRenderer.color = colorToChange;
         await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000);

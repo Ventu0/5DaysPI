@@ -3868,14 +3868,15 @@ MonoBehaviour:
   - {fileID: 212723957}
   EndMenu: {fileID: 685205819}
   endText: {fileID: 1619888810}
+  turnModeCam: {fileID: 1645614959}
   hasOnlyOneEnemy: 0
-  mainCamera: {fileID: 1645614959}
   escapeChance: 0
   turnoDeQualPersonagem: 0
   turno: 0
   aliadosPersonagens: []
   aliadosPersonagensPersistentes: []
   inimigosPersonagens: []
+  originalCameraPos: {x: 0, y: 0, z: 0}
   iniciarLuta: {fileID: 0}
 --- !u!4 &613544267
 Transform:

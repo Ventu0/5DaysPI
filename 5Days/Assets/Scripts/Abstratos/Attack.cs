@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 public enum Alvo
 {
     Inimigo,
@@ -34,6 +32,9 @@ public abstract class Attack : ScriptableObject
     [Tooltip("Se o ataque for de cura, qual a porcentagem de cura que ele vai fazer")]
     public AudioClip soundEffect;
     public bool repeatSoundOnLoop = true;
+
+    [Header("Situacional")]
+    public bool canUseSelectMenu = true;
 
     [Header("Configurações de Ataque")]
     public bool usarMovimentoLinear;

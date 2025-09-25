@@ -4,6 +4,7 @@ public class CameraController : MonoBehaviour
 {
     public Camera mainCamera;
     public GameObject cameraRoot;
+    public Vector3 originalCameraPos;
     [SerializeField]public CinemachineVirtualCamera cinemachineCamera;
     public static CameraController instance;
     private void Awake()
@@ -11,6 +12,7 @@ public class CameraController : MonoBehaviour
         if(mainCamera == null)
         {
             mainCamera = Camera.main;
+            originalCameraPos = Camera.main.transform.position;
         }
         else
         {

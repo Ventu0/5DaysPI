@@ -26,12 +26,14 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public StatusEffect statusEffect;
 
     //variaveis privadas
-    public Animator animator;
+    Vector3 originalPos;
+    [HideInInspector] public Animator animator;
     Aliados aliado;
     TextMeshProUGUI lifeText;
     TurnModeManager turnModeManager;
     void Awake()
     {
+        originalPos = transform.position;
         if (shadow != null) shadow.gameObject.SetActive(false);
     }
     void Start()
@@ -85,6 +87,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         {
         if (ChecarSePossuiVida())
         {
+            TurnModeManager turnModeManager = TurnModeManager.instance;
             if (aliado != null && aliado.isDefending)
             {
                 damage = damage / 2;
@@ -94,10 +97,10 @@ public class BasePersonagem : MonoBehaviour, IDamageable
             string texto = ("-" + damage.ToString() + (isMoveStrong ? "!" : ""));
             TextPopup.instance.GerarTexto(texto, transform.position, Color.red);
 
-            StartCoroutine(ShakeEffect.instance.Shake(gameObject, 0.25f, 0.05f));
+            StartCoroutine(ShakeEffect.instance.Shake(gameObject, originalPos, 0.25f, 0.05f));
 
             if(shakeCamera)
-            StartCoroutine(ShakeEffect.instance.Shake(TurnModeManager.instance.mainCamera.gameObject, 0.25f, 0.09f, true));
+            StartCoroutine(ShakeEffect.instance.Shake(turnModeManager.turnModeCam.gameObject, turnModeManager.originalCameraPos, 0.25f, 0.09f, true));
 
             AtualizarVida();
         }

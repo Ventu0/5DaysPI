@@ -43,9 +43,7 @@ using System.Threading.Tasks;
 
             if (ataqueEmArea) //se for, faz o ataque em area, se não, ataca normalmente
             {
-                List<BasePersonagem> alvos = turnModeManager.turno == Turnos.PlayerTurn ? 
-                    new List<BasePersonagem>(turnModeManager.inimigosPersonagens) 
-                    : new List<BasePersonagem>(turnModeManager.aliadosPersonagens);
+                List<BasePersonagem> alvos = EncontrarAliados();
 
                 for (int j = 0; j < alvos.Count; j++)
                 {
@@ -76,11 +74,15 @@ using System.Threading.Tasks;
         {
             if (efeitoSecundario == null)
             {
-                Debug.LogWarning("Steal Heal precisa de um efeito secundário de cura!");
+                Debug.LogError("Steal Heal precisa de um efeito secundário de cura!");
                 return;
             }
             efeitoSecundario.ApplyEffect(TurnModeManager.instance.QuemEstaAtacando(), Mathf.FloorToInt(danoOuCura * porcentagemDeCura) /* trinta por cento */);
         }
         alvo.TakeDamage(damage, shakeCamera, isMoveStrong);
+    }
+    public override List<BasePersonagem> EncontrarAliados()
+    {
+        return base.EncontrarAliados();
     }
 }
