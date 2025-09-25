@@ -1439,7 +1439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: dialogueLines.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: charactersFace.Array.size
@@ -1448,6 +1448,22 @@ PrefabInstance:
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
       value: Ol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: "Precisa de assist\xEAncia m\xE9dica?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: "Sim, eu e meus amigos tamb\xE9m"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: "Beleza, tomem mais cuidado da pr\xF3xima"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
+      propertyPath: 'dialogueLines.Array.data[4]'
+      value: Pode deixar!
       objectReference: {fileID: 0}
     - target: {fileID: 5297348769169459207, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: 'charactersFace.Array.data[0]'
@@ -2521,7 +2537,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

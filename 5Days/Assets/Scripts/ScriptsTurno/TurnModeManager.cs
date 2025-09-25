@@ -11,7 +11,6 @@ public enum Turnos
 
 public class TurnModeManager : MonoBehaviour
 {
-
     [Header("Essential")]
     public TextMeshProUGUI winText;
     public List<EnemyAI> inimigos;
@@ -22,6 +21,7 @@ public class TurnModeManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI endText;
     [Tooltip("uma UI de vitoria ou derrota")]
     public Camera turnModeCam;
+    [SerializeField] BackGroundControl backGroundControl;
 
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
@@ -31,10 +31,11 @@ public class TurnModeManager : MonoBehaviour
     public Turnos turno;
 
     //variaveis invisiveis
-    public List<BasePersonagem> aliadosPersonagens;
-    public List<BasePersonagem> aliadosPersonagensPersistentes; //não é usado no sistema, somente no final
-    public List<BasePersonagem> inimigosPersonagens;
+    [HideInInspector] public List<BasePersonagem> aliadosPersonagens;
+    [HideInInspector] public List<BasePersonagem> aliadosPersonagensPersistentes; //não é usado no sistema, somente no final
+    [HideInInspector] public List<BasePersonagem> inimigosPersonagens;
     [HideInInspector] public Vector3 originalCameraPos;
+    
     public EnemyIniciarLuta iniciarLuta;
     public static TurnModeManager instance;
     private void Awake()
@@ -49,6 +50,12 @@ public class TurnModeManager : MonoBehaviour
 
         turnoDeQualPersonagem = 0;
         originalCameraPos = turnModeCam.transform.position;
+    }
+    private void Start()
+    {
+        float actualHour = DiaENoite.instance.relogioScript.GetCurrentHour(); //pega o horario atual
+        float multipleOf24 = backGroundControl.GetPercentOf24(); //pega o numero de 1 / 24, que da 0,0416..., usado pra aplicar a cor entre 0 a 1
+        backGroundControl.SetHour(multipleOf24 * actualHour); //como o multiplo é dividido por 24, eu pego o valor da hora atual e multiplico pelo outro numero, dando a hora atual entre 0 a 1
     }
     public void FirstAllyAttack()
     {
@@ -127,7 +134,6 @@ public class TurnModeManager : MonoBehaviour
             }
             else if (!JaAtacaram(aliadosPersonagens))
             {
-                print("nao acabou o turno: " + turnoDeQualPersonagem);
                 turnoDeQualPersonagem += 1;
                 InteractButtonsController.instance.NextPlayer();
             }

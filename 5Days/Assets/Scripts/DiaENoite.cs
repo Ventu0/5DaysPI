@@ -108,7 +108,6 @@ public class DiaENoite : MonoBehaviour
             directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, iterador / duration);
             yield return null;
         }
-        print("Noite Iniciada");
     }
     public IEnumerator ChangeToDay()
     {
@@ -123,7 +122,6 @@ public class DiaENoite : MonoBehaviour
             directionalLight.intensity = Mathf.Lerp(intensidadeNoite, 1, iterador / duration);
             yield return null;
         }
-        print("Dia Iniciado");
     }
     #endregion
 }

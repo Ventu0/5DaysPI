@@ -23,7 +23,7 @@ public class GolpesNeutros : Attack
             List<BasePersonagem> alvos = EncontrarAliados();
             for (int i = 0; i < alvos.Count; i++)
             {
-                MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[i].transform.position, attackAnimation, animationPlayInFront, VisualEffectDuration);
+                MovesVisualEffect.instance.AttackEffect(attackSprite, alvos[i].transform.position, attackAnimation, animationPlayInFront, attackEffectYOffset, VisualEffectDuration);
                 if (changeColorWhileApplyingEffect)
                     ChangeColorDuringEffect(alvos[i]);
             }

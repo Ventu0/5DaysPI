@@ -100,4 +100,8 @@ public class RelogioScript : MonoBehaviour
         }
         print("Relogio Completo");
     }
+    public int GetCurrentHour()
+    {
+        return hours;
+    }
 }

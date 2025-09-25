@@ -62,7 +62,10 @@ public class MovesVisualEffect : MonoBehaviour
     }
     IEnumerator PlayAttackEffectInPosition()
     {
+        print("instanciando");
         GameObject effect = Instantiate(attackEffect, effectPosition, transform.rotation);
+        print("Nome efeito: " + effect.name);
+        effect.transform.SetParent(transform);
         effect.GetComponent<Animator>().runtimeAnimatorController = controllerAnimation;
         effect.SetActive(true);
         effect.transform.position = effectPosition;

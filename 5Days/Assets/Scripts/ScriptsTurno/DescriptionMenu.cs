@@ -20,6 +20,7 @@ public class DescriptionMenu : MonoBehaviour
     public void AbrirMenu(int whatMove) //numero de identificação do ataque selecionado de acordo com o botão
     {
         Attack attack = interactButtonsController.ataques[whatMove];
+        if (attack == null) return;
         descriptionMenu.SetActive(true);
 
         if(attack.description == null || attack.description == "")

@@ -7,8 +7,12 @@ public class BackGroundControl : MonoBehaviour
     {
         
     }
-    void Update()
+    public void SetHour(float time)
     {
-        
+        dayShader.SetFloat("_time", time);
+    }
+    public float GetPercentOf24()
+    {
+        return 1f / 24f;
     }
 }
