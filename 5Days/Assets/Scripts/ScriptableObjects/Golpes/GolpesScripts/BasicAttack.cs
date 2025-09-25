@@ -13,10 +13,17 @@ using System.Threading.Tasks;
         TurnModeManager turnModeManager;
         public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O Inimigo
         {
+        turnModeManager = TurnModeManager.instance;
+        if (turnModeManager.turno == Turnos.EnemyTurn)
+        {
+            ataqueUmaVezSó = false;
+            oneTime = false;
+        }
+
         if(ataqueUmaVezSó)
             if(oneTime) return; //se for ataque uma vez só e já tiver sido usado, não faz nada
 
-        turnModeManager = TurnModeManager.instance;
+        
 
         float duração = turnModeManager.QuemEstaAtacando().duration;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
