@@ -51,12 +51,6 @@ public class TurnModeManager : MonoBehaviour
         turnoDeQualPersonagem = 0;
         originalCameraPos = turnModeCam.transform.position;
     }
-    private void Start()
-    {
-        float actualHour = DiaENoite.instance.relogioScript.GetCurrentHour(); //pega o horario atual
-        float multipleOf24 = backGroundControl.GetPercentOf24(); //pega o numero de 1 / 24, que da 0,0416..., usado pra aplicar a cor entre 0 a 1
-        backGroundControl.SetHour(multipleOf24 * actualHour); //como o multiplo é dividido por 24, eu pego o valor da hora atual e multiplico pelo outro numero, dando a hora atual entre 0 a 1
-    }
     public void FirstAllyAttack()
     {
         InteractButtonsController.instance.ataques = QuemEstaAtacando().characterStatus.ataques;
