@@ -21,7 +21,7 @@ MonoBehaviour:
   iconeAtaque: {fileID: 7866795523874103367, guid: ad87a8be74c7817438cee689222ca1da, type: 3}
   iconMainColor: {r: 1, g: 0.04718091, b: 0.015686274, a: 1}
   attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
-  attackEffectYOffset: -0.8
+  attackEffectYOffset: -0.7
   tipoDeAlvo: 1
   attackAnimation: {fileID: 9100000, guid: b6d35dc5e03a3a448ae02aebabe14bdd, type: 2}
   animationPlayInFront: 0

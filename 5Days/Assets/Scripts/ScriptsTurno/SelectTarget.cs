@@ -10,7 +10,8 @@ public class SelectTarget : MonoBehaviour
     [SerializeField] float duration;
 
     [Header("Optional")]
-    public GameObject attackText;
+    [SerializeField] GameObject attackText;
+    [SerializeField] GameObject cancelText;
     [SerializeField] float inputTimerCooldown = 0.2f;
     [SerializeField] float inputTimer;
 
@@ -37,7 +38,8 @@ public class SelectTarget : MonoBehaviour
     void Start()
     {
         inputTimer = inputTimerCooldown;
-        attackText.gameObject.SetActive(false);
+        attackText.SetActive(false);
+        cancelText.SetActive(false);
         arrowTransform.position = Vector3.zero;
         arrowTransform.gameObject.SetActive(false);
         canMove = true;
@@ -68,10 +70,22 @@ public class SelectTarget : MonoBehaviour
                 CallMoveArrow(currentCharacterSelected);
             }
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space))
-            {
                 FinishSelect();
-            }
+            if (Input.GetButtonDown("Cancel"))
+                CancelSelect();
         }
+    }
+    void CancelSelect()
+    {
+        currentCharacterSelected = 0;
+        targets.Clear();
+        inputTimer = inputTimerCooldown;
+        arrowTransform.gameObject.SetActive(false);
+        attackText.SetActive(false);
+        cancelText.SetActive(false);
+        isSelecting = false;
+        selectedTarget = null;
+        InteractButtonsController.instance.menu.SetActive(true);
     }
     public void FinishSelect()
     {
@@ -82,6 +96,7 @@ public class SelectTarget : MonoBehaviour
         targets.Clear();
         inputTimer = inputTimerCooldown;
         attackText.SetActive(false);
+        cancelText.SetActive(false);
         selectedTarget = null;
         arrowTransform.gameObject.SetActive(false);
         isSelecting = false;
@@ -94,6 +109,7 @@ public class SelectTarget : MonoBehaviour
         currentCharacterSelected = 0;
         arrowTransform.position = new Vector2(targets[0].transform.position.x, targets[0].transform.position.y + 1);
         attackText.SetActive(true);
+        cancelText.SetActive(true);
     }
     public void CallMoveArrow(int index)
     {
