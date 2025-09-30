@@ -18,10 +18,14 @@ public class LojaScript : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Horizontal"))
         {
+            if(!CheckIfCanMoveSelection((int)horizontal))
+            {//
+                print("não pode mover mais");
+                return;
+            }
+            if (fieldToMove == 2 || fieldToMove == -2)
+                Mexeu(new Vector2(horizontal, 0));
             SelectOther(new Vector2(horizontal, 0));
-            if(fieldToMove == 1)
-            Mexeu(new Vector2(horizontal, 0));
-            //layoutGroup.padding.left += Mathf.RoundToInt(horizontal * 157); //157 é o tamanho do item + espaçamento
         }
     }
     void Mexeu(Vector2 direction)
@@ -39,17 +43,29 @@ public class LojaScript : MonoBehaviour
         currentSelected += horizontal;
         fieldToMove += horizontal;
         currentSelected = Mathf.Clamp(currentSelected, 0, items.Length - 1);
-        StartCoroutine(MexerSelect(items[currentSelected], 0.2f));
+        StartCoroutine(MexerSelect(horizontal, 0.75f));
     }
-    IEnumerator MexerSelect(RectTransform toPos, float duration)
+    IEnumerator MexerSelect(int sentido, float duration)
     {
         float iterador = 0;
-        while(iterador < duration)
+        Vector2 selecionPos = new Vector2(selection.anchoredPosition.x, selection.anchoredPosition.y);
+        Vector2 newPos = selecionPos + new Vector2(sentido * 54, 0);
+        while (iterador < duration)
         {
-            selection.anchoredPosition = Vector2.Lerp(selection.anchoredPosition, toPos.anchoredPosition, iterador / duration);
+            selection.anchoredPosition = Vector2.Lerp(selection.anchoredPosition, newPos, iterador / duration);
             iterador += Time.deltaTime;
             yield return null;
         }
-        selection.anchoredPosition = toPos.anchoredPosition;
+    }
+    bool CheckIfCanMoveSelection(int direction)
+    {
+        if(currentSelected + direction < 0 || currentSelected + direction > items.Length - 1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
