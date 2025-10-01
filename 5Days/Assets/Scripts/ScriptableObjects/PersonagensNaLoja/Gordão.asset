@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b10e1a9046ec744da45dc8d5bbb5f18, type: 3}
+  m_Name: "Gord\xE3o"
+  m_EditorClassIdentifier: 
+  nomePersonagem: Diego
+  display: {fileID: 5667557361644986513, guid: db08c3c645e97b14ea2a9dc6fb87390f, type: 3}
+  personagemOriginal: {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}

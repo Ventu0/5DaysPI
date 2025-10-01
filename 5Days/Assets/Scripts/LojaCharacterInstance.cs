@@ -12,15 +12,15 @@ public class LojaCharacterInstance : MonoBehaviour
     {
         
     }
-    public IEnumerator Mexer(RectTransform nextPos, float duration)
+    public IEnumerator Mexer(Vector3 originalPos, Vector3 originalScale, float duration)
     {
         float t = 0;
         RectTransform rect = GetComponent<RectTransform>();
         while (t < duration)
         {
             t += Time.deltaTime;
-            rect.anchoredPosition = Vector3.Lerp(rect.anchoredPosition, nextPos.anchoredPosition, t / duration);
-            rect.localScale = Vector3.Lerp(rect.localScale, nextPos.localScale, t / duration);
+            rect.anchoredPosition = Vector3.Lerp(rect.anchoredPosition, originalPos, t / duration);
+            rect.localScale = Vector3.Lerp(rect.localScale, originalScale, t / duration);
             yield return null;
         }
     }

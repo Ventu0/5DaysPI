@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b10e1a9046ec744da45dc8d5bbb5f18, type: 3}
+  m_Name: JavaliTeste
+  m_EditorClassIdentifier: 
+  nomePersonagem: Javali
+  display: {fileID: 443562644885829971, guid: c3cd18af58a86224092090c8f2a31dd5, type: 3}
+  personagemOriginal: {fileID: 11400000, guid: 85c92f8db85e22e4c91030bd03990261, type: 2}
