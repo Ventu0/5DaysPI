@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LojaCharacterSelection : MonoBehaviour
 {
@@ -9,38 +10,58 @@ public class LojaCharacterSelection : MonoBehaviour
 
     void Start()
     {
-        
+        Setup();
+    }
+    void Setup()
+    {
+        for(int i = 0; i < charactersInfo.Length; i++)
+        {
+            characters[i].Setup(charactersInfo[i]);
+        }
     }
     void Update()
     {
         int horizontal = (int)Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Horizontal"))
-        {
-            if(selected == 0 && horizontal == -1)
-            {
-                print("nao pode ir mais pra esquerda");
-                return;
-            }else if(selected == characters.Length - 1 && horizontal == 1)
-            {
-                print("nao pode ir mais pra direita");
-                return;
-            }   
-                MexerTodos(horizontal);
+        {  
+            MexerTodos(horizontal);
         }
     }
     void MexerTodos(int sentido)
     {
-        selected = Mathf.Clamp(selected + sentido, 1, characters.Length - 2);
+        if(0 >= selected && sentido == -1 || selected == characters.Length - 1 && sentido == 1)
+        {
+            print("nao mexe");
+            return;
+        }
+
+        selected = Mathf.Clamp(selected + sentido, 0, characters.Length - 1);
         sentido = -sentido;
+        
         for (int i = 0; i < characters.Length; i++)
         {
-            print(i);
             int next = i + sentido;
-            if (next < 0 || next >= characters.Length)
+            print(i);
+            if (next < 0)
             {
-                Vector3 offset = new Vector3(50 * sentido, 0, 0);
-                StartCoroutine(characters[i].Mexer(offset, characters[i].GetComponent<RectTransform>().localScale, 0.5f));
+                if (sentido == 1) sentido = sentido * -1;
+                Vector2 offset = new Vector3(100 * -sentido, 0);
+                LojaCharacterInstance character = characters[i];
+                RectTransform characterRect = character.GetComponent<RectTransform>();
+                StartCoroutine(character.Mexer(characterRect.anchoredPosition + offset, character.originalScale, 0.5f));
                 continue;
+            }else if(next >= characters.Length)
+            {
+                if (sentido == -1)
+                {
+                    print("invertendo sentido do max"); //bug acontecendo aqui e ali em cima
+                    sentido = sentido * 1;
+                }
+                Vector2 offset = new Vector3(100 * sentido, 0);
+                LojaCharacterInstance character = characters[i];
+                RectTransform characterRect = character.GetComponent<RectTransform>();
+                StartCoroutine(character.Mexer(characterRect.anchoredPosition + offset, character.originalScale, 0.5f));
+                break;
             }
 
             RectTransform rectTransform = characters[i + sentido].GetComponent<RectTransform>();

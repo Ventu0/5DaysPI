@@ -222,7 +222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 1013796750}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!1 &218723478
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 0}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!114 &461002260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,7 +859,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 947846329}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!1 &828747782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 1123569698}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!1 &947846326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 0}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!114 &1476709099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2281,7 +2296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 2143607691}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!1 &1992596628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,7 +3933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4afd25f6ecb6c4fb1aa2f63ed56953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  displayImage: {fileID: 1448799230}
+  personagem: {fileID: 0}
+  originalScale: {x: 0, y: 0}
+  originalPos: {x: 0, y: 0}
 --- !u!1 &2143607688
 GameObject:
   m_ObjectHideFlags: 0

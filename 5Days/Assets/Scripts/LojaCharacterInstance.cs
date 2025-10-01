@@ -1,12 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LojaCharacterInstance : MonoBehaviour
 {
-    [SerializeField] int id;
+    [SerializeField] Image displayImage;
+    [SerializeField] PersonagensNaLoja personagem;
+    public Vector2 originalScale;
+    public Vector2 originalPos;
+    bool isOnRoutine;
+
     void Start()
     {
-        
+        originalScale = GetComponent<RectTransform>().localScale;
+    }
+    public void Setup(PersonagensNaLoja novoPersonagem)
+    {
+        displayImage.sprite = novoPersonagem.display;
+        personagem = novoPersonagem;
     }
     void Update()
     {
