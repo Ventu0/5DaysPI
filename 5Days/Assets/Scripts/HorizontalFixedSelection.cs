@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LojaScript : MonoBehaviour
+public class HorizontalFixedSelection : MonoBehaviour
 {
     [SerializeField] HorizontalLayoutGroup layoutGroup; //to usando Layout que é mais facil de organizar e mexer tipo slider
     [SerializeField] RectTransform[] items;
