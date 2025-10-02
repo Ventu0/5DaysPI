@@ -6,6 +6,7 @@ public class LojaCharacterSelection : MonoBehaviour
 {
     [SerializeField] LojaCharacterInstance[] characters;
     [SerializeField] PersonagensNaLoja[] charactersInfo;
+    [SerializeField] RectTransform[] fixedPositions;
     [SerializeField] int selected;
 
     void Start()
@@ -37,46 +38,32 @@ public class LojaCharacterSelection : MonoBehaviour
 
         selected = Mathf.Clamp(selected + sentido, 0, characters.Length - 1);
         sentido = -sentido;
-        
         for (int i = 0; i < characters.Length; i++)
         {
-            int next = i + sentido;
-            print(i);
-            if (next < 0)
-            {
-                if (sentido == 1) sentido = sentido * -1;
-                Vector2 offset = new Vector3(100 * -sentido, 0);
-                LojaCharacterInstance character = characters[i];
-                RectTransform characterRect = character.GetComponent<RectTransform>();
-                StartCoroutine(character.Mexer(characterRect.anchoredPosition + offset, character.originalScale, 0.5f));
-                continue;
-            }else if(next >= characters.Length)
-            {
-                if (sentido == -1)
-                {
-                    print("invertendo sentido do max"); //bug acontecendo aqui e ali em cima
-                    sentido = sentido * 1;
-                }
-                Vector2 offset = new Vector3(100 * sentido, 0);
-                LojaCharacterInstance character = characters[i];
-                RectTransform characterRect = character.GetComponent<RectTransform>();
-                StartCoroutine(character.Mexer(characterRect.anchoredPosition + offset, character.originalScale, 0.5f));
-                break;
-            }
+           int interval = ChecarSeONumeroEstaNoIntervalo(i);
+           interval = Mathf.Clamp(interval, 0, fixedPositions.Length - 1);
+           LojaCharacterInstance character = characters[i];
+          
+           bool isOnInterval = interval > 2 ? false : true;
+           character.gameObject.SetActive(isOnInterval);
+           print("eu: " + characters[i].name + ", tenho o numero: " + ChecarSeONumeroEstaNoIntervalo(i));
 
-            RectTransform rectTransform = characters[i + sentido].GetComponent<RectTransform>();
-            StartCoroutine(characters[i].Mexer(rectTransform.anchoredPosition, rectTransform.localScale, 0.5f));
+           
+           RectTransform fixedPos = fixedPositions[interval];
+            RectTransform characterTransform = character.GetComponent<RectTransform>();
+
+           int invertXIfPositive = 1;
+
+           if(sentido == -1 && characterTransform.anchoredPosition.x > 0)
+                invertXIfPositive = -1;
+            else if(sentido == -1 && characterTransform.anchoredPosition.x < 0)
+                invertXIfPositive = 1;
+
+           StartCoroutine(character.Mexer(fixedPos.anchoredPosition * sentido * invertXIfPositive, fixedPos.localScale, 0.2f));
         }
     }
-    bool ChecarSeONumeroEstaNoIntervalo(int i)
+    int ChecarSeONumeroEstaNoIntervalo(int i)
     {
-        if(i <= selected + 2 && i >= selected - 2)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Mathf.Abs(i - selected);
     }
 }
