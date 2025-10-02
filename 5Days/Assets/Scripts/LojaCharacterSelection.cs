@@ -8,7 +8,7 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] PersonagensNaLoja[] charactersInfo;
     [SerializeField] RectTransform[] fixedPositions;
     [SerializeField] int selected;
-
+    [SerializeField] bool canMoveAll = true;
     void Start()
     {
         Setup();
@@ -30,12 +30,17 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void MexerTodos(int sentido)
     {
-        if(0 >= selected && sentido == -1 || selected == characters.Length - 1 && sentido == 1)
+        ChecarSePodeReceberInput();
+        if (!canMoveAll)
+            return;
+
+        if (0 >= selected && sentido == -1 || selected == characters.Length - 1 && sentido == 1)
         {
             print("nao mexe");
             return;
         }
 
+        canMoveAll = false;
         selected = Mathf.Clamp(selected + sentido, 0, characters.Length - 1);
         sentido = -sentido;
         for (int i = 0; i < characters.Length; i++)
@@ -45,24 +50,27 @@ public class LojaCharacterSelection : MonoBehaviour
            LojaCharacterInstance character = characters[i];
           
            bool isOnInterval = interval > 2 ? false : true;
-           character.gameObject.SetActive(isOnInterval);
-           print("eu: " + characters[i].name + ", tenho o numero: " + ChecarSeONumeroEstaNoIntervalo(i));
-
            
            RectTransform fixedPos = fixedPositions[interval];
            RectTransform characterTransform = character.GetComponent<RectTransform>();
 
             int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
-           
 
-                //int invertXIfPositive = 1;
-                //if(sentido == -1 && characterTransform.anchoredPosition.x > 0)
-                //     invertXIfPositive = -1;
-                // else if(sentido == -1 && characterTransform.anchoredPosition.x < 0)
-                //     invertXIfPositive = 1;
-
-            StartCoroutine(character.Mexer(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.2f));
+            character.Move(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.1f, isOnInterval);
         }
+    }
+    void ChecarSePodeReceberInput()
+    {
+        for(int i = 0; i < characters.Length; i++)
+        {
+            if (!characters[i].gameObject.activeSelf) continue;
+            if (characters[i].HasEndedCoroutine() != null)
+            {
+                canMoveAll = false;
+                return;
+            }
+        }
+        canMoveAll = true;
     }
     int ChecarSePrecisaInverter(int sentido, float positionEmRelacao0)
     {
@@ -78,11 +86,11 @@ public class LojaCharacterSelection : MonoBehaviour
         else
         {
             if (positionEmRelacao0 > 0)
-                return -1;
-            else if (positionEmRelacao0 < 0)
                 return 1;
-            else
+            else if (positionEmRelacao0 < 0)
                 return -1;
+            else
+                return 1;
         }
     }
     int ChecarSeONumeroEstaNoIntervalo(int i)
