@@ -7,6 +7,7 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] LojaCharacterInstance[] characters;
     [SerializeField] PersonagensNaLoja[] charactersInfo;
     [SerializeField] RectTransform[] fixedPositions;
+    [SerializeField] Color[] buttonColors;
     [SerializeField] int selected;
     [SerializeField] bool canMoveAll = true;
     void Start()
@@ -55,7 +56,7 @@ public class LojaCharacterSelection : MonoBehaviour
            RectTransform characterTransform = character.GetComponent<RectTransform>();
 
             int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
-
+            character.TrocarCor(i == selected, ButtonColor(interval));
             character.Move(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.1f, isOnInterval);
         }
     }
@@ -92,6 +93,12 @@ public class LojaCharacterSelection : MonoBehaviour
             else
                 return 1;
         }
+    }
+    Color ButtonColor(int distanceInInterval)
+    {
+        print("Distance: " + distanceInInterval);
+        distanceInInterval = Mathf.Clamp(distanceInInterval, 0, buttonColors.Length - 1);
+        return buttonColors[distanceInInterval];
     }
     int ChecarSeONumeroEstaNoIntervalo(int i)
     {

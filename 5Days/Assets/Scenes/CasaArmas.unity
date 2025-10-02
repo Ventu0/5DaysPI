@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 1013796750}
   personagem: {fileID: 0}
+  graphicsToChangeColor: []
   originalScale: {x: 0, y: 0}
   originalPos: {x: 0, y: 0}
 --- !u!114 &189482925
@@ -385,6 +386,10 @@ MonoBehaviour:
   - {fileID: 1514494967}
   - {fileID: 1947054402}
   - {fileID: 805614625}
+  buttonColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  - {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   selected: 2
   canMoveAll: 1
 --- !u!1 &616576770
@@ -630,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 947846329}
   personagem: {fileID: 0}
+  graphicsToChangeColor: []
   originalScale: {x: 0, y: 0}
   originalPos: {x: 0, y: 0}
 --- !u!114 &756183108
@@ -1014,6 +1020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 1123569698}
   personagem: {fileID: 0}
+  graphicsToChangeColor: []
   originalScale: {x: 0, y: 0}
   originalPos: {x: 0, y: 0}
 --- !u!114 &903698459
@@ -2155,6 +2162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 2143607691}
   personagem: {fileID: 0}
+  graphicsToChangeColor: []
   originalScale: {x: 0, y: 0}
   originalPos: {x: 0, y: 0}
 --- !u!114 &1974586715
@@ -3837,6 +3845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 1448799230}
   personagem: {fileID: 0}
+  graphicsToChangeColor: []
   originalScale: {x: 0, y: 0}
   originalPos: {x: 0, y: 0}
 --- !u!114 &2012000283
