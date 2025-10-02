@@ -50,16 +50,39 @@ public class LojaCharacterSelection : MonoBehaviour
 
            
            RectTransform fixedPos = fixedPositions[interval];
-            RectTransform characterTransform = character.GetComponent<RectTransform>();
+           RectTransform characterTransform = character.GetComponent<RectTransform>();
 
-           int invertXIfPositive = 1;
+            int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
+           
 
-           if(sentido == -1 && characterTransform.anchoredPosition.x > 0)
-                invertXIfPositive = -1;
-            else if(sentido == -1 && characterTransform.anchoredPosition.x < 0)
-                invertXIfPositive = 1;
+                //int invertXIfPositive = 1;
+                //if(sentido == -1 && characterTransform.anchoredPosition.x > 0)
+                //     invertXIfPositive = -1;
+                // else if(sentido == -1 && characterTransform.anchoredPosition.x < 0)
+                //     invertXIfPositive = 1;
 
-           StartCoroutine(character.Mexer(fixedPos.anchoredPosition * sentido * invertXIfPositive, fixedPos.localScale, 0.2f));
+            StartCoroutine(character.Mexer(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.2f));
+        }
+    }
+    int ChecarSePrecisaInverter(int sentido, float positionEmRelacao0)
+    {
+        if(sentido == -1)
+        {
+            if (positionEmRelacao0 > 0)
+                return 1;
+            else if (positionEmRelacao0 < 0)
+                return -1;
+            else
+                return -1;
+        }
+        else
+        {
+            if (positionEmRelacao0 > 0)
+                return -1;
+            else if (positionEmRelacao0 < 0)
+                return 1;
+            else
+                return -1;
         }
     }
     int ChecarSeONumeroEstaNoIntervalo(int i)
