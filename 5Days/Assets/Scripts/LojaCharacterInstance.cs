@@ -9,12 +9,15 @@ public class LojaCharacterInstance : MonoBehaviour
     [SerializeField] PersonagensNaLoja personagem;
     [SerializeField] Graphic[] graphicsToChangeColor;
     [HideInInspector]public Button button;
-    Color originalColor;
     Coroutine MoveRoutine;
-    void Start()
+    private void Awake()
     {
         button = GetComponent<Button>();
         graphicsToChangeColor = GetComponentsInChildren<Graphic>();
+
+    }
+    void Start()
+    {
         ColorBlock color = button.colors;
         button.onClick.AddListener(() => TrocarCorOnClick(color.pressedColor)); //fiz esse pra trocar a cor quando clicar, provavelmente vou fazer um efeito de grow in e grow out e mexer pra posição fixa
     }
@@ -54,25 +57,28 @@ public class LojaCharacterInstance : MonoBehaviour
         float newAlpha = 0;
         while(t < duration)
         {
-            newAlpha = Mathf.Lerp(255, 0, t / duration);
+            newAlpha = Mathf.Lerp(1, 0, t / duration);
             ChangeAlpha(newAlpha);
             t += Time.deltaTime;
             yield return null;
         }
+        newAlpha = 0;   
+        ChangeAlpha(newAlpha);
     }
     void ChangeAlpha(float alpha)
     {
         ColorBlock colorBlock = button.colors;
         Color thisColor = colorBlock.disabledColor;
+
         thisColor.a = alpha;
+
         colorBlock.disabledColor = thisColor;
         button.colors = colorBlock;
-
         for (int i = 0; i < graphicsToChangeColor.Length; i++)
         {
             graphicsToChangeColor[i].color = thisColor;
-            print("trocando cor");
         }
+        gameObject.SetActive(false);
     }
     public void TrocarCor(bool isSelected, Color newColor)
     {

@@ -9,10 +9,13 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] RectTransform[] fixedPositions;
     [SerializeField] Color[] buttonColors;
     [SerializeField] int selected;
-    [SerializeField] bool canMoveAll = true;
+    [SerializeField] bool canRecieveInput = true;
     public bool canMove = true;
     void Start()
     {
+        LojaCharacterInstance character = characters[selected];
+        character.button.onClick.AddListener(FadeToAlphaDisabled);
+        TrocarCoresDeTodos();
         Setup();
     }
     void Setup()
@@ -36,9 +39,9 @@ public class LojaCharacterSelection : MonoBehaviour
     void MexerTodos(int sentido)
     {
         ChecarSePodeReceberInput();
-        if (!canMoveAll)
+        if (!canRecieveInput)
             return;
-        canMoveAll = false;
+        canRecieveInput = false;
 
         if (0 >= selected && sentido == -1 || selected == characters.Length - 1 && sentido == 1)
         {
@@ -60,10 +63,19 @@ public class LojaCharacterSelection : MonoBehaviour
             RectTransform fixedPos = fixedPositions[interval];
            
             RectTransform characterTransform = character.GetComponent<RectTransform>();
-
+            TrocarCoresDeTodos();
             int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
-            character.TrocarCor(i == selected, ButtonColor(interval));
-            character.Move(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.1f, isOnInterval);
+            character.Move(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.3f, isOnInterval);
+        }
+    }
+    void TrocarCoresDeTodos()
+    {
+        for(int i = 0; i < characters.Length; i++)
+        {
+            int interval = ChecarSeONumeroEstaNoIntervalo(i);
+            interval = Mathf.Clamp(interval, 0, fixedPositions.Length - 1);
+
+            characters[i].TrocarCor(i == selected, ButtonColor(interval));
         }
     }
     void ChecarSePodeReceberInput()
@@ -73,11 +85,11 @@ public class LojaCharacterSelection : MonoBehaviour
             if (!characters[i].gameObject.activeSelf) continue;
             if (characters[i].HasEndedCoroutine() != null)
             {
-                canMoveAll = false;
+                canRecieveInput = false;
                 return;
             }
         }
-        canMoveAll = true;
+        canRecieveInput = true;
     }
     void FadeToAlphaDisabled() //faz o fade out do personagem que nao esta selecionado
     {
@@ -88,6 +100,7 @@ public class LojaCharacterSelection : MonoBehaviour
             if (isSelected) continue; //pula o que ta selecionado, pra otimizar e nao deixar transparente
             StartCoroutine(characters[i].FadeAlpha(0.1f));
         }
+        canMove = false;
     }
     #region Functions With Return
     int ChecarSePrecisaInverter(int sentido, float positionEmRelacao0)
