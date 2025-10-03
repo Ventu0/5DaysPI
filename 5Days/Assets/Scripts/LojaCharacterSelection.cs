@@ -10,6 +10,7 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] Color[] buttonColors;
     [SerializeField] int selected;
     [SerializeField] bool canMoveAll = true;
+    public bool canMove = true;
     void Start()
     {
         Setup();
@@ -23,6 +24,9 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void Update()
     {
+        if(!canMove)
+            return;
+
         int horizontal = (int)Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Horizontal"))
         {  
@@ -34,26 +38,28 @@ public class LojaCharacterSelection : MonoBehaviour
         ChecarSePodeReceberInput();
         if (!canMoveAll)
             return;
+        canMoveAll = false;
 
         if (0 >= selected && sentido == -1 || selected == characters.Length - 1 && sentido == 1)
         {
-            print("nao mexe");
+            print("Chegou no limite");
             return;
         }
-
-        canMoveAll = false;
         selected = Mathf.Clamp(selected + sentido, 0, characters.Length - 1);
-        sentido = -sentido;
+        characters[selected].button.onClick.AddListener(FadeToAlphaDisabled);
+
+        sentido = -sentido; //inverte o sentido, pois os personagems se mexem na direcao contraria ao input
         for (int i = 0; i < characters.Length; i++)
         {
-           int interval = ChecarSeONumeroEstaNoIntervalo(i);
-           interval = Mathf.Clamp(interval, 0, fixedPositions.Length - 1);
-           LojaCharacterInstance character = characters[i];
+            int interval = ChecarSeONumeroEstaNoIntervalo(i);
+            interval = Mathf.Clamp(interval, 0, fixedPositions.Length - 1);
+
+            LojaCharacterInstance character = characters[i];
           
-           bool isOnInterval = interval > 2 ? false : true;
+            bool isOnInterval = interval > 2 ? false : true;
+            RectTransform fixedPos = fixedPositions[interval];
            
-           RectTransform fixedPos = fixedPositions[interval];
-           RectTransform characterTransform = character.GetComponent<RectTransform>();
+            RectTransform characterTransform = character.GetComponent<RectTransform>();
 
             int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
             character.TrocarCor(i == selected, ButtonColor(interval));
@@ -73,30 +79,30 @@ public class LojaCharacterSelection : MonoBehaviour
         }
         canMoveAll = true;
     }
+    void FadeToAlphaDisabled() //faz o fade out do personagem que nao esta selecionado
+    {
+        print("clicado");
+        for (int i = 0; i < characters.Length; i++)
+        {
+            bool isSelected = i == selected;
+            if (isSelected) continue; //pula o que ta selecionado, pra otimizar e nao deixar transparente
+            StartCoroutine(characters[i].FadeAlpha(0.1f));
+        }
+    }
+    #region Functions With Return
     int ChecarSePrecisaInverter(int sentido, float positionEmRelacao0)
     {
-        if(sentido == -1)
-        {
-            if (positionEmRelacao0 > 0)
-                return 1;
-            else if (positionEmRelacao0 < 0)
-                return -1;
-            else
-                return -1;
-        }
+        int positionIn0 = 0;
+
+        if (positionEmRelacao0 > 0)
+            return 1;
+        else if (positionEmRelacao0 < 0)
+            return -1;
         else
-        {
-            if (positionEmRelacao0 > 0)
-                return 1;
-            else if (positionEmRelacao0 < 0)
-                return -1;
-            else
-                return 1;
-        }
+            return positionIn0 = sentido == -1 ? -1 : 1;
     }
     Color ButtonColor(int distanceInInterval)
     {
-        print("Distance: " + distanceInInterval);
         distanceInInterval = Mathf.Clamp(distanceInInterval, 0, buttonColors.Length - 1);
         return buttonColors[distanceInInterval];
     }
@@ -104,4 +110,5 @@ public class LojaCharacterSelection : MonoBehaviour
     {
         return Mathf.Abs(i - selected);
     }
+    #endregion
 }

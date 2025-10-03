@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -226,8 +226,7 @@ MonoBehaviour:
   displayImage: {fileID: 1013796750}
   personagem: {fileID: 0}
   graphicsToChangeColor: []
-  originalScale: {x: 0, y: 0}
-  originalPos: {x: 0, y: 0}
+  button: {fileID: 0}
 --- !u!114 &189482925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +252,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 0.5019608}
+    m_DisabledColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -392,6 +391,7 @@ MonoBehaviour:
   - {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   selected: 2
   canMoveAll: 1
+  canMove: 1
 --- !u!1 &616576770
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,8 +636,7 @@ MonoBehaviour:
   displayImage: {fileID: 947846329}
   personagem: {fileID: 0}
   graphicsToChangeColor: []
-  originalScale: {x: 0, y: 0}
-  originalPos: {x: 0, y: 0}
+  button: {fileID: 0}
 --- !u!114 &756183108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,8 +1020,7 @@ MonoBehaviour:
   displayImage: {fileID: 1123569698}
   personagem: {fileID: 0}
   graphicsToChangeColor: []
-  originalScale: {x: 0, y: 0}
-  originalPos: {x: 0, y: 0}
+  button: {fileID: 0}
 --- !u!114 &903698459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2215,8 +2213,7 @@ MonoBehaviour:
   displayImage: {fileID: 2143607691}
   personagem: {fileID: 0}
   graphicsToChangeColor: []
-  originalScale: {x: 0, y: 0}
-  originalPos: {x: 0, y: 0}
+  button: {fileID: 0}
 --- !u!114 &1974586715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3898,8 +3895,7 @@ MonoBehaviour:
   displayImage: {fileID: 1448799230}
   personagem: {fileID: 0}
   graphicsToChangeColor: []
-  originalScale: {x: 0, y: 0}
-  originalPos: {x: 0, y: 0}
+  button: {fileID: 0}
 --- !u!114 &2012000283
 MonoBehaviour:
   m_ObjectHideFlags: 0

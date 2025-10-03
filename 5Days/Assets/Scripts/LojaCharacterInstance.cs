@@ -1,21 +1,20 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(Button))]
 public class LojaCharacterInstance : MonoBehaviour
 {
     [SerializeField] Image displayImage;
     [SerializeField] PersonagensNaLoja personagem;
     [SerializeField] Graphic[] graphicsToChangeColor;
-    Button button;
-    public Vector2 originalScale;
-    public Vector2 originalPos;
+    [HideInInspector]public Button button;
+    Color originalColor;
     Coroutine MoveRoutine;
     void Start()
     {
         button = GetComponent<Button>();
         graphicsToChangeColor = GetComponentsInChildren<Graphic>();
-        originalScale = GetComponent<RectTransform>().localScale;
         ColorBlock color = button.colors;
         button.onClick.AddListener(() => TrocarCorOnClick(color.pressedColor)); //fiz esse pra trocar a cor quando clicar, provavelmente vou fazer um efeito de grow in e grow out e mexer pra posição fixa
     }
@@ -35,10 +34,50 @@ public class LojaCharacterInstance : MonoBehaviour
 
         MoveRoutine = StartCoroutine(Mexer(originalPos, originalScale, duration));
     }
+    
+    public IEnumerator Mexer(Vector3 originalPos, Vector3 originalScale, float duration)
+    {
+        float t = 0;
+        RectTransform rect = GetComponent<RectTransform>();
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            rect.anchoredPosition = Vector3.Lerp(rect.anchoredPosition, originalPos, t / duration);
+            rect.localScale = Vector3.Lerp(rect.localScale, originalScale, t / duration);
+            yield return null;
+        }
+        MoveRoutine = null;
+    }
+    public IEnumerator FadeAlpha(float duration)
+    {
+        float t = 0;
+        float newAlpha = 0;
+        while(t < duration)
+        {
+            newAlpha = Mathf.Lerp(255, 0, t / duration);
+            ChangeAlpha(newAlpha);
+            t += Time.deltaTime;
+            yield return null;
+        }
+    }
+    void ChangeAlpha(float alpha)
+    {
+        ColorBlock colorBlock = button.colors;
+        Color thisColor = colorBlock.disabledColor;
+        thisColor.a = alpha;
+        colorBlock.disabledColor = thisColor;
+        button.colors = colorBlock;
+
+        for (int i = 0; i < graphicsToChangeColor.Length; i++)
+        {
+            graphicsToChangeColor[i].color = thisColor;
+            print("trocando cor");
+        }
+    }
     public void TrocarCor(bool isSelected, Color newColor)
     {
         ColorBlock colors = button.colors;
-        button.enabled = isSelected ? true : false;
+        button.interactable = isSelected ? true : false;
 
         if (isSelected)
             colors.selectedColor = newColor;
@@ -56,19 +95,6 @@ public class LojaCharacterInstance : MonoBehaviour
         {
             graphicsToChangeColor[i].color = color;
         }
-    }
-    public IEnumerator Mexer(Vector3 originalPos, Vector3 originalScale, float duration)
-    {
-        float t = 0;
-        RectTransform rect = GetComponent<RectTransform>();
-        while (t < duration)
-        {
-            t += Time.deltaTime;
-            rect.anchoredPosition = Vector3.Lerp(rect.anchoredPosition, originalPos, t / duration);
-            rect.localScale = Vector3.Lerp(rect.localScale, originalScale, t / duration);
-            yield return null;
-        }
-        MoveRoutine = null;
     }
     public Coroutine HasEndedCoroutine()
     {
