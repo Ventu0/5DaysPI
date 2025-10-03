@@ -16,6 +16,8 @@ public class LojaCharacterInstance : MonoBehaviour
         button = GetComponent<Button>();
         graphicsToChangeColor = GetComponentsInChildren<Graphic>();
         originalScale = GetComponent<RectTransform>().localScale;
+        ColorBlock color = button.colors;
+        button.onClick.AddListener(() => TrocarCorOnClick(color.pressedColor)); //fiz esse pra trocar a cor quando clicar, provavelmente vou fazer um efeito de grow in e grow out e mexer pra posição fixa
     }
     public void Setup(PersonagensNaLoja novoPersonagem)
     {
@@ -36,13 +38,23 @@ public class LojaCharacterInstance : MonoBehaviour
     public void TrocarCor(bool isSelected, Color newColor)
     {
         ColorBlock colors = button.colors;
+        button.enabled = isSelected ? true : false;
+
         if (isSelected)
-        colors.selectedColor = newColor;
+            colors.selectedColor = newColor;
         else
-        colors.disabledColor = newColor;
+            colors.disabledColor = newColor;
+
         for (int i = 0; i < graphicsToChangeColor.Length; i++)
         {
             graphicsToChangeColor[i].color = newColor;
+        }
+    }
+    void TrocarCorOnClick(Color color)
+    {
+        for (int i = 0; i < graphicsToChangeColor.Length; i++)
+        {
+            graphicsToChangeColor[i].color = color;
         }
     }
     public IEnumerator Mexer(Vector3 originalPos, Vector3 originalScale, float duration)
