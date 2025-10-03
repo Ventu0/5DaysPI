@@ -1,55 +1,46 @@
 fileFormatVersion: 2
-guid: c8692cb4a160ed0418db5554696b065d
+guid: 5dcf704d730bd414ea3d1159b4a94b67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2567870970117455677
-    second: Minhoca Redonda_0
+      213: 3262272171438677393
+    second: Minhoca Redonda (1)_0
   - first:
-      213: -5665464804653571851
-    second: Minhoca Redonda_1
+      213: 3467737487255739053
+    second: Minhoca Redonda (1)_1
   - first:
-      213: 5451166632433920184
-    second: Minhoca Redonda_2
+      213: 1438146194987120772
+    second: Minhoca Redonda (1)_2
   - first:
-      213: 6087330315439579388
-    second: Minhoca Redonda_3
+      213: -5007174465275881894
+    second: Minhoca Redonda (1)_3
   - first:
-      213: 7405205172378671955
-    second: Minhoca Redonda_4
+      213: 1067746830901546308
+    second: Minhoca Redonda (1)_4
   - first:
-      213: -5673597185426257164
-    second: Minhoca Redonda_5
+      213: -4583573770426982415
+    second: Minhoca Redonda (1)_5
   - first:
-      213: -1481856725810268878
-    second: Minhoca Redonda_6
+      213: 5693521890039501166
+    second: Minhoca Redonda (1)_6
   - first:
-      213: -4202475111293324074
-    second: Minhoca Redonda_7
+      213: -1360165570551927726
+    second: Minhoca Redonda (1)_7
   - first:
-      213: 5548557088563747822
-    second: Minhoca Redonda_8
+      213: 7505378003112680526
+    second: Minhoca Redonda (1)_8
   - first:
-      213: 7217282781720090578
-    second: Minhoca Redonda_9
+      213: 5809417691063589987
+    second: Minhoca Redonda (1)_9
   - first:
-      213: 6888463880060959247
-    second: Minhoca Redonda_10
+      213: 4137061260624497405
+    second: Minhoca Redonda (1)_10
   - first:
-      213: -7997515735796325886
-    second: Minhoca Redonda_11
+      213: 8358393834855282466
+    second: Minhoca Redonda (1)_11
   - first:
-      213: -8640688581241357717
-    second: Minhoca Redonda_12
-  - first:
-      213: 5258953555723258920
-    second: Minhoca Redonda_13
-  - first:
-      213: 4329587087243714527
-    second: Minhoca Redonda_14
-  - first:
-      213: -634438570188735340
-    second: Minhoca Redonda_15
+      213: 9079293466937408287
+    second: Minhoca Redonda (1)_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -171,7 +162,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Minhoca Redonda_0
+      name: Minhoca Redonda (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -186,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3f73eaca09e2a320800000000000000
-      internalID: 2567870970117455677
+      spriteID: 19d9e33714be54d20800000000000000
+      internalID: 3262272171438677393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_1
+      name: Minhoca Redonda (1)_1
       rect:
         serializedVersion: 2
         x: 448
@@ -208,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f0652fe6c93061b0800000000000000
-      internalID: -5665464804653571851
+      spriteID: daa1f2e2fd0ef1030800000000000000
+      internalID: 3467737487255739053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_2
+      name: Minhoca Redonda (1)_2
       rect:
         serializedVersion: 2
         x: 896
@@ -230,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b8afa1bb2f66ab40800000000000000
-      internalID: 5451166632433920184
+      spriteID: 488794f385255f310800000000000000
+      internalID: 1438146194987120772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_3
+      name: Minhoca Redonda (1)_3
       rect:
         serializedVersion: 2
         x: 1344
@@ -252,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf02e3a7baa8a7450800000000000000
-      internalID: 6087330315439579388
+      spriteID: a5613dc5a51f28ab0800000000000000
+      internalID: -5007174465275881894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_4
+      name: Minhoca Redonda (1)_4
       rect:
         serializedVersion: 2
         x: 0
@@ -274,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35b148caed294c660800000000000000
-      internalID: 7405205172378671955
+      spriteID: 44d8fe5e51661de00800000000000000
+      internalID: 1067746830901546308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_5
+      name: Minhoca Redonda (1)_5
       rect:
         serializedVersion: 2
         x: 448
@@ -296,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fa030c7b655341b0800000000000000
-      internalID: -5673597185426257164
+      spriteID: 1ffd6ebc0ffd360c0800000000000000
+      internalID: -4583573770426982415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_6
+      name: Minhoca Redonda (1)_6
       rect:
         serializedVersion: 2
         x: 896
@@ -318,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2353e0ab8236f6be0800000000000000
-      internalID: -1481856725810268878
+      spriteID: e6117b05ef3730f40800000000000000
+      internalID: 5693521890039501166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_7
+      name: Minhoca Redonda (1)_7
       rect:
         serializedVersion: 2
         x: 1344
@@ -340,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d4f0f5e62fcda5c0800000000000000
-      internalID: -4202475111293324074
+      spriteID: 25c298bbe98bf1de0800000000000000
+      internalID: -1360165570551927726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_8
+      name: Minhoca Redonda (1)_8
       rect:
         serializedVersion: 2
         x: 0
@@ -362,14 +353,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eeb51d7464f600d40800000000000000
-      internalID: 5548557088563747822
+      spriteID: e4cdf845785782860800000000000000
+      internalID: 7505378003112680526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_9
+      name: Minhoca Redonda (1)_9
       rect:
         serializedVersion: 2
         x: 448
@@ -384,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d718ff7370f82460800000000000000
-      internalID: 7217282781720090578
+      spriteID: 36c17b34c923f9050800000000000000
+      internalID: 5809417691063589987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_10
+      name: Minhoca Redonda (1)_10
       rect:
         serializedVersion: 2
         x: 896
@@ -406,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0a742bf66db89f50800000000000000
-      internalID: 6888463880060959247
+      spriteID: dfa8d852c4bc96930800000000000000
+      internalID: 4137061260624497405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_11
+      name: Minhoca Redonda (1)_11
       rect:
         serializedVersion: 2
         x: 1344
@@ -428,14 +419,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 202634a9fcd130190800000000000000
-      internalID: -7997515735796325886
+      spriteID: 2273d5b78eafef370800000000000000
+      internalID: 8358393834855282466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_12
+      name: Minhoca Redonda (1)_12
       rect:
         serializedVersion: 2
         x: 0
@@ -450,14 +441,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ab554048b161880800000000000000
-      internalID: -8640688581241357717
+      spriteID: f1b3454dd41200e70800000000000000
+      internalID: 9079293466937408287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minhoca Redonda_13
+      name: Minhoca Redonda (1)_13
       rect:
         serializedVersion: 2
         x: 448
@@ -470,54 +461,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 82c8923556e8bf840800000000000000
-      internalID: 5258953555723258920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minhoca Redonda_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 448
-        height: 448
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fdf97474488c51c30800000000000000
-      internalID: 4329587087243714527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Minhoca Redonda_15
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 448
-        height: 448
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49cf7185b750237f0800000000000000
-      internalID: -634438570188735340
+      spriteID: 3fb8c6f256ed31e4eae6c6145740a4e0
+      internalID: 1952255265
       vertices: []
       indices: 
       edges: []
@@ -526,7 +473,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6ad71ebaec5a5f840bc503ac0d22ee36
+    spriteID: a9119f9e3f56c8a408f24fd88417bbf1
     internalID: 0
     vertices: []
     indices: 
@@ -536,22 +483,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Minhoca Redonda_0: 2567870970117455677
-      Minhoca Redonda_1: -5665464804653571851
-      Minhoca Redonda_10: 6888463880060959247
-      Minhoca Redonda_11: -7997515735796325886
-      Minhoca Redonda_12: -8640688581241357717
-      Minhoca Redonda_13: 5258953555723258920
-      Minhoca Redonda_14: 4329587087243714527
-      Minhoca Redonda_15: -634438570188735340
-      Minhoca Redonda_2: 5451166632433920184
-      Minhoca Redonda_3: 6087330315439579388
-      Minhoca Redonda_4: 7405205172378671955
-      Minhoca Redonda_5: -5673597185426257164
-      Minhoca Redonda_6: -1481856725810268878
-      Minhoca Redonda_7: -4202475111293324074
-      Minhoca Redonda_8: 5548557088563747822
-      Minhoca Redonda_9: 7217282781720090578
+      Minhoca Redonda (1)_0: 3262272171438677393
+      Minhoca Redonda (1)_1: 3467737487255739053
+      Minhoca Redonda (1)_10: 4137061260624497405
+      Minhoca Redonda (1)_11: 8358393834855282466
+      Minhoca Redonda (1)_12: 9079293466937408287
+      Minhoca Redonda (1)_13: 1952255265
+      Minhoca Redonda (1)_2: 1438146194987120772
+      Minhoca Redonda (1)_3: -5007174465275881894
+      Minhoca Redonda (1)_4: 1067746830901546308
+      Minhoca Redonda (1)_5: -4583573770426982415
+      Minhoca Redonda (1)_6: 5693521890039501166
+      Minhoca Redonda (1)_7: -1360165570551927726
+      Minhoca Redonda (1)_8: 7505378003112680526
+      Minhoca Redonda (1)_9: 5809417691063589987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
