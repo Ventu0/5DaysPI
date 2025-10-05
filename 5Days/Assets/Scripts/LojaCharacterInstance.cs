@@ -8,18 +8,16 @@ public class LojaCharacterInstance : MonoBehaviour
     [SerializeField] Image displayImage;
     [SerializeField] PersonagensNaLoja personagem;
     [SerializeField] Graphic[] graphicsToChangeColor;
-    [HideInInspector]public Button button;
+    [HideInInspector] public Button button;
+    public RectTransform rect; //pra nao ter que ficar pegando os componentes no meio do for
     Coroutine MoveRoutine;
+    bool hasEndedChangeAlpha = false;
     private void Awake()
     {
+        rect = GetComponent<RectTransform>();
         button = GetComponent<Button>();
         graphicsToChangeColor = GetComponentsInChildren<Graphic>();
-
-    }
-    void Start()
-    {
-        ColorBlock color = button.colors;
-        button.onClick.AddListener(() => TrocarCorOnClick(color.pressedColor)); //fiz esse pra trocar a cor quando clicar, provavelmente vou fazer um efeito de grow in e grow out e mexer pra posição fixa
+        button.onClick.AddListener(() => button.enabled = false); //desativa quando clica ppra nao repetir o animSequence
     }
     public void Setup(PersonagensNaLoja novoPersonagem)
     {
@@ -63,6 +61,7 @@ public class LojaCharacterInstance : MonoBehaviour
             yield return null;
         }
         newAlpha = 0;   
+        hasEndedChangeAlpha = true;
         ChangeAlpha(newAlpha);
     }
     void ChangeAlpha(float alpha)
@@ -78,8 +77,11 @@ public class LojaCharacterInstance : MonoBehaviour
         {
             graphicsToChangeColor[i].color = thisColor;
         }
+        if (!hasEndedChangeAlpha) return;
         gameObject.SetActive(false);
+        hasEndedChangeAlpha = false;
     }
+    //provavelmente vou ter que tirar ChangeAlpha e colocar a logica toda no TrocarCor, porque elas basicamente faz a mesma coisa
     public void TrocarCor(bool isSelected, Color newColor)
     {
         ColorBlock colors = button.colors;
@@ -93,13 +95,6 @@ public class LojaCharacterInstance : MonoBehaviour
         for (int i = 0; i < graphicsToChangeColor.Length; i++)
         {
             graphicsToChangeColor[i].color = newColor;
-        }
-    }
-    void TrocarCorOnClick(Color color)
-    {
-        for (int i = 0; i < graphicsToChangeColor.Length; i++)
-        {
-            graphicsToChangeColor[i].color = color;
         }
     }
     public Coroutine HasEndedCoroutine()

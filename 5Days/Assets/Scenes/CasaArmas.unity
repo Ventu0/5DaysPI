@@ -227,6 +227,7 @@ MonoBehaviour:
   personagem: {fileID: 0}
   graphicsToChangeColor: []
   button: {fileID: 0}
+  rect: {fileID: 0}
 --- !u!114 &189482925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +284,7 @@ GameObject:
   - component: {fileID: 218723481}
   - component: {fileID: 218723480}
   - component: {fileID: 218723482}
+  - component: {fileID: 218723483}
   m_Layer: 5
   m_Name: Fundo
   m_TagString: Untagged
@@ -389,9 +391,24 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   - {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  animSequence: {fileID: 0}
   selected: 2
-  canMoveAll: 1
+  lastSelected: 0
+  canRecieveInput: 1
   canMove: 1
+--- !u!114 &218723483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218723478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09cdf236a2c290438db47fa1df591de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalX: -275
 --- !u!1 &616576770
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +654,7 @@ MonoBehaviour:
   personagem: {fileID: 0}
   graphicsToChangeColor: []
   button: {fileID: 0}
+  rect: {fileID: 0}
 --- !u!114 &756183108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,6 +1039,7 @@ MonoBehaviour:
   personagem: {fileID: 0}
   graphicsToChangeColor: []
   button: {fileID: 0}
+  rect: {fileID: 0}
 --- !u!114 &903698459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,6 +2233,7 @@ MonoBehaviour:
   personagem: {fileID: 0}
   graphicsToChangeColor: []
   button: {fileID: 0}
+  rect: {fileID: 0}
 --- !u!114 &1974586715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3896,6 +3916,7 @@ MonoBehaviour:
   personagem: {fileID: 0}
   graphicsToChangeColor: []
   button: {fileID: 0}
+  rect: {fileID: 0}
 --- !u!114 &2012000283
 MonoBehaviour:
   m_ObjectHideFlags: 0

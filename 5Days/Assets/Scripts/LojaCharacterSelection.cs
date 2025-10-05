@@ -1,20 +1,30 @@
-using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
-
+using System.Collections;
+using System;
 public class LojaCharacterSelection : MonoBehaviour
 {
+    [Header("Characters")]
     [SerializeField] LojaCharacterInstance[] characters;
     [SerializeField] PersonagensNaLoja[] charactersInfo;
+
+    [Header("Config")]
     [SerializeField] RectTransform[] fixedPositions;
     [SerializeField] Color[] buttonColors;
+
+    [Header("Read-Only")]
+    [SerializeField] LojaAnimSequence animSequence;
     [SerializeField] int selected;
+    [SerializeField] int lastSelected;
     [SerializeField] bool canRecieveInput = true;
     public bool canMove = true;
     void Start()
     {
-        LojaCharacterInstance character = characters[selected];
-        character.button.onClick.AddListener(FadeToAlphaDisabled);
+        animSequence = GetComponent<LojaAnimSequence>();
+        lastSelected = selected;
+        AddOnClick(); //adicionar um primeiro botao pra nao ficar estranho e bugado
+
         TrocarCoresDeTodos();
         Setup();
     }
@@ -36,6 +46,25 @@ public class LojaCharacterSelection : MonoBehaviour
             MexerTodos(horizontal);
         }
     }
+    void RemoveOnClick()
+    {
+        LojaCharacterInstance character = characters[lastSelected];
+        UnityEvent onClick = character.button.onClick;
+        UnityAction sequence = () => animSequence.StartSequence(character.rect);
+
+        onClick.RemoveListener(FadeToAlphaDisabled); //remove o ultimo listener pra nao acumular
+        onClick.RemoveListener(sequence); 
+    }
+    void AddOnClick()
+    {
+        LojaCharacterInstance character = characters[selected];
+        UnityEvent onClick = character.button.onClick;
+        UnityAction sequence = () => animSequence.StartSequence(character.rect);
+
+        onClick.AddListener(FadeToAlphaDisabled);
+        onClick.AddListener(sequence);
+    }
+    #region Movimento do menu
     void MexerTodos(int sentido)
     {
         ChecarSePodeReceberInput();
@@ -48,8 +77,13 @@ public class LojaCharacterSelection : MonoBehaviour
             print("Chegou no limite");
             return;
         }
+
+        lastSelected = selected;
+        RemoveOnClick();
+
         selected = Mathf.Clamp(selected + sentido, 0, characters.Length - 1);
-        characters[selected].button.onClick.AddListener(FadeToAlphaDisabled);
+
+        AddOnClick();
 
         sentido = -sentido; //inverte o sentido, pois os personagems se mexem na direcao contraria ao input
         for (int i = 0; i < characters.Length; i++)
@@ -58,11 +92,11 @@ public class LojaCharacterSelection : MonoBehaviour
             interval = Mathf.Clamp(interval, 0, fixedPositions.Length - 1);
 
             LojaCharacterInstance character = characters[i];
+            RectTransform characterTransform = character.rect;
           
             bool isOnInterval = interval > 2 ? false : true;
             RectTransform fixedPos = fixedPositions[interval];
            
-            RectTransform characterTransform = character.GetComponent<RectTransform>();
             TrocarCoresDeTodos();
             int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
             character.Move(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.3f, isOnInterval);
@@ -91,6 +125,9 @@ public class LojaCharacterSelection : MonoBehaviour
         }
         canRecieveInput = true;
     }
+#endregion
+
+    #region OnClick
     void FadeToAlphaDisabled() //faz o fade out do personagem que nao esta selecionado
     {
         print("clicado");
@@ -98,21 +135,25 @@ public class LojaCharacterSelection : MonoBehaviour
         {
             bool isSelected = i == selected;
             if (isSelected) continue; //pula o que ta selecionado, pra otimizar e nao deixar transparente
-            StartCoroutine(characters[i].FadeAlpha(0.1f));
+            StartCoroutine(characters[i].FadeAlpha(0.2f));
         }
         canMove = false;
     }
+    #endregion
     #region Functions With Return
     int ChecarSePrecisaInverter(int sentido, float positionEmRelacao0)
     {
-        int positionIn0 = 0;
+        float tolerancia = 0.5f; //faco isso porque o float pode não ser exatamente 0, então coloco esse nivel de tolerancia
+        //porque no modo janela tava dando certo, e quando fui pro fullscreen tava dando coordenadas levemente erradas, fazendo dar erro
 
-        if (positionEmRelacao0 > 0)
+        if (positionEmRelacao0 > tolerancia)
             return 1;
-        else if (positionEmRelacao0 < 0)
+        else if (positionEmRelacao0 < -tolerancia)
             return -1;
         else
-            return positionIn0 = sentido == -1 ? -1 : 1;
+        {
+            return sentido == -1 ? -1 : 1;
+        }
     }
     Color ButtonColor(int distanceInInterval)
     {
