@@ -23,7 +23,7 @@ public class LojaCharacterSelection : MonoBehaviour
     {
         animSequence = GetComponent<LojaAnimSequence>();
         lastSelected = selected;
-        AddOnClick(); //adicionar um primeiro botao pra nao ficar estranho e bugado
+        SelectedButtonSetOnClick(selected, true); //adicionar um primeiro botao pra nao ficar estranho e bugado
 
         TrocarCoresDeTodos();
         Setup();
@@ -46,23 +46,17 @@ public class LojaCharacterSelection : MonoBehaviour
             MexerTodos(horizontal);
         }
     }
-    void RemoveOnClick()
+    void SelectedButtonSetOnClick(int whichCharacter, bool addListener)
     {
-        LojaCharacterInstance character = characters[lastSelected];
+        whichCharacter = Mathf.Clamp(whichCharacter, 0, characters.Length - 1);
+        LojaCharacterInstance character = characters[whichCharacter];
         UnityEvent onClick = character.button.onClick;
         UnityAction sequence = () => animSequence.StartSequence(character.rect);
 
-        onClick.RemoveListener(FadeToAlphaDisabled); //remove o ultimo listener pra nao acumular
-        onClick.RemoveListener(sequence); 
-    }
-    void AddOnClick()
-    {
-        LojaCharacterInstance character = characters[selected];
-        UnityEvent onClick = character.button.onClick;
-        UnityAction sequence = () => animSequence.StartSequence(character.rect);
+        Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
 
-        onClick.AddListener(FadeToAlphaDisabled);
-        onClick.AddListener(sequence);
+        action(FadeToAlphaDisabled);
+        action(sequence);
     }
     #region Movimento do menu
     void MexerTodos(int sentido)
@@ -79,11 +73,11 @@ public class LojaCharacterSelection : MonoBehaviour
         }
 
         lastSelected = selected;
-        RemoveOnClick();
+        SelectedButtonSetOnClick(lastSelected, false);
 
         selected = Mathf.Clamp(selected + sentido, 0, characters.Length - 1);
 
-        AddOnClick();
+        SelectedButtonSetOnClick(selected, true); //adiciona os listeners pro novo selecionado
 
         sentido = -sentido; //inverte o sentido, pois os personagems se mexem na direcao contraria ao input
         for (int i = 0; i < characters.Length; i++)

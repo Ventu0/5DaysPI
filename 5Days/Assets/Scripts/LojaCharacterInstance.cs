@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
@@ -14,6 +13,7 @@ public class LojaCharacterInstance : MonoBehaviour
     bool hasEndedChangeAlpha = false;
     private void Awake()
     {
+        displayImage = displayImage != null ? displayImage : GetComponent<Image>();
         rect = GetComponent<RectTransform>();
         button = GetComponent<Button>();
         graphicsToChangeColor = GetComponentsInChildren<Graphic>();
@@ -26,10 +26,9 @@ public class LojaCharacterInstance : MonoBehaviour
     }
     public void Move(Vector3 originalPos, Vector3 originalScale, float duration, bool setActive)
     {
-        gameObject.SetActive(false);
-        if (!setActive)
-            return;
-        gameObject.SetActive(true);
+        gameObject.SetActive(setActive);
+        if (!setActive) return;
+
         if (MoveRoutine != null)
             StopCoroutine(MoveRoutine);
 
