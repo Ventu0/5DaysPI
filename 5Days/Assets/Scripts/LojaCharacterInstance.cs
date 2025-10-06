@@ -51,10 +51,14 @@ public class LojaCharacterInstance : MonoBehaviour
     #endregion
     public IEnumerator FadeAlpha(float duration, bool invert = false)
     {
+        if (invert) gameObject.SetActive(true);
+
         float t = 0;
         float newAlpha = 0;
+
         float startAlpha = invert ? 0 : 1;
         float endAlpha = invert ? 1 : 0;
+
         while (t < duration)
         {
             newAlpha = Mathf.Lerp(startAlpha, endAlpha, t / duration);
@@ -62,11 +66,11 @@ public class LojaCharacterInstance : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
-        newAlpha = 0;   
+        newAlpha = endAlpha;   
         hasEndedChangeAlpha = true;
-        ChangeAlpha(newAlpha);
+        ChangeAlpha(newAlpha, invert);
     }
-    void ChangeAlpha(float alpha)
+    void ChangeAlpha(float alpha, bool invert = false)
     {
         ColorBlock colorBlock = button.colors;
         Color thisColor = colorBlock.disabledColor;
@@ -80,7 +84,7 @@ public class LojaCharacterInstance : MonoBehaviour
             graphicsToChangeColor[i].color = thisColor;
         }
         if (!hasEndedChangeAlpha) return;
-        gameObject.SetActive(false);
+        gameObject.SetActive(invert);
         hasEndedChangeAlpha = false;
     }
     //provavelmente vou ter que tirar ChangeAlpha e colocar a logica toda no TrocarCor, porque elas basicamente faz a mesma coisa

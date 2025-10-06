@@ -18,7 +18,6 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] int selected;
     [SerializeField] int lastSelected;
     [SerializeField] bool canRecieveInput = true;
-    [SerializeField] bool isSelected = false;
     public bool canMove = true;
     void Start()
     {
@@ -50,24 +49,31 @@ public class LojaCharacterSelection : MonoBehaviour
     void SelectedButtonSetOnClick(int whichCharacter, bool addListener)
     {
         whichCharacter = Mathf.Clamp(whichCharacter, 0, characters.Length - 1);
+
         LojaCharacterInstance character = characters[whichCharacter];
         UnityEvent onClick = character.button.onClick;
         UnityAction sequence = () => animSequence.StartSequence(character.rect);
 
         Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
+        Action <UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
 
-        action(FadeToAlphaDisabled);
+        action(() => character.button.enabled = false);
+        action(() => FadeToAlphaDisabled());
         action(sequence);
-        action(() => isSelected = !isSelected);
+        action(OnSelected);
+        onAnimEnd(() => character.button.enabled = true);
+    }
+    void OnSelected()
+    {
+        characters[selected].button.onClick.RemoveAllListeners();
+        characters[selected].button.onClick.AddListener(DeselectCurrent);
     }
     void DeselectCurrent()
     {
-        isSelected = false;
+        characters[selected].button.onClick.RemoveAllListeners();
         ReturnToSelection();
-        SelectedButtonSetOnClick(selected, false);
         SelectedButtonSetOnClick(selected, true);
-        SelectedButtonSetOnClick(lastSelected, false);
-        TrocarCoresDeTodos();
+        FadeToAlphaDisabled(true);
         canMove = true;
     }
     #region Movimento do menu
@@ -134,19 +140,18 @@ public class LojaCharacterSelection : MonoBehaviour
 #endregion
 
     #region OnClick
-    void FadeToAlphaDisabled() //faz o fade out do personagem que nao esta selecionado
+    void FadeToAlphaDisabled(bool invert = false) //faz o fade out do personagem que nao esta selecionado
     {
         for (int i = 0; i < characters.Length; i++)
         {
             bool isSelected = i == selected;
             if (isSelected) continue; //pula o que ta selecionado, pra otimizar e nao deixar transparente
-            StartCoroutine(characters[i].FadeAlpha(0.2f));
+            StartCoroutine(characters[i].FadeAlpha(0.2f, invert));
         }
         canMove = false;
     }
     void ReturnToSelection()
     {
-        print("voltando selecao");
         RectTransform rect = characters[selected].rect;
         StartCoroutine(animSequence.Vector2LerpTween(rect.anchoredPosition, fixedPositions[0].anchoredPosition, 0.5f, v => rect.anchoredPosition = v, false));
     }

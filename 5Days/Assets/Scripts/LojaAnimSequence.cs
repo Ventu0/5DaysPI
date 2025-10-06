@@ -5,7 +5,7 @@ using System;
 public class LojaAnimSequence : MonoBehaviour
 {
     [SerializeField] float finalX;
-    [SerializeField] UnityEvent onAnimEnd;
+    public UnityEvent onAnimEnd;
     void Start()
     {
         
