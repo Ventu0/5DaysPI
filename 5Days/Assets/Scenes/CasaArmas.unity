@@ -396,6 +396,7 @@ MonoBehaviour:
   selected: 2
   lastSelected: 0
   canRecieveInput: 1
+  isSelected: 0
   canMove: 1
 --- !u!114 &218723483
 MonoBehaviour:
@@ -1889,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1408020422
 RectTransform:
   m_ObjectHideFlags: 0

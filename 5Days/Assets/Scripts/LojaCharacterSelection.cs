@@ -18,6 +18,7 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] int selected;
     [SerializeField] int lastSelected;
     [SerializeField] bool canRecieveInput = true;
+    [SerializeField] bool isSelected = false;
     public bool canMove = true;
     void Start()
     {
@@ -57,6 +58,17 @@ public class LojaCharacterSelection : MonoBehaviour
 
         action(FadeToAlphaDisabled);
         action(sequence);
+        action(() => isSelected = !isSelected);
+    }
+    void DeselectCurrent()
+    {
+        isSelected = false;
+        ReturnToSelection();
+        SelectedButtonSetOnClick(selected, false);
+        SelectedButtonSetOnClick(selected, true);
+        SelectedButtonSetOnClick(lastSelected, false);
+        TrocarCoresDeTodos();
+        canMove = true;
     }
     #region Movimento do menu
     void MexerTodos(int sentido)
@@ -124,7 +136,6 @@ public class LojaCharacterSelection : MonoBehaviour
     #region OnClick
     void FadeToAlphaDisabled() //faz o fade out do personagem que nao esta selecionado
     {
-        print("clicado");
         for (int i = 0; i < characters.Length; i++)
         {
             bool isSelected = i == selected;
@@ -132,6 +143,12 @@ public class LojaCharacterSelection : MonoBehaviour
             StartCoroutine(characters[i].FadeAlpha(0.2f));
         }
         canMove = false;
+    }
+    void ReturnToSelection()
+    {
+        print("voltando selecao");
+        RectTransform rect = characters[selected].rect;
+        StartCoroutine(animSequence.Vector2LerpTween(rect.anchoredPosition, fixedPositions[0].anchoredPosition, 0.5f, v => rect.anchoredPosition = v, false));
     }
     #endregion
     #region Functions With Return

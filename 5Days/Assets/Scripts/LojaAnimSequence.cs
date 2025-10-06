@@ -24,10 +24,10 @@ public class LojaAnimSequence : MonoBehaviour
         //    Vector2LerpTween(selectedCharacter.localScale, finalScale, 0.25f, v => selectedCharacter.localScale = v, true));
 
         yield return StartCoroutine(
-            Vector2LerpTween(selectedCharacter.anchoredPosition, finalPos, 0.25f, v => selectedCharacter.anchoredPosition = v));
+            Vector2LerpTween(selectedCharacter.anchoredPosition, finalPos, 0.5f, v => selectedCharacter.anchoredPosition = v));
         onAnimEnd?.Invoke();
     }
-    IEnumerator Vector2LerpTween(Vector2 start, Vector2 end, float duration, Action<Vector2> valueToTween, bool InOut = false)
+    public IEnumerator Vector2LerpTween(Vector2 start, Vector2 end, float duration, Action<Vector2> valueToTween, bool InOut = false)
     {
         float completeDuration = InOut ? duration / 2 : duration;
         float t = 0;

@@ -16,14 +16,14 @@ public class LojaCharacterInstance : MonoBehaviour
         displayImage = displayImage != null ? displayImage : GetComponent<Image>();
         rect = GetComponent<RectTransform>();
         button = GetComponent<Button>();
-        graphicsToChangeColor = GetComponentsInChildren<Graphic>();
-        button.onClick.AddListener(() => button.enabled = false); //desativa quando clica ppra nao repetir o animSequence
+        graphicsToChangeColor = GetComponentsInChildren<Graphic>(); //desativa quando clica ppra nao repetir o animSequence
     }
     public void Setup(PersonagensNaLoja novoPersonagem)
     {
         displayImage.sprite = novoPersonagem.display;
         personagem = novoPersonagem;
     }
+    #region Movimentação
     public void Move(Vector3 originalPos, Vector3 originalScale, float duration, bool setActive)
     {
         gameObject.SetActive(setActive);
@@ -48,13 +48,16 @@ public class LojaCharacterInstance : MonoBehaviour
         }
         MoveRoutine = null;
     }
-    public IEnumerator FadeAlpha(float duration)
+    #endregion
+    public IEnumerator FadeAlpha(float duration, bool invert = false)
     {
         float t = 0;
         float newAlpha = 0;
-        while(t < duration)
+        float startAlpha = invert ? 0 : 1;
+        float endAlpha = invert ? 1 : 0;
+        while (t < duration)
         {
-            newAlpha = Mathf.Lerp(1, 0, t / duration);
+            newAlpha = Mathf.Lerp(startAlpha, endAlpha, t / duration);
             ChangeAlpha(newAlpha);
             t += Time.deltaTime;
             yield return null;
