@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+[System.Serializable]
 class AttackInstance
 {
     public TextMeshProUGUI attackText;

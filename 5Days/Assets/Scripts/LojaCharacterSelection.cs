@@ -16,7 +16,6 @@ public class LojaCharacterSelection : MonoBehaviour
 
     [Header("Read-Only")]
     [SerializeField] LojaAnimSequence animSequence;
-    [SerializeField] bool isInSelection = true;
     [SerializeField] int selected;
     [SerializeField] int lastSelected;
     [SerializeField] bool canRecieveInput = true;
@@ -152,7 +151,8 @@ public class LojaCharacterSelection : MonoBehaviour
         {
             bool isSelected = i == selected;
             if (isSelected) continue; //pula o que ta selecionado, pra otimizar e nao deixar transparente
-            StartCoroutine(characters[i].FadeAlpha(0.2f, invert));
+
+            characters[i].StartChangeAlpha(animSequence, 0.25f, invert);
         }
     }
     void ReturnToSelection()

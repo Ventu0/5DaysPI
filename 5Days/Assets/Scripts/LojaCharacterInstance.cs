@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,6 @@ public class LojaCharacterInstance : MonoBehaviour
     [HideInInspector] public Button button;
     public RectTransform rect; //pra nao ter que ficar pegando os componentes no meio do for
     Coroutine MoveRoutine;
-    bool hasEndedChangeAlpha = false;
     private void Awake()
     {
         displayImage = displayImage != null ? displayImage : GetComponent<Image>();
@@ -49,28 +49,13 @@ public class LojaCharacterInstance : MonoBehaviour
         MoveRoutine = null;
     }
     #endregion
-    public IEnumerator FadeAlpha(float duration, bool invert = false)
+    
+    public void StartChangeAlpha(LojaAnimSequence animSequence, float duration , bool invert = false)
     {
-        if (invert) gameObject.SetActive(true);
-
-        float t = 0;
-        float newAlpha = 0;
-
-        float startAlpha = invert ? 0 : 1;
-        float endAlpha = invert ? 1 : 0;
-
-        while (t < duration)
-        {
-            newAlpha = Mathf.Lerp(startAlpha, endAlpha, t / duration);
-            ChangeAlpha(newAlpha);
-            t += Time.deltaTime;
-            yield return null;
-        }
-        newAlpha = endAlpha;   
-        hasEndedChangeAlpha = true;
-        ChangeAlpha(newAlpha, invert);
+        if(invert) gameObject.SetActive(true);
+        StartCoroutine(animSequence.FadeAlpha(a => ChangeAlpha(a), duration, b => gameObject.SetActive(b), invert));
     }
-    void ChangeAlpha(float alpha, bool invert = false)
+    void ChangeAlpha(float alpha)
     {
         ColorBlock colorBlock = button.colors;
         Color thisColor = colorBlock.disabledColor;
@@ -84,10 +69,6 @@ public class LojaCharacterInstance : MonoBehaviour
             graphicsToChangeColor[i].color = thisColor;
         }
 
-        if (!hasEndedChangeAlpha) return;
-
-        gameObject.SetActive(invert);
-        hasEndedChangeAlpha = false;
     }
     //provavelmente vou ter que tirar ChangeAlpha e colocar a logica toda no TrocarCor, porque elas basicamente faz a mesma coisa
     public void TrocarCor(bool isSelected, Color newColor)

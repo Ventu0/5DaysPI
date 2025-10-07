@@ -65,4 +65,25 @@ public class LojaAnimSequence : MonoBehaviour
 
         afterAnimReset.RemoveAllListeners();
     }
+    public IEnumerator FadeAlpha(Action<float> ChangeAlpha, float duration, Action<bool> onEnd, bool invert = false)
+    {
+
+        float t = 0;
+        float newAlpha = 0;
+
+        float startAlpha = invert ? 0 : 1;
+        float endAlpha = invert ? 1 : 0;
+
+        while (t < duration)
+        {
+            newAlpha = Mathf.Lerp(startAlpha, endAlpha, t / duration);
+            ChangeAlpha(newAlpha);
+            t += Time.deltaTime;
+            yield return null;
+        }
+       newAlpha = endAlpha;
+       ChangeAlpha(newAlpha);
+
+       onEnd?.Invoke(invert);
+    }
 }
