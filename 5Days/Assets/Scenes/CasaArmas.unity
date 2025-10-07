@@ -392,13 +392,8 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   - {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
-  selectCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   animSequence: {fileID: 0}
+  isInSelection: 1
   selected: 2
   lastSelected: 0
   canRecieveInput: 1
@@ -441,6 +436,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   onAnimEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  afterAnimReset:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &616576770
@@ -1913,6 +1911,7 @@ GameObject:
   - component: {fileID: 1408020424}
   - component: {fileID: 1408020423}
   - component: {fileID: 1408020426}
+  - component: {fileID: 1408020427}
   m_Layer: 5
   m_Name: FundoInfoMenu
   m_TagString: Untagged
@@ -2003,6 +2002,22 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1408020427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408020421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cb6e7118b3cb144862f69099e29d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 698139353}
+  lifeText: {fileID: 1542699042}
+  costText: {fileID: 1417006673}
+  characterStatus: {fileID: 0}
 --- !u!1 &1417006671
 GameObject:
   m_ObjectHideFlags: 0

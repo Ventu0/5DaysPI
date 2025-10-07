@@ -16,6 +16,7 @@ public class LojaCharacterSelection : MonoBehaviour
 
     [Header("Read-Only")]
     [SerializeField] LojaAnimSequence animSequence;
+    [SerializeField] bool isInSelection = true;
     [SerializeField] int selected;
     [SerializeField] int lastSelected;
     [SerializeField] bool canRecieveInput = true;
@@ -54,30 +55,31 @@ public class LojaCharacterSelection : MonoBehaviour
         LojaCharacterInstance character = characters[whichCharacter];
         UnityEvent onClick = character.button.onClick;
 
-        UnityAction sequence = () => animSequence.StartSequence(character.rect);
+        
+        UnityAction sequence = () => animSequence.StartSequence(character.rect, false);
 
         Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
         Action<UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
 
         action(() => character.button.enabled = false);
         action(() => canMove = false);
+        action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
         action(() => FadeToAlphaDisabled());
+        onAnimEnd(() => character.button.enabled = true);
         action(sequence);
         action(OnSelected);
-        onAnimEnd(() => character.button.enabled = true);
     }
     void OnSelected()
     {
         characters[selected].button.onClick.RemoveAllListeners();
         characters[selected].button.onClick.AddListener(DeselectCurrent);
-         
     }
     void DeselectCurrent()
     {
         characters[selected].button.onClick.RemoveAllListeners();
+        characters[selected].button.enabled = false;
 
         ReturnToSelection();
-        SelectedButtonSetOnClick(selected, true);
         FadeToAlphaDisabled(true);
     }
     #region Movimento do menu
@@ -155,11 +157,12 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void ReturnToSelection()
     {
-        animSequence.onAnimEnd.RemoveAllListeners();
-        animSequence.onAnimEnd.AddListener(() => print("canMove: " + canMove));
         animSequence.onAnimEnd.AddListener(() => canMove = true);
+        animSequence.onAnimEnd.AddListener(() => characters[selected].button.enabled = true);
+        animSequence.afterAnimReset.AddListener(() => SelectedButtonSetOnClick(selected, true));
 
         RectTransform rect = characters[selected].rect;
+
         animSequence.StartSequence(rect, true);
     }
     #endregion

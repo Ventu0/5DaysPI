@@ -7,6 +7,7 @@ public class LojaAnimSequence : MonoBehaviour
     [SerializeField] float finalX;
     [SerializeField] AnimationCurve selectedCurve;
     public UnityEvent onAnimEnd;
+    public UnityEvent afterAnimReset;
     void Start()
     {
 
@@ -19,7 +20,6 @@ public class LojaAnimSequence : MonoBehaviour
     {
         if (returnPos)
         {
-            print("voltando");
             finalX *= -1;
         }
         Vector2 finalScale = selectedCharacter.localScale * 1.15f;
@@ -28,13 +28,16 @@ public class LojaAnimSequence : MonoBehaviour
 
         //yield return StartCoroutine( animação crescer e diminuir;
         //    Vector2LerpTween(selectedCharacter.localScale, finalScale, 0.25f, v => selectedCharacter.localScale = v, true));
+
         yield return StartCoroutine(
             Vector2LerpTween(selectedCharacter.anchoredPosition, finalPos, 0.5f, v => selectedCharacter.anchoredPosition = v));
 
         if (returnPos)
             finalX *= -1;
+
         onAnimEnd?.Invoke();
-        ResetAnimEnd();
+        
+        ResetAnimEnd(returnPos);
     }
     public IEnumerator Vector2LerpTween(Vector2 start, Vector2 end, float duration, Action<Vector2> valueToTween, bool InOut = false)
     {
@@ -54,8 +57,12 @@ public class LojaAnimSequence : MonoBehaviour
         yield return StartCoroutine(Vector2LerpTween(end, start, duration, valueToTween));
 
     }
-    public void ResetAnimEnd()
+    public void ResetAnimEnd(bool resetFirst)
     {
         onAnimEnd.RemoveAllListeners();
+
+        afterAnimReset?.Invoke();
+
+        afterAnimReset.RemoveAllListeners();
     }
 }

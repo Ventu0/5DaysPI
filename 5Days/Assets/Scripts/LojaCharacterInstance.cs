@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class LojaCharacterInstance : MonoBehaviour
 {
     [SerializeField] Image displayImage;
-    [SerializeField] PersonagensNaLoja personagem;
+    public PersonagensNaLoja personagem;
     [SerializeField] Graphic[] graphicsToChangeColor;
     [HideInInspector] public Button button;
     public RectTransform rect; //pra nao ter que ficar pegando os componentes no meio do for
@@ -83,7 +83,9 @@ public class LojaCharacterInstance : MonoBehaviour
         {
             graphicsToChangeColor[i].color = thisColor;
         }
+
         if (!hasEndedChangeAlpha) return;
+
         gameObject.SetActive(invert);
         hasEndedChangeAlpha = false;
     }

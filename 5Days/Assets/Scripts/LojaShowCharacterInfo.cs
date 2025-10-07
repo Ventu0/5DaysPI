@@ -15,6 +15,11 @@ public class LojaShowCharacterInfo : MonoBehaviour
 
     [Header("Readonly")]
     [SerializeField] CharacterStatusGeneric characterStatus;
+    public static LojaShowCharacterInfo instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         
