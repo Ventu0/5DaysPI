@@ -392,11 +392,16 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   - {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  selectCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   animSequence: {fileID: 0}
   selected: 2
   lastSelected: 0
   canRecieveInput: 1
-  isSelected: 0
   canMove: 1
 --- !u!114 &218723483
 MonoBehaviour:
@@ -411,6 +416,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalX: -285
+  selectedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   onAnimEnd:
     m_PersistentCalls:
       m_Calls: []

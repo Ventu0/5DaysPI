@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using Unity.VisualScripting;
 public class LojaCharacterSelection : MonoBehaviour
 {
     [Header("Characters")]
@@ -52,12 +53,14 @@ public class LojaCharacterSelection : MonoBehaviour
 
         LojaCharacterInstance character = characters[whichCharacter];
         UnityEvent onClick = character.button.onClick;
+
         UnityAction sequence = () => animSequence.StartSequence(character.rect);
 
         Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
-        Action <UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
+        Action<UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
 
         action(() => character.button.enabled = false);
+        action(() => canMove = false);
         action(() => FadeToAlphaDisabled());
         action(sequence);
         action(OnSelected);
@@ -67,14 +70,15 @@ public class LojaCharacterSelection : MonoBehaviour
     {
         characters[selected].button.onClick.RemoveAllListeners();
         characters[selected].button.onClick.AddListener(DeselectCurrent);
+         
     }
     void DeselectCurrent()
     {
         characters[selected].button.onClick.RemoveAllListeners();
+
         ReturnToSelection();
         SelectedButtonSetOnClick(selected, true);
         FadeToAlphaDisabled(true);
-        canMove = true;
     }
     #region Movimento do menu
     void MexerTodos(int sentido)
@@ -148,12 +152,15 @@ public class LojaCharacterSelection : MonoBehaviour
             if (isSelected) continue; //pula o que ta selecionado, pra otimizar e nao deixar transparente
             StartCoroutine(characters[i].FadeAlpha(0.2f, invert));
         }
-        canMove = false;
     }
     void ReturnToSelection()
     {
+        animSequence.onAnimEnd.RemoveAllListeners();
+        animSequence.onAnimEnd.AddListener(() => print("canMove: " + canMove));
+        animSequence.onAnimEnd.AddListener(() => canMove = true);
+
         RectTransform rect = characters[selected].rect;
-        StartCoroutine(animSequence.Vector2LerpTween(rect.anchoredPosition, fixedPositions[0].anchoredPosition, 0.5f, v => rect.anchoredPosition = v, false));
+        animSequence.StartSequence(rect, true);
     }
     #endregion
     #region Functions With Return
