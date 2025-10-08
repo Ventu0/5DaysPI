@@ -23,7 +23,7 @@ public class LojaShowCharacterInfo : MonoBehaviour
     }
     void Start()
     {
-        
+        gameObject.SetActive(false);
     }
     public void ApplyInfo(PersonagensNaLoja character)
     {
@@ -47,5 +47,13 @@ public class LojaShowCharacterInfo : MonoBehaviour
                     attacks[i].attackSprite.sprite = ataque.iconeAtaque;
             }
         }
+        
+    }
+    public void ChangeAlpha(float a)
+    {
+        Image img = GetComponent<Image>();
+        Color c = img.color;
+        c.a = a;
+        img.color = c;
     }
 }

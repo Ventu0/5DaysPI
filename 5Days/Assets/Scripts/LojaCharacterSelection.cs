@@ -11,6 +11,7 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] PersonagensNaLoja[] charactersInfo;
 
     [Header("Config")]
+    [SerializeField] GameObject menu;
     [SerializeField] RectTransform[] fixedPositions;
     [SerializeField] Color[] buttonColors;
 
@@ -62,7 +63,7 @@ public class LojaCharacterSelection : MonoBehaviour
 
         action(() => character.button.enabled = false);
         action(() => canMove = false);
-        action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
+        //action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
         action(() => FadeToAlphaDisabled());
         onAnimEnd(() => character.button.enabled = true);
         action(sequence);
@@ -70,13 +71,17 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void OnSelected()
     {
-        characters[selected].button.onClick.RemoveAllListeners();
-        characters[selected].button.onClick.AddListener(DeselectCurrent);
+        LojaCharacterInstance character = characters[selected];
+
+        character.button.onClick.RemoveAllListeners();
+        character.button.onClick.AddListener(DeselectCurrent);
     }
     void DeselectCurrent()
     {
-        characters[selected].button.onClick.RemoveAllListeners();
-        characters[selected].button.enabled = false;
+        LojaCharacterInstance character = characters[selected];
+
+        character.button.onClick.RemoveAllListeners();
+        character.button.enabled = false;
 
         ReturnToSelection();
         FadeToAlphaDisabled(true);
@@ -154,6 +159,9 @@ public class LojaCharacterSelection : MonoBehaviour
 
             characters[i].StartChangeAlpha(animSequence, 0.25f, invert);
         }
+        LojaShowCharacterInfo info = LojaShowCharacterInfo.instance;
+        menu.SetActive(true);
+        StartCoroutine(animSequence.FadeAlpha(a => info.ChangeAlpha(a), 0.25f, b => menu.SetActive(!b), invert));
     }
     void ReturnToSelection()
     {
