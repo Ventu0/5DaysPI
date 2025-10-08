@@ -16,7 +16,8 @@ public class LojaShowCharacterInfo : MonoBehaviour
     [SerializeField] AttackInstance[] attackInstance = new AttackInstance[4];
 
     [Header("Readonly")]
-    [SerializeField] CharacterStatusGeneric characterStatus;
+    public CharacterStatusGeneric characterStatus;
+
     public static LojaShowCharacterInfo instance;
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class LojaShowCharacterInfo : MonoBehaviour
     }
     public void ApplyInfo(PersonagensNaLoja character)
     {
+        if (character == null) return;
         characterStatus = character.personagemOriginal;
 
         nameText.text = character.nomePersonagem;

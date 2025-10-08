@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-public class DescriptionMenu : MonoBehaviour
+public class DescriptionMenu : Selectable
 {
     public GameObject descriptionMenu; //publico para desativar o menu no script
     [SerializeField] TextMeshProUGUI descriptionText;
@@ -18,10 +18,12 @@ public class DescriptionMenu : MonoBehaviour
         interactButtonsController = GetComponent<InteractButtonsController>();
         descriptionMenu.SetActive(false);
     }
-    public void AbrirMenu(int whatMove) //numero de identificação do ataque selecionado de acordo com o botão
+    public override void AbrirMenu(int whatMove) //numero de identificação do ataque selecionado de acordo com o botão
     {
         Attack attack = interactButtonsController.ataques[whatMove];
+
         if (attack == null) return;
+
         descriptionMenu.SetActive(true);
 
         if(attack.description == null || attack.description == "")
@@ -39,5 +41,5 @@ public class DescriptionMenu : MonoBehaviour
         //futuramente: customizar o menu de descrição para ter mais personalidade e coisas
     }
 
-    //public abstract void Close()
+    public override void Close() => descriptionMenu.SetActive(false);
 }

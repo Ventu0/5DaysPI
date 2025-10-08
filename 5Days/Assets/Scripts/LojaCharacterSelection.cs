@@ -3,7 +3,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 using System;
-using Unity.VisualScripting;
 public class LojaCharacterSelection : MonoBehaviour
 {
     [Header("Characters")]
@@ -71,10 +70,10 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void OnSelected()
     {
-        LojaCharacterInstance character = characters[selected];
+        UnityEvent onClick = characters[selected].button.onClick;
 
-        character.button.onClick.RemoveAllListeners();
-        character.button.onClick.AddListener(DeselectCurrent);
+        onClick.RemoveAllListeners();
+        onClick.AddListener(DeselectCurrent);
     }
     void DeselectCurrent()
     {
