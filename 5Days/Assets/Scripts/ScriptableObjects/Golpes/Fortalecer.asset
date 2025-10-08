@@ -27,15 +27,19 @@ MonoBehaviour:
   attackAnimation: {fileID: 9100000, guid: b6d35dc5e03a3a448ae02aebabe14bdd, type: 2}
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 11400000, guid: 5aeb4a08fb90720458b88cdc3cd57faf, type: 2}
+  porcentagemDeCura: 0.3
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 0
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  stealHeal: 0
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 
+  buffType: "For\xE7a: "
   changeColorWhileApplyingEffect: 1
   colorToChange: {r: 0.23137257, g: 0.36862746, b: 0.78823537, a: 1}

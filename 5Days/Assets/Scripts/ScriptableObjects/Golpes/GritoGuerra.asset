@@ -39,5 +39,6 @@ MonoBehaviour:
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 
+  buffType: "For\xE7a: "
   changeColorWhileApplyingEffect: 1
   colorToChange: {r: 1, g: 0, b: 0.13348532, a: 1}

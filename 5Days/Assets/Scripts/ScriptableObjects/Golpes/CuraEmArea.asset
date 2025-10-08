@@ -39,5 +39,6 @@ MonoBehaviour:
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 
+  buffType: 'Cura: '
   changeColorWhileApplyingEffect: 1
   colorToChange: {r: 0, g: 1, b: 0, a: 1}

@@ -26,15 +26,19 @@ MonoBehaviour:
   attackAnimation: {fileID: 9100000, guid: 8c1b80898f2fbe0469af492e79bda716, type: 2}
   animationPlayInFront: 0
   efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
+  porcentagemDeCura: 0.3
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 0
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  stealHeal: 0
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 
+  buffType: 'Cura: '
   changeColorWhileApplyingEffect: 1
   colorToChange: {r: 0, g: 1, b: 0, a: 1}

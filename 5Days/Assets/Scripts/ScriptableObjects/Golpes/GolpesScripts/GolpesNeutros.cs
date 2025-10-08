@@ -6,6 +6,7 @@ using System;
 public class GolpesNeutros : Attack
 {
     BasePersonagem alvoPersonagem;
+    public string buffType = "Cura: ";
     [Header("Exclusivo neutral")]
     [SerializeField] bool changeColorWhileApplyingEffect;
     [SerializeField] Color colorToChange = Color.green;
