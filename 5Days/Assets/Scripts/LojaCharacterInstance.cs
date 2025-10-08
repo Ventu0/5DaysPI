@@ -52,7 +52,7 @@ public class LojaCharacterInstance : MonoBehaviour
     
     public void StartChangeAlpha(LojaAnimSequence animSequence, float duration , bool invert = false)
     {
-        if(invert) gameObject.SetActive(true);
+        gameObject.SetActive(true);
         StartCoroutine(animSequence.FadeAlpha(a => ChangeAlpha(a), duration, b => gameObject.SetActive(b), invert));
     }
     void ChangeAlpha(float alpha)

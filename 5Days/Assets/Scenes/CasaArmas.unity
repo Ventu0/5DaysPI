@@ -2061,15 +2061,19 @@ MonoBehaviour:
   nameText: {fileID: 698139353}
   lifeText: {fileID: 1542699042}
   costText: {fileID: 1417006673}
-  attacks:
+  attackInstance:
   - attackText: {fileID: 1544829319}
     attackSprite: {fileID: 1709640592}
+    button: {fileID: 0}
   - attackText: {fileID: 568146018}
     attackSprite: {fileID: 752510247}
+    button: {fileID: 0}
   - attackText: {fileID: 1734771769}
     attackSprite: {fileID: 764276754}
+    button: {fileID: 0}
   - attackText: {fileID: 1071854601}
     attackSprite: {fileID: 2015532614}
+    button: {fileID: 2016210338}
   characterStatus: {fileID: 0}
 --- !u!1 &1417006671
 GameObject:
@@ -2849,9 +2853,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2520334061439379592, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520334061439379592, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520334061439379592, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696227870201737294, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696227870201737294, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696227870201737294, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5778189613832978879, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
       propertyPath: m_Name
       value: AttackMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250197271445543789, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250197271445543789, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250197271445543789, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173279911570060676, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173279911570060676, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173279911570060676, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173279911570060676, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4811,6 +4867,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2016210338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2520334061439379592, guid: 506e7036447785942b84ebbd14dd26ca, type: 3}
+  m_PrefabInstance: {fileID: 1827686753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2113449871

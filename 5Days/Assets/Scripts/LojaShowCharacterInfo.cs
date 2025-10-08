@@ -6,13 +6,14 @@ class AttackInstance
 {
     public TextMeshProUGUI attackText;
     public Image attackSprite;
+    public Button button;
 }
 public class LojaShowCharacterInfo : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI lifeText;
     [SerializeField] TextMeshProUGUI costText;
-    [SerializeField] AttackInstance[] attacks = new AttackInstance[4];
+    [SerializeField] AttackInstance[] attackInstance = new AttackInstance[4];
 
     [Header("Readonly")]
     [SerializeField] CharacterStatusGeneric characterStatus;
@@ -23,6 +24,10 @@ public class LojaShowCharacterInfo : MonoBehaviour
     }
     void Start()
     {
+        foreach (AttackInstance attackInstance in attackInstance)
+        {
+            attackInstance.button = attackInstance.attackText.GetComponent<Button>();
+        }
         gameObject.SetActive(false);
     }
     public void ApplyInfo(PersonagensNaLoja character)
@@ -33,27 +38,34 @@ public class LojaShowCharacterInfo : MonoBehaviour
         costText.text = character.custo.ToString();
         lifeText.text = characterStatus.vidaMaxima.ToString();
 
-        for(int i = 0; i < attacks.Length; i++)
+        for(int i = 0; i < attackInstance.Length; i++)
         {
             Attack ataque = characterStatus.ataques[i];
-            if(ataque == null)
+            AttackInstance attackSlot = attackInstance[i];
+            if (ataque == null)
             {
-                attacks[i].attackText.text = "------";
+                attackSlot.attackText.text = "------";
             }
             else
             {
-                attacks[i].attackText.text = ataque.nomeAtaque;
+                attackSlot.attackText.text = ataque.nomeAtaque;
+
                 if (ataque.iconeAtaque != null)
-                    attacks[i].attackSprite.sprite = ataque.iconeAtaque;
+                    attackSlot.attackSprite.sprite = ataque.iconeAtaque;
+
+                ColorBlock colors = attackSlot.button.colors;
+
+                colors.highlightedColor = ataque.iconMainColor;
+                colors.selectedColor = ataque.iconMainColor;
+
+                attackSlot.button.colors = colors;
             }
         }
         
     }
     public void ChangeAlpha(float a)
     {
-        Image img = GetComponent<Image>();
-        Color c = img.color;
-        c.a = a;
-        img.color = c;
+        CanvasGroup img = GetComponent<CanvasGroup>();
+        img.alpha = a;
     }
 }

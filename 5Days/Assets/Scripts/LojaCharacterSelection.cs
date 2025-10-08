@@ -63,7 +63,7 @@ public class LojaCharacterSelection : MonoBehaviour
 
         action(() => character.button.enabled = false);
         action(() => canMove = false);
-        //action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
+        action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
         action(() => FadeToAlphaDisabled());
         onAnimEnd(() => character.button.enabled = true);
         action(sequence);
@@ -160,8 +160,9 @@ public class LojaCharacterSelection : MonoBehaviour
             characters[i].StartChangeAlpha(animSequence, 0.25f, invert);
         }
         LojaShowCharacterInfo info = LojaShowCharacterInfo.instance;
+
         menu.SetActive(true);
-        StartCoroutine(animSequence.FadeAlpha(a => info.ChangeAlpha(a), 0.25f, b => menu.SetActive(!b), invert));
+        StartCoroutine(animSequence.FadeAlpha(a => info.ChangeAlpha(a), 0.35f, b => menu.SetActive(b), !invert));
     }
     void ReturnToSelection()
     {
