@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ButtonOutline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     [SerializeField] GameObject outlineObject;
+    [SerializeField] Selectable selectable;
+
     [Header("Attack Buttons Only")]
     [SerializeField] bool isAnAttackButton = false;
     [SerializeField] int buttonID;
@@ -45,14 +48,14 @@ public class ButtonOutline : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (isAnAttackButton)
         {
-            DescriptionMenu.instance.AbrirMenu(buttonID);
+            selectable.AbrirMenu(buttonID);
         }
     }
     void CloseDescriptionMenu()
     {
         if (isAnAttackButton)
         {
-            DescriptionMenu.instance.descriptionMenu.SetActive(false);
+            selectable.Close();
         }
     }
 }

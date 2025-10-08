@@ -7,6 +7,7 @@ public class DescriptionMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI damageText;
     [SerializeField] TextMeshProUGUI PPText;
     InteractButtonsController interactButtonsController;
+
     public static DescriptionMenu instance;
     private void Awake()
     {
@@ -37,4 +38,6 @@ public class DescriptionMenu : MonoBehaviour
         damageText.text = "Dano: " + attack.danoOuCura * TurnModeManager.instance.QuemEstaAtacando().strengthFactor;
         //futuramente: customizar o menu de descrição para ter mais personalidade e coisas
     }
+
+    //public abstract void Close()
 }
