@@ -19,31 +19,31 @@ public class BounceEffect : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public IEnumerator Bounce(Transform tranform, Vector2 originalPos, float bobbingDuration, float bounceQuantity, Action onEnd = null)
+    public IEnumerator Bounce(RectTransform tranform, Vector2 originalPos, float bobbingDuration, float bounceQuantity, Action onEnd = null)
     {
         if (isOnRoutine) yield break;
-        tranform.position = originalPos;
+        tranform.anchoredPosition = originalPos;
         isOnRoutine = true;
         float iterador = 0;
-        Vector2 newPos = new Vector2(tranform.position.x, tranform.position.y + bounceQuantity);
+        Vector2 newPos = new Vector2(tranform.anchoredPosition.x, tranform.anchoredPosition.y + bounceQuantity);
         while (iterador < bobbingDuration)
         {
             iterador += Time.deltaTime / bobbingDuration;
-            tranform.position = Vector2.Lerp(tranform.position, newPos, iterador);
+            tranform.anchoredPosition = Vector2.Lerp(tranform.anchoredPosition, newPos, iterador);
             yield return null;
         }
 
         yield return null;
 
         iterador = 0;
-        newPos = new Vector2(tranform.position.x, tranform.position.y - bounceQuantity);
+        newPos = new Vector2(tranform.anchoredPosition.x, tranform.anchoredPosition.y - bounceQuantity);
         while (iterador < bobbingDuration)
         {
             iterador += Time.deltaTime / bobbingDuration;
-            tranform.position = Vector2.Lerp(tranform.position, newPos, iterador);
+            tranform.anchoredPosition = Vector2.Lerp(tranform.anchoredPosition, newPos, iterador);
             yield return null;
         }
-        tranform.position = originalPos;
+        tranform.anchoredPosition = originalPos;
         yield return new WaitForSeconds(0.5f);
         onEnd?.Invoke();
         isOnRoutine = false;

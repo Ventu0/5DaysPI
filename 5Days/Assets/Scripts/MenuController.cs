@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour
 
     [Header("Interação com o menu (animação)")]
     [SerializeField] Sprite clickSprite;
-    [SerializeField] Transform characterTransform;
+    [SerializeField] RectTransform characterTransform;
     [SerializeField] float jumpQuantity = 10f;
     [SerializeField] float bobbingDuration = 0.5f;
     Image objectImage;
@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
     #endregion
     public void InteractObject()
     {
-        StartCoroutine(BounceEffect.instance.Bounce(objectImage.transform, characterTransform.position, bobbingDuration, jumpQuantity, OnEndBounce));
+        StartCoroutine(BounceEffect.instance.Bounce(characterTransform, characterTransform.anchoredPosition, bobbingDuration, jumpQuantity, OnEndBounce));
         objectImage.sprite = clickSprite;
     }
     void OnEndBounce()

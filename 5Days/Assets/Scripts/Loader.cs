@@ -43,7 +43,9 @@ public class Loader : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene != null && scene.name != coisasSalvas.activeScene)
+        if (scene == null) return;
+
+        if(scene.name != coisasSalvas.activeScene)
             return;
 
         Player player = Player.instance;

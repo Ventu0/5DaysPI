@@ -58,7 +58,6 @@ public class LojaShowCharacterInfo : MonoBehaviour
                 ColorBlock colors = attackSlot.button.colors;
 
                 colors.highlightedColor = ataque.iconMainColor;
-                colors.selectedColor = ataque.iconMainColor;
 
                 attackSlot.button.colors = colors;
             }
