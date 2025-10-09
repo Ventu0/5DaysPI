@@ -38,6 +38,7 @@ public class EnemyIniciarLuta : MonoBehaviour
     {
         inimigo.jaMorreu = true;
         gameObject.SetActive(false);
+        PlayerMoney.instance.SetActive(true);
         PlayerMoney.instance.AddMoney(moneyYield);
         Time.timeScale = 0f;
     }
@@ -56,7 +57,7 @@ public class EnemyIniciarLuta : MonoBehaviour
             }
         }
 
-        QuestController.instance.menu.SetActive(false);
+        QuestController.instance.SetAllActive(false);
         PauseMenuController.instance.canPause = false;
 
         DiaENoite dayScript = DiaENoite.instance;
@@ -65,7 +66,7 @@ public class EnemyIniciarLuta : MonoBehaviour
 
         turnModeManager.iniciarLuta = this;
         turnModeManager.escapeChance = escapeChance;
-
+        PlayerMoney.instance.SetActive(false);
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
 }

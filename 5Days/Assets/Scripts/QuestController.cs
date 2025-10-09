@@ -16,6 +16,7 @@ public class QuestController : MonoBehaviour
     [SerializeField] float waitTime;
 
     bool isOnRoutine = false;
+    bool canActive = true;
     public static QuestController instance;
     private void Awake()
     {
@@ -32,9 +33,15 @@ public class QuestController : MonoBehaviour
     {
 
     }
+    public void SetAllActive(bool allActive)
+    {
+        canActive = allActive;
+        menu.SetActive(allActive ? !allActive : allActive);
+        closedText.gameObject.SetActive(allActive);
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) && canActive)
         {
             SetActive(menu.activeSelf);
         }

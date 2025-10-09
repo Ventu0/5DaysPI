@@ -4,11 +4,14 @@ using System.Collections;
 public class PlayerMoney : MonoBehaviour
 {
     public static int money { get; private set; } = 0;
+    [SerializeField] GameObject moedaGira;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI moneyToAddText;
     public static PlayerMoney instance;
     private void Awake()
     {
+        moneyText = GameObject.Find("MoneyText").GetComponent<TextMeshProUGUI>();
+        moneyText.text = money.ToString();
         if (instance == null)
         {
             instance = this;
@@ -23,12 +26,19 @@ public class PlayerMoney : MonoBehaviour
         moneyToAddText.text = "";
         moneyToAddText.gameObject.SetActive(false);
     }
+    public void SetActive(bool setActive = true)
+    {
+        moedaGira.SetActive(setActive);
+    }
     public void AddMoneyNoAnimation(int amount)
     {
-        print("adicionando money");
         money += amount;
+        
+        SkipFrame();
+    }
+    public void SkipFrame()
+    {
         moneyText.text = money.ToString();
-        print("dinheiro depois: " + money);
     }
     public void AddMoney(int amount)
     {
@@ -69,4 +79,17 @@ public class PlayerMoney : MonoBehaviour
 
         moneyToAddText.gameObject.SetActive(false);
     }
+    #region ContextMenu
+    [ContextMenu("See money value")]
+    public void SeeMoney()
+    {
+        print("money: " + money.ToString());
+        moneyText.text = money.ToString();
+    }
+    [ContextMenu("Add money")]
+    public void AddMoney()
+    {
+        money += 10;
+    }
+    #endregion
 }

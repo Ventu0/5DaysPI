@@ -26,7 +26,7 @@ public class ReturnScene : MonoBehaviour
     }
     public void ReturnSceneBTN()
     {
-        QuestController.instance.menu.SetActive(true);
+        QuestController.instance.SetAllActive(true);
         TurnModeManager.instance.MaintainStatus();
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);

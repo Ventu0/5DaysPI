@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-using System.Threading.Tasks;
+using System.Collections;
+
 public class Loader : MonoBehaviour
 {
     CoisasParaSalvar coisasSalvas;
@@ -25,9 +26,9 @@ public class Loader : MonoBehaviour
         GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
         foreach(GameObject objeto in objectsInScene)
         {
+            if(objeto != gameObject)
             Destroy(objeto);
         }
-        Destroy(gameObject);
     }
     public void Carregar()
     {
@@ -41,7 +42,12 @@ public class Loader : MonoBehaviour
         Destroy(DeleteSave.instance);
         SceneManager.LoadScene(coisasSalvas.activeScene);
     }
-    async void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    IEnumerator DelayedAddMoney(PlayerMoney money, int amount)
+    {
+        yield return null; // espera 1 frame
+        money.AddMoneyNoAnimation(amount);
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene == null || coisasSalvas == null) return;
 
@@ -57,10 +63,9 @@ public class Loader : MonoBehaviour
         player.lastSavedPosition = coisasSalvas.playerLastSavedPos;
 
         questController?.JustSetQuest(coisasSalvas.activeQuest);
-
-        money.AddMoneyNoAnimation(coisasSalvas.money);
+        if (money == null) print("null");
+        StartCoroutine(DelayedAddMoney(money, coisasSalvas.money));
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        await Task.Delay(100);
-        Destroy(gameObject);
+
     }
 }
