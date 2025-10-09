@@ -18,6 +18,7 @@ public class RelogioScript : MonoBehaviour
     [HideInInspector] public int hours = 0;
     [SerializeField] int maxHours = 23;
     [SerializeField] bool isCompleted = false;
+    bool startedNight = false;
     DiaENoite dayScript;
     void Start()
     {
@@ -53,9 +54,10 @@ public class RelogioScript : MonoBehaviour
             hours = Mathf.Clamp(hours, 0, maxHours);
             minutes = 0;
         }
-        if (hours == dayScript.horarioDaNoite)
+        if (hours == dayScript.horarioDaNoite && !startedNight)
         {
             print("noite começou");
+            startedNight = true;
             StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));
         }
         if (hours == maxHours)
@@ -65,6 +67,7 @@ public class RelogioScript : MonoBehaviour
             hours = 0;
             StartCoroutine(MoveGradient());
             StartCoroutine(diaENoite.ChangeToDay());
+            startedNight = false;
             //diaENoite.ResetTime();
         }
 

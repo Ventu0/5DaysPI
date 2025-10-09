@@ -43,6 +43,7 @@ public class MenuController : MonoBehaviour
     }
     public void LoadGameButton()
     {
+        Loader.instance.DeletarTudoDoDontDestroy();
         Loader.instance.Carregar();
     }
     

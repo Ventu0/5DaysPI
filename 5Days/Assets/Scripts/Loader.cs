@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-
+using System.Threading.Tasks;
 public class Loader : MonoBehaviour
 {
     CoisasParaSalvar coisasSalvas;
@@ -41,20 +41,26 @@ public class Loader : MonoBehaviour
         Destroy(DeleteSave.instance);
         SceneManager.LoadScene(coisasSalvas.activeScene);
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    async void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene == null) return;
+        if (scene == null || coisasSalvas == null) return;
 
         if(scene.name != coisasSalvas.activeScene)
             return;
 
         Player player = Player.instance;
         QuestController questController = QuestController.instance;
+        PlayerMoney money = PlayerMoney.instance;
+
         if (player == null) print("Player nulo no Loader");
         player.transform.position = coisasSalvas.playerPos;
         player.lastSavedPosition = coisasSalvas.playerLastSavedPos;
+
         questController?.JustSetQuest(coisasSalvas.activeQuest);
+
+        money.AddMoneyNoAnimation(coisasSalvas.money);
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        await Task.Delay(100);
         Destroy(gameObject);
     }
 }

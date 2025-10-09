@@ -12,7 +12,6 @@ public class PlayerMoney : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -21,7 +20,15 @@ public class PlayerMoney : MonoBehaviour
     }
     void Start()
     {
+        moneyToAddText.text = "";
         moneyToAddText.gameObject.SetActive(false);
+    }
+    public void AddMoneyNoAnimation(int amount)
+    {
+        print("adicionando money");
+        money += amount;
+        moneyText.text = money.ToString();
+        print("dinheiro depois: " + money);
     }
     public void AddMoney(int amount)
     {

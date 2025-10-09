@@ -1,11 +1,9 @@
-using NUnit.Framework;
-using System.Linq.Expressions;
-using UnityEngine;  
-
+using UnityEngine;
+using UnityEngine.SceneManagement;
 public class NPConditions : MonoBehaviour
 {
     [SerializeField] NPC actualNPC;
-    [SerializeField] DialogueOptions actualOptions;
+    [SerializeField] DialogueOptions currentOption;
     public bool canSleep = true;
     public static NPConditions instance;
     private void Awake()
@@ -24,11 +22,14 @@ public class NPConditions : MonoBehaviour
     {
         DiaENoite.instance.onNightStart += () => canSleep = true;
     }
-
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
     public void DoAction(NPC whichNPC, DialogueOptions options)
     {
         actualNPC = whichNPC;
-        actualOptions = options;
+        currentOption = options;
 
         if (options.needMoney)
         {
@@ -41,7 +42,7 @@ public class NPConditions : MonoBehaviour
                 return; 
             }
             //se quiser colocar uma cutscene de dormir aqui, colocar aqui
-            if (!CheckIfHasText(actualOptions.yesDialogue))
+            if (!CheckIfHasText(currentOption.yesDialogue))
             {
                 actualNPC.ResetNPC();
             }
@@ -53,31 +54,22 @@ public class NPConditions : MonoBehaviour
     void WasteMoney()
     {
         int money = PlayerMoney.money;
-        if (money >= actualOptions.moneyAmount)
-        {
-            string[] yesLines = actualOptions.yesDialogue.lines;
-            Sprite[] yesFaces = actualOptions.yesDialogue.faces;
 
-            money -= actualOptions.moneyAmount;
-            if (CheckIfHasText(actualOptions.yesDialogue))
-            {
-                actualNPC.ResetNPC();
-                return;
-            }
+        bool condition = money >= currentOption.moneyAmount;
+        if(condition) money -= currentOption.moneyAmount;
 
-            actualNPC.Falar(yesLines, yesFaces);
-        }
-        else
+        DialogueArrays dialogueToUse = condition ? currentOption.yesDialogue : currentOption.notEnoughMoneyDialogues;
+
+        string[] lines = dialogueToUse.lines;
+        Sprite[] sprites = dialogueToUse.faces;
+
+        if (!CheckIfHasText(dialogueToUse))
         {
-            string[] noMoneyLines = actualOptions.noDialogue.lines;
-            Sprite[] noMoneyFaces = actualOptions.noDialogue.faces;
-            if (CheckIfHasText(actualOptions.notEnoughMoneyDialogues))
-            {
-                actualNPC.ResetNPC();
-                return;
-            }
-            actualNPC.Falar(noMoneyLines, noMoneyFaces);
+            Debug.LogWarning("O dialogo selecionado nao tem texto. Dialogo: " + dialogueToUse);
+            return;
         }
+
+        actualNPC.Falar(lines, sprites);
     }
     bool CheckIfHasText(DialogueArrays dialogue)
     {

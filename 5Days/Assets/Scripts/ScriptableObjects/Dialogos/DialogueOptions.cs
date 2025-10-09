@@ -1,10 +1,12 @@
 using UnityEngine;
+
 [System.Serializable]
 public class DialogueArrays
 {
     [TextArea] public string[] lines;
     public Sprite[] faces;
 }
+
 [CreateAssetMenu(fileName = "DialogueOptions", menuName = "Scriptable Objects/DialogueOptions")]
 public class DialogueOptions : ScriptableObject
 {

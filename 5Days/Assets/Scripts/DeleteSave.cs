@@ -38,7 +38,8 @@ public class DeleteSave : MonoBehaviour
             }
         }
         PlayerPrefs.DeleteAll();
-        Loader.instance.DeletarTudoDoDontDestroy();
+        if(Loader.instance != null)
+            Loader.instance.DeletarTudoDoDontDestroy();
     }
     public bool ChecarSePossuiSave()
     {

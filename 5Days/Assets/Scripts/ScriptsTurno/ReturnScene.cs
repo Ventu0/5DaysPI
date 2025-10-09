@@ -33,6 +33,7 @@ public class ReturnScene : MonoBehaviour
         dayScript.PauseTime(false);
         SceneManager.UnloadSceneAsync(sceneName);
         SceneTimeController.instance.onPauseGame?.Invoke();
+        PauseMenuController.instance.canPause = true;
         Time.timeScale = 1f;
     }
     public IEnumerator RunAnimation(BasePersonagem[] characters)

@@ -4,8 +4,11 @@ using UnityEngine.SceneManagement;
 using System.IO;
 public class CoisasParaSalvar
 {
+    public int money;
+
     public Vector2 playerPos;
     public Vector2 playerLastSavedPos;
+
     public string activeQuest;
     public string activeScene;
 }
@@ -69,10 +72,15 @@ public class PauseMenuController : MonoBehaviour
     }
     public void Salvar()
     {
+        Player player = Player.instance;
         onSave?.Invoke();
+
+        print("money: " + PlayerMoney.money);
+        coisasSalvar.money = PlayerMoney.money;
+        coisasSalvar.playerPos = player.transform.position;
+        coisasSalvar.playerLastSavedPos = player.lastSavedPosition;
+
         coisasSalvar.activeQuest = QuestController.instance?.GetActiveQuest();
-        coisasSalvar.playerPos = Player.instance.transform.position;
-        coisasSalvar.playerLastSavedPos = Player.instance.lastSavedPosition;
         coisasSalvar.activeScene = SceneManager.GetActiveScene().name;
 
         string json = JsonUtility.ToJson(coisasSalvar, true);
