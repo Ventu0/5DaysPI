@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b10e1a9046ec744da45dc8d5bbb5f18, type: 3}
-  m_Name: Tom
+  m_Name: Lanceiro
   m_EditorClassIdentifier: 
-  nomePersonagem: 
-  display: {fileID: 0}
-  personagemOriginal: {fileID: 0}
+  nomePersonagem: Ronaldo
+  display: {fileID: 21300000, guid: 239f45e279c1f874c953280158733410, type: 3}
+  custo: 0
+  personagemOriginal: {fileID: 11400000, guid: 68df01415572d4f4d945dafbbdc608b2, type: 2}

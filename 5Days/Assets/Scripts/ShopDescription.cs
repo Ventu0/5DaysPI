@@ -18,8 +18,9 @@ public class ShopDescription : Selectable
 
     public override void AbrirMenu(int whichMove)
     {
-        descriptionMenu.SetActive(true);
         Attack selectedAttack = LojaShowCharacterInfo.instance.characterStatus.ataques[whichMove];
+        if (selectedAttack == null) return;
+        descriptionMenu.SetActive(true);
 
         if (selectedAttack is GolpesNeutros neutral)
             damageText.text = neutral.buffType + selectedAttack.danoOuCura;

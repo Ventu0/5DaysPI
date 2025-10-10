@@ -10,7 +10,8 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] PersonagensNaLoja[] charactersInfo;
 
     [Header("Config")]
-    [SerializeField] GameObject menu;
+    [SerializeField] GameObject selectionMenu;
+    [SerializeField] GameObject buyMenu;
     [SerializeField] RectTransform[] fixedPositions;
     [SerializeField] Color[] buttonColors;
 
@@ -22,6 +23,7 @@ public class LojaCharacterSelection : MonoBehaviour
     public bool canMove = true;
     void Start()
     {
+        SetActive(true);
         animSequence = GetComponent<LojaAnimSequence>();
         lastSelected = selected;
         SelectedButtonSetOnClick(selected, true); //adicionar um primeiro botao pra nao ficar estranho e bugado
@@ -36,6 +38,11 @@ public class LojaCharacterSelection : MonoBehaviour
             characters[i].Setup(charactersInfo[i]);
         }
     }
+    public void SetActive(bool active)
+    {
+        selectionMenu.SetActive(active);
+        canMove = active;
+    }
     void Update()
     {
         if(!canMove)
@@ -47,44 +54,7 @@ public class LojaCharacterSelection : MonoBehaviour
             MexerTodos(horizontal);
         }
     }
-    void SelectedButtonSetOnClick(int whichCharacter, bool addListener)
-    {
-        whichCharacter = Mathf.Clamp(whichCharacter, 0, characters.Length - 1);
 
-        LojaCharacterInstance character = characters[whichCharacter];
-        UnityEvent onClick = character.button.onClick;
-
-        
-        UnityAction sequence = () => animSequence.StartSequence(character.rect, false);
-
-        Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
-        Action<UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
-
-        action(() => character.button.enabled = false);
-        action(() => canMove = false);
-        action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
-        action(() => FadeToAlphaDisabled());
-        onAnimEnd(() => character.button.enabled = true);
-        action(sequence);
-        action(OnSelected);
-    }
-    void OnSelected()
-    {
-        UnityEvent onClick = characters[selected].button.onClick;
-
-        onClick.RemoveAllListeners();
-        onClick.AddListener(DeselectCurrent);
-    }
-    void DeselectCurrent()
-    {
-        LojaCharacterInstance character = characters[selected];
-
-        character.button.onClick.RemoveAllListeners();
-        character.button.enabled = false;
-
-        ReturnToSelection();
-        FadeToAlphaDisabled(true);
-    }
     #region Movimento do menu
     void MexerTodos(int sentido)
     {
@@ -160,8 +130,45 @@ public class LojaCharacterSelection : MonoBehaviour
         }
         LojaShowCharacterInfo info = LojaShowCharacterInfo.instance;
 
-        menu.SetActive(true);
-        StartCoroutine(animSequence.FadeAlpha(a => info.ChangeAlpha(a), 0.35f, b => menu.SetActive(b), !invert));
+        buyMenu.SetActive(true);
+        StartCoroutine(animSequence.FadeAlpha(a => info.ChangeAlpha(a), 0.35f, b => buyMenu.SetActive(b), !invert));
+    }
+    void SelectedButtonSetOnClick(int whichCharacter, bool addListener)
+    {
+        whichCharacter = Mathf.Clamp(whichCharacter, 0, characters.Length - 1);
+
+        LojaCharacterInstance character = characters[whichCharacter];
+        UnityEvent onClick = character.button.onClick;
+
+        UnityAction sequence = () => animSequence.StartSequence(character.rect, false);
+
+        Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
+        Action<UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
+
+        action(() => character.button.enabled = false);
+        action(() => canMove = false);
+        action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
+        action(() => FadeToAlphaDisabled());
+        onAnimEnd(() => character.button.enabled = true);
+        action(sequence);
+        action(OnSelected);
+    }
+    void OnSelected()
+    {
+        UnityEvent onClick = characters[selected].button.onClick;
+
+        onClick.RemoveAllListeners();
+        onClick.AddListener(DeselectCurrent);
+    }
+    void DeselectCurrent()
+    {
+        LojaCharacterInstance character = characters[selected];
+
+        character.button.onClick.RemoveAllListeners();
+        character.button.enabled = false;
+
+        ReturnToSelection();
+        FadeToAlphaDisabled(true);
     }
     void ReturnToSelection()
     {

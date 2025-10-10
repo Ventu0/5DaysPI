@@ -37,6 +37,7 @@ public class PlayerPartyController : MonoBehaviour
     }
     void Start()
     {
+        if(PauseMenuController.instance != null)
         PauseMenuController.instance.onSave += SaveParty;
         string caminho = Application.persistentDataPath + "/PlayerParty.json";
         if (File.Exists(caminho)) //se já houver uma party
@@ -57,6 +58,14 @@ public class PlayerPartyController : MonoBehaviour
             partyAtual.Add(character);
         }
         CurarTodos();
+    }
+    public void AddCharacter(CharacterStatusGeneric character)
+    {
+        if (playerParty.Count >= 3 || partyAtual.Count >= 3) return;
+        playerParty.Add(character);
+        partyAtual.Clear();
+
+        partyAtual = new List<CharacterStatusGeneric>(playerParty);
     }
     public void SaveParty()
     {
@@ -123,6 +132,8 @@ public class PlayerPartyController : MonoBehaviour
     }
     private void OnDisable()
     {
+        PauseMenuController pauseMenu = PauseMenuController.instance;
+        if(pauseMenu != null)
         PauseMenuController.instance.onSave -= SaveParty;
     }
 }
