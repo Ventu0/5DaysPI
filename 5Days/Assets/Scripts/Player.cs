@@ -50,30 +50,24 @@ public class Player : CharacterStatus
             DiaENoite.instance.onNightStart += OnNightStart;
         luzNatural?.gameObject.SetActive(false);
     }
-    public void SavePosition()
-    {
-        lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
-    }
+    public void SavePosition() => lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
+    public void SetGamePauseManual(bool active) => isGamePaused = active;
     #region delegates
     void PausePlayer()
     {
         if (!isGamePaused)
-        {
             isGamePaused = true;
-        }
         else
-        {
             isGamePaused = false;
-        }
     }
     void OnNightStart()
     {
-            luzNatural?.gameObject.SetActive(true);
+        luzNatural?.gameObject.SetActive(true);
     }
     #endregion
     void Update()
     {
-        if (Time.timeScale == 0) return; //evita que o update seja chamado quando for pausado
+        if (Time.timeScale == 0 || isGamePaused) return; //evita que o update seja chamado quando for pausado
 
         if (canTalk)
         {
@@ -85,7 +79,7 @@ public class Player : CharacterStatus
             }
         }
 
-        if (isGamePaused || !canMove)
+        if (!canMove)
         {
             rb.linearVelocity = Vector2.zero;
             anim.SetFloat("Horizontal", 0);
@@ -95,6 +89,7 @@ public class Player : CharacterStatus
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+
         anim.SetFloat("Horizontal", Mathf.Abs(horizontal));
         anim.SetFloat("Vertical", vertical);
         moveInput = new Vector2(horizontal, vertical);

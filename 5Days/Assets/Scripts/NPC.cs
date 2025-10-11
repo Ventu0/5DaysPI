@@ -27,6 +27,7 @@ public class NPC : MonoBehaviour
     [Header("Opcionais")]
     [SerializeField] bool isHealer = false;
     [SerializeField] YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
+    [SerializeField] UnityEvent onTextEnd;
 
     [Header("Quest-Only")]
     [SerializeField] bool completeQuest = false;
@@ -41,9 +42,16 @@ public class NPC : MonoBehaviour
     bool alreadyRecievedQuest;
     NPConditions conditions;
     ChatController chatController;
-    
+
+    PauseMenuController pauseMenu;
+    DiaENoite dayAndNight;
+    Player player;
     void Start()
     {
+        player = Player.instance;
+        dayAndNight = DiaENoite.instance;
+        pauseMenu = PauseMenuController.instance;
+
         conditions = NPConditions.instance;
         chatController = ChatController.instance;
         activeLines = dialogueLines;
@@ -61,9 +69,7 @@ public class NPC : MonoBehaviour
         return;
         }
 
-        Player player = Player.instance;
-        DiaENoite dayAndNight = DiaENoite.instance;
-        PauseMenuController pauseMenu = PauseMenuController.instance;
+        
         
         if(falas != null && icons != null)
         {
@@ -83,8 +89,13 @@ public class NPC : MonoBehaviour
         {
 
             player.canMove = false;
+
+            if(pauseMenu != null)
             pauseMenu.canPause = false;
+
+            if(dayAndNight != null)
             dayAndNight.isPaused = true;
+
             chatController.StartDialogue(activeIcons[falaAtual], activeLines[falaAtual]);
             CheckIfHasQuestion();
         }
@@ -96,14 +107,20 @@ public class NPC : MonoBehaviour
     }
     public void ResetNPC()
     {
-        Player.instance.canMove = true;
-        PauseMenuController.instance.canPause = true;
-        DiaENoite.instance.isPaused = false;
+        if(player != null)
+        player.canMove = true;
+        
+        if(pauseMenu != null)
+        pauseMenu.canPause = true;
+
+        if(dayAndNight != null)
+        dayAndNight.isPaused = false;
 
         chatController.CloseDialogue();
         print("fechando dialogo");
         activeLines = dialogueLines;
         activeIcons = charactersFace;
+        onTextEnd?.Invoke();
         if (yesOrNo != null)
         {
             yesOrNo.alreadyAnswered = false;

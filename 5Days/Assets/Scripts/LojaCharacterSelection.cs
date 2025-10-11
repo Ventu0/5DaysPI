@@ -23,7 +23,7 @@ public class LojaCharacterSelection : MonoBehaviour
     public bool canMove = true;
     void Start()
     {
-        SetActive(true);
+        SetActive(false);
         animSequence = GetComponent<LojaAnimSequence>();
         lastSelected = selected;
         SelectedButtonSetOnClick(selected, true); //adicionar um primeiro botao pra nao ficar estranho e bugado
@@ -42,6 +42,8 @@ public class LojaCharacterSelection : MonoBehaviour
     {
         selectionMenu.SetActive(active);
         canMove = active;
+
+        Player.instance.SetGamePauseManual(active);
     }
     void Update()
     {
