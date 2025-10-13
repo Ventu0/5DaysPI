@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 [RequireComponent(typeof(Button))]
 public class LojaCharacterInstance : MonoBehaviour
 {
@@ -9,7 +10,14 @@ public class LojaCharacterInstance : MonoBehaviour
     public PersonagensNaLoja personagem;
     [SerializeField] Graphic[] graphicsToChangeColor;
     [HideInInspector] public Button button;
+
+    [Header("Read-Only")]
     public RectTransform rect; //pra nao ter que ficar pegando os componentes no meio do for
+    [Space]
+    [SerializeField] GameObject unlockedText;
+    public bool unlocked;
+    [Space]
+    [SerializeField] Color disabledColor = new Color(51, 51, 50);
     Coroutine MoveRoutine;
     private void Awake()
     {
@@ -17,11 +25,13 @@ public class LojaCharacterInstance : MonoBehaviour
         rect = GetComponent<RectTransform>();
         button = GetComponent<Button>();
         graphicsToChangeColor = GetComponentsInChildren<Graphic>(); //desativa quando clica ppra nao repetir o animSequence
+        unlockedText.SetActive(false);
     }
-    public void Setup(PersonagensNaLoja novoPersonagem)
+    public void Setup(PersonagensNaLoja novoPersonagem, bool unlocked = false)
     {
         displayImage.sprite = novoPersonagem.display;
         personagem = novoPersonagem;
+        if (unlocked) Comprado(false);
     }
     #region Movimentação
     public void Move(Vector3 originalPos, Vector3 originalScale, float duration, bool setActive)
@@ -73,6 +83,7 @@ public class LojaCharacterInstance : MonoBehaviour
     //provavelmente vou ter que tirar ChangeAlpha e colocar a logica toda no TrocarCor, porque elas basicamente faz a mesma coisa
     public void TrocarCor(bool isSelected, Color newColor)
     {
+        if (unlocked) return; //evita trocar a cor
         ColorBlock colors = button.colors;
         button.interactable = isSelected ? true : false;
 
@@ -85,6 +96,15 @@ public class LojaCharacterInstance : MonoBehaviour
         {
             graphicsToChangeColor[i].color = newColor;
         }
+    }
+    public void Comprado(bool descelecionar = true)
+    {
+        print("ja fui desbloqueado");
+        TrocarCor(false, disabledColor);
+        unlocked = true;
+        unlockedText.SetActive(true);
+        if(descelecionar)
+        LojaCharacterSelection.instance.DeselectCurrent();
     }
     public Coroutine HasEndedCoroutine()
     {

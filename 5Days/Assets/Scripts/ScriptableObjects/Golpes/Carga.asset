@@ -16,21 +16,28 @@ MonoBehaviour:
   description: "Caminha at\xE9 o oponente com for\xE7a, causando dano"
   danoOuCura: 35
   maxPP: 15
-  currentPP: 12
+  currentPP: 11
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 0}
   iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackEffect: {fileID: 0}
-  tipoDeAlvo: 1
-  animation: {fileID: 0}
+  attackEffectYOffset: -0.5
+  tipoDeAlvo: 0
+  attackAnimation: {fileID: 0}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 0}
+  porcentagemDeCura: 0.3
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
   usarMovimentoLinear: 1
   "ataqueUmaVezS\xF3": 0
+  oneTime: 0
   shakeCamera: 1
   ataqueEmArea: 0
-  oneTime: 0
+  stealHeal: 0
+  useCharacterAnimation: 0
+  attackParameterName: 
+  endAttackParameter: 
   quantidadesDeAtaque: 1
   stillDuration: 0.1

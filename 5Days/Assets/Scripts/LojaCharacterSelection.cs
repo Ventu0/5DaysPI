@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using System.Collections;
 using System;
+using System.Collections.Generic;
 public class LojaCharacterSelection : MonoBehaviour
 {
     [Header("Characters")]
@@ -21,6 +21,11 @@ public class LojaCharacterSelection : MonoBehaviour
     [SerializeField] int lastSelected;
     [SerializeField] bool canRecieveInput = true;
     public bool canMove = true;
+    public static LojaCharacterSelection instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         SetActive(false);
@@ -29,13 +34,15 @@ public class LojaCharacterSelection : MonoBehaviour
         SelectedButtonSetOnClick(selected, true); //adicionar um primeiro botao pra nao ficar estranho e bugado
 
         TrocarCoresDeTodos();
-        Setup();
     }
-    void Setup()
+    public void Setup(List<bool> unlocked)
     {
-        for(int i = 0; i < charactersInfo.Length; i++)
+        bool isNull = unlocked == null;
+        print(isNull);
+        for (int i = 0; i < charactersInfo.Length; i++)
         {
-            characters[i].Setup(charactersInfo[i]);
+            print(i);
+            characters[i].Setup(charactersInfo[i], isNull ? false : unlocked[i]); //se nao tiver pre salvado, colocar como false
         }
     }
     public void SetActive(bool active)
@@ -47,12 +54,12 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void Update()
     {
-        if(!canMove)
+        if (!canMove)
             return;
 
         int horizontal = (int)Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Horizontal"))
-        {  
+        {
             MexerTodos(horizontal);
         }
     }
@@ -86,10 +93,10 @@ public class LojaCharacterSelection : MonoBehaviour
 
             LojaCharacterInstance character = characters[i];
             RectTransform characterTransform = character.rect;
-          
+
             bool isOnInterval = interval > 2 ? false : true;
             RectTransform fixedPos = fixedPositions[interval];
-           
+
             TrocarCoresDeTodos();
             int sentidoInstance = ChecarSePrecisaInverter(sentido, characterTransform.anchoredPosition.x);
             character.Move(fixedPos.anchoredPosition * sentidoInstance, fixedPos.localScale, 0.3f, isOnInterval);
@@ -97,7 +104,7 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void TrocarCoresDeTodos()
     {
-        for(int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < characters.Length; i++)
         {
             int interval = ChecarSeONumeroEstaNoIntervalo(i);
             interval = Mathf.Clamp(interval, 0, fixedPositions.Length - 1);
@@ -107,7 +114,7 @@ public class LojaCharacterSelection : MonoBehaviour
     }
     void ChecarSePodeReceberInput()
     {
-        for(int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < characters.Length; i++)
         {
             if (!characters[i].gameObject.activeSelf) continue;
             if (characters[i].HasEndedCoroutine() != null)
@@ -118,7 +125,7 @@ public class LojaCharacterSelection : MonoBehaviour
         }
         canRecieveInput = true;
     }
-#endregion
+    #endregion
 
     #region OnClick
     void FadeToAlphaDisabled(bool invert = false) //faz o fade out do personagem que nao esta selecionado
@@ -162,7 +169,7 @@ public class LojaCharacterSelection : MonoBehaviour
         onClick.RemoveAllListeners();
         onClick.AddListener(DeselectCurrent);
     }
-    void DeselectCurrent()
+    public void DeselectCurrent()
     {
         LojaCharacterInstance character = characters[selected];
 
@@ -206,6 +213,20 @@ public class LojaCharacterSelection : MonoBehaviour
     int ChecarSeONumeroEstaNoIntervalo(int i)
     {
         return Mathf.Abs(i - selected);
+    }
+    public LojaCharacterInstance CurrentSelected()
+    {
+        return characters[selected];
+    }
+    public List<bool> CheckWhichAreUnlocked()
+    {
+        List<bool> unlocked = new List<bool>();
+        for(int i = 0; i < characters.Length; i++)
+        {
+            print("instancia: " + i + "unlocked: " + characters[i].unlocked);
+            unlocked.Add(characters[i].unlocked);
+        }
+        return unlocked;
     }
     #endregion
 }

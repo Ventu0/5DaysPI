@@ -23,6 +23,7 @@ public class LojaShowCharacterInfo : MonoBehaviour
     [Header("Readonly")]
     [SerializeField] PersonagensNaLoja currentCharacter;
     public CharacterStatusGeneric characterStatus;
+    LojaCharacterInstance currentSelected;
 
     public static LojaShowCharacterInfo instance;
     private void Awake()
@@ -41,6 +42,7 @@ public class LojaShowCharacterInfo : MonoBehaviour
     public void ApplyInfo(PersonagensNaLoja character)
     {
         if (character == null) return;
+
         currentCharacter = character;
         characterStatus = character.personagemOriginal;
 
@@ -49,10 +51,19 @@ public class LojaShowCharacterInfo : MonoBehaviour
         lifeText.text = characterStatus.vidaMaxima.ToString();
 
         Image btnImg = buyButton.GetComponent<Image>();
+        LojaCharacterInstance characterBTN = LojaCharacterSelection.instance.CurrentSelected();
+        if (characterBTN.unlocked)
+        {
+            btnImg.color = Color.grey;
+            buyButton.interactable = false;
+            buyTextMesh.color = Color.grey;
+            return;
+        }
         bool condition = PlayerMoney.money >= character.custo;
 
         btnImg.color = condition ? Color.green : Color.red;
         buyTextMesh.color = condition ? Color.green : Color.red;
+
 
         buyButton.interactable = condition;
 
@@ -81,9 +92,10 @@ public class LojaShowCharacterInfo : MonoBehaviour
     }
     public void BuyBTN()
     {
-        print("adicionando character");
+        print("comprando");
         PlayerMoney.instance.AddMoneyNoAnimation(-currentCharacter.custo);
         PlayerPartyController.instance.AddCharacter(characterStatus);
+        LojaCharacterSelection.instance.CurrentSelected().Comprado();
     }
     public void ChangeAlpha(float a)
     {

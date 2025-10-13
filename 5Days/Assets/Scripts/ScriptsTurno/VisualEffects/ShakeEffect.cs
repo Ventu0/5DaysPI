@@ -23,6 +23,10 @@ public class ShakeEffect : MonoBehaviour
     {
 
     }
+    public void ShakeCutscene()
+    {
+        StartCoroutine(Shake(shakeObject, shakeObject.transform.position, shakeDuration, shakeStrength));
+    }
     public IEnumerator Shake(GameObject objectToShake, Vector3 originalPos, float duration, float strength, bool useLocalPosition = false)
     {
         Vector3 initialPos = objectToShake.transform.position;

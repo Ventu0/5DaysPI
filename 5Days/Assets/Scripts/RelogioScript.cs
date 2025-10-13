@@ -17,6 +17,7 @@ public class RelogioScript : MonoBehaviour
     [SerializeField] int minutes;
     [HideInInspector] public int hours = 0;
     [SerializeField] int maxHours = 23;
+    [SerializeField] int timeToReset = 1;
     [SerializeField] bool isCompleted = false;
     bool startedNight = false;
     DiaENoite dayScript;
@@ -69,6 +70,13 @@ public class RelogioScript : MonoBehaviour
             StartCoroutine(diaENoite.ChangeToDay());
             startedNight = false;
             //diaENoite.ResetTime();
+        }
+        if(hours == timeToReset && !isCompleted)
+        {
+            NextDay();
+            StopAllCoroutines();
+            //precisa adicionar a cutscene de desmaiar aqui, talvez fade out e fazer ela acordar na ultima cama dormida
+            isCompleted = true;
         }
 
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");

@@ -1841,7 +1841,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 379290045}
           m_TargetAssemblyTypeName: ShakeEffect, Assembly-CSharp
-          m_MethodName: StartShake
+          m_MethodName: ShakeCutscene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2466,6 +2466,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     options: {fileID: 11400000, guid: 52502cb41c4404a4bb974111a97f2e0e, type: 2}
+  onTextEnd:
+    m_PersistentCalls:
+      m_Calls: []
   completeQuest: 0
   nextQuestName: 
   activeLines: []
@@ -2615,7 +2618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualNPC: {fileID: 0}
-  actualOptions: {fileID: 0}
+  currentOption: {fileID: 0}
   canSleep: 1
 --- !u!4 &1466838108
 Transform:

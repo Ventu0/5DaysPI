@@ -64,9 +64,11 @@ public class CutsceneController : MonoBehaviour
         SceneManager.LoadScene("CasaDianas");
 
         PlayerPrefs.SetInt("CutsceneEnded", 1);
+        PlayerPrefs.SetInt("FirstQuest", 0);
         PauseMenuController.instance.canPause = true;
 
         doors.InteractDoors(true);
+        doors.florestaCollider.enabled = false;
         dayScript.PauseTime(false); //reseta o tempo
         dayScript.ResetTime();
 

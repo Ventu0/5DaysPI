@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Doors : MonoBehaviour
 {
+    public Collider2D florestaCollider;
     [SerializeField] Collider2D[] doors;
     public static Doors instance;
     private void Awake()
@@ -13,6 +14,14 @@ public class Doors : MonoBehaviour
             instance = this;
         }
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
+        int firstQuestEnded = PlayerPrefs.GetInt("FirstQuest");
+
+        if(firstQuestEnded == 0)
+        {
+            florestaCollider.enabled = false;
+        }
+        else florestaCollider.enabled = true;
+
         if (cutsceneEnded == 1) return;
         InteractDoors(false);
     }
@@ -22,6 +31,7 @@ public class Doors : MonoBehaviour
     }
     public void InteractDoors(bool open)
     {
+        florestaCollider.enabled = open;
         for(int i = 0; i < doors.Length; i++)
         {
             Collider2D collider2D = doors[i];
