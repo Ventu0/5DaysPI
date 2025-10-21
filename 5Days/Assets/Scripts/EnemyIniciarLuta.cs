@@ -34,6 +34,10 @@ public class EnemyIniciarLuta : MonoBehaviour
         SceneTimeController.instance.PausarJogo();
         Invoke("WaitSomeTime", 0.3f);
     }
+    void CheckIfCanBattle()
+    {
+
+    }
     public void EndBattle()
     {
         inimigo.jaMorreu = true;

@@ -29,12 +29,18 @@ public class ReturnScene : MonoBehaviour
         QuestController.instance.SetAllActive(true);
         TurnModeManager.instance.MaintainStatus();
         DiaENoite dayScript = DiaENoite.instance;
+
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
         dayScript.PauseTime(false);
         SceneManager.UnloadSceneAsync(sceneName);
         SceneTimeController.instance.onPauseGame?.Invoke();
         PauseMenuController.instance.canPause = true;
         Time.timeScale = 1f;
+    }
+    public void StartDeathScene()
+    {
+        fadeAnimation.gameObject.SetActive(true);
+        fadeAnimation.SetBool("Stay", true);
     }
     public IEnumerator RunAnimation(BasePersonagem[] characters)
     {
