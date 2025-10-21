@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+
 public class RelogioScript : MonoBehaviour
 {
     [Header("Configurações do Relógio")]
