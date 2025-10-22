@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
 {
@@ -16,10 +17,14 @@ public class Player : CharacterStatus
 
     [Header("Read-Only")]
     [SerializeField] Vector2 moveInput;
-    public Vector2 lastSavedPosition;
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
+
+    [Header("Últimos saves de posição")]
+    public Vector2 lastSavedPosition;
+    public Vector3 lastSavedBedPos { get; private set; }
+    public string lastSavedBedScene { get; private set; }
 
     public static Player instance;
 
@@ -50,7 +55,16 @@ public class Player : CharacterStatus
             DiaENoite.instance.onNightStart += OnNightStart;
         luzNatural?.gameObject.SetActive(false);
     }
+    #region SaveMethods
     public void SavePosition() => lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
+    public void SaveBedPos() => lastSavedBedPos = new Vector2(transform.position.x, transform.position.y);
+    public void SaveBedScene() => lastSavedBedScene = SceneManager.GetActiveScene().name;
+    #endregion
+    public void LoadOnLastBed()
+    {
+        SceneManager.LoadScene(lastSavedBedScene);
+        transform.position = lastSavedBedPos;
+    }
     public void SetGamePauseManual(bool active) => isGamePaused = active;
     #region delegates
     void PausePlayer()

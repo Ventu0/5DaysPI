@@ -10,33 +10,41 @@ public class FadeController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(transform.root);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.root);
         }
     }
     void Start()
     {
-        
+        fadeAnimator.gameObject.SetActive(false);
     }
+    [ContextMenu("FadeOut")]
     public void FadeOut()
     {
         StopAllCoroutines();
         fadeAnimator.gameObject.SetActive(true);
-        fadeAnimator.SetBool("End", true);
+        StartCoroutine(FadeCoroutine(2, "Stay"));
     }
     public void FadeInForHowMuchTime(float time)
     {
-        StartCoroutine(FadeInCoroutine(time));
+        StartCoroutine(FadeCoroutine(time, "Stay"));
     }
-    IEnumerator FadeInCoroutine(float time)
+    IEnumerator FadeCoroutine(float time, string parameterName)
     {
+        float halfTime = time / 2f;
+
         fadeAnimator.gameObject.SetActive(true);
-        fadeAnimator.SetBool("Stay", true);
-        yield return new WaitForSecondsRealtime(time);
-        fadeAnimator.SetBool("Stay", false);
+        fadeAnimator.SetBool(parameterName, true);
+
+        yield return new WaitForSecondsRealtime(halfTime);
+
+        fadeAnimator.SetBool(parameterName, false);
+
+        yield return new WaitForSecondsRealtime(halfTime);
+
         fadeAnimator.gameObject.SetActive(false);
     }
 }

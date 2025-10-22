@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 public class ReturnScene : MonoBehaviour
 {
     [Header("Configurações animation")]
+    [SerializeField] Button loseButton;
     [SerializeField] float duration = 1.5f;
     [SerializeField] float characterSpeed = 3;
     [SerializeField] string sceneName;
@@ -22,6 +24,7 @@ public class ReturnScene : MonoBehaviour
     }
     private void Start()
     {
+        loseButton.onClick.AddListener(ReturnSceneBTN);
         fadeAnimation.gameObject.SetActive(false);
     }
     public void ReturnSceneBTN()
@@ -40,8 +43,13 @@ public class ReturnScene : MonoBehaviour
     public void StartDeathScene()
     {
         fadeAnimation.gameObject.SetActive(true);
-        fadeAnimation.SetBool("Stay", true);
+        FadeController.instance.FadeInForHowMuchTime(2);
+        Player.instance.LoadOnLastBed();
+        SceneTimeController.instance.onPauseGame?.Invoke();
+        PauseMenuController.instance.canPause = true;
+        Time.timeScale = 1f;
     }
+    public void AddLoseMethod() => loseButton.onClick.AddListener(StartDeathScene);
     public IEnumerator RunAnimation(BasePersonagem[] characters)
     {
         float iterador = 0;

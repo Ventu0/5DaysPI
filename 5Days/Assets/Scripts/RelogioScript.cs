@@ -60,7 +60,7 @@ public class RelogioScript : MonoBehaviour
         {
             print("noite começou");
             startedNight = true;
-            StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));
+            StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));    
         }
         if (hours == maxHours)
         {

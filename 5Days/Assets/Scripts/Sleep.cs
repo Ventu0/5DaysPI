@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Sleep : MonoBehaviour
 {
-    NPC npc;
+    [SerializeField] NPC[] npc;
     public static Sleep instance;
     private void Awake()
     {   
@@ -10,12 +10,20 @@ public class Sleep : MonoBehaviour
     }
     void Start()
     {
-        npc = GetComponent<NPC>();
-        DiaENoite.instance.onNightStart += () => npc.canBeInteracted = true;
+        for(int i = 0; i < npc.Length; i++)
+        {
+            int index = i;
+            DiaENoite.instance.onNightStart += () => npc[index].canBeInteracted = true;
+        }
     }
     public void SleepForTheDay()
     {
-        DiaENoite.instance.ResetTime();
-        DiaENoite.instance.relogioScript.NextDay();
+        Player player = Player.instance;
+        DiaENoite dayNight = DiaENoite.instance;
+        dayNight.ResetTime();
+        dayNight.relogioScript.NextDay();
+        
+        player.SaveBedPos();
+        player.SaveBedScene();
     }
 }

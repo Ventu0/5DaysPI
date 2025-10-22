@@ -79,6 +79,7 @@ public class TurnModeManager : MonoBehaviour
         {
             endText.text = "Derrota!!!";
             endText.color = Color.red;
+            ReturnScene.instance.AddLoseMethod();
         }
            
         MaintainStatus();
