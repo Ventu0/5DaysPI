@@ -42,12 +42,20 @@ public class ReturnScene : MonoBehaviour
     }
     public void StartDeathScene()
     {
+        StartCoroutine(FadeSequence());
+    }
+    IEnumerator FadeSequence()
+    {
         fadeAnimation.gameObject.SetActive(true);
         FadeController.instance.FadeInForHowMuchTime(2);
+        yield return new WaitForSecondsRealtime(1f);
         Player.instance.LoadOnLastBed();
-        SceneTimeController.instance.onPauseGame?.Invoke();
-        PauseMenuController.instance.canPause = true;
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        
+
         Time.timeScale = 1f;
+        Sleep.instance.SleepForTheDay();
     }
     public void AddLoseMethod() => loseButton.onClick.AddListener(StartDeathScene);
     public IEnumerator RunAnimation(BasePersonagem[] characters)

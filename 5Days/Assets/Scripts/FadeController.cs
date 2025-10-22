@@ -14,8 +14,13 @@ public class FadeController : MonoBehaviour
         }
         else
         {
-            Destroy(transform.root);
+            StartCoroutine(DestroyCanvasNextFrame());
         }
+    }
+    private IEnumerator DestroyCanvasNextFrame()
+    {
+        yield return null;
+        Destroy(transform.root);
     }
     void Start()
     {

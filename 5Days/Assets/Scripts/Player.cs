@@ -13,7 +13,7 @@ public class Player : CharacterStatus
     [SerializeField] float raioDeInteração = 2;
     [SerializeField] LayerMask layerMaskInteração;
     public bool canTalk = true;
-    bool isGamePaused;
+    public bool isGamePaused;
 
     [Header("Read-Only")]
     [SerializeField] Vector2 moveInput;
@@ -63,12 +63,14 @@ public class Player : CharacterStatus
     public void LoadOnLastBed()
     {
         SceneManager.LoadScene(lastSavedBedScene);
+        isGamePaused = false;
         transform.position = lastSavedBedPos;
     }
     public void SetGamePauseManual(bool active) => isGamePaused = active;
     #region delegates
     void PausePlayer()
     {
+        print("Pausando player");
         if (!isGamePaused)
             isGamePaused = true;
         else
