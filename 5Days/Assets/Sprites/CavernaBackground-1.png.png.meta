@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a710b18e55ac764b8f41a0c57a84678
+guid: 04d6c703bf241d04da3ed3605c4b7e5e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5662783821573247211
-    second: relogio_0
+      213: -3384633107485958792
+    second: CavernaBackground-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: relogio_0
+      name: CavernaBackground-1.png_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 720
-        height: 720
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be0d3bc02ef369e40800000000000000
-      internalID: 5662783821573247211
+      spriteID: 87dd54d0f1e5701d0800000000000000
+      internalID: -3384633107485958792
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      relogio_0: 5662783821573247211
+      CavernaBackground-1.png_0: -3384633107485958792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

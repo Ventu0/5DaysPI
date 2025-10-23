@@ -20,7 +20,7 @@ public class EnemyIniciarLuta : MonoBehaviour
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
     [SerializeField] float escapeChance = 0.7f; //chance de escapar da batalha, entre 0 e 1 
     [SerializeField] int moneyYield = 5; 
-
+    bool battleStarted = false;
     public bool jaMorreu;
     public Inimigo inimigo;
     void Start()
@@ -29,14 +29,12 @@ public class EnemyIniciarLuta : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (battleStarted) return;
+
         SceneManager.LoadScene(cenaEscolhida, LoadSceneMode.Additive);
         SceneTimeController.instance.sceneTime = 0;
         SceneTimeController.instance.PausarJogo();
         Invoke("WaitSomeTime", 0.3f);
-    }
-    void CheckIfCanBattle()
-    {
-
     }
     public void EndBattle()
     {
@@ -67,7 +65,7 @@ public class EnemyIniciarLuta : MonoBehaviour
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(false);
         dayScript.PauseTime(true);
-
+        battleStarted = true;
         turnModeManager.iniciarLuta = this;
         turnModeManager.escapeChance = escapeChance;
         PlayerMoney.instance.SetActive(false);

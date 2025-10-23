@@ -40,6 +40,12 @@ public class Player : CharacterStatus
             Destroy(gameObject);
         }
     }
+    [ContextMenu("Valores de save da cama")]
+    void SaberValoresSaveBed()
+    {
+        print("Posição da cama salva em: " + lastSavedBedPos);
+        print("Cena da cama salva em: " + lastSavedBedScene);
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,6 +69,7 @@ public class Player : CharacterStatus
     public void LoadOnLastBed()
     {
         SceneManager.LoadScene(lastSavedBedScene);
+        print("carregando cena");
         isGamePaused = false;
         transform.position = lastSavedBedPos;
     }
@@ -70,7 +77,6 @@ public class Player : CharacterStatus
     #region delegates
     void PausePlayer()
     {
-        print("Pausando player");
         if (!isGamePaused)
             isGamePaused = true;
         else

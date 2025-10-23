@@ -30,10 +30,12 @@ public class ReturnScene : MonoBehaviour
     }
     public void ReturnSceneBTN()
     {
+        PersistentObject persistent = PersistentObject.instance;
+        if (lost) persistent.StartCoroutine(persistent.FadeSequence());
+
         QuestController.instance.SetAllActive(true);
         TurnModeManager.instance.MaintainStatus();
         DiaENoite dayScript = DiaENoite.instance;
-        if(lost) StartCoroutine(FadeSequence());
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
         dayScript.PauseTime(false);
         SceneManager.UnloadSceneAsync(sceneName);
@@ -42,16 +44,7 @@ public class ReturnScene : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    IEnumerator FadeSequence()
-    {
-        fadeAnimation.gameObject.SetActive(true);
-        FadeController.instance.FadeInForHowMuchTime(2);
-        yield return new WaitForSecondsRealtime(1f);
-        Player.instance.LoadOnLastBed();
-        yield return new WaitForSecondsRealtime(0.5f);
-        if(Sleep.instance != null)
-        Sleep.instance.SleepForTheDay();
-    }
+
     public void AddLoseMethod() => lost = true;
     public IEnumerator RunAnimation(BasePersonagem[] characters)
     {
