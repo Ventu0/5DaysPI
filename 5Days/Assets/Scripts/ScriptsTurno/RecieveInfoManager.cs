@@ -37,6 +37,7 @@ public class RecieveInfoManager : MonoBehaviour
 
         for (int i = 0; i < playerStatus.Count; i++)
         {
+            if (playerStatus[i].isDead) continue;
             turnModeManager.aliados.Add(aliadosOriginais[i]);
             turnModeManager.aliadosPersonagens.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
             turnModeManager.aliadosPersonagensPersistentes.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());

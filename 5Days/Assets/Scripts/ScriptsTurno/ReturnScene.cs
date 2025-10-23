@@ -10,6 +10,7 @@ public class ReturnScene : MonoBehaviour
     [SerializeField] float characterSpeed = 3;
     [SerializeField] string sceneName;
     [SerializeField] Animator fadeAnimation;
+    bool lost;
     public static ReturnScene instance;
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class ReturnScene : MonoBehaviour
         QuestController.instance.SetAllActive(true);
         TurnModeManager.instance.MaintainStatus();
         DiaENoite dayScript = DiaENoite.instance;
-
+        if(lost) StartCoroutine(FadeSequence());
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
         dayScript.PauseTime(false);
         SceneManager.UnloadSceneAsync(sceneName);
@@ -40,10 +41,7 @@ public class ReturnScene : MonoBehaviour
         PauseMenuController.instance.canPause = true;
         Time.timeScale = 1f;
     }
-    public void StartDeathScene()
-    {
-        StartCoroutine(FadeSequence());
-    }
+
     IEnumerator FadeSequence()
     {
         fadeAnimation.gameObject.SetActive(true);
@@ -51,13 +49,10 @@ public class ReturnScene : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         Player.instance.LoadOnLastBed();
         yield return new WaitForSecondsRealtime(0.5f);
-
-        
-
-        Time.timeScale = 1f;
+        if(Sleep.instance != null)
         Sleep.instance.SleepForTheDay();
     }
-    public void AddLoseMethod() => loseButton.onClick.AddListener(StartDeathScene);
+    public void AddLoseMethod() => lost = true;
     public IEnumerator RunAnimation(BasePersonagem[] characters)
     {
         float iterador = 0;

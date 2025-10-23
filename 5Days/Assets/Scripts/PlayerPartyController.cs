@@ -8,6 +8,7 @@ public class CharacterStatusData
     public string characterName;
     public int vidaAtual;
     public List<int> ppAtaques;
+    public bool isDead;
 }
 [System.Serializable]
 public class Party
@@ -86,6 +87,7 @@ public class PlayerPartyController : MonoBehaviour
         dados.characterName = original.name;
         dados.vidaAtual = original.vidaAtual;
         dados.ppAtaques = new List<int>();
+        dados.isDead = original.isDead;
         for (int i = 0; i < original.ataques.Count; i++)
         {
             if (original.ataques[i] != null)
