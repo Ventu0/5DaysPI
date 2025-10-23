@@ -67,6 +67,11 @@ public class TurnModeManager : MonoBehaviour
             hasOnlyOneEnemy = true;
         }
     }
+    [ContextMenu("Perder")]
+    void FinalizarAgora()
+    {
+        EndGame(false);
+    }
     public void EndGame(bool winOrLose = false)
     {
         EndMenu.SetActive(true);

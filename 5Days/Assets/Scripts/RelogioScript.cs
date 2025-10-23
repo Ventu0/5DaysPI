@@ -78,16 +78,11 @@ public class RelogioScript : MonoBehaviour
         {
             lastTriggeredHour = timeToReset;
             NextDay();
-            StopAllCoroutines();
             //precisa adicionar a cutscene de desmaiar aqui, talvez fade out e fazer ela acordar na ultima cama dormida
         }
 
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");
         hourText.text = time;
-    }
-    void OnReachHour(int hour)
-    {
-        
     }
     public void ResetTime()
     {
