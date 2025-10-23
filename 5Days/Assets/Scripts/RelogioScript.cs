@@ -20,6 +20,7 @@ public class RelogioScript : MonoBehaviour
     [SerializeField] int maxHours = 23;
     [SerializeField] int timeToReset = 1;
     [SerializeField] bool isCompleted = false;
+    [SerializeField] int lastTriggeredHour = -1;
     bool startedNight = false;
     DiaENoite dayScript;
     void Start()
@@ -40,6 +41,7 @@ public class RelogioScript : MonoBehaviour
         currentDay += 1;
         currentDay = Mathf.Clamp(currentDay, 1, 5);
         dayText.text = "Dia " + currentDay;
+        
     }
     public void AddTime()
     {
@@ -56,32 +58,36 @@ public class RelogioScript : MonoBehaviour
             hours = Mathf.Clamp(hours, 0, maxHours);
             minutes = 0;
         }
-        if (hours == dayScript.horarioDaNoite && !startedNight)
+        if (hours == dayScript.horarioDaNoite && lastTriggeredHour < dayScript.horarioDaNoite)
         {
+            lastTriggeredHour = dayScript.horarioDaNoite;
             print("noite começou");
-            startedNight = true;
             StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));    
         }
-        if (hours == maxHours)
+        if (hours == maxHours && lastTriggeredHour < maxHours)
         {
+            lastTriggeredHour = 0;
             DiaENoite diaENoite = GetComponent<DiaENoite>();
             minutes = 0;
             hours = 0;
             StartCoroutine(MoveGradient());
             StartCoroutine(diaENoite.ChangeToDay());
-            startedNight = false;
             //diaENoite.ResetTime();
         }
-        if(hours == timeToReset && !isCompleted)
+        if(hours == timeToReset && lastTriggeredHour < timeToReset)
         {
+            lastTriggeredHour = timeToReset;
             NextDay();
             StopAllCoroutines();
             //precisa adicionar a cutscene de desmaiar aqui, talvez fade out e fazer ela acordar na ultima cama dormida
-            isCompleted = true;
         }
 
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");
         hourText.text = time;
+    }
+    void OnReachHour(int hour)
+    {
+        
     }
     public void ResetTime()
     {
