@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lanceiro
   m_EditorClassIdentifier: 
   nomePersonagem: Ronaldo
-  display: {fileID: 21300000, guid: 239f45e279c1f874c953280158733410, type: 3}
+  display: {fileID: 21300000, guid: 486add12779bd7e41b133af79178fd9b, type: 3}
   custo: 0
   personagemOriginal: {fileID: 11400000, guid: 68df01415572d4f4d945dafbbdc608b2, type: 2}
