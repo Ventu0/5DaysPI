@@ -21,7 +21,6 @@ public class RelogioScript : MonoBehaviour
     [SerializeField] int timeToReset = 1;
     [SerializeField] bool isCompleted = false;
     [SerializeField] int lastTriggeredHour = -1;
-    bool startedNight = false;
     DiaENoite dayScript;
     void Start()
     {

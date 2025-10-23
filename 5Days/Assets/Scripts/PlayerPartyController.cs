@@ -109,7 +109,8 @@ public class PlayerPartyController : MonoBehaviour
             
             //modifica os valores de clone para serem os valores já salvos no Json(CharacterStatusData)
             clone.vidaAtual = savedParty.partyAtual[i].vidaAtual;
-            for(int j = 0; j < clone.ataques.Count; j++)
+            clone.isDead = savedParty.partyAtual[i].isDead;
+            for (int j = 0; j < clone.ataques.Count; j++)
             {
                 if(clone.ataques[j] != null)
                 clone.ataques[j].currentPP = savedParty.partyAtual[i].ppAtaques[j];

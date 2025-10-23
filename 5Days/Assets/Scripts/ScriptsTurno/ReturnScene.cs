@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using JetBrains.Annotations;
 public class ReturnScene : MonoBehaviour
 {
     [Header("Configurações animation")]
@@ -33,14 +34,20 @@ public class ReturnScene : MonoBehaviour
         PersistentObject persistent = PersistentObject.instance;
         if (lost) persistent.StartCoroutine(persistent.FadeSequence());
 
+        TurnModeManager turnModeManager = TurnModeManager.instance;
+        turnModeManager.MaintainStatus();
+        turnModeManager.currentFightingEnemy.battleStarted = false;
+
         QuestController.instance.SetAllActive(true);
-        TurnModeManager.instance.MaintainStatus();
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
         dayScript.PauseTime(false);
+
         SceneManager.UnloadSceneAsync(sceneName);
+
         SceneTimeController.instance.onPauseGame?.Invoke();
         PauseMenuController.instance.canPause = true;
+
         Time.timeScale = 1f;
     }
 

@@ -20,7 +20,7 @@ public class EnemyIniciarLuta : MonoBehaviour
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
     [SerializeField] float escapeChance = 0.7f; //chance de escapar da batalha, entre 0 e 1 
     [SerializeField] int moneyYield = 5; 
-    bool battleStarted = false;
+    [HideInInspector] public bool battleStarted = false;
     public bool jaMorreu;
     public Inimigo inimigo;
     void Start()
@@ -38,6 +38,7 @@ public class EnemyIniciarLuta : MonoBehaviour
     }
     public void EndBattle()
     {
+        battleStarted = false;
         inimigo.jaMorreu = true;
         gameObject.SetActive(false);
         PlayerMoney.instance.SetActive(true);
@@ -53,10 +54,7 @@ public class EnemyIniciarLuta : MonoBehaviour
 
         for (int i = 0; i < party.partyAtual.Count; i++)
         {
-            if (!party.partyAtual[i].isDead)
-            {
-                statusAtualizado.Add(party.partyAtual[i]);
-            }
+            statusAtualizado.Add(party.partyAtual[i]);
         }
 
         QuestController.instance.SetAllActive(false);
@@ -66,7 +64,7 @@ public class EnemyIniciarLuta : MonoBehaviour
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(false);
         dayScript.PauseTime(true);
         battleStarted = true;
-        turnModeManager.iniciarLuta = this;
+        turnModeManager.currentFightingEnemy = this;
         turnModeManager.escapeChance = escapeChance;
         PlayerMoney.instance.SetActive(false);
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());

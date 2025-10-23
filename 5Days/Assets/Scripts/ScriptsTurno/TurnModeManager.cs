@@ -36,7 +36,7 @@ public class TurnModeManager : MonoBehaviour
     [HideInInspector] public List<BasePersonagem> inimigosPersonagens;
     [HideInInspector] public Vector3 originalCameraPos;
     
-    public EnemyIniciarLuta iniciarLuta;
+    public EnemyIniciarLuta currentFightingEnemy;
     public static TurnModeManager instance;
     private void Awake()
     {
@@ -88,19 +88,22 @@ public class TurnModeManager : MonoBehaviour
         }
            
         MaintainStatus();
-        iniciarLuta.EndBattle();
-        iniciarLuta = null;
+        currentFightingEnemy.EndBattle();
+        currentFightingEnemy = null;
     }
     public void MaintainStatus()
     {
         #region ManterStatusAposALuta
         PlayerPartyController party = PlayerPartyController.instance;
-        //int aliadosMortos =     terminar isso aqui    
+
         for (int i = 0; i < aliadosPersonagens.Count; i++)
         {
             BasePersonagem personagem = aliadosPersonagens[i];
             BasePersonagem personagemPersistente = aliadosPersonagensPersistentes[i];
-            party.partyAtual[i].vidaAtual = personagem.vidaAtual;
+            party.partyAtual[i].vidaAtual = personagemPersistente.vidaAtual;
+
+            if (party.partyAtual[i].isDead) print("eu to morto: " + personagem.characterStatus.name);
+
             party.partyAtual[i].isDead = personagemPersistente.characterStatus.isDead;
             //aqui tem chance de dar erro(linha de cima). porque? por conta que eu acho que personagemPersistente sempre retornaria true ou sempre false, o que pode dar problema
             for (int j = 0; j < personagem.characterStatus.ataques.Count; j++)

@@ -37,27 +37,31 @@ public class RecieveInfoManager : MonoBehaviour
 
         for (int i = 0; i < playerStatus.Count; i++)
         {
-            if (playerStatus[i].isDead) continue;
+            if (playerStatus[i].isDead)
+            {
+                BasePersonagem personagem = aliadosOriginais[i].GetComponent<BasePersonagem>();
+                personagem.characterStatus = Instantiate(playerStatus[i]);
+                turnModeManager.aliadosPersonagensPersistentes.Add(personagem);
+                continue;
+            }
+
+            BasePersonagem aliadoPersonagem = aliadosOriginais[i].GetComponent<BasePersonagem>();
             turnModeManager.aliados.Add(aliadosOriginais[i]);
-            turnModeManager.aliadosPersonagens.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
-            turnModeManager.aliadosPersonagensPersistentes.Add(aliadosOriginais[i].GetComponent<BasePersonagem>());
 
-            BasePersonagem aliado = turnModeManager.aliadosPersonagens[i];
+            aliadoPersonagem.shadow.gameObject.SetActive(true);
 
-            aliado.shadow.gameObject.SetActive(true);
-            
-            aliado.characterStatus = Instantiate(playerStatus[i]);
+            aliadoPersonagem.characterStatus = Instantiate(playerStatus[i]);
 
-            aliado.SetupStatus();
-            aliado.gameObject.SetActive(true);
+            aliadoPersonagem.SetupStatus();
+            aliadoPersonagem.gameObject.SetActive(true);
             for(int j = 0; j < enemyStatus.Count; j++)
             {
-                aliado.characterStatus.ataques[j] = Instantiate(playerStatus[i].ataques[j]);
+                aliadoPersonagem.characterStatus.ataques[j] = Instantiate(playerStatus[i].ataques[j]);
                 playerStatus[i].ataques[j].oneTime = false; //para não dar erro de ataque nulo
-                aliado.characterStatus.ataques[j].name = playerStatus[i].ataques[j].name; //para nao dar o ataque(copia)
+                aliadoPersonagem.characterStatus.ataques[j].name = playerStatus[i].ataques[j].name; //para nao dar o ataque(copia)
             }
-            
-
+            turnModeManager.aliadosPersonagensPersistentes.Add(aliadoPersonagem); //adiciona os personagens no persistente (pra prevalecer o isDead)
+            turnModeManager.aliadosPersonagens.Add(aliadoPersonagem);
         }
 
         for (int i = 0; i < enemyStatus.Count; i++)
