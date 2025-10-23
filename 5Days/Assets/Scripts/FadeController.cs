@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -31,25 +32,28 @@ public class FadeController : MonoBehaviour
     {
         StopAllCoroutines();
         fadeAnimator.gameObject.SetActive(true);
-        StartCoroutine(FadeCoroutine(2, "Stay"));
+        StartCoroutine(FadeCoroutine(2));
     }
-    public void FadeInForHowMuchTime(float time)
+    
+    public void FadeInForHowMuchTime(float time, Action onFadeInHalf = null)
     {
-        StartCoroutine(FadeCoroutine(time, "Stay"));
+        StartCoroutine(FadeCoroutine(time, onFadeInHalf));
     }
-    IEnumerator FadeCoroutine(float time, string parameterName)
+    IEnumerator FadeCoroutine(float time, Action onFadeInHalf = null)
     {
+        string parameterName = "Stay";
         float halfTime = time / 2f;
 
         fadeAnimator.gameObject.SetActive(true);
         fadeAnimator.SetBool(parameterName, true);
 
         yield return new WaitForSecondsRealtime(halfTime);
-
+        onFadeInHalf?.Invoke();
         fadeAnimator.SetBool(parameterName, false);
 
         yield return new WaitForSecondsRealtime(halfTime);
 
         fadeAnimator.gameObject.SetActive(false);
+        
     }
 }
