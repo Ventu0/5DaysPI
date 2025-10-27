@@ -36,11 +36,14 @@ public class Sleep : MonoBehaviour
     }
     public void SleepForTheDay()
     {
-        Player player = Player.instance;
         dayNight.ResetTime();
         dayNight.relogioScript.NextDay();
 
         StartingFade();
+        SavePlayerBed();
+    }
+    public void SavePlayerBed()
+    {
         player.SaveBedPos();
         player.SaveBedScene();
     }
