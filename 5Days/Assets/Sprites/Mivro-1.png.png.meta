@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0a2ed6ce0b1094345b3613d7f3276243
+guid: c67f0f96820ffc74498939197cec1d98
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9155318951396949641
-    second: DianaDiario-1.png_0
+      213: -583317337245257168
+    second: Mivro-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DianaDiario-1.png_0
+      name: Mivro-1.png_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 3
-        width: 46
-        height: 57
+        x: 0
+        y: 27
+        width: 448
+        height: 394
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7714590bbe5c1f080800000000000000
-      internalID: -9155318951396949641
+      spriteID: 0327b2ae8f3a7e7f0800000000000000
+      internalID: -583317337245257168
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DianaDiario-1.png_0: -9155318951396949641
+      Mivro-1.png_0: -583317337245257168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
