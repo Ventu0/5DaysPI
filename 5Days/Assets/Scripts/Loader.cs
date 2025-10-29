@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Loader : MonoBehaviour
 {
-    CoisasParaSalvar coisasSalvas;
+    PlayerData playerData;
     public static Loader instance;
     private void Awake()
     {
@@ -33,14 +33,14 @@ public class Loader : MonoBehaviour
     public void Carregar()
     {
         string caminho = Application.persistentDataPath + "/PlayerData.json";
-         coisasSalvas = new CoisasParaSalvar();
+        playerData = new PlayerData();
         if (File.Exists(caminho))
         {
             string json = File.ReadAllText(caminho);
-            coisasSalvas = JsonUtility.FromJson<CoisasParaSalvar>(json);
+            playerData = JsonUtility.FromJson<PlayerData>(json);
         }
         Destroy(DeleteSave.instance);
-        SceneManager.LoadScene(coisasSalvas.activeScene);
+        SceneManager.LoadScene(playerData.activeScene);
     }
     IEnumerator DelayedAddMoney(PlayerMoney money, int amount)
     {
@@ -49,9 +49,9 @@ public class Loader : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene == null || coisasSalvas == null) return;
+        if (scene == null || playerData == null) return;
 
-        if(scene.name != coisasSalvas.activeScene)
+        if(scene.name != playerData.activeScene)
             return;
 
         Player player = Player.instance;
@@ -59,12 +59,12 @@ public class Loader : MonoBehaviour
         PlayerMoney money = PlayerMoney.instance;
 
         if (player == null) print("Player nulo no Loader");
-        player.transform.position = coisasSalvas.playerPos;
-        player.lastSavedPosition = coisasSalvas.playerLastSavedPos;
+        player.transform.position = playerData.playerPos;
+        player.lastSavedPosition = playerData.playerLastSavedPos;
 
-        questController?.JustSetQuest(coisasSalvas.activeQuest);
+        questController?.JustSetQuest(playerData.activeQuest);
         if (money == null) print("null");
-        StartCoroutine(DelayedAddMoney(money, coisasSalvas.money));
+        StartCoroutine(DelayedAddMoney(money, playerData.money));
         SceneManager.sceneLoaded -= OnSceneLoaded;
 
     }

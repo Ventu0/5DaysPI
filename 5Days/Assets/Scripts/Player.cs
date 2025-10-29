@@ -63,8 +63,20 @@ public class Player : CharacterStatus
     }
     #region SaveMethods
     public void SavePosition() => lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
-    public void SaveBedPos() => lastSavedBedPos = new Vector2(transform.position.x, transform.position.y);
-    public void SaveBedScene() => lastSavedBedScene = SceneManager.GetActiveScene().name;
+    public void SaveBedPos(Vector2 bedPos = default)
+    {
+        if (bedPos != default)
+            lastSavedBedPos = bedPos;
+        else
+            lastSavedBedPos = new Vector2(transform.position.x, transform.position.y);
+    }
+    public void SaveBedScene(string bedScene = default)
+    {
+        if (bedScene != default)
+            lastSavedBedScene = bedScene;
+        else
+            lastSavedBedScene = SceneManager.GetActiveScene().name;
+    }
     #endregion
     public void LoadOnLastBed()
     {
@@ -131,8 +143,7 @@ public class Player : CharacterStatus
     {
         if (overlapCircle != null)
         {
-            NPC npc = overlapCircle.GetComponent<NPC>();
-            if (npc != null)
+            if (overlapCircle.TryGetComponent(out NPC npc))
             {
                 npc.Falar();
             }

@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
-public class CoisasParaSalvar
+public class PlayerData
 {
     public int money;
 
     public Vector2 playerPos;
     public Vector2 playerLastSavedPos;
+
+    public Vector2 playerLastBedPos;
+    public string playerLastBedScene;
 
     public string activeQuest;
     public string activeScene;
@@ -21,11 +24,11 @@ public class PauseMenuController : MonoBehaviour
 
     public delegate void Save();
     public Save onSave;
-    public CoisasParaSalvar coisasSalvar;
+    public PlayerData coisasSalvar;
     public static PauseMenuController instance;
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -34,14 +37,14 @@ public class PauseMenuController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        coisasSalvar = new CoisasParaSalvar();
+        coisasSalvar = new PlayerData();
     }
     private void Start()
     {
         SaveButton.onClick.AddListener(Salvar);
         menu.SetActive(false);
     }
-    
+
     void Update()
     {
         if (!canPause) return;
@@ -49,7 +52,7 @@ public class PauseMenuController : MonoBehaviour
         {
             Pausar(true);
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
             Pausar(false);
         }
@@ -75,10 +78,12 @@ public class PauseMenuController : MonoBehaviour
         Player player = Player.instance;
         onSave?.Invoke();
 
-        print("money: " + PlayerMoney.money);
         coisasSalvar.money = PlayerMoney.money;
         coisasSalvar.playerPos = player.transform.position;
         coisasSalvar.playerLastSavedPos = player.lastSavedPosition;
+
+        coisasSalvar.playerLastBedPos = player.lastSavedBedPos;
+        coisasSalvar.playerLastBedScene = player.lastSavedBedScene;
 
         coisasSalvar.activeQuest = QuestController.instance?.GetActiveQuest();
         coisasSalvar.activeScene = SceneManager.GetActiveScene().name;
