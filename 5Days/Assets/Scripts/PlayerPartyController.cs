@@ -98,7 +98,8 @@ public class PlayerPartyController : MonoBehaviour
     public void LoadParty()
     {
         string caminho = Application.persistentDataPath + "/PlayerParty.json";
-
+        partyAtual.Clear();
+        playerParty.Clear();
         string json = File.ReadAllText(caminho);
         Party savedParty = JsonUtility.FromJson<Party>(json); //usando variavel local pois não quero sobreescrever party, por mais que desse
         for(int i = 0; i < savedParty.partyAtual.Count; i++)
@@ -117,6 +118,7 @@ public class PlayerPartyController : MonoBehaviour
             }
             partyAtual.Add(clone);
         }
+        playerParty = new List<CharacterStatusGeneric>(partyAtual);
     }
     public void CurarTodos()
     {
