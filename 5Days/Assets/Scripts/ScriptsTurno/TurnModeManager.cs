@@ -89,7 +89,6 @@ public class TurnModeManager : MonoBehaviour
            
         MaintainStatus();
         currentFightingEnemy.EndBattle();
-        currentFightingEnemy = null;
     }
     public void MaintainStatus()
     {

@@ -30,7 +30,7 @@ public class ReturnScene : MonoBehaviour
         fadeAnimation.gameObject.SetActive(false);
     }
     public void ReturnSceneBTN()
-    {
+    {   
         PersistentObject persistent = PersistentObject.instance;
         if (lost) persistent.StartCoroutine(persistent.FadeSequence());
 

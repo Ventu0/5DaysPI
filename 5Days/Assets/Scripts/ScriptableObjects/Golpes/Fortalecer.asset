@@ -16,8 +16,8 @@ MonoBehaviour:
   description: "O usu\xE1rio foca suas energias, aumentando o dano de seu proximo
     ataque. Este ataque n\xE3o pode ser usado em sequ\xEAncia"
   danoOuCura: 0
-  maxPP: 15
-  currentPP: 15
+  maxPP: 10
+  currentPP: 10
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 2069320296070208538, guid: 0658892808ea2c847ad532323f05c2cc, type: 3}
   iconMainColor: {r: 0.23137257, g: 0.36862746, b: 0.78823537, a: 1}

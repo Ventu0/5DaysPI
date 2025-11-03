@@ -107,7 +107,7 @@ public class PlayerPartyController : MonoBehaviour
             //pega EXATAMENTE o personagem da pasta Resources (por isso salvamos o nome original do personagem)
             CharacterStatusGeneric character = Resources.Load<CharacterStatusGeneric>("Characters/" + savedParty.partyAtual[i].characterName);
             CharacterStatusGeneric clone = Instantiate(character);
-            
+            clone.name = character.name;
             //modifica os valores de clone para serem os valores já salvos no Json(CharacterStatusData)
             clone.vidaAtual = savedParty.partyAtual[i].vidaAtual;
             clone.isDead = savedParty.partyAtual[i].isDead;

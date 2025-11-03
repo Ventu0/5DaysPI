@@ -22,8 +22,12 @@ public class PauseMenuController : MonoBehaviour
     public bool canPause = true;
     [SerializeField] bool isPaused;
 
+    [Header("Salvar")]
+    [SerializeField] string caminho;
     public delegate void Save();
     public Save onSave;
+
+
     public PlayerData coisasSalvar;
     public static PauseMenuController instance;
     private void Awake()
@@ -38,6 +42,7 @@ public class PauseMenuController : MonoBehaviour
             Destroy(gameObject);
         }
         coisasSalvar = new PlayerData();
+        caminho = Application.persistentDataPath;
     }
     private void Start()
     {

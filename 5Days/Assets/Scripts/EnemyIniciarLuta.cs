@@ -34,7 +34,12 @@ public class EnemyIniciarLuta : MonoBehaviour
         SceneManager.LoadScene(cenaEscolhida, LoadSceneMode.Additive);
         SceneTimeController.instance.sceneTime = 0;
         SceneTimeController.instance.PausarJogo();
-        Invoke("WaitSomeTime", 0.3f);
+        Invoke("ActivateBefore", 0.01f);
+        Invoke("WaitSomeTime", 0.05f);
+    }
+    void ActivateBefore()
+    {
+        CombatBackground.instance.ChangeBackGround();
     }
     public void EndBattle()
     {
@@ -43,15 +48,18 @@ public class EnemyIniciarLuta : MonoBehaviour
         gameObject.SetActive(false);
         PlayerMoney.instance.SetActive(true);
         PlayerMoney.instance.AddMoney(moneyYield);
+        Player.instance.canMove = true;
         Time.timeScale = 0f;
     }
     void WaitSomeTime()
     {
+
         PlayerPartyController party = PlayerPartyController.instance;
         TurnModeManager turnModeManager = TurnModeManager.instance;
+        turnModeManager.currentFightingEnemy = this;
+        turnModeManager.escapeChance = escapeChance;
 
         List<CharacterStatusGeneric> statusAtualizado = new List<CharacterStatusGeneric>();
-
         for (int i = 0; i < party.partyAtual.Count; i++)
         {
             statusAtualizado.Add(party.partyAtual[i]);
@@ -59,14 +67,15 @@ public class EnemyIniciarLuta : MonoBehaviour
 
         QuestController.instance.SetAllActive(false);
         PauseMenuController.instance.canPause = false;
+        PlayerMoney.instance.SetActive(false);
+        Player.instance.canMove = false;
+        battleStarted = true;
 
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(false);
         dayScript.PauseTime(true);
-        battleStarted = true;
-        turnModeManager.currentFightingEnemy = this;
-        turnModeManager.escapeChance = escapeChance;
-        PlayerMoney.instance.SetActive(false);
+
+        
         RecieveInfoManager.instance.SetupCharacters(statusAtualizado,enemiesStatus.ToList());
     }
 }

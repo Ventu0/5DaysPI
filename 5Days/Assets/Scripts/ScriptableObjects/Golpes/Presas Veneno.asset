@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Presas de Veneno
   description: 
-  danoOuCura: 20
+  danoOuCura: 13
   maxPP: 15
   currentPP: 0
   VisualEffectDuration: 1
@@ -26,14 +26,18 @@ MonoBehaviour:
   attackAnimation: {fileID: 9100000, guid: 503ad334b8f4b7749ad411291b9f794a, type: 2}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 11400000, guid: 55ceecb8bd200d8429a594a78b8d46a3, type: 2}
+  porcentagemDeCura: 0.3
   soundEffect: {fileID: 8300000, guid: 439dc4789aeac1d4dbc78d805ecb4e2d, type: 3}
   repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 0
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  stealHeal: 0
   useCharacterAnimation: 0
   attackParameterName: 
+  endAttackParameter: 
   quantidadesDeAtaque: 1
   stillDuration: 0.1

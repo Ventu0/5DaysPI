@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Curar
   m_EditorClassIdentifier: 
   nomeAtaque: Curar
-  description: "O usu\xE1rio usa uma magia da tribo para se curar"
+  description: "O usu\xE1rio usa uma magia da tribo para regenerar seus machucados."
   danoOuCura: 25
-  maxPP: 15
-  currentPP: 15
+  maxPP: 8
+  currentPP: 7
   VisualEffectDuration: 1
   iconeAtaque: {fileID: -4423450090214009036, guid: 9ecd82581d43d4b44bf5310b08bb53b2, type: 3}
   iconMainColor: {r: 0.28235295, g: 0.76470596, b: 0, a: 1}

@@ -39,7 +39,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14.700012, y: -17.800003}
+  m_AnchoredPosition: {x: 14.700073, y: -17.799988}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7215338206796043171
@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 2049274291172616807}
   - component: {fileID: 4102222990943949287}
   - component: {fileID: 8910532338804416755}
+  - component: {fileID: 4043912373808540544}
   m_Layer: 0
   m_Name: DayController
   m_TagString: Untagged
@@ -246,11 +247,11 @@ MonoBehaviour:
   clockUI: {fileID: 1551012992348587638}
   dontDestroyObject: {fileID: 6721595690482119415}
   directionalLight: {fileID: 7726231660225402303}
-  tempoParaNoite: 3
+  tempoParaNoite: 0.5
   tempoParaNoiteSegundos: 0
   intensidadeNoite: 0.149
   iniciarEmQualHora: 6
-  horarioDaNoite: 16
+  horarioDaNoite: 18
   isPaused: 0
   relogioScript: {fileID: 0}
 --- !u!114 &8910532338804416755
@@ -270,12 +271,27 @@ MonoBehaviour:
   dayText: {fileID: 1864066444991193222}
   gradienteInitialX: 46.2
   gradienteFinalX: -60.3
-  time: 
-  currentDay: 1
   minutes: 0
   hours: 6
   maxHours: 24
+  timeToReset: 1
+  currentDay: 1
+  lastTriggeredHour: -1
   isCompleted: 0
+  time: 
+--- !u!114 &4043912373808540544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915401325149353468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3269845362ddc464b901dabeaf296f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayNightSave
+  path: /TimeData.json
 --- !u!1 &4697697935842491554
 GameObject:
   m_ObjectHideFlags: 0

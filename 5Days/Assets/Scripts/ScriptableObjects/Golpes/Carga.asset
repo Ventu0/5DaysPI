@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Charge
   description: "Caminha at\xE9 o oponente com for\xE7a, causando dano"
-  danoOuCura: 35
+  danoOuCura: 23
   maxPP: 15
   currentPP: 11
   VisualEffectDuration: 1

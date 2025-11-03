@@ -13,26 +13,46 @@ public class RelogioScript : MonoBehaviour
     [SerializeField] float gradienteFinalX;
 
     [Header("Configurações de Tempo")]
-    [SerializeField] string time;
-    [SerializeField] int currentDay = 1;
     [SerializeField] int minutes;
     [HideInInspector] public int hours = 0;
     [SerializeField] int maxHours = 23;
     [SerializeField] int timeToReset = 1;
-    [SerializeField] bool isCompleted = false;
+
+    [Header("Read-Only")]
+    public int currentDay = 1;
     [SerializeField] int lastTriggeredHour = -1;
+    [Space]
+    [SerializeField] bool isCompleted = false;
+
+    [SerializeField] string time;
+
     DiaENoite dayScript;
     void Start()
     {
         dayScript = GetComponent<DiaENoite>();
+        DayNightSave dayNightSave = GetComponent<DayNightSave>();
+        var savedTime = dayNightSave.HasSave();
+        if (savedTime.has)
+        {
+            Load(savedTime.data);
+            return;
+        }
+
         UpdateTime();
         StartCoroutine(MoveGradient(dayScript.AcharValorRestante(dayScript.iniciarEmQualHora)));
         hours = dayScript.iniciarEmQualHora;
         dayText.text = "Dia " + currentDay;
     }
-    void Update()
+    void Load(TimeData timeData)
     {
-        
+        currentDay = timeData.currentDay;
+        hours = timeData.currentHour;
+        minutes = timeData.currentMinute;
+
+        UpdateTime();
+        dayText.text = "Dia " + currentDay;
+        dayScript.tempoParaNoiteSegundos = hours * 60;
+        StartCoroutine(MoveGradient(dayScript.AcharValorRestante(hours)));
     }
     public void NextDay()
     {
@@ -115,5 +135,9 @@ public class RelogioScript : MonoBehaviour
     public int GetCurrentHour()
     {
         return hours;
+    }
+    public int GetCurrentMinute()
+    {
+        return minutes;
     }
 }

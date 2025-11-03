@@ -10,7 +10,7 @@ public abstract class Attack : ScriptableObject
 {
     [Header("Configurações Base")]
     public string nomeAtaque;
-    public string description;
+    [TextArea] public string description;
     public int danoOuCura;
     public int maxPP = 15;
     public int currentPP = 13;

@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: "F\xFAria"
   m_EditorClassIdentifier: 
   nomeAtaque: "F\xFAria"
-  description: "Lan\xE7a uma barragem de socos furiosos. <color=red>S\xF3 pode ser
-    usado 1 vez por partida.</color>"
-  danoOuCura: 15
-  maxPP: 15
-  currentPP: 14
+  description: "Lan\xE7a uma barragem de socos furiosos."
+  danoOuCura: 13
+  maxPP: 5
+  currentPP: 3
   VisualEffectDuration: 1
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -32,7 +31,7 @@ MonoBehaviour:
   repeatSoundOnLoop: 0
   canUseSelectMenu: 1
   usarMovimentoLinear: 0
-  "ataqueUmaVezS\xF3": 1
+  "ataqueUmaVezS\xF3": 0
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
