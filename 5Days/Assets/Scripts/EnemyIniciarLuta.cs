@@ -48,7 +48,6 @@ public class EnemyIniciarLuta : MonoBehaviour
         gameObject.SetActive(false);
         PlayerMoney.instance.SetActive(true);
         PlayerMoney.instance.AddMoney(moneyYield);
-        Player.instance.canMove = true;
         Time.timeScale = 0f;
     }
     void WaitSomeTime()

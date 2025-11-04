@@ -38,13 +38,13 @@ public class ReturnScene : MonoBehaviour
         turnModeManager.MaintainStatus();
         turnModeManager.currentFightingEnemy.battleStarted = false;
 
+        Player.instance.canMove = true;
         QuestController.instance.SetAllActive(true);
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
         dayScript.PauseTime(false);
 
         SceneManager.UnloadSceneAsync(sceneName);
-
         SceneTimeController.instance.onPauseGame?.Invoke();
         PauseMenuController.instance.canPause = true;
 
