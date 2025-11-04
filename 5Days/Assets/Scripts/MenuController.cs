@@ -11,9 +11,13 @@ public class MenuController : MonoBehaviour
     [SerializeField] Button loadGameButton;
     [SerializeField] Button deleteSaveButton;
     [SerializeField] Button fiveDaysLogo;
+
+    [Header("Hardcore Mode")]
     [SerializeField] GameObject hardcorePanel;
+    [SerializeField]
     [SerializeField] Image toggleImage;
     [SerializeField] Sprite[] toggleSprites;
+
     [Header("Config")]
     [SerializeField] int clickCountToActivate = 5;
     [SerializeField] int clicks = 0;
