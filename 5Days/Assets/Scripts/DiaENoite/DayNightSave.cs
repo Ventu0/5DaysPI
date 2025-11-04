@@ -30,7 +30,7 @@ public class DayNightSave : MonoBehaviour
         timeData.currentDay = clockScript.currentDay;
         timeData.currentHour = clockScript.GetCurrentHour();
         timeData.currentMinute = clockScript.GetCurrentMinute();
-        string json = JsonUtility.ToJson(timeData);
+        string json = JsonUtility.ToJson(timeData, true);
         File.WriteAllText(path, json);
     }
     public void Load()
@@ -42,6 +42,10 @@ public class DayNightSave : MonoBehaviour
     }
     public (bool has,TimeData data) HasSave()
     {
+        if (!File.Exists(path))
+        {
+            return (false, null);
+        }
         string json = File.ReadAllText(path);
         TimeData timeData = JsonUtility.FromJson<TimeData>(json);
 

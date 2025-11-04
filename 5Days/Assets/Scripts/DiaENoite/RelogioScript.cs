@@ -14,7 +14,7 @@ public class RelogioScript : MonoBehaviour
 
     [Header("Configurações de Tempo")]
     [SerializeField] int minutes;
-    [HideInInspector] public int hours = 0;
+    public int hours = 0;
     [SerializeField] int maxHours = 23;
     [SerializeField] int timeToReset = 1;
 
@@ -51,7 +51,8 @@ public class RelogioScript : MonoBehaviour
 
         UpdateTime();
         dayText.text = "Dia " + currentDay;
-        dayScript.tempoParaNoiteSegundos = hours * 60;
+
+        dayScript.isPaused = false;
         StartCoroutine(MoveGradient(dayScript.AcharValorRestante(hours)));
     }
     public void NextDay()
@@ -118,19 +119,23 @@ public class RelogioScript : MonoBehaviour
     }
     IEnumerator MoveGradient(float tempoInicial = 0)
     {
-        float duration = dayScript.tempoParaNoite * 60 - tempoInicial;
-        print("Tempo inicial" + tempoInicial);
-        float iterador = 0;
         RectTransform rectTransform = gradiente.GetComponent<RectTransform>();
+
+        float duration = dayScript.tempoParaNoite * 60 - tempoInicial;  
+
+        float initialProgress = tempoInicial / dayScript.tempoParaNoiteSegundos;
+        float initialLerp = Mathf.Lerp(gradienteInitialX, gradienteFinalX, initialProgress);
+        rectTransform.anchoredPosition = new Vector2(initialLerp, rectTransform.anchoredPosition.y);
+
+        float iterador = 0;
         while (iterador < duration)
         {
             while (dayScript.isPaused) yield return null;
-            iterador += Time.deltaTime;
-            float x = Mathf.Lerp(gradienteInitialX, gradienteFinalX, iterador / duration);
+            iterador += Time.deltaTime;;
+            float x = Mathf.Lerp(gradienteInitialX, gradienteFinalX, Mathf.Clamp01(initialProgress + iterador / dayScript.tempoParaNoiteSegundos));
             rectTransform.anchoredPosition = new Vector2(x, rectTransform.anchoredPosition.y);
             yield return null;
         }
-        print("Relogio Completo");
     }
     public int GetCurrentHour()
     {

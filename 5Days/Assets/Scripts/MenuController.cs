@@ -9,6 +9,10 @@ using UnityEngine.EventSystems;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] Button loadGameButton;
+    //[SerializeField] 
+    [Header("Config")]
+    [SerializeField] int clickCountToActivate = 5;
+    int clicks = 0;
 
     [Header("Interação com o menu (animação)")]
     [SerializeField] Sprite clickSprite;
@@ -58,8 +62,13 @@ public class MenuController : MonoBehaviour
     #endregion
     public void InteractObject()
     {
+        clicks = Mathf.Clamp(clicks + 1, 0, clickCountToActivate);
         StartCoroutine(BounceEffect.instance.Bounce(characterTransform, characterTransform.anchoredPosition, bobbingDuration, jumpQuantity, OnEndBounce));
         objectImage.sprite = clickSprite;
+        if(clicks >= clickCountToActivate)
+        {
+
+        }
     }
     void OnEndBounce()
     {
