@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
 
     [Header("Hardcore Mode")]
     [SerializeField] GameObject hardcorePanel;
-    [SerializeField]
+    [SerializeField] Toggle hardcoreToggle;   
     [SerializeField] Image toggleImage;
     [SerializeField] Sprite[] toggleSprites;
 
@@ -34,13 +34,16 @@ public class MenuController : MonoBehaviour
         DeleteSave delete = DeleteSave.instance;
         objectImage = characterTransform.GetComponent<Image>();
         originalSprite = objectImage.sprite;
-        hardcorePanel.SetActive(false);
+        
         loadGameButton.onClick.AddListener(LoadGameButton);
-        loadGameButton.enabled = delete.ChecarSePossuiSave();
-
-        deleteSaveButton.onClick.AddListener(DeleteSaveBTN);
-        deleteSaveButton.gameObject.SetActive(false);
         fiveDaysLogo.onClick.AddListener(ShowDeleteBTN);
+        deleteSaveButton.onClick.AddListener(DeleteSaveBTN);
+
+        ToggleHardmode(hardcoreToggle.isOn);
+        hardcoreToggle.onValueChanged.AddListener(ToggleHardmode);
+        hardcorePanel.SetActive(false);
+        loadGameButton.enabled = delete.ChecarSePossuiSave();
+        deleteSaveButton.gameObject.SetActive(false);
         if (!delete.ChecarSePossuiSave())
         {
             return;

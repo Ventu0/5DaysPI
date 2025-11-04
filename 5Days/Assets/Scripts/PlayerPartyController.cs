@@ -58,7 +58,6 @@ public class PlayerPartyController : MonoBehaviour
             }
             partyAtual.Add(character);
         }
-        CurarTodos();
     }
     public void AddCharacter(CharacterStatusGeneric character)
     {

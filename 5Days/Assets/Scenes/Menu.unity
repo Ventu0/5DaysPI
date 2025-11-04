@@ -1292,11 +1292,12 @@ MonoBehaviour:
   deleteSaveButton: {fileID: 1313706155}
   fiveDaysLogo: {fileID: 156091719}
   hardcorePanel: {fileID: 400315344}
+  hardcoreToggle: {fileID: 1110011332}
   toggleImage: {fileID: 763969476}
   toggleSprites:
   - {fileID: 7974197513838324122, guid: 38e0f8f8378658c4ebf5890d73c03cfd, type: 3}
   - {fileID: 1787831746, guid: 38e0f8f8378658c4ebf5890d73c03cfd, type: 3}
-  clickCountToActivate: 5
+  clickCountToActivate: 4
   clicks: 0
   clickSprite: {fileID: -1981268770160298414, guid: ec0a9a7a33500f449a90a851892a37e8, type: 3}
   characterTransform: {fileID: 1925298868}
@@ -1359,11 +1360,11 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
+    m_PressedColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1386,20 +1387,8 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1088642449}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: ToggleHardmode
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  m_IsOn: 1
+      m_Calls: []
+  m_IsOn: 0
 --- !u!1 &1149069202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1617,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1088642449}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: NewGameButton
+        m_MethodName: DeleteSaveBTN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

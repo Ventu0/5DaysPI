@@ -29,6 +29,8 @@ public class DeleteSave : MonoBehaviour
     {
         if (ChecarSePossuiSave())
         {
+            PlayerPrefs.DeleteAll();
+
             string pasta = Application.persistentDataPath;
             string[] arquivos = Directory.GetFiles(pasta, "*.json");
 
@@ -37,7 +39,6 @@ public class DeleteSave : MonoBehaviour
                 File.Delete(arquivos[i]); //se já houver um save, deleta ele
             }
         }
-        PlayerPrefs.DeleteAll();
         if(Loader.instance != null)
             Loader.instance.DeletarTudoDoDontDestroy();
     }
