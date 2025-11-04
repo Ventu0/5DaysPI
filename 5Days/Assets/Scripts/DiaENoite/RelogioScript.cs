@@ -135,7 +135,7 @@ public class RelogioScript : MonoBehaviour
             float x = Mathf.Lerp(gradienteInitialX, gradienteFinalX, Mathf.Clamp01(initialProgress + iterador / dayScript.tempoParaNoiteSegundos));
             rectTransform.anchoredPosition = new Vector2(x, rectTransform.anchoredPosition.y);
             yield return null;
-        }
+        }   
     }
     public int GetCurrentHour()
     {

@@ -9,11 +9,15 @@ using UnityEngine.EventSystems;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] Button loadGameButton;
-    //[SerializeField] 
+    [SerializeField] Button deleteSaveButton;
+    [SerializeField] Button fiveDaysLogo;
+    [SerializeField] GameObject hardcorePanel;
+    [SerializeField] Image toggleImage;
+    [SerializeField] Sprite[] toggleSprites;
     [Header("Config")]
     [SerializeField] int clickCountToActivate = 5;
-    int clicks = 0;
-
+    [SerializeField] int clicks = 0;
+    bool hardmode;
     [Header("Interação com o menu (animação)")]
     [SerializeField] Sprite clickSprite;
     [SerializeField] RectTransform characterTransform;
@@ -26,8 +30,13 @@ public class MenuController : MonoBehaviour
         DeleteSave delete = DeleteSave.instance;
         objectImage = characterTransform.GetComponent<Image>();
         originalSprite = objectImage.sprite;
+        hardcorePanel.SetActive(false);
         loadGameButton.onClick.AddListener(LoadGameButton);
         loadGameButton.enabled = delete.ChecarSePossuiSave();
+
+        deleteSaveButton.onClick.AddListener(DeleteSaveBTN);
+        deleteSaveButton.gameObject.SetActive(false);
+        fiveDaysLogo.onClick.AddListener(ShowDeleteBTN);
         if (!delete.ChecarSePossuiSave())
         {
             return;
@@ -50,7 +59,18 @@ public class MenuController : MonoBehaviour
         Loader.instance.DeletarTudoDoDontDestroy();
         Loader.instance.Carregar();
     }
-    
+    public void DeleteSaveBTN()
+    {
+        DeleteSave.instance.Deletar();
+        loadGameButton.enabled = false;
+        Color deactivateColor = new Color(255, 255, 255, 110);
+        loadGameButton.image.color = deactivateColor;
+        loadGameButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = deactivateColor;
+    }
+    public void ShowDeleteBTN()
+    {
+        deleteSaveButton.gameObject.SetActive(true);
+    }
     public void OptionsButton()
     {
 
@@ -59,19 +79,25 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ToggleHardmode(bool toggle)
+    {
+        hardmode = toggle;
+        toggleImage.sprite = hardmode ? toggleSprites[1] : toggleSprites[0];
+    }
     #endregion
     public void InteractObject()
     {
-        clicks = Mathf.Clamp(clicks + 1, 0, clickCountToActivate);
         StartCoroutine(BounceEffect.instance.Bounce(characterTransform, characterTransform.anchoredPosition, bobbingDuration, jumpQuantity, OnEndBounce));
         objectImage.sprite = clickSprite;
         if(clicks >= clickCountToActivate)
         {
-
+            if(!DeleteSave.instance.ChecarSePossuiSave())
+                hardcorePanel.SetActive(true);
         }
     }
     void OnEndBounce()
     {
+        clicks++;
         objectImage.sprite = originalSprite;
     }
 }
