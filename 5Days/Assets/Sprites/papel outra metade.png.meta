@@ -1,0 +1,1005 @@
+fileFormatVersion: 2
+guid: 288509c6082fbdd41a2ae2c88e1c2588
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1191652210659249201
+    second: papel outra metade_0
+  - first:
+      213: -1203691594286766524
+    second: papel outra metade_1
+  - first:
+      213: -1500676030669966433
+    second: papel outra metade_2
+  - first:
+      213: -2082626305405882944
+    second: papel outra metade_3
+  - first:
+      213: 598048063345842369
+    second: papel outra metade_4
+  - first:
+      213: -215667935573198482
+    second: papel outra metade_5
+  - first:
+      213: 3757768522839355143
+    second: papel outra metade_6
+  - first:
+      213: -4723651924450202738
+    second: papel outra metade_7
+  - first:
+      213: -1606297602401349654
+    second: papel outra metade_8
+  - first:
+      213: 4582968937028444851
+    second: papel outra metade_9
+  - first:
+      213: 1980237067355258060
+    second: papel outra metade_10
+  - first:
+      213: 313881660745481290
+    second: papel outra metade_11
+  - first:
+      213: 262759511738476160
+    second: papel outra metade_12
+  - first:
+      213: 251741159490002393
+    second: papel outra metade_13
+  - first:
+      213: 7338444667061885387
+    second: papel outra metade_14
+  - first:
+      213: 766028411888334688
+    second: papel outra metade_15
+  - first:
+      213: -1583955655355704201
+    second: papel outra metade_16
+  - first:
+      213: -3845314273712445164
+    second: papel outra metade_17
+  - first:
+      213: -4963614293666828709
+    second: papel outra metade_18
+  - first:
+      213: -440965723133958045
+    second: papel outra metade_19
+  - first:
+      213: 6031317802347507149
+    second: papel outra metade_20
+  - first:
+      213: 4612007693744943658
+    second: papel outra metade_21
+  - first:
+      213: 1984459744821331884
+    second: papel outra metade_22
+  - first:
+      213: -6794268049881346324
+    second: papel outra metade_23
+  - first:
+      213: 1883541158551884087
+    second: papel outra metade_24
+  - first:
+      213: -8529468336700877750
+    second: papel outra metade_25
+  - first:
+      213: 4782504668508768081
+    second: papel outra metade_26
+  - first:
+      213: 4982556096241189080
+    second: papel outra metade_27
+  - first:
+      213: 2509040396835774731
+    second: papel outra metade_28
+  - first:
+      213: -8855066565575823064
+    second: papel outra metade_29
+  - first:
+      213: -4463526387372690890
+    second: papel outra metade_30
+  - first:
+      213: 5324063484039671994
+    second: papel outra metade_31
+  - first:
+      213: -1028904668516719998
+    second: papel outra metade_32
+  - first:
+      213: 7079418817400033418
+    second: papel outra metade_33
+  - first:
+      213: 3702151424914279534
+    second: papel outra metade_34
+  - first:
+      213: -3854337995962268019
+    second: papel outra metade_35
+  - first:
+      213: -1020139898308575895
+    second: papel outra metade_36
+  - first:
+      213: 3181969486742961183
+    second: papel outra metade_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: papel outra metade_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c47283f59998010800000000000000
+      internalID: 1191652210659249201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 2800
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446e9675fd0ab4fe0800000000000000
+      internalID: -1203691594286766524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_2
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 2800
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9339fcd9178c2be0800000000000000
+      internalID: -1500676030669966433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_3
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 2800
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cde562d8660913e0800000000000000
+      internalID: -2082626305405882944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_4
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2800
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8d6568b81bc4800800000000000000
+      internalID: 598048063345842369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_5
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 2800
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69b7beb72bc10df0800000000000000
+      internalID: -215667935573198482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70febffdf86462430800000000000000
+      internalID: 3757768522839355143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_7
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 2240
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b2e880a97327eb0800000000000000
+      internalID: -4723651924450202738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_8
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 2240
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef4e4557d845b9e0800000000000000
+      internalID: -1606297602401349654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_9
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 2240
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2ea3477f9f99f30800000000000000
+      internalID: 4582968937028444851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_10
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2240
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc75cafe173b7b10800000000000000
+      internalID: 1980237067355258060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_11
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 2240
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c7e3a15b12b5400800000000000000
+      internalID: 313881660745481290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086e68e326285a300800000000000000
+      internalID: 262759511738476160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1680
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd1fb2304d5e7300800000000000000
+      internalID: 251741159490002393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_14
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1680
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc955104b8467d560800000000000000
+      internalID: 7338444667061885387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_15
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1680
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067f57238ca71aa00800000000000000
+      internalID: 766028411888334688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_16
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1680
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c5d8e39b8a40ae0800000000000000
+      internalID: -1583955655355704201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_17
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 1680
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41961a99a03b2aac0800000000000000
+      internalID: -3845314273712445164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5eefe72913bd1bb0800000000000000
+      internalID: -4963614293666828709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_19
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1120
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3682a7ad20061e9f0800000000000000
+      internalID: -440965723133958045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_20
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1120
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcda960069b83b350800000000000000
+      internalID: 6031317802347507149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_21
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1120
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22390fdf84210040800000000000000
+      internalID: 4612007693744943658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_22
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1120
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca74321bf973a8b10800000000000000
+      internalID: 1984459744821331884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_23
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 1120
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee490ac439e5b1a0800000000000000
+      internalID: -6794268049881346324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731105b44bea32a10800000000000000
+      internalID: 1883541158551884087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_25
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 560
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4490042dbd31a980800000000000000
+      internalID: -8529468336700877750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_26
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 560
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157cc1f38aede5240800000000000000
+      internalID: 4782504668508768081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_27
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 560
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0c9edee58952540800000000000000
+      internalID: 4982556096241189080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_28
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 560
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01608c82f6e1d220800000000000000
+      internalID: 2509040396835774731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_29
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 560
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8213a60ffdb7c1580800000000000000
+      internalID: -8855066565575823064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6327113466e5e02c0800000000000000
+      internalID: -4463526387372690890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_31
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 0
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab030d7d78fd2e940800000000000000
+      internalID: 5324063484039671994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: papel outra metade_32
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 525
+        height: 560
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282e155c7a898b1f0800000000000000
+      internalID: -1028904668516719998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 40b80b891bac94e41a453358d4f8df79
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":6.0},"gridSpriteSize":{"x":525.0,"y":560.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      papel outra metade_0: 1191652210659249201
+      papel outra metade_1: -1203691594286766524
+      papel outra metade_10: 1980237067355258060
+      papel outra metade_11: 313881660745481290
+      papel outra metade_12: 262759511738476160
+      papel outra metade_13: 251741159490002393
+      papel outra metade_14: 7338444667061885387
+      papel outra metade_15: 766028411888334688
+      papel outra metade_16: -1583955655355704201
+      papel outra metade_17: -3845314273712445164
+      papel outra metade_18: -4963614293666828709
+      papel outra metade_19: -440965723133958045
+      papel outra metade_2: -1500676030669966433
+      papel outra metade_20: 6031317802347507149
+      papel outra metade_21: 4612007693744943658
+      papel outra metade_22: 1984459744821331884
+      papel outra metade_23: -6794268049881346324
+      papel outra metade_24: 1883541158551884087
+      papel outra metade_25: -8529468336700877750
+      papel outra metade_26: 4782504668508768081
+      papel outra metade_27: 4982556096241189080
+      papel outra metade_28: 2509040396835774731
+      papel outra metade_29: -8855066565575823064
+      papel outra metade_3: -2082626305405882944
+      papel outra metade_30: -4463526387372690890
+      papel outra metade_31: 5324063484039671994
+      papel outra metade_32: -1028904668516719998
+      papel outra metade_4: 598048063345842369
+      papel outra metade_5: -215667935573198482
+      papel outra metade_6: 3757768522839355143
+      papel outra metade_7: -4723651924450202738
+      papel outra metade_8: -1606297602401349654
+      papel outra metade_9: 4582968937028444851
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
