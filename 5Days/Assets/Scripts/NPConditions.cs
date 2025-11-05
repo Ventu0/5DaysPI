@@ -68,7 +68,7 @@ public class NPConditions : MonoBehaviour
             Debug.LogWarning("O dialogo selecionado nao tem texto. Dialogo: " + dialogueToUse);
             return;
         }
-
+        actualNPC.yesOrNo.conditionMet = condition;
         actualNPC.Falar(lines, sprites);
     }
     bool CheckIfHasText(DialogueArrays dialogue)

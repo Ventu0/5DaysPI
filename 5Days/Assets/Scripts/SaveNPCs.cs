@@ -11,7 +11,7 @@ public class NPCSaveData
 [System.Serializable]
 public class NPCSaveDataList
 {
-    public List<NPCSaveData> npcSaveDatas = new List<NPCSaveData>();
+    public List<NPCSaveData> npcData = new List<NPCSaveData>();
 }
 public class SaveNPCs : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class SaveNPCs : MonoBehaviour
     //public delegate void Salvar();
     //public Salvar onSave;
     [SerializeField] List<NPC> npcList;
-
+    List<NPCSaveData> dataFromBefore = new List<NPCSaveData>();
     public static SaveNPCs instance;
     private void Awake()
     {
@@ -36,10 +36,11 @@ public class SaveNPCs : MonoBehaviour
             Destroy(gameObject);
         }
         path = Application.persistentDataPath + "/" + jsonName;
+        Load();
     }
     void Start()
     {
-        
+        PauseMenuController.instance.onSave += Save;
     }
     public void Save()
     {
@@ -49,12 +50,50 @@ public class SaveNPCs : MonoBehaviour
         {
             NPCSaveData saveData = new NPCSaveData();
             NPC currentNPC = npcList[i];
-            
+            DialogueOptions options = currentNPC.yesOrNo.options;
+
+            if (options == null) 
+            {
+                if (options.needMoney) //se adicionar mais condições, adicionar aqui
+                    saveData.alreadyPayedMoney = currentNPC.yesOrNo.conditionMet;
+            }
+            saveData.npcName = currentNPC.name;
+            saveData.alreadyRecievedQuest = currentNPC.alreadyRecievedQuest;
+            saveData.alreadyAnswered = currentNPC.alreadyTalked;
+            saveDataList.npcData.Add(saveData);
         }
 
 
-        //string json = JsonUtility.ToJson(saveData, true);
+        string json = JsonUtility.ToJson(saveDataList, true);
         File.WriteAllText(path, json);
+    }
+    void Load()
+    {
+        if (HasData())
+        {
+            string json = File.ReadAllText(path);
+            NPCSaveDataList saveDataList = JsonUtility.FromJson<NPCSaveDataList>(json);
+
+            for(int i = 0; i < saveDataList.npcData.Count; i++)
+            {
+                dataFromBefore.Add(saveDataList.npcData[i]);
+            }
+        }
+    }
+    public bool HasData()
+    {
+        return File.Exists(path);
+    }
+    public NPCSaveData GetNPCData(string npcName)
+    {
+        for (int i = 0; i < dataFromBefore.Count; i++)
+        {
+            if (dataFromBefore[i].npcName == npcName)
+            {
+                return dataFromBefore[i];
+            }
+        }
+        return null;
     }
     public void AddNPC(NPC npc)
     {

@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using static UnityEditor.Progress;
+using UnityEditor.Overlays;
 
 [System.Serializable]
 public class YesOrNo
 {
     public bool hasQuestion;
     public bool alreadyAnswered = false;
+    public bool conditionMet = false;
     public int question;
 
     public bool yesTextActivated = false;
@@ -27,7 +30,7 @@ public class NPC : MonoBehaviour
 
     [Header("Opcionais")]
     [SerializeField] bool isHealer = false;
-    [SerializeField] YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
+    public YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
     [SerializeField] UnityEvent onTextEnd;
 
     [Header("Quest-Only")]
@@ -40,7 +43,8 @@ public class NPC : MonoBehaviour
     public bool canBeInteracted = true;
     [SerializeField] bool isChoosing = false;
 
-    bool alreadyRecievedQuest;
+    public bool alreadyRecievedQuest;
+    public bool alreadyTalked;
     NPConditions conditions;
     ChatController chatController;
 
@@ -59,10 +63,13 @@ public class NPC : MonoBehaviour
         activeIcons = charactersFace;
 
         if (!yesOrNo.hasQuestion) yesOrNo = null;
+        SaveNPCs.instance.AddNPC(this);
+        Load();
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
-        if(!canBeInteracted) return;
+        if(alreadyTalked) return;
+        if (!canBeInteracted) return;
 
         if (isChoosing)
         {
@@ -86,7 +93,7 @@ public class NPC : MonoBehaviour
 
         falaAtual++;
 
-        if (falaAtual < activeLines.Length && canBeInteracted) //erro aqui
+        if (falaAtual < activeLines.Length && canBeInteracted) 
         {
 
             player.canMove = false;
@@ -101,9 +108,11 @@ public class NPC : MonoBehaviour
             CheckIfHasQuestion();
         }
 
-        if (falaAtual > activeLines.Length)
+        if (falaAtual > activeLines.Length && !alreadyTalked)
         {
             ResetNPC();
+            if(yesOrNo == null)
+                alreadyTalked = true;
         }
     }
     public void ResetNPC()
@@ -183,5 +192,25 @@ public class NPC : MonoBehaviour
         }
             
         Player.instance.canTalk = true;
+    }
+    void Load()
+    {
+        SaveNPCs savedNPCs = SaveNPCs.instance;
+        if(savedNPCs == null)
+        {
+            Debug.LogWarning("Não tem script de salvar npcs");
+            return;
+        }
+        if (!savedNPCs.HasData()) return;
+        NPCSaveData data = savedNPCs.GetNPCData(name);
+        DialogueOptions options = yesOrNo.options;
+        if (options == null)
+        {
+            if (options.needMoney) //se adicionar mais condições, adicionar aqui
+                yesOrNo.conditionMet = data.alreadyPayedMoney;
+        }
+        
+        alreadyRecievedQuest = data.alreadyRecievedQuest;
+        alreadyTalked = data.alreadyAnswered;
     }
 }
