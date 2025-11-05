@@ -29,6 +29,11 @@ public class MenuController : MonoBehaviour
     [SerializeField] float bobbingDuration = 0.5f;
     Image objectImage;
     Sprite originalSprite;
+    public static MenuController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         DeleteSave delete = DeleteSave.instance;
@@ -42,23 +47,21 @@ public class MenuController : MonoBehaviour
         ToggleHardmode(hardcoreToggle.isOn);
         hardcoreToggle.onValueChanged.AddListener(ToggleHardmode);
         hardcorePanel.SetActive(false);
-        loadGameButton.enabled = delete.ChecarSePossuiSave();
         deleteSaveButton.gameObject.SetActive(false);
+
         if (!delete.ChecarSePossuiSave())
-        {
-            return;
-        }
-        else
-        {
-            Color deactivateColor = new Color(255, 255, 255, 110);
-            loadGameButton.image.color = deactivateColor;
-            loadGameButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = deactivateColor;
-        }
+            DeactivateContinueButton();
+            
     }
     #region MenuButtons
     public void NewGameButton()
     {
         DeleteSave.instance.Deletar();
+        if (hardmode)
+        {
+            PlayerPrefs.SetInt("HardcoreMode", 1);
+        }
+        
         SceneManager.LoadScene("CasaDianas");
     }
     public void LoadGameButton()
@@ -69,18 +72,11 @@ public class MenuController : MonoBehaviour
     public void DeleteSaveBTN()
     {
         DeleteSave.instance.Deletar();
-        loadGameButton.enabled = false;
-        Color deactivateColor = new Color(255, 255, 255, 110);
-        loadGameButton.image.color = deactivateColor;
-        loadGameButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = deactivateColor;
+        DeactivateContinueButton();
     }
     public void ShowDeleteBTN()
     {
         deleteSaveButton.gameObject.SetActive(true);
-    }
-    public void OptionsButton()
-    {
-
     }
     public void ExitButton()
     {
@@ -92,6 +88,13 @@ public class MenuController : MonoBehaviour
         toggleImage.sprite = hardmode ? toggleSprites[1] : toggleSprites[0];
     }
     #endregion
+    public void DeactivateContinueButton()
+    {
+        loadGameButton.enabled = false;
+        Color deactivateColor = new Color(255, 255, 255, 110);
+        loadGameButton.image.color = deactivateColor;
+        loadGameButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = deactivateColor;
+    }
     public void InteractObject()
     {
         StartCoroutine(BounceEffect.instance.Bounce(characterTransform, characterTransform.anchoredPosition, bobbingDuration, jumpQuantity, OnEndBounce));

@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PersistentObject : MonoBehaviour
 {
     public static PersistentObject instance;
@@ -33,6 +33,15 @@ public class PersistentObject : MonoBehaviour
 
         if (Sleep.instance != null)
             Sleep.instance.SleepForTheDay();
+    }
+    public IEnumerator HardcoreModeLost()
+    {
+        FadeController.instance.FadeInForHowMuchTime(2);
+        yield return new WaitForSecondsRealtime(1);
+        SceneManager.LoadScene("Menu");
+        yield return new WaitForSecondsRealtime(0.5f);
+        DeleteSave.instance.Deletar();
+        MenuController.instance.DeactivateContinueButton();
     }
 
     void Update()

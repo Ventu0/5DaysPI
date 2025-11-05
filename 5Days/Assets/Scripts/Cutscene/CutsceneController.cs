@@ -14,7 +14,7 @@ public class CutsceneController : MonoBehaviour
     {
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
         if(cutsceneEnded == 1)
-        {
+        {print("Cutscene ja foi vista, destruindo objeto");
             Destroy(dontDestroyParent);
             return;
         }

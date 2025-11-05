@@ -32,7 +32,12 @@ public class ReturnScene : MonoBehaviour
     public void ReturnSceneBTN()
     {   
         PersistentObject persistent = PersistentObject.instance;
-        if (lost) persistent.StartCoroutine(persistent.FadeSequence());
+        int isHardcore = PlayerPrefs.GetInt("HardcoreMode", 0);
+        if(lost && isHardcore == 1)
+        {
+            persistent.StartCoroutine(persistent.HardcoreModeLost());
+        }
+        else if(lost)   persistent.StartCoroutine(persistent.FadeSequence());
 
         TurnModeManager turnModeManager = TurnModeManager.instance;
         turnModeManager.MaintainStatus();

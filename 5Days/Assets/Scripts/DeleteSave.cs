@@ -27,9 +27,10 @@ public class DeleteSave : MonoBehaviour
     [ContextMenu("Deletar Save")]
     public void Deletar()
     {
+        PlayerPrefs.DeleteAll();
         if (ChecarSePossuiSave())
         {
-            PlayerPrefs.DeleteAll();
+            print("apagando save");
 
             string pasta = Application.persistentDataPath;
             string[] arquivos = Directory.GetFiles(pasta, "*.json");
@@ -44,8 +45,11 @@ public class DeleteSave : MonoBehaviour
     }
     public bool ChecarSePossuiSave()
     {
+        print("checando save");
         string caminho = Application.persistentDataPath;
         string[] arquivosJson = Directory.GetFiles(caminho, "*.json");
-        return arquivosJson.Length > 0;
+        bool check = arquivosJson.Length > 0;
+         print("chequei e o resultado deu: " + check);
+        return check;
     }
 }
