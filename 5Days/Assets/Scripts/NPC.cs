@@ -29,6 +29,7 @@ public class NPC : MonoBehaviour
     [SerializeField] Sprite[] charactersFace;
 
     [Header("Opcionais")]
+    public string idToSave;
     [SerializeField] bool isHealer = false;
     public YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
     [SerializeField] UnityEvent onTextEnd;
@@ -202,11 +203,11 @@ public class NPC : MonoBehaviour
             return;
         }
         if (!savedNPCs.HasData()) return;
-        NPCSaveData data = savedNPCs.GetNPCData(name);
-        DialogueOptions options = yesOrNo.options;
-        if (options == null)
+        NPCSaveData data = savedNPCs.GetNPCData(idToSave);
+        DialogueOptions options = yesOrNo?.options;
+        if (options != null)
         {
-            if (options.needMoney) //se adicionar mais condições, adicionar aqui
+            if (options.needMoney && yesOrNo != null) //se adicionar mais condições, adicionar aqui
                 yesOrNo.conditionMet = data.alreadyPayedMoney;
         }
         

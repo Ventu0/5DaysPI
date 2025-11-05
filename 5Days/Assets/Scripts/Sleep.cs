@@ -21,18 +21,25 @@ public class Sleep : MonoBehaviour
     }
     void Start()
     {
+        pauseMenu = PauseMenuController.instance;
+        player = Player.instance;
+        dayNight = DiaENoite.instance;
+
         cutscene.SetActive(false);
 
         for (int i = 0; i < npc.Length; i++)
         {
             int index = i;
-            DiaENoite.instance.onNightStart += () => npc[index].canBeInteracted = true;
+            dayNight.onNightStart += () => npc[index].canBeInteracted = true;
         }
         director.stopped += OnTimelineStopped;
-
-        pauseMenu = PauseMenuController.instance;
-        player = Player.instance;
-        dayNight = DiaENoite.instance;
+        if(dayNight.relogioScript.GetCurrentHour() >= dayNight.horarioDaNoite)
+        {
+            for(int i = 0; i < npc.Length; i++)
+            {
+                npc[i].canBeInteracted = true;
+            }
+        }
     }
     public void SleepForTheDay()
     {

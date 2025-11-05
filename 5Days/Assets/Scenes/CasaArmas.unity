@@ -856,6 +856,7 @@ MonoBehaviour:
   - {fileID: 6932645916695646368, guid: d594f296e82d45e4ba71892921b9c88f, type: 3}
   - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
   - {fileID: 6932645916695646368, guid: d594f296e82d45e4ba71892921b9c88f, type: 3}
+  idToSave: vende armas
   isHealer: 0
   yesOrNo:
     hasQuestion: 0

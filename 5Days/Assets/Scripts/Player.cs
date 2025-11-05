@@ -108,7 +108,6 @@ public class Player : CharacterStatus
             Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
             if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             {
-                print("Interagindo com NPC");
                 InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
             }
         }

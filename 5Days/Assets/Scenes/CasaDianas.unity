@@ -3096,6 +3096,7 @@ MonoBehaviour:
   - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
   - {fileID: 3269279359094584176, guid: acf8eb9ad4dc9ef489d4bf302d252ac2, type: 3}
   - {fileID: 3269279359094584176, guid: acf8eb9ad4dc9ef489d4bf302d252ac2, type: 3}
+  idToSave: CamaDormir
   isHealer: 0
   yesOrNo:
     hasQuestion: 1

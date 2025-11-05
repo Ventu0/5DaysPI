@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+[System.Serializable]
 public class NPCSaveData
 {
-    public string npcName;
+    public string npcId;
     public bool alreadyRecievedQuest;
     public bool alreadyAnswered;
     public bool alreadyPayedMoney;
@@ -50,19 +51,19 @@ public class SaveNPCs : MonoBehaviour
         {
             NPCSaveData saveData = new NPCSaveData();
             NPC currentNPC = npcList[i];
-            DialogueOptions options = currentNPC.yesOrNo.options;
+            YesOrNo npcYesOrNo = currentNPC.yesOrNo;
+            DialogueOptions options = npcYesOrNo?.options;
 
-            if (options == null) 
+            if (options != null) 
             {
                 if (options.needMoney) //se adicionar mais condições, adicionar aqui
                     saveData.alreadyPayedMoney = currentNPC.yesOrNo.conditionMet;
-            }
-            saveData.npcName = currentNPC.name;
+            } 
+            saveData.npcId = currentNPC.idToSave;
             saveData.alreadyRecievedQuest = currentNPC.alreadyRecievedQuest;
             saveData.alreadyAnswered = currentNPC.alreadyTalked;
             saveDataList.npcData.Add(saveData);
         }
-
 
         string json = JsonUtility.ToJson(saveDataList, true);
         File.WriteAllText(path, json);
@@ -84,11 +85,11 @@ public class SaveNPCs : MonoBehaviour
     {
         return File.Exists(path);
     }
-    public NPCSaveData GetNPCData(string npcName)
+    public NPCSaveData GetNPCData(string npcIds)
     {
         for (int i = 0; i < dataFromBefore.Count; i++)
         {
-            if (dataFromBefore[i].npcName == npcName)
+            if (dataFromBefore[i].npcId == npcIds)
             {
                 return dataFromBefore[i];
             }
@@ -101,5 +102,10 @@ public class SaveNPCs : MonoBehaviour
         {
             npcList.Add(npc);
         }
+    }
+    private void OnDisable()
+    {
+        if(PauseMenuController.instance != null)
+        PauseMenuController.instance.onSave -= Save;
     }
 }
