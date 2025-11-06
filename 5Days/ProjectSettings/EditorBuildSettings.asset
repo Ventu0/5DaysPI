@@ -35,5 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CasaDianas.unity
     guid: c2bd1243cdf4c7a4ab7484297689a9f1
+  - enabled: 1
+    path: Assets/Scenes/CasaArmas.unity
+    guid: 9625a59186ae266428f6ab4f5c6947a4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

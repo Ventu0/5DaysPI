@@ -29,6 +29,7 @@ public class NPC : MonoBehaviour
     [SerializeField] Sprite[] charactersFace;
 
     [Header("Opcionais")]
+    [SerializeField] bool talkOnce = true;
     public string idToSave;
     [SerializeField] bool isHealer = false;
     public YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
@@ -112,7 +113,7 @@ public class NPC : MonoBehaviour
         if (falaAtual > activeLines.Length && !alreadyTalked)
         {
             ResetNPC();
-            if(yesOrNo == null)
+            if(yesOrNo == null && talkOnce)
                 alreadyTalked = true;
         }
     }
@@ -212,6 +213,6 @@ public class NPC : MonoBehaviour
         }
         
         alreadyRecievedQuest = data.alreadyRecievedQuest;
-        alreadyTalked = data.alreadyAnswered;
+        if(talkOnce) alreadyTalked = data.alreadyAnswered;
     }
 }

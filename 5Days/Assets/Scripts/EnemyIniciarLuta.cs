@@ -15,11 +15,12 @@ public class EnemyIniciarLuta : MonoBehaviour
 {
     public delegate void OnStartBattle();
     public OnStartBattle onStartBattle;
-
-    [SerializeField] string cenaEscolhida;
+    
+    [SerializeField] string cenaEscolhida = "CombatScenes";
     [SerializeField] CharacterStatusGeneric[] enemiesStatus;
     [SerializeField] float escapeChance = 0.7f; //chance de escapar da batalha, entre 0 e 1 
-    [SerializeField] int moneyYield = 5; 
+    [SerializeField] int moneyYield = 5;
+    public bool isEnemyPersistent = true;
     [HideInInspector] public bool battleStarted = false;
     public bool jaMorreu;
     public Inimigo inimigo;

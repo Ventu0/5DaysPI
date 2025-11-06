@@ -10,6 +10,12 @@ public class PlayerMoney : MonoBehaviour
     public static PlayerMoney instance;
     private void Awake()
     {
+        int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded", 0);
+        if (cutsceneEnded == 0)
+        {
+            Destroy(transform.root.gameObject);
+            return;
+        }
         moneyText = GameObject.Find("MoneyText").GetComponent<TextMeshProUGUI>();
         moneyText.text = money.ToString();
         if (instance == null)

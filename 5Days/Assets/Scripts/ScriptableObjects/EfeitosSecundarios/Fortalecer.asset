@@ -15,5 +15,5 @@ MonoBehaviour:
   effectName: Fortalecer
   durationInTurn: 2
   remainingTurns: 2
-  strengthMultiplier: 1
+  strengthMultiplier: 0.5
   stackAble: 0
