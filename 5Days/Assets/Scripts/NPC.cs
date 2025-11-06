@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
-using static UnityEditor.Progress;
-using UnityEditor.Overlays;
 
 [System.Serializable]
 public class YesOrNo

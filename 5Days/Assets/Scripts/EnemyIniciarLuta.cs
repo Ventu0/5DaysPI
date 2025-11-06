@@ -64,7 +64,7 @@ public class EnemyIniciarLuta : MonoBehaviour
         {
             statusAtualizado.Add(party.partyAtual[i]);
         }
-
+        MainSoundtrack.instance.ChooseRandomBattleSoundtrack();
         QuestController.instance.SetAllActive(false);
         PauseMenuController.instance.canPause = false;
         PlayerMoney.instance.SetActive(false);

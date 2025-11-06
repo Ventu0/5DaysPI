@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 public class MainSoundtrack : MonoBehaviour
 {
     [Header("Audio Source")]
     [SerializeField] AudioSource audioSource;
+    [SerializeField] float mainVolume;
 
     [Header("Sounds")]
     [SerializeField] AudioClip[] mainSoundtracks;
@@ -23,27 +25,56 @@ public class MainSoundtrack : MonoBehaviour
     }
     private void Start()
     {
-        ChooseRandomMusic();
+        int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded", 0);
+        if (cutsceneEnded == 0) return;
+
+        ChooseRandomMainSoundtrack();
     }
-    void ChooseRandomMusic()
+    public void ChooseRandomMainSoundtrack()
     {
         int index = Random.Range(0, mainSoundtracks.Length);
         AudioClip clip = mainSoundtracks[index];
-        audioSource.clip = mainSoundtracks[index];
-        audioSource.Play();
+        PlayMain(clip);
     }
-    public void PlayOneShot(AudioClip clip)
+    public void ChooseRandomBattleSoundtrack()
     {
-        audioSource.PlayOneShot(clip);
+        int index = Random.Range(0, battleSoundtracks.Length);
+        AudioClip clip = battleSoundtracks[index];
+        PlayMain(clip);
+    }
+    public void PlayOneShot(AudioClip clip, float volume = 1)
+    {
+        audioSource.PlayOneShot(clip, volume);
     }
     
     public void PlayMain(AudioClip soundTrack)
     {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
         audioSource.clip = soundTrack;
         audioSource.Play();
     }
-    public void TurnVolumeUpDown(float volume = 0.5f)
+    IEnumerator PlayNextAudio(AudioClip clip, AudioClip newClip)
     {
-        audioSource.volume = volume;
+        audioSource.clip = clip;
+        audioSource.Play();
+        yield return new WaitUntil(() => !audioSource.isPlaying);
+        audioSource.clip = newClip;
+    }
+    public void TurnVolumeUpDown(float volume = 0.1f)
+    {
+        StartCoroutine(VolumeLerp(volume));
+    }
+    IEnumerator VolumeLerp(float newVolume, float duration = 0.5f)
+    {
+        float iterador = 0;
+        while (iterador < duration)
+        {
+            audioSource.volume = Mathf.Lerp(audioSource.volume, newVolume, iterador / duration);
+            iterador += Time.deltaTime;
+            yield return null;
+        }
     }
 }

@@ -448,31 +448,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3669523251283931230, guid: 647ef542eaa5ea440917c535e93cf6bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 205378718}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 647ef542eaa5ea440917c535e93cf6bc, type: 3}
---- !u!1 &205378717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3669523251283931230, guid: 647ef542eaa5ea440917c535e93cf6bc, type: 3}
-  m_PrefabInstance: {fileID: 205378716}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &205378718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205378717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d113d47023b9abc4bb51fdbbb76fecd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainSoundtrack
-  audioSource: {fileID: 0}
-  mainSoundtracks: []
-  battleSoundtracks: []
 --- !u!1001 &235657433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3240,6 +3217,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137004182849802052, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: m_Volume
+      value: 0.102
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3620,6 +3601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ac4299a88cd4a4c8c8632e4ea9d7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bedScene: CasaDianas
+  playerNewLastSavedPos: {x: -8.9, y: 1.51}
   npc:
   - {fileID: 1403760631}
   director: {fileID: 405871164}

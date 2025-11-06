@@ -3,6 +3,8 @@ using UnityEngine.Playables;
 
 public class Sleep : MonoBehaviour
 {
+    [SerializeField] string bedScene;
+    [SerializeField] Vector2 playerNewLastSavedPos;
     [SerializeField] NPC[] npc;
 
     [Header("Cutscene de Dormir")]
@@ -35,16 +37,19 @@ public class Sleep : MonoBehaviour
         director.stopped += OnTimelineStopped;
         if(dayNight.relogioScript.GetCurrentHour() >= dayNight.horarioDaNoite)
         {
+            print("horario atual: " + dayNight.relogioScript.GetCurrentHour());
             for(int i = 0; i < npc.Length; i++)
             {
                 npc[i].canBeInteracted = true;
             }
         }
     }
-    public void SleepForTheDay()
+    public void SleepForTheDay(bool SetNewSavedPos = false)
     {
         dayNight.ResetTime();
         dayNight.relogioScript.NextDay();
+        if (SetNewSavedPos)
+            Player.instance.SavePosition(playerNewLastSavedPos);
 
         StartingFade();
         PausePlayer(false);
@@ -53,7 +58,7 @@ public class Sleep : MonoBehaviour
     public void SavePlayerBed()
     {
         player.SaveBedPos();
-        player.SaveBedScene();
+        player.SaveBedScene(bedScene);
     }
     void StartingFade() => FadeController.instance.FadeInForHowMuchTime(1.5f, StartCutscene);
     void StartCutscene()

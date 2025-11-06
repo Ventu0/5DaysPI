@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Javali
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 443562644885829971, guid: c3cd18af58a86224092090c8f2a31dd5, type: 3}
-  vidaMaxima: 85
-  vidaAtual: 85
+  vidaMaxima: 65
+  vidaAtual: 65
   YOffset: -0.2
   isDead: 0
   ataques:

@@ -50,6 +50,7 @@ public class ReturnScene : MonoBehaviour
         dayScript.PauseTime(false);
 
         SceneManager.UnloadSceneAsync(sceneName);
+        MainSoundtrack.instance.ChooseRandomMainSoundtrack();
         SceneTimeController.instance.onPauseGame?.Invoke();
         PauseMenuController.instance.canPause = true;
 

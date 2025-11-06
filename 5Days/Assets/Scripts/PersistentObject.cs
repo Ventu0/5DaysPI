@@ -23,12 +23,12 @@ public class PersistentObject : MonoBehaviour
     }
     public IEnumerator FadeSequence()
     {
-        FadeController.instance.FadeInForHowMuchTime(2);
+        FadeController.instance.FadeInForHowMuchTime(3);
         print("Bed2");
         yield return new WaitForSecondsRealtime(1f);
         print("Bed1");
         if (Player.instance != null)
-            Player.instance.LoadOnLastBed();
+            Player.instance.LoadOnLastBed(true);
         yield return new WaitForSeconds(0.5f);
 
         if (Sleep.instance != null)

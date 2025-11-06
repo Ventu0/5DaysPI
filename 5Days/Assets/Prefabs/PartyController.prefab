@@ -45,7 +45,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.108
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainSoundtrack
   audioSource: {fileID: 2688721014625590866}
+  mainVolume: 0
   mainSoundtracks:
   - {fileID: 8300000, guid: 5b9d82a078c1f3b4097d399aef83bfcf, type: 3}
   - {fileID: 8300000, guid: c887d14cbcb73fb4a8bd82b3fd2107dd, type: 3}

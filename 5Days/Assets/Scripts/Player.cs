@@ -23,7 +23,7 @@ public class Player : CharacterStatus
 
     [Header("Últimos saves de posição")]
     public Vector2 lastSavedPosition;
-    public Vector3 lastSavedBedPos { get; private set; }
+    public Vector3 lastSavedBedPos{ get; private set; }
     public string lastSavedBedScene { get; private set; }
 
     public static Player instance;
@@ -62,8 +62,14 @@ public class Player : CharacterStatus
         luzNatural?.gameObject.SetActive(false);
     }
     #region SaveMethods
-    public void SavePosition() => lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
-    public void SaveBedPos(Vector2 bedPos = default)
+    public void SavePosition(Vector2 newPos = default)
+    {
+        if (newPos == default)
+            lastSavedPosition = new Vector2(transform.position.x, transform.position.y - 0.4f);
+        else
+            lastSavedPosition = newPos;
+    }
+        public void SaveBedPos(Vector2 bedPos = default)
     {
         if (bedPos != default)
             lastSavedBedPos = bedPos;
@@ -78,8 +84,9 @@ public class Player : CharacterStatus
             lastSavedBedScene = SceneManager.GetActiveScene().name;
     }
     #endregion
-    public void LoadOnLastBed()
+    public void LoadOnLastBed(bool resetBedPos)
     {
+        if (resetBedPos) lastSavedBedPos = new Vector2(0, 0);
         SceneManager.LoadScene(lastSavedBedScene);
         print("carregando cena");
         isGamePaused = false;
@@ -101,6 +108,13 @@ public class Player : CharacterStatus
     #endregion
     void Update()
     {
+        if (isGamePaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            anim.SetFloat("Horizontal", 0);
+            anim.SetFloat("Vertical", 0);
+            return;
+        }
         if (Time.timeScale == 0 || isGamePaused) return; //evita que o update seja chamado quando for pausado
 
         if (canTalk)

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Borboleta
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 7718727912951115733, guid: 5a07381baac4fb64496f72abc96b8b6a, type: 3}
-  vidaMaxima: 85
-  vidaAtual: 85
+  vidaMaxima: 50
+  vidaAtual: 50
   YOffset: 0.3
   isDead: 0
   ataques:

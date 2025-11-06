@@ -68,18 +68,21 @@ public class CutsceneController : MonoBehaviour
 
         PlayerPrefs.SetInt("CutsceneEnded", 1);
         PlayerPrefs.SetInt("FirstQuest", 0);
+
         PauseMenuController.instance.canPause = true;
+        MainSoundtrack.instance.ChooseRandomMainSoundtrack();
 
         doors.InteractDoors(true);
         doors.florestaCollider.enabled = false;
         dayScript.PauseTime(false); //reseta o tempo
         dayScript.ResetTime();
 
-        Sleep.instance.SavePlayerBed();
         player.transform.position = Vector3.zero; //redefine posições do player
         player.gameObject.SetActive(true);
         player.canMove = true;
         player.canTalk = true;
+        Sleep.instance.SavePlayerBed();
+
 
         Destroy(dontDestroyParent);
     }

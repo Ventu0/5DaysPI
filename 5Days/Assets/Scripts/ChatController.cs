@@ -70,6 +70,9 @@ public class ChatController : MonoBehaviour
         canShowText = true;
         pressButtonText.SetActive(false);
         bounceEffect.isOnRoutine = false;
+        MainSoundtrack soundtrack = MainSoundtrack.instance;
+        if (soundtrack != null)
+            soundtrack.TurnVolumeUpDown(0.05f);
         //SÓ PARA MOSTRAR: posso fazer isso: portraitFundo.SetActive(sprite == null);
 
         if (sprite == null)
@@ -121,6 +124,9 @@ public class ChatController : MonoBehaviour
     #endregion
     public void CloseDialogue()
     {
+        MainSoundtrack soundtrack = MainSoundtrack.instance;
+        if (soundtrack != null)
+            soundtrack.TurnVolumeUpDown(0.1f);
         StopAllCoroutines();
         canShowText = false;
         isWritingText = false;
