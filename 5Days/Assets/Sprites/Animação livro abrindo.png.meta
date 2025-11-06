@@ -1,0 +1,1016 @@
+fileFormatVersion: 2
+guid: 9dbb9543860ea59409601181b2252cdd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1565915488464861283
+    second: "Anima\xE7\xE3o livro abrindo_0"
+  - first:
+      213: 2552481105408205647
+    second: "Anima\xE7\xE3o livro abrindo_1"
+  - first:
+      213: 7987855774300706399
+    second: "Anima\xE7\xE3o livro abrindo_2"
+  - first:
+      213: -6966241743120437947
+    second: "Anima\xE7\xE3o livro abrindo_3"
+  - first:
+      213: 8784215425695509584
+    second: "Anima\xE7\xE3o livro abrindo_4"
+  - first:
+      213: -4426675384098051643
+    second: "Anima\xE7\xE3o livro abrindo_5"
+  - first:
+      213: 188696930315565705
+    second: "Anima\xE7\xE3o livro abrindo_6"
+  - first:
+      213: 6472508835852976558
+    second: "Anima\xE7\xE3o livro abrindo_7"
+  - first:
+      213: 2053357232224625950
+    second: "Anima\xE7\xE3o livro abrindo_8"
+  - first:
+      213: 8739687261352516536
+    second: "Anima\xE7\xE3o livro abrindo_9"
+  - first:
+      213: 950942803761735366
+    second: "Anima\xE7\xE3o livro abrindo_10"
+  - first:
+      213: -5234147863415761486
+    second: "Anima\xE7\xE3o livro abrindo_11"
+  - first:
+      213: -1510672215476444895
+    second: "Anima\xE7\xE3o livro abrindo_12"
+  - first:
+      213: -3999042838493919668
+    second: "Anima\xE7\xE3o livro abrindo_13"
+  - first:
+      213: 7716865392828607360
+    second: "Anima\xE7\xE3o livro abrindo_14"
+  - first:
+      213: 8377703914334162416
+    second: "Anima\xE7\xE3o livro abrindo_15"
+  - first:
+      213: 4634917432115074574
+    second: "Anima\xE7\xE3o livro abrindo_16"
+  - first:
+      213: -325247717782754558
+    second: "Anima\xE7\xE3o livro abrindo_17"
+  - first:
+      213: -7994767181711454097
+    second: "Anima\xE7\xE3o livro abrindo_18"
+  - first:
+      213: 1549737214113288913
+    second: "Anima\xE7\xE3o livro abrindo_19"
+  - first:
+      213: 7164568009687173765
+    second: "Anima\xE7\xE3o livro abrindo_20"
+  - first:
+      213: 3615576251331797052
+    second: "Anima\xE7\xE3o livro abrindo_21"
+  - first:
+      213: -6455619050625800884
+    second: "Anima\xE7\xE3o livro abrindo_22"
+  - first:
+      213: 109922833694789338
+    second: "Anima\xE7\xE3o livro abrindo_23"
+  - first:
+      213: -5083460796602915909
+    second: "Anima\xE7\xE3o livro abrindo_24"
+  - first:
+      213: -2610135811601374279
+    second: "Anima\xE7\xE3o livro abrindo_25"
+  - first:
+      213: -8534412385204795399
+    second: "Anima\xE7\xE3o livro abrindo_26"
+  - first:
+      213: 180992913760861823
+    second: "Anima\xE7\xE3o livro abrindo_27"
+  - first:
+      213: 6437211814103228597
+    second: "Anima\xE7\xE3o livro abrindo_28"
+  - first:
+      213: -1422406619682598927
+    second: "Anima\xE7\xE3o livro abrindo_29"
+  - first:
+      213: 6168252141811430508
+    second: "Anima\xE7\xE3o livro abrindo_30"
+  - first:
+      213: 8347266053922621674
+    second: "Anima\xE7\xE3o livro abrindo_31"
+  - first:
+      213: 5607461684623951935
+    second: "Anima\xE7\xE3o livro abrindo_32"
+  - first:
+      213: 4770026155461298645
+    second: "Anima\xE7\xE3o livro abrindo_33"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2688
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368fa3617df3bb510800000000000000
+      internalID: 1565915488464861283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_1"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 2688
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43a0cfaa0c3c6320800000000000000
+      internalID: 2552481105408205647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_2"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2688
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f561f3851809ade60800000000000000
+      internalID: 7987855774300706399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_3"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 2688
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54deec91b00f25f90800000000000000
+      internalID: -6966241743120437947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_4"
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2688
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c661f836dc7e970800000000000000
+      internalID: 8784215425695509584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_5"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9aed2113a4192c0800000000000000
+      internalID: -4426675384098051643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_6"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 2240
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a7aadbbd26e9200800000000000000
+      internalID: 188696930315565705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_7"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2240
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1089e4e78f2d950800000000000000
+      internalID: 6472508835852976558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_8"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 2240
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e156ab7068dfe7c10800000000000000
+      internalID: 2053357232224625950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_9"
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2240
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb5ce4624b994970800000000000000
+      internalID: 8739687261352516536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_10"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6aee3117d623d00800000000000000
+      internalID: 950942803761735366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_11"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1792
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5db3bff329c57b0800000000000000
+      internalID: -5234147863415761486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_12"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1792
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1216978bf93090be0800000000000000
+      internalID: -1510672215476444895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_13"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1792
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46000ae9bb8088c0800000000000000
+      internalID: -3999042838493919668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_14"
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1792
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08bed076030d71b60800000000000000
+      internalID: 7716865392828607360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_15"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1344
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd8947b255934470800000000000000
+      internalID: 8377703914334162416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_16"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1344
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e061c7009d8825040800000000000000
+      internalID: 4634917432115074574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_17"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1344
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b6d858cec7c7bf0800000000000000
+      internalID: -325247717782754558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_18"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1344
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6053283b91ec0190800000000000000
+      internalID: -7994767181711454097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_19"
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1344
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d21d6e09c5c18510800000000000000
+      internalID: 1549737214113288913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_20"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a088235a8ad6360800000000000000
+      internalID: 7164568009687173765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_21"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 896
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3068f6c17b1d2230800000000000000
+      internalID: 3615576251331797052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_22"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 896
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4564324da80966a0800000000000000
+      internalID: -6455619050625800884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_23"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 896
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade051f1c36868100800000000000000
+      internalID: 109922833694789338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_24"
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 896
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3ebdcb65be379b0800000000000000
+      internalID: -5083460796602915909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_25"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b369f5fe4fe6cbd0800000000000000
+      internalID: -2610135811601374279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_26"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 448
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f78c25272daf8980800000000000000
+      internalID: -8534412385204795399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_27"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 448
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e349b9814038200800000000000000
+      internalID: 180992913760861823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_28"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 448
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b022930a02955950800000000000000
+      internalID: 6437211814103228597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_29"
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 448
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff87a337b8924ce0800000000000000
+      internalID: -1422406619682598927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_30"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6476b564a80a9550800000000000000
+      internalID: 6168252141811430508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_31"
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae80cb5104277d370800000000000000
+      internalID: 8347266053922621674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_32"
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38cf9b41b4b1dd40800000000000000
+      internalID: 5607461684623951935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Anima\xE7\xE3o livro abrindo_33"
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 560
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d9c7950489823240800000000000000
+      internalID: 4770026155461298645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c39fdc0541f32214fba9e5d221986deb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":7.0},"gridSpriteSize":{"x":560.0,"y":448.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      "Anima\xE7\xE3o livro abrindo_0": 1565915488464861283
+      "Anima\xE7\xE3o livro abrindo_1": 2552481105408205647
+      "Anima\xE7\xE3o livro abrindo_10": 950942803761735366
+      "Anima\xE7\xE3o livro abrindo_11": -5234147863415761486
+      "Anima\xE7\xE3o livro abrindo_12": -1510672215476444895
+      "Anima\xE7\xE3o livro abrindo_13": -3999042838493919668
+      "Anima\xE7\xE3o livro abrindo_14": 7716865392828607360
+      "Anima\xE7\xE3o livro abrindo_15": 8377703914334162416
+      "Anima\xE7\xE3o livro abrindo_16": 4634917432115074574
+      "Anima\xE7\xE3o livro abrindo_17": -325247717782754558
+      "Anima\xE7\xE3o livro abrindo_18": -7994767181711454097
+      "Anima\xE7\xE3o livro abrindo_19": 1549737214113288913
+      "Anima\xE7\xE3o livro abrindo_2": 7987855774300706399
+      "Anima\xE7\xE3o livro abrindo_20": 7164568009687173765
+      "Anima\xE7\xE3o livro abrindo_21": 3615576251331797052
+      "Anima\xE7\xE3o livro abrindo_22": -6455619050625800884
+      "Anima\xE7\xE3o livro abrindo_23": 109922833694789338
+      "Anima\xE7\xE3o livro abrindo_24": -5083460796602915909
+      "Anima\xE7\xE3o livro abrindo_25": -2610135811601374279
+      "Anima\xE7\xE3o livro abrindo_26": -8534412385204795399
+      "Anima\xE7\xE3o livro abrindo_27": 180992913760861823
+      "Anima\xE7\xE3o livro abrindo_28": 6437211814103228597
+      "Anima\xE7\xE3o livro abrindo_29": -1422406619682598927
+      "Anima\xE7\xE3o livro abrindo_3": -6966241743120437947
+      "Anima\xE7\xE3o livro abrindo_30": 6168252141811430508
+      "Anima\xE7\xE3o livro abrindo_31": 8347266053922621674
+      "Anima\xE7\xE3o livro abrindo_32": 5607461684623951935
+      "Anima\xE7\xE3o livro abrindo_33": 4770026155461298645
+      "Anima\xE7\xE3o livro abrindo_4": 8784215425695509584
+      "Anima\xE7\xE3o livro abrindo_5": -4426675384098051643
+      "Anima\xE7\xE3o livro abrindo_6": 188696930315565705
+      "Anima\xE7\xE3o livro abrindo_7": 6472508835852976558
+      "Anima\xE7\xE3o livro abrindo_8": 2053357232224625950
+      "Anima\xE7\xE3o livro abrindo_9": 8739687261352516536
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
