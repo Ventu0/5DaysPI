@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6079780735817675671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &2891055484239730910
 MonoBehaviour:
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 1707055264106433436}
   - component: {fileID: 2648682390073550437}
   m_Layer: 5
-  m_Name: FadeController
+  m_Name: FadeControllerAndSoundtrackController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

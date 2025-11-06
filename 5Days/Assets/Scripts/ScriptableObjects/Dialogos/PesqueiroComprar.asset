@@ -14,8 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yesDialogue:
     lines:
-    - Beleza, suba no barco.
+    - Hahaha te enganei!
+    - "Brincadeira, essa parte do jogo ainda n\xE3o ta pronta"
+    - "Me desculpe mas voc\xEA ter\xE1 que esperar os desenvolvedores terminar o
+      resto do jogo, pregui\xE7osos"
+    - "Da uma visitada na loja enquanto isso, tem bastante coisa legal l\xE1"
     faces:
+    - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+    - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+    - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
     - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
   noDialogue:
     lines:

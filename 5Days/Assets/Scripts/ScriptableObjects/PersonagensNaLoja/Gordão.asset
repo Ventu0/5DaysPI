@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePersonagem: Diego
   display: {fileID: 21300000, guid: bc5bbb81e36b4b2459f40134e7229a6b, type: 3}
-  custo: 5
+  custo: 25
   personagemOriginal: {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
