@@ -41,7 +41,11 @@ public class LojaShowCharacterInfo : MonoBehaviour
     }
     public void ApplyInfo(PersonagensNaLoja character)
     {
-        if (character == null) return;
+        if (character == null)
+        {
+            print("null personagem");
+            return;
+        }
 
         currentCharacter = character;
         characterStatus = character.personagemOriginal;

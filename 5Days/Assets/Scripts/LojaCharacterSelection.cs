@@ -34,7 +34,6 @@ public class LojaCharacterSelection : MonoBehaviour
         SelectedButtonSetOnClick(selected, true); //adicionar um primeiro botao pra nao ficar estranho e bugado
 
         TrocarCoresDeTodos();
-        characters[0].Comprado();
     }
     public void Setup(List<bool> unlocked)
     {
@@ -149,9 +148,14 @@ public class LojaCharacterSelection : MonoBehaviour
 
         LojaCharacterInstance character = characters[whichCharacter];
         UnityEvent onClick = character.button.onClick;
+        if (!addListener)
+        {
+            animSequence.onAnimEnd.RemoveAllListeners();
+            onClick.RemoveAllListeners(); //remove todos os listeners pra evitar bugs
+            return;
+        }
 
         UnityAction sequence = () => animSequence.StartSequence(character.rect, false);
-
         Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
         Action<UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
 

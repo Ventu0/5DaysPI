@@ -20,7 +20,8 @@ public class NPConditions : MonoBehaviour
     }
     void Start()
     {
-        DiaENoite.instance.onNightStart += () => canSleep = true;
+        if(DiaENoite.instance != null)
+            DiaENoite.instance.onNightStart += () => canSleep = true;
     }
     public void LoadScene(string sceneName)
     {

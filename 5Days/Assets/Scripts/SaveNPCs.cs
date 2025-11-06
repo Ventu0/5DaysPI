@@ -41,7 +41,8 @@ public class SaveNPCs : MonoBehaviour
     }
     void Start()
     {
-        PauseMenuController.instance.onSave += Save;
+        if(PauseMenuController.instance != null)
+            PauseMenuController.instance.onSave += Save;
     }
     public void Save()
     {
