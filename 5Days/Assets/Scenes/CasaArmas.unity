@@ -482,7 +482,7 @@ MonoBehaviour:
   button: {fileID: 0}
   rect: {fileID: 0}
   unlockedText: {fileID: 1280487911}
-  unlocked: 0
+  unlocked: 1
   disabledColor: {r: 51, g: 51, b: 50, a: 1}
 --- !u!114 &189482925
 MonoBehaviour:
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   button: {fileID: 0}
   rect: {fileID: 0}
   unlockedText: {fileID: 1308588528}
-  unlocked: 0
+  unlocked: 1
   disabledColor: {r: 51, g: 51, b: 50, a: 1}
 --- !u!114 &756183108
 MonoBehaviour:
@@ -3900,7 +3900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyButton: {fileID: 944476580}
-  buyTextMesh: {fileID: 0}
+  buyTextMesh: {fileID: 2017798166}
   nameText: {fileID: 698139353}
   lifeText: {fileID: 1542699042}
   costText: {fileID: 1417006673}
