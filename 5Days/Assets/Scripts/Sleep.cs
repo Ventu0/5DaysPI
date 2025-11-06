@@ -47,6 +47,7 @@ public class Sleep : MonoBehaviour
         dayNight.relogioScript.NextDay();
 
         StartingFade();
+        PausePlayer(false);
         SavePlayerBed();
     }
     public void SavePlayerBed()
@@ -57,7 +58,7 @@ public class Sleep : MonoBehaviour
     void StartingFade() => FadeController.instance.FadeInForHowMuchTime(1.5f, StartCutscene);
     void StartCutscene()
     {
-        PausePlayer(false);
+        
         cutscene.SetActive(true);
         director.Play();
     }

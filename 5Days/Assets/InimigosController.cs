@@ -30,6 +30,7 @@ public class InimigosController : MonoBehaviour
 
         for (int i = 0; i < inimigosArray.Length; i++)
         {
+            if(!inimigosArray[i].isEnemyPersistent) continue;
             bool morreu = inimigosArray[i].inimigo.jaMorreu;
             inimigos.enemies[i] = new Inimigo(morreu);
         }

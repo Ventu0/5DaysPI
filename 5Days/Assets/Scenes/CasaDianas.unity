@@ -2540,6 +2540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fab5e7af265be4aa682618c08195b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 1921253240}
   dontDestroyParent: {fileID: 958920868}
   director: {fileID: 239250714}
   onInputReceived:
@@ -3096,6 +3097,7 @@ MonoBehaviour:
   - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
   - {fileID: 3269279359094584176, guid: acf8eb9ad4dc9ef489d4bf302d252ac2, type: 3}
   - {fileID: 3269279359094584176, guid: acf8eb9ad4dc9ef489d4bf302d252ac2, type: 3}
+  talkOnce: 0
   idToSave: CamaDormir
   isHealer: 0
   yesOrNo:
@@ -3735,18 +3737,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1864066444991193222, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: m_text
-      value: DIA 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2071040697021452473, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.700073
-      objectReference: {fileID: 0}
-    - target: {fileID: 2071040697021452473, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -17.799988
-      objectReference: {fileID: 0}
     - target: {fileID: 3276163473673638495, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6070051
@@ -3786,18 +3776,6 @@ PrefabInstance:
     - target: {fileID: 3276163473673638495, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102222990943949287, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: horarioDaNoite
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102222990943949287, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: tempoParaNoite
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342458987349623456, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6721595690482119415, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_Name

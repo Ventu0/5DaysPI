@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Presas de Veneno
   description: 
-  danoOuCura: 13
+  danoOuCura: 18
   maxPP: 15
   currentPP: 0
   VisualEffectDuration: 1

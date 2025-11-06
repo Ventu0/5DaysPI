@@ -34,6 +34,7 @@ public class LojaCharacterSelection : MonoBehaviour
         SelectedButtonSetOnClick(selected, true); //adicionar um primeiro botao pra nao ficar estranho e bugado
 
         TrocarCoresDeTodos();
+        characters[0].Comprado(false); //garante que o primeiro personagem ja comece comprado
     }
     public void Setup(List<bool> unlocked)
     {

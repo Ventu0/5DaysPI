@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class CutsceneController : MonoBehaviour
 {
+    [SerializeField] GameObject book;
     [SerializeField] GameObject dontDestroyParent;
     public PlayableDirector director;
     [SerializeField] UnityEvent onInputReceived;
@@ -12,9 +13,11 @@ public class CutsceneController : MonoBehaviour
     public static CutsceneController instance;
     private void Awake()
     {
+        book.gameObject.SetActive(false);
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
         if(cutsceneEnded == 1)
-        {print("Cutscene ja foi vista, destruindo objeto");
+        {
+            book.gameObject.SetActive(true);
             Destroy(dontDestroyParent);
             return;
         }

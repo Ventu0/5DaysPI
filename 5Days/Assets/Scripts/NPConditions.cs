@@ -42,7 +42,6 @@ public class NPConditions : MonoBehaviour
             {
                 return; 
             }
-            //se quiser colocar uma cutscene de dormir aqui, colocar aqui
             if (!CheckIfHasText(currentOption.yesDialogue))
             {
                 actualNPC.ResetNPC();

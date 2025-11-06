@@ -28,5 +28,5 @@ MonoBehaviour:
     faces:
     - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
   needMoney: 1
-  moneyAmount: 10
-  canSleep: 0
+  moneyAmount: 25
+  needSleep: 0

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Soco
   description: "A maneira mais b\xE1sica de atacar um oponente."
-  danoOuCura: 25
+  danoOuCura: 30
   maxPP: 15
-  currentPP: 15
+  currentPP: 5
   VisualEffectDuration: 1
   iconeAtaque: {fileID: -676253207152913929, guid: 8590deffd8e72774591195e9048ab5f2, type: 3}
   iconMainColor: {r: 0.79215693, g: 0, b: 0.2392157, a: 1}
@@ -26,13 +26,16 @@ MonoBehaviour:
   attackAnimation: {fileID: 0}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 0}
+  porcentagemDeCura: 0.3
   soundEffect: {fileID: 8300000, guid: 3faa760b5a64098408ec8f2832cbec19, type: 3}
   repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 0
   oneTime: 0
   shakeCamera: 0
   ataqueEmArea: 0
+  stealHeal: 0
   useCharacterAnimation: 1
   attackParameterName: Normal
   endAttackParameter: 
