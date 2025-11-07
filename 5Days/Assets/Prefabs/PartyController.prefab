@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2728031865123413414}
   - component: {fileID: 930291832013184143}
-  - component: {fileID: 5527594118378867894}
+  - component: {fileID: 8484533490468632750}
   m_Layer: 0
   m_Name: PartyController
   m_TagString: Untagged
@@ -177,8 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerParty:
   - {fileID: 11400000, guid: ab683088ce5e0de4fbc6c65f78b86f59, type: 2}
+  - {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
+  - {fileID: 11400000, guid: 68df01415572d4f4d945dafbbdc608b2, type: 2}
   partyAtual: []
---- !u!114 &5527594118378867894
+--- !u!114 &8484533490468632750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,8 +195,8 @@ MonoBehaviour:
   audioSource: {fileID: 2688721014625590866}
   mainVolume: 0
   mainSoundtracks:
-  - {fileID: 8300000, guid: 5b9d82a078c1f3b4097d399aef83bfcf, type: 3}
   - {fileID: 8300000, guid: c887d14cbcb73fb4a8bd82b3fd2107dd, type: 3}
+  - {fileID: 8300000, guid: 5b9d82a078c1f3b4097d399aef83bfcf, type: 3}
   battleSoundtracks:
   - {fileID: 8300000, guid: 8b6208c5531621a41a07d8cb8b848a9b, type: 3}
   - {fileID: 8300000, guid: 4ae84f1015fec1d498f55db1fbecd2c6, type: 3}

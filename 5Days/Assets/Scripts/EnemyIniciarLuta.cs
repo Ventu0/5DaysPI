@@ -47,8 +47,12 @@ public class EnemyIniciarLuta : MonoBehaviour
         battleStarted = false;
         inimigo.jaMorreu = true;
         gameObject.SetActive(false);
-        PlayerMoney.instance.SetActive(true);
-        PlayerMoney.instance.AddMoney(moneyYield);
+        if (PlayerMoney.instance != null)
+        {
+            PlayerMoney.instance.SetActive(true);
+            PlayerMoney.instance.AddMoney(moneyYield);
+        }
+            
         Time.timeScale = 0f;
     }
     void WaitSomeTime()
@@ -67,7 +71,10 @@ public class EnemyIniciarLuta : MonoBehaviour
         MainSoundtrack.instance.ChooseRandomBattleSoundtrack();
         QuestController.instance.SetAllActive(false);
         PauseMenuController.instance.canPause = false;
+
+        if(PlayerMoney.instance != null)
         PlayerMoney.instance.SetActive(false);
+
         Player.instance.canMove = false;
         battleStarted = true;
 
