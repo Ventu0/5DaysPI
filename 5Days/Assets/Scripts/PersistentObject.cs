@@ -29,10 +29,10 @@ public class PersistentObject : MonoBehaviour
         print("Bed1");
         if (Player.instance != null)
             Player.instance.LoadOnLastBed(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
 
         if (Sleep.instance != null)
-            Sleep.instance.SleepForTheDay();
+            Sleep.instance.SleepForTheDay(true);
     }
     public IEnumerator HardcoreModeLost()
     {

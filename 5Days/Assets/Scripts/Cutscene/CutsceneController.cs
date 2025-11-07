@@ -83,7 +83,6 @@ public class CutsceneController : MonoBehaviour
         player.canTalk = true;
         Sleep.instance.SavePlayerBed();
 
-
         Destroy(dontDestroyParent);
     }
 }
