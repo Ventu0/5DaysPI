@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: -5133412329262697850, guid: 4386f6a97b708294dbb1215329ad84cb, type: 3}
   vidaMaxima: 200
-  vidaAtual: 175
+  vidaAtual: 200
   YOffset: 0.3
   isDead: 0
   ataques:

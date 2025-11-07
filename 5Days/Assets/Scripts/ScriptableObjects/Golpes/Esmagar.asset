@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Esmagar
   description: "O usu\xE1rio pisa no cha\xF5 com for\xE7a, causando dano em \xE1rea"
-  danoOuCura: 20
+  danoOuCura: 15
   maxPP: 10
-  currentPP: 10
+  currentPP: 9
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 8232695534017358868, guid: 10dc84ebd71f59f40812f0375c66b1da, type: 3}
   iconMainColor: {r: 0.36078432, g: 0.19607845, b: 0, a: 1}

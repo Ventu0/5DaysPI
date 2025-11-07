@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: Curar
   description: "O usu\xE1rio usa uma magia da tribo para regenerar seus machucados."
-  danoOuCura: 25
+  danoOuCura: 42
   maxPP: 8
   currentPP: 7
   VisualEffectDuration: 1

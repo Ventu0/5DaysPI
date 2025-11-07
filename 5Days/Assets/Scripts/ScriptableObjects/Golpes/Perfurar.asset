@@ -15,7 +15,7 @@ MonoBehaviour:
   nomeAtaque: Perfurar
   description: "Um ataque onde o usuario gira a lan\xE7a, causando dano repetidamente.
     <color=red> s\xF3 pode ser usado uma vez por partida</color>"
-  danoOuCura: 8
+  danoOuCura: 18
   maxPP: 5
   currentPP: 4
   VisualEffectDuration: 1.4

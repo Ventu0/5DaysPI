@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Lanceiro
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 1797109563838230265, guid: 0f93ba0687460e049816bbd4d68fb18d, type: 3}
-  vidaMaxima: 130
-  vidaAtual: 130
+  vidaMaxima: 150
+  vidaAtual: 150
   YOffset: 0.2
   isDead: 0
   ataques:

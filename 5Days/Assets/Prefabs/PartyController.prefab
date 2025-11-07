@@ -177,8 +177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerParty:
   - {fileID: 11400000, guid: ab683088ce5e0de4fbc6c65f78b86f59, type: 2}
-  - {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
-  - {fileID: 11400000, guid: 68df01415572d4f4d945dafbbdc608b2, type: 2}
   partyAtual: []
 --- !u!114 &8484533490468632750
 MonoBehaviour:

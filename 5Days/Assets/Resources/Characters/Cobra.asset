@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cobra
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 9061232554596751, guid: bcf417657e71b0f4985b6c38caae8d78, type: 3}
-  vidaMaxima: 70
-  vidaAtual: 70
+  vidaMaxima: 55
+  vidaAtual: 55
   YOffset: 0
   isDead: 0
   ataques:
