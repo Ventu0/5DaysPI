@@ -28,7 +28,7 @@ public class MainSoundtrack : MonoBehaviour
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded", 0);
         if (cutsceneEnded == 0) return;
 
-        ChooseRandomMainSoundtrack();
+        ChooseRandomMainSoundtrack(); //cuidado vital
     }
     public void ChooseRandomMainSoundtrack()
     {
