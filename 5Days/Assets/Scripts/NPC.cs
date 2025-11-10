@@ -22,9 +22,9 @@ public class YesOrNo
 public class NPC : MonoBehaviour
 {
     [Header("Configurações de Fala")]
-    [SerializeField] string[] dialogueLines;
+    public string[] dialogueLines;
     [SerializeField] int falaAtual = -1;
-    [SerializeField] Sprite[] charactersFace;
+    public Sprite[] charactersFace;
 
     [Header("Opcionais")]
     [SerializeField] bool talkOnce = true;
@@ -68,7 +68,7 @@ public class NPC : MonoBehaviour
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
-        if(alreadyTalked) return;
+        if (alreadyTalked) return;
         if (!canBeInteracted) return;
 
         if (isChoosing)
@@ -114,6 +114,11 @@ public class NPC : MonoBehaviour
             if(yesOrNo == null && talkOnce)
                 alreadyTalked = true;
         }
+    }
+    public void ChangeOriginalDialogue(DialogueArrays dialogueArray)
+    {
+        dialogueLines = dialogueArray.lines;
+        charactersFace = dialogueArray.faces;
     }
     public void ResetNPC()
     {
@@ -202,15 +207,24 @@ public class NPC : MonoBehaviour
             return;
         }
         if (!savedNPCs.HasData()) return;
+
         NPCSaveData data = savedNPCs.GetNPCData(idToSave);
         DialogueOptions options = yesOrNo?.options;
         if (options != null)
         {
             if (options.needMoney && yesOrNo != null) //se adicionar mais condições, adicionar aqui
                 yesOrNo.conditionMet = data.alreadyPayedMoney;
+            if(yesOrNo.conditionMet)
+            {
+                ChangeOriginalDialogue(options.alreadyPayedDialogue);
+                activeLines = dialogueLines;
+                activeIcons = charactersFace;
+                print("trocando dialogo");
+            }
         }
         
         alreadyRecievedQuest = data.alreadyRecievedQuest;
         if(talkOnce) alreadyTalked = data.alreadyAnswered;
+
     }
 }

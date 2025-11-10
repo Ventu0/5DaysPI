@@ -12,7 +12,11 @@ public class DialogueOptions : ScriptableObject
 {
     public DialogueArrays yesDialogue;
     public DialogueArrays noDialogue;
+    [Space(10)]
+    public bool alreadyPayed = false;
     public DialogueArrays notEnoughMoneyDialogues;
+    public DialogueArrays alreadyPayedDialogue;
+    public DialogueArrays yesPayedDialogue;
 
     [Header("Configurações de opções")]
     public bool needMoney;

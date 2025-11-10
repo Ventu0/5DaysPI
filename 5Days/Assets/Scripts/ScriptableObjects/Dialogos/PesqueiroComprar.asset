@@ -29,11 +29,26 @@ MonoBehaviour:
     - "Beleza ent\xE3o"
     faces:
     - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+  alreadyPayed: 0
   notEnoughMoneyDialogues:
     lines:
     - "Lamento mas voc\xEA n\xE3o tem dinheiro suficiente"
     faces:
     - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+  alreadyPayedDialogue:
+    lines:
+    - "Parece que voc\xEA j\xE1 me pagou antes"
+    - Gostaria de ir para a caverna?
+    faces:
+    - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+    - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+  yesPayedDialogue:
+    lines:
+    - Indo para caverna...
+    - Bora Bill!
+    faces:
+    - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
+    - {fileID: 7071523916423533649, guid: 8bdd911a1fb38624e830300c565af48c, type: 3}
   needMoney: 1
   moneyAmount: 25
   needSleep: 0

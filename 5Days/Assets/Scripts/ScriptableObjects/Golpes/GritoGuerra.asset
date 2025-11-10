@@ -18,7 +18,7 @@ MonoBehaviour:
   maxPP: 5
   currentPP: 5
   VisualEffectDuration: 1
-  iconeAtaque: {fileID: 7866795523874103367, guid: ad87a8be74c7817438cee689222ca1da, type: 3}
+  iconeAtaque: {fileID: 3113841234540775196, guid: 5f2dcd3ce63bce243956eaf5bfc99163, type: 3}
   iconMainColor: {r: 1, g: 0.04718091, b: 0.015686274, a: 1}
   attackEffect: {fileID: -505457000399052102, guid: f4af8db42c296a94bb4508924dab5c34, type: 3}
   attackEffectYOffset: -0.7

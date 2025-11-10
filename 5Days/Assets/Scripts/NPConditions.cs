@@ -53,11 +53,16 @@ public class NPConditions : MonoBehaviour
     }
     void WasteMoney()
     {
+        if(currentOption.alreadyPayed)
+        {
+            actualNPC.Falar(currentOption.yesPayedDialogue.lines, currentOption.yesPayedDialogue.faces);
+            return;
+        }
         int money = PlayerMoney.money;
 
         bool condition = money >= currentOption.moneyAmount;
-        if(condition) money -= currentOption.moneyAmount;
-
+        if(condition) PlayerMoney.instance.AddMoneyNoAnimation(-currentOption.moneyAmount);
+        print("Tem dinheiro: " + condition);
         DialogueArrays dialogueToUse = condition ? currentOption.yesDialogue : currentOption.notEnoughMoneyDialogues;
 
         string[] lines = dialogueToUse.lines;
@@ -69,6 +74,9 @@ public class NPConditions : MonoBehaviour
             return;
         }
         actualNPC.yesOrNo.conditionMet = condition;
+        currentOption.alreadyPayed = condition;
+        if(condition) 
+            actualNPC.ChangeOriginalDialogue(currentOption.alreadyPayedDialogue);
         actualNPC.Falar(lines, sprites);
     }
     bool CheckIfHasText(DialogueArrays dialogue)

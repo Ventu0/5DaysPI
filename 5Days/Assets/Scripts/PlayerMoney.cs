@@ -3,15 +3,18 @@ using TMPro;
 using System.Collections;
 public class PlayerMoney : MonoBehaviour
 {
-    public static int money { get; private set; } = 0;
+    [SerializeField] bool debugMode = false;
+    [Space(10)] 
     [SerializeField] GameObject moedaGira;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI moneyToAddText;
+    public static int money { get; private set; } = 0;
     public static PlayerMoney instance;
+
     private void Awake()
     {
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded", 0);
-        if (cutsceneEnded == 0)
+        if (cutsceneEnded == 0 && !debugMode)
         {
             Destroy(transform.root.gameObject);
             return;
@@ -27,29 +30,34 @@ public class PlayerMoney : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void Start()
     {
         moneyToAddText.text = "";
         moneyToAddText.gameObject.SetActive(false);
     }
+
     public void SetActive(bool setActive = true)
     {
         moedaGira.SetActive(setActive);
     }
+
     public void AddMoneyNoAnimation(int amount)
     {
         money += amount;
-        
         SkipFrame();
     }
+
     public void SkipFrame()
     {
         moneyText.text = money.ToString();
     }
+
     public void AddMoney(int amount)
     {
         StartCoroutine(MoneyAnimation(amount));
     }
+
     IEnumerator MoneyAnimation(int amount)
     {
         moneyToAddText.gameObject.SetActive(true);
@@ -60,7 +68,7 @@ public class PlayerMoney : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        while(moneyToAdd != 0 || fakeMoney <= moneyAmount + amount) 
+        while (moneyToAdd != 0 || fakeMoney <= moneyAmount + amount)
         {
             if (moneyToAdd != 0)
             {
@@ -85,6 +93,7 @@ public class PlayerMoney : MonoBehaviour
 
         moneyToAddText.gameObject.SetActive(false);
     }
+
     #region ContextMenu
     [ContextMenu("See money value")]
     public void SeeMoney()
@@ -92,6 +101,7 @@ public class PlayerMoney : MonoBehaviour
         print("money: " + money.ToString());
         moneyText.text = money.ToString();
     }
+
     [ContextMenu("Add money")]
     public void AddMoney()
     {
