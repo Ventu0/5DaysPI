@@ -82,6 +82,7 @@ public class RelogioScript : MonoBehaviour
         {
             lastTriggeredHour = dayScript.horarioDaNoite;
             print("noite começou");
+            if(!dayScript.isOnDarkPlace)
             StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));    
         }
         if (hours == maxHours && lastTriggeredHour < maxHours)
@@ -91,6 +92,7 @@ public class RelogioScript : MonoBehaviour
             minutes = 0;
             hours = 0;
             StartCoroutine(MoveGradient());
+            if(!dayScript.isOnDarkPlace)
             StartCoroutine(diaENoite.ChangeToDay());
             //diaENoite.ResetTime();
         }

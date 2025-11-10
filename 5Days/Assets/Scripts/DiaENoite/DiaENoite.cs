@@ -25,6 +25,7 @@ public class DiaENoite : MonoBehaviour
     public int horarioDaNoite = 18;
 
     [Header("Read-Only")]
+    public bool isOnDarkPlace;
     public bool isPaused;
     float time;
 
@@ -52,12 +53,13 @@ public class DiaENoite : MonoBehaviour
             directionalLight.gameObject.SetActive(false);
             Destroy(dontDestroyObject);
         }
+        SceneManager.sceneLoaded += OnSceneChange;
+
         relogioScript = GetComponent<RelogioScript>();
         tempoParaNoiteSegundos = tempoParaNoite * 60;
     }
     void Start()
     {
-        
     }
     public float AcharValorRestante(float valorParaAcharPorcentagem)
     {
@@ -89,8 +91,7 @@ public class DiaENoite : MonoBehaviour
     }
     public void SetSpecificHour(float tempo) 
     {
-      clockUI.SetActive(false);
-      directionalLight.intensity = Mathf.Lerp(1, intensidadeNoite, tempo);
+      directionalLight.intensity = Mathf.Lerp(0, 1, tempo);
       StopAllCoroutines();
     }
     #region LerpsDeTempo
@@ -124,4 +125,17 @@ public class DiaENoite : MonoBehaviour
         }
     }
     #endregion
+    public void OnSceneChange(Scene scene, LoadSceneMode mode)
+    { 
+        if(scene.name == "Caverna")
+        {
+            print("cAVERNANNNA");
+            SetSpecificHour(0.05f);
+            isOnDarkPlace = true;
+        }
+        else
+        {
+            isOnDarkPlace = false;
+        }
+    }
 }
