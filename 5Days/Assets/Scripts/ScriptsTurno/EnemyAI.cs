@@ -19,7 +19,12 @@ public class EnemyAI : MonoBehaviour
         {
             int ataqueEscolhido = Random.Range(0, ataques.Count);
             Attack ataque = ataques[ataqueEscolhido];
-            print("nome do ataque: " +  ataque.name);
+            if(ataque.tipoDeAlvo == Alvo.Self)
+            {
+                ataque.ExecutarAtaque(enemyCharacter, ataque.attackEffect);
+                enemyCharacter.turnEnded = true;
+                return;
+            }
             ataque.ExecutarAtaque(TurnModeManager.instance.EncontrarAlvo(), ataque.attackEffect);
         }
     }

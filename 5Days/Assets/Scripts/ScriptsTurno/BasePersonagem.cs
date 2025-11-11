@@ -26,7 +26,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     public StatusEffect statusEffect;
 
     //variaveis privadas
-    Vector3 originalPos;
+    public Vector3 originalPos;
     [HideInInspector] public Animator animator;
     Aliados aliado;
     TextMeshProUGUI lifeText;
@@ -48,6 +48,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
         List<Effect> efeitos = new List<Effect>(efeitosAtivos);
         for(int i = 0; i < efeitos.Count; i++)
         {
+            print("onturnstart de: " + gameObject.name);
             if(efeitos[i] != null)
             efeitos[i].OnTurnStart(this);
         }

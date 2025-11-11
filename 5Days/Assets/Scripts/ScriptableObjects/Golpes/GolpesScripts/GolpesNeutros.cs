@@ -31,7 +31,7 @@ public class GolpesNeutros : Attack
         }
         else
         {
-            MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront, VisualEffectDuration);
+            MovesVisualEffect.instance.AttackEffect(attackSprite, alvoPos, attackAnimation, animationPlayInFront, attackEffectYOffset, VisualEffectDuration);
             if (changeColorWhileApplyingEffect) ChangeColorDuringEffect(alvo);
         }
         currentPP -= 1;
@@ -71,6 +71,7 @@ public class GolpesNeutros : Attack
             efeitoSecundario.ApplyEffect(alvo);
             alvo.AtualizarVida();
         }
+        Debug.Log("terminando de aplicar o efeito");
     }
     public override List<BasePersonagem> EncontrarAliados()
     {

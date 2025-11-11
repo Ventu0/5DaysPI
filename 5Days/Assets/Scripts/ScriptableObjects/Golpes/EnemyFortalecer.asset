@@ -10,27 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fb6f06121f23fd4c94a839c03694efc, type: 3}
-  m_Name: Fortalecer
-  m_EditorClassIdentifier: 
-  nomeAtaque: Fortalecer
-  description: "O usu\xE1rio foca suas energias, aumentando o dano de seu proximo
-    ataque. Este ataque n\xE3o pode ser usado em sequ\xEAncia"
+  m_Name: EnemyFortalecer
+  m_EditorClassIdentifier: Assembly-CSharp::GolpesNeutros
+  nomeAtaque: 
+  description: 
   danoOuCura: 0
-  maxPP: 5
-  currentPP: 3
+  maxPP: 15
+  currentPP: 2
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 2069320296070208538, guid: 0658892808ea2c847ad532323f05c2cc, type: 3}
-  iconMainColor: {r: 0.23137257, g: 0.36862746, b: 0.78823537, a: 1}
+  iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackEffect: {fileID: 7866795523874103367, guid: ad87a8be74c7817438cee689222ca1da, type: 3}
   attackEffectYOffset: -0.65
   tipoDeAlvo: 2
   attackAnimation: {fileID: 9100000, guid: b6d35dc5e03a3a448ae02aebabe14bdd, type: 2}
   animationPlayInFront: 0
-  efeitoSecundario: {fileID: 11400000, guid: 5aeb4a08fb90720458b88cdc3cd57faf, type: 2}
+  efeitoSecundario: {fileID: 11400000, guid: 5ef9ce67c185109448db025055adc683, type: 2}
   porcentagemDeCura: 0.3
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
-  canUseSelectMenu: 1
+  canUseSelectMenu: 0
   usarMovimentoLinear: 0
   "ataqueUmaVezS\xF3": 0
   oneTime: 0
@@ -40,6 +39,6 @@ MonoBehaviour:
   useCharacterAnimation: 0
   attackParameterName: 
   endAttackParameter: 
-  buffType: "For\xE7a: "
+  buffType: 'Cura: '
   changeColorWhileApplyingEffect: 1
-  colorToChange: {r: 0.23137257, g: 0.36862746, b: 0.78823537, a: 1}
+  colorToChange: {r: 0.8113208, g: 0.62725264, b: 0, a: 1}

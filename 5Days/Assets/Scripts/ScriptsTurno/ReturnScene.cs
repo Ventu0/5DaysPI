@@ -63,7 +63,7 @@ public class ReturnScene : MonoBehaviour
     {
         float iterador = 0;
         fadeAnimation.gameObject.SetActive(true);
-        FadeController.instance.FadeInForHowMuchTime(2f);
+        FadeController.instance.FadeInForHowMuchTime(2.7f);
         InteractButtonsController.instance.menu.SetActive(false);
         while (iterador < duration)
         {

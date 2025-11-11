@@ -77,7 +77,10 @@ public class RecieveInfoManager : MonoBehaviour
 
             inimigo.GetComponent<SpriteRenderer>().flipX = inimigo.characterStatus.flipX;
 
-            inimigo.transform.position = new Vector2(inimigoPos.x, inimigoPos.y + inimigo.characterStatus.YOffset);
+            Vector2 newEnemyPos = new Vector2(inimigoPos.x, inimigoPos.y + inimigo.characterStatus.YOffset);
+            inimigo.transform.position = newEnemyPos;
+            inimigo.originalPos = newEnemyPos;
+
             inimigo.shadow.transform.position = shadowOriginalPos;
             inimigo.shadow.gameObject.SetActive(true);
 

@@ -131,6 +131,10 @@ public class TurnModeManager : MonoBehaviour
             {
                 turno = Turnos.EnemyTurn;
                 InteractButtonsController.instance.menu.SetActive(false);
+                for(int i = 0; i < inimigosPersonagens.Count; i++)
+                {
+                    inimigosPersonagens[i].OnTurnStart();
+                }
                 turnoDeQualPersonagem = 0;
                 inimigos[turnoDeQualPersonagem].Attack();
             }

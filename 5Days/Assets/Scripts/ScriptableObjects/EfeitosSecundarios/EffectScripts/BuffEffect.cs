@@ -1,3 +1,4 @@
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 [CreateAssetMenu(fileName = "BuffEffect", menuName = "EfeitoSecundario/BuffEffect", order = 1)]
 public class BuffEffect : Effect
@@ -47,7 +48,8 @@ public class BuffEffect : Effect
     }
     public override void RemoveEffect()
     {
-        character.strengthFactor -= strengthMultiplier; 
+        character.strengthFactor -= strengthMultiplier;
+        Debug.Log("Removendo efeito");
         character.strengthFactor = Mathf.Clamp(character.strengthFactor, 1, 999);
         TextPopup.instance.GerarTexto("Força: " + character.strengthFactor.ToString(), character.transform.position, Color.red, 26f);
         character.isBuffed = false;

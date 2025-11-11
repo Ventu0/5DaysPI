@@ -55,7 +55,6 @@ public class InteractButtonsController : MonoBehaviour
     public void OpenMenu()
     {
         attackMenuAnim.gameObject.SetActive(!attackMenuAnim.isActiveAndEnabled);
-        print(turnModeManager.QuemEstaAtacando());
         ataques = turnModeManager.QuemEstaAtacando().characterStatus.ataques;
         EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
     }
@@ -65,6 +64,7 @@ public class InteractButtonsController : MonoBehaviour
         aliado.isDefending = true;
         
         aliado.shield.SetActive(true);
+
         turnModeManager.QuemEstaAtacando().turnEnded = true;
         turnModeManager.CheckIfAllCharactersAttacked();
     }
