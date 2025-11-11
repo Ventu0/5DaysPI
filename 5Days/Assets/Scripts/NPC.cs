@@ -10,6 +10,8 @@ public class YesOrNo
     public bool conditionMet = false;
     public int question;
 
+    public bool activateYesTextEndOnCondition = false;
+    [Space(10)]
     public bool yesTextActivated = false;
     public UnityEvent OnYesTextEnd;
     public DialogueOptions options;
@@ -141,7 +143,14 @@ public class NPC : MonoBehaviour
             yesOrNo.alreadyAnswered = false;
             if (yesOrNo.yesTextActivated)
             {
-                yesOrNo.OnYesTextEnd?.Invoke();
+                if (yesOrNo.activateYesTextEndOnCondition)
+                {
+                    if(yesOrNo.conditionMet)
+                        yesOrNo.OnYesTextEnd?.Invoke();
+                }
+                else
+                    yesOrNo.OnYesTextEnd?.Invoke();
+
                 yesOrNo.yesTextActivated = false;
             }
         }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System.Collections.Generic;
 public class DeleteSave : MonoBehaviour
@@ -40,8 +41,17 @@ public class DeleteSave : MonoBehaviour
                 File.Delete(arquivos[i]); //se já houver um save, deleta ele
             }
         }
-        if(Loader.instance != null)
-            Loader.instance.DeletarTudoDoDontDestroy();
+        DeletarTudoDoDontDestroy();
+    }
+    public void DeletarTudoDoDontDestroy()
+    {
+        Scene dontDestroyScene = gameObject.scene;
+        GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
+        foreach (GameObject objeto in objectsInScene)
+        {
+            if (objeto != gameObject)
+                Destroy(objeto);
+        }
     }
     public bool ChecarSePossuiSave()
     {

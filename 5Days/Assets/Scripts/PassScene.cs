@@ -8,6 +8,6 @@ public class PassScene : MonoBehaviour
     }
     public void PassTheScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("BarcoCutscene");
     }
 }

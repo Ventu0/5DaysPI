@@ -38,5 +38,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CasaArmas.unity
     guid: 9625a59186ae266428f6ab4f5c6947a4
+  - enabled: 1
+    path: Assets/Scenes/BarcoCutscene.unity
+    guid: ca347d283e439eb4bac33f4c9ab93443
+  - enabled: 1
+    path: Assets/Scenes/Caverna.unity
+    guid: d1045fbbc946bf34b9cedfbcb33d325a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

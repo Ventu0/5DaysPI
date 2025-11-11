@@ -20,16 +20,7 @@ public class Loader : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void DeletarTudoDoDontDestroy()
-    {
-        Scene dontDestroyScene = gameObject.scene;
-        GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
-        foreach(GameObject objeto in objectsInScene)
-        {
-            if(objeto != gameObject)
-            Destroy(objeto);
-        }
-    }
+   
     public void Carregar()
     {
         string caminho = Application.persistentDataPath + "/PlayerData.json";
