@@ -250,3 +250,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeController
   fadeAnimator: {fileID: 5197342945179744268}
+  persistent: 1

@@ -5,12 +5,14 @@ using UnityEngine;
 public class FadeController : MonoBehaviour
 {
     [SerializeField] Animator fadeAnimator;
+    [SerializeField] bool persistent = true;
     public static FadeController instance;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            if (!persistent) return;
             DontDestroyOnLoad(transform.root);
         }
         else
@@ -38,6 +40,10 @@ public class FadeController : MonoBehaviour
     public void FadeInForHowMuchTime(float time, Action onFadeInHalf = null)
     {
         StartCoroutine(FadeCoroutine(time, onFadeInHalf));
+    }
+    public void FadeInWithoutAction(float time)
+    {
+        StartCoroutine(FadeCoroutine(time));
     }
     IEnumerator FadeCoroutine(float time, Action onFadeInHalf = null)
     {
