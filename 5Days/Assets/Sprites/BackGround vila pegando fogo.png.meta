@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93d05671f11b8b947ac375e2fdcf0391
-      internalID: -749553458
+      spriteID: b8938280ac4d44e4d995a5f17f19464e
+      internalID: 972603931
       vertices: []
       indices: 
       edges: []
@@ -172,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 158111bd47cf4b54a87588918447f77f
-      internalID: 1961786011
+      spriteID: 433dd1ffee1943746b365c9dca53d213
+      internalID: 533577544
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a7c1b55fe772484281a6876ccecf38e
-      internalID: 1626846479
+      spriteID: b226af8233b000a4f849ff580b8313c5
+      internalID: -948889289
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 102f61f28ccd999459dd22d8795863c0
-      internalID: -771772141
+      spriteID: 9835658a077bc51488d7ed0615374f5a
+      internalID: -2100726684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround vila pegando fogo_5
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 3200
+        height: 2400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d93d7953e093240b53a9e81af7a28f
+      internalID: 1615162382
       vertices: []
       indices: 
       edges: []
@@ -239,11 +261,11 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":3.0},"gridSpriteSize":{"x":3200.0,"y":2400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       BackGround vila pegando fogo_0: 5830027910182858302
-      BackGround vila pegando fogo_1: -749553458
-      BackGround vila pegando fogo_2: 1961786011
-      BackGround vila pegando fogo_3: 1626846479
-      BackGround vila pegando fogo_4: -771772141
-      BackGround vila pegando fogo_5: 213030276
+      BackGround vila pegando fogo_1: 972603931
+      BackGround vila pegando fogo_2: 533577544
+      BackGround vila pegando fogo_3: -948889289
+      BackGround vila pegando fogo_4: -2100726684
+      BackGround vila pegando fogo_5: 1615162382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

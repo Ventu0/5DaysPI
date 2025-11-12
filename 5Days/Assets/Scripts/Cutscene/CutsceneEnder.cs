@@ -6,7 +6,8 @@ public class CutsceneEnder : MonoBehaviour
     [SerializeField] string sceneToLoad;
     void Start()
     {
-        DeleteSave.instance.DeletarTudoDoDontDestroy();
+        if(DeleteSave.instance != null)
+            DeleteSave.instance.DeletarTudoDoDontDestroy();
     }
     public void EndCutscene()
     {

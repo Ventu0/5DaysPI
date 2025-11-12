@@ -138,7 +138,7 @@ public class InteractButtonsController : MonoBehaviour
         SFX sfx = SFX.instance;
         if (ataque.currentPP <= 0)
         {
-            mainText.SetText("Esse ataque não tem mais PP!", Color.red);
+            mainText.SetText("Esse ataque não tem mais usos!", Color.red);
             sfx.PlaySFX(errorSound);
             return;
         }
