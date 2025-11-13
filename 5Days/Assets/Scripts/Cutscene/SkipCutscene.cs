@@ -43,12 +43,16 @@ public class SkipCutscene : MonoBehaviour
             elapsedTime = 0f;
             secondsText.text = timeToSkip.ToString("F1") + "s";
         }
-        if(timeToSkip - elapsedTime <= 0f)
+        if(timeToSkip <= elapsedTime)
         {
             finished = true;
             onCutsceneSkip.Invoke();
             skipCutsceneMenu.SetActive(false);
         }
+    }
+    public void CompletedSkip()
+    {
+        finished = true;
     }
     IEnumerator DecreaseTime()
     {

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
   nomeAtaque: Sugar
   description: 
-  danoOuCura: 15
+  danoOuCura: 18
   maxPP: 15
-  currentPP: 13
+  currentPP: 11
   VisualEffectDuration: 1
   iconeAtaque: {fileID: 0}
   iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -26,7 +26,7 @@ MonoBehaviour:
   attackAnimation: {fileID: 9100000, guid: b7262ae32d42fe0449c0803cc6d3d373, type: 2}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
-  porcentagemDeCura: 0.5
+  porcentagemDeCura: 0.431
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
   canUseSelectMenu: 1

@@ -23332,12 +23332,16 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: c7c1990cd9c991742861447f09c78cb1, type: 2}
     - target: {fileID: 6205605082003792416, guid: 443110dbaebccda439299fb4904903ce, type: 3}
       propertyPath: enemiesStatus.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6205605082003792416, guid: 443110dbaebccda439299fb4904903ce, type: 3}
       propertyPath: 'enemiesStatus.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 00e1e345a9dbd9c438d5295d74182709, type: 2}
+    - target: {fileID: 6205605082003792416, guid: 443110dbaebccda439299fb4904903ce, type: 3}
+      propertyPath: 'enemiesStatus.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d4eb3702f5efc5f458654f475e6497e6, type: 2}
     - target: {fileID: 8480002590178634455, guid: 443110dbaebccda439299fb4904903ce, type: 3}
       propertyPath: m_Name
       value: Inimigo_EntrarBatalha (1)

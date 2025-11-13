@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using Cinemachine;
 
 public class RelogioScript : MonoBehaviour
 {
     [Header("Configurações do Relógio")]
+    [SerializeField] GameObject relogio;
     [SerializeField] Image gradiente;
     [SerializeField] TextMeshProUGUI hourText;
     [SerializeField] TextMeshProUGUI dayText;
@@ -61,18 +63,24 @@ public class RelogioScript : MonoBehaviour
         currentDay += 1;
         currentDay = Mathf.Clamp(currentDay, 1, 5);
         dayText.text = "Dia " + currentDay;
-        if (currentDay.Equals(5))
+        if (currentDay + 1 == 6)
         {
-            Lose();
+            StartCoroutine(LoseRoutine());
         }
     }
     [ContextMenu("Perder agora")]
-    public void Lose()
+    void Lose() => StartCoroutine(LoseRoutine());
+    public IEnumerator LoseRoutine()
     {
         Player.instance.canMove = false;
         isCompleted = true;
-        Player player = Player.instance;
-        StartCoroutine(ShakeEffect.instance.Shake(player.mainCam.gameObject, player.mainCam.transform.position, 5f, 0.09f, false));
+        CameraController camController = CameraController.instance;
+        CinemachineFramingTransposer transposer = camController.cinemachineCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        StartCoroutine(ShakeEffect.instance.ShakeCam(transposer, transposer.m_TrackedObjectOffset, 5f, 0.5f));
+        yield return new WaitForSeconds(4);
+        FadeController.instance.FadeInForHowMuchTime(2, () => UnityEngine.SceneManagement.SceneManager.LoadScene("Lost"));
+        yield return new WaitForSeconds(2.5f);
+        DeleteSave.instance.Deletar();
     }
     public void AddTime()
     {
@@ -111,11 +119,14 @@ public class RelogioScript : MonoBehaviour
         {
             lastTriggeredHour = timeToReset;
             NextDay();
-            //precisa adicionar a cutscene de desmaiar aqui, talvez fade out e fazer ela acordar na ultima cama dormida
         }
 
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");
         hourText.text = time;
+    }
+    void Desmaiar()
+    {
+        Player.instance.canMove = false;
     }
     public void ResetTime()
     {
@@ -149,6 +160,10 @@ public class RelogioScript : MonoBehaviour
             rectTransform.anchoredPosition = new Vector2(x, rectTransform.anchoredPosition.y);
             yield return null;
         }   
+    }
+    public void SetActive(bool active)
+    {
+        relogio.SetActive(active);
     }
     public int GetCurrentHour()
     {

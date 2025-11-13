@@ -35,6 +35,7 @@ public class CutsceneController : MonoBehaviour
 
     void Start()
     {
+        DiaENoite.instance.relogioScript.SetActive(false);
         Player.instance.canTalk = false;
         DiaENoite.instance.PauseTime(true);
         PauseMenuController.instance.canPause = false;
@@ -74,6 +75,7 @@ public class CutsceneController : MonoBehaviour
 
         doors.InteractDoors(true);
         doors.florestaCollider.enabled = false;
+        dayScript.relogioScript.SetActive(true);
         dayScript.PauseTime(false); //reseta o tempo
         dayScript.ResetTime();
 

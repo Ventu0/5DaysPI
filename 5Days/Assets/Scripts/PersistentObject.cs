@@ -21,7 +21,7 @@ public class PersistentObject : MonoBehaviour
     {
         
     }
-    public IEnumerator FadeSequence()
+    public IEnumerator LoseSequence()
     {
         FadeController.instance.FadeInForHowMuchTime(3);
         print("Bed2");

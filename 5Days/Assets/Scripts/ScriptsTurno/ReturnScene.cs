@@ -37,7 +37,7 @@ public class ReturnScene : MonoBehaviour
         {
             persistent.StartCoroutine(persistent.HardcoreModeLost());
         }
-        else if(lost)   persistent.StartCoroutine(persistent.FadeSequence());
+        else if(lost)   persistent.StartCoroutine(persistent.LoseSequence());
 
         TurnModeManager turnModeManager = TurnModeManager.instance;
         turnModeManager.MaintainStatus();
