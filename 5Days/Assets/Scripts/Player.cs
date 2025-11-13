@@ -2,10 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : CharacterStatus
 {
     [Header("Optional")]
+    public CinemachineVirtualCamera mainCam;
     [SerializeField] Light2D luzNatural;
     public bool canMove = true;
 

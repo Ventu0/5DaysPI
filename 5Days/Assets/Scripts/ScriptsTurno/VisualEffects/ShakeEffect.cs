@@ -47,6 +47,6 @@ public class ShakeEffect : MonoBehaviour
         }
 
         objectToShake.transform.position = originalPos;
-
+        print("brutal, ja acabei");
     }
 }

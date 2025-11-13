@@ -61,7 +61,18 @@ public class RelogioScript : MonoBehaviour
         currentDay += 1;
         currentDay = Mathf.Clamp(currentDay, 1, 5);
         dayText.text = "Dia " + currentDay;
-        
+        if (currentDay.Equals(5))
+        {
+            Lose();
+        }
+    }
+    [ContextMenu("Perder agora")]
+    public void Lose()
+    {
+        Player.instance.canMove = false;
+        isCompleted = true;
+        Player player = Player.instance;
+        StartCoroutine(ShakeEffect.instance.Shake(player.mainCam.gameObject, player.mainCam.transform.position, 5f, 0.09f, false));
     }
     public void AddTime()
     {
