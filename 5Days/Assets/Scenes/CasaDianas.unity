@@ -3284,6 +3284,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Persistent
       objectReference: {fileID: 0}
+    - target: {fileID: 2627659140865795238, guid: 66079f4d4126d9141b9534c63d7461c1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291499249458407463, guid: 66079f4d4126d9141b9534c63d7461c1, type: 3}
+      propertyPath: m_text
+      value: "\t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291499249458407463, guid: 66079f4d4126d9141b9534c63d7461c1, type: 3}
+      propertyPath: m_fontSize
+      value: 16.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291499249458407463, guid: 66079f4d4126d9141b9534c63d7461c1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774992218612827418, guid: 66079f4d4126d9141b9534c63d7461c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3749,6 +3769,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2885700893652039446, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: m_fontColorGradientPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: 110649fe250f13340889c279f790841d, type: 2}
     - target: {fileID: 3276163473673638495, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6070051
@@ -3789,6 +3813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4102222990943949287, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: tempoParaNoite
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6721595690482119415, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_Name
       value: DiaENoiteComponentes
@@ -3797,6 +3825,14 @@ PrefabInstance:
       propertyPath: relogio
       value: 
       objectReference: {fileID: 124175172}
+    - target: {fileID: 8910532338804416755, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: dangerGradient
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f5d68fcaee8b104b85124ba25903a8d, type: 2}
+    - target: {fileID: 8910532338804416755, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
+      propertyPath: originalGradient
+      value: 
+      objectReference: {fileID: 11400000, guid: 110649fe250f13340889c279f790841d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 using System.Collections;
 using Cinemachine;
@@ -11,6 +12,7 @@ public class RelogioScript : MonoBehaviour
     [SerializeField] Image gradiente;
     [SerializeField] TextMeshProUGUI hourText;
     [SerializeField] TextMeshProUGUI dayText;
+    [SerializeField] TMP_ColorGradient dangerGradient;
     [SerializeField] float gradienteInitialX;
     [SerializeField] float gradienteFinalX;
 
@@ -22,10 +24,11 @@ public class RelogioScript : MonoBehaviour
 
     [Header("Read-Only")]
     public int currentDay = 1;
+    [SerializeField] TMP_ColorGradient originalGradient;
     [SerializeField] int lastTriggeredHour = -1;
     [Space]
     [SerializeField] bool isCompleted = false;
-
+    public UnityEvent onAfterNoon;
     [SerializeField] string time;
 
     DiaENoite dayScript;
@@ -97,6 +100,11 @@ public class RelogioScript : MonoBehaviour
             hours = Mathf.Clamp(hours, 0, maxHours);
             minutes = 0;
         }
+        if (hours == dayScript.horarioDaTarde && lastTriggeredHour < dayScript.horarioDaTarde)
+        {
+            lastTriggeredHour = dayScript.horarioDaTarde;
+            onAfterNoon?.Invoke();
+        }
         if (hours == dayScript.horarioDaNoite && lastTriggeredHour < dayScript.horarioDaNoite)
         {
             lastTriggeredHour = dayScript.horarioDaNoite;
@@ -106,14 +114,17 @@ public class RelogioScript : MonoBehaviour
         }
         if (hours == maxHours && lastTriggeredHour < maxHours)
         {
-            lastTriggeredHour = 0;
             DiaENoite diaENoite = GetComponent<DiaENoite>();
+
+            lastTriggeredHour = 0;
             minutes = 0;
             hours = 0;
+
+            originalGradient = hourText.colorGradientPreset;
+            hourText.colorGradientPreset = dangerGradient;
+
             StartCoroutine(MoveGradient());
-            if(!dayScript.isOnDarkPlace)
-            StartCoroutine(diaENoite.ChangeToDay());
-            //diaENoite.ResetTime();
+            if(!dayScript.isOnDarkPlace) StartCoroutine(diaENoite.ChangeToDay());
         }
         if(hours == timeToReset && lastTriggeredHour < timeToReset)
         {
@@ -127,8 +138,18 @@ public class RelogioScript : MonoBehaviour
     }
     void Desmaiar()
     {
-        Player.instance.canMove = false;
-        StartCoroutine(PersistentObject.instance.LoseSequence(true, () => isCompleted = false));
+        Player player = Player.instance;
+        player.canMove = false;
+        player.OnDesmaiar();
+        
+        StartCoroutine(PersistentObject.instance.LoseSequence(true, OnEndLoseSequence));
+    }
+    void OnEndLoseSequence()
+    {
+        hourText.colorGradientPreset = originalGradient;
+        MainText.instance.SetText("Desmaiou! -25% de velocidade até a tarde!", Color.red, 3f);
+        isCompleted = false;
+        Player.instance.canMove = true;
     }
     public void ResetTime()
     {

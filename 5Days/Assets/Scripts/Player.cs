@@ -22,6 +22,8 @@ public class Player : CharacterStatus
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] float originalSpeed;
+    //[SerializeField] bool isTired; //porque cansado você nao anda rapido
 
     [Header("Últimos saves de posição")]
     public Vector2 lastSavedPosition;
@@ -163,6 +165,22 @@ public class Player : CharacterStatus
                 npc.Falar();
             }
         }
+    }
+    public void OnDesmaiar()
+    {
+        originalSpeed = Speed;
+
+        float reducedSpeed = Speed * 0.25f; //10%
+        Speed -= reducedSpeed;
+
+        //isTired = true;
+        DiaENoite.instance.relogioScript.onAfterNoon.AddListener(OnAfterNoon);
+    }
+    void OnAfterNoon()
+    {
+        //isTired = false;
+        Speed = originalSpeed;
+        DiaENoite.instance.relogioScript.onAfterNoon.RemoveListener(OnAfterNoon);
     }
     private void OnDrawGizmos()
     {

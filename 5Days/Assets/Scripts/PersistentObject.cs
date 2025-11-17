@@ -33,9 +33,8 @@ public class PersistentObject : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         if (Sleep.instance != null)
-            Sleep.instance.SleepForTheDay(true);
+            Sleep.instance.SleepForTheDay(true, OnSequenceEnd);
         //if(applyDebuff) 
-        OnSequenceEnd?.Invoke();
     }
     public IEnumerator HardcoreModeLost()
     {
