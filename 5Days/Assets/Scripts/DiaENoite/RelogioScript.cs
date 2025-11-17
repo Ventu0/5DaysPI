@@ -118,7 +118,8 @@ public class RelogioScript : MonoBehaviour
         if(hours == timeToReset && lastTriggeredHour < timeToReset)
         {
             lastTriggeredHour = timeToReset;
-            NextDay();
+            isCompleted = true;
+            Desmaiar();
         }
 
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");
@@ -127,6 +128,7 @@ public class RelogioScript : MonoBehaviour
     void Desmaiar()
     {
         Player.instance.canMove = false;
+        StartCoroutine(PersistentObject.instance.LoseSequence(true, () => isCompleted = false));
     }
     public void ResetTime()
     {

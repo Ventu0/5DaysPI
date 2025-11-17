@@ -67,6 +67,7 @@ public class PlayerPartyController : MonoBehaviour
 
         partyAtual = new List<CharacterStatusGeneric>(playerParty);
     }
+    #region SaveThings
     public void SaveParty()
     {
         List<CharacterStatusData> saveParty = party.partyAtual;
@@ -119,6 +120,7 @@ public class PlayerPartyController : MonoBehaviour
         }
         playerParty = new List<CharacterStatusGeneric>(partyAtual);
     }
+    #endregion
     public void CurarTodos()
     {
         print("curando");
