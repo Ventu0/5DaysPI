@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Playables;
-
+using System;
 public class Sleep : MonoBehaviour
 {
     [SerializeField] string bedScene;
@@ -11,6 +11,7 @@ public class Sleep : MonoBehaviour
     [SerializeField] PlayableDirector director;
     [SerializeField] GameObject cutscene;
 
+    Action onCutsceneEnd;
     //instancias
     PauseMenuController pauseMenu;
     DiaENoite dayNight;
@@ -44,8 +45,9 @@ public class Sleep : MonoBehaviour
             }
         }
     }
-    public void SleepForTheDay(bool SetNewSavedPos = false)
+    public void SleepForTheDay(bool SetNewSavedPos = false, Action onCutsceneEnd = null)
     {
+        this.onCutsceneEnd = onCutsceneEnd;
         dayNight.ResetTime();
         dayNight.relogioScript.NextDay();
         if (SetNewSavedPos)
@@ -70,6 +72,7 @@ public class Sleep : MonoBehaviour
     void OnTimelineStopped(PlayableDirector director) => FadeController.instance.FadeInForHowMuchTime(2, CutsceneStop);
     void CutsceneStop()
     {
+        onCutsceneEnd?.Invoke();
         PausePlayer(true);
         cutscene.SetActive(false);
     }

@@ -247,11 +247,13 @@ MonoBehaviour:
   clockUI: {fileID: 1551012992348587638}
   dontDestroyObject: {fileID: 6721595690482119415}
   directionalLight: {fileID: 7726231660225402303}
-  tempoParaNoite: 7
+  tempoParaNoite: 1
   tempoParaNoiteSegundos: 0
   intensidadeNoite: 0.149
   iniciarEmQualHora: 6
+  horarioDaTarde: 13
   horarioDaNoite: 19
+  isOnDarkPlace: 0
   isPaused: 0
   relogioScript: {fileID: 0}
 --- !u!114 &8910532338804416755
@@ -266,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be10a74d8e338479e97986e0e1174a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relogio: {fileID: 0}
   gradiente: {fileID: 4100953076190858603}
   hourText: {fileID: 2885700893652039446}
   dayText: {fileID: 1864066444991193222}
@@ -278,6 +281,9 @@ MonoBehaviour:
   currentDay: 1
   lastTriggeredHour: -1
   isCompleted: 0
+  onAfterNoon:
+    m_PersistentCalls:
+      m_Calls: []
   time: 
 --- !u!114 &4043912373808540544
 MonoBehaviour:

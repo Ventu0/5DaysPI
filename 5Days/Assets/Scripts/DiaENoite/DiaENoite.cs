@@ -22,7 +22,12 @@ public class DiaENoite : MonoBehaviour
     public int iniciarEmQualHora = 0;
 
     [Range(0, 24)]
+    public int horarioDaTarde = 12;
+
+    [Range(0, 24)]
     public int horarioDaNoite = 18;
+
+    
 
     [Header("Read-Only")]
     public bool isOnDarkPlace;
