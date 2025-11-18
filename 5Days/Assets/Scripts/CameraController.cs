@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
     public GameObject cameraRoot;
     public Vector3 originalCameraPos;
     [SerializeField]public CinemachineVirtualCamera cinemachineCamera;
+    [SerializeField] bool staticCamera;
     public static CameraController instance;
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class CameraController : MonoBehaviour
     }
     void Start()
     {
+        if(staticCamera) return;
         cinemachineCamera.LookAt = Player.instance.transform;
         cinemachineCamera.Follow = Player.instance.transform;
     }

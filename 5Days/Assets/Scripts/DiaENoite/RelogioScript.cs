@@ -75,6 +75,7 @@ public class RelogioScript : MonoBehaviour
     void Lose() => StartCoroutine(LoseRoutine());
     public IEnumerator LoseRoutine()
     {
+        print("perder");
         Player.instance.canMove = false;
         isCompleted = true;
         CameraController camController = CameraController.instance;
