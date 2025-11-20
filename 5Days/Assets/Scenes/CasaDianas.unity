@@ -194,11 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56575794}
   m_CullTransparentMesh: 1
---- !u!1 &124175172 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 39445108595614168, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-  m_PrefabInstance: {fileID: 1782297813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &152992995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,6 +2536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fab5e7af265be4aa682618c08195b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineCam: {fileID: 1921854793}
   book: {fileID: 1921253240}
   dontDestroyParent: {fileID: 958920868}
   director: {fileID: 239250714}
@@ -3800,14 +3796,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1551012992348587638, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2885700893652039446, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: m_fontColorGradientPreset
-      value: 
-      objectReference: {fileID: 11400000, guid: 110649fe250f13340889c279f790841d, type: 2}
     - target: {fileID: 3276163473673638495, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6070051
@@ -3848,26 +3836,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4102222990943949287, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: tempoParaNoite
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 6721595690482119415, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
       propertyPath: m_Name
       value: DiaENoiteComponentes
       objectReference: {fileID: 0}
-    - target: {fileID: 8910532338804416755, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: relogio
-      value: 
-      objectReference: {fileID: 124175172}
-    - target: {fileID: 8910532338804416755, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: dangerGradient
-      value: 
-      objectReference: {fileID: 11400000, guid: 2f5d68fcaee8b104b85124ba25903a8d, type: 2}
-    - target: {fileID: 8910532338804416755, guid: a41aeb03cc4d9e948976cecc17774436, type: 3}
-      propertyPath: originalGradient
-      value: 
-      objectReference: {fileID: 11400000, guid: 110649fe250f13340889c279f790841d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4171,6 +4143,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8187eee48152f54685e2d6d9489fee3, type: 3}
+--- !u!1 &1921854793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2668474838012953577, guid: b8187eee48152f54685e2d6d9489fee3, type: 3}
+  m_PrefabInstance: {fileID: 1921854792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1972608714
 GameObject:
   m_ObjectHideFlags: 0

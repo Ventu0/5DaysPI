@@ -22,7 +22,7 @@ public class ShakeEffect : MonoBehaviour
 
     void Update()
     {
-
+    
     }
     public void ShakeCutscene()
     {

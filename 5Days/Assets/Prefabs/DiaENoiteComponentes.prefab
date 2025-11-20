@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be10a74d8e338479e97986e0e1174a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relogio: {fileID: 0}
+  relogio: {fileID: 39445108595614168}
   gradiente: {fileID: 4100953076190858603}
   hourText: {fileID: 2885700893652039446}
   dayText: {fileID: 1864066444991193222}

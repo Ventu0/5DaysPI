@@ -64,9 +64,8 @@ public class RelogioScript : MonoBehaviour
     {
         print("Next Day");
         currentDay += 1;
-        currentDay = Mathf.Clamp(currentDay, 1, 5);
-        dayText.text = "Dia " + currentDay;
-        if (currentDay + 1 == 6)
+        dayText.text = "Dia " + Mathf.Clamp(currentDay, 1, 5);
+        if (currentDay + 1 == 7)
         {
             StartCoroutine(LoseRoutine());
         }

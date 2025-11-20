@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class CutsceneController : MonoBehaviour
 {
+    [SerializeField] GameObject cinemachineCam;
     [SerializeField] GameObject book;
     [SerializeField] GameObject dontDestroyParent;
     public PlayableDirector director;
@@ -14,10 +15,12 @@ public class CutsceneController : MonoBehaviour
     private void Awake()
     {
         book.gameObject.SetActive(false);
+        cinemachineCam.SetActive(false);
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
         if(cutsceneEnded == 1)
         {
             book.gameObject.SetActive(true);
+            cinemachineCam.SetActive(true);
             Destroy(dontDestroyParent);
             return;
         }
