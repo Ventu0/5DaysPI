@@ -16,14 +16,15 @@ public class SkipCutscene : MonoBehaviour
 
     [Header("Read-Only")]
     [SerializeField] float elapsedTime = 0f;
-    [SerializeField] bool finished = false;
+    public bool finished = false;
+    public bool canSkipCutscene;
     void Start()
     {
         skipCutsceneMenu.SetActive(false);
     }
     private void Update()
     {
-        if (finished) return;
+        if (finished || !canSkipCutscene) return;
 
         if (Input.GetButtonDown("Fire1"))
         {

@@ -160,9 +160,9 @@ public class Player : CharacterStatus
     {
         if (overlapCircle != null)
         {
-            if (overlapCircle.TryGetComponent(out NPC npc))
+            if (overlapCircle.TryGetComponent(out IInteractable interact))
             {
-                npc.Falar();
+                interact.Interact();
             }
         }
     }
