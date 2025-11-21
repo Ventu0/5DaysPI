@@ -24,10 +24,11 @@ public class PlayerMoney : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
     }
 

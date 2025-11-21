@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 public class DeleteSave : MonoBehaviour
 {
+    public List<GameObject> exception;
     public static DeleteSave instance;
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class DeleteSave : MonoBehaviour
 
             for (int i = 0; i < arquivos.Length; i++)
             {
+                
                 File.Delete(arquivos[i]); //se já houver um save, deleta ele
             }
         }
@@ -49,6 +51,8 @@ public class DeleteSave : MonoBehaviour
         GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
         foreach (GameObject objeto in objectsInScene)
         {
+            if (exception.Contains(objeto))
+                continue;
             if (objeto != gameObject)
                 Destroy(objeto);
         }

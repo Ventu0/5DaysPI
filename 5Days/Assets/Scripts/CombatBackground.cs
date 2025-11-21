@@ -14,6 +14,8 @@ public class CombatBackground : MonoBehaviour
     }
     public void ChangeBackGround()
     {
+        print("trocando background");
+        if (BackGroundControl.instance == null) print("nulooo porra");
         BackGroundControl.instance.ChangeMainBackGround(background);
     }
 }

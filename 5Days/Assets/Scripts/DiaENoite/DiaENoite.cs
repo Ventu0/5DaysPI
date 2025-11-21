@@ -95,7 +95,7 @@ public class DiaENoite : MonoBehaviour
     {
         if (directionalLight == null) print("directionallight null");
         directionalLight.intensity = Mathf.Lerp(0, 1, tempo);
-        if(this != null)StopAllCoroutines();
+        if(this != null) StopAllCoroutines();
     }
     #region LerpsDeTempo
     public IEnumerator ChangeToNight(float tempoInicial = 0)

@@ -29,6 +29,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] float bobbingDuration = 0.5f;
     Image objectImage;
     Sprite originalSprite;
+    bool oneTime = false;
     public static MenuController instance;
     private void Awake()
     {
@@ -66,8 +67,12 @@ public class MenuController : MonoBehaviour
     }
     public void LoadGameButton()
     {
+        if (!oneTime)
+        {
+            Loader.instance.Carregar();
+            oneTime = true;
+        }
         DeleteSave.instance.DeletarTudoDoDontDestroy();
-        Loader.instance.Carregar();
     }
     public void DeleteSaveBTN()
     {

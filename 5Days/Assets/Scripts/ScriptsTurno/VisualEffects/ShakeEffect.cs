@@ -43,7 +43,6 @@ public class ShakeEffect : MonoBehaviour
             if(!useLocalPosition)
             objectToShake.transform.position = initialPos + new Vector3(x, y, 0f);
             else objectToShake.transform.localPosition = initialPos + new Vector3(x, y, 0f);
-            print("object to shake pos: " + objectToShake.transform.position);
             yield return null;
         }
 

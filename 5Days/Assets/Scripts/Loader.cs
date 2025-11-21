@@ -14,9 +14,11 @@ public class Loader : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            DeleteSave.instance.exception.Add(gameObject);
         }
         else
         {
+            print("deletando no singleton");
             Destroy(gameObject);
         }
     }
@@ -29,14 +31,17 @@ public class Loader : MonoBehaviour
         {
             string json = File.ReadAllText(caminho);
             playerData = JsonUtility.FromJson<PlayerData>(json);
+            print("playerDataMoney: " + playerData.money);
         }
-        Destroy(DeleteSave.instance);
         SceneManager.LoadScene(playerData.activeScene);
     }
     IEnumerator DelayedAddMoney(PlayerMoney money, int amount)
     {
+        print("delayed ativo");
         yield return null; // espera 1 frame
         money.AddMoneyNoAnimation(amount);
+        DeleteSave.instance.exception.Clear();
+        Destroy(gameObject);
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -44,7 +49,7 @@ public class Loader : MonoBehaviour
 
         if(scene.name != playerData.activeScene)
             return;
-
+        print("carregando no OnSceneLoader");
         Player player = Player.instance;
         QuestController questController = QuestController.instance;
         PlayerMoney money = PlayerMoney.instance;
@@ -55,8 +60,7 @@ public class Loader : MonoBehaviour
 
         questController?.JustSetQuest(playerData.activeQuest);
         if (money == null) print("null");
-        StartCoroutine(DelayedAddMoney(money, playerData.money));
+        if (this != null) StartCoroutine(DelayedAddMoney(money, playerData.money));
         SceneManager.sceneLoaded -= OnSceneLoaded;
-
     }
 }
