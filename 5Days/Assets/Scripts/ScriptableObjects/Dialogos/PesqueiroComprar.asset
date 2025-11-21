@@ -24,7 +24,7 @@ MonoBehaviour:
     - "Beleza ent\xE3o"
     faces:
     - {fileID: -1898936516232743360, guid: 7e0c884bb88058c4999c49d60470193f, type: 3}
-  alreadyPayed: 0
+  alreadyPayed: 1
   notEnoughMoneyDialogues:
     lines:
     - "Lamento mas voc\xEA n\xE3o tem dinheiro suficiente"
