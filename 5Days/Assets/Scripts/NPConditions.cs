@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NPConditions : MonoBehaviour
 {
-    [SerializeField] NPC actualNPC;
+    [SerializeField] NPC currentNPC;
     [SerializeField] DialogueOptions currentOption;
     public bool canSleep = true;
     public static NPConditions instance;
@@ -29,33 +29,38 @@ public class NPConditions : MonoBehaviour
     }
     public void DoAction(NPC whichNPC, DialogueOptions options)
     {
-        actualNPC = whichNPC;
+        currentNPC = whichNPC;
         currentOption = options;
 
         if (options.needMoney)
         {
             WasteMoney();
         }
-        if(options.needSleep)
+        if (options.needSleep && !options.needMoney)
         {
-            if (!canSleep)
-            {
-                return; 
-            }
-            if (!CheckIfHasText(currentOption.yesDialogue))
-            {
-                actualNPC.ResetNPC();
-            }
-            Sleep.instance.SleepForTheDay();
-            whichNPC.canBeInteracted = false;
-            canSleep = false;
+            print("nao preciso de dinheiro");
+            SleepToDay();
         }
     }
-    void WasteMoney()
+    void SleepToDay()
     {
+        if (!canSleep)
+        {
+            return;
+        }
+        if (!CheckIfHasText(currentOption.yesDialogue))
+        {
+            currentNPC.ResetNPC();
+        }
+        Sleep.instance.SleepForTheDay();
+        currentNPC.canBeInteracted = false;
+        canSleep = false;
+    }
+    void WasteMoney()
+    { 
         if(currentOption.alreadyPayed)
         {
-            actualNPC.Falar(currentOption.yesPayedDialogue.lines, currentOption.yesPayedDialogue.faces);
+            currentNPC.Falar(currentOption.yesPayedDialogue.lines, currentOption.yesPayedDialogue.faces);
             return;
         }
         int money = PlayerMoney.money;
@@ -68,16 +73,30 @@ public class NPConditions : MonoBehaviour
         string[] lines = dialogueToUse.lines;
         Sprite[] sprites = dialogueToUse.faces;
 
-        if (!CheckIfHasText(dialogueToUse))
+        if (!CheckIfHasText(dialogueToUse) && !currentOption.needSleep) //só ativa se nao for dormir
         {
             Debug.LogWarning("O dialogo selecionado nao tem texto. Dialogo: " + dialogueToUse);
             return;
         }
-        actualNPC.yesOrNo.conditionMet = condition;
-        currentOption.alreadyPayed = condition;
+
+        if (!currentOption.needToPayAgain)
+        {
+            currentNPC.yesOrNo.conditionMet = condition;
+            currentOption.alreadyPayed = condition;
+        }
+
+        if (currentOption.needSleep && condition)
+        {
+            print("durma");
+            SleepToDay();
+            return;
+        }
+
+        
+
         if(condition) 
-            actualNPC.ChangeOriginalDialogue(currentOption.alreadyPayedDialogue);
-        actualNPC.Falar(lines, sprites);
+            currentNPC.ChangeOriginalDialogue(currentOption.alreadyPayedDialogue);
+        currentNPC.Falar(lines, sprites);
     }
     bool CheckIfHasText(DialogueArrays dialogue)
     {

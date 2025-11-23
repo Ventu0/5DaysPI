@@ -31,7 +31,6 @@ public class Loader : MonoBehaviour
         {
             string json = File.ReadAllText(caminho);
             playerData = JsonUtility.FromJson<PlayerData>(json);
-            print("playerDataMoney: " + playerData.money);
         }
         SceneManager.LoadScene(playerData.activeScene);
     }
@@ -39,7 +38,7 @@ public class Loader : MonoBehaviour
     {
         print("delayed ativo");
         yield return null; // espera 1 frame
-        money.AddMoneyNoAnimation(amount);
+        money.AtribuirMoney(amount);
         DeleteSave.instance.exception.Clear();
         Destroy(gameObject);
     }

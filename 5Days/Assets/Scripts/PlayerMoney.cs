@@ -42,7 +42,11 @@ public class PlayerMoney : MonoBehaviour
     {
         moedaGira.SetActive(setActive);
     }
-
+    public void AtribuirMoney(int amount)
+    {
+        money = amount;
+        SkipFrame();
+    }
     public void AddMoneyNoAnimation(int amount)
     {
         money += amount;

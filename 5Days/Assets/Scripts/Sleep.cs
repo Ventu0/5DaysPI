@@ -3,6 +3,7 @@ using UnityEngine.Playables;
 using System;
 public class Sleep : MonoBehaviour
 {
+    public bool resetPlayerPosOnSleep = true;
     [SerializeField] string bedScene;
     [SerializeField] Vector2 playerNewLastSavedPos;
     [SerializeField] NPC[] npc;

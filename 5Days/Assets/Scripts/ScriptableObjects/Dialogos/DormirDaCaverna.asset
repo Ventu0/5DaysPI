@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811cb9dc139b65e42a2998e6eb36d030, type: 3}
+  m_Name: DormirDaCaverna
+  m_EditorClassIdentifier: 
+  yesDialogue:
+    lines: []
+    faces: []
+  noDialogue:
+    lines:
+    - "Tem certeza que n\xE3o quer tirar nem um cochilo? pensa direito"
+    faces:
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+  alreadyPayed: 0
+  notEnoughMoneyDialogues:
+    lines:
+    - "ta querendo me enganar \xE9?"
+    faces:
+    - {fileID: -964797315671811446, guid: 9d4f5aefd4de29346993593f395814a8, type: 3}
+  alreadyPayedDialogue:
+    lines: []
+    faces: []
+  yesPayedDialogue:
+    lines: []
+    faces: []
+  needToPayAgain: 1
+  needMoney: 1
+  moneyAmount: 15
+  needSleep: 1

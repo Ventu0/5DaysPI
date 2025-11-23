@@ -67,12 +67,12 @@ public class MenuController : MonoBehaviour
     }
     public void LoadGameButton()
     {
+        DeleteSave.instance.DeletarTudoDoDontDestroy();
         if (!oneTime)
         {
             Loader.instance.Carregar();
             oneTime = true;
         }
-        DeleteSave.instance.DeletarTudoDoDontDestroy();
     }
     public void DeleteSaveBTN()
     {

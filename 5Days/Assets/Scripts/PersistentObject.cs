@@ -24,12 +24,18 @@ public class PersistentObject : MonoBehaviour
     }
     public IEnumerator LoseSequence(bool applyDebuff = false, Action OnSequenceEnd = null)
     {
+        Sleep sleep = Sleep.instance;
         FadeController.instance.FadeInForHowMuchTime(3);
         print("Bed2");
         yield return new WaitForSecondsRealtime(1f);
         print("Bed1");
         if (Player.instance != null)
-            Player.instance.LoadOnLastBed(true);
+        {
+            if(sleep != null)
+                Player.instance.LoadOnLastBed(sleep.resetPlayerPosOnSleep);
+            else
+                Player.instance.LoadOnLastBed(true);
+        }
         yield return new WaitForSeconds(0.1f);
 
         if (Sleep.instance != null)

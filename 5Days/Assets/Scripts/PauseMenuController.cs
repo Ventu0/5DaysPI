@@ -52,6 +52,10 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetButtonDown("Fire2")) //alt
+        {
+            Salvar();
+        }
         if (!canPause) return;
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
@@ -101,6 +105,7 @@ public class PauseMenuController : MonoBehaviour
     {
         Salvar();
         SceneManager.LoadScene("Menu");
+        DeleteSave.instance.DeletarTudoDoDontDestroy();
         Time.timeScale = 1;
         Destroy(gameObject); //para não pausar no menu
     }

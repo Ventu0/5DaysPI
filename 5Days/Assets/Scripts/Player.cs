@@ -90,9 +90,18 @@ public class Player : CharacterStatus
     #endregion
     public void LoadOnLastBed(bool resetBedPos)
     {
-        if (resetBedPos) lastSavedBedPos = new Vector2(0, 0);
-        SceneManager.LoadScene(lastSavedBedScene);
-        print("carregando cena");
+        if (resetBedPos)
+        {
+            print("resetando Pos");
+            lastSavedBedPos = new Vector2(0, 0);
+        }
+
+            if (SceneManager.GetActiveScene().name != lastSavedBedScene)
+        {
+            print("carregando cena");
+            SceneManager.LoadScene(lastSavedBedScene);
+        }
+
         isGamePaused = false;
         transform.position = lastSavedBedPos;
     }
