@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
+  m_Name: Boss_Perfurar
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  nomeAtaque: Perfurate
+  description: 
+  danoOuCura: 4
+  maxPP: 15
+  currentPP: 1
+  VisualEffectDuration: 1
+  iconeAtaque: {fileID: 0}
+  iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  attackEffect: {fileID: 6660453761866703191, guid: 7527d22d3cd392644aac2fc8ad525045, type: 3}
+  attackEffectYOffset: 1.05
+  endYOffset: 0
+  endXOffset: 3
+  tipoDeAlvo: 0
+  attackAnimation: {fileID: 9100000, guid: 083c2b51028c77b4ab20dd5b7c6a8f45, type: 2}
+  animationPlayInFront: 1
+  efeitoSecundario: {fileID: 0}
+  porcentagemDeCura: 0.3
+  soundEffect: {fileID: 0}
+  repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
+  usarMovimentoLinear: 0
+  "ataqueUmaVezS\xF3": 0
+  oneTime: 0
+  shakeCamera: 0
+  ataqueEmArea: 0
+  stealHeal: 0
+  useCharacterAnimation: 1
+  attackParameterName: Drill
+  endAttackParameter: Exit
+  quantidadesDeAtaque: 11
+  stillDuration: 0.1

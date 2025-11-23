@@ -16,6 +16,7 @@ MonoBehaviour:
   vidaMaxima: 130
   vidaAtual: 130
   YOffset: 0
+  endXOffset: 3
   isDead: 0
   ataques:
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}

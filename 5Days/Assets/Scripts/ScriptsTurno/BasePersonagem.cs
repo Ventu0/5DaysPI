@@ -69,10 +69,12 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     {
         EnemyAI enemy = GetComponent<EnemyAI>();
         Animator animato = GetComponent<Animator>();
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         vidaAtual = characterStatus.vidaAtual;
         vidaMaxima = characterStatus.vidaMaxima;
         if (characterStatus.characterSprite != null)
-            GetComponent<SpriteRenderer>().sprite = characterStatus.characterSprite;
+            spriteRenderer.sprite = characterStatus.characterSprite;
+        spriteRenderer.sortingOrder = characterStatus.spriteSort;
         if(animato!= null) animato.runtimeAnimatorController = characterStatus.animatorController;
         if (enemy != null) enemy.ataques = characterStatus.ataques;
 

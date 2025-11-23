@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c8fce7cdc2a2e4e980b0733c00a56a, type: 3}
+  m_Name: BossFinal
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterStatusGeneric
+  characterSprite: {fileID: 6897934898970670842, guid: fb6faf7bef332074ead144afe1dd49e7, type: 3}
+  vidaMaxima: 350
+  vidaAtual: 350
+  YOffset: 0.9
+  spriteSort: 1
+  isDead: 0
+  ataques:
+  - {fileID: 11400000, guid: 6c232cdf4b2c1df4fb31d8b4cb046122, type: 2}
+  - {fileID: 11400000, guid: 144148e55ed5f0840b69af45df5b53dc, type: 2}
+  - {fileID: 11400000, guid: 144148e55ed5f0840b69af45df5b53dc, type: 2}
+  - {fileID: 11400000, guid: 32f90b418f4a98c4eb66bd5338295337, type: 2}
+  animatorController: {fileID: 9100000, guid: 4ab59fa6951decb4f89cf286f591a1de, type: 2}
+  flipX: 0

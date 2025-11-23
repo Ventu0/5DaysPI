@@ -26,12 +26,12 @@ using System.Threading.Tasks;
         
 
         float duração = turnModeManager.QuemEstaAtacando().duration;
-        Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y + 0.5f);
+        Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y - 0.2f);
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
         Animator characterAnimator = quemEstaAtacando.GetComponent<Animator>();
 
         InteractButtonsController.instance.menu.SetActive(false);
-        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, VisualEffectDuration * stillDuration * quantidadesDeAtaque, usarMovimentoLinear);
+        CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, VisualEffectDuration * stillDuration * quantidadesDeAtaque, usarMovimentoLinear, endXOffset, endYOffset);
         currentPP = Mathf.Abs(currentPP - 1);
         if(ataqueUmaVezSó) oneTime = true;
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fortalecer
   m_EditorClassIdentifier: 
   effectName: Fortalecer
-  durationInTurn: 2
+  durationInTurn: 3
   remainingTurns: 2
   strengthMultiplier: 0.5
   stackAble: 0

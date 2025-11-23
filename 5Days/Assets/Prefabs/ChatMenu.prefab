@@ -216,7 +216,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.28
@@ -313,6 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6292954907540065557}
   - component: {fileID: 4703961561017793645}
+  - component: {fileID: 8302533402387697403}
   m_Layer: 5
   m_Name: ChatController
   m_TagString: Untagged
@@ -363,6 +364,23 @@ MonoBehaviour:
   timer: 0
   timeToTextAppear: 5
   canShowText: 0
+  isWritingText: 0
+  originalIconPos: {x: 0, y: 0}
+--- !u!114 &8302533402387697403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552050593898383833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9593b6970a9954418373074ad82ec91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShakeEffect
+  shakeObject: {fileID: 0}
+  shakeDuration: 0
+  shakeStrength: 0
 --- !u!1 &1831743875562072913
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.3476982}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 95.8433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3213012547857385780
@@ -1172,7 +1190,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2cbc175def14c0a4b9f646c05524e293, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

@@ -21,6 +21,9 @@ public abstract class Attack : ScriptableObject
     public Sprite attackEffect;
     [Tooltip("Sprite do efeito visual (caso não possua animação, isto é obrigatório)")]
     public float attackEffectYOffset = -0.5f;
+    public float endYOffset = 0;
+    public float endXOffset = 3;
+    [Tooltip("posicao X do personagem em relação ao alvo (depois de saltar). Normalmente é 3")]
     public Alvo tipoDeAlvo;
 
     [Header("Configurações Opcionais")]

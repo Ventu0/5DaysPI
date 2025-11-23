@@ -25,13 +25,13 @@ public class CharacterMovement : MonoBehaviour
     {
         turnModeManager = TurnModeManager.instance;
     }
-    public void Move(BasePersonagem characterToMove, Vector2 newPos, float stillDuration, bool useLinearMovement = false)
+    public void Move(BasePersonagem characterToMove, Vector2 newPos, float stillDuration, bool useLinearMovement = false, float xOffSet = 3, float yOffSet = 0)
     { 
         Turnos turno = turnModeManager.turno;
         if (turno == Turnos.EnemyTurn)
-            newPos.x += 3;
+            newPos.x += xOffSet;
         else if (turno == Turnos.PlayerTurn)
-            newPos.x -= 3;
+            newPos.x -= xOffSet;
 
         shadow = characterToMove.shadow;
         character = characterToMove;  //coloca os parametros em variaveis, para facilitar+
@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
 
         float duration = turnModeManager.QuemEstaAtacando().duration;
         float offset = character.characterStatus.YOffset;
-        Vector2 playerNewPos = new Vector2(newPos.x, newPos.y + offset); //calcula a posição com base no Offset do personagem
+        Vector2 playerNewPos = new Vector2(newPos.x, newPos.y + offset + yOffSet); //calcula a posição com base no Offset do personagem
 
         if (!useLinearMovement)
             StartCoroutine(AllyMove(characterToMove, playerNewPos, duration));
