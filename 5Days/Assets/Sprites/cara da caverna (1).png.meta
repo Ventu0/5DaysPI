@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a1d0aa68d1968f647b30f8199968620f
+guid: 9bf12f7e28aa953439a552980ebd0cfd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8418823326397880505
-    second: ANAID_0
+      213: -8723718775711236480
+    second: cara da caverna (1)_0
+  - first:
+      213: 8115237268655550968
+    second: cara da caverna (1)_1
+  - first:
+      213: 7582948599645799423
+    second: cara da caverna (1)_2
+  - first:
+      213: -424950967048220960
+    second: cara da caverna (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ANAID_0
+      name: cara da caverna (1)_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 0
-        width: 154
-        height: 480
+        x: 87
+        y: 399
+        width: 146
+        height: 401
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b8d7b4e53ba5d470800000000000000
-      internalID: 8418823326397880505
+      spriteID: 08e73556eff1fe680800000000000000
+      internalID: -8723718775711236480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara da caverna (1)_1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 399
+        width: 146
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1b93aac4d1f9070800000000000000
+      internalID: 8115237268655550968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara da caverna (1)_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 146
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff30fef339b0c3960800000000000000
+      internalID: 7582948599645799423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cara da caverna (1)_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 0
+        width: 146
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eec122d8554a1af0800000000000000
+      internalID: -424950967048220960
       vertices: []
       indices: 
       edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ANAID_0: 8418823326397880505
+      cara da caverna (1)_0: -8723718775711236480
+      cara da caverna (1)_1: 8115237268655550968
+      cara da caverna (1)_2: 7582948599645799423
+      cara da caverna (1)_3: -424950967048220960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

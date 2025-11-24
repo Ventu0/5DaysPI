@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 77966a183e113464db09ac37b5f9f15c
+guid: 0412114d5ebc64c4682523848778c342
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2508336896696872787
-    second: cara da caverna_0
+      213: -3267534370382887033
+    second: ANAID (1)_0
+  - first:
+      213: 7817698916399928551
+    second: ANAID (1)_1
+  - first:
+      213: -135874923035343348
+    second: ANAID (1)_2
+  - first:
+      213: 386202945759252860
+    second: ANAID (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cara da caverna_0
+      name: ANAID (1)_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 0
-        width: 146
-        height: 400
+        x: 119
+        y: 479
+        width: 154
+        height: 481
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35f6f982e176fc220800000000000000
-      internalID: 2508336896696872787
+      spriteID: 787c2f16dc267a2d0800000000000000
+      internalID: -3267534370382887033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANAID (1)_1
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 479
+        width: 154
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e459f89ebb0e7c60800000000000000
+      internalID: 7817698916399928551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANAID (1)_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 154
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0648963a764d1ef0800000000000000
+      internalID: -135874923035343348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ANAID (1)_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 0
+        width: 154
+        height: 473
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71903178811c5500800000000000000
+      internalID: 386202945759252860
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cara da caverna_0: 2508336896696872787
+      ANAID (1)_0: -3267534370382887033
+      ANAID (1)_1: 7817698916399928551
+      ANAID (1)_2: -135874923035343348
+      ANAID (1)_3: 386202945759252860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
