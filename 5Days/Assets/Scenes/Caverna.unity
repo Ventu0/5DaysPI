@@ -1047,8 +1047,11 @@ GameObject:
   - component: {fileID: 361215461}
   - component: {fileID: 361215460}
   - component: {fileID: 361215462}
-  m_Layer: 0
-  m_Name: Carrinho de mina-1.png_0
+  - component: {fileID: 361215464}
+  - component: {fileID: 361215463}
+  - component: {fileID: 361215465}
+  m_Layer: 3
+  m_Name: Saida Tambem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,7 +1124,7 @@ Transform:
   m_GameObject: {fileID: 361215459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.033151466, w: 0.9994504}
-  m_LocalPosition: {x: -1.960001, y: 0.8600006, z: 0}
+  m_LocalPosition: {x: -1.91, y: 1.02, z: 0}
   m_LocalScale: {x: 0.6014319, y: 0.6014319, z: 0.6014319}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1173,6 +1176,116 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.4302843, y: 2.4416962}
   m_EdgeRadius: 0
+--- !u!114 &361215463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361215459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d05b837874b02c42a85fa94f9b26dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassScene
+  sceneName: CavernaCutscene
+--- !u!61 &361215464
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361215459}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -2.02, y: 2.17}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.81, y: 6.88}
+    newSize: {x: 6.81, y: 6.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.53, y: 2.34}
+  m_EdgeRadius: 0
+--- !u!114 &361215465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361215459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08adb0702ddf49a40adf016ffbfb252c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2054349353}
+        m_TargetAssemblyTypeName: PlayerPartyController, Assembly-CSharp
+        m_MethodName: CurarTodos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1251389441}
+        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+        m_MethodName: Salvar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 361215463}
+        m_TargetAssemblyTypeName: PassScene, Assembly-CSharp
+        m_MethodName: PassTheScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &388860733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2854,7 +2967,7 @@ PrefabInstance:
     - target: {fileID: 229366517997784323, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 493919691174764739, guid: 5ffa09ebc286fff4fbe1601371686752, type: 3}
+      objectReference: {fileID: 21300000, guid: 77966a183e113464db09ac37b5f9f15c, type: 3}
     - target: {fileID: 229366517997784323, guid: 98babea8458e2844898a36baff93314e, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -24067,6 +24180,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e34657b21655a8049b35428694bd13f2, type: 3}
+--- !u!114 &1251389441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5134797313544583326, guid: e34657b21655a8049b35428694bd13f2, type: 3}
+  m_PrefabInstance: {fileID: 1251389440}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618b3f46e1ff0c249821757d5f8c8fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1271347505
 GameObject:
   m_ObjectHideFlags: 0
@@ -25115,8 +25239,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1730872042}
   - component: {fileID: 1730872041}
+  - component: {fileID: 1730872043}
   m_Layer: 0
-  m_Name: pedra da caverna-1.png
+  m_Name: Saida da caverna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25195,6 +25320,166 @@ Transform:
   m_Children: []
   m_Father: {fileID: 836598298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1730872043
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730872040}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.6, y: 5.6}
+    newSize: {x: 5.6, y: 5.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.23, y: 1.35}
+      - {x: 2.21, y: 1.29}
+      - {x: 1.9499999, y: 1.29}
+      - {x: 1.87, y: 1.23}
+      - {x: 1.79, y: 1.13}
+      - {x: 1.67, y: 1.0799999}
+      - {x: 0.96999997, y: 0.72999996}
+      - {x: 0.82, y: 0.68}
+      - {x: 0.61, y: 0.45999998}
+      - {x: 0.53, y: 0.35999998}
+      - {x: 0.53999996, y: 0.22999999}
+      - {x: 0.29999998, y: 0.22999999}
+      - {x: 0.38, y: 0.66999996}
+      - {x: 0.51, y: 0.65}
+      - {x: 0.66999996, y: 0.83}
+      - {x: 0.65999997, y: 1.06}
+      - {x: 0.59999996, y: 1.14}
+      - {x: 0.42, y: 1.28}
+      - {x: 0.19999999, y: 1.29}
+      - {x: -2.04, y: 0.17}
+      - {x: -2.19, y: 0.12}
+      - {x: -2.27, y: 0.01}
+      - {x: -2.27, y: -0.08}
+      - {x: -2.2, y: -0.22}
+      - {x: -2.06, y: -0.35999998}
+      - {x: -2.03, y: -0.37}
+      - {x: -1.81, y: -0.38}
+      - {x: -1.77, y: -0.32}
+      - {x: -1.77, y: -1.8199999}
+      - {x: -1.75, y: -1.8399999}
+      - {x: -1.8299999, y: -1.86}
+      - {x: -2, y: -1.9499999}
+      - {x: -2.05, y: -2.03}
+      - {x: -2.19, y: -2.2}
+      - {x: -2.28, y: -2.37}
+      - {x: -2.33, y: -2.59}
+      - {x: -2.33, y: -2.8}
+      - {x: 2.8, y: -2.8}
+      - {x: 2.8, y: 1.28}
+      - {x: 2.6599998, y: 1.35}
+    - - {x: -1.3, y: -0.17}
+      - {x: -1.1899999, y: -0.17}
+      - {x: -1.16, y: -0.14}
+      - {x: -1.16, y: -0.099999994}
+      - {x: -1.05, y: -0.099999994}
+      - {x: -1.02, y: -0.07}
+      - {x: -1.02, y: -0.03}
+      - {x: -0.90999997, y: -0.03}
+      - {x: -0.88, y: 0}
+      - {x: -0.88, y: 0.04}
+      - {x: -0.77, y: 0.04}
+      - {x: -0.74, y: 0.07}
+      - {x: -0.74, y: 0.11}
+      - {x: -0.63, y: 0.11}
+      - {x: -0.59999996, y: 0.14}
+      - {x: -0.59999996, y: 0.17999999}
+      - {x: -0.48999998, y: 0.17999999}
+      - {x: -0.45999998, y: 0.21}
+      - {x: -0.45999998, y: 0.25}
+      - {x: -0.35, y: 0.25}
+      - {x: -0.32, y: 0.28}
+      - {x: -0.32, y: 0.32}
+      - {x: -0.21, y: 0.32}
+      - {x: -0.17999999, y: 0.35}
+      - {x: -0.17999999, y: 0.39}
+      - {x: -0.099999994, y: 0.39}
+      - {x: -0.099999994, y: -0.04}
+      - {x: -0.14, y: -0.04}
+      - {x: -0.17, y: -0.07}
+      - {x: -0.17, y: -0.11}
+      - {x: -0.21, y: -0.11}
+      - {x: -0.24, y: -0.14}
+      - {x: -0.24, y: -0.25}
+      - {x: -0.28, y: -0.25}
+      - {x: -0.31, y: -0.28}
+      - {x: -0.31, y: -0.32}
+      - {x: -0.35, y: -0.32}
+      - {x: -0.38, y: -0.35}
+      - {x: -0.38, y: -0.39}
+      - {x: -0.42, y: -0.39}
+      - {x: -0.45, y: -0.42}
+      - {x: -0.45, y: -0.45999998}
+      - {x: -0.56, y: -0.45999998}
+      - {x: -0.59, y: -0.48999998}
+      - {x: -0.59, y: -0.53}
+      - {x: -0.7, y: -0.53}
+      - {x: -0.72999996, y: -0.56}
+      - {x: -0.72999996, y: -0.59999996}
+      - {x: -0.77, y: -0.59999996}
+      - {x: -0.79999995, y: -0.63}
+      - {x: -0.79999995, y: -0.66999996}
+      - {x: -0.84, y: -0.66999996}
+      - {x: -0.87, y: -0.7}
+      - {x: -0.87, y: -0.81}
+      - {x: -0.90999997, y: -0.81}
+      - {x: -0.94, y: -0.84}
+      - {x: -0.94, y: -0.88}
+      - {x: -0.97999996, y: -0.88}
+      - {x: -1.01, y: -0.90999997}
+      - {x: -1.01, y: -1.02}
+      - {x: -1.05, y: -1.02}
+      - {x: -1.0799999, y: -1.05}
+      - {x: -1.0799999, y: -1.16}
+      - {x: -1.12, y: -1.16}
+      - {x: -1.15, y: -1.1899999}
+      - {x: -1.15, y: -1.5799999}
+      - {x: -1.1899999, y: -1.5799999}
+      - {x: -1.22, y: -1.61}
+      - {x: -1.22, y: -1.65}
+      - {x: -1.26, y: -1.65}
+      - {x: -1.29, y: -1.68}
+      - {x: -1.29, y: -1.7199999}
+      - {x: -1.3, y: -1.7199999}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1769701974
 GameObject:
   m_ObjectHideFlags: 0
@@ -25393,6 +25678,7 @@ MonoBehaviour:
   closeCutscene: {fileID: 388860736}
   timeline: {fileID: 388860735}
   cutsceneSkipper: {fileID: 471958811}
+  skipToTime: 11.26
   waitForAnimation: 1
   animationObject: {fileID: 1532915221}
   animationTime: 3.5
