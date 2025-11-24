@@ -247,11 +247,13 @@ MonoBehaviour:
   clockUI: {fileID: 1551012992348587638}
   dontDestroyObject: {fileID: 6721595690482119415}
   directionalLight: {fileID: 7726231660225402303}
-  tempoParaNoite: 7
+  tempoParaNoite: 5
   tempoParaNoiteSegundos: 0
   intensidadeNoite: 0.149
   iniciarEmQualHora: 6
+  horarioDaTarde: 13
   horarioDaNoite: 19
+  isOnDarkPlace: 0
   isPaused: 0
   relogioScript: {fileID: 0}
 --- !u!114 &8910532338804416755
@@ -266,9 +268,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be10a74d8e338479e97986e0e1174a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relogio: {fileID: 39445108595614168}
   gradiente: {fileID: 4100953076190858603}
   hourText: {fileID: 2885700893652039446}
   dayText: {fileID: 1864066444991193222}
+  dangerGradient: {fileID: 11400000, guid: 2f5d68fcaee8b104b85124ba25903a8d, type: 2}
   gradienteInitialX: 46.2
   gradienteFinalX: -60.3
   minutes: 0
@@ -276,8 +280,12 @@ MonoBehaviour:
   maxHours: 24
   timeToReset: 1
   currentDay: 1
+  originalGradient: {fileID: 11400000, guid: 110649fe250f13340889c279f790841d, type: 2}
   lastTriggeredHour: -1
   isCompleted: 0
+  onAfterNoon:
+    m_PersistentCalls:
+      m_Calls: []
   time: 
 --- !u!114 &4043912373808540544
 MonoBehaviour:
@@ -402,7 +410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60.3, y: 25.644682}
+  m_AnchoredPosition: {x: 47, y: 25.644682}
   m_SizeDelta: {x: 157.5064, y: 100.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8640427986876444381

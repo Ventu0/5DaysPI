@@ -15089,6 +15089,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6856558007142692109, guid: 5210e478e8eb36048a0027fccc21df13, type: 3}
+      propertyPath: canSkipCutscene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856558007142692109, guid: 5210e478e8eb36048a0027fccc21df13, type: 3}
       propertyPath: onCutsceneSkip.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 214692138}

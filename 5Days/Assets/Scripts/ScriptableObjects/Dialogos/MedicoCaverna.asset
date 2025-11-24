@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811cb9dc139b65e42a2998e6eb36d030, type: 3}
+  m_Name: MedicoCaverna
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOptions
+  yesDialogue:
+    lines:
+    - "N\xE3o tenha vergonha de pedir ajuda da pr\xF3xima vez!"
+    faces:
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+  noDialogue:
+    lines:
+    - "N\xE3o precisa? Tudo bem"
+    faces:
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+  alreadyPayed: 0
+  notEnoughMoneyDialogues:
+    lines:
+    - "Lamento, mas n\xE3o posso te ajudar aqui sem meu ganha-p\xE3o"
+    faces:
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+  alreadyPayedDialogue:
+    lines:
+    - "Oi diana, Como voc\xEA j\xE1 me pagou, essa vai por conta da casa"
+    - "Precisa de assist\xEAncia m\xE9dica?"
+    faces:
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+  yesPayedDialogue:
+    lines:
+    - "Pronto, mais cuidado da pr\xF3xima vez"
+    faces:
+    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+  needMoney: 1
+  moneyAmount: 10
+  needSleep: 0

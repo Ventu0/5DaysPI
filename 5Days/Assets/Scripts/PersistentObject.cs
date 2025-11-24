@@ -1,6 +1,7 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System;
 public class PersistentObject : MonoBehaviour
 {
     public static PersistentObject instance;
@@ -21,31 +22,32 @@ public class PersistentObject : MonoBehaviour
     {
         
     }
-    public IEnumerator LoseSequence()
+    public IEnumerator LoseSequence(bool applyDebuff = false, Action OnSequenceEnd = null)
     {
+        Sleep sleep = Sleep.instance;
         FadeController.instance.FadeInForHowMuchTime(3);
         print("Bed2");
         yield return new WaitForSecondsRealtime(1f);
         print("Bed1");
         if (Player.instance != null)
-            Player.instance.LoadOnLastBed(true);
+        {
+            if(sleep != null)
+                Player.instance.LoadOnLastBed(sleep.resetPlayerPosOnSleep);
+            else
+                Player.instance.LoadOnLastBed(true);
+        }
         yield return new WaitForSeconds(0.1f);
 
         if (Sleep.instance != null)
-            Sleep.instance.SleepForTheDay(true);
+            Sleep.instance.SleepForTheDay(true, OnSequenceEnd);
+        //if(applyDebuff) 
     }
     public IEnumerator HardcoreModeLost()
     {
         FadeController.instance.FadeInForHowMuchTime(2);
         yield return new WaitForSecondsRealtime(1);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Lost");
         yield return new WaitForSecondsRealtime(0.5f);
         DeleteSave.instance.Deletar();
-        MenuController.instance.DeactivateContinueButton();
-    }
-
-    void Update()
-    {
-        
     }
 }

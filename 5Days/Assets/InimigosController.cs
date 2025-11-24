@@ -10,6 +10,7 @@ public class Inimigos
 }
 public class InimigosController : MonoBehaviour
 {
+    [SerializeField] string path = "/inimigos.json";
     [SerializeField] EnemyIniciarLuta[] inimigosArray;
     public static InimigosController instance;
 
@@ -35,11 +36,11 @@ public class InimigosController : MonoBehaviour
             inimigos.enemies[i] = new Inimigo(morreu);
         }
         string json = JsonUtility.ToJson(inimigos, true);
-        File.WriteAllText(Application.persistentDataPath + "/inimigos.json", json);
+        File.WriteAllText(Application.persistentDataPath + path, json);
     }
     public void Carregar()
     {
-        string caminho = Application.persistentDataPath + "/inimigos.json";
+        string caminho = Application.persistentDataPath + path;
         print(caminho);
         Inimigos inimigosSalvos = new Inimigos();
         if (File.Exists(caminho))

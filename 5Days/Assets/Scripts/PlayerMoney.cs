@@ -24,10 +24,11 @@ public class PlayerMoney : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
     }
 
@@ -41,7 +42,11 @@ public class PlayerMoney : MonoBehaviour
     {
         moedaGira.SetActive(setActive);
     }
-
+    public void AtribuirMoney(int amount)
+    {
+        money = amount;
+        SkipFrame();
+    }
     public void AddMoneyNoAnimation(int amount)
     {
         money += amount;

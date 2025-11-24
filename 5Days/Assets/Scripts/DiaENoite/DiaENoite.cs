@@ -22,7 +22,12 @@ public class DiaENoite : MonoBehaviour
     public int iniciarEmQualHora = 0;
 
     [Range(0, 24)]
+    public int horarioDaTarde = 12;
+
+    [Range(0, 24)]
     public int horarioDaNoite = 18;
+
+    
 
     [Header("Read-Only")]
     public bool isOnDarkPlace;
@@ -58,9 +63,6 @@ public class DiaENoite : MonoBehaviour
         relogioScript = GetComponent<RelogioScript>();
         tempoParaNoiteSegundos = tempoParaNoite * 60;
     }
-    void Start()
-    {
-    }
     public float AcharValorRestante(float valorParaAcharPorcentagem)
     {
         float porcentagem = valorParaAcharPorcentagem / 24f * 100f; //acha a porcentagem do horario dentre as 24 horas
@@ -91,8 +93,9 @@ public class DiaENoite : MonoBehaviour
     }
     public void SetSpecificHour(float tempo) 
     {
-      directionalLight.intensity = Mathf.Lerp(0, 1, tempo);
-      StopAllCoroutines();
+        if (directionalLight == null) print("directionallight null");
+        directionalLight.intensity = Mathf.Lerp(0, 1, tempo);
+        if(this != null) StopAllCoroutines();
     }
     #region LerpsDeTempo
     public IEnumerator ChangeToNight(float tempoInicial = 0)
@@ -126,7 +129,7 @@ public class DiaENoite : MonoBehaviour
     }
     #endregion
     public void OnSceneChange(Scene scene, LoadSceneMode mode)
-    { 
+    {
         if(scene.name == "Caverna")
         {
             print("cAVERNANNNA");

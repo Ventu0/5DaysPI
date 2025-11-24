@@ -35,8 +35,8 @@ public class EnemyIniciarLuta : MonoBehaviour
         SceneManager.LoadScene(cenaEscolhida, LoadSceneMode.Additive);
         SceneTimeController.instance.sceneTime = 0;
         SceneTimeController.instance.PausarJogo();
-        Invoke("ActivateBefore", 0.01f);
-        Invoke("WaitSomeTime", 0.05f);
+        Invoke("ActivateBefore", 0.05f);
+        Invoke("WaitSomeTime", 0.1f);
     }
     void ActivateBefore()
     {

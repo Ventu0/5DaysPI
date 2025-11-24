@@ -17,6 +17,7 @@ public class BackGroundControl : MonoBehaviour
     }
     public void ChangeMainBackGround(Sprite newSprite)
     {
+        if (mainBackGround == null) print("mainBackGround nulo");
         mainBackGround.sprite = newSprite;
     }
     #region ShaderDeDiaENoiteDoModoDeCombate    

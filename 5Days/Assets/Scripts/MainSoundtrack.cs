@@ -35,17 +35,13 @@ public class MainSoundtrack : MonoBehaviour
         }
 
         else
-
         {
-
             Destroy(gameObject);
-
         }
 
     }
 
     private void Start()
-
     {
 
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded", 0);
@@ -57,7 +53,6 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     public void ChooseRandomMainSoundtrack()
-
     {
 
         int index = Random.Range(0, mainSoundtracks.Length);
@@ -69,7 +64,6 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     public void ChooseRandomBattleSoundtrack()
-
     {
 
         int index = Random.Range(0, battleSoundtracks.Length);
@@ -81,7 +75,6 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     public void PlayOneShot(AudioClip clip, float volume = 1)
-
     {
 
         audioSource.PlayOneShot(clip, volume);
@@ -89,11 +82,8 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     public void PlayMain(AudioClip soundTrack)
-
     {
-
         if (audioSource.isPlaying)
-
         {
 
             audioSource.Stop();
@@ -107,7 +97,6 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     IEnumerator PlayNextAudio(AudioClip clip, AudioClip newClip)
-
     {
 
         audioSource.clip = clip;
@@ -121,7 +110,6 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     public void TurnVolumeUpDown(float volume = 0.1f)
-
     {
 
         StartCoroutine(VolumeLerp(volume));
@@ -129,13 +117,11 @@ public class MainSoundtrack : MonoBehaviour
     }
 
     IEnumerator VolumeLerp(float newVolume, float duration = 0.5f)
-
     {
 
         float iterador = 0;
 
         while (iterador < duration)
-
         {
 
             audioSource.volume = Mathf.Lerp(audioSource.volume, newVolume, iterador / duration);
@@ -143,7 +129,6 @@ public class MainSoundtrack : MonoBehaviour
             iterador += Time.deltaTime;
 
             yield return null;
-
         }
 
     }

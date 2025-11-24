@@ -21,7 +21,7 @@ public class YesOrNo
         return options != null;
     }
 }
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IInteractable
 {
     [Header("Configurações de Fala")]
     public string[] dialogueLines;
@@ -67,6 +67,10 @@ public class NPC : MonoBehaviour
         if (!yesOrNo.hasQuestion) yesOrNo = null;
         SaveNPCs.instance.AddNPC(this);
         Load();
+    }
+    public void Interact()
+    {
+        Falar();
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {

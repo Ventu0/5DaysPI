@@ -344,7 +344,6 @@ GameObject:
   m_Component:
   - component: {fileID: 13303828}
   - component: {fileID: 13303827}
-  - component: {fileID: 13303829}
   m_Layer: 0
   m_Name: VisualEffectsController
   m_TagString: Untagged
@@ -383,21 +382,6 @@ Transform:
   - {fileID: 1216816777}
   m_Father: {fileID: 772576917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &13303829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13303826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9593b6970a9954418373074ad82ec91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeObject: {fileID: 0}
-  shakeDuration: 0
-  shakeStrength: 0
 --- !u!1 &26305928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1201,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  originalPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!95 &212723959
 Animator:
@@ -1441,6 +1426,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  originalPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!114 &213286780
 MonoBehaviour:
@@ -3050,6 +3036,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  originalPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!95 &518258462
 Animator:
@@ -3908,6 +3895,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  originalPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!95 &742859711
 Animator:
@@ -5703,6 +5691,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  originalPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!114 &1135933686
 MonoBehaviour:
@@ -7092,6 +7081,7 @@ MonoBehaviour:
   turnEnded: 0
   efeitosAtivos: []
   statusEffect: 0
+  originalPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!95 &1441147515
 Animator:

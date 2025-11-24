@@ -9,6 +9,8 @@ public class CharacterStatusGeneric : ScriptableObject
     public int vidaAtual;
     public float YOffset = 0;
     [Tooltip("posicao Y do personagem em relacao a sombra. Positivo para cima, negativo para baixo")]
+    public int spriteSort = 0;
+    [Tooltip("Layer do boneco")]
     public bool isDead = false;
     public List<Attack> ataques;
     public RuntimeAnimatorController animatorController;

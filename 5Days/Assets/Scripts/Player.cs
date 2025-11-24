@@ -22,6 +22,8 @@ public class Player : CharacterStatus
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] float originalSpeed;
+    //[SerializeField] bool isTired; //porque cansado você nao anda rapido
 
     [Header("Últimos saves de posição")]
     public Vector2 lastSavedPosition;
@@ -88,9 +90,18 @@ public class Player : CharacterStatus
     #endregion
     public void LoadOnLastBed(bool resetBedPos)
     {
-        if (resetBedPos) lastSavedBedPos = new Vector2(0, 0);
-        SceneManager.LoadScene(lastSavedBedScene);
-        print("carregando cena");
+        if (resetBedPos)
+        {
+            print("resetando Pos");
+            lastSavedBedPos = new Vector2(0, 0);
+        }
+
+            if (SceneManager.GetActiveScene().name != lastSavedBedScene)
+        {
+            print("carregando cena");
+            SceneManager.LoadScene(lastSavedBedScene);
+        }
+
         isGamePaused = false;
         transform.position = lastSavedBedPos;
     }
@@ -158,11 +169,27 @@ public class Player : CharacterStatus
     {
         if (overlapCircle != null)
         {
-            if (overlapCircle.TryGetComponent(out NPC npc))
+            if (overlapCircle.TryGetComponent(out IInteractable interact))
             {
-                npc.Falar();
+                interact.Interact();
             }
         }
+    }
+    public void OnDesmaiar()
+    {
+        originalSpeed = Speed;
+
+        float reducedSpeed = Speed * 0.25f; //10%
+        Speed -= reducedSpeed;
+
+        //isTired = true;
+        DiaENoite.instance.relogioScript.onAfterNoon.AddListener(OnAfterNoon);
+    }
+    void OnAfterNoon()
+    {
+        //isTired = false;
+        Speed = originalSpeed;
+        DiaENoite.instance.relogioScript.onAfterNoon.RemoveListener(OnAfterNoon);
     }
     private void OnDrawGizmos()
     {

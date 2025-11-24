@@ -79,6 +79,7 @@ public class TurnModeManager : MonoBehaviour
         {
             endText.text = "Vitória!!!";
             endText.color = Color.green;
+            currentFightingEnemy.EndBattle();
         }
         else
         {
@@ -88,7 +89,6 @@ public class TurnModeManager : MonoBehaviour
         }
            
         MaintainStatus();
-        currentFightingEnemy.EndBattle();
     }
     public void MaintainStatus()
     {
