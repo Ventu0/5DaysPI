@@ -19,7 +19,7 @@ MonoBehaviour:
     lines:
     - "Tem certeza que n\xE3o quer tirar nem um cochilo? pensa direito"
     faces:
-    - {fileID: -3871075964220730190, guid: efdc4a24b1a94ff4ea7afaac269db6dc, type: 3}
+    - {fileID: 21300000, guid: 02f9eed9d64a50c4faf159946fb59fa1, type: 3}
   alreadyPayed: 0
   notEnoughMoneyDialogues:
     lines:
@@ -34,5 +34,5 @@ MonoBehaviour:
     faces: []
   needToPayAgain: 1
   needMoney: 1
-  moneyAmount: 15
+  moneyAmount: 5
   needSleep: 1

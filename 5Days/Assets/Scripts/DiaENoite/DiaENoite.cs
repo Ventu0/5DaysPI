@@ -86,6 +86,7 @@ public class DiaENoite : MonoBehaviour
     {
         clockUI.SetActive(true);
         time = 0;
+        if (isOnDarkPlace) return;
         directionalLight.intensity = 1;
         relogioScript.ResetTime();
         StopAllCoroutines();

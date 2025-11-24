@@ -3001,7 +3001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566e1d199a702e34598a4d0b5c7d7661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualNPC: {fileID: 0}
+  currentNPC: {fileID: 0}
   currentOption: {fileID: 0}
   canSleep: 1
 --- !u!4 &1466838108
@@ -3325,6 +3325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ac4299a88cd4a4c8c8632e4ea9d7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetPlayerPosOnSleep: 1
   bedScene: CasaDianas
   playerNewLastSavedPos: {x: -8.9, y: 1.51}
   npc:
@@ -3656,7 +3657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6856558007142692109, guid: 5210e478e8eb36048a0027fccc21df13, type: 3}
       propertyPath: timeToSkip
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6856558007142692109, guid: 5210e478e8eb36048a0027fccc21df13, type: 3}
       propertyPath: onCutsceneSkip.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3702,7 +3703,6 @@ GameObject:
   - component: {fileID: 1921253241}
   - component: {fileID: 1921253243}
   - component: {fileID: 1921253244}
-  - component: {fileID: 1921253245}
   m_Layer: 3
   m_Name: Mivro-1.png_0
   m_TagString: Untagged
@@ -3799,6 +3799,7 @@ MonoBehaviour:
   closeCutscene: {fileID: 911536398}
   timeline: {fileID: 4807272856926175442}
   cutsceneSkipper: {fileID: 1916167603}
+  skipToTime: 3.8
   waitForAnimation: 0
   animationObject: {fileID: 0}
   animationTime: 0
@@ -3849,36 +3850,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.48, y: 3.94}
   m_EdgeRadius: 0
---- !u!114 &1921253245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921253240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 15e6819c87e928149aef2008313fb28a, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1921253243}
-          m_TargetAssemblyTypeName: CheckBook, Assembly-CSharp
-          m_MethodName: StopCutscene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &1921854792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4241,6 +4212,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 191175624786922901, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2e536792b0783fe4c893fc1d35f8bafb, type: 2}
     - target: {fileID: 1100003245359411085, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4249,6 +4224,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: LivroCutscene
       objectReference: {fileID: 0}
+    - target: {fileID: 2985671352235306383, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232736847637713532, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_WrapMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_InitialState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0585d4ad79e2bc7438648fec82dca0e2, type: 2}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[8].key
+      value: 
+      objectReference: {fileID: -1033453498152091657, guid: 0585d4ad79e2bc7438648fec82dca0e2, type: 2}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[9].key
+      value: 
+      objectReference: {fileID: -1033453498152091657, guid: 0585d4ad79e2bc7438648fec82dca0e2, type: 2}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[10].key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[4].value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].value
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[8].value
+      value: 
+      objectReference: {fileID: 1300107164775590387}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[9].value
+      value: 
+      objectReference: {fileID: 1300107164775590387}
+    - target: {fileID: 6382188146922536710, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      propertyPath: m_SceneBindings.Array.data[10].value
+      value: 
+      objectReference: {fileID: 1300107164775590386}
     - target: {fileID: 7432538937198306742, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4294,10 +4341,58 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6528419913094368215, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+    - {fileID: 400205563157553914, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+    - {fileID: 1742857047602436015, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+    - {fileID: 5363552221060705206, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+    - {fileID: 6773700933367343512, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7405486602246193070, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1300107164775590391}
   m_SourcePrefab: {fileID: 100100000, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+--- !u!1 &1300107164775590386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7405486602246193070, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+  m_PrefabInstance: {fileID: 1300107164775590385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1300107164775590387 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5232736847637713532, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}
+  m_PrefabInstance: {fileID: 1300107164775590385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1300107164775590391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300107164775590386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 15e6819c87e928149aef2008313fb28a, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1921253243}
+          m_TargetAssemblyTypeName: CheckBook, Assembly-CSharp
+          m_MethodName: StopCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3691943757662744145 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2985671352235306383, guid: 5b1f3bab354b0344387be90552bd916f, type: 3}

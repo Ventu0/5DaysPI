@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class CheckBook : MonoBehaviour, IInteractable
 {
@@ -11,6 +12,7 @@ public class CheckBook : MonoBehaviour, IInteractable
     [SerializeField] SkipCutscene cutsceneSkipper;
 
     [Header("Config")]
+    [SerializeField] float skipToTime = 11.26f;
     [SerializeField] bool waitForAnimation = false;
     [SerializeField] GameObject animationObject;
     [SerializeField] float animationTime;
@@ -82,16 +84,16 @@ public class CheckBook : MonoBehaviour, IInteractable
     public void Skip()
     {
         cutsceneSkipper.canSkipCutscene = false;
-        timeline.time = 11.26f;
+        timeline.time = skipToTime;
         timeline.Evaluate();
+        closeCutscene.SetActive(true);
         StopCutscene();
     }
     public void StopCutscene()
     {
         print("parando cutscene");
         closeCutscene.SetActive(true);
-        cutsceneSkipper.canSkipCutscene = false;
-        cutsceneSkipper.finished = true;
+        cutsceneSkipper.CompletedSkip();
         timeline.Pause();
     }
 }

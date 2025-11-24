@@ -26,17 +26,17 @@ public class SkipCutscene : MonoBehaviour
     {
         if (finished || !canSkipCutscene) return;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !finished)
         {
             skipCutsceneMenu.SetActive(true);
             StartCoroutine(DecreaseTime());
         }
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && !finished)
         {
             elapsedTime += Time.deltaTime;
             secondsText.text = Mathf.Max(timeToSkip - elapsedTime, 0).ToString("F1") + "s";
         }
-        if(Input.GetButtonUp("Fire1"))
+        if(Input.GetButtonUp("Fire1") && !finished)
         {
             skipCutsceneMenu.SetActive(false);
             StopAllCoroutines();
@@ -54,6 +54,8 @@ public class SkipCutscene : MonoBehaviour
     public void CompletedSkip()
     {
         finished = true;
+        canSkipCutscene = false;
+        skipCutsceneMenu.SetActive(false);
     }
     IEnumerator DecreaseTime()
     {
