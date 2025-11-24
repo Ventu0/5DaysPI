@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 53126965}
   - component: {fileID: 53126964}
+  - component: {fileID: 53126966}
   m_Layer: 0
   m_Name: CutsceneController
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f7a515100d6d24ebd1fbc7504a5bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneEnder
-  sceneToLoad: 
+  sceneToLoad: Vila Inimiga
 --- !u!4 &53126965
 Transform:
   m_ObjectHideFlags: 0
@@ -164,6 +165,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53126966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53126963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 15e6819c87e928149aef2008313fb28a, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 53126964}
+          m_TargetAssemblyTypeName: CutsceneEnder, Assembly-CSharp
+          m_MethodName: EndCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &92467631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1587,8 @@ PlayableDirector:
     value: {fileID: 595267505}
   - key: {fileID: -6421811534282620741, guid: d690313c28de37c48b7a49028ab16ad2, type: 2}
     value: {fileID: 1353651332}
+  - key: {fileID: 3377220666942253573, guid: d690313c28de37c48b7a49028ab16ad2, type: 2}
+    value: {fileID: 53126966}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1364610522

@@ -495,6 +495,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 958920869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &262339625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8302533402387697403, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+  m_PrefabInstance: {fileID: 1426656057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9593b6970a9954418373074ad82ec91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShakeEffect
 --- !u!1 &379290044
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +515,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 379290046}
-  - component: {fileID: 379290045}
   m_Layer: 0
   m_Name: SHAKE
   m_TagString: Untagged
@@ -512,21 +522,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &379290045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379290044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9593b6970a9954418373074ad82ec91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeObject: {fileID: 1575663267}
-  shakeDuration: 1
-  shakeStrength: 0.05
 --- !u!4 &379290046
 Transform:
   m_ObjectHideFlags: 0
@@ -2137,7 +2132,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 379290045}
+        - m_Target: {fileID: 262339625}
           m_TargetAssemblyTypeName: ShakeEffect, Assembly-CSharp
           m_MethodName: ShakeCutscene
           m_Mode: 1
@@ -2796,7 +2791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4703961561017793645, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: canShowText
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7441956713374165473, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: m_Name
@@ -2886,6 +2881,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302533402387697403, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9137004182849802052, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: m_Volume
       value: 0.102
@@ -2965,7 +2964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774992218612827418, guid: 66079f4d4126d9141b9534c63d7461c1, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

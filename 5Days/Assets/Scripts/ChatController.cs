@@ -32,7 +32,7 @@ public class ChatController : MonoBehaviour
     public static ChatController instance;
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(dontDestroyObject);
@@ -44,12 +44,14 @@ public class ChatController : MonoBehaviour
     }
     private void Start()
     {
-        bounceEffect = BounceEffect.instance;
+
+        if(bounceEffect == null && BounceEffect.instance != null)
+            bounceEffect = BounceEffect.instance;
+
         originalIconPos = portrait.GetComponent<RectTransform>().anchoredPosition;
         ShowYesOrNoButtons(false);
         pressButtonText.SetActive(false);
-        chatMenu.SetActive(false);
-
+        if(chatMenu != null) chatMenu.SetActive(false);
     }
     private void Update()
     {

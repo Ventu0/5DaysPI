@@ -39,7 +39,7 @@ public class CutsceneChat : MonoBehaviour
     public void Falar(string[] falas, Sprite[] charactersFace)
     {
         int falasMaximas = falas.Length;
-        if (chatController.falasRoutine == null)
+        if (chatController.falasRoutine == null && chatController != null)
             falaAtual++;
         if (falaAtual < falasMaximas)
         {
