@@ -6,12 +6,14 @@ public class PoisonEffect : Effect
     [SerializeField] BasePersonagem character;
     public int damagePerTurn;
     [SerializeField] RuntimeAnimatorController poisonAnimation;
-    Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
+    [Header("Visual Feedback")]
+    [SerializeField] Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
     [SerializeField] AudioClip poisonSound;
+    [SerializeField] bool applyChance = true;
     public override void ApplyEffect(BasePersonagem alvo)
     {
         int random = Random.Range(1, 3);
-        if(random == 1)
+        if(random == 1 && applyChance)
         {
             TextPopup.instance.GerarTexto("Errou!", alvo.transform.position, Color.yellow);
             return;

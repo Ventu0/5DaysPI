@@ -2885,6 +2885,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8302533402387697403, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: shakeObject
+      value: 
+      objectReference: {fileID: 1575663267}
+    - target: {fileID: 8302533402387697403, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: shakeDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302533402387697403, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
+      propertyPath: shakeStrength
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9137004182849802052, guid: c8f5a2d71350d514495a3346ceb49dc1, type: 3}
       propertyPath: m_Volume
       value: 0.102

@@ -137,11 +137,11 @@ public class NPC : MonoBehaviour, IInteractable
         if(dayAndNight != null)
         dayAndNight.isPaused = false;
 
+        onTextEnd?.Invoke();
         chatController.CloseDialogue();
         print("fechando dialogo");
         activeLines = dialogueLines;
         activeIcons = charactersFace;
-        onTextEnd?.Invoke();
         if (yesOrNo != null)
         {
             yesOrNo.alreadyAnswered = false;

@@ -160,18 +160,20 @@ public class LojaCharacterSelection : MonoBehaviour
         Action<UnityAction> action = addListener ? onClick.AddListener : onClick.RemoveListener; //decide o que vai fazer (remover ou adicionar)
         Action<UnityAction> onAnimEnd = addListener ? animSequence.onAnimEnd.AddListener : animSequence.onAnimEnd.RemoveListener;
 
+        print("colocando actions");
         action(() => character.button.enabled = false);
         action(() => canMove = false);
         action(() => LojaShowCharacterInfo.instance.ApplyInfo(character.personagem));
         action(() => FadeToAlphaDisabled());
         onAnimEnd(() => character.button.enabled = true);
+        onAnimEnd(() => print(character.button.enabled));
         action(sequence);
         action(OnSelected);
     }
     void OnSelected()
     {
         UnityEvent onClick = characters[selected].button.onClick;
-
+        print("selected");
         onClick.RemoveAllListeners();
         onClick.AddListener(DeselectCurrent);
     }
