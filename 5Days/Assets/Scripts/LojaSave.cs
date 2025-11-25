@@ -7,12 +7,13 @@ public class LojaSaveInfo
 }
 public class LojaSave : MonoBehaviour
 {
+    [SerializeField] string jsonName = "/LojaInfo.json";
     [SerializeField] string caminho;
     [SerializeField] LojaCharacterSelection characterSelection;
     PauseMenuController pauseMenu;
     private void Awake()
     {
-        caminho = Application.persistentDataPath + "/LojaInfo.json";
+        caminho = Application.persistentDataPath + jsonName;
     }
     void Start()
     {
