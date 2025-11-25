@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: CuraEmArea
   m_EditorClassIdentifier: 
   nomeAtaque: "Ben\xE7\xE3o"
-  description: 
+  description: "O usu\xE1rio pede ben\xE7a para os deuses, curando sua equipe em
+    15\n"
   danoOuCura: 15
   maxPP: 15
   currentPP: 14
   VisualEffectDuration: 1
-  iconeAtaque: {fileID: 0}
+  iconeAtaque: {fileID: 5873729260468705610, guid: 0207427d60c819742aac7fa03c8ef4d6, type: 3}
   iconMainColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackEffect: {fileID: -8987271427450927229, guid: b5c43de9ed8df2b44a8fd4b7dc76e539, type: 3}
   attackEffectYOffset: -0.5
+  endYOffset: 0
+  endXOffset: 3
   tipoDeAlvo: 1
   attackAnimation: {fileID: 9100000, guid: 8c1b80898f2fbe0469af492e79bda716, type: 2}
   animationPlayInFront: 0

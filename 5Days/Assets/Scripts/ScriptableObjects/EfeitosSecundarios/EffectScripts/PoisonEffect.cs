@@ -7,6 +7,7 @@ public class PoisonEffect : Effect
     public int damagePerTurn;
     [SerializeField] RuntimeAnimatorController poisonAnimation;
     [Header("Visual Feedback")]
+    [SerializeField] string debuffName = "Envenenado";
     [SerializeField] Color poisonColor = new Color(138f, 0f, 214f); // Cor roxa
     [SerializeField] AudioClip poisonSound;
     [SerializeField] bool applyChance = true;
@@ -48,7 +49,7 @@ public class PoisonEffect : Effect
         }
         SFX.instance.PlaySFX(poisonSound, 1f);
         MovesVisualEffect.instance.AttackEffect(null, character.transform.position, poisonAnimation, false);
-        TextPopup.instance.GerarTexto("Envenenado!", character.transform.position, poisonColor, 29);
+        TextPopup.instance.GerarTexto(debuffName, character.transform.position, poisonColor, 29);
         character.TakeDamage(damagePerTurn, false);
         
     }

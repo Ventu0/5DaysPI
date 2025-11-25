@@ -16,11 +16,12 @@ MonoBehaviour:
   vidaMaxima: 150
   vidaAtual: 150
   YOffset: 0.2
+  spriteSort: 0
   isDead: 0
   ataques:
   - {fileID: 11400000, guid: 6f270ab83c8161b4a9598107134ae88d, type: 2}
   - {fileID: 11400000, guid: fe48149566e2d634fad33e48bb957ae3, type: 2}
   - {fileID: 11400000, guid: 6a55d637a05a9c54db05c1726acaba4c, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 78a1fb8fb429d834eb85b6b79c6c904a, type: 2}
   animatorController: {fileID: 9100000, guid: 85dd2aa842c289741ae40055d29ca9cf, type: 2}
   flipX: 0

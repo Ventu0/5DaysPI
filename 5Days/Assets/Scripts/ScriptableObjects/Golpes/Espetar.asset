@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d9338a6cc1f6841b4bee447e66f2b0, type: 3}
+  m_Name: Espetar
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  nomeAtaque: Espetar
+  description: "O usu\xE1rio espeta o inimigo, fazendo-o sangrar"
+  danoOuCura: 15
+  maxPP: 10
+  currentPP: 3
+  VisualEffectDuration: 1
+  iconeAtaque: {fileID: -8562212357155758977, guid: 2b5fbd484e1ecd6479ebe196ab6c467a, type: 3}
+  iconMainColor: {r: 0.764151, g: 0.39288896, b: 0.39288896, a: 1}
+  attackEffect: {fileID: 6660453761866703191, guid: 7527d22d3cd392644aac2fc8ad525045, type: 3}
+  attackEffectYOffset: 0.1
+  endYOffset: 0
+  endXOffset: 3
+  tipoDeAlvo: 0
+  attackAnimation: {fileID: 0}
+  animationPlayInFront: 1
+  efeitoSecundario: {fileID: 11400000, guid: 4fb60f2b8f8a8874b9b89b1ceaaef5f6, type: 2}
+  porcentagemDeCura: 0.3
+  soundEffect: {fileID: 0}
+  repeatSoundOnLoop: 1
+  canUseSelectMenu: 1
+  usarMovimentoLinear: 0
+  "ataqueUmaVezS\xF3": 0
+  oneTime: 0
+  shakeCamera: 0
+  ataqueEmArea: 0
+  stealHeal: 0
+  useCharacterAnimation: 1
+  attackParameterName: Normal
+  endAttackParameter: Exit
+  quantidadesDeAtaque: 1
+  stillDuration: 0.1
