@@ -58,6 +58,7 @@ public class QuestController : MonoBehaviour
     }
     public void JustSetQuest(string text)
     {
+        print("setando text");
         questText.text = text;
     }
     #endregion

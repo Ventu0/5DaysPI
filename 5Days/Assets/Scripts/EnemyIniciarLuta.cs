@@ -79,7 +79,7 @@ public class EnemyIniciarLuta : MonoBehaviour
         if(PlayerMoney.instance != null)
         PlayerMoney.instance.SetActive(false);
 
-        Player.instance.canMove = false;
+        Player.instance.isGamePaused = true;
         battleStarted = true;
 
         DiaENoite dayScript = DiaENoite.instance;

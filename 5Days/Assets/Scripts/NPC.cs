@@ -8,11 +8,11 @@ public class YesOrNo
     public bool hasQuestion;
     public bool alreadyAnswered = false;
     public bool conditionMet = false;
+    public bool pressedYes;
     public int question;
 
     public bool activateYesTextEndOnCondition = false;
     [Space(10)]
-    public bool yesTextActivated = false;
     public UnityEvent OnYesTextEnd;
     public DialogueOptions options;
 
@@ -117,7 +117,7 @@ public class NPC : MonoBehaviour, IInteractable
         if (falaAtual > activeLines.Length && !alreadyTalked)
         {
             ResetNPC();
-            if(yesOrNo == null && talkOnce)
+            if(!yesOrNo.hasQuestion && talkOnce)
                 alreadyTalked = true;
         }
     }
@@ -142,9 +142,9 @@ public class NPC : MonoBehaviour, IInteractable
         print("fechando dialogo");
         activeLines = dialogueLines;
         activeIcons = charactersFace;
-        if (yesOrNo != null && yesOrNo.hasQuestion)
+        if (yesOrNo != null && yesOrNo.hasQuestion && yesOrNo.pressedYes)
         {
-            yesOrNo.alreadyAnswered = false;
+            
             if (yesOrNo.activateYesTextEndOnCondition)
             {
                 if (yesOrNo.conditionMet)
@@ -153,6 +153,7 @@ public class NPC : MonoBehaviour, IInteractable
             else
                 yesOrNo.OnYesTextEnd?.Invoke();
         }
+        yesOrNo.alreadyAnswered = false;
 
         if (isHealer)
         {
@@ -193,8 +194,8 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (yesOrNoButton)
         {
+            yesOrNo.pressedYes = true;
             isChoosing = false;
-            yesOrNo.yesTextActivated = true;
             if (yesOrNo.hasCondition())
                 conditions.DoAction(this, yesOrNo.options);
         }
@@ -218,6 +219,8 @@ public class NPC : MonoBehaviour, IInteractable
 
         NPCSaveData data = savedNPCs.GetNPCData(idToSave);
         DialogueOptions options = yesOrNo?.options;
+        if (data == null) return;
+
         if (options != null)
         {
             if (options.needMoney && yesOrNo != null) //se adicionar mais condições, adicionar aqui

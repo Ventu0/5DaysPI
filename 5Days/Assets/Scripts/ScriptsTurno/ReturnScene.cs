@@ -43,7 +43,7 @@ public class ReturnScene : MonoBehaviour
         turnModeManager.MaintainStatus();
         turnModeManager.currentFightingEnemy.battleStarted = false;
 
-        Player.instance.canMove = true;
+        //Player.instance.isGamePaused = false;
         QuestController.instance.SetAllActive(true);
         PlayerMoney.instance.SetActive(true);
         DiaENoite dayScript = DiaENoite.instance;

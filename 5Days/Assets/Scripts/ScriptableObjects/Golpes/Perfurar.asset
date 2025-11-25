@@ -15,14 +15,16 @@ MonoBehaviour:
   nomeAtaque: Perfurar
   description: "Um ataque onde o usuario gira a lan\xE7a, causando dano repetidamente.
     <color=red> s\xF3 pode ser usado uma vez por partida</color>"
-  danoOuCura: 18
+  danoOuCura: 10
   maxPP: 5
-  currentPP: 4
+  currentPP: 7
   VisualEffectDuration: 1.4
   iconeAtaque: {fileID: -7385497226993952244, guid: ebf37106a9ebe8e4badfe67a365f741f, type: 3}
   iconMainColor: {r: 0.8313726, g: 0.5137255, b: 0, a: 1}
   attackEffect: {fileID: 6660453761866703191, guid: 7527d22d3cd392644aac2fc8ad525045, type: 3}
   attackEffectYOffset: -0.1
+  endYOffset: 0
+  endXOffset: 3
   tipoDeAlvo: 0
   attackAnimation: {fileID: 9100000, guid: 083c2b51028c77b4ab20dd5b7c6a8f45, type: 2}
   animationPlayInFront: 1
@@ -40,5 +42,5 @@ MonoBehaviour:
   useCharacterAnimation: 1
   attackParameterName: Spin
   endAttackParameter: Exit
-  quantidadesDeAtaque: 7
+  quantidadesDeAtaque: 5
   stillDuration: 0.2

@@ -136,6 +136,11 @@ public class TurnModeManager : MonoBehaviour
                     inimigosPersonagens[i].OnTurnStart();
                 }
                 turnoDeQualPersonagem = 0;
+                if (inimigos.Count <= 0)
+                {
+                    EndGame(true);
+                    return;
+                }
                 inimigos[turnoDeQualPersonagem].Attack();
             }
             else if (!JaAtacaram(aliadosPersonagens))

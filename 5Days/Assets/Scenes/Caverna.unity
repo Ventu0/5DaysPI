@@ -2369,9 +2369,9 @@ MonoBehaviour:
     hasQuestion: 0
     alreadyAnswered: 0
     conditionMet: 0
+    pressedYes: 0
     question: 0
     activateYesTextEndOnCondition: 0
-    yesTextActivated: 0
     OnYesTextEnd:
       m_PersistentCalls:
         m_Calls: []
