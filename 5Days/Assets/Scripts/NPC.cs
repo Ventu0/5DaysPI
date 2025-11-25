@@ -142,21 +142,16 @@ public class NPC : MonoBehaviour, IInteractable
         print("fechando dialogo");
         activeLines = dialogueLines;
         activeIcons = charactersFace;
-        if (yesOrNo != null)
+        if (yesOrNo != null && yesOrNo.hasQuestion)
         {
             yesOrNo.alreadyAnswered = false;
-            if (yesOrNo.yesTextActivated)
+            if (yesOrNo.activateYesTextEndOnCondition)
             {
-                if (yesOrNo.activateYesTextEndOnCondition)
-                {
-                    if(yesOrNo.conditionMet)
-                        yesOrNo.OnYesTextEnd?.Invoke();
-                }
-                else
+                if (yesOrNo.conditionMet)
                     yesOrNo.OnYesTextEnd?.Invoke();
-
-                yesOrNo.yesTextActivated = false;
             }
+            else
+                yesOrNo.OnYesTextEnd?.Invoke();
         }
 
         if (isHealer)

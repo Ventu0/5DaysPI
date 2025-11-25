@@ -32,6 +32,11 @@ public class NPConditions : MonoBehaviour
         currentNPC = whichNPC;
         currentOption = options;
 
+        if (!options.needsSomething)
+        {
+            currentNPC.Falar(currentOption.yesDialogue.lines, currentOption.yesDialogue.faces);
+            return; 
+        }
         if (options.needMoney)
         {
             WasteMoney();
@@ -41,6 +46,7 @@ public class NPConditions : MonoBehaviour
             print("nao preciso de dinheiro");
             SleepToDay();
         }
+        
     }
     void SleepToDay()
     {

@@ -30,6 +30,10 @@ public class EnemyIniciarLuta : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        EnterBattle();
+    }
+    public void EnterBattle()
+    {
         if (battleStarted) return;
 
         SceneManager.LoadScene(cenaEscolhida, LoadSceneMode.Additive);

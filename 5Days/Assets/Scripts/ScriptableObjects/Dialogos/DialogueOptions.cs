@@ -19,6 +19,7 @@ public class DialogueOptions : ScriptableObject
     public DialogueArrays yesPayedDialogue;
 
     [Header("Configurações de opções")]
+    public bool needsSomething = true;
     public bool needToPayAgain;
     public bool needMoney;
     public int moneyAmount;
