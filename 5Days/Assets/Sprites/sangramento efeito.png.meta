@@ -1,0 +1,696 @@
+fileFormatVersion: 2
+guid: 76c0d63f7c54ec04085df1384d8cf652
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5538676903297518458
+    second: sangramento efeito_0
+  - first:
+      213: -3038459201276190179
+    second: sangramento efeito_1
+  - first:
+      213: 3371622432694034099
+    second: sangramento efeito_2
+  - first:
+      213: -3941133670546269528
+    second: sangramento efeito_3
+  - first:
+      213: 6052836195808259874
+    second: sangramento efeito_4
+  - first:
+      213: 714425726012717216
+    second: sangramento efeito_5
+  - first:
+      213: -1987142008422844362
+    second: sangramento efeito_6
+  - first:
+      213: 6879688944741098385
+    second: sangramento efeito_7
+  - first:
+      213: 7580657926554255535
+    second: sangramento efeito_8
+  - first:
+      213: -6553592707306879293
+    second: sangramento efeito_9
+  - first:
+      213: 162619585708224108
+    second: sangramento efeito_10
+  - first:
+      213: -7525643046388784549
+    second: sangramento efeito_11
+  - first:
+      213: -5978642202312298137
+    second: sangramento efeito_12
+  - first:
+      213: 625856808909747241
+    second: sangramento efeito_13
+  - first:
+      213: -2482700391707234483
+    second: sangramento efeito_14
+  - first:
+      213: -400905876459573557
+    second: sangramento efeito_15
+  - first:
+      213: -4111331850744638571
+    second: sangramento efeito_16
+  - first:
+      213: 7310399569642255821
+    second: sangramento efeito_17
+  - first:
+      213: 1272350402259438584
+    second: sangramento efeito_18
+  - first:
+      213: 5186631803897228730
+    second: sangramento efeito_19
+  - first:
+      213: 1659222149361664263
+    second: sangramento efeito_20
+  - first:
+      213: -6652633102647411075
+    second: sangramento efeito_21
+  - first:
+      213: 4935424808441276069
+    second: sangramento efeito_22
+  - first:
+      213: 2885477335393830954
+    second: sangramento efeito_23
+  - first:
+      213: 3328067123444752389
+    second: sangramento efeito_24
+  - first:
+      213: 2080303151354873179
+    second: sangramento efeito_25
+  - first:
+      213: 6706252185538692456
+    second: sangramento efeito_26
+  - first:
+      213: 3826206837308743951
+    second: sangramento efeito_27
+  - first:
+      213: 7561359232598545354
+    second: sangramento efeito_28
+  - first:
+      213: 4536754653986137168
+    second: sangramento efeito_29
+  - first:
+      213: 2672956493918636635
+    second: sangramento efeito_30
+  - first:
+      213: -9149004488155454064
+    second: sangramento efeito_31
+  - first:
+      213: 1383646563679260440
+    second: sangramento efeito_32
+  - first:
+      213: 6974860741271272372
+    second: sangramento efeito_33
+  - first:
+      213: 1959084630221658559
+    second: sangramento efeito_34
+  - first:
+      213: -4381394639052081962
+    second: sangramento efeito_35
+  - first:
+      213: 3427813021222118515
+    second: sangramento efeito_36
+  - first:
+      213: -3286590340799096925
+    second: sangramento efeito_37
+  - first:
+      213: 7341859583914043746
+    second: sangramento efeito_38
+  - first:
+      213: -8563609313005193837
+    second: sangramento efeito_39
+  - first:
+      213: -5902582321561230672
+    second: sangramento efeito_40
+  - first:
+      213: -6140320587533899867
+    second: sangramento efeito_41
+  - first:
+      213: -4228187293001076128
+    second: sangramento efeito_42
+  - first:
+      213: 6905914455876231631
+    second: sangramento efeito_43
+  - first:
+      213: -2898802710908925076
+    second: sangramento efeito_44
+  - first:
+      213: 2962719459961854919
+    second: sangramento efeito_45
+  - first:
+      213: 5553242222490178428
+    second: sangramento efeito_46
+  - first:
+      213: 2569443693943333799
+    second: sangramento efeito_47
+  - first:
+      213: 8395091593835763975
+    second: sangramento efeito_48
+  - first:
+      213: 9219037034001673592
+    second: sangramento efeito_49
+  - first:
+      213: 2424435397598389724
+    second: sangramento efeito_50
+  - first:
+      213: -4180301345467819839
+    second: sangramento efeito_51
+  - first:
+      213: 3871645823501028368
+    second: sangramento efeito_52
+  - first:
+      213: -7775389990585947190
+    second: sangramento efeito_53
+  - first:
+      213: -1025570963276154270
+    second: sangramento efeito_54
+  - first:
+      213: 445401977783064533
+    second: sangramento efeito_55
+  - first:
+      213: 2986910122095079110
+    second: sangramento efeito_56
+  - first:
+      213: 1494972762308088378
+    second: sangramento efeito_57
+  - first:
+      213: 9099059921828496389
+    second: sangramento efeito_58
+  - first:
+      213: -8226556981205943341
+    second: sangramento efeito_59
+  - first:
+      213: 3989245175065373282
+    second: sangramento efeito_60
+  - first:
+      213: 3112864454290362082
+    second: sangramento efeito_61
+  - first:
+      213: -4885604260491051111
+    second: sangramento efeito_62
+  - first:
+      213: 4675518111667462131
+    second: sangramento efeito_63
+  - first:
+      213: -3016628855199621873
+    second: sangramento efeito_64
+  - first:
+      213: -4935749279994516933
+    second: sangramento efeito_65
+  - first:
+      213: 4551591989712220492
+    second: sangramento efeito_66
+  - first:
+      213: -4427385579705942844
+    second: sangramento efeito_67
+  - first:
+      213: -8530467275681727587
+    second: sangramento efeito_68
+  - first:
+      213: -4887398662279211949
+    second: sangramento efeito_69
+  - first:
+      213: 7291530337156278688
+    second: sangramento efeito_70
+  - first:
+      213: 8787445189225253137
+    second: sangramento efeito_71
+  - first:
+      213: -104952994688195881
+    second: sangramento efeito_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sangramento efeito_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b85b26c455ddc40800000000000000
+      internalID: 5538676903297518458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 600
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d126a63747935d5d0800000000000000
+      internalID: -3038459201276190179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 600
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be57792db86ace20800000000000000
+      internalID: 3371622432694034099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 600
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa12c2cec74e49c0800000000000000
+      internalID: -3941133670546269528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f27c6637efff350800000000000000
+      internalID: 6052836195808259874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 400
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a87361a9662ae900800000000000000
+      internalID: 714425726012717216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_6
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 400
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63833b52fd04c64e0800000000000000
+      internalID: -1987142008422844362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_7
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 400
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193a97425a0997f50800000000000000
+      internalID: 6879688944741098385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0040c5838e33960800000000000000
+      internalID: 7580657926554255535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 200
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c60266b726fc05a0800000000000000
+      internalID: -6553592707306879293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_10
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 200
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ee8afc6adb14200800000000000000
+      internalID: 162619585708224108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_11
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 200
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52ab99958b8f8790800000000000000
+      internalID: -7525643046388784549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761340cd798970da0800000000000000
+      internalID: -5978642202312298137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_13
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9243357a37d7fa800800000000000000
+      internalID: 625856808909747241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sangramento efeito_14
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 216
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f219cc52dab8dd0800000000000000
+      internalID: -2482700391707234483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f7c979d68c4f60a4ba5726137c43b375
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":216.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sangramento efeito_0: 5538676903297518458
+      sangramento efeito_1: -3038459201276190179
+      sangramento efeito_10: 162619585708224108
+      sangramento efeito_11: -7525643046388784549
+      sangramento efeito_12: -5978642202312298137
+      sangramento efeito_13: 625856808909747241
+      sangramento efeito_14: -2482700391707234483
+      sangramento efeito_2: 3371622432694034099
+      sangramento efeito_3: -3941133670546269528
+      sangramento efeito_4: 6052836195808259874
+      sangramento efeito_5: 714425726012717216
+      sangramento efeito_6: -1987142008422844362
+      sangramento efeito_7: 6879688944741098385
+      sangramento efeito_8: 7580657926554255535
+      sangramento efeito_9: -6553592707306879293
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
