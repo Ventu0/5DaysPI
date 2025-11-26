@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAtaque: "Ben\xE7\xE3o"
   description: "O usu\xE1rio pede ben\xE7a para os deuses, curando sua equipe em
-    15\n"
-  danoOuCura: 15
+    22\n"
+  danoOuCura: 22
   maxPP: 15
   currentPP: 14
   VisualEffectDuration: 1
