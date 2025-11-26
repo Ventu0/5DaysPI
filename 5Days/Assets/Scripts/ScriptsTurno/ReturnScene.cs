@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using JetBrains.Annotations;
 public class ReturnScene : MonoBehaviour
 {
     [Header("Configurações animation")]
@@ -42,7 +41,12 @@ public class ReturnScene : MonoBehaviour
         TurnModeManager turnModeManager = TurnModeManager.instance;
         turnModeManager.MaintainStatus();
         turnModeManager.currentFightingEnemy.battleStarted = false;
-
+        if (turnModeManager.currentFightingEnemy.isBoss)
+        {
+            SceneManager.LoadScene("Créditos");
+            Time.timeScale = 1f;
+            return;
+        }
         //Player.instance.isGamePaused = false;
         QuestController.instance.SetAllActive(true);
         PlayerMoney.instance.SetActive(true);

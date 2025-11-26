@@ -3,7 +3,6 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     public Camera mainCamera;
-    public GameObject cameraRoot;
     public Vector3 originalCameraPos;
     [SerializeField]public CinemachineVirtualCamera cinemachineCamera;
     [SerializeField] bool staticCamera;
@@ -16,7 +15,7 @@ public class CameraController : MonoBehaviour
             originalCameraPos = Camera.main.transform.position;
         }
         else
-        {
+        {   
             Destroy(mainCamera.gameObject);
         }
         if (instance == null)
@@ -33,9 +32,5 @@ public class CameraController : MonoBehaviour
         if(staticCamera) return;
         cinemachineCamera.LookAt = Player.instance.transform;
         cinemachineCamera.Follow = Player.instance.transform;
-    }
-    void Update()
-    {
-        
     }
 }

@@ -14,14 +14,21 @@ public class PlayTimeline : MonoBehaviour
     public void StartTimeline()
     {
         print("Starting timeline");
+        DiaENoite dayNight = DiaENoite.instance;
+
         if (Player.instance != null)
             Player.instance.isGamePaused = true;
 
         if (PauseMenuController.instance != null)
             PauseMenuController.instance.canPause = false;
 
-        if (DiaENoite.instance != null)
-            DiaENoite.instance.isPaused = true;
+        if (dayNight != null)
+        {
+            dayNight.relogioScript.SetActive(false);
+            dayNight.isPaused = true;
+        }
+        QuestController.instance.SetAllActive(false);
+        PlayerMoney.instance.SetActive(false);
 
         timelineObj.SetActive(true);
         timeline.Play();

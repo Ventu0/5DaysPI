@@ -27,6 +27,10 @@ public class DeleteSave : MonoBehaviour
         
     }
     [ContextMenu("Deletar Save")]
+    public void Delete()
+    {
+        Deletar(false);
+    }
     public void Deletar(bool deleteEvenExceptions = false)
     {
         PlayerPrefs.DeleteAll();
