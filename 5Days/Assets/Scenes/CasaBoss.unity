@@ -399,6 +399,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7392359582449114972, guid: 7927471c69a91b445aca4407c7f9a9f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7483358246495476340, guid: 7927471c69a91b445aca4407c7f9a9f9, type: 3}
       propertyPath: m_Name
       value: BossCutsceneCanvas
@@ -5589,6 +5593,63 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1001 &1196421981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.91666
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32048
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943744098496474567, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341846320557177526, guid: abea96c5f5108d54c93c842b98594351, type: 3}
+      propertyPath: m_Name
+      value: DeleteSave
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abea96c5f5108d54c93c842b98594351, type: 3}
 --- !u!1 &1238884500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6035,6 +6096,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 930291832013184143, guid: ed4e8bd7bfe925a43a3fe2dac2d49a16, type: 3}
+      propertyPath: playerParty.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 930291832013184143, guid: ed4e8bd7bfe925a43a3fe2dac2d49a16, type: 3}
+      propertyPath: 'playerParty.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a13feccd670f72d42bcedb1b11192ce9, type: 2}
+    - target: {fileID: 930291832013184143, guid: ed4e8bd7bfe925a43a3fe2dac2d49a16, type: 3}
+      propertyPath: 'playerParty.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 68df01415572d4f4d945dafbbdc608b2, type: 2}
     - target: {fileID: 2728031865123413414, guid: ed4e8bd7bfe925a43a3fe2dac2d49a16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 78.56567
@@ -7514,3 +7587,4 @@ SceneRoots:
   - {fileID: 194077648}
   - {fileID: 1383017575}
   - {fileID: 1752186462}
+  - {fileID: 1196421981}
