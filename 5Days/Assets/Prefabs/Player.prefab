@@ -353,7 +353,7 @@ MonoBehaviour:
   speed: 4.45
   vida: 0
   mainCam: {fileID: 0}
-  luzNatural: {fileID: 3483629820433639213}
+  luzNatural: {fileID: 3195473346101944132}
   canMove: 1
   "raioDeIntera\xE7\xE3o": 1.75
   "layerMaskIntera\xE7\xE3o":
@@ -367,6 +367,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   originalSpeed: 0
   lastSavedPosition: {x: -8.56, y: 1.55}
+  resetBedPosOnLoad: 0
 --- !u!95 &6900481064955034760
 Animator:
   serializedVersion: 7

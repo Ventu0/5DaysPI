@@ -8,7 +8,7 @@ public class Player : CharacterStatus
 {
     [Header("Optional")]
     public CinemachineVirtualCamera mainCam;
-    public Light2D luzNatural;
+    public GameObject luzNatural;
     public bool canMove = true;
 
     [Header("Interagir Com NPC")]
@@ -44,6 +44,8 @@ public class Player : CharacterStatus
         {
             Destroy(gameObject);
         }
+        luzNatural.SetActive(false);
+
     }
     [ContextMenu("Valores de save da cama")]
     void SaberValoresSaveBed()
@@ -56,7 +58,6 @@ public class Player : CharacterStatus
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();    
-        luzNatural?.gameObject.SetActive(false);
 
         canTalk = true;
         if (SceneTimeController.instance != null)
