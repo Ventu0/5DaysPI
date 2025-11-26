@@ -136,6 +136,7 @@ public class RelogioScript : MonoBehaviour
         time = hours.ToString("D2") + ":" + minutes.ToString("D2");
         hourText.text = time;
     }
+    [ContextMenu("Desmaiar agora")]
     void Desmaiar()
     {
         Player player = Player.instance;

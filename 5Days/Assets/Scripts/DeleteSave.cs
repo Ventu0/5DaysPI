@@ -43,6 +43,7 @@ public class DeleteSave : MonoBehaviour
                 File.Delete(arquivos[i]); //se já houver um save, deleta ele
             }
         }
+        if (PlayerMoney.instance != null) PlayerMoney.instance.AtribuirMoney(0);
         DeletarTudoDoDontDestroy();
     }
     public void DeletarTudoDoDontDestroy()

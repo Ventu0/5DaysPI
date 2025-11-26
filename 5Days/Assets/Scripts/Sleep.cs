@@ -7,7 +7,7 @@ public class Sleep : MonoBehaviour
     [SerializeField] string bedScene;
     [SerializeField] Vector2 playerNewLastSavedPos;
     [SerializeField] NPC[] npc;
-
+    [SerializeField] bool needsToBeNightToSleep = false;
     [Header("Cutscene de Dormir")]
     [SerializeField] PlayableDirector director;
     [SerializeField] GameObject cutscene;
@@ -37,7 +37,7 @@ public class Sleep : MonoBehaviour
             dayNight.onNightStart += () => npc[index].canBeInteracted = true;
         }
         director.stopped += OnTimelineStopped;
-        if(dayNight.relogioScript.GetCurrentHour() >= dayNight.horarioDaNoite)
+        if(dayNight.relogioScript.GetCurrentHour() >= dayNight.horarioDaNoite && needsToBeNightToSleep)
         {
             print("horario atual: " + dayNight.relogioScript.GetCurrentHour());
             for(int i = 0; i < npc.Length; i++)
@@ -54,6 +54,7 @@ public class Sleep : MonoBehaviour
         if (SetNewSavedPos)
             Player.instance.SavePosition(playerNewLastSavedPos);
 
+        Player.instance.isGamePaused = true;
         StartingFade();
         PausePlayer(false);
         SavePlayerBed();
@@ -73,6 +74,7 @@ public class Sleep : MonoBehaviour
     void OnTimelineStopped(PlayableDirector director) => FadeController.instance.FadeInForHowMuchTime(2, CutsceneStop);
     void CutsceneStop()
     {
+        Player.instance.isGamePaused = false;
         onCutsceneEnd?.Invoke();
         PausePlayer(true);
         cutscene.SetActive(false);
