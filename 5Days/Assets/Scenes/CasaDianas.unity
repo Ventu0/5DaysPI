@@ -2763,9 +2763,9 @@ MonoBehaviour:
     hasQuestion: 1
     alreadyAnswered: 0
     conditionMet: 0
+    pressedYes: 0
     question: 2
     activateYesTextEndOnCondition: 0
-    yesTextActivated: 0
     OnYesTextEnd:
       m_PersistentCalls:
         m_Calls: []
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   nextQuestName: 
   activeLines: []
   activeIcons: []
-  canBeInteracted: 0
+  canBeInteracted: 1
   isChoosing: 0
   alreadyRecievedQuest: 0
   alreadyTalked: 0
@@ -3341,6 +3341,7 @@ MonoBehaviour:
   playerNewLastSavedPos: {x: -8.9, y: 1.51}
   npc:
   - {fileID: 1403760631}
+  needsToBeNightToSleep: 0
   director: {fileID: 405871164}
   cutscene: {fileID: 405871163}
 --- !u!4 &1675349340

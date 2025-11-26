@@ -136,9 +136,19 @@ public class DiaENoite : MonoBehaviour
             print("cAVERNANNNA");
             SetSpecificHour(0.05f);
             isOnDarkPlace = true;
+            Player player = Player.instance;
+            if (player == null) print("nulo");
+            else print("ativo");
+
+            if (player.luzNatural == null) print("sem luz");
+            else print("temos luz");
+            if(player.luzNatural != null)
+                player.luzNatural.SetActive(true);
         }
         else
         {
+            if(Player.instance != null)
+            Player.instance.luzNatural.gameObject.SetActive(false);
             isOnDarkPlace = false;
         }
     }

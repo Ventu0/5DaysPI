@@ -7,10 +7,11 @@ public class CutsceneEnder : MonoBehaviour
     void Start()
     {
         if(DeleteSave.instance != null)
-            DeleteSave.instance.DeletarTudoDoDontDestroy();
+            DeleteSave.instance.DeletarTudoDoDontDestroy(false);
     }
     public void EndCutscene()
     {
         SceneManager.LoadScene(sceneToLoad);
+        Loader.instance.LoadBedInfos();
     }
 }

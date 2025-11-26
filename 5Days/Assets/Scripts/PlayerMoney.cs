@@ -110,7 +110,8 @@ public class PlayerMoney : MonoBehaviour
     [ContextMenu("Add money")]
     public void AddMoney()
     {
-        money += 10;
+        money += 999;
+        moneyText.text = money.ToString();
     }
     #endregion
 }

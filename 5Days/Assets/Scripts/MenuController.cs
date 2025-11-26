@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
     #region MenuButtons
     public void NewGameButton()
     {
-        DeleteSave.instance.Deletar();
+        DeleteSave.instance.Deletar(true);
         if (hardmode)
         {
             PlayerPrefs.SetInt("HardcoreMode", 1);
@@ -67,7 +67,7 @@ public class MenuController : MonoBehaviour
     }
     public void LoadGameButton()
     {
-        DeleteSave.instance.DeletarTudoDoDontDestroy();
+        DeleteSave.instance.DeletarTudoDoDontDestroy(false);
         if (!oneTime)
         {
             Loader.instance.Carregar();

@@ -117,7 +117,7 @@ public class NPC : MonoBehaviour, IInteractable
         if (falaAtual > activeLines.Length && !alreadyTalked)
         {
             ResetNPC();
-            if(!yesOrNo.hasQuestion && talkOnce)
+            if(yesOrNo != null && !yesOrNo.hasQuestion && talkOnce)
                 alreadyTalked = true;
         }
     }
@@ -133,11 +133,12 @@ public class NPC : MonoBehaviour, IInteractable
         
         if(pauseMenu != null)
         pauseMenu.canPause = true;
-
+        pauseMenu.Salvar();
+        
         if(dayAndNight != null)
         dayAndNight.isPaused = false;
-
         onTextEnd?.Invoke();
+        
         chatController.CloseDialogue();
         print("fechando dialogo");
         activeLines = dialogueLines;
@@ -153,7 +154,8 @@ public class NPC : MonoBehaviour, IInteractable
             else
                 yesOrNo.OnYesTextEnd?.Invoke();
         }
-        yesOrNo.alreadyAnswered = false;
+        if(yesOrNo != null)
+            yesOrNo.alreadyAnswered = false;
 
         if (isHealer)
         {
