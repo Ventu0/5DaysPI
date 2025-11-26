@@ -11,6 +11,7 @@ public class PlayerData
 
     public Vector2 playerLastBedPos;
     public string playerLastBedScene;
+    public bool resetPlayerPosOnSleep;
 
     public string activeQuest;
     public string activeScene;
@@ -94,6 +95,9 @@ public class PauseMenuController : MonoBehaviour
         coisasSalvar.playerLastBedPos = player.lastSavedBedPos;
         coisasSalvar.playerLastBedScene = player.lastSavedBedScene;
 
+        if (Sleep.instance != null)
+            coisasSalvar.resetPlayerPosOnSleep = Sleep.instance.resetPlayerPosOnSleep;
+
         coisasSalvar.activeQuest = QuestController.instance?.GetActiveQuest();
         coisasSalvar.activeScene = SceneManager.GetActiveScene().name;
 
@@ -105,7 +109,7 @@ public class PauseMenuController : MonoBehaviour
     {
         Salvar();
         SceneManager.LoadScene("Menu");
-        DeleteSave.instance.DeletarTudoDoDontDestroy();
+        DeleteSave.instance.DeletarTudoDoDontDestroy(false);
         Time.timeScale = 1;
         Destroy(gameObject); //para não pausar no menu
     }

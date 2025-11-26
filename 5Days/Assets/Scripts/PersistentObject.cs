@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
+using static UnityEditor.Experimental.GraphView.GraphView;
 public class PersistentObject : MonoBehaviour
 {
     public static PersistentObject instance;
@@ -29,12 +30,10 @@ public class PersistentObject : MonoBehaviour
         print("Bed2");
         yield return new WaitForSecondsRealtime(1f);
         print("Bed1");
+        Player player = Player.instance;
         if (Player.instance != null)
         {
-            if(sleep != null)
-                Player.instance.LoadOnLastBed(sleep.resetPlayerPosOnSleep);
-            else
-                Player.instance.LoadOnLastBed(true);
+            player.LoadOnLastBed(player.resetBedPosOnLoad);
         }
         yield return new WaitForSeconds(0.1f);
 

@@ -8,7 +8,7 @@ public class Player : CharacterStatus
 {
     [Header("Optional")]
     public CinemachineVirtualCamera mainCam;
-    [SerializeField] Light2D luzNatural;
+    public Light2D luzNatural;
     public bool canMove = true;
 
     [Header("Interagir Com NPC")]
@@ -29,6 +29,7 @@ public class Player : CharacterStatus
     public Vector2 lastSavedPosition;
     public Vector3 lastSavedBedPos{ get; private set; }
     public string lastSavedBedScene { get; private set; }
+    public bool resetBedPosOnLoad = false;
 
     public static Player instance;
 
@@ -54,8 +55,8 @@ public class Player : CharacterStatus
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        //luzNatural = GetComponentInChildren<Light2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();    
+        luzNatural?.gameObject.SetActive(false);
 
         canTalk = true;
         if (SceneTimeController.instance != null)
@@ -63,7 +64,6 @@ public class Player : CharacterStatus
 
         if (DiaENoite.instance != null)
             DiaENoite.instance.onNightStart += OnNightStart;
-        luzNatural?.gameObject.SetActive(false);
     }
     #region SaveMethods
     public void SavePosition(Vector2 newPos = default)
@@ -73,7 +73,7 @@ public class Player : CharacterStatus
         else
             lastSavedPosition = newPos;
     }
-        public void SaveBedPos(Vector2 bedPos = default)
+    public void SaveBedPos(Vector2 bedPos = default)
     {
         if (bedPos != default)
             lastSavedBedPos = bedPos;
@@ -82,6 +82,7 @@ public class Player : CharacterStatus
     }
     public void SaveBedScene(string bedScene = default)
     {
+        print("salvando cena da cama: " + bedScene);
         if (bedScene != default)
             lastSavedBedScene = bedScene;
         else
@@ -99,6 +100,7 @@ public class Player : CharacterStatus
             if (SceneManager.GetActiveScene().name != lastSavedBedScene)
         {
             print("carregando cena");
+            print("lastSavedBedScene: " + lastSavedBedScene);
             SceneManager.LoadScene(lastSavedBedScene);
         }
 

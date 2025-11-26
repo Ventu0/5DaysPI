@@ -133,11 +133,12 @@ public class NPC : MonoBehaviour, IInteractable
         
         if(pauseMenu != null)
         pauseMenu.canPause = true;
-
+        pauseMenu.Salvar();
+        
         if(dayAndNight != null)
         dayAndNight.isPaused = false;
-
         onTextEnd?.Invoke();
+        
         chatController.CloseDialogue();
         print("fechando dialogo");
         activeLines = dialogueLines;

@@ -27,7 +27,7 @@ public class DeleteSave : MonoBehaviour
         
     }
     [ContextMenu("Deletar Save")]
-    public void Deletar()
+    public void Deletar(bool deleteEvenExceptions = false)
     {
         PlayerPrefs.DeleteAll();
         if (ChecarSePossuiSave())
@@ -44,15 +44,15 @@ public class DeleteSave : MonoBehaviour
             }
         }
         if (PlayerMoney.instance != null) PlayerMoney.instance.AtribuirMoney(0);
-        DeletarTudoDoDontDestroy();
+        DeletarTudoDoDontDestroy(deleteEvenExceptions);
     }
-    public void DeletarTudoDoDontDestroy()
+    public void DeletarTudoDoDontDestroy(bool deleteExceptions)
     {
         Scene dontDestroyScene = gameObject.scene;
         GameObject[] objectsInScene = dontDestroyScene.GetRootGameObjects();
         foreach (GameObject objeto in objectsInScene)
         {
-            if (exception.Contains(objeto))
+            if (exception.Contains(objeto) && !deleteExceptions)
                 continue;
             if (objeto != gameObject)
                 Destroy(objeto);
