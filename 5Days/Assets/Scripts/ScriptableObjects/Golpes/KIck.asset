@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
   nomeAtaque: Chute
   description: 
-  danoOuCura: 45
+  danoOuCura: 55
   maxPP: 15
   currentPP: 1
   VisualEffectDuration: 1

@@ -28,7 +28,7 @@ MonoBehaviour:
   attackAnimation: {fileID: 9100000, guid: b7262ae32d42fe0449c0803cc6d3d373, type: 2}
   animationPlayInFront: 1
   efeitoSecundario: {fileID: 11400000, guid: 327405aa08f7cfb4a8faa8c49ca91466, type: 2}
-  porcentagemDeCura: 0.45
+  porcentagemDeCura: 0.55
   soundEffect: {fileID: 0}
   repeatSoundOnLoop: 1
   canUseSelectMenu: 1
