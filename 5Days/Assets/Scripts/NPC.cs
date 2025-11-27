@@ -34,6 +34,7 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField] bool isHealer = false;
     public YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
     [SerializeField] UnityEvent onTextEnd;
+    
 
     [Header("Quest-Only")]
     [SerializeField] bool completeQuest = false;
@@ -155,7 +156,10 @@ public class NPC : MonoBehaviour, IInteractable
                 yesOrNo.OnYesTextEnd?.Invoke();
         }
         if(yesOrNo != null)
+        {
+            yesOrNo.pressedYes = false;
             yesOrNo.alreadyAnswered = false;
+        }
 
         if (isHealer)
         {

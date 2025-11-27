@@ -2198,6 +2198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fab5e7af265be4aa682618c08195b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bed: {fileID: 1403760631}
   cinemachineCam: {fileID: 1921854793}
   book: {fileID: 1921253240}
   dontDestroyParent: {fileID: 958920868}

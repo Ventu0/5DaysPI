@@ -15,7 +15,7 @@ public class PassScene : MonoBehaviour
     }
     private void Update()
     {
-        if(!endByBoolean) return;
+        if (!endByBoolean) return;
         if (booleanValue)
         {
             PassTheScene();

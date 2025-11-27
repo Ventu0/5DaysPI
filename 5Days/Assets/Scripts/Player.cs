@@ -62,9 +62,6 @@ public class Player : CharacterStatus
         canTalk = true;
         if (SceneTimeController.instance != null)
         SceneTimeController.instance.onPauseGame += PausePlayer;
-
-        if (DiaENoite.instance != null)
-            DiaENoite.instance.onNightStart += OnNightStart;
     }
     #region SaveMethods
     public void SavePosition(Vector2 newPos = default)
@@ -98,7 +95,7 @@ public class Player : CharacterStatus
             lastSavedBedPos = new Vector2(0, 0);
         }
 
-            if (SceneManager.GetActiveScene().name != lastSavedBedScene)
+        if (SceneManager.GetActiveScene().name != lastSavedBedScene)
         {
             print("carregando cena");
             print("lastSavedBedScene: " + lastSavedBedScene);
@@ -116,10 +113,6 @@ public class Player : CharacterStatus
             isGamePaused = true;
         else
             isGamePaused = false;
-    }
-    void OnNightStart()
-    {
-        luzNatural?.gameObject.SetActive(true);
     }
     #endregion
     void Update()

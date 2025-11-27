@@ -50,6 +50,7 @@ public class ReturnScene : MonoBehaviour
         //Player.instance.isGamePaused = false;
         QuestController.instance.SetAllActive(true);
         PlayerMoney.instance.SetActive(true);
+        
         DiaENoite dayScript = DiaENoite.instance;
         if (dayScript.clockUI != null) dayScript.clockUI.SetActive(true);
         dayScript.PauseTime(false);

@@ -70,7 +70,7 @@ public class PlayerMoney : MonoBehaviour
         int moneyAmount = money;
         int fakeMoney = money;
         moneyToAddText.text = "+" + moneyToAdd.ToString();
-
+        money += amount;
         yield return new WaitForSeconds(2);
 
         while (moneyToAdd != 0 || fakeMoney <= moneyAmount + amount)
@@ -90,11 +90,11 @@ public class PlayerMoney : MonoBehaviour
             }
         }
 
-        money += amount;
+        
         moneyText.text = money.ToString();
         moneyToAddText.GetComponent<Animator>().SetTrigger("Ativar");
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         moneyToAddText.gameObject.SetActive(false);
     }

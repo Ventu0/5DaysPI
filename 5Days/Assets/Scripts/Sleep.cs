@@ -54,6 +54,8 @@ public class Sleep : MonoBehaviour
         if (SetNewSavedPos)
             Player.instance.SavePosition(playerNewLastSavedPos);
 
+        if (PlayerPartyController.instance != null) PlayerPartyController.instance.CurarTodos();
+
         Player.instance.isGamePaused = true;
         StartingFade();
         PausePlayer(false);

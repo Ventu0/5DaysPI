@@ -46,7 +46,7 @@ public class NPConditions : MonoBehaviour
             print("nao preciso de dinheiro");
             SleepToDay();
         }
-        
+
     }
     void SleepToDay()
     {
@@ -58,9 +58,14 @@ public class NPConditions : MonoBehaviour
         {
             currentNPC.ResetNPC();
         }
-        Sleep.instance.SleepForTheDay();
+        Sleep.instance.SleepForTheDay(false, AfterSleep);
         currentNPC.canBeInteracted = false;
         canSleep = false;
+    }
+    void AfterSleep()
+    {
+        currentNPC.canBeInteracted = true;
+        canSleep = true;
     }
     void WasteMoney()
     { 

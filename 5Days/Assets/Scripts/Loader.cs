@@ -77,10 +77,11 @@ public class Loader : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         LoadJson();
-        print("carregando bed infos");
+        QuestController quest = QuestController.instance;
+        if (quest != null) quest.JustSetQuest(playerData.activeQuest);
         Player player = Player.instance;
         if (player == null || playerData == null) yield break;
-        print("player nao é nulo");
+
         player.resetBedPosOnLoad = playerData.resetPlayerPosOnSleep;
         player.SaveBedPos(playerData.playerLastBedPos);
         player.SaveBedScene(playerData.playerLastBedScene);

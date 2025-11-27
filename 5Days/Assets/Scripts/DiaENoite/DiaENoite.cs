@@ -86,10 +86,10 @@ public class DiaENoite : MonoBehaviour
     {
         clockUI.SetActive(true);
         time = 0;
-        if (isOnDarkPlace) return;
-        directionalLight.intensity = 1;
         relogioScript.ResetTime();
         StopAllCoroutines();
+        if (isOnDarkPlace) return;
+        directionalLight.intensity = 1;
         StartCoroutine(ChangeToNight());
     }
     public void SetSpecificHour(float tempo) 
@@ -131,24 +131,24 @@ public class DiaENoite : MonoBehaviour
     #endregion
     public void OnSceneChange(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "Caverna")
+        if (scene.name == "CombatScene") return;
+        Player player = Player.instance;
+
+        if (scene.name == "Caverna")
         {
             print("cAVERNANNNA");
             SetSpecificHour(0.05f);
             isOnDarkPlace = true;
-            Player player = Player.instance;
             if (player == null) print("nulo");
             else print("ativo");
 
-            if (player.luzNatural == null) print("sem luz");
-            else print("temos luz");
             if(player.luzNatural != null)
                 player.luzNatural.SetActive(true);
         }
         else
         {
-            if(Player.instance != null)
-            Player.instance.luzNatural.gameObject.SetActive(false);
+            if(player != null)
+                player.luzNatural.gameObject.SetActive(false);
             isOnDarkPlace = false;
         }
     }

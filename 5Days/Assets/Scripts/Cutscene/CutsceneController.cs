@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class CutsceneController : MonoBehaviour
 {
+    [SerializeField] NPC bed;
     [SerializeField] GameObject cinemachineCam;
     [SerializeField] GameObject book;
     [SerializeField] GameObject dontDestroyParent;
@@ -14,11 +15,13 @@ public class CutsceneController : MonoBehaviour
     public static CutsceneController instance;
     private void Awake()
     {
+        bed.canBeInteracted = false;
         book.gameObject.SetActive(false);
         cinemachineCam.SetActive(false);
         int cutsceneEnded = PlayerPrefs.GetInt("CutsceneEnded");
         if(cutsceneEnded == 1)
         {
+            bed.canBeInteracted = true;
             book.gameObject.SetActive(true);
             cinemachineCam.SetActive(true);
             Destroy(dontDestroyParent);
