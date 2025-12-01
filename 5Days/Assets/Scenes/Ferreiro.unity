@@ -1724,6 +1724,10 @@ PrefabInstance:
       value: MoneyUI
       objectReference: {fileID: 0}
     - target: {fileID: 8891274094679194515, guid: b27829d22997fb14db3b390596a1e209, type: 3}
+      propertyPath: debugMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891274094679194515, guid: b27829d22997fb14db3b390596a1e209, type: 3}
       propertyPath: moedaGira
       value: 
       objectReference: {fileID: 1172816353}

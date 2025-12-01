@@ -231,7 +231,6 @@ public class LojaCharacterSelection : MonoBehaviour
         List<bool> unlocked = new List<bool>();
         for(int i = 0; i < characters.Length; i++)
         {
-            print("instancia: " + i + "unlocked: " + characters[i].unlocked);
             unlocked.Add(characters[i].unlocked);
         }
         return unlocked;

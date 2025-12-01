@@ -52,6 +52,7 @@ public class Player : CharacterStatus
     {
         print("Posição da cama salva em: " + lastSavedBedPos);
         print("Cena da cama salva em: " + lastSavedBedScene);
+        print("Resetar posição da cama: " + resetBedPosOnLoad);
     }
     void Start()
     {
