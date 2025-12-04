@@ -6,6 +6,7 @@ using System;
 
 public class ChatController : MonoBehaviour
 {
+    public Button interactBTN;
     [SerializeField] GameObject dontDestroyObject;
     [SerializeField] GameObject chatMenu;
     [SerializeField] GameObject portraitFundo;
@@ -44,8 +45,8 @@ public class ChatController : MonoBehaviour
     }
     private void Start()
     {
-
-        if(bounceEffect == null && BounceEffect.instance != null)
+        interactBTN.gameObject.SetActive(false);
+        if (bounceEffect == null && BounceEffect.instance != null)
             bounceEffect = BounceEffect.instance;
 
         originalIconPos = portrait.GetComponent<RectTransform>().anchoredPosition;
@@ -67,6 +68,7 @@ public class ChatController : MonoBehaviour
     public void StartDialogue(Sprite sprite, string fala)
     {
         line = fala;
+        interactBTN.gameObject.SetActive(false);
         chatMenu.SetActive(true);
         timer = 0;
         canShowText = true;

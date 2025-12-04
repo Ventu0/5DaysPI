@@ -352,10 +352,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4.45
   vida: 0
+  joystick: {fileID: 0}
   mainCam: {fileID: 0}
   luzNatural: {fileID: 3195473346101944132}
   canMove: 1
-  "raioDeIntera\xE7\xE3o": 1.75
+  "raioDeIntera\xE7\xE3o": 1.35
   "layerMaskIntera\xE7\xE3o":
     serializedVersion: 2
     m_Bits: 8

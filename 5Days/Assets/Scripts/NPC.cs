@@ -44,6 +44,7 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField] Sprite[] activeIcons;
     public bool canBeInteracted = true;
     [SerializeField] bool isChoosing = false;
+    bool isOnRange = false;
 
     public bool alreadyRecievedQuest;
     public bool alreadyTalked;
@@ -68,9 +69,18 @@ public class NPC : MonoBehaviour, IInteractable
         SaveNPCs.instance.AddNPC(this);
         Load();
     }
-    public void Interact()
+    public void OnReachRange()
     {
-        Falar();
+        if(isOnRange) return;
+        chatController.interactBTN.onClick.AddListener(() => Falar());
+        chatController.interactBTN.gameObject.SetActive(true);
+        isOnRange = true;
+    }
+    public void OnExitRange()
+    {
+        chatController.interactBTN.onClick.RemoveAllListeners();
+        chatController.interactBTN.gameObject.SetActive(false);
+        isOnRange = false;
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {

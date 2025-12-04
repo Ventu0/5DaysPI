@@ -24,6 +24,7 @@ public class CheckBook : MonoBehaviour, IInteractable
     Player player;
     PauseMenuController pauseMenu;
     DiaENoite dayNight;
+    ChatController chatController;
     void Awake()
     {
         if (animationObject != null) animationObject.SetActive(false);
@@ -32,6 +33,17 @@ public class CheckBook : MonoBehaviour, IInteractable
         player = Player.instance;
         pauseMenu = PauseMenuController.instance;
         dayNight = DiaENoite.instance;
+        chatController = ChatController.instance;
+    }
+    public void OnExitRange()
+    {
+        chatController.interactBTN.gameObject.SetActive(false);
+        chatController.interactBTN.onClick.RemoveAllListeners();
+    }
+    public void OnReachRange()
+    {
+        chatController.interactBTN.gameObject.SetActive(true);
+        chatController.interactBTN.onClick.AddListener(() => Interact());
     }
     public void Interact()
     {
@@ -66,7 +78,7 @@ public class CheckBook : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(animationTime);
         animationObject.SetActive(false);
         animationEnded = true;
-        Interact();
+        OnReachRange();
     }
     public void CloseCutscene()
     {

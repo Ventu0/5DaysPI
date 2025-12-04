@@ -24,6 +24,7 @@ public class Player : CharacterStatus
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] float originalSpeed;
+    IInteractable lastInteractable;
     //[SerializeField] bool isTired; //porque cansado você nao anda rapido
 
     [Header("Últimos saves de posição")]
@@ -174,7 +175,17 @@ public class Player : CharacterStatus
         {
             if (overlapCircle.TryGetComponent(out IInteractable interact))
             {
-                interact.Interact();
+                interact.OnReachRange();
+                lastInteractable = interact;
+            }
+        }
+        else
+        {
+            if (lastInteractable != null)
+            {
+                print("saindo do range");
+                lastInteractable.OnExitRange();
+                lastInteractable = null;
             }
         }
     }
