@@ -45,6 +45,7 @@ public class NPC : MonoBehaviour, IInteractable
     public bool canBeInteracted = true;
     [SerializeField] bool isChoosing = false;
     bool isOnRange = false;
+    bool isInteracting = false;
 
     public bool alreadyRecievedQuest;
     public bool alreadyTalked;
@@ -71,10 +72,16 @@ public class NPC : MonoBehaviour, IInteractable
     }
     public void OnReachRange()
     {
-        if(isOnRange) return;
-        chatController.interactBTN.onClick.AddListener(() => Falar());
-        chatController.interactBTN.gameObject.SetActive(true);
-        isOnRange = true;
+        if (!isInteracting)
+        {
+            if (isOnRange) return;
+            chatController.interactBTN.onClick.AddListener(() => Falar());
+            chatController.interactBTN.gameObject.SetActive(true);
+            isOnRange = true;
+        }
+        else
+            Falar();
+        
     }
     public void OnExitRange()
     {
@@ -84,6 +91,8 @@ public class NPC : MonoBehaviour, IInteractable
     }
     public void Falar(string[] falas = null, Sprite[] icons = null)
     {
+        Player.instance.isTalking = true;
+        isInteracting = true;
         if (alreadyTalked) return;
         if (!canBeInteracted) return;
 
@@ -147,6 +156,9 @@ public class NPC : MonoBehaviour, IInteractable
         
         if(dayAndNight != null)
         dayAndNight.isPaused = false;
+
+        isInteracting = false;
+        Player.instance.isTalking = false;
         onTextEnd?.Invoke();
         
         chatController.CloseDialogue();

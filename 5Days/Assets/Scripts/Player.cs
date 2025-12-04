@@ -17,6 +17,7 @@ public class Player : CharacterStatus
     [SerializeField] LayerMask layerMaskInteração;
     public bool canTalk = true;
     public bool isGamePaused;
+    public bool isTalking;
 
     [Header("Read-Only")]
     [SerializeField] Vector2 moveInput;
@@ -24,7 +25,7 @@ public class Player : CharacterStatus
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] float originalSpeed;
-    IInteractable lastInteractable;
+    [SerializeField] IInteractable lastInteractable;
     //[SerializeField] bool isTired; //porque cansado você nao anda rapido
 
     [Header("Últimos saves de posição")]
@@ -137,10 +138,7 @@ public class Player : CharacterStatus
         if (canTalk)
         {
             Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
-            if (Input.GetKeyDown(KeyCode.E) || InputHelper.GetPrimaryDown())
-            {
-                InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
-            }
+            InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
         }
 
         if (!canMove)
@@ -171,21 +169,27 @@ public class Player : CharacterStatus
     }
     void InteragirNPC(Collider2D overlapCircle)
     {
-        if (overlapCircle != null)
+        if (lastInteractable != null && overlapCircle == null)
         {
-            if (overlapCircle.TryGetComponent(out IInteractable interact))
+            print("saindo do range");
+            lastInteractable.OnExitRange();
+            lastInteractable = null;
+            return;
+        }
+
+        if(overlapCircle == null) return;
+        bool hasComponent = overlapCircle.TryGetComponent(out IInteractable interact);
+
+        if (hasComponent && !isTalking)
+        {
+            interact.OnReachRange();
+            lastInteractable = interact;
+
+        }else if(hasComponent && isTalking)
+        {
+            if (InputHelper.GetPrimaryDown())
             {
                 interact.OnReachRange();
-                lastInteractable = interact;
-            }
-        }
-        else
-        {
-            if (lastInteractable != null)
-            {
-                print("saindo do range");
-                lastInteractable.OnExitRange();
-                lastInteractable = null;
             }
         }
     }
