@@ -17,13 +17,13 @@ public class InteractButtonsController : MonoBehaviour
 
     [Header("Configurable")]
     [SerializeField] Image[] attackIcons = new Image[4];
-    [Tooltip("Cores de seleÁ„o dos botıes de ataque, pode configurar com base na cor do icone do ataque")]
+    [Tooltip("Cores de sele√ß√£o dos bot√µes de ataque, pode configurar com base na cor do icone do ataque")]
     [SerializeField] Button[] attackButtons = new Button[4];
     [SerializeField] Sprite[] originalSprites = new Sprite[4];
     [SerializeField] float menuDistance;
     [SerializeField] AudioClip errorSound;
 
-    //variaveis n„o-mostraveis
+    //variaveis n√£o-mostraveis
      TurnModeManager turnModeManager;
     DescriptionMenu descriptionMenuScript;
     [HideInInspector] public int chosenAttack;
@@ -73,7 +73,7 @@ public class InteractButtonsController : MonoBehaviour
         MainText mainText = MainText.instance;
         if (turnModeManager.escapeChance == 0)
         {
-            mainText.SetText("N„o È possÌvel fugir!", Color.red);
+            mainText.SetText("N√£o √© poss√≠vel fugir!", Color.red);
             SFX.instance.PlaySFX(errorSound);
             runButton.enabled = false;
         }
@@ -84,7 +84,7 @@ public class InteractButtonsController : MonoBehaviour
         }
         else
         {
-            mainText.SetText("N„o conseguiu fugir!", Color.red);
+            mainText.SetText("N√£o conseguiu fugir!", Color.red);
             runButton.enabled = false;
             runButton.gameObject.SetActive(false);
             EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
@@ -138,19 +138,19 @@ public class InteractButtonsController : MonoBehaviour
         SFX sfx = SFX.instance;
         if (ataque.currentPP <= 0)
         {
-            mainText.SetText("Esse ataque n„o tem mais usos!", Color.red);
+            mainText.SetText("Esse ataque n√£o tem mais usos!", Color.red);
             sfx.PlaySFX(errorSound);
             return;
         }
         if(ataque.oneTime)
         {
-            mainText.SetText("Esse ataque sÛ pode ser usado uma vez por batalha!", Color.red);
+            mainText.SetText("Esse ataque s√≥ pode ser usado uma vez por batalha!", Color.red);
             sfx.PlaySFX(errorSound);
             return;
         }
         if(ataque == null)
         {
-            mainText.SetText("Ataque n„o existe!", Color.red);
+            mainText.SetText("Ataque n√£o existe!", Color.red);
             sfx.PlaySFX(errorSound);
             return;
         }

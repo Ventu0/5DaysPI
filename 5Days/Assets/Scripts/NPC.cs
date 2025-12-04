@@ -23,7 +23,7 @@ public class YesOrNo
 }
 public class NPC : MonoBehaviour, IInteractable
 {
-    [Header("Configurações de Fala")]
+    [Header("ConfiguraÃ§Ãµes de Fala")]
     public string[] dialogueLines;
     [SerializeField] int falaAtual = -1;
     public Sprite[] charactersFace;
@@ -32,7 +32,7 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField] bool talkOnce = true;
     public string idToSave;
     [SerializeField] bool isHealer = false;
-    public YesOrNo yesOrNo; //futuro: adicionar mais opções de fala
+    public YesOrNo yesOrNo; //futuro: adicionar mais opÃ§Ãµes de fala
     [SerializeField] UnityEvent onTextEnd;
 
     [Header("Quest-Only")]
@@ -214,7 +214,7 @@ public class NPC : MonoBehaviour, IInteractable
         SaveNPCs savedNPCs = SaveNPCs.instance;
         if(savedNPCs == null)
         {
-            Debug.LogWarning("Não tem script de salvar npcs");
+            Debug.LogWarning("NÃ£o tem script de salvar npcs");
             return;
         }
         if (!savedNPCs.HasData()) return;
@@ -225,7 +225,7 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (options != null)
         {
-            if (options.needMoney && yesOrNo != null) //se adicionar mais condições, adicionar aqui
+            if (options.needMoney && yesOrNo != null) //se adicionar mais condiÃ§Ãµes, adicionar aqui
                 yesOrNo.conditionMet = data.alreadyPayedMoney;
             if(yesOrNo.conditionMet)
             {

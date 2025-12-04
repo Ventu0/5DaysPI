@@ -79,7 +79,7 @@ public class NPConditions : MonoBehaviour
         string[] lines = dialogueToUse.lines;
         Sprite[] sprites = dialogueToUse.faces;
 
-        if (!CheckIfHasText(dialogueToUse) && !currentOption.needSleep) //só ativa se nao for dormir
+        if (!CheckIfHasText(dialogueToUse) && !currentOption.needSleep) //sÃ³ ativa se nao for dormir
         {
             Debug.LogWarning("O dialogo selecionado nao tem texto. Dialogo: " + dialogueToUse);
             return;

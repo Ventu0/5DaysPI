@@ -4,14 +4,14 @@ using TMPro;
 using System.Collections;
 public class QuestController : MonoBehaviour
 {
-    [Header("Obrigatório")]
+    [Header("ObrigatÃ³rio")]
     public GameObject menu;
     [SerializeField] GameObject canva;
     [SerializeField] TextMeshProUGUI questText;
     [SerializeField] Image retangulo;
     [SerializeField] TextMeshProUGUI closedText;
 
-    [Header("Configurações da animação")]
+    [Header("ConfiguraÃ§Ãµes da animaÃ§Ã£o")]
     [SerializeField] float duration;
     [SerializeField] float waitTime;
 
@@ -51,7 +51,7 @@ public class QuestController : MonoBehaviour
         menu.SetActive(!active);
         closedText.gameObject.SetActive(active);
     }
-    #region OpçõesDeSetQuest
+    #region OpÃ§ÃµesDeSetQuest
     public string GetActiveQuest()
     {
         return questText.text;
@@ -85,7 +85,7 @@ public class QuestController : MonoBehaviour
         yield return new WaitForSeconds(halfWaitTime);
         questText.text = text;
         isOnRoutine = true;
-        SetQuestWithAnimation(text); // Atualiza o tamanho do retângulo com o novo texto
+        SetQuestWithAnimation(text); // Atualiza o tamanho do retÃ¢ngulo com o novo texto
         yield return new WaitForSeconds(halfWaitTime);
         while (iterador > 0)
         {

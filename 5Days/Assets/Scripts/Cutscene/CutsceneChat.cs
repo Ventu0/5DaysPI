@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CutsceneChat : MonoBehaviour
 {
-    [Header("Configurações de Fala")]
+    [Header("ConfiguraÃ§Ãµes de Fala")]
     [SerializeField] int falaAtual = 0;
     [Space]
     [Header("Todos os Textos (se quiser adicionar mais falas: aumenta as array")]

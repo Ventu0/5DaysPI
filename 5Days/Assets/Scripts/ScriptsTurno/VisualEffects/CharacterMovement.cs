@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
     TurnModeManager turnModeManager;
     BasePersonagem character;
     [SerializeField] AnimationCurve timeCurve;
-    [SerializeField] AnimationCurve curve; //curva atÈ funciona, mas ela n„o È adaptativa, teria que mexer no script
+    [SerializeField] AnimationCurve curve; //curva at√© funciona, mas ela n√£o √© adaptativa, teria que mexer no script
     public static CharacterMovement instance;
     
     void Awake()
@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
 
         float duration = turnModeManager.QuemEstaAtacando().duration;
         float offset = character.characterStatus.YOffset;
-        Vector2 playerNewPos = new Vector2(newPos.x, newPos.y + offset + yOffSet); //calcula a posiÁ„o com base no Offset do personagem
+        Vector2 playerNewPos = new Vector2(newPos.x, newPos.y + offset + yOffSet); //calcula a posi√ß√£o com base no Offset do personagem
 
         if (!useLinearMovement)
             StartCoroutine(AllyMove(characterToMove, playerNewPos, duration));

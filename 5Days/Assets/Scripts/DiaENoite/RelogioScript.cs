@@ -7,7 +7,7 @@ using Cinemachine;
 
 public class RelogioScript : MonoBehaviour
 {
-    [Header("Configurações do Relógio")]
+    [Header("ConfiguraÃ§Ãµes do RelÃ³gio")]
     [SerializeField] GameObject relogio;
     [SerializeField] Image gradiente;
     [SerializeField] TextMeshProUGUI hourText;
@@ -16,7 +16,7 @@ public class RelogioScript : MonoBehaviour
     [SerializeField] float gradienteInitialX;
     [SerializeField] float gradienteFinalX;
 
-    [Header("Configurações de Tempo")]
+    [Header("ConfiguraÃ§Ãµes de Tempo")]
     [SerializeField] int minutes;
     public int hours = 0;
     [SerializeField] int maxHours = 23;
@@ -108,7 +108,7 @@ public class RelogioScript : MonoBehaviour
         if (hours == dayScript.horarioDaNoite && lastTriggeredHour < dayScript.horarioDaNoite)
         {
             lastTriggeredHour = dayScript.horarioDaNoite;
-            print("noite começou");
+            print("noite comeÃ§ou");
             if(!dayScript.isOnDarkPlace)
             StartCoroutine(dayScript.ChangeToNight(dayScript.AcharValorRestante(dayScript.horarioDaNoite)));    
         }
@@ -148,7 +148,7 @@ public class RelogioScript : MonoBehaviour
     void OnEndLoseSequence()
     {
         hourText.colorGradientPreset = originalGradient;
-        MainText.instance.SetText("Desmaiou! -25% de velocidade até a tarde!", Color.red, 3f);
+        MainText.instance.SetText("Desmaiou! -25% de velocidade atÃ© a tarde!", Color.red, 3f);
         isCompleted = false;
         Player.instance.canMove = true;
     }

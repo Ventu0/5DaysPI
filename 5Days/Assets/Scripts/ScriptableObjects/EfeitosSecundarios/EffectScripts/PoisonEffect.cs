@@ -28,7 +28,7 @@ public class PoisonEffect : Effect
         {
             resultado.efeitoQueJaPossui.remainingTurns = durationInTurn;
         }
-        else //se o alvo n„o tiver o efeito
+        else //se o alvo n√£o tiver o efeito
         {
             alvo.efeitosAtivos.Add(Instantiate(this));
            if(alvoStatus == StatusEffect.Nada)

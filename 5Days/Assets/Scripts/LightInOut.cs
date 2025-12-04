@@ -4,8 +4,8 @@ using UnityEngine.Rendering.Universal;
 
 public class LightBobing : MonoBehaviour
 {
-    [SerializeField] Light2D luz;//Referência para a luz que será mexida
-    [SerializeField] float maxLightRadius = 1.5f; // Raio máximo da luz
+    [SerializeField] Light2D luz;//ReferÃªncia para a luz que serÃ¡ mexida
+    [SerializeField] float maxLightRadius = 1.5f; // Raio mÃ¡ximo da luz
     [SerializeField] float duration = 5f;
     void Start()
     {

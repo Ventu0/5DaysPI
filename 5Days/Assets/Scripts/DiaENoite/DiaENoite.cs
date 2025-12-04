@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class DiaENoite : MonoBehaviour
 {
     public GameObject clockUI;
+    public Joystick joystick;
+
     public GameObject dontDestroyObject;
     public Light2D directionalLight;
 
-    [Header("Configurações do tempo")]
+    [Header("ConfiguraÃ§Ãµes do tempo")]
     public float tempoParaNoite = 1;
     [Tooltip("Tempo(em minutos) para a noite")]
 

@@ -8,25 +8,25 @@ public enum Alvo
 }
 public abstract class Attack : ScriptableObject
 {
-    [Header("Configurações Base")]
+    [Header("ConfiguraÃ§Ãµes Base")]
     public string nomeAtaque;
     [TextArea] public string description;
     public int danoOuCura;
     public int maxPP = 15;
     public int currentPP = 13;
     public float VisualEffectDuration = 1f;
-    [Tooltip("tempo em segundos para a duração do efeito visual")]
+    [Tooltip("tempo em segundos para a duraÃ§Ã£o do efeito visual")]
     public Sprite iconeAtaque;
     public Color iconMainColor = Color.yellow;
     public Sprite attackEffect;
-    [Tooltip("Sprite do efeito visual (caso não possua animação, isto é obrigatório)")]
+    [Tooltip("Sprite do efeito visual (caso nÃ£o possua animaÃ§Ã£o, isto Ã© obrigatÃ³rio)")]
     public float attackEffectYOffset = -0.5f;
     public float endYOffset = 0;
     public float endXOffset = 3;
-    [Tooltip("posicao X do personagem em relação ao alvo (depois de saltar). Normalmente é 3")]
+    [Tooltip("posicao X do personagem em relaÃ§Ã£o ao alvo (depois de saltar). Normalmente Ã© 3")]
     public Alvo tipoDeAlvo;
 
-    [Header("Configurações Opcionais")]
+    [Header("ConfiguraÃ§Ãµes Opcionais")]
     public RuntimeAnimatorController attackAnimation;
     public bool animationPlayInFront = true;
     public Effect efeitoSecundario;
@@ -39,10 +39,10 @@ public abstract class Attack : ScriptableObject
     [Header("Situacional")]
     public bool canUseSelectMenu = true;
 
-    [Header("Configurações de Ataque")]
+    [Header("ConfiguraÃ§Ãµes de Ataque")]
     public bool usarMovimentoLinear;
-    [Tooltip("Se sim, se mexe ao inimigo caminhando. Se não, pula até o inimigo")]
-    public bool ataqueUmaVezSó = false;
+    [Tooltip("Se sim, se mexe ao inimigo caminhando. Se nÃ£o, pula atÃ© o inimigo")]
+    public bool ataqueUmaVezSÃ³ = false;
     public bool oneTime;
     public bool shakeCamera;
     public bool ataqueEmArea;
@@ -51,11 +51,11 @@ public abstract class Attack : ScriptableObject
     public bool useCharacterAnimation = false;
     [Tooltip("se o personagem tiver animation, usar ela")]
 
-    [Header("Configurações da animação do personagem (ativar se useCharacterAnimation for true)" )]
+    [Header("ConfiguraÃ§Ãµes da animaÃ§Ã£o do personagem (ativar se useCharacterAnimation for true)" )]
     public string attackParameterName;
     public string endAttackParameter;
     public virtual List<BasePersonagem> EncontrarAliados()
-    { //fiz esse if pra eu identificar quem esta atacando, pra os inimigos poderem usar esses golpes também
+    { //fiz esse if pra eu identificar quem esta atacando, pra os inimigos poderem usar esses golpes tambÃ©m
         TurnModeManager turnModeManager = TurnModeManager.instance;
         List<BasePersonagem> alvos = new List<BasePersonagem>();
 
@@ -80,7 +80,7 @@ public abstract class Attack : ScriptableObject
                 break;
 
             default:
-                Debug.Log("Alvo é self");
+                Debug.Log("Alvo Ã© self");
                 alvos.Add(turnModeManager.QuemEstaAtacando());
                 break;
         }

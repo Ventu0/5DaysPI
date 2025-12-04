@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 public class MovesVisualEffect : MonoBehaviour
 {
-    [SerializeField] float espaçamento = 0.75f;
+    [SerializeField] float espaÃ§amento = 0.75f;
     [SerializeField] GameObject attackEffect;
     [SerializeField] Animator animator;
     SpriteRenderer spriteRenderer;
@@ -44,12 +44,12 @@ public class MovesVisualEffect : MonoBehaviour
         Turnos turno = TurnModeManager.instance.turno;
         if (turno == Turnos.EnemyTurn)
         {
-                effectPosition.x += espaçamento;
+                effectPosition.x += espaÃ§amento;
                 spriteRenderer.flipX = true;
         }
         else if (turno == Turnos.PlayerTurn)
         {           
-                effectPosition.x -= espaçamento;
+                effectPosition.x -= espaÃ§amento;
                 spriteRenderer.flipX = false;
         }
 

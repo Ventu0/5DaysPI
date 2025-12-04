@@ -2,11 +2,11 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-[CreateAssetMenu(menuName = "Ataques/AtaqueB·sico")]
+[CreateAssetMenu(menuName = "Ataques/AtaqueB√°sico")]
 
     public class BasicAttack : Attack
     {
-        [Header("ConfiguraÁıes de ataque b·sico")]
+        [Header("Configura√ß√µes de ataque b√°sico")]
         public int quantidadesDeAtaque = 1;
 
         [SerializeField] float stillDuration = 0.1f; //tempo parado na frente do inimigo
@@ -16,16 +16,16 @@ using System.Threading.Tasks;
         turnModeManager = TurnModeManager.instance;
         if (turnModeManager.turno == Turnos.EnemyTurn)
         {
-            ataqueUmaVezSÛ = false;
+            ataqueUmaVezS√≥ = false;
             oneTime = false;
         }
 
-        if(ataqueUmaVezSÛ)
-            if(oneTime) return; //se for ataque uma vez sÛ e j· tiver sido usado, n„o faz nada
+        if(ataqueUmaVezS√≥)
+            if(oneTime) return; //se for ataque uma vez s√≥ e j√° tiver sido usado, n√£o faz nada
 
         
 
-        float duraÁ„o = turnModeManager.QuemEstaAtacando().duration;
+        float dura√ß√£o = turnModeManager.QuemEstaAtacando().duration;
         Vector2 alvoPos = new Vector2(alvo.transform.position.x, alvo.transform.position.y - 0.2f);
         BasePersonagem quemEstaAtacando = turnModeManager.QuemEstaAtacando();
         Animator characterAnimator = quemEstaAtacando.GetComponent<Animator>();
@@ -33,22 +33,22 @@ using System.Threading.Tasks;
         InteractButtonsController.instance.menu.SetActive(false);
         CharacterMovement.instance.Move(quemEstaAtacando, alvoPos, VisualEffectDuration * stillDuration * quantidadesDeAtaque, usarMovimentoLinear, endXOffset, endYOffset);
         currentPP = Mathf.Abs(currentPP - 1);
-        if(ataqueUmaVezSÛ) oneTime = true;
+        if(ataqueUmaVezS√≥) oneTime = true;
 
-        await Task.Delay(Mathf.CeilToInt(duraÁ„o) * 250); //tempo do pulo
+        await Task.Delay(Mathf.CeilToInt(dura√ß√£o) * 250); //tempo do pulo
 
         if (soundEffect != null && !repeatSoundOnLoop)
             SFX.instance.PlaySFX(soundEffect, 1f);
 
         if(useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
-            characterAnimator.SetTrigger(attackParameterName); //se tiver animaÁ„o, usar ela
+            characterAnimator.SetTrigger(attackParameterName); //se tiver anima√ß√£o, usar ela
         for (int i = 0; i < quantidadesDeAtaque; i++) //determina quantos ataques devem ocorrer
         {
             if (efeitoSecundario != null) efeitoSecundario.ApplyEffect(alvo); //se tiver efeito secundario, ativar
 
             if (soundEffect != null && repeatSoundOnLoop) SFX.instance.PlaySFX(soundEffect, 1f);// tocar som do ataque
 
-            if (ataqueEmArea) //se for, faz o ataque em area, se n„o, ataca normalmente
+            if (ataqueEmArea) //se for, faz o ataque em area, se n√£o, ataca normalmente
             {
                 List<BasePersonagem> alvos = EncontrarAliados();
 
@@ -81,7 +81,7 @@ using System.Threading.Tasks;
         {
             if (efeitoSecundario == null)
             {
-                Debug.LogError("Steal Heal precisa de um efeito secund·rio de cura!");
+                Debug.LogError("Steal Heal precisa de um efeito secund√°rio de cura!");
                 return;
             }
             efeitoSecundario.ApplyEffect(TurnModeManager.instance.QuemEstaAtacando(), Mathf.FloorToInt(danoOuCura * porcentagemDeCura) /* trinta por cento */);

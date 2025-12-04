@@ -7,7 +7,7 @@ public class TextPopup : MonoBehaviour
     [Header("Essentials")]
     [SerializeField] Transform prefabText;
 
-    [Header("Configurações")]
+    [Header("ConfiguraÃ§Ãµes")]
     [SerializeField] float baseDuration = 1f;
     [Space]
     [SerializeField] int tamanhoDaPool;

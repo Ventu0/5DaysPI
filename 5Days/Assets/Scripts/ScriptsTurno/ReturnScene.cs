@@ -5,7 +5,7 @@ using System.Collections;
 using JetBrains.Annotations;
 public class ReturnScene : MonoBehaviour
 {
-    [Header("Configurações animation")]
+    [Header("ConfiguraÃ§Ãµes animation")]
     [SerializeField] Button loseButton;
     [SerializeField] float duration = 1.5f;
     [SerializeField] float characterSpeed = 3;

@@ -33,7 +33,7 @@ public class SaveNPCs : MonoBehaviour
         }
         else
         {
-            print("dois SaveNPCs na cena, autodestruição iminente");
+            print("dois SaveNPCs na cena, autodestruiÃ§Ã£o iminente");
             Destroy(gameObject);
         }
         path = Application.persistentDataPath + "/" + jsonName;
@@ -57,7 +57,7 @@ public class SaveNPCs : MonoBehaviour
 
             if (options != null) 
             {
-                if (options.needMoney) //se adicionar mais condições, adicionar aqui
+                if (options.needMoney) //se adicionar mais condiÃ§Ãµes, adicionar aqui
                     saveData.alreadyPayedMoney = currentNPC.yesOrNo.conditionMet;
             } 
             saveData.npcId = currentNPC.idToSave;

@@ -41,7 +41,7 @@ public class PlayerPartyController : MonoBehaviour
         if(PauseMenuController.instance != null)
         PauseMenuController.instance.onSave += SaveParty;
         string caminho = Application.persistentDataPath + "/PlayerParty.json";
-        if (File.Exists(caminho)) //se j· houver uma party
+        if (File.Exists(caminho)) //se j√° houver uma party
         {
             LoadParty();
             return;
@@ -74,7 +74,7 @@ public class PlayerPartyController : MonoBehaviour
         saveParty.Clear();
         for(int i = 0; i < partyAtual.Count; i++)
         {
-            saveParty.Add(ExtrairData(partyAtual[i])); //extrai as informaÁıes que quero salvar para Json poder ler
+            saveParty.Add(ExtrairData(partyAtual[i])); //extrai as informa√ß√µes que quero salvar para Json poder ler
         }
 
         string json = JsonUtility.ToJson(party, true);
@@ -101,14 +101,14 @@ public class PlayerPartyController : MonoBehaviour
         partyAtual.Clear();
         playerParty.Clear();
         string json = File.ReadAllText(caminho);
-        Party savedParty = JsonUtility.FromJson<Party>(json); //usando variavel local pois n„o quero sobreescrever party, por mais que desse
+        Party savedParty = JsonUtility.FromJson<Party>(json); //usando variavel local pois n√£o quero sobreescrever party, por mais que desse
         for(int i = 0; i < savedParty.partyAtual.Count; i++)
         {
             //pega EXATAMENTE o personagem da pasta Resources (por isso salvamos o nome original do personagem)
             CharacterStatusGeneric character = Resources.Load<CharacterStatusGeneric>("Characters/" + savedParty.partyAtual[i].characterName);
             CharacterStatusGeneric clone = Instantiate(character);
             clone.name = character.name;
-            //modifica os valores de clone para serem os valores j· salvos no Json(CharacterStatusData)
+            //modifica os valores de clone para serem os valores j√° salvos no Json(CharacterStatusData)
             clone.vidaAtual = savedParty.partyAtual[i].vidaAtual;
             clone.isDead = savedParty.partyAtual[i].isDead;
             for (int j = 0; j < clone.ataques.Count; j++)

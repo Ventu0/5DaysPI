@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "CharacterStatusGeneric", menuName = "Status Genérico/Novo Character")]
+[CreateAssetMenu(fileName = "CharacterStatusGeneric", menuName = "Status GenÃ©rico/Novo Character")]
 public class CharacterStatusGeneric : ScriptableObject
 {
     public Sprite characterSprite;

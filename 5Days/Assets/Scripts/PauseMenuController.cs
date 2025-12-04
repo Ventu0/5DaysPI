@@ -111,7 +111,7 @@ public class PauseMenuController : MonoBehaviour
         SceneManager.LoadScene("Menu");
         DeleteSave.instance.DeletarTudoDoDontDestroy(false);
         Time.timeScale = 1;
-        Destroy(gameObject); //para n„o pausar no menu
+        Destroy(gameObject); //para n√£o pausar no menu
     }
     #endregion
 }

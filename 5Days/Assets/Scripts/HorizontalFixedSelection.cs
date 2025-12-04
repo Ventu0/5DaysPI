@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HorizontalFixedSelection : MonoBehaviour
 {
-    [SerializeField] HorizontalLayoutGroup layoutGroup; //to usando Layout que È mais facil de organizar e mexer tipo slider
+    [SerializeField] HorizontalLayoutGroup layoutGroup; //to usando Layout que √© mais facil de organizar e mexer tipo slider
     [SerializeField] RectTransform[] items;
     [SerializeField] RectTransform selection;
     [SerializeField] Vector2 selectionClamp;
@@ -23,7 +23,7 @@ public class HorizontalFixedSelection : MonoBehaviour
             print("antes do horizontal");
             if(!CheckIfCanMoveSelection((int)horizontal))
             {
-                print("n„o pode mover mais");
+                print("n√£o pode mover mais");
                 return;
             }
             SelectOther(new Vector2(horizontal, 0));

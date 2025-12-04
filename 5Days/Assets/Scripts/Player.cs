@@ -7,13 +7,14 @@ using Cinemachine;
 public class Player : CharacterStatus
 {
     [Header("Optional")]
+    [SerializeField] Joystick joystick;
     public CinemachineVirtualCamera mainCam;
     public GameObject luzNatural;
     public bool canMove = true;
 
     [Header("Interagir Com NPC")]
-    [SerializeField] float raioDeInteração = 2;
-    [SerializeField] LayerMask layerMaskInteração;
+    [SerializeField] float raioDeInteraÃ§Ã£o = 2;
+    [SerializeField] LayerMask layerMaskInteraÃ§Ã£o;
     public bool canTalk = true;
     public bool isGamePaused;
 
@@ -23,9 +24,9 @@ public class Player : CharacterStatus
     [SerializeField] Rigidbody2D rb;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] float originalSpeed;
-    //[SerializeField] bool isTired; //porque cansado você nao anda rapido
+    //[SerializeField] bool isTired; //porque cansado vocÃª nao anda rapido
 
-    [Header("Últimos saves de posição")]
+    [Header("Ãšltimos saves de posiÃ§Ã£o")]
     public Vector2 lastSavedPosition;
     public Vector3 lastSavedBedPos{ get; private set; }
     public string lastSavedBedScene { get; private set; }
@@ -50,7 +51,7 @@ public class Player : CharacterStatus
     [ContextMenu("Valores de save da cama")]
     void SaberValoresSaveBed()
     {
-        print("Posição da cama salva em: " + lastSavedBedPos);
+        print("PosiÃ§Ã£o da cama salva em: " + lastSavedBedPos);
         print("Cena da cama salva em: " + lastSavedBedScene);
     }
     void Start()
@@ -58,13 +59,12 @@ public class Player : CharacterStatus
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();    
-
+        
         canTalk = true;
         if (SceneTimeController.instance != null)
         SceneTimeController.instance.onPauseGame += PausePlayer;
 
-        if (DiaENoite.instance != null)
-            DiaENoite.instance.onNightStart += OnNightStart;
+
     }
     #region SaveMethods
     public void SavePosition(Vector2 newPos = default)
@@ -135,8 +135,8 @@ public class Player : CharacterStatus
 
         if (canTalk)
         {
-            Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteração, layerMaskInteração);
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+            Collider2D collider2D = Physics2D.OverlapCircle(transform.position, raioDeInteraÃ§Ã£o, layerMaskInteraÃ§Ã£o);
+            if (Input.GetKeyDown(KeyCode.E) || InputHelper.GetPrimaryDown())
             {
                 InteragirNPC(collider2D); //antes de checar se pode mover, permite o player a falar com npc
             }
@@ -150,8 +150,8 @@ public class Player : CharacterStatus
             return;
         }
 
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = joystick.Horizontal;
+        float vertical = joystick.Vertical;
 
         anim.SetFloat("Horizontal", Mathf.Abs(horizontal));
         anim.SetFloat("Vertical", vertical);
@@ -194,9 +194,17 @@ public class Player : CharacterStatus
         Speed = originalSpeed;
         DiaENoite.instance.relogioScript.onAfterNoon.RemoveListener(OnAfterNoon);
     }
+    public void OnEnable()
+    {
+        if (DiaENoite.instance != null)
+        {
+            joystick = DiaENoite.instance.joystick;
+            DiaENoite.instance.onNightStart += OnNightStart;
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, raioDeInteração);
+        Gizmos.DrawWireSphere(transform.position, raioDeInteraÃ§Ã£o);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class BuffEffect : Effect
 {
     [SerializeField] float strengthMultiplier = 2f;
-    [Tooltip("o valor È somado")]
+    [Tooltip("o valor √© somado")]
     [SerializeField] bool stackAble = false;
     BasePersonagem character;
     public override void ApplyEffect(BasePersonagem alvo)
@@ -14,7 +14,7 @@ public class BuffEffect : Effect
         var resultado = alvo.ChecarSeJaPossuiEfeito(this);
         if (!stackAble)
         {
-            if (resultado.jaTem) //se o alvo n„o tiver o efeito tiver o efeito
+            if (resultado.jaTem) //se o alvo n√£o tiver o efeito tiver o efeito
             {
                 TextPopup.instance.GerarTexto("Falhou!", alvo.transform.position, Color.white, 26f);
             }
@@ -28,11 +28,11 @@ public class BuffEffect : Effect
     {
         character.strengthFactor += strengthMultiplier;
         remainingTurns = durationInTurn;
-        TextPopup.instance.GerarTexto("ForÁa: " + character.strengthFactor.ToString(), character.transform.position, Color.red, 26f);
+        TextPopup.instance.GerarTexto("For√ßa: " + character.strengthFactor.ToString(), character.transform.position, Color.red, 26f);
         character.efeitosAtivos.Add(Instantiate(this));
         character.isBuffed = true;
     }
-    public override void OnTurnStart(BasePersonagem alvo) //por algum motivo desconhecido, o character estava sendo nulo, ent„o teve que ser atribuido forÁadamente
+    public override void OnTurnStart(BasePersonagem alvo) //por algum motivo desconhecido, o character estava sendo nulo, ent√£o teve que ser atribuido for√ßadamente
     {
         Debug.Log("OnTurnStart ativando: " + remainingTurns);
         alvo.isBuffed = true;
@@ -51,7 +51,7 @@ public class BuffEffect : Effect
         character.strengthFactor -= strengthMultiplier;
         Debug.Log("Removendo efeito");
         character.strengthFactor = Mathf.Clamp(character.strengthFactor, 1, 999);
-        TextPopup.instance.GerarTexto("ForÁa: " + character.strengthFactor.ToString(), character.transform.position, Color.red, 26f);
+        TextPopup.instance.GerarTexto("For√ßa: " + character.strengthFactor.ToString(), character.transform.position, Color.red, 26f);
         character.isBuffed = false;
         character.efeitosAtivos.Remove(this);
     }

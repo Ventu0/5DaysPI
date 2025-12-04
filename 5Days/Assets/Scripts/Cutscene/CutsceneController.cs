@@ -56,7 +56,7 @@ public class CutsceneController : MonoBehaviour
     }
     void Update()
     {
-       if(waitingInput && Input.GetKeyDown(KeyCode.E) || waitingInput && Input.GetMouseButtonDown(0))
+       if(waitingInput && Input.GetKeyDown(KeyCode.E) || waitingInput && InputHelper.GetPrimaryDown())
        {
            onInputReceived.Invoke();
        }
@@ -82,7 +82,7 @@ public class CutsceneController : MonoBehaviour
         dayScript.PauseTime(false); //reseta o tempo
         dayScript.ResetTime();
 
-        player.transform.position = Vector3.zero; //redefine posições do player
+        player.transform.position = Vector3.zero; //redefine posiÃ§Ãµes do player
         player.gameObject.SetActive(true);
         player.canMove = true;
         player.canTalk = true;

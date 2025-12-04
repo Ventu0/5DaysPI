@@ -22,7 +22,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] int clickCountToActivate = 5;
     [SerializeField] int clicks = 0;
     bool hardmode;
-    [Header("Interação com o menu (animação)")]
+    [Header("InteraÃ§Ã£o com o menu (animaÃ§Ã£o)")]
     [SerializeField] Sprite clickSprite;
     [SerializeField] RectTransform characterTransform;
     [SerializeField] float jumpQuantity = 10f;

@@ -25,14 +25,14 @@ public class TurnModeManager : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] bool hasOnlyOneEnemy;
-    [Tooltip("Chance de escapar da batalha, È usado em porcentagem, ou seja, o numero È entre 0 a 1")]
+    [Tooltip("Chance de escapar da batalha, √© usado em porcentagem, ou seja, o numero √© entre 0 a 1")]
     public float escapeChance;
     public int turnoDeQualPersonagem;
     public Turnos turno;
 
     //variaveis invisiveis
     [HideInInspector] public List<BasePersonagem> aliadosPersonagens;
-    [HideInInspector] public List<BasePersonagem> aliadosPersonagensPersistentes; //n„o È usado no sistema, somente no final
+    [HideInInspector] public List<BasePersonagem> aliadosPersonagensPersistentes; //n√£o √© usado no sistema, somente no final
     [HideInInspector] public List<BasePersonagem> inimigosPersonagens;
     [HideInInspector] public Vector3 originalCameraPos;
     
@@ -77,7 +77,7 @@ public class TurnModeManager : MonoBehaviour
         EndMenu.SetActive(true);
         if (winOrLose)
         {
-            endText.text = "VitÛria!!!";
+            endText.text = "Vit√≥ria!!!";
             endText.color = Color.green;
             currentFightingEnemy.EndBattle();
         }
@@ -208,7 +208,7 @@ public class TurnModeManager : MonoBehaviour
     public BasePersonagem QuemEstaAtacando()
     {
         List<BasePersonagem> personagems = turno == Turnos.PlayerTurn ? aliadosPersonagens : turno == Turnos.EnemyTurn ? inimigosPersonagens : null;
-        //verificador, se player turno for true, recebe aliadosPersonagens, se n„o, recebe inimigosPersonagens
+        //verificador, se player turno for true, recebe aliadosPersonagens, se n√£o, recebe inimigosPersonagens
 
         BasePersonagem personagem = personagems[turnoDeQualPersonagem];
 

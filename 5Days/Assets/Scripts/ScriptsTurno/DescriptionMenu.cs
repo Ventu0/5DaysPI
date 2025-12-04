@@ -18,7 +18,7 @@ public class DescriptionMenu : Selectable
         interactButtonsController = GetComponent<InteractButtonsController>();
         descriptionMenu.SetActive(false);
     }
-    public override void AbrirMenu(int whatMove) //numero de identificação do ataque selecionado de acordo com o botão
+    public override void AbrirMenu(int whatMove) //numero de identificaÃ§Ã£o do ataque selecionado de acordo com o botÃ£o
     {
         Attack attack = interactButtonsController.ataques[whatMove];
 
@@ -27,7 +27,7 @@ public class DescriptionMenu : Selectable
         descriptionMenu.SetActive(true);
 
         if(attack.description == null || attack.description == "")
-            descriptionText.text = "Sem descrição.";
+            descriptionText.text = "Sem descriÃ§Ã£o.";
         else
             descriptionText.text = attack.description;
 
@@ -38,7 +38,7 @@ public class DescriptionMenu : Selectable
             damageText.text = "";
         }else
         damageText.text = "Dano: " + attack.danoOuCura * TurnModeManager.instance.QuemEstaAtacando().strengthFactor;
-        //futuramente: customizar o menu de descrição para ter mais personalidade e coisas
+        //futuramente: customizar o menu de descriÃ§Ã£o para ter mais personalidade e coisas
     }
 
     public override void Close() => descriptionMenu.SetActive(false);

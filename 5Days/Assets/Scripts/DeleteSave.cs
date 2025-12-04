@@ -40,7 +40,7 @@ public class DeleteSave : MonoBehaviour
             for (int i = 0; i < arquivos.Length; i++)
             {
                 
-                File.Delete(arquivos[i]); //se já houver um save, deleta ele
+                File.Delete(arquivos[i]); //se jÃ¡ houver um save, deleta ele
             }
         }
         if (PlayerMoney.instance != null) PlayerMoney.instance.AtribuirMoney(0);

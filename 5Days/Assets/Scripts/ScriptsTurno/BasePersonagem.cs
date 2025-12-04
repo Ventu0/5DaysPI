@@ -19,7 +19,7 @@ public class BasePersonagem : MonoBehaviour, IDamageable
     [Header("Read-Only")]
     public bool isBuffed;
     public float strengthFactor = 1; //futuramente: fazer stackar com outras coisas como Grito de Guerra
-    [Tooltip("A quantidade de forÁa que o golpe ser· multiplicado, usado apenas em golpes buffados")]
+    [Tooltip("A quantidade de for√ßa que o golpe ser√° multiplicado, usado apenas em golpes buffados")]
     public float duration = 2;
     public bool turnEnded;
     public List<Effect> efeitosAtivos;

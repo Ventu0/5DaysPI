@@ -80,7 +80,7 @@ public class Loader : MonoBehaviour
         print("carregando bed infos");
         Player player = Player.instance;
         if (player == null || playerData == null) yield break;
-        print("player nao é nulo");
+        print("player nao Ã© nulo");
         player.resetBedPosOnLoad = playerData.resetPlayerPosOnSleep;
         player.SaveBedPos(playerData.playerLastBedPos);
         player.SaveBedScene(playerData.playerLastBedScene);

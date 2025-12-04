@@ -26,7 +26,7 @@ public class LojaAnimSequence : MonoBehaviour
         Vector2 finalPos = new Vector2(selectedCharacter.anchoredPosition.x + finalX, 0);
         //yield return StartCoroutine espera a outra Corotina terminar pra continuar, tipo uma sequencia
 
-        //yield return StartCoroutine( animação crescer e diminuir;
+        //yield return StartCoroutine( animaÃ§Ã£o crescer e diminuir;
         //    Vector2LerpTween(selectedCharacter.localScale, finalScale, 0.25f, v => selectedCharacter.localScale = v, true));
 
         yield return StartCoroutine(

@@ -48,7 +48,7 @@ public class SelectTarget : MonoBehaviour
     {
         if (isSelecting)
         {
-            if (inputTimer > 0f) //para n„o dar erro de apertar espaÁo duas vezes
+            if (inputTimer > 0f) //para n√£o dar erro de apertar espa√ßo duas vezes
             {
                 inputTimer -= Time.unscaledDeltaTime;
                 return;
@@ -61,7 +61,7 @@ public class SelectTarget : MonoBehaviour
                 currentCharacterSelected = Mathf.Clamp(currentCharacterSelected, 0, targets.Count - 1);
                 CallMoveArrow(currentCharacterSelected);
             }
-            if (vertical > 0 && canMove) //este cÛdigo est· bastante genÈrico e consegue trabalhar sozinho, apenas remover algumas coisas especÌficas (como Atacar()) e pronto
+            if (vertical > 0 && canMove) //este c√≥digo est√° bastante gen√©rico e consegue trabalhar sozinho, apenas remover algumas coisas espec√≠ficas (como Atacar()) e pronto
             {
                 canMove = false;
 
@@ -102,7 +102,7 @@ public class SelectTarget : MonoBehaviour
         isSelecting = false;
         canMove = true;
     }
-    public void StartSelecting() //caso eu queria mudar para genÈrico (selecionar aliados tambÈm) adicionar parametro generico
+    public void StartSelecting() //caso eu queria mudar para gen√©rico (selecionar aliados tamb√©m) adicionar parametro generico
     { 
         isSelecting = true;
         arrowTransform.gameObject.SetActive(true);

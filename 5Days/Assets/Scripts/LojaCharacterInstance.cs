@@ -33,7 +33,7 @@ public class LojaCharacterInstance : MonoBehaviour
         personagem = novoPersonagem;
         if (unlocked) Comprado(false);
     }
-    #region Movimentação
+    #region MovimentaÃ§Ã£o
     public void Move(Vector3 originalPos, Vector3 originalScale, float duration, bool setActive)
     {
         gameObject.SetActive(setActive);

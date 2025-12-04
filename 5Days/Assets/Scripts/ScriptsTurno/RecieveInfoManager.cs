@@ -57,7 +57,7 @@ public class RecieveInfoManager : MonoBehaviour
             for(int j = 0; j < enemyStatus.Count; j++)
             {
                 aliadoPersonagem.characterStatus.ataques[j] = Instantiate(playerStatus[i].ataques[j]);
-                playerStatus[i].ataques[j].oneTime = false; //para não dar erro de ataque nulo
+                playerStatus[i].ataques[j].oneTime = false; //para nÃ£o dar erro de ataque nulo
                 aliadoPersonagem.characterStatus.ataques[j].name = playerStatus[i].ataques[j].name; //para nao dar o ataque(copia)
             }
             turnModeManager.aliadosPersonagensPersistentes.Add(aliadoPersonagem); //adiciona os personagens no persistente (pra prevalecer o isDead)

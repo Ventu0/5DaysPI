@@ -10,7 +10,7 @@ public class GolpesNeutros : Attack
     [Header("Exclusivo neutral")]
     [SerializeField] bool changeColorWhileApplyingEffect;
     [SerializeField] Color colorToChange = Color.green;
-    public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O próprio usuário
+    public override async void ExecutarAtaque(BasePersonagem alvo, Sprite attackSprite) //tipo de alvo: O prÃ³prio usuÃ¡rio
     {
         alvoPersonagem = alvo;
         Debug.Log("Alvo: " + alvo.name);
@@ -39,7 +39,7 @@ public class GolpesNeutros : Attack
         await Task.Delay(Mathf.CeilToInt(VisualEffectDuration) * 1000);
 
         if (useCharacterAnimation && characterAnimator.runtimeAnimatorController != null)
-            characterAnimator.SetTrigger(attackParameterName); //se tiver animação, usar ela
+            characterAnimator.SetTrigger(attackParameterName); //se tiver animaÃ§Ã£o, usar ela
 
         AplicarEfeito(alvo);
 
@@ -51,7 +51,7 @@ public class GolpesNeutros : Attack
     {
         if(efeitoSecundario == null)
         {
-            Debug.LogError("precisa ter um efeito pra aplicar ele, gênio!");
+            Debug.LogError("precisa ter um efeito pra aplicar ele, gÃªnio!");
             return;
         }
 

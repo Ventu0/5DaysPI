@@ -17,7 +17,7 @@ public class ChatController : MonoBehaviour
     [SerializeField] Button yesBTN;
     [SerializeField] Button noBTN;
 
-    [Header("Configurações para aparecer texto de clicar E")]
+    [Header("ConfiguraÃ§Ãµes para aparecer texto de clicar E")]
     [SerializeField] GameObject pressButtonText;
     [SerializeField] float timer;
     [SerializeField] float timeToTextAppear = 5f;
@@ -75,7 +75,7 @@ public class ChatController : MonoBehaviour
         MainSoundtrack soundtrack = MainSoundtrack.instance;
         if (soundtrack != null)
             soundtrack.TurnVolumeUpDown(0.05f);
-        //SÓ PARA MOSTRAR: posso fazer isso: portraitFundo.SetActive(sprite == null);
+        //SÃ“ PARA MOSTRAR: posso fazer isso: portraitFundo.SetActive(sprite == null);
 
         if (sprite == null)
         {

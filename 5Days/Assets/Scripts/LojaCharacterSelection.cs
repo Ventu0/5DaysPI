@@ -201,7 +201,7 @@ public class LojaCharacterSelection : MonoBehaviour
     #region Functions With Return
     int ChecarSePrecisaInverter(int sentido, float positionEmRelacao0)
     {
-        float tolerancia = 0.5f; //faco isso porque o float pode não ser exatamente 0, então coloco esse nivel de tolerancia
+        float tolerancia = 0.5f; //faco isso porque o float pode nÃ£o ser exatamente 0, entÃ£o coloco esse nivel de tolerancia
         //porque no modo janela tava dando certo, e quando fui pro fullscreen tava dando coordenadas levemente erradas, fazendo dar erro
 
         if (positionEmRelacao0 > tolerancia)
