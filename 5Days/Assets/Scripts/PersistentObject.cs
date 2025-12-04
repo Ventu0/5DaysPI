@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
-using static UnityEditor.Experimental.GraphView.GraphView;
 public class PersistentObject : MonoBehaviour
 {
     public static PersistentObject instance;
